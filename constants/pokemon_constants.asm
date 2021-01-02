@@ -271,6 +271,13 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const FLAMBEAR   ; fc
+	const VOLBEAR    ; fd
+	const DYNABEAR   ; fe
+	const CRUIZE     ; ff
+	const AQUALLO    ; 100
+	const AQUARIUS   ; 101
+	
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

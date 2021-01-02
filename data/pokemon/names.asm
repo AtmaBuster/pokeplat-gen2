@@ -254,3 +254,10 @@ PokemonNames::
 	db "LUGIA@@@@@"
 	db "HO-OH@@@@@"
 	db "CELEBI@@@@"
+	db "FLAMBEAR@@"
+	db "VOLBEAR@@@"
+	db "DYNABEAR@@"
+	db "CRUIZE@@@@"
+	db "AQUALLO@@@"
+	db "AQUARIUS@@"
+	

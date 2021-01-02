@@ -251,3 +251,9 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
+	dba FlambearPokedexEntry
+	dba VolbearPokedexEntry
+	dba DynabearPokedexEntry
+	dba CruizePokedexEntry
+	dba AqualloPokedexEntry
+	dba AquariusPokedexEntry

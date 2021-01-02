@@ -6,6 +6,8 @@ AlphabeticalPokedexOrder:
 	dw AIPOM
 	dw ALAKAZAM
 	dw AMPHAROS
+	dw AQUALLO
+	dw AQUARIUS
 	dw ARBOK
 	dw ARCANINE
 	dw ARIADOS
@@ -34,6 +36,7 @@ AlphabeticalPokedexOrder:
 	dw CORSOLA
 	dw CROBAT
 	dw CROCONAW
+	dw CRUIZE
 	dw CUBONE
 	dw CYNDAQUIL
 	dw DELIBIRD
@@ -49,6 +52,7 @@ AlphabeticalPokedexOrder:
 	dw DROWZEE
 	dw DUGTRIO
 	dw DUNSPARCE
+	dw DYNABEAR
 	dw EEVEE
 	dw EKANS
 	dw ELECTABUZZ
@@ -62,6 +66,7 @@ AlphabeticalPokedexOrder:
 	dw FEAROW
 	dw FERALIGATR
 	dw FLAAFFY
+	dw FLAMBEAR
 	dw FLAREON
 	dw FORRETRESS
 	dw FURRET
@@ -239,6 +244,7 @@ AlphabeticalPokedexOrder:
 	dw VENUSAUR
 	dw VICTREEBEL
 	dw VILEPLUME
+	dw VOLBEAR
 	dw VOLTORB
 	dw VULPIX
 	dw WARTORTLE

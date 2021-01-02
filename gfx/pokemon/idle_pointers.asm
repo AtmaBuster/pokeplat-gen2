@@ -250,3 +250,10 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
+	dw FlambearAnimationIdle
+	dw VolbearAnimationIdle
+	dw DynabearAnimationIdle
+	dw CruizeAnimationIdle
+	dw AqualloAnimationIdle
+	dw AquariusAnimationIdle
+	

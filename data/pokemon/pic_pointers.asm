@@ -515,3 +515,16 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
+	dba FlambearFrontpic
+	dba FlambearBackpic
+	dba VolbearFrontpic
+	dba VolbearBackpic
+	dba DynabearFrontpic
+	dba DynabearBackpic
+	dba CruizeFrontpic
+	dba CruizeBackpic
+	dba AqualloFrontpic
+	dba AqualloBackpic
+	dba AquariusFrontpic
+	dba AquariusBackpic
+	

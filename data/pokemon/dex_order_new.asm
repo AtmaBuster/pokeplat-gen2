@@ -252,3 +252,10 @@ NewPokedexOrder:
 	dw MEWTWO
 	dw MEW
 	dw CELEBI
+	dw FLAMBEAR
+	dw VOLBEAR
+	dw DYNABEAR
+	dw CRUIZE
+	dw AQUALLO
+	dw AQUARIUS
+	

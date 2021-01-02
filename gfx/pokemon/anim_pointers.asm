@@ -250,3 +250,9 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+	dw FlambearAnimation
+	dw VolbearAnimation
+	dw DynabearAnimation
+	dw CruizeAnimation
+	dw AqualloAnimation
+	dw AquariusAnimation

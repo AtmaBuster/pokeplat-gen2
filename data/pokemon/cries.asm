@@ -256,3 +256,9 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,  $000,  $100 ; LUGIA
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
+	mon_cry CRY_MARILL,      $0a0,  $080 ; FLAMBEAR
+	mon_cry CRY_TOTODILE,    $2f0,  $0a0 ; VOLBEAR
+	mon_cry CRY_TOTODILE,    $de0,  $1a0 ; DYNABEAR
+	mon_cry CRY_MANTINE,     $f90,  $090 ; CRUIZE
+	mon_cry CRY_GOLEM,       $300,  $0f0 ; AQUALLO
+	mon_cry CRY_TOTODILE,   -$010,  $0c0 ; AQUARIUS

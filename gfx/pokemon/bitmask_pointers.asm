@@ -250,3 +250,10 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
+	dw FlambearBitmasks
+	dw VolbearBitmasks
+	dw DynabearBitmasks
+	dw CruizeBitmasks
+	dw AqualloBitmasks
+	dw AquariusBitmasks
+	

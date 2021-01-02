@@ -101,6 +101,12 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw FlambearEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw CruizeEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -465,5 +471,25 @@ LarvitarEggMoves:
 	dw OUTRAGE
 	dw FOCUS_ENERGY
 	dw ANCIENTPOWER
+
 NoEggMoves2:
+	dw -1 ; end
+
+FlambearEggMoves:
+	dw FURY_SWIPES
+	dw QUICK_ATTACK
+	dw REVERSAL
+	dw THRASH
+	dw FORESIGHT
+	dw FAINT_ATTACK
+	dw SUBMISSION
+	dw -1 ; end
+	
+CruizeEggMoves:
+	dw ICY_WIND
+	dw BLIZZARD
+	dw HYDRO_PUMP
+	dw ANCIENTPOWER
+	dw RAZOR_WIND
+	dw ROCK_SLIDE
 	dw -1 ; end

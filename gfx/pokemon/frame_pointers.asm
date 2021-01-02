@@ -250,3 +250,9 @@ FramesPointers:
 	dba LugiaFrames
 	dba HoOhFrames
 	dba CelebiFrames
+	dba FlambearFrames
+	dba VolbearFrames
+	dba DynabearFrames
+	dba CruizeFrames
+	dba AqualloFrames
+	dba AquariusFrames
