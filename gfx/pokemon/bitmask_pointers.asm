@@ -259,3 +259,7 @@ BitmasksPointers:
 	dw KotoraBitmasks
 	dw RaitoraBitmasks
 	dw BomshealBitmasks
+	dw CorasunBitmasks
+	dw Sunfish_2Bitmasks
+	dw Sunfish_3Bitmasks
+	

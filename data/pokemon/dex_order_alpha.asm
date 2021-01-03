@@ -34,6 +34,7 @@ AlphabeticalPokedexOrder:
 	dw CLEFAIRY
 	dw CLEFFA
 	dw CLOYSTER
+	dw CORASUN
 	dw CORSOLA
 	dw CROBAT
 	dw CROCONAW
@@ -224,6 +225,8 @@ AlphabeticalPokedexOrder:
 	dw STEELIX
 	dw SUDOWOODO
 	dw SUICUNE
+	dw SUNFISH_2
+	dw SUNFISH_3
 	dw SUNFLORA
 	dw SUNKERN
 	dw SWINUB

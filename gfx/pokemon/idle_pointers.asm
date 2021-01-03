@@ -259,4 +259,7 @@ AnimationIdlePointers:
 	dw KotoraAnimationIdle
 	dw RaitoraAnimationIdle
 	dw BomshealAnimationIdle
+	dw CorasunAnimationIdle
+	dw Sunfish_2AnimationIdle
+	dw Sunfish_3AnimationIdle
 	

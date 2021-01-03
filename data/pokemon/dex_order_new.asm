@@ -261,3 +261,7 @@ NewPokedexOrder:
 	dw KOTORA
 	dw RAITORA
 	dw BOMSHEAL
+	dw CORASUN
+	dw SUNFISH_2
+	dw SUNFISH_3
+	

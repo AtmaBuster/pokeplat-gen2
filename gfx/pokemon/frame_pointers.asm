@@ -259,4 +259,7 @@ FramesPointers:
 	dba KotoraFrames
 	dba RaitoraFrames
 	dba BomshealFrames
+	dba CorasunFrames
+	dba Sunfish_2Frames
+	dba Sunfish_3Frames
 	

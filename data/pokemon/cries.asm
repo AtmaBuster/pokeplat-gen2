@@ -265,4 +265,6 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
 	mon_cry CRY_RAIKOU,      $db3,  $168 ; RAITORA
 	mon_cry CRY_TOTODILE,    $e90,  $160 ; BOMSHEAL
-	
+	mon_cry CRY_TEDDIURSA,   $043,  $050 ; CORASUN
+	mon_cry CRY_RATTATA,     $000,  $001 ; SUNFISH_2
+	mon_cry CRY_RATTATA,     $000,  $001 ; SUNFISH_3

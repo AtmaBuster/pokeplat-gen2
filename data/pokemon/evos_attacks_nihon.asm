@@ -10,6 +10,9 @@ EvosAttacksPointers3::
 	dw KotoraEvosAttacks
 	dw RaitoraEvosAttacks
 	dw BomshealEvosAttacks
+	dw CorasunEvosAttacks
+	dw Sunfish_2EvosAttacks
+	dw Sunfish_3EvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -168,4 +171,31 @@ BomshealEvosAttacks:
 	dbw 45, BODY_SLAM
 	dbw 51, FIRE_BLAST
 	dbw 56, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+CorasunEvosAttacks:
+	dbbw EVOLVE_LEVEL, 28, SUNFISH_2
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 1, BUBBLE
+	dbw 6, DEFENSE_CURL
+	dbw 10, RAGE
+	dbw 15, SUPERSONIC
+	dbw 19, BUBBLEBEAM
+	dbw 24, SCREECH
+	dbw 28, SLAM
+	dbw 33, ACID_ARMOR
+	dbw 37, CONFUSE_RAY
+	dbw 42, DOUBLE_EDGE
+	dbw 46, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
+Sunfish_2EvosAttacks:
+	dbbw EVOLVE_LEVEL, 39, SUNFISH_3
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
+Sunfish_3EvosAttacks:
+	db 0 ; no more evolutions
 	db 0 ; no more level-up moves

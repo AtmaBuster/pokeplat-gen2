@@ -260,4 +260,7 @@ PokedexDataPointerTable:
 	dba KotoraPokedexEntry
 	dba RaitoraPokedexEntry
 	dba BomshealPokedexEntry
+	dba CorasunPokedexEntry
+	dba Sunfish_2PokedexEntry
+	dba Sunfish_3PokedexEntry
 	

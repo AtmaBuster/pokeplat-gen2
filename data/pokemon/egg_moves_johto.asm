@@ -110,6 +110,9 @@ EggMovePointers2::
 	dw KotoraEggMoves
 	dw NoEggMoves2
 	dw BomshealEggMoves
+	dw CorasunEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -501,13 +504,19 @@ KotoraEggMoves:
 	dw THUNDERBOLT
 	dw TAKE_DOWN
 	dw SCREECH
-	db -1 ; end
+	dw -1 ; end
 
 BomshealEggMoves:
-	db FLAMETHROWER
-	db FIRE_SPIN
-	db BUBBLEBEAM
-	db FIRE_BLAST
-	db SLAM
-	db THRASH
-	db -1 ; end
+	dw FLAMETHROWER
+	dw FIRE_SPIN
+	dw BUBBLEBEAM
+	dw FIRE_BLAST
+	dw SLAM
+	dw THRASH
+	dw -1 ; end
+
+CorasunEggMoves:
+	dw RAIN_DANCE
+	dw REVERSAL
+	dw SWAGGER
+	dw -1 ; end

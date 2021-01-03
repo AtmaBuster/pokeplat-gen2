@@ -259,3 +259,6 @@ AnimationPointers:
 	dw KotoraAnimation
 	dw RaitoraAnimation
 	dw BomshealAnimation
+	dw CorasunAnimation
+	dw Sunfish_2Animation
+	dw Sunfish_3Animation

@@ -263,3 +263,7 @@ PokemonNames::
 	db "KOTORA@@@@"
 	db "RAITORA@@@"
 	db "BOMSHEAL@@"
+	db "CORASUN@@@"
+	db "SUNFISH-2@"
+	db "SUNFISH-3@"
+	
