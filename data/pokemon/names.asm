@@ -262,4 +262,4 @@ PokemonNames::
 	db "AQUARIUS@@"
 	db "KOTORA@@@@"
 	db "RAITORA@@@"
-	
+	db "BOMSHEAL@@"

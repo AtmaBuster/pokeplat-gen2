@@ -258,4 +258,4 @@ AnimationPointers:
 	dw AquariusAnimation
 	dw KotoraAnimation
 	dw RaitoraAnimation
-	
+	dw BomshealAnimation

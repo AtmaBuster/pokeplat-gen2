@@ -258,4 +258,5 @@ FramesPointers:
 	dba AquariusFrames
 	dba KotoraFrames
 	dba RaitoraFrames
+	dba BomshealFrames
 	

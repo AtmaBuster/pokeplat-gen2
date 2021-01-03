@@ -260,4 +260,5 @@ MonMenuIcons:
 	db ICON_LAPRAS		; AQUARIUS
 	db ICON_FOX         ; KOTORA
 	db ICON_FOX         ; RAITORA
+	db ICON_LAPRAS      ; BOMSHEAL
 	

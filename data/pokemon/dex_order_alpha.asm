@@ -19,6 +19,7 @@ AlphabeticalPokedexOrder:
 	dw BELLSPROUT
 	dw BLASTOISE
 	dw BLISSEY
+	dw BOMSHEAL
 	dw BULBASAUR
 	dw BUTTERFREE
 	dw CATERPIE

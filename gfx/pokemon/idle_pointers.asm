@@ -258,4 +258,5 @@ AnimationIdlePointers:
 	dw AquariusAnimationIdle
 	dw KotoraAnimationIdle
 	dw RaitoraAnimationIdle
+	dw BomshealAnimationIdle
 	

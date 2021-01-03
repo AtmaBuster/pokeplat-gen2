@@ -531,5 +531,6 @@ PokemonPicPointers::
 	dba KotoraBackpic
 	dba RaitoraFrontpic
 	dba RaitoraBackpic
-	
+	dba BomshealFrontpic
+	dba BomshealBackpic
 	

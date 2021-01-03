@@ -260,3 +260,4 @@ NewPokedexOrder:
 	dw AQUARIUS
 	dw KOTORA
 	dw RAITORA
+	dw BOMSHEAL

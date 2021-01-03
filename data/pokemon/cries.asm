@@ -264,4 +264,5 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,   -$010,  $0c0 ; AQUARIUS
 	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
 	mon_cry CRY_RAIKOU,      $db3,  $168 ; RAITORA
+	mon_cry CRY_TOTODILE,    $e90,  $160 ; BOMSHEAL
 	

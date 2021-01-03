@@ -279,6 +279,7 @@ JOHTO_POKEMON EQU const_value
 	const AQUARIUS   ; 101
 	const KOTORA     ; 102
 	const RAITORA    ; 103
+	const BOMSHEAL   ; 104
 	
 NUM_POKEMON EQU const_value + -1
 

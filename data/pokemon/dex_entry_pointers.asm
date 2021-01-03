@@ -259,3 +259,5 @@ PokedexDataPointerTable:
 	dba AquariusPokedexEntry
 	dba KotoraPokedexEntry
 	dba RaitoraPokedexEntry
+	dba BomshealPokedexEntry
+	

@@ -258,4 +258,4 @@ BitmasksPointers:
 	dw AquariusBitmasks
 	dw KotoraBitmasks
 	dw RaitoraBitmasks
-	
+	dw BomshealBitmasks
