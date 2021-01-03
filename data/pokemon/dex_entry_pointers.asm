@@ -257,3 +257,5 @@ PokedexDataPointerTable:
 	dba CruizePokedexEntry
 	dba AqualloPokedexEntry
 	dba AquariusPokedexEntry
+	dba KotoraPokedexEntry
+	dba RaitoraPokedexEntry

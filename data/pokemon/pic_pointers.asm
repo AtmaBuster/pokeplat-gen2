@@ -527,4 +527,9 @@ PokemonPicPointers::
 	dba AqualloBackpic
 	dba AquariusFrontpic
 	dba AquariusBackpic
+	dba KotoraFrontpic
+	dba KotoraBackpic
+	dba RaitoraFrontpic
+	dba RaitoraBackpic
+	
 	

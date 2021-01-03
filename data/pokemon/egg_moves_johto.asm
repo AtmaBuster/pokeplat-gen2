@@ -107,6 +107,8 @@ EggMovePointers2::
 	dw CruizeEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw KotoraEggMoves
+	dw NoEggMoves2
 
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -493,3 +495,9 @@ CruizeEggMoves:
 	dw RAZOR_WIND
 	dw ROCK_SLIDE
 	dw -1 ; end
+	
+KotoraEggMoves:
+	dw THUNDERBOLT
+	dw TAKE_DOWN
+	dw SCREECH
+	db -1 ; end

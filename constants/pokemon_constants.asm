@@ -277,6 +277,8 @@ JOHTO_POKEMON EQU const_value
 	const CRUIZE     ; ff
 	const AQUALLO    ; 100
 	const AQUARIUS   ; 101
+	const KOTORA     ; 102
+	const RAITORA    ; 103
 	
 NUM_POKEMON EQU const_value + -1
 

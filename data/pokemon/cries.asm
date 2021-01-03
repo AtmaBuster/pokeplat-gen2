@@ -262,3 +262,6 @@ PokemonCries::
 	mon_cry CRY_MANTINE,     $f90,  $090 ; CRUIZE
 	mon_cry CRY_GOLEM,       $300,  $0f0 ; AQUALLO
 	mon_cry CRY_TOTODILE,   -$010,  $0c0 ; AQUARIUS
+	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
+	mon_cry CRY_RAIKOU,      $db3,  $168 ; RAITORA
+	

@@ -258,3 +258,6 @@ MonMenuIcons:
 	db ICON_LAPRAS		; CRUIZE
 	db ICON_LAPRAS		; AQUALLO
 	db ICON_LAPRAS		; AQUARIUS
+	db ICON_FOX         ; KOTORA
+	db ICON_FOX         ; RAITORA
+	

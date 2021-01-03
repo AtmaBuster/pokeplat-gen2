@@ -256,3 +256,6 @@ FramesPointers:
 	dba CruizeFrames
 	dba AqualloFrames
 	dba AquariusFrames
+	dba KotoraFrames
+	dba RaitoraFrames
+	

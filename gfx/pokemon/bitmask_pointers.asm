@@ -256,4 +256,6 @@ BitmasksPointers:
 	dw CruizeBitmasks
 	dw AqualloBitmasks
 	dw AquariusBitmasks
+	dw KotoraBitmasks
+	dw RaitoraBitmasks
 	

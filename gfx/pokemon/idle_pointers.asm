@@ -256,4 +256,6 @@ AnimationIdlePointers:
 	dw CruizeAnimationIdle
 	dw AqualloAnimationIdle
 	dw AquariusAnimationIdle
+	dw KotoraAnimationIdle
+	dw RaitoraAnimationIdle
 	

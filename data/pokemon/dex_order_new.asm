@@ -258,4 +258,5 @@ NewPokedexOrder:
 	dw CRUIZE
 	dw AQUALLO
 	dw AQUARIUS
-	
+	dw KOTORA
+	dw RAITORA

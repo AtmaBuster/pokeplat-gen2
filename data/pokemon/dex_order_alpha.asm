@@ -111,6 +111,7 @@ AlphabeticalPokedexOrder:
 	dw KINGDRA
 	dw KINGLER
 	dw KOFFING
+	dw KOTORA
 	dw KRABBY
 	dw LANTURN
 	dw LAPRAS
@@ -185,6 +186,7 @@ AlphabeticalPokedexOrder:
 	dw QWILFISH
 	dw RAICHU
 	dw RAIKOU
+	dw RAITORA
 	dw RAPIDASH
 	dw RATICATE
 	dw RATTATA

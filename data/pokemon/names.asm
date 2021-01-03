@@ -260,4 +260,6 @@ PokemonNames::
 	db "CRUIZE@@@@"
 	db "AQUALLO@@@"
 	db "AQUARIUS@@"
+	db "KOTORA@@@@"
+	db "RAITORA@@@"
 	

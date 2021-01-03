@@ -256,3 +256,6 @@ AnimationPointers:
 	dw CruizeAnimation
 	dw AqualloAnimation
 	dw AquariusAnimation
+	dw KotoraAnimation
+	dw RaitoraAnimation
+	

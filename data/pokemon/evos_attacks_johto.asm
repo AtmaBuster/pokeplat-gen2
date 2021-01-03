@@ -107,6 +107,8 @@ EvosAttacksPointers2::
 	dw CruizeEvosAttacks
 	dw AqualloEvosAttacks
 	dw AquariusEvosAttacks
+	dw KotoraEvosAttacks
+	dw RaitoraEvosAttacks
 
 ChikoritaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, BAYLEEF
@@ -1426,7 +1428,7 @@ FlambearEvosAttacks:
 	db 0 ; no more level-up moves
 
 VolbearEvosAttacks:
-	db EVOLVE_LEVEL, 36, DYNABEAR
+	dbbw EVOLVE_LEVEL, 36, DYNABEAR
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -1480,7 +1482,7 @@ CruizeEvosAttacks:
 	db 0 ; no more level-up moves
 
 AqualloEvosAttacks:
-	db EVOLVE_LEVEL, 32, AQUARIUS
+	dbbw EVOLVE_LEVEL, 32, AQUARIUS
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, GROWL
@@ -1517,3 +1519,37 @@ AquariusEvosAttacks:
 	dbw 52, ICE_BEAM
 	dbw 60, HYDRO_PUMP
 	db 0 ; no more level-up moves
+
+KotoraEvosAttacks:
+	dbbw EVOLVE_LEVEL, 31, RAITORA
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 6, THUNDERSHOCK
+	dbw 10, BITE
+	dbw 15, THUNDER_WAVE
+	dbw 19, SCARY_FACE
+	dbw 24, SPARK
+	dbw 28, TAKE_DOWN
+	dbw 33, SLASH
+	dbw 37, CRUNCH
+	dbw 42, THUNDERBOLT
+	dbw 46, AGILITY
+	db 0 ; no more level-up moves
+
+RaitoraEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 6, THUNDERSHOCK
+	dbw 10, BITE
+	dbw 15, THUNDER_WAVE
+	dbw 19, SCARY_FACE
+	dbw 24, SPARK
+	dbw 28, TAKE_DOWN
+	dbw 35, SLASH
+	dbw 42, CRUNCH
+	dbw 49, THUNDERBOLT
+	dbw 56, AGILITY
+	db 0 ; no more level-up moves
+	
