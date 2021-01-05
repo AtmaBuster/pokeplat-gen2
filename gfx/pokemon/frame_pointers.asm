@@ -260,6 +260,6 @@ FramesPointers:
 	dba RaitoraFrames
 	dba BomshealFrames
 	dba CorasunFrames
-	dba Sunfish_2Frames
-	dba Sunfish_3Frames
+	dba CoramolaFrames
+	dba MambokingFrames
 	

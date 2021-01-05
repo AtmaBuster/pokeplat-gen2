@@ -535,7 +535,7 @@ PokemonPicPointers::
 	dba BomshealBackpic
 	dba CorasunFrontpic
 	dba CorasunBackpic
-	dba Sunfish_2Frontpic
-	dba Sunfish_2Backpic
-	dba Sunfish_3Frontpic
-	dba Sunfish_3Backpic
+	dba CoramolaFrontpic
+	dba CoramolaBackpic
+	dba MambokingFrontpic
+	dba MambokingBackpic

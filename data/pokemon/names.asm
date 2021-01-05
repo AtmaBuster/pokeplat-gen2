@@ -264,6 +264,6 @@ PokemonNames::
 	db "RAITORA@@@"
 	db "BOMSHEAL@@"
 	db "CORASUN@@@"
-	db "SUNFISH-2@"
-	db "SUNFISH-3@"
+	db "CORAMOLA@@"
+	db "MAMBOKING@"
 	

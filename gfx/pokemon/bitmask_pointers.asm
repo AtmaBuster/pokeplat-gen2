@@ -260,6 +260,6 @@ BitmasksPointers:
 	dw RaitoraBitmasks
 	dw BomshealBitmasks
 	dw CorasunBitmasks
-	dw Sunfish_2Bitmasks
-	dw Sunfish_3Bitmasks
+	dw CoramolaBitmasks
+	dw MambokingBitmasks
 	

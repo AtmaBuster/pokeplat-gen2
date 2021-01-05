@@ -281,8 +281,8 @@ JOHTO_POKEMON EQU const_value
 	const RAITORA    ; 103
 	const BOMSHEAL   ; 104
 	const CORASUN    ; 105
-	const SUNFISH_2  ; 106
-	const SUNFISH_3  ; 105
+	const CORAMOLA   ; 106
+	const MAMBOKING  ; 105
 	
 NUM_POKEMON EQU const_value + -1
 

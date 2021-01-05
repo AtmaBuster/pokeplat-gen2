@@ -260,5 +260,5 @@ AnimationPointers:
 	dw RaitoraAnimation
 	dw BomshealAnimation
 	dw CorasunAnimation
-	dw Sunfish_2Animation
-	dw Sunfish_3Animation
+	dw CoramolaAnimation
+	dw MambokingAnimation

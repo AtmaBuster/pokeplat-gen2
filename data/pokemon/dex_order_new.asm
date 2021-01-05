@@ -262,6 +262,6 @@ NewPokedexOrder:
 	dw RAITORA
 	dw BOMSHEAL
 	dw CORASUN
-	dw SUNFISH_2
-	dw SUNFISH_3
+	dw CORAMOLA
+	dw MAMBOKING
 	

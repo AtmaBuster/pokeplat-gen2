@@ -262,5 +262,6 @@ MonMenuIcons:
 	db ICON_FOX         ; RAITORA
 	db ICON_LAPRAS      ; BOMSHEAL
 	db ICON_FISH        ; CORASUN
-	db ICON_FISH        ; SUNFISH_2
-	db ICON_FISH        ; SUNFISH_3
+	db ICON_FISH        ; SUNMOLA
+	db ICON_FISH        ; MAMBOKING
+	

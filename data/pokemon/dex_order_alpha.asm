@@ -35,6 +35,7 @@ AlphabeticalPokedexOrder:
 	dw CLEFFA
 	dw CLOYSTER
 	dw CORASUN
+	dw CORAMOLA
 	dw CORSOLA
 	dw CROBAT
 	dw CROCONAW
@@ -131,6 +132,7 @@ AlphabeticalPokedexOrder:
 	dw MAGMAR
 	dw MAGNEMITE
 	dw MAGNETON
+	dw MAMBOKING
 	dw MANKEY
 	dw MANTINE
 	dw MAREEP
@@ -225,8 +227,6 @@ AlphabeticalPokedexOrder:
 	dw STEELIX
 	dw SUDOWOODO
 	dw SUICUNE
-	dw SUNFISH_2
-	dw SUNFISH_3
 	dw SUNFLORA
 	dw SUNKERN
 	dw SWINUB

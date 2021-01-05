@@ -11,8 +11,8 @@ EvosAttacksPointers3::
 	dw RaitoraEvosAttacks
 	dw BomshealEvosAttacks
 	dw CorasunEvosAttacks
-	dw Sunfish_2EvosAttacks
-	dw Sunfish_3EvosAttacks
+	dw CoramolaEvosAttacks
+	dw MambokingEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -174,7 +174,7 @@ BomshealEvosAttacks:
 	db 0 ; no more level-up moves
 
 CorasunEvosAttacks:
-	dbbw EVOLVE_LEVEL, 28, SUNFISH_2
+	dbbw EVOLVE_LEVEL, 28, CORAMOLA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -191,11 +191,11 @@ CorasunEvosAttacks:
 	dbw 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 	
-Sunfish_2EvosAttacks:
-	dbbw EVOLVE_LEVEL, 39, SUNFISH_3
+CoramolaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 39, MAMBOKING
 	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
 
-Sunfish_3EvosAttacks:
+MambokingEvosAttacks:
 	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
