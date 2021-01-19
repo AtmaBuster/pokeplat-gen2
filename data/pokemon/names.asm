@@ -266,4 +266,8 @@ PokemonNames::
 	db "CORASUN@@@"
 	db "CORAMOLA@@"
 	db "MAMBOKING@"
+	db "BITEEL@@@@"
+	db "GROTESS@@@"
+	db "RINRING@@@"
+	db "BELLRUN@@@"
 	

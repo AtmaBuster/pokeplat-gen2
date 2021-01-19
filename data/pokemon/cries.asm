@@ -268,4 +268,8 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,   $043,  $050 ; CORASUN
 	mon_cry CRY_RATTATA,     $000,  $001 ; CORAMOLA
 	mon_cry CRY_RATTATA,     $000,  $001 ; MAMBOKING
+	mon_cry CRY_RATTATA,     $000,  $001 ; BITEEL
+	mon_cry CRY_TOTODILE,   -$051,  $0e8 ; GROTESS
+	mon_cry CRY_GLIGAR,      $040,  $100 ; RINRING
+	mon_cry CRY_GLIGAR,      $020,  $300 ; BELLRUN
 	

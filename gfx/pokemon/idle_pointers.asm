@@ -262,4 +262,8 @@ AnimationIdlePointers:
 	dw CorasunAnimationIdle
 	dw CoramolaAnimationIdle
 	dw MambokingAnimationIdle
+	dw BiteelAnimationIdle
+	dw GrotessAnimationIdle
+	dw RinringAnimationIdle
+	dw BellrunAnimationIdle
 	

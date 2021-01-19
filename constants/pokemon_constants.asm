@@ -283,6 +283,10 @@ JOHTO_POKEMON EQU const_value
 	const CORASUN    ; 105
 	const CORAMOLA   ; 106
 	const MAMBOKING  ; 105
+	const BITEEL     ; 106
+	const GROTESS    ; 107
+	const RINRING    ; 108
+	const BELLRUN    ; 109
 	
 NUM_POKEMON EQU const_value + -1
 

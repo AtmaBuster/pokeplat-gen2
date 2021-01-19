@@ -264,4 +264,8 @@ NewPokedexOrder:
 	dw CORASUN
 	dw CORAMOLA
 	dw MAMBOKING
+	dw BITEEL
+	dw GROTESS
+	dw RINRING
+	dw BELLRUN
 	

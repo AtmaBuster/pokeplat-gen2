@@ -13,6 +13,10 @@ EvosAttacksPointers3::
 	dw CorasunEvosAttacks
 	dw CoramolaEvosAttacks
 	dw MambokingEvosAttacks
+	dw BiteelEvosAttacks
+	dw GrotessEvosAttacks
+	dw RinringEvosAttacks
+	dw BellrunEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -199,3 +203,56 @@ CoramolaEvosAttacks:
 MambokingEvosAttacks:
 	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
+	
+BiteelEvosAttacks:
+	dbbw EVOLVE_LEVEL, 28, GROTESS
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	db 0 ; no more level-up moves
+	
+GrotessEvosAttacks: ;Change moveset to reflect line
+	db 0 ; no more evolutions
+	dbw 1, TACKLE 
+	dbw 1, GROWL
+	dbw 1, BUBBLE
+	dbw 6, DEFENSE_CURL
+	dbw 10, RAGE
+	dbw 15, SUPERSONIC
+	dbw 19, BUBBLEBEAM
+	dbw 24, SCREECH
+	dbw 28, IRON_TAIL
+	dbw 34, ACID_ARMOR
+	dbw 39, SCARY_FACE
+	dbw 46, CRUNCH
+	dbw 52, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
+RinringEvosAttacks:
+	dbbw EVOLVE_LEVEL, 28, BELLRUN
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 7, PURSUIT
+	dbw 12, DISABLE
+	dbw 18, PAY_DAY
+	dbw 23, FURY_SWIPES
+	dbw 29, FAINT_ATTACK
+	dbw 34, CONFUSE_RAY
+	dbw 40, SLASH
+	dbw 45, ATTRACT
+	db 0 ; no more level-up moves
+
+BellrunEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 7, PURSUIT
+	dbw 12, DISABLE
+	dbw 18, PAY_DAY
+	dbw 23, FURY_SWIPES
+	dbw 31, FAINT_ATTACK
+	dbw 39, CONFUSE_RAY
+	dbw 47, SLASH
+	dbw 56, ATTRACT
+	db 0 ; no more level-up moves
+	

@@ -16,7 +16,9 @@ AlphabeticalPokedexOrder:
 	dw BAYLEEF
 	dw BEEDRILL
 	dw BELLOSSOM
+	dw BELLRUN
 	dw BELLSPROUT
+	dw BITEEL
 	dw BLASTOISE
 	dw BLISSEY
 	dw BOMSHEAL
@@ -86,6 +88,7 @@ AlphabeticalPokedexOrder:
 	dw GRANBULL
 	dw GRAVELER
 	dw GRIMER
+	dw GROTESS
 	dw GROWLITHE
 	dw GYARADOS
 	dw HAUNTER
@@ -197,6 +200,7 @@ AlphabeticalPokedexOrder:
 	dw REMORAID
 	dw RHYDON
 	dw RHYHORN
+	dw RINRING
 	dw SANDSHREW
 	dw SANDSLASH
 	dw SCIZOR

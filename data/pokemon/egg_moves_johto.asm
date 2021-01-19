@@ -113,6 +113,10 @@ EggMovePointers2::
 	dw CorasunEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw BiteelEggMoves
+	dw NoEggMoves2
+	dw RinringEggMoves
+	dw NoEggMoves2
 	
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -520,3 +524,14 @@ CorasunEggMoves:
 	dw REVERSAL
 	dw SWAGGER
 	dw -1 ; end
+
+BiteelEggMoves:
+	dw WATER_GUN
+	dw -1 ; end
+
+RinringEggMoves:
+	db SPITE
+	db CHARM
+	db HYPNOSIS
+	db AMNESIA
+	db -1 ; end

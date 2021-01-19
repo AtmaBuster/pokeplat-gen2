@@ -539,3 +539,12 @@ PokemonPicPointers::
 	dba CoramolaBackpic
 	dba MambokingFrontpic
 	dba MambokingBackpic
+	dba BiteelFrontpic
+	dba BiteelBackpic
+	dba GrotessFrontpic
+	dba GrotessBackpic
+	dba RinringFrontpic
+	dba RinringBackpic
+	dba BellrunFrontpic
+	dba BellrunBackpic
+	
