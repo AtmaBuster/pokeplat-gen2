@@ -162,7 +162,6 @@ ROMX $3b
 	"Songs 2"
 ROMX $3c
 	"Songs 3"
-	"Sound Effects"
 	"Cries"
 ROMX $3d
 	"Songs 4"
@@ -310,6 +309,8 @@ ROMX $7d
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
+	"Sound Effects"
+	"Base Data 2"
 	org $7de0
 	"Mobile Stadium 2"
 WRAM0

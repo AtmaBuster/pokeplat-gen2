@@ -547,4 +547,12 @@ PokemonPicPointers::
 	dba RinringBackpic
 	dba BellrunFrontpic
 	dba BellrunBackpic
+	dba BlottleFrontpic
+	dba BlottleBackpic
+	dba PendrakenFrontpic
+	dba PendrakenBackpic
+	dba KurstrawFrontpic
+	dba KurstrawBackpic
+	dba PangshiFrontpic
+	dba PangshiBackpic
 	

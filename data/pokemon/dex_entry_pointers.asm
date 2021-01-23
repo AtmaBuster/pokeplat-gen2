@@ -267,4 +267,8 @@ PokedexDataPointerTable:
 	dba GrotessPokedexEntry
 	dba RinringPokedexEntry
 	dba BellrunPokedexEntry
+	dba BlottlePokedexEntry
+	dba PendrakenPokedexEntry
+	dba KurstrawPokedexEntry
+	dba PangshiPokedexEntry
 	

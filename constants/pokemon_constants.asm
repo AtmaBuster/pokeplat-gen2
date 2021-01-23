@@ -287,6 +287,10 @@ JOHTO_POKEMON EQU const_value
 	const GROTESS    ; 107
 	const RINRING    ; 108
 	const BELLRUN    ; 109
+	const BLOTTLE    ; 10A
+	const PENDRAKEN  ; 10B
+	const KURSTRAW   ; 10C
+	const PANGSHI    ; 10D
 	
 NUM_POKEMON EQU const_value + -1
 

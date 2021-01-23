@@ -268,4 +268,8 @@ NewPokedexOrder:
 	dw GROTESS
 	dw RINRING
 	dw BELLRUN
+	dw BLOTTLE
+	dw PENDRAKEN
+	dw KURSTRAW
+	dw PANGSHI
 	

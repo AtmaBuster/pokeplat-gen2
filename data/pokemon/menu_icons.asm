@@ -268,4 +268,8 @@ MonMenuIcons:
 	db ICON_SERPENT     ; GROTESS
 	db ICON_FOX         ; RINRING
 	db ICON_FOX         ; BELLRUN
+	db ICON_JELLYFISH   ; BLOTTLE
+	db ICON_JELLYFISH   ; PENDRAKEN
+	db ICON_GHOST       ; KURSTRAW
+	db ICON_GHOST       ; PANGSHI
 	

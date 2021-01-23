@@ -266,4 +266,8 @@ AnimationIdlePointers:
 	dw GrotessAnimationIdle
 	dw RinringAnimationIdle
 	dw BellrunAnimationIdle
+	dw BlottleAnimationIdle
+	dw PendrakenAnimationIdle
+	dw KurstrawAnimationIdle
+	dw PangshiAnimationIdle
 	

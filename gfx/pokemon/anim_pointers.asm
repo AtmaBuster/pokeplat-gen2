@@ -266,4 +266,8 @@ AnimationPointers:
 	dw GrotessAnimation
 	dw RinringAnimation
 	dw BellrunAnimation
+	dw BlottleAnimation
+	dw PendrakenAnimation
+	dw KurstrawAnimation
+	dw PangshiAnimation
 	

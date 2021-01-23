@@ -266,4 +266,8 @@ BitmasksPointers:
 	dw GrotessBitmasks
 	dw RinringBitmasks
 	dw BellrunBitmasks
+	dw BlottleBitmasks
+	dw PendrakenBitmasks
+	dw KurstrawBitmasks
+	dw PangshiBitmasks
 	

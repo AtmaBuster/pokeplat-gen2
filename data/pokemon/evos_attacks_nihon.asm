@@ -17,6 +17,10 @@ EvosAttacksPointers3::
 	dw GrotessEvosAttacks
 	dw RinringEvosAttacks
 	dw BellrunEvosAttacks
+	dw BlottleEvosAttacks
+	dw PendrakenEvosAttacks
+	dw KurstrawEvosAttacks
+	dw PangshiEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -256,3 +260,67 @@ BellrunEvosAttacks:
 	dbw 56, ATTRACT
 	db 0 ; no more level-up moves
 	
+
+BlottleEvosAttacks:
+	dbbw EVOLVE_LEVEL, 32, PENDRAKEN
+	dbw 1, BUBBLE
+	dbw 1, SMOKESCREEN
+	dbw 6, HARDEN
+	dbw 13, CONSTRICT
+	dbw 20, BUBBLEBEAM
+	dbw 27, BARRIER
+	dbw 34, SCREECH
+	dbw 41, WRAP
+	dbw 48, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+PendrakenEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, BUBBLE
+	dbw 1, SMOKESCREEN
+	dbw 1, HARDEN
+	dbw 13, CONSTRICT
+	dbw 20, BUBBLEBEAM
+	dbw 27, BARRIER
+	dbw 36, SCREECH
+	dbw 43, WRAP
+	dbw 50, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+KurstrawEvosAttacks:
+	dbbw EVOLVE_LEVEL, 29, PANGSHI
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, TACKLE
+	dbw 1, PSYWAVE
+	dbw 6, SPITE
+	dbw 10, FAINT_ATTACK
+	dbw 15, CURSE
+	dbw 19, MEAN_LOOK
+	dbw 24, PSYBEAM
+	dbw 28, CONFUSE_RAY
+	dbw 33, NIGHT_SHADE
+	dbw 37, BODY_SLAM
+	dbw 32, PAIN_SPLIT
+	dbw 46, SHADOW_BALL
+	dbw 51, PERISH_SONG
+	db 0 ; no more level-up moves
+
+PangshiEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, TACKLE
+	dbw 1, PSYWAVE
+	dbw 6, SPITE
+	dbw 10, FAINT_ATTACK
+	dbw 15, CURSE
+	dbw 19, MEAN_LOOK
+	dbw 24, PSYBEAM
+	dbw 28, CONFUSE_RAY
+	dbw 29, CRUNCH
+	dbw 35, NIGHT_SHADE
+	dbw 42, BODY_SLAM
+	dbw 48, PAIN_SPLIT
+	dbw 55, SHADOW_BALL
+	dbw 61, PERISH_SONG
+	db 0 ; no more level-up moves

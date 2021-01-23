@@ -748,3 +748,15 @@ RinringFrontpic:     INCBIN "gfx/pokemon/rinring/front.animated.2bpp.lz"
 RinringBackpic:      INCBIN "gfx/pokemon/rinring/back.2bpp.lz"
 BellrunFrontpic:     INCBIN "gfx/pokemon/bellrun/front.animated.2bpp.lz"
 BellrunBackpic:      INCBIN "gfx/pokemon/bellrun/back.2bpp.lz"
+BlottleFrontpic:     INCBIN "gfx/pokemon/blottle/front.animated.2bpp.lz"
+BlottleBackpic:      INCBIN "gfx/pokemon/blottle/back.2bpp.lz"
+
+
+SECTION "Pics 20", ROMX
+
+PendrakenFrontpic:   INCBIN "gfx/pokemon/pendraken/front.animated.2bpp.lz"
+PendrakenBackpic:    INCBIN "gfx/pokemon/pendraken/back.2bpp.lz"
+KurstrawFrontpic:    INCBIN "gfx/pokemon/kurstraw/front.animated.2bpp.lz"
+KurstrawBackpic:     INCBIN "gfx/pokemon/kurstraw/back.2bpp.lz"
+PangshiFrontpic:     INCBIN "gfx/pokemon/pangshi/front.animated.2bpp.lz"
+PangshiBackpic:      INCBIN "gfx/pokemon/pangshi/back.2bpp.lz"

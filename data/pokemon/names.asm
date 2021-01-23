@@ -270,4 +270,8 @@ PokemonNames::
 	db "GROTESS@@@"
 	db "RINRING@@@"
 	db "BELLRUN@@@"
+	db "BLOTTLE@@@"
+	db "PENDRAKEN@"
+	db "KURSTRAW@@"
+	db "PANGSHI@@@"
 	

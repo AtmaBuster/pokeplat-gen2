@@ -266,4 +266,8 @@ FramesPointers:
 	dba GrotessFrames
 	dba RinringFrames
 	dba BellrunFrames
+	dba BlottleFrames
+	dba PendrakenFrames
+	dba KurstrawFrames
+	dba PangshiFrames
 	

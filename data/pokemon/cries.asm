@@ -272,4 +272,8 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,   -$051,  $0e8 ; GROTESS
 	mon_cry CRY_GLIGAR,      $040,  $100 ; RINRING
 	mon_cry CRY_GLIGAR,      $020,  $300 ; BELLRUN
+	mon_cry CRY_BLASTOISE,   $082,  $09c ; BLOTTLE
+	mon_cry CRY_BLASTOISE,   $010,  $15a ; PENDRAKEN
+	mon_cry CRY_GRIMER,      $210,  $100 ; KURSTRAW
+	mon_cry CRY_GRIMER,      $9a0,  $190 ; PANGSHI
 	
