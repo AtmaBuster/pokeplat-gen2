@@ -715,3 +715,7 @@ INCLUDE "engine/16/table_functions.asm"
 
 ; own section
 INCLUDE "data/trainers/parties.asm"
+
+SECTION "Footprints", ROMX
+Footprints:
+INCLUDE "gfx/footprints.asm"

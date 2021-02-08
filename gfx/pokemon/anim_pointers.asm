@@ -270,4 +270,17 @@ AnimationPointers:
 	dw PendrakenAnimation
 	dw KurstrawAnimation
 	dw PangshiAnimation
+	dw WolfanAnimation
+	dw WarwolfAnimation
+	dw CheepAnimation
+	dw JabettaAnimation
+	dw SnobitAnimation
+	dw BlizbitAnimation
+	dw GlacihareAnimation
+	dw StemineelAnimation
+	dw ArskeedAnimation
+	dw DrakarveAnimation
+	dw PeticornAnimation
+	dw GupgoldAnimation
+	dw TritalesAnimation
 	

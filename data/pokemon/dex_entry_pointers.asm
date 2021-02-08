@@ -271,4 +271,18 @@ PokedexDataPointerTable:
 	dba PendrakenPokedexEntry
 	dba KurstrawPokedexEntry
 	dba PangshiPokedexEntry
+	dba WolfanPokedexEntry
+	dba WarwolfPokedexEntry
+	dba CheepPokedexEntry
+	dba JabettaPokedexEntry
+	dba SnobitPokedexEntry
+	dba BlizbitPokedexEntry
+	dba GlaciharePokedexEntry
+	dba StemineelPokedexEntry
+	dba ArskeedPokedexEntry
+	dba DrakarvePokedexEntry
+	dba PeticornPokedexEntry
+	dba GupgoldPokedexEntry
+	dba TritalesPokedexEntry
+	
 	

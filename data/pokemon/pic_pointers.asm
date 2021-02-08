@@ -555,4 +555,30 @@ PokemonPicPointers::
 	dba KurstrawBackpic
 	dba PangshiFrontpic
 	dba PangshiBackpic
+	dba WolfanFrontpic
+	dba WolfanBackpic
+	dba WarwolfFrontpic
+	dba WarwolfBackpic
+	dba CheepFrontpic
+	dba CheepBackpic
+	dba JabettaFrontpic
+	dba JabettaBackpic
+	dba SnobitFrontpic
+	dba SnobitBackpic
+	dba BlizbitFrontpic
+	dba BlizbitBackpic
+	dba GlacihareFrontpic
+	dba GlacihareBackpic
+	dba StemineelFrontpic
+	dba StemineelBackpic
+	dba ArskeedFrontpic
+	dba ArskeedBackpic
+	dba DrakarveFrontpic
+	dba DrakarveBackpic
+	dba PeticornFrontpic
+	dba PeticornBackpic
+	dba GupgoldFrontpic
+	dba GupgoldBackpic
+	dba TritalesFrontpic
+	dba TritalesBackpic
 	

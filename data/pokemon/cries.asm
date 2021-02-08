@@ -276,4 +276,17 @@ PokemonCries::
 	mon_cry CRY_BLASTOISE,   $010,  $15a ; PENDRAKEN
 	mon_cry CRY_GRIMER,      $210,  $100 ; KURSTRAW
 	mon_cry CRY_GRIMER,      $9a0,  $190 ; PANGSHI
+	mon_cry CRY_RAIKOU,     -$0b0,  $120 ; WOLFAN
+	mon_cry CRY_RAIKOU,     -$1db,  $150 ; WARWOLF
+	mon_cry CRY_RATTATA,     $000,  $001 ; CHEEP
+	mon_cry CRY_RATTATA,     $000,  $001 ; JABETTA
+	mon_cry CRY_RATTATA,     $000,  $001 ; SNOBIT
+	mon_cry CRY_RATTATA,     $000,  $001 ; BLIZBIT
+	mon_cry CRY_RATTATA,     $000,  $001 ; GLACIHARE
+	mon_cry CRY_RATTATA,     $000,  $001 ; STEMINEEL
+	mon_cry CRY_RATTATA,     $000,  $001 ; ARSKEED
+	mon_cry CRY_RATTATA,     $000,  $001 ; DRAKARVE
+	mon_cry CRY_MARILL,      $0c0,  $090 ; PETICORN
+	mon_cry CRY_SPEAROW,     $0a0,  $050 ; GUPGOLD
+	mon_cry CRY_LAPRAS,      $0B0,  $0D0 ; TRITALES
 	

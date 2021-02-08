@@ -270,4 +270,17 @@ FramesPointers:
 	dba PendrakenFrames
 	dba KurstrawFrames
 	dba PangshiFrames
+	dba WolfanFrames
+	dba WarwolfFrames
+	dba CheepFrames
+	dba JabettaFrames
+	dba SnobitFrames
+	dba BlizbitFrames
+	dba GlacihareFrames
+	dba StemineelFrames
+	dba ArskeedFrames
+	dba DrakarveFrames
+	dba PeticornFrames
+	dba GupgoldFrames
+	dba TritalesFrames
 	

@@ -270,4 +270,17 @@ AnimationIdlePointers:
 	dw PendrakenAnimationIdle
 	dw KurstrawAnimationIdle
 	dw PangshiAnimationIdle
+	dw WolfanAnimationIdle
+	dw WarwolfAnimationIdle
+	dw CheepAnimationIdle
+	dw JabettaAnimationIdle
+	dw SnobitAnimationIdle
+	dw BlizbitAnimationIdle
+	dw GlacihareAnimationIdle
+	dw StemineelAnimationIdle
+	dw ArskeedAnimationIdle
+	dw DrakarveAnimationIdle
+	dw PeticornAnimationIdle
+	dw GupgoldAnimationIdle
+	dw TritalesAnimationIdle
 	

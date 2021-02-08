@@ -291,6 +291,19 @@ JOHTO_POKEMON EQU const_value
 	const PENDRAKEN  ; 10B
 	const KURSTRAW   ; 10C
 	const PANGSHI    ; 10D
+	const WOLFAN     ; 10E
+	const WARWOLF    ; 10F
+	const CHEEP      ; 110
+	const JABETTA    ; 111
+	const SNOBIT     ; 112
+	const BLIZBIT    ; 113
+	const GLACIHARE  ; 114
+	const STEMINEEL  ; 115
+	const ARSKEED    ; 116
+	const DRAKARVE   ; 117
+	const PETICORN   ; 118
+	const GUPGOLD    ; 119
+	const TRITALES   ; 11A
 	
 NUM_POKEMON EQU const_value + -1
 

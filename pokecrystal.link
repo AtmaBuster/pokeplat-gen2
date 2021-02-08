@@ -306,6 +306,7 @@ ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $7d
 	"Mobile News Data"
+	
 ROMX $7e
 	"Crystal Events"
 ROMX $7f
@@ -313,6 +314,8 @@ ROMX $7f
 	"Base Data 2"
 	org $7de0
 	"Mobile Stadium 2"
+ROMX $80
+	"Footprints"
 WRAM0
 	"Stack"
 	"Audio RAM"

@@ -270,4 +270,17 @@ BitmasksPointers:
 	dw PendrakenBitmasks
 	dw KurstrawBitmasks
 	dw PangshiBitmasks
+	dw WolfanBitmasks
+	dw WarwolfBitmasks
+	dw CheepBitmasks
+	dw JabettaBitmasks
+	dw SnobitBitmasks
+	dw BlizbitBitmasks
+	dw GlacihareBitmasks
+	dw StemineelBitmasks
+	dw ArskeedBitmasks
+	dw DrakarveBitmasks
+	dw PeticornBitmasks
+	dw GupgoldBitmasks
+	dw TritalesBitmasks
 	

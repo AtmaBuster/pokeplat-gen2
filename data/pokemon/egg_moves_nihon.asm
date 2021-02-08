@@ -21,6 +21,19 @@ EggMovePointers3::
 	dw NoEggMoves3
 	dw KurstrawEggMoves
 	dw NoEggMoves3
+	dw WolfanEggMoves
+	dw NoEggMoves3
+	dw CheepEggMoves
+	dw NoEggMoves3
+	dw SnobitEggMoves
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw ArskeedEggMoves
+	dw NoEggMoves3
+	dw PeticornEggMoves
+	dw GupgoldEggMoves
+	dw TritalesEggMoves
 
 FlambearEggMoves:
 	dw FURY_SWIPES
@@ -84,6 +97,42 @@ BlottleEggMoves:
 KurstrawEggMoves:
 	db SCREECH
 	db DESTINY_BOND
+	db -1 ; end
+	
+WolfanEggMoves:
+	db PURSUIT
+	db OUTRAGE
+	db MIST
+	db DYNAMICPUNCH
+	db -1 ; end
+	
+CheepEggMoves:
+	db PECK
+	db WATER_GUN
+	db REVERSAL
+	
+SnobitEggMoves:
+	db TACKLE
+	
+ArskeedEggMoves:
+	db TACKLE
+	
+PeticornEggMoves:
+	db SELFDESTRUCT
+	db -1 ; end
+	
+GupgoldEggMoves:
+	db PSYBEAM
+	db HAZE
+	db HYDRO_PUMP
+	db -1 ; end
+	
+TritalesEggMoves:
+	db FAINT_ATTACK
+	db HYPNOSIS
+	db FLAIL
+	db SPITE
+	db DISABLE
 	db -1 ; end
 
 NoEggMoves3:
