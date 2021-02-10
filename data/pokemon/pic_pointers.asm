@@ -581,4 +581,10 @@ PokemonPicPointers::
 	dba GupgoldBackpic
 	dba TritalesFrontpic
 	dba TritalesBackpic
+	dba GrimbyFrontpic
+	dba GrimbyBackpic
+	dba ParamiteFrontpic
+	dba ParamiteBackpic
+	dba NyanyaFrontpic
+	dba NyanyaBackpic
 	

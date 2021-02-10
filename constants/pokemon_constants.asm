@@ -304,6 +304,9 @@ JOHTO_POKEMON EQU const_value
 	const PETICORN   ; 118
 	const GUPGOLD    ; 119
 	const TRITALES   ; 11A
+	const GRIMBY     ; 11B
+	const PARAMITE   ; 11C
+	const NYANYA     ; 11D
 	
 NUM_POKEMON EQU const_value + -1
 

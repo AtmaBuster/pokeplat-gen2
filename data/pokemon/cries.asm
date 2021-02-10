@@ -289,4 +289,7 @@ PokemonCries::
 	mon_cry CRY_MARILL,      $0c0,  $090 ; PETICORN
 	mon_cry CRY_SPEAROW,     $0a0,  $050 ; GUPGOLD
 	mon_cry CRY_LAPRAS,      $0B0,  $0D0 ; TRITALES
+	mon_cry CRY_GRIMER,      $080,  $0b0 ; GRIMBY
+	mon_cry CRY_PARAS,       $0c4,  $0b0 ; PARAMITE
+	mon_cry CRY_MARILL,      $0f4,  $0c0 ; NYANYA
 	

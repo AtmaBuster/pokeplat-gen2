@@ -283,4 +283,8 @@ FramesPointers:
 	dba PeticornFrames
 	dba GupgoldFrames
 	dba TritalesFrames
+	dba GrimbyFrames
+	dba ParamiteFrames
+	dba NyanyaFrames
+	
 	

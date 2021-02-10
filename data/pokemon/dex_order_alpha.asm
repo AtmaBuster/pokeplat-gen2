@@ -93,6 +93,7 @@ AlphabeticalPokedexOrder:
 	dw GOLEM
 	dw GRANBULL
 	dw GRAVELER
+	dw GRIMBY
 	dw GRIMER
 	dw GROTESS
 	dw GROWLITHE
@@ -170,12 +171,14 @@ AlphabeticalPokedexOrder:
 	dw NIDORINO
 	dw NINETALES
 	dw NOCTOWL
+	dw NYANYA
 	dw OCTILLERY
 	dw ODDISH
 	dw OMANYTE
 	dw OMASTAR
 	dw ONIX
 	dw PANGSHI
+	dw PARAMITE
 	dw PARAS
 	dw PARASECT
 	dw PENDRAKEN

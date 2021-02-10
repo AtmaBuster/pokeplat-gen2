@@ -287,4 +287,7 @@ PokemonNames::
 	db "PETICORN@@"
 	db "GUPGOLD@@@"
 	db "TRITALES@@"
+	db "GRIMBY@@@@"
+	db "PARAMITE@@"
+	db "NYANYA@@@@"
 	

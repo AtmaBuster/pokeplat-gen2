@@ -283,4 +283,7 @@ AnimationPointers:
 	dw PeticornAnimation
 	dw GupgoldAnimation
 	dw TritalesAnimation
+	dw GrimbyAnimation
+	dw ParamiteAnimation
+	dw NyanyaAnimation
 	

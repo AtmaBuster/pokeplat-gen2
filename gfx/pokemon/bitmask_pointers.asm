@@ -283,4 +283,7 @@ BitmasksPointers:
 	dw PeticornBitmasks
 	dw GupgoldBitmasks
 	dw TritalesBitmasks
+	dw GrimbyBitmasks
+	dw ParamiteBitmasks
+	dw NyanyaBitmasks
 	

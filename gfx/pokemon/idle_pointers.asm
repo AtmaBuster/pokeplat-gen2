@@ -283,4 +283,7 @@ AnimationIdlePointers:
 	dw PeticornAnimationIdle
 	dw GupgoldAnimationIdle
 	dw TritalesAnimationIdle
+	dw GrimbyAnimationIdle
+	dw ParamiteAnimationIdle
+	dw NyanyaAnimationIdle
 	

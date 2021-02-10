@@ -285,4 +285,7 @@ MonMenuIcons:
 	db ICON_EQUINE      ; PETICORN
 	db ICON_FISH        ; GUPGOLD
 	db ICON_FOX         ; TRITALES
+	db ICON_BLOB        ; GRIMBY
+	db ICON_BUG         ; PARAMITE
+	db ICON_FOX         ; NYANYA
 	

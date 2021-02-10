@@ -284,5 +284,7 @@ PokedexDataPointerTable:
 	dba PeticornPokedexEntry
 	dba GupgoldPokedexEntry
 	dba TritalesPokedexEntry
-	
+	dba GrimbyPokedexEntry
+	dba ParamitePokedexEntry
+	dba NyanyaPokedexEntry
 	

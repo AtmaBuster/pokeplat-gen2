@@ -34,6 +34,9 @@ EvosAttacksPointers3::
 	dw PeticornEvosAttacks
 	dw GupgoldEvosAttacks
 	dw TritalesEvosAttacks
+	dw GrimbyEvosAttacks
+	dw ParamiteEvosAttacks
+	dw NyanyaEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -466,4 +469,48 @@ TritalesEvosAttacks:
 	dbw 33, FLAMETHROWER
 	dbw 37, SAFEGUARD
 	dbw 40, FIRE_BLAST
+	db 0 ; no more level-up moves
+	
+GrimbyEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, GRIMER
+	db 0 ; no more evolutions
+	dbw 1, POISON_GAS
+	dbw 1, POUND
+	dbw 7, HARDEN
+	dbw 11, MUD_SLAP
+	dbw 15, DISABLE
+	dbw 21, SLUDGE
+	dbw 25, MINIMIZE
+	dbw 30, SCREECH
+	dbw 36, ACID_ARMOR
+	dbw 40, SLUDGE_BOMB
+	dbw 45, TOXIC
+	db 0 ; no more level-up moves
+
+ParamiteEvosAttacks:
+	dbbw EVOLVE_LEVEL, 14, PARAS
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 6, STUN_SPORE
+	dbw 6, POISONPOWDER
+	dbw 11, ABSORB
+	dbw 13, LEECH_LIFE
+	dbw 17, FURY_CUTTER
+	dbw 22, SPORE
+	dbw 27, SLASH
+	dbw 33, GROWTH
+	dbw 38, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+NyanyaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 15, MEOWTH
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, GROWL
+	dbw 7, BITE
+	dbw 13, PAY_DAY
+	dbw 19, FURY_SWIPES
+	dbw 25, FAINT_ATTACK
+	dbw 37, SCREECH
+	dbw 43, SLASH
 	db 0 ; no more level-up moves

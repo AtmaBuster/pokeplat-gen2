@@ -34,6 +34,9 @@ EggMovePointers3::
 	dw PeticornEggMoves
 	dw GupgoldEggMoves
 	dw TritalesEggMoves
+	dw GrimbyEggMoves
+	dw ParamiteEggMoves
+	dw NyanyaEggMoves
 
 FlambearEggMoves:
 	dw FURY_SWIPES
@@ -118,7 +121,12 @@ ArskeedEggMoves:
 	db TACKLE
 	
 PeticornEggMoves:
-	db SELFDESTRUCT
+	db FLAME_WHEEL
+	db THRASH
+	db DOUBLE_KICK
+	db HYPNOSIS
+	db CHARM
+	db QUICK_ATTACK
 	db -1 ; end
 	
 GupgoldEggMoves:
@@ -133,6 +141,27 @@ TritalesEggMoves:
 	db FLAIL
 	db SPITE
 	db DISABLE
+	db -1 ; end
+	
+GrimbyEggMoves:
+	db HAZE
+	db MEAN_LOOK
+	db LICK
+	db -1 ; end
+	
+ParamiteEggMoves:
+	db FALSE_SWIPE
+	db SCREECH
+	db COUNTER
+	db PSYBEAM
+	db FLAIL
+	db SWEET_SCENT
+
+NyanyaEggMoves:
+	db SPITE
+	db CHARM
+	db HYPNOSIS
+	db AMNESIA
 	db -1 ; end
 
 NoEggMoves3:

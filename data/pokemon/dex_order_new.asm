@@ -285,4 +285,7 @@ NewPokedexOrder:
 	dw PETICORN
 	dw GUPGOLD
 	dw TRITALES
+	dw GRIMBY
+	dw PARAMITE
+	dw NYANYA
 	
