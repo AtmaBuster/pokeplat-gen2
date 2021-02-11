@@ -288,4 +288,7 @@ MonMenuIcons:
 	db ICON_BLOB        ; GRIMBY
 	db ICON_BUG         ; PARAMITE
 	db ICON_FOX         ; NYANYA
+	db ICON_FOX         ; PUDDIPUP
+	db ICON_BIRD        ; CHIX
+	db ICON_BIRD        ; KATU
 	

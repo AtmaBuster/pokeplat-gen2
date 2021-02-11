@@ -288,4 +288,7 @@ NewPokedexOrder:
 	dw GRIMBY
 	dw PARAMITE
 	dw NYANYA
+	dw PUDDIPUP
+	dw CHIX
+	dw KATU
 	

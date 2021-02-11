@@ -445,7 +445,7 @@ TogeticEvosAttacks:
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
-	dbbw EVOLVE_LEVEL, 25, XATU
+	dbbw EVOLVE_LEVEL, 15, KATU
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, LEER

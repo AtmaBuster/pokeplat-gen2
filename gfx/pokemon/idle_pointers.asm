@@ -286,4 +286,7 @@ AnimationIdlePointers:
 	dw GrimbyAnimationIdle
 	dw ParamiteAnimationIdle
 	dw NyanyaAnimationIdle
+	dw PuddipupAnimationIdle
+	dw ChixAnimationIdle
+	dw KatuAnimationIdle
 	

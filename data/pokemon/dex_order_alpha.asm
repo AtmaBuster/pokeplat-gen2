@@ -36,6 +36,7 @@ AlphabeticalPokedexOrder:
 	dw CHEEP
 	dw CHIKORITA
 	dw CHINCHOU
+	dw CHIX
 	dw CLEFABLE
 	dw CLEFAIRY
 	dw CLEFFA
@@ -123,6 +124,7 @@ AlphabeticalPokedexOrder:
 	dw KADABRA
 	dw KAKUNA
 	dw KANGASKHAN
+	dw KATU
 	dw KINGDRA
 	dw KINGLER
 	dw KOFFING
@@ -202,6 +204,7 @@ AlphabeticalPokedexOrder:
 	dw PORYGON2
 	dw PRIMEAPE
 	dw PSYDUCK
+	dw PUDDIPUP
 	dw PUPITAR
 	dw QUAGSIRE
 	dw QUILAVA

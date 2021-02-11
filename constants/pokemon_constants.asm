@@ -307,6 +307,9 @@ JOHTO_POKEMON EQU const_value
 	const GRIMBY     ; 11B
 	const PARAMITE   ; 11C
 	const NYANYA     ; 11D
+	const PUDDIPUP   ; 11E
+	const CHIX       ; 11F
+	const KATU       ; 120
 	
 NUM_POKEMON EQU const_value + -1
 

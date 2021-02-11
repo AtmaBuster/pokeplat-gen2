@@ -286,4 +286,7 @@ BitmasksPointers:
 	dw GrimbyBitmasks
 	dw ParamiteBitmasks
 	dw NyanyaBitmasks
+	dw PuddipupBitmasks
+	dw ChixBitmasks
+	dw KatuBitmasks
 	

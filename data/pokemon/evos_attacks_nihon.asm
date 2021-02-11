@@ -37,6 +37,9 @@ EvosAttacksPointers3::
 	dw GrimbyEvosAttacks
 	dw ParamiteEvosAttacks
 	dw NyanyaEvosAttacks
+	dw PuddipupEvosAttacks
+	dw ChixEvosAttacks
+	dw KatuEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -514,3 +517,50 @@ NyanyaEvosAttacks:
 	dbw 37, SCREECH
 	dbw 43, SLASH
 	db 0 ; no more level-up moves
+	
+PuddipupEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, GROWLITHE
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, CHARM
+	dbw 6, EMBER
+	dbw 12, LEER
+	dbw 17, FLAME_WHEEL
+	dbw 23, REVERSAL
+	dbw 28, TAKE_DOWN
+	dbw 34, FLAMETHROWER
+	dbw 39, AGILITY
+	dbw 45, CRUNCH
+	dbw 50, OUTRAGE
+	dbw 56, FIRE_BLAST
+	db 0 ; no more level-up moves
+
+ChixEvosAttacks:
+	dbbw EVOLVE_LEVEL, 18, DODUO
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, CHARM
+	dbw 5, QUICK_ATTACK
+	dbw 10, RAGE
+	dbw 14, FURY_ATTACK
+	dbw 19, PURSUIT
+	dbw 25, AGILITY
+	dbw 31, SWORDS_DANCE
+	dbw 36, DRILL_PECK
+	dbw 42, JUMP_KICK
+	dbw 47, THRASH
+	db 0 ; no more level-up moves
+	
+KatuEvosAttacks:
+	dbbw EVOLVE_LEVEL, 25, XATU
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, LEER
+	dbw 1, NIGHT_SHADE
+	dbw 10, NIGHT_SHADE
+	dbw 15, TELEPORT
+	dbw 25, FUTURE_SIGHT
+	dbw 45, CONFUSE_RAY
+	dbw 55, PSYCHIC_M
+	db 0 ; no more level-up moves
+	

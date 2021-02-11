@@ -287,4 +287,7 @@ PokedexDataPointerTable:
 	dba GrimbyPokedexEntry
 	dba ParamitePokedexEntry
 	dba NyanyaPokedexEntry
+	dba PuddipupPokedexEntry
+	dba ChixPokedexEntry
+	dba KatuPokedexEntry
 	

@@ -292,4 +292,6 @@ PokemonCries::
 	mon_cry CRY_GRIMER,      $080,  $0b0 ; GRIMBY
 	mon_cry CRY_PARAS,       $0c4,  $0b0 ; PARAMITE
 	mon_cry CRY_MARILL,      $0f4,  $0c0 ; NYANYA
-	
+	mon_cry CRY_GROWLITHE,   $0a1,  $0e8 ; PUDDIPUP
+	mon_cry CRY_SEEL,        $9fa,  $0b0 ; CHIX
+	mon_cry CRY_NATU,       -$07c,  $166 ; KATU

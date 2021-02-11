@@ -286,4 +286,7 @@ AnimationPointers:
 	dw GrimbyAnimation
 	dw ParamiteAnimation
 	dw NyanyaAnimation
+	dw PuddipupAnimation
+	dw ChixAnimation
+	dw KatuAnimation
 	

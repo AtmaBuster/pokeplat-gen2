@@ -587,4 +587,10 @@ PokemonPicPointers::
 	dba ParamiteBackpic
 	dba NyanyaFrontpic
 	dba NyanyaBackpic
+	dba PuddipupFrontpic
+	dba PuddipupBackpic
+	dba ChixFrontpic
+	dba ChixBackpic
+	dba KatuFrontpic
+	dba KatuBackpic
 	

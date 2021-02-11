@@ -37,6 +37,9 @@ EggMovePointers3::
 	dw GrimbyEggMoves
 	dw ParamiteEggMoves
 	dw NyanyaEggMoves
+	dw PuddipupEggMoves
+	dw ChixEggMoves
+	dw NoEggMoves3
 
 FlambearEggMoves:
 	dw FURY_SWIPES
@@ -163,6 +166,22 @@ NyanyaEggMoves:
 	db HYPNOSIS
 	db AMNESIA
 	db -1 ; end
+	
+PuddipupEggMoves:
+	db BODY_SLAM
+	db SAFEGUARD
+	db CRUNCH
+	db THRASH
+	db FIRE_SPIN
+	db -1 ; end
+
+ChixEggMoves:
+	dw QUICK_ATTACK
+	dw SUPERSONIC
+	dw HAZE
+	dw FAINT_ATTACK
+	dw FLAIL
+	dw -1 ; end
 
 NoEggMoves3:
 	dw -1 ; end

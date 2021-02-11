@@ -290,4 +290,7 @@ PokemonNames::
 	db "GRIMBY@@@@"
 	db "PARAMITE@@"
 	db "NYANYA@@@@"
+	db "PUDDIPUP@@"
+	db "CHIX@@@@@@"
+	db "KATU@@@@@@"
 	

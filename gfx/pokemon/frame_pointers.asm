@@ -286,5 +286,7 @@ FramesPointers:
 	dba GrimbyFrames
 	dba ParamiteFrames
 	dba NyanyaFrames
-	
+	dba PuddipupFrames
+	dba ChixFrames
+	dba KatuFrames
 	
