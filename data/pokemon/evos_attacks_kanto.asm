@@ -1064,6 +1064,7 @@ BellsproutEvosAttacks:
 
 WeepinbellEvosAttacks:
 	dbbw EVOLVE_ITEM, LEAF_STONE, VICTREEBEL
+	;dbbw EVOLVE_ITEM, POISON_STONE, BELMITT
 	db 0 ; no more evolutions
 	dbw 1, VINE_WHIP
 	dbw 1, GROWTH
@@ -1684,6 +1685,7 @@ ChanseyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 40, GELANIA
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 4, SLEEP_POWDER

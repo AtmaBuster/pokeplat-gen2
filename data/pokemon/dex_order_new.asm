@@ -291,4 +291,7 @@ NewPokedexOrder:
 	dw PUDDIPUP
 	dw CHIX
 	dw KATU
+	dw TANGTRIP
+	dw GELANIA
+	dw BELMITT
 	

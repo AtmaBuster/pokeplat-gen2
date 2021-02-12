@@ -289,4 +289,7 @@ AnimationIdlePointers:
 	dw PuddipupAnimationIdle
 	dw ChixAnimationIdle
 	dw KatuAnimationIdle
+	dw TangtripAnimationIdle
+	dw GelaniaAnimationIdle
+	dw BelmittAnimationIdle
 	

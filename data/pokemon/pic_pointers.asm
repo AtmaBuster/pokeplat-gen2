@@ -593,4 +593,10 @@ PokemonPicPointers::
 	dba ChixBackpic
 	dba KatuFrontpic
 	dba KatuBackpic
+	dba TangtripFrontpic
+	dba TangtripBackpic
+	dba GelaniaFrontpic
+	dba GelaniaBackpic
+	dba BelmittFrontpic
+	dba BelmittBackpic
 	

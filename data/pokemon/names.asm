@@ -293,4 +293,7 @@ PokemonNames::
 	db "PUDDIPUP@@"
 	db "CHIX@@@@@@"
 	db "KATU@@@@@@"
+	db "TANGTRIP@@"
+	db "GELANIA@@@"
+	db "BELMITT@@@"
 	

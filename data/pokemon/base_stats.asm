@@ -337,4 +337,7 @@ INCLUDE "data/pokemon/base_stats/nyanya.asm"
 INCLUDE "data/pokemon/base_stats/puddipup.asm"
 INCLUDE "data/pokemon/base_stats/chix.asm"
 INCLUDE "data/pokemon/base_stats/katu.asm"
+INCLUDE "data/pokemon/base_stats/tangtrip.asm"
+INCLUDE "data/pokemon/base_stats/gelania.asm"
+INCLUDE "data/pokemon/base_stats/belmitt.asm"
 POPS

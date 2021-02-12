@@ -289,4 +289,7 @@ BitmasksPointers:
 	dw PuddipupBitmasks
 	dw ChixBitmasks
 	dw KatuBitmasks
+	dw TangtripBitmasks
+	dw GelaniaBitmasks
+	dw BelmittBitmasks
 	

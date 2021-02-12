@@ -40,6 +40,9 @@ EvosAttacksPointers3::
 	dw PuddipupEvosAttacks
 	dw ChixEvosAttacks
 	dw KatuEvosAttacks
+	dw TangtripEvosAttacks
+	dw GelaniaEvosAttacks
+	dw BelmittEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -564,3 +567,44 @@ KatuEvosAttacks:
 	dbw 55, PSYCHIC_M
 	db 0 ; no more level-up moves
 	
+TangtripEvosAttacks:
+	dbbw EVOLVE_LEVEL, 15, TANGELA
+	db 0 ; no more evolutions
+	dbw 1, ABSORB
+	dbw 1, CONSTRICT
+	dbw 4, STUN_SPORE
+	dbw 7, GROWTH
+	dbw 10, MEGA_DRAIN
+	dbw 13, BIND
+	dbw 19, VINE_WHIP
+	dbw 25, POISONPOWDER
+	dbw 31, GIGA_DRAIN
+	dbw 34, SLEEP_POWDER
+	dbw 40, ANCIENTPOWER
+	dbw 46, SLAM
+	db 0 ; no more level-up moves
+
+GelaniaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ABSORB
+	dbw 1, CONSTRICT
+	dbw 4, STUN_SPORE
+	dbw 7, GROWTH
+	dbw 10, MEGA_DRAIN
+	dbw 13, BIND
+	dbw 19, VINE_WHIP
+	dbw 25, POISONPOWDER
+	dbw 31, GIGA_DRAIN
+	dbw 34, SLEEP_POWDER
+	dbw 40, ANCIENTPOWER
+	dbw 50, SLAM
+	db 0 ; no more level-up moves
+	
+BelmittEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, VINE_WHIP
+	dbw 1, SLEEP_POWDER
+	dbw 1, SWEET_SCENT
+	dbw 1, RAZOR_LEAF
+	dbw 55, GIGA_DRAIN
+	db 0 ; no more level-up moves

@@ -289,4 +289,7 @@ AnimationPointers:
 	dw PuddipupAnimation
 	dw ChixAnimation
 	dw KatuAnimation
+	dw TangtripAnimation
+	dw GelaniaAnimation
+	dw BelmittAnimation
 	

@@ -290,4 +290,7 @@ PokedexDataPointerTable:
 	dba PuddipupPokedexEntry
 	dba ChixPokedexEntry
 	dba KatuPokedexEntry
+	dba TangtripPokedexEntry
+	dba GelaniaPokedexEntry
+	dba BelmittPokedexEntry
 	

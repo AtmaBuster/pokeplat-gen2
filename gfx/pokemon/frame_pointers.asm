@@ -289,4 +289,7 @@ FramesPointers:
 	dba PuddipupFrames
 	dba ChixFrames
 	dba KatuFrames
+	dba TangtripFrames
+	dba GelaniaFrames
+	dba BelmittFrames
 	

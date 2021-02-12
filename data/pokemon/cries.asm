@@ -295,3 +295,7 @@ PokemonCries::
 	mon_cry CRY_GROWLITHE,   $0a1,  $0e8 ; PUDDIPUP
 	mon_cry CRY_SEEL,        $9fa,  $0b0 ; CHIX
 	mon_cry CRY_NATU,       -$07c,  $166 ; KATU
+	mon_cry CRY_MARILL,      $f4c,  $110 ; TANGTRIP
+	mon_cry CRY_GOLEM,      -$010,  $1a0 ; GELANIA
+	mon_cry CRY_CATERPIE,    $06d,  $160 ; BELMITT
+	

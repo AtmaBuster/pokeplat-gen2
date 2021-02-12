@@ -19,6 +19,7 @@ AlphabeticalPokedexOrder:
 	dw BELLOSSOM
 	dw BELLRUN
 	dw BELLSPROUT
+	dw BELMITT
 	dw BITEEL
 	dw BLASTOISE
 	dw BLISSEY
@@ -82,6 +83,7 @@ AlphabeticalPokedexOrder:
 	dw FORRETRESS
 	dw FURRET
 	dw GASTLY
+	dw GELANIA
 	dw GENGAR
 	dw GEODUDE
 	dw GIRAFARIG
@@ -255,6 +257,7 @@ AlphabeticalPokedexOrder:
 	dw SUNKERN
 	dw SWINUB
 	dw TANGELA
+	dw TANGTRIP
 	dw TAUROS
 	dw TEDDIURSA
 	dw TENTACOOL

@@ -40,6 +40,9 @@ EggMovePointers3::
 	dw PuddipupEggMoves
 	dw ChixEggMoves
 	dw NoEggMoves3
+	dw TangtripEggMoves
+	dw NoEggMoves3
+	dw NoEggMoves3
 
 FlambearEggMoves:
 	dw FURY_SWIPES
@@ -182,6 +185,14 @@ ChixEggMoves:
 	dw FAINT_ATTACK
 	dw FLAIL
 	dw -1 ; end
+	
+TangtripEggMoves:
+	db FLAIL
+	db CONFUSION
+	db MEGA_DRAIN
+	db REFLECT
+	db AMNESIA
+	db -1 ; end
 
 NoEggMoves3:
 	dw -1 ; end

@@ -291,4 +291,7 @@ MonMenuIcons:
 	db ICON_FOX         ; PUDDIPUP
 	db ICON_BIRD        ; CHIX
 	db ICON_BIRD        ; KATU
+	db ICON_ODDISH      ; TANGTRIP
+	db ICON_ODDISH      ; TANGROWTH
+	db ICON_ODDISH      ; BELMITT
 	

@@ -310,6 +310,9 @@ JOHTO_POKEMON EQU const_value
 	const PUDDIPUP   ; 11E
 	const CHIX       ; 11F
 	const KATU       ; 120
+	const TANGTRIP   ; 121
+	const GELANIA    ; 122
+	const BELMITT    ; 123
 	
 NUM_POKEMON EQU const_value + -1
 
