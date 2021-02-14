@@ -100,6 +100,7 @@ AlphabeticalPokedexOrder:
 	dw GRIMER
 	dw GROTESS
 	dw GROWLITHE
+	dw GUARDIA
 	dw GUPGOLD
 	dw GYARADOS
 	dw HAUNTER
@@ -143,6 +144,7 @@ AlphabeticalPokedexOrder:
 	dw MACHAMP
 	dw MACHOKE
 	dw MACHOP
+	dw MADAME
 	dw MAGBY
 	dw MAGCARGO
 	dw MAGIKARP
@@ -158,6 +160,7 @@ AlphabeticalPokedexOrder:
 	dw MEGANIUM
 	dw MEOWTH
 	dw METAPOD
+	dw METTO
 	dw MEW
 	dw MEWTWO
 	dw MILTANK
@@ -175,9 +178,11 @@ AlphabeticalPokedexOrder:
 	dw NIDORINO
 	dw NINETALES
 	dw NOCTOWL
+	dw NUMBPUFF
 	dw NYANYA
 	dw OCTILLERY
 	dw ODDISH
+	dw OHMEGA
 	dw OMANYTE
 	dw OMASTAR
 	dw ONIX
@@ -204,6 +209,7 @@ AlphabeticalPokedexOrder:
 	dw PONYTA
 	dw PORYGON
 	dw PORYGON2
+	dw PRAXE
 	dw PRIMEAPE
 	dw PSYDUCK
 	dw PUDDIPUP
@@ -266,6 +272,7 @@ AlphabeticalPokedexOrder:
 	dw TOGETIC
 	dw TOTODILE
 	dw TRITALES
+	dw TURBAN
 	dw TYPHLOSION
 	dw TYRANITAR
 	dw TYROGUE

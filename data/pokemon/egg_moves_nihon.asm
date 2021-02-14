@@ -43,7 +43,14 @@ EggMovePointers3::
 	dw TangtripEggMoves
 	dw NoEggMoves3
 	dw NoEggMoves3
-
+	dw TurbanEggMoves
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	
 FlambearEggMoves:
 	dw FURY_SWIPES
 	dw QUICK_ATTACK
@@ -192,6 +199,12 @@ TangtripEggMoves:
 	db MEGA_DRAIN
 	db REFLECT
 	db AMNESIA
+	db -1 ; end
+	
+TurbanEggMoves:
+	db CRUNCH
+	db FLAIL
+	db SWIFT
 	db -1 ; end
 
 NoEggMoves3:

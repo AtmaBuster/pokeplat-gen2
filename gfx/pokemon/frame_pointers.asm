@@ -292,4 +292,11 @@ FramesPointers:
 	dba TangtripFrames
 	dba GelaniaFrames
 	dba BelmittFrames
+	dba TurbanFrames
+	dba PraxeFrames
+	dba NumbpuffFrames
+	dba MettoFrames
+	dba MadameFrames
+	dba GuardiaFrames
+	dba OhmegaFrames
 	

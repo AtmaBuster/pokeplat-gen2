@@ -294,4 +294,11 @@ MonMenuIcons:
 	db ICON_ODDISH      ; TANGTRIP
 	db ICON_ODDISH      ; TANGROWTH
 	db ICON_ODDISH      ; BELMITT
+	db ICON_SHELL       ; TURBAN
+	db ICON_BUG         ; PRAXE
+	db ICON_FISH        ; NUMBPUFF
+	db ICON_BLOB        ; METTO
+	db ICON_BIRD        ; MADAME
+	db ICON_MONSTER     ; GUARDIA
+	db ICON_MONSTER     ; OHMEGA
 	

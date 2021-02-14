@@ -292,4 +292,11 @@ AnimationIdlePointers:
 	dw TangtripAnimationIdle
 	dw GelaniaAnimationIdle
 	dw BelmittAnimationIdle
+	dw TurbanAnimationIdle
+	dw PraxeAnimationIdle
+	dw NumbpuffAnimationIdle
+	dw MettoAnimationIdle
+	dw MadameAnimationIdle
+	dw GuardiaAnimationIdle
+	dw OhmegaAnimationIdle
 	

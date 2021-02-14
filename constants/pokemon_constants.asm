@@ -313,6 +313,13 @@ JOHTO_POKEMON EQU const_value
 	const TANGTRIP   ; 121
 	const GELANIA    ; 122
 	const BELMITT    ; 123
+	const TURBAN     ; 124
+	const PRAXE      ; 125
+	const NUMBPUFF   ; 126
+	const METTO      ; 127
+	const MADAME     ; 128
+	const GUARDIA    ; 129
+	const OHMEGA     ; 12A
 	
 NUM_POKEMON EQU const_value + -1
 

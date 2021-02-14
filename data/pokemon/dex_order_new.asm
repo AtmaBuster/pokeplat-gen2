@@ -294,4 +294,11 @@ NewPokedexOrder:
 	dw TANGTRIP
 	dw GELANIA
 	dw BELMITT
+	dw TURBAN
+	dw PRAXE
+	dw NUMBPUFF
+	dw METTO
+	dw MADAME
+	dw GUARDIA
+	dw OHMEGA
 	

@@ -43,6 +43,13 @@ EvosAttacksPointers3::
 	dw TangtripEvosAttacks
 	dw GelaniaEvosAttacks
 	dw BelmittEvosAttacks
+	dw TurbanEvosAttacks
+	dw PraxeEvosAttacks
+	dw NumbpuffEvosAttacks
+	dw MettoEvosAttacks
+	dw MadameEvosAttacks
+	dw GuardiaEvosAttacks
+	dw OhmegaEvosAttacks
 	
 FlambearEvosAttacks:
 	dbbw EVOLVE_LEVEL, 14, VOLBEAR
@@ -608,3 +615,102 @@ BelmittEvosAttacks:
 	dbw 1, RAZOR_LEAF
 	dbw 55, GIGA_DRAIN
 	db 0 ; no more level-up moves
+
+TurbanEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, WITHDRAW
+	dbw 6, POISON_STING
+	dbw 10, BITE
+	dbw 15, CLAMP
+	dbw 19, PROTECT
+	dbw 24, ACID
+	dbw 28, BUBBLEBEAM
+	dbw 33, ACID_ARMOR
+	dbw 37, DIG
+	dbw 42, CRUNCH
+	dbw 46, DOUBLE_EDGE
+	dbw 51, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
+PraxeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, VICEGRIP
+	dbw 7, FOCUS_ENERGY
+	dbw 13, BIND
+	dbw 19, SEISMIC_TOSS
+	dbw 25, HARDEN
+	dbw 30, CROSS_CHOP
+	dbw 35, THRASH
+	dbw 38, SWORDS_DANCE
+	dbw 42, METAL_CLAW
+	dbw 44, SUBMISSION
+	dbw 52, GUILLOTINE
+	dbw 60, MEGAHORN
+	db 0 ; no more level-up moves
+	
+NumbpuffEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SPIKES
+	dbw 1, TACKLE
+	dbw 1, POISON_STING
+	dbw 1, WATER_GUN
+	dbw 9, HARDEN
+	dbw 9, MINIMIZE
+	dbw 13, THUNDER_WAVE
+	dbw 23, SPARK
+	dbw 28, SELFDESTRUCT
+	dbw 37, PIN_MISSILE
+	dbw 40, DESTINY_BOND
+	dbw 48, HYDRO_PUMP
+	dbw 50, THUNDERBOLT
+	db 0 ; no more level-up moves
+	
+MettoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TRANSFORM
+	db 0 ; no more level-up moves
+
+MadameEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SAND_ATTACK
+	dbw 4, LEER
+	dbw 9, FURY_CUTTER
+	dbw 13, FURY_ATTACK
+	dbw 19, WING_ATTACK
+	dbw 25, FAINT_ATTACK
+	dbw 31, SLASH
+	dbw 39, SWORDS_DANCE
+	dbw 46, AGILITY
+	dbw 54, FALSE_SWIPE
+	dbw 61, SKY_ATTACK
+	db 0 ; no more level-up moves
+	
+GuardiaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, TAIL_WHIP
+	dbw 1, BONE_CLUB
+	dbw 1, HEADBUTT
+	dbw 5, TAIL_WHIP
+	dbw 17, LEER
+	dbw 21, FOCUS_ENERGY
+	dbw 25, BONEMERANG
+	dbw 33, RAGE
+	dbw 41, FALSE_SWIPE
+	dbw 46, THRASH
+	dbw 53, BONE_RUSH
+	db 0 ; no more level-up moves
+	
+OhmegaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SPARK
+	dbw 1, RAGE
+	dbw 28, THUNDERSHOCK
+	dbw 32, SUPERSONIC
+	dbw 34, THUNDERBOLT
+	dbw 37, MEGA_PUNCH
+	dbw 42, THUNDER_WAVE
+	dbw 47, SEISMIC_TOSS
+	db 0 ; no more level-up moves
+	

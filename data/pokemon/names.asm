@@ -296,4 +296,11 @@ PokemonNames::
 	db "TANGTRIP@@"
 	db "GELANIA@@@"
 	db "BELMITT@@@"
+	db "TURBAN@@@@"
+	db "PRAXE@@@@@"
+	db "NUMBPUFF@@"
+	db "METTO@@@@@"
+	db "MADAME@@@@"
+	db "GUARDIA@@@"
+	db "OHMEGA@@@@"
 	

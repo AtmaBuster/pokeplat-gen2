@@ -292,4 +292,11 @@ AnimationPointers:
 	dw TangtripAnimation
 	dw GelaniaAnimation
 	dw BelmittAnimation
+	dw TurbanAnimation
+	dw PraxeAnimation
+	dw NumbpuffAnimation
+	dw MettoAnimation
+	dw MadameAnimation
+	dw GuardiaAnimation
+	dw OhmegaAnimation
 	

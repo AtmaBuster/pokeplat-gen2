@@ -1256,6 +1256,7 @@ MagnetonEvosAttacks:
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
+	dbbw EVOLVE_LEVEL, 33, MADAME
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 7, SAND_ATTACK
@@ -1554,6 +1555,7 @@ CuboneEvosAttacks:
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
+	dbbw EVOLVE_LEVEL, 42, GUARDIA
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, TAIL_WHIP
@@ -1867,6 +1869,7 @@ MagmarEvosAttacks:
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:
+	dbbw EVOLVE_LEVEL, 42, PRAXE
 	db 0 ; no more evolutions
 	dbw 1, VICEGRIP
 	dbw 7, FOCUS_ENERGY
@@ -1927,6 +1930,7 @@ LaprasEvosAttacks:
 	db 0 ; no more level-up moves
 
 DittoEvosAttacks:
+	dbbw EVOLVE_TRADE, METAL_COAT, METTO
 	db 0 ; no more evolutions
 	dbw 1, TRANSFORM
 	db 0 ; no more level-up moves

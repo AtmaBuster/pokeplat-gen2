@@ -317,6 +317,8 @@ ROMX $80
 	"Footprints"
 ROMX $81
 	"Pic Pointers"
+ROMX $82
+	"Pics 21"
 WRAM0
 	"Stack"
 	"Audio RAM"

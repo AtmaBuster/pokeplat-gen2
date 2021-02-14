@@ -292,4 +292,11 @@ BitmasksPointers:
 	dw TangtripBitmasks
 	dw GelaniaBitmasks
 	dw BelmittBitmasks
+	dw TurbanBitmasks
+	dw PraxeBitmasks
+	dw NumbpuffBitmasks
+	dw MettoBitmasks
+	dw MadameBitmasks
+	dw GuardiaBitmasks
+	dw OhmegaBitmasks
 	

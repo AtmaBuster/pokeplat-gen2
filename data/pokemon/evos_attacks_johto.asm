@@ -869,6 +869,7 @@ GranbullEvosAttacks:
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, NUMBPUFF
 	db 0 ; no more evolutions
 	dbw 1, SPIKES
 	dbw 1, TACKLE

@@ -599,4 +599,18 @@ PokemonPicPointers::
 	dba GelaniaBackpic
 	dba BelmittFrontpic
 	dba BelmittBackpic
+	dba TurbanFrontpic
+	dba TurbanBackpic
+	dba PraxeFrontpic
+	dba PraxeBackpic
+	dba NumbpuffFrontpic
+	dba NumbpuffBackpic
+	dba MettoFrontpic
+	dba MettoBackpic
+	dba MadameFrontpic
+	dba MadameBackpic
+	dba GuardiaFrontpic
+	dba GuardiaBackpic
+	dba OhmegaFrontpic
+	dba OhmegaBackpic
 	

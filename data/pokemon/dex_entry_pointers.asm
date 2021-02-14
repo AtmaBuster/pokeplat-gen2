@@ -293,4 +293,11 @@ PokedexDataPointerTable:
 	dba TangtripPokedexEntry
 	dba GelaniaPokedexEntry
 	dba BelmittPokedexEntry
+	dba TurbanPokedexEntry
+	dba PraxePokedexEntry
+	dba NumbpuffPokedexEntry
+	dba MettoPokedexEntry
+	dba MadamePokedexEntry
+	dba GuardiaPokedexEntry
+	dba OhmegaPokedexEntry
 	

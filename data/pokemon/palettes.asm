@@ -616,3 +616,17 @@ INCBIN "gfx/pokemon/gelania/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/gelania/shiny.pal"
 INCBIN "gfx/pokemon/belmitt/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/belmitt/shiny.pal"
+INCBIN "gfx/pokemon/turban/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/turban/shiny.pal"
+INCBIN "gfx/pokemon/praxe/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/praxe/shiny.pal"
+INCBIN "gfx/pokemon/numbpuff/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/numbpuff/shiny.pal"
+INCBIN "gfx/pokemon/metto/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/metto/shiny.pal"
+INCBIN "gfx/pokemon/madame/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/madame/shiny.pal"
+INCBIN "gfx/pokemon/guardia/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/guardia/shiny.pal"
+INCBIN "gfx/pokemon/ohmega/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/ohmega/shiny.pal"

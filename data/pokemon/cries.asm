@@ -298,4 +298,10 @@ PokemonCries::
 	mon_cry CRY_MARILL,      $f4c,  $110 ; TANGTRIP
 	mon_cry CRY_GOLEM,      -$010,  $1a0 ; GELANIA
 	mon_cry CRY_CATERPIE,    $06d,  $160 ; BELMITT
-	
+	mon_cry CRY_MAGCARGO,	 $2f1,  $140 ; TURBAN
+	mon_cry CRY_RAICHU,      $123,  $100 ; PRAXE
+	mon_cry CRY_SLOWKING,    $fce,  $160 ; NUMBPUFF
+	mon_cry CRY_PIDGEY,      $162,  $120 ; METTO
+	mon_cry CRY_SPEAROW,     $02d,  $0a0 ; MADAME
+	mon_cry CRY_KANGASKHAN,  $011,  $0f5 ; GUARDIA
+	mon_cry CRY_BLASTOISE,   $00c,  $11e ; OHMEGA
