@@ -301,4 +301,10 @@ NewPokedexOrder:
 	dw MADAME
 	dw GUARDIA
 	dw OHMEGA
+	dw TREECKO
+	dw GROVYLE
+	dw SCEPTILE
+	dw TORCHIC
+	dw COMBUSKEN
+	dw BLAZIKEN
 	

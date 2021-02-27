@@ -713,6 +713,14 @@ SECTION "16-bit ID stuff", ROMX
 
 INCLUDE "engine/16/table_functions.asm"
 
+SECTION "EvosAttacksPointers4", ROMX
+
+INCLUDE "data/pokemon/evos_attacks_hoenn.asm"
+
+SECTION "Egg Moves 4", ROMX
+INCLUDE "data/pokemon/egg_moves_hoenn.asm"
+
+
 ; own section
 INCLUDE "data/trainers/parties.asm"
 

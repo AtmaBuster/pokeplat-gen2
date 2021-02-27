@@ -299,4 +299,10 @@ AnimationIdlePointers:
 	dw MadameAnimationIdle
 	dw GuardiaAnimationIdle
 	dw OhmegaAnimationIdle
+	dw TreeckoAnimationIdle
+	dw GrovyleAnimationIdle
+	dw SceptileAnimationIdle
+	dw TorchicAnimationIdle
+	dw CombuskenAnimationIdle
+	dw BlazikenAnimationIdle
 	

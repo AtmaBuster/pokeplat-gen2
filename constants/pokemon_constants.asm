@@ -271,6 +271,7 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	;Begin Nihon
 	const FLAMBEAR   ; fc
 	const VOLBEAR    ; fd
 	const DYNABEAR   ; fe
@@ -320,6 +321,13 @@ JOHTO_POKEMON EQU const_value
 	const MADAME     ; 128
 	const GUARDIA    ; 129
 	const OHMEGA     ; 12A
+	;begin Hoenn
+	const TREECKO    ; 12B
+	const GROVYLE    ; 12C
+	const SCEPTILE   ; 12D
+	const TORCHIC    ; 12E
+	const COMBUSKEN  ; 12F
+	const BLAZIKEN   ; 130
 	
 NUM_POKEMON EQU const_value + -1
 

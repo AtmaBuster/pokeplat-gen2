@@ -300,4 +300,10 @@ PokedexDataPointerTable:
 	dba MadamePokedexEntry
 	dba GuardiaPokedexEntry
 	dba OhmegaPokedexEntry
+	dba TreeckoPokedexEntry
+	dba GrovylePokedexEntry
+	dba SceptilePokedexEntry
+	dba TorchicPokedexEntry
+	dba CombuskenPokedexEntry
+	dba BlazikenPokedexEntry
 	

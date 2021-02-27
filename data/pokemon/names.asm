@@ -303,4 +303,11 @@ PokemonNames::
 	db "MADAME@@@@"
 	db "GUARDIA@@@"
 	db "OHMEGA@@@@"
+	db "TREECKO@@@"
+	db "GROVYLE@@@"
+	db "SCEPTILE@@"
+	db "TORCHIC@@@"
+	db "COMBUSKEN@"
+	db "BLAZIKEN@@"
+	
 	

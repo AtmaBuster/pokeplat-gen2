@@ -25,6 +25,7 @@ AlphabeticalPokedexOrder:
 	dw BLISSEY
 	dw BLIZBIT
 	dw BLOTTLE
+	dw BLAZIKEN
 	dw BOMSHEAL
 	dw BULBASAUR
 	dw BUTTERFREE
@@ -42,6 +43,7 @@ AlphabeticalPokedexOrder:
 	dw CLEFAIRY
 	dw CLEFFA
 	dw CLOYSTER
+	dw COMBUSKEN
 	dw CORASUN
 	dw CORAMOLA
 	dw CORSOLA
@@ -99,6 +101,7 @@ AlphabeticalPokedexOrder:
 	dw GRIMBY
 	dw GRIMER
 	dw GROTESS
+	dw GROVYLE
 	dw GROWLITHE
 	dw GUARDIA
 	dw GUPGOLD
@@ -229,6 +232,7 @@ AlphabeticalPokedexOrder:
 	dw RINRING
 	dw SANDSHREW
 	dw SANDSLASH
+	dw SCEPTILE
 	dw SCIZOR
 	dw SCYTHER
 	dw SEADRA
@@ -270,7 +274,9 @@ AlphabeticalPokedexOrder:
 	dw TENTACRUEL
 	dw TOGEPI
 	dw TOGETIC
+	dw TORCHIC
 	dw TOTODILE
+	dw TREECKO
 	dw TRITALES
 	dw TURBAN
 	dw TYPHLOSION

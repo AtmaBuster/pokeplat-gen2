@@ -299,4 +299,10 @@ AnimationPointers:
 	dw MadameAnimation
 	dw GuardiaAnimation
 	dw OhmegaAnimation
+	dw TreeckoAnimation
+	dw GrovyleAnimation
+	dw SceptileAnimation
+	dw TorchicAnimation
+	dw CombuskenAnimation
+	dw BlazikenAnimation
 	

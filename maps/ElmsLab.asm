@@ -218,8 +218,8 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic OHMEGA
-	cry OHMEGA
+	pokepic TORCHIC
+	cry TORCHIC
 	waitbutton
 	closepokepic
 	opentext
@@ -231,15 +231,23 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	getmonname STRING_BUFFER_3, OHMEGA
+	getmonname STRING_BUFFER_3, TORCHIC
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke OHMEGA, 40, BERRY
+	givepoke TORCHIC, 36, BERRY
+	callasm .asm
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
+
+.asm 
+	ld hl, wPartyMon1DVs
+	ld a, $aa
+	ld [hli], a
+	ld [hl], a
+	ret
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText

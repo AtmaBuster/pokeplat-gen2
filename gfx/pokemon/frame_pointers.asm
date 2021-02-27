@@ -299,4 +299,10 @@ FramesPointers:
 	dba MadameFrames
 	dba GuardiaFrames
 	dba OhmegaFrames
+	dba TreeckoFrames
+	dba GrovyleFrames
+	dba SceptileFrames
+	dba TorchicFrames
+	dba CombuskenFrames
+	dba BlazikenFrames
 	

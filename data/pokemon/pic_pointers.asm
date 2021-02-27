@@ -613,4 +613,16 @@ PokemonPicPointers::
 	dba GuardiaBackpic
 	dba OhmegaFrontpic
 	dba OhmegaBackpic
+	dba TreeckoFrontpic
+	dba TreeckoBackpic
+	dba GrovyleFrontpic
+	dba GrovyleBackpic
+	dba SceptileFrontpic
+	dba SceptileBackpic
+	dba TorchicFrontpic
+	dba TorchicBackpic
+	dba CombuskenFrontpic
+	dba CombuskenBackpic
+	dba BlazikenFrontpic
+	dba BlazikenBackpic
 	

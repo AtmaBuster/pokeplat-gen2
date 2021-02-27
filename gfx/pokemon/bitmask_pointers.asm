@@ -299,4 +299,9 @@ BitmasksPointers:
 	dw MadameBitmasks
 	dw GuardiaBitmasks
 	dw OhmegaBitmasks
-	
+	dw TreeckoBitmasks
+	dw GrovyleBitmasks
+	dw SceptileBitmasks
+	dw TorchicBitmasks
+	dw CombuskenBitmasks
+	dw BlazikenBitmasks
