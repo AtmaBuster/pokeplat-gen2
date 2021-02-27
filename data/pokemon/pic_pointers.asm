@@ -625,4 +625,10 @@ PokemonPicPointers::
 	dba CombuskenBackpic
 	dba BlazikenFrontpic
 	dba BlazikenBackpic
+	dba MudkipFrontpic
+	dba MudkipBackpic
+	dba MarshtompFrontpic
+	dba MarshtompBackpic
+	dba SwampertFrontpic
+	dba SwampertBackpic
 	

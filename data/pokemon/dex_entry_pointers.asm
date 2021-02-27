@@ -306,4 +306,7 @@ PokedexDataPointerTable:
 	dba TorchicPokedexEntry
 	dba CombuskenPokedexEntry
 	dba BlazikenPokedexEntry
+	dba MudkipPokedexEntry
+	dba MarshtompPokedexEntry
+	dba SwampertPokedexEntry
 	

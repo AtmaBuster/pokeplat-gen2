@@ -7,6 +7,9 @@ EggMovePointers4::
 	dw TorchicEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw MudkipEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw TACKLE
@@ -16,5 +19,9 @@ TorchicEggMoves:
 	dw TACKLE
 	dw -1 ; end
 	
+MudkipEggMoves:
+	dw TACKLE
+	dw -1 ; end
+
 NoEggMoves4:
 	dw -1 ; end

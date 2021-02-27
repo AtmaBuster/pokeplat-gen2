@@ -160,6 +160,7 @@ AlphabeticalPokedexOrder:
 	dw MAREEP
 	dw MARILL
 	dw MAROWAK
+	dw MARSHTOMP
 	dw MEGANIUM
 	dw MEOWTH
 	dw METAPOD
@@ -170,6 +171,7 @@ AlphabeticalPokedexOrder:
 	dw MISDREAVUS
 	dw MOLTRES
 	dw MR__MIME
+	dw MUDKIP
 	dw MUK
 	dw MURKROW
 	dw NATU
@@ -265,6 +267,7 @@ AlphabeticalPokedexOrder:
 	dw SUICUNE
 	dw SUNFLORA
 	dw SUNKERN
+	dw SWAMPERT
 	dw SWINUB
 	dw TANGELA
 	dw TANGTRIP

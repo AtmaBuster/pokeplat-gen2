@@ -309,5 +309,7 @@ PokemonNames::
 	db "TORCHIC@@@"
 	db "COMBUSKEN@"
 	db "BLAZIKEN@@"
-	
+	db "MUDKIP@@@@"
+	db "MARSHTOMP@"
+	db "SWAMPERT@@"
 	

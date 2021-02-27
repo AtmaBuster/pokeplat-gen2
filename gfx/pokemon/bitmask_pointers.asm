@@ -305,3 +305,7 @@ BitmasksPointers:
 	dw TorchicBitmasks
 	dw CombuskenBitmasks
 	dw BlazikenBitmasks
+	dw MudkipBitmasks
+	dw MarshtompBitmasks
+	dw SwampertBitmasks
+	

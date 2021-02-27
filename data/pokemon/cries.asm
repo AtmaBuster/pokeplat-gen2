@@ -311,4 +311,7 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; TORCHIC
 	mon_cry CRY_RATTATA,     $000,  $001 ; COMBUSKEN
 	mon_cry CRY_RATTATA,     $000,  $001 ; BLAZIKEN
+	mon_cry CRY_RATTATA,     $000,  $001 ; MUDKIP
+	mon_cry CRY_RATTATA,     $000,  $001 ; MARSHTOMP
+	mon_cry CRY_RATTATA,     $000,  $001 ; SWAMPERT
 	

@@ -307,4 +307,7 @@ NewPokedexOrder:
 	dw TORCHIC
 	dw COMBUSKEN
 	dw BLAZIKEN
+	dw MUDKIP
+	dw MARSHTOMP
+	dw SWAMPERT
 	

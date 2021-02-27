@@ -7,6 +7,9 @@ EvosAttacksPointers4::
 	dw TorchicEvosAttacks
 	dw CombuskenEvosAttacks
 	dw BlazikenEvosAttacks
+	dw MudkipEvosAttacks
+	dw MarshtompEvosAttacks
+	dw SwampertEvosAttacks
 	
 TreeckoEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, GROVYLE
@@ -41,3 +44,21 @@ BlazikenEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	db 0 ; no more level-up moves
+
+MudkipEvosAttacks:
+	dbbw EVOLVE_LEVEL, 16, MARSHTOMP
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	db 0 ; no more level-up moves
+	
+MarshtompEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, SWAMPERT
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	db 0 ; no more level-up moves
+	
+SwampertEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	db 0 ; no more level-up moves
+	

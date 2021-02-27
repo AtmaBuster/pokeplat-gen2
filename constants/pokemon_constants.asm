@@ -328,6 +328,9 @@ JOHTO_POKEMON EQU const_value
 	const TORCHIC    ; 12E
 	const COMBUSKEN  ; 12F
 	const BLAZIKEN   ; 130
+	const MUDKIP     ; 131
+	const MARSHTOMP  ; 132
+	const SWAMPERT   ; 133
 	
 NUM_POKEMON EQU const_value + -1
 

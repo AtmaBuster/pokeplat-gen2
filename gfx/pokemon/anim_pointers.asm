@@ -305,4 +305,7 @@ AnimationPointers:
 	dw TorchicAnimation
 	dw CombuskenAnimation
 	dw BlazikenAnimation
+	dw MudkipAnimation
+	dw MarshtompAnimation
+	dw SwampertAnimation
 	

@@ -218,8 +218,8 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic TORCHIC
-	cry TORCHIC
+	pokepic MUDKIP
+	cry MUDKIP
 	waitbutton
 	closepokepic
 	opentext
@@ -231,12 +231,12 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	getmonname STRING_BUFFER_3, TORCHIC
+	getmonname STRING_BUFFER_3, MUDKIP
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke TORCHIC, 36, BERRY
+	givepoke MUDKIP, 5, BERRY
 	callasm .asm
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
