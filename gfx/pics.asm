@@ -860,10 +860,13 @@ SECTION "Pics 22", ROMX
 
 DustoxFrontpic:      INCBIN "gfx/pokemon/dustox/front.animated.2bpp.lz"
 DustoxBackpic:       INCBIN "gfx/pokemon/dustox/back.2bpp.lz"
+LotadFrontpic:       INCBIN "gfx/pokemon/lotad/front.animated.2bpp.lz"
+LotadBackpic:        INCBIN "gfx/pokemon/lotad/back.2bpp.lz"
+LombreFrontpic:      INCBIN "gfx/pokemon/lombre/front.animated.2bpp.lz"
+LombreBackpic:       INCBIN "gfx/pokemon/lombre/back.2bpp.lz"
+LudicoloFrontpic:    INCBIN "gfx/pokemon/ludicolo/front.animated.2bpp.lz"
+LudicoloBackpic:     INCBIN "gfx/pokemon/ludicolo/back.2bpp.lz"
 
-LotadFrontpic:
-LombreFrontpic:
-LudicoloFrontpic:
 SeedotFrontpic:
 NuzleafFrontpic:
 ShiftryFrontpic:
@@ -1104,9 +1107,6 @@ GiratinaOriginFrontpic:
 ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
-LotadBackpic:
-LombreBackpic:
-LudicoloBackpic:
 SeedotBackpic:
 NuzleafBackpic:
 ShiftryBackpic:

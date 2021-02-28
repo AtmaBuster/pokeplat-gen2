@@ -666,3 +666,9 @@ CascoonPal:         INCBIN "gfx/pokemon/cascoon/front.gbcpal", middle_colors
 CascoonShinyPal:    INCLUDE "gfx/pokemon/cascoon/shiny.pal"
 DustoxPal:          INCBIN "gfx/pokemon/dustox/front.gbcpal", middle_colors
 DustoxShinyPal:     INCLUDE "gfx/pokemon/dustox/shiny.pal"
+LotadPal:           INCBIN "gfx/pokemon/lotad/front.gbcpal", middle_colors
+LotadShinyPal:      INCLUDE "gfx/pokemon/lotad/shiny.pal"
+LombrePal:          INCBIN "gfx/pokemon/lombre/front.gbcpal", middle_colors
+LombreShinyPal:     INCLUDE "gfx/pokemon/lombre/shiny.pal"
+LudicoloPal:        INCBIN "gfx/pokemon/ludicolo/front.gbcpal", middle_colors
+LudicoloShinyPal:   INCLUDE "gfx/pokemon/ludicolo/shiny.pal"

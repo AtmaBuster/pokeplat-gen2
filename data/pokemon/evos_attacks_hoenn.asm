@@ -441,8 +441,45 @@ DustoxEvosAttacks:
 	db 0 ; no more level-up moves
 	
 LotadEvosAttacks:
+	dbbw EVOLVE_LEVEL, 14, LOMBRE
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 3, GROWL
+	dbw 5, ABSORB
+	dbw 7, NATURE_POWER
+	dbw 11, MIST
+	dbw 15, NATURAL_GIFT
+	dbw 19, MEGA_DRAIN
+	dbw 25, BUBBLEBEAM
+	dbw 31, ZEN_HEADBUTT
+	dbw 37, RAIN_DANCE
+	dbw 45, ENERGY_BALL
+	db 0 ; no more level-up moves
+	
 LombreEvosAttacks:
+	dbbw EVOLVE_ITEM, WATER_STONE, LUDICOLO
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 3, GROWL
+	dbw 5, ABSORB
+	dbw 7, NATURE_POWER
+	dbw 11, FAKE_OUT
+	dbw 15, FURY_SWIPES
+	dbw 19, WATER_SPORT
+	dbw 25, BUBBLEBEAM
+	dbw 31, ZEN_HEADBUTT
+	dbw 37, UPROAR
+	dbw 45, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
 LudicoloEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 1, GROWL
+	dbw 1, MEGA_DRAIN
+	dbw 1, NATURE_POWER
+	db 0 ; no more level-up moves
+	
 SeedotEvosAttacks:
 NuzleafEvosAttacks:
 ShiftryEvosAttacks:

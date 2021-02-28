@@ -19,6 +19,9 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw LotadEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -86,6 +89,15 @@ ZigzagoonEggMoves:
 	dw SUBSTITUTE
 	dw TICKLE
 	dw TRICK
+	dw -1 ; end
+	
+LotadEggMoves:
+	dw FLAIL
+	dw LEECH_SEED
+	dw RAZOR_LEAF
+	dw SWEET_SCENT
+	dw TICKLE
+	dw WATER_GUN
 	dw -1 ; end
 
 NoEggMoves4:

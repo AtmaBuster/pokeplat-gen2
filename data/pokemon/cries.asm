@@ -333,9 +333,9 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; BEAUTIFLY
 	mon_cry CRY_RATTATA,     $000,  $001 ; CASCOON
 	mon_cry CRY_RATTATA,     $000,  $001 ; DUSTOX
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; LOTAD
+	mon_cry CRY_RATTATA,     $000,  $001 ; LOMBRE
+	mon_cry CRY_RATTATA,     $000,  $001 ; LUDICOLO
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

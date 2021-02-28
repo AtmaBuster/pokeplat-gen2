@@ -317,4 +317,7 @@ AnimationPointers:
 	dw BeautiflyAnimation
 	dw CascoonAnimation
 	dw DustoxAnimation
+	dw LotadAnimation
+	dw LombreAnimation
+	dw LudicoloAnimation
 	
