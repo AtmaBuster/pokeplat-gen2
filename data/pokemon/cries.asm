@@ -324,10 +324,10 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; MUDKIP
 	mon_cry CRY_RATTATA,     $000,  $001 ; MARSHTOMP
 	mon_cry CRY_RATTATA,     $000,  $001 ; SWAMPERT
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; POOCHYENA
+	mon_cry CRY_RATTATA,     $000,  $001 ; MIGHTYENA
+	mon_cry CRY_RATTATA,     $000,  $001 ; ZIGZAGOON
+	mon_cry CRY_RATTATA,     $000,  $001 ; LINOONE
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

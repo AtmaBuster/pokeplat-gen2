@@ -839,11 +839,15 @@ MarshtompFrontpic:   INCBIN "gfx/pokemon/marshtomp/front.animated.2bpp.lz"
 MarshtompBackpic:    INCBIN "gfx/pokemon/marshtomp/back.2bpp.lz"
 SwampertFrontpic:    INCBIN "gfx/pokemon/swampert/front.animated.2bpp.lz"
 SwampertBackpic:     INCBIN "gfx/pokemon/swampert/back.2bpp.lz"
+PoochyenaFrontpic:   INCBIN "gfx/pokemon/poochyena/front.2bpp.lz"
+PoochyenaBackpic:    INCBIN "gfx/pokemon/poochyena/back.2bpp.lz"
+MightyenaFrontpic:   INCBIN "gfx/pokemon/mightyena/front.2bpp.lz"
+MightyenaBackpic:    INCBIN "gfx/pokemon/mightyena/back.2bpp.lz"
+ZigzagoonFrontpic:   INCBIN "gfx/pokemon/zigzagoon/front.animated.2bpp.lz"
+ZigzagoonBackpic:    INCBIN "gfx/pokemon/zigzagoon/back.2bpp.lz"
+LinooneFrontpic:     INCBIN "gfx/pokemon/linoone/front.animated.2bpp.lz"
+LinooneBackpic:      INCBIN "gfx/pokemon/linoone/back.2bpp.lz"
 
-PoochyenaFrontpic:
-MightyenaFrontpic:
-ZigzagoonFrontpic:
-LinooneFrontpic:
 WurmpleFrontpic:
 SilcoonFrontpic:
 BeautiflyFrontpic:
@@ -1092,10 +1096,6 @@ GiratinaOriginFrontpic:
 ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
-PoochyenaBackpic:
-MightyenaBackpic:
-ZigzagoonBackpic:
-LinooneBackpic:
 WurmpleBackpic:
 SilcoonBackpic:
 BeautiflyBackpic:

@@ -308,4 +308,8 @@ AnimationPointers:
 	dw MudkipAnimation
 	dw MarshtompAnimation
 	dw SwampertAnimation
+	dw PoochyenaAnimation
+	dw MightyenaAnimation
+	dw ZigzagoonAnimation
+	dw LinooneAnimation
 	

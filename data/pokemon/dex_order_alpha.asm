@@ -543,3 +543,12 @@ AlphabeticalPokedexOrder:
 	dw ZAPDOS
 	dw ZIGZAGOON
 	dw ZUBAT
+
+AlphabeticalPokedexOrderEnd:
+NUM_ALPHA_DEX EQU ((AlphabeticalPokedexOrderEnd - AlphabeticalPokedexOrder) / 2)
+num_rept EQU 0
+_numrept = NUM_ALPHA_DEX
+rept NUM_POKEMON - NUM_ALPHA_DEX
+    dw _numrept
+_numrept = _numrept + 1
+endr

@@ -543,3 +543,11 @@ NewPokedexOrder:
 	dw DARKRAI
 	dw SHAYMIN
 	dw ARCEUS
+
+NewPokedexOrderEnd:
+NUM_NEW_DEX EQU ((NewPokedexOrderEnd - NewPokedexOrder) / 2)
+_numrept = NUM_NEW_DEX
+rept NUM_POKEMON - NUM_NEW_DEX
+    dw _numrept
+_numrept = _numrept + 1
+endr

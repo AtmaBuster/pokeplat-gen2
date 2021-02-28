@@ -305,4 +305,11 @@ FramesPointers:
 	dba TorchicFrames
 	dba CombuskenFrames
 	dba BlazikenFrames
+	dba MudkipFrames
+	dba MarshtompFrames
+	dba SwampertFrames
+	dba PoochyenaFrames
+	dba MightyenaFrames
+	dba ZigzagoonFrames
+	dba LinooneFrames
 	
