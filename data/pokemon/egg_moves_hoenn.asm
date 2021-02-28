@@ -14,6 +14,11 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw ZigzagoonEggMoves
 	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH

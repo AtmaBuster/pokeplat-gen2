@@ -218,8 +218,8 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic SWAMPERT
-	cry SWAMPERT
+	pokepic DUSTOX
+	cry DUSTOX
 	waitbutton
 	closepokepic
 	opentext
@@ -231,12 +231,12 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	getmonname STRING_BUFFER_3, SWAMPERT
+	getmonname STRING_BUFFER_3, DUSTOX
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke SWAMPERT, 36, BERRY
+	givepoke DUSTOX, 20, BERRY
 	callasm .asm
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement

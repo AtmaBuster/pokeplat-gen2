@@ -312,4 +312,9 @@ BitmasksPointers:
 	dw MightyenaBitmasks
 	dw ZigzagoonBitmasks
 	dw LinooneBitmasks
+	dw WurmpleBitmasks
+	dw SilcoonBitmasks
+	dw BeautiflyBitmasks
+	dw CascoonBitmasks
+	dw DustoxBitmasks
 	

@@ -839,20 +839,28 @@ MarshtompFrontpic:   INCBIN "gfx/pokemon/marshtomp/front.animated.2bpp.lz"
 MarshtompBackpic:    INCBIN "gfx/pokemon/marshtomp/back.2bpp.lz"
 SwampertFrontpic:    INCBIN "gfx/pokemon/swampert/front.animated.2bpp.lz"
 SwampertBackpic:     INCBIN "gfx/pokemon/swampert/back.2bpp.lz"
-PoochyenaFrontpic:   INCBIN "gfx/pokemon/poochyena/front.2bpp.lz"
+PoochyenaFrontpic:   INCBIN "gfx/pokemon/poochyena/front.animated.2bpp.lz"
 PoochyenaBackpic:    INCBIN "gfx/pokemon/poochyena/back.2bpp.lz"
-MightyenaFrontpic:   INCBIN "gfx/pokemon/mightyena/front.2bpp.lz"
+MightyenaFrontpic:   INCBIN "gfx/pokemon/mightyena/front.animated.2bpp.lz"
 MightyenaBackpic:    INCBIN "gfx/pokemon/mightyena/back.2bpp.lz"
 ZigzagoonFrontpic:   INCBIN "gfx/pokemon/zigzagoon/front.animated.2bpp.lz"
 ZigzagoonBackpic:    INCBIN "gfx/pokemon/zigzagoon/back.2bpp.lz"
 LinooneFrontpic:     INCBIN "gfx/pokemon/linoone/front.animated.2bpp.lz"
 LinooneBackpic:      INCBIN "gfx/pokemon/linoone/back.2bpp.lz"
+WurmpleFrontpic:     INCBIN "gfx/pokemon/wurmple/front.animated.2bpp.lz"
+WurmpleBackpic:      INCBIN "gfx/pokemon/wurmple/back.2bpp.lz"
+SilcoonFrontpic:     INCBIN "gfx/pokemon/silcoon/front.animated.2bpp.lz"
+SilcoonBackpic:      INCBIN "gfx/pokemon/silcoon/back.2bpp.lz"
+BeautiflyFrontpic:   INCBIN "gfx/pokemon/beautifly/front.animated.2bpp.lz"
+BeautiflyBackpic:    INCBIN "gfx/pokemon/beautifly/back.2bpp.lz"
+CascoonFrontpic:     INCBIN "gfx/pokemon/cascoon/front.animated.2bpp.lz"
+CascoonBackpic:      INCBIN "gfx/pokemon/cascoon/back.2bpp.lz"
 
-WurmpleFrontpic:
-SilcoonFrontpic:
-BeautiflyFrontpic:
-CascoonFrontpic:
-DustoxFrontpic:
+SECTION "Pics 22", ROMX
+
+DustoxFrontpic:      INCBIN "gfx/pokemon/dustox/front.animated.2bpp.lz"
+DustoxBackpic:       INCBIN "gfx/pokemon/dustox/back.2bpp.lz"
+
 LotadFrontpic:
 LombreFrontpic:
 LudicoloFrontpic:
@@ -1096,11 +1104,6 @@ GiratinaOriginFrontpic:
 ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
-WurmpleBackpic:
-SilcoonBackpic:
-BeautiflyBackpic:
-CascoonBackpic:
-DustoxBackpic:
 LotadBackpic:
 LombreBackpic:
 LudicoloBackpic:

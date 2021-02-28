@@ -315,7 +315,7 @@ PokemonCries::
 	mon_cry CRY_SPEAROW,     $02d,  $0a0 ; MADAME
 	mon_cry CRY_KANGASKHAN,  $011,  $0f5 ; GUARDIA
 	mon_cry CRY_BLASTOISE,   $00c,  $11e ; OHMEGA
-	mon_cry CRY_RATTATA,     $000,  $001 ; TREECKO
+	mon_cry CRY_RATTATA,     $000,  $001 ; TREECKO - Samples past this point
 	mon_cry CRY_RATTATA,     $000,  $001 ; GROVYLE
 	mon_cry CRY_RATTATA,     $000,  $001 ; SCEPTILE
 	mon_cry CRY_RATTATA,     $000,  $001 ; TORCHIC
@@ -328,11 +328,11 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; MIGHTYENA
 	mon_cry CRY_RATTATA,     $000,  $001 ; ZIGZAGOON
 	mon_cry CRY_RATTATA,     $000,  $001 ; LINOONE
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; WURMPLE
+	mon_cry CRY_RATTATA,     $000,  $001 ; SILCOON
+	mon_cry CRY_RATTATA,     $000,  $001 ; BEAUTIFLY
+	mon_cry CRY_RATTATA,     $000,  $001 ; CASCOON
+	mon_cry CRY_RATTATA,     $000,  $001 ; DUSTOX
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
