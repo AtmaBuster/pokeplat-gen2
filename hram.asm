@@ -160,3 +160,13 @@ hDMATransfer:: db ; ffe8
 hMobile:: db ; ffe9
 hSystemBooted:: db ; ffea
 hClockResetTrigger:: db ; ffeb
+
+hSamplePlaying:: db ; ffec
+hSampleVolume:: db ; ffed
+hTimerInterrupt:: db ; ffee
+hMusicStore:: db ; ffef
+
+if DEF(_DEBUG)
+hDebugMenuCursorPos:: db
+hDebugMenuDataBuffer:: ds 8
+endc

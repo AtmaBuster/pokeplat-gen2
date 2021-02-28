@@ -665,40 +665,6 @@ Text_AreYouABoyOrAreYouAGirl::
 	line "Or are you a girl?"
 	done
 
-UnknownText_0x1c0cc6::
-	text "<USER>'s"
-	line "@"
-	text_ram wStringBuffer2
-	text_end
-
-	text_end ; unused
-
-UnknownText_0x1c0cd0::
-	text_pause
-	text "<SCROLL>went way up!"
-	prompt
-
-UnknownText_0x1c0ce0::
-	text " went up!"
-	prompt
-
-UnknownText_0x1c0ceb::
-	text "<TARGET>'s"
-	line "@"
-	text_ram wStringBuffer2
-	text_end
-
-	text_end ; unused
-
-UnknownText_0x1c0cf5::
-	text_pause
-	text "<SCROLL>sharply fell!"
-	prompt
-
-UnknownText_0x1c0d06::
-	text " fell!"
-	prompt
-
 UnknownText_0x1c0d0e::
 	text "<USER>@"
 	text_end

@@ -147,8 +147,11 @@ rept 6 ; sizeof(mon_cry)
 	add hl, de
 endr
 
-	ld e, [hl]
-	inc hl
+	ldi a, [hl]
+	cp CRY_SAMPLED
+	jr z, .sampled_cry
+
+	ld e, a
 	ld d, [hl]
 	inc hl
 
@@ -175,6 +178,20 @@ endr
 	pop bc
 	pop de
 	pop hl
+	ret
+
+.sampled_cry
+	call PlaySample
+
+	pop af
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+
+	pop af
+	pop bc
+	pop de
+	pop hl
+	ret
 	ret
 
 PlaySFX::
@@ -224,9 +241,13 @@ WaitPlaySFX::
 WaitSFX::
 ; infinite loop until sfx is done playing
 
+	push af
 	push hl
 
 .wait
+	ldh a, [hSamplePlaying]
+	and a
+	jr nz, .wait
 	ld hl, wChannel5Flags1
 	bit 0, [hl]
 	jr nz, .wait
@@ -241,11 +262,17 @@ WaitSFX::
 	jr nz, .wait
 
 	pop hl
+	pop af
 	ret
 
 IsSFXPlaying::
 ; Return carry if no sound effect is playing.
 ; The inverse of CheckSFX.
+; First, check if sampled sound is playing
+	ldh a, [hSamplePlaying]
+	and a
+	jr nz, .playing
+; Then, check other
 	push hl
 
 	ld hl, wChannel5Flags1
@@ -445,19 +472,19 @@ SpecialMapMusic::
 	ret
 
 .contest
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_35_NATIONAL_PARK_GATE
-	jr nz, .no
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_35_NATIONAL_PARK_GATE
-	jr z, .ranking
-	cp MAP_ROUTE_36_NATIONAL_PARK_GATE
-	jr nz, .no
-
-.ranking
-	ld de, MUSIC_BUG_CATCHING_CONTEST_RANKING
-	scf
-	ret
+;	ld a, [wMapGroup]
+;	cp GROUP_ROUTE_35_NATIONAL_PARK_GATE
+;	jr nz, .no
+;	ld a, [wMapNumber]
+;	cp MAP_ROUTE_35_NATIONAL_PARK_GATE
+;	jr z, .ranking
+;	cp MAP_ROUTE_36_NATIONAL_PARK_GATE
+;	jr nz, .no
+;
+;.ranking
+;	ld de, MUSIC_BUG_CATCHING_CONTEST_RANKING
+;	scf
+;	ret
 
 GetMapMusic_MaybeSpecial::
 	call SpecialMapMusic
@@ -466,6 +493,11 @@ GetMapMusic_MaybeSpecial::
 
 CheckSFX::
 ; Return carry if any SFX channels are active.
+; First, check if sampled sound is playing
+	ldh a, [hSamplePlaying]
+	and a
+	jr nz, .playing
+; Then, check other
 	ld a, [wChannel5Flags1]
 	bit 0, a
 	jr nz, .playing
@@ -514,3 +546,128 @@ SFXChannelsOff::
 	ld [wChannel8Flags1], a
 	ld [wSoundInput], a
 	ret
+
+PlaySample::
+	; setup timer interrupt
+	xor a
+	ldh [rTMA], a
+	ld a, %110
+	ldh [rTAC], a
+	; loads sample header at hl and queues the sample to play
+	ld c, LOW(rNR51)
+	ld a, $ff
+	ld [c], a
+	dec c
+	ld a, $77
+	ld [c], a
+	ld a, $20
+	ldh [rNR32], a
+
+	ld de, wSampleData
+	ld bc, 5 ; size of sample header
+	call CopyBytes
+;	ldi a, [hl]
+;	ld [wSamplePointer], a
+;	ldi a, [hl]
+;	ld [wSamplePointer + 1], a
+;	ldi a, [hl]
+;	ld [wSampleSize], a
+;	ldi a, [hl]
+;	ld [wSampleSize + 1], a
+;	ld a, [hl]
+;	ld [wSampleBank], a
+	ld a, 1
+	ldh [hSamplePlaying], a
+	ret
+
+Timer::
+	push af
+	push bc
+	push de
+	push hl
+	ldh a, [hSamplePlaying]
+	and a
+	jr nz, .play_sample
+	xor a
+	ldh [hSampleVolume], a
+	inc a
+	ldh [hTimerInterrupt], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	reti
+
+.play_sample
+	ld hl, wSampleSize
+	ldi a, [hl]
+	ld d, [hl]
+	ld e, a
+	ld hl, wSamplePointer
+	ldi a, [hl]
+	ld h, [hl]
+	ld l, a
+	ld a, [wSampleBank]
+	ld [MBC3RomBank], a
+	ldh a, [rNR51]
+	ld c, a
+	and %10111011
+	ldh [rNR51], a
+	xor a
+	ldh [rNR30], a
+	ldi a, [hl]
+	push af
+	ldh [rWave_0], a
+wave=rWave_1
+rept 15
+	ldi a, [hl]
+	ldh [wave], a
+wave=wave+1
+endr
+	ld a, %10000000
+	ldh [rNR30], a
+	ld a, c
+	ldh [rNR51], a
+	ld a, $80
+	;xor a
+	ldh [rNR33], a
+	ld a, $87
+	ldh [rNR34], a
+
+	ld a, e
+	sub $10
+	ld e, a
+	jr nc, .nc
+	dec d
+.nc
+	ld a, h
+	ld [wSamplePointer + 1], a
+	ld a, l
+	ld [wSamplePointer], a
+
+	ld a, d
+	cp -1
+	jr nz, .no_reset2
+	xor a
+	ldh [hSamplePlaying], a
+	ldh [rNR30], a
+.no_reset2
+	ld a, d
+	ld [wSampleSize + 1], a
+	ld a, e
+	ld [wSampleSize], a
+
+	pop af
+	swap a
+	and $0f
+	ldh [hSampleVolume], a
+	ld a, 1
+	ld [hTimerInterrupt], a
+
+	ldh a, [hROMBank]
+	ld [MBC3RomBank], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	reti

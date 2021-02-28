@@ -21,37 +21,13 @@ BattleCommand_Curse:
 	cp GHOST
 	jr z, .ghost
 
-; If no stats can be increased, don't.
-
-; Attack
-	ld a, [bc]
-	cp MAX_STAT_LEVEL
-	jr c, .raise
-
-; Defense
-	inc bc
-	ld a, [bc]
-	cp MAX_STAT_LEVEL
-	jr nc, .cantraise
-
-.raise
-
-; Raise Attack and Defense, and lower Speed.
-
-	ld a, $1
-	ld [wKickCounter], a
-	call AnimateCurrentMove
-	ld a, SPEED
-	call LowerStat
-	call BattleCommand_SwitchTurn
-	call BattleCommand_StatDownMessage
-	call ResetMiss
-	call BattleCommand_SwitchTurn
-	call BattleCommand_AttackUp
-	call BattleCommand_StatUpMessage
-	call ResetMiss
-	call BattleCommand_DefenseUp
-	jp BattleCommand_StatUpMessage
+	; not Ghost-type
+	ld b, SPEED
+	call ForceLowerStat
+	ld b, ATTACK
+	call ForceRaiseStat
+	ld b, DEFENSE
+	jp ForceRaiseStat
 
 .ghost
 
@@ -81,13 +57,3 @@ BattleCommand_Curse:
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
-
-.cantraise
-
-; Can't raise either stat.
-
-	ld b, ABILITY + 1
-	call GetStatName
-	call AnimateFailedMove
-	ld hl, WontRiseAnymoreText
-	jp StdBattleTextbox

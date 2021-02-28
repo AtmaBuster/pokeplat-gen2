@@ -1,6 +1,6 @@
-roms := pokecrystal.gbc
+roms := pokecrystal.gbc pokecrystal_debug.gbc
 
-crystal_obj := \
+rom_obj := \
 audio.o \
 home.o \
 main.o \
@@ -15,6 +15,9 @@ engine/overworld/events.o \
 gfx/pics.o \
 gfx/sprites.o \
 lib/mobile/main.o
+
+crystal_obj       := $(rom_obj:.o=.o)
+crystal_debug_obj := $(rom_obj:.o=_debug.o)
 
 ### Build tools
 
@@ -39,7 +42,9 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: pokecrystal.gbc
+all: crystal crystal_debug
+crystal:   pokecrystal.gbc
+crystal_debug: pokecrystal_debug.gbc
 
 clean: tidy
 	find gfx \( -name "*.[12]bpp" -o -name "*.lz" -o -name "*.gbcpal" \) -delete
@@ -53,14 +58,16 @@ tools:
 	$(MAKE) -C tools/
 
 
-$(crystal_obj): RGBASMFLAGS =
+RGBASMFLAGS = -L -Weverything
+$(crystal_obj): RGBASMFLAGS +=
+$(crystal_debug_obj):   RGBASMFLAGS += -D _DEBUG
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
 # It doesn't look like $(shell) can be deferred so there might not be a better way.
 define DEP
 $1: $2 $$(shell tools/scan_includes $2)
-	$$(RGBASM) $$(RGBASMFLAGS) -L -o $$@ $$<
+	$$(RGBASM) $$(RGBASMFLAGS) -o $$@ $$<
 endef
 
 # Build tools when building the rom.
@@ -70,12 +77,13 @@ ifeq (,$(filter clean tools,$(MAKECMDGOALS)))
 $(info $(shell $(MAKE) -C tools))
 
 $(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(crystal_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
 
 endif
 
 
-pokecrystal.gbc: $(crystal_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l pokecrystal.link -o $@ $(crystal_obj)
+poke%.gbc: $$(%_obj) pokecrystal.link
+	$(RGBLINK) -n poke$*.sym -m poke$*.map -l pokecrystal.link -o $@ $(filter %.o,$^)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
 	tools/sort_symfile.sh pokecrystal.sym
 

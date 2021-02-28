@@ -235,6 +235,9 @@ ScriptCommandTable:
 	dw Script_checksave                  ; a9
 	dw Script_loadmonindex               ; aa
 	dw Script_checkmaplockedmons         ; ab
+	dw Script_jumptextsign               ; ac
+	dw Script_settableindex              ; ad
+	dw Script_applymovementtable         ; ae
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2582,10 +2585,10 @@ Script_warpcheck:
 	farcall EnableEvents
 	ret
 
-Script_enableevents:
-; unused
-	farcall EnableEvents
-	ret
+;Script_enableevents:
+;; unused
+;	farcall EnableEvents
+;	ret
 
 Script_newloadmap:
 ; script command 0x8a
@@ -2626,7 +2629,7 @@ Script_writeunusedbytebuffer:
 	ld [wUnusedScriptByteBuffer], a
 	ret
 
-	db closetext_command ; unused
+;	db closetext_command ; unused
 
 Script_closetext:
 ; script command 0x49
@@ -2730,7 +2733,7 @@ ExitScriptSubroutine:
 	add hl, de
 	ld a, [hli]
 	ld b, a
-	and " "
+	and $7f
 	ld [wScriptBank], a
 	ld a, [hli]
 	ld e, a
@@ -2804,13 +2807,13 @@ Script_checksave:
 	ld [wScriptVar], a
 	ret
 
-; unused
-	ld a, [.byte]
-	ld [wScriptVar], a
-	ret
-
-.byte
-	db 0
+;; unused
+;	ld a, [.byte]
+;	ld [wScriptVar], a
+;	ret
+;
+;.byte
+;	db 0
 
 Script_loadmonindex:
 ; script command 0xaa
@@ -2870,4 +2873,80 @@ LoadScriptPokemonID:
 	or l
 	jp nz, GetPokemonIDFromIndex
 	ld a, [wScriptVar]
+	ret
+
+Script_jumptextsign:
+; script command 0xac
+; parameters: text_pointer
+
+	ld a, [wScriptBank]
+	ld [wScriptTextBank], a
+	call GetScriptByte
+	ld [wScriptTextAddr], a
+	call GetScriptByte
+	ld [wScriptTextAddr + 1], a
+	ld hl, wOptions
+	set NO_TEXT_SCROLL, [hl]
+	ld b, BANK(JumpTextScript)
+	ld hl, JumpTextSignScript
+	jp ScriptJump
+
+JumpTextSignScript:
+	opentext
+	repeattext -1, -1
+	waitbutton
+	closetext
+	callasm .set_delay
+	end
+
+.set_delay
+	ld hl, wOptions
+	res NO_TEXT_SCROLL, [hl]
+	ret
+
+Script_settableindex:
+; script command 0xad
+; parameters: index
+	call GetScriptByte
+	ld [wScriptTableIndex], a
+	ret
+
+Script_applymovementtable:
+; script command 0xae
+; parameters: object_id, data
+	call GetScriptByte
+	call GetScriptObject
+	ld c, a
+
+	push bc
+	ld a, c
+	farcall SetFlagsForMovement_1
+	pop bc
+
+	push bc
+	call SetFlagsForMovement_2
+	pop bc
+
+	call GetScriptByte
+	ld l, a
+	call GetScriptByte
+	ld h, a
+
+	ld a, [wScriptTableIndex]
+	push bc
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	pop bc
+	ld a, [wScriptBank]
+	ld b, a
+	call GetFarHalfword
+
+	call GetMovementData
+	ret c
+
+	ld a, SCRIPT_WAIT_MOVEMENT
+	ld [wScriptMode], a
+	call StopScript
 	ret

@@ -224,3 +224,38 @@ GetBattleAnimByte::
 
 	ld a, [wBattleAnimByte]
 	ret
+
+HasUserFainted::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, HasPlayerFainted
+HasEnemyFainted::
+	ld hl, wEnemyMonHP
+	jr CheckIfHPIsZero
+
+HasOpponentFainted::
+	ldh a, [hBattleTurn]
+	and a
+	jr z, HasEnemyFainted
+HasPlayerFainted::
+	ld hl, wBattleMonHP
+CheckIfHPIsZero::
+	ld a, [hli]
+	or [hl]
+	ret
+
+CheckAlreadyFailed::
+	ld a, [wAlreadyFailed]
+	and a
+	ret nz
+	inc a
+	ld [wAlreadyFailed], a
+	dec a
+	ret
+
+BattleCommand_SwitchTurn::
+; switchturn
+	ldh a, [hBattleTurn]
+	xor 1
+	ldh [hBattleTurn], a
+	ret

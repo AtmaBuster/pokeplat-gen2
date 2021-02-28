@@ -1,51 +1,7 @@
 SECTION "mobile_40", ROMX
 
 Function100000:
-; d: 1 or 2
-; e: bank
-; bc: addr
-	ldh a, [rSVBK]
-	push af
-	ld a, 1
-	ldh [rSVBK], a
-
-	call Function100022
-	call Function1000ba
-	call Function100675
-	call Function100057
-	call Function10016f
-	call Function100276
-
-	push bc
-	call Function100301
-	pop bc
-
-	pop af
-	ldh [rSVBK], a
-	ret
-
 Function100022:
-	push de
-	push bc
-	call SetRAMStateForMobile
-	pop bc
-	pop de
-	ld a, d
-	ld [wcd21], a
-	ld a, e
-	ld [wcd22], a
-	ld a, c
-	ld [wcd23], a
-	ld a, b
-	ld [wcd24], a
-	farcall Function10127e
-	farcall Stubbed_Function106462
-	farcall Function106464 ; load broken gfx
-	farcall Function11615a ; init RAM
-	ld hl, wVramState
-	set 1, [hl]
-	ret
-
 Function100057:
 	call DisableMobile
 	call ReturnToMapFromSubmenu

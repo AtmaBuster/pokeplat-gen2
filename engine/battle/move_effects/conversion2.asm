@@ -18,6 +18,7 @@ BattleCommand_Conversion2:
 	ld l, a
 	ld a, MOVE_TYPE
 	call GetMoveAttribute
+	and TYPE_MASK
 	ld d, a
 	pop hl
 	cp CURSE_T
@@ -40,6 +41,7 @@ BattleCommand_Conversion2:
 	push hl
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
+	and TYPE_MASK
 	push af
 	push hl
 	ld a, d

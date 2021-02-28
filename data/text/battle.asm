@@ -1106,3 +1106,33 @@ BattleText_0x8188e:
 	text "There is no time"
 	line "left today!"
 	done
+
+StatRoseText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer2
+	text " went up!"
+	prompt
+
+StatFellText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer2
+	text " fell!"
+	prompt
+
+StatRoseSharplyText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer2
+	text_pause
+	text "<SCROLL>went way up!"
+	prompt
+
+StatHarshlyFellText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer2
+	text_pause
+	text "<SCROLL>sharply fell!"
+	prompt

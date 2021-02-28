@@ -440,7 +440,8 @@ ReadMonMenuIcon:
 	call GetPokemonIndexFromID
 	ld de, MonMenuIcons - 1
 	add hl, de
-	ld a, [hl]
+	ld a, BANK(MonMenuIcons)
+	call GetFarByte
 	ret
 .egg
 	ld a, ICON_EGG

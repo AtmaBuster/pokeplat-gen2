@@ -39,14 +39,14 @@ INCLUDE "data/tilesets/ice_path_collision.asm"
 TilesetPlayersRoomGFX:
 INCBIN "gfx/tilesets/players_room.2bpp.lz"
 
+
+SECTION "Tileset Data 2", ROMX
+
 TilesetPlayersRoomMeta:
 INCBIN "data/tilesets/players_room_metatiles.bin"
 
 TilesetPlayersRoomColl:
 INCLUDE "data/tilesets/players_room_collision.asm"
-
-
-SECTION "Tileset Data 2", ROMX
 
 TilesetPokecenterGFX:
 INCBIN "gfx/tilesets/pokecenter.2bpp.lz"
@@ -76,13 +76,13 @@ TilesetPlayersHouseColl:
 INCLUDE "data/tilesets/players_house_collision.asm"
 
 TilesetMansionGFX:
-INCBIN "gfx/tilesets/mansion.2bpp.lz"
+;INCBIN "gfx/tilesets/mansion.2bpp.lz"
 
 TilesetMansionMeta:
-INCBIN "data/tilesets/mansion_metatiles.bin"
+;INCBIN "data/tilesets/mansion_metatiles.bin"
 
 TilesetMansionColl:
-INCLUDE "data/tilesets/mansion_collision.asm"
+;INCLUDE "data/tilesets/mansion_collision.asm"
 
 TilesetCaveGFX:
 INCBIN "gfx/tilesets/cave.2bpp.lz"

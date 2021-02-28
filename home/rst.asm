@@ -12,8 +12,8 @@ SECTION "rst10", ROM0 ; rst Bankswitch
 	ld [MBC3RomBank], a
 	ret
 
-SECTION "rst18", ROM0
-	rst $38
+SECTION "rst18", ROM0 ; rst FarCall2
+	jp FarCall_stack
 
 SECTION "rst20", ROM0
 	rst $38

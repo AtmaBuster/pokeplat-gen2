@@ -47,3 +47,52 @@ ReturnFarCall::
 
 FarJump_hl::
 	jp hl
+
+FarCall_stack::
+	push af ; inc sp * 2
+	push af ; inc sp * 2
+	push af ; inc sp * 2
+	push af
+	push bc
+	push de
+	push hl
+	ld hl, sp+14
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	inc de
+	inc de
+	inc de
+	ld [hl], d
+	dec hl
+	ld [hl], e
+	dec hl
+	ldh a, [hROMBank]
+	ldd [hl], a
+	dec hl
+	ld [hl], HIGH(FarCallReturn_stack)
+	dec hl
+	ld [hl], LOW(FarCallReturn_stack)
+	dec hl
+	dec de
+	ld a, [de]
+	dec de
+	ld [hld], a
+	ld a, [de]
+	dec de
+	ld [hl], a
+	ld a, [de]
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+
+FarCallReturn_stack:
+	ldh [hBuffer], a
+	pop af
+	rst Bankswitch
+	ldh a, [hBuffer]
+	ret

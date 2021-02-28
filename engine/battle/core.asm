@@ -288,7 +288,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
-	call HandleStatBoostingHeldItems
+;	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
@@ -369,49 +369,30 @@ HandleBerserkGene:
 	; fallthrough
 
 .go
-	push de
-	push bc
 	callfar GetUserItem
 	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	sub BERSERK_GENE
-	pop bc
-	pop de
+	cp BERSERK_GENE
 	ret nz
 
-	ld [hl], a
+	ld [wNamedObjectIndexBuffer], a
+	push hl
+	call GetItemName
+	ld a, STAT_SKIPTEXT | STAT_SILENT
+	ld b, $10 | ATTACK
+	farcall _ForceRaiseStat
+	ld a, [wFailedMessage]
+	and a
+	pop hl
+	ret nz
 
-	ld h, d
-	ld l, e
-	ld a, b
-	call GetPartyLocation
 	xor a
-	ld [hl], a
+	ld [hl], a ; consume item
+
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
-	push af
-	set SUBSTATUS_CONFUSED, [hl]
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVarAddr
-	push hl
-	push af
-	xor a
-	ld [hl], a
-	ld [wAttackMissed], a
-	ld [wEffectFailed], a
-	farcall BattleCommand_AttackUp2
-	pop af
-	pop hl
-	ld [hl], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextbox
-	callfar BattleCommand_StatUpMessage
-	pop af
-	bit SUBSTATUS_CONFUSED, a
+	bit SUBSTATUS_CONFUSED, [hl]
 	ret nz
-	xor a
-	ld [wNumHits], a
+	set SUBSTATUS_CONFUSED, [hl]
 	ld de, ANIM_CONFUSED
 	call Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurnCore
@@ -840,21 +821,21 @@ GetMovePriority:
 ; Return the priority (0-3) of move a.
 
 	ld b, a
-
-	; Vital Throw goes last.
-	call GetMoveIndexFromID
-	ld a, h
-	if HIGH(VITAL_THROW)
-		cp HIGH(VITAL_THROW)
-	else
-		and a
-	endc
-	jr nz, .not_vital_throw
-	ld a, l
-	sub LOW(VITAL_THROW)
-	ret z
-
-.not_vital_throw
+;
+;	; Vital Throw goes last.
+;	call GetMoveIndexFromID
+;	ld a, h
+;	if HIGH(VITAL_THROW)
+;		cp HIGH(VITAL_THROW)
+;	else
+;		and a
+;	endc
+;	jr nz, .not_vital_throw
+;	ld a, l
+;	sub LOW(VITAL_THROW)
+;	ret z
+;
+;.not_vital_throw
 	call GetMoveEffect
 	ld hl, MoveEffectPriorities
 .loop
@@ -999,22 +980,6 @@ EndUserDestinyBond:
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
-	ret
-
-HasUserFainted:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, HasPlayerFainted
-HasEnemyFainted:
-	ld hl, wEnemyMonHP
-	jr CheckIfHPIsZero
-
-HasPlayerFainted:
-	ld hl, wBattleMonHP
-
-CheckIfHPIsZero:
-	ld a, [hli]
-	or [hl]
 	ret
 
 ResidualDamage:
@@ -4515,76 +4480,6 @@ UseConfusionHealingItem:
 	ld [hl], a
 	ret
 
-HandleStatBoostingHeldItems:
-; The effects handled here are not used in-game.
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
-	call .DoPlayer
-	jp .DoEnemy
-
-.player_1
-	call .DoEnemy
-	jp .DoPlayer
-
-.DoPlayer:
-	call GetPartymonItem
-	ld a, $0
-	jp .HandleItem
-
-.DoEnemy:
-	call GetOTPartymonItem
-	ld a, $1
-.HandleItem:
-	ldh [hBattleTurn], a
-	ld d, h
-	ld e, l
-	push de
-	push bc
-	ld a, [bc]
-	ld b, a
-	callfar GetItemHeldEffect
-	ld hl, HeldStatUpItems
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .finish
-	inc hl
-	inc hl
-	cp b
-	jr nz, .loop
-	pop bc
-	ld a, [bc]
-	ld [wNamedObjectIndexBuffer], a
-	push bc
-	dec hl
-	dec hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, BANK(BattleCommand_AttackUp)
-	rst FarCall
-	pop bc
-	pop de
-	ld a, [wFailedMessage]
-	and a
-	ret nz
-	xor a
-	ld [bc], a
-	ld [de], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextbox
-	callfar BattleCommand_StatUpMessage
-	ret
-
-.finish
-	pop bc
-	pop de
-	ret
-
-INCLUDE "data/battle/held_stat_up.asm"
-
 GetPartymonItem:
 	ld hl, wPartyMon1Item
 	ld a, [wCurBattleMon]
@@ -5730,14 +5625,21 @@ MoveInfoBox:
 	ld [wStringBuffer1], a
 	call .PrintPP
 
+	callfar UpdateMoveData
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	ld b, a
+	farcall GetMoveCategoryName
 	hlcoord 1, 9
-	ld de, .Type
+;	ld de, .Type
+	ld de, wStringBuffer1
 	call PlaceString
 
-	hlcoord 7, 11
+;	hlcoord 7, 11
+	ld h, b
+	ld l, c
 	ld [hl], "/"
 
-	callfar UpdateMoveData
+;	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
@@ -5748,8 +5650,8 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
-.Type:
-	db "TYPE/@"
+;.Type:
+;	db "TYPE/@"
 
 .PrintPP:
 	hlcoord 5, 11
@@ -6190,7 +6092,7 @@ LoadEnemyMon:
 	if HIGH(UNOWN) == 0
 		or h
 	else
-		jr nz, .Magikarp
+		jr nz, .Happiness
 		ld a, h
 		if HIGH(UNOWN) == 1
 			dec a
@@ -6198,7 +6100,7 @@ LoadEnemyMon:
 			cp HIGH(UNOWN)
 		endc
 	endc
-	jr nz, .Magikarp
+	jr nz, .Happiness
 
 ; Get letter based on DVs
 	ld hl, wEnemyMonDVs
@@ -6208,89 +6110,6 @@ LoadEnemyMon:
 	call CheckUnownLetter
 	jr c, .GenerateDVs ; try again
 	jr .Happiness ; skip the Magikarp check
-
-.Magikarp:
-; These filters are untranslated.
-; They expect at wMagikarpLength a 2-byte value in mm,
-; but the value is in feet and inches (one byte each).
-
-; The first filter is supposed to make very large Magikarp even rarer,
-; by targeting those 1600 mm (= 5'3") or larger.
-; After the conversion to feet, it is unable to target any,
-; since the largest possible Magikarp is 5'3", and $0503 = 1283 mm.
-	ld a, l
-	sub LOW(MAGIKARP)
-	if HIGH(MAGIKARP) == 0
-		or h
-	else
-		jr nz, .Happiness
-		if HIGH(MAGIKARP) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(MAGIKARP)
-		endc
-	endc
-	jr nz, .Happiness
-
-; Get Magikarp's length
-	ld de, wEnemyMonDVs
-	ld bc, wPlayerID
-	callfar CalcMagikarpLength
-
-; No reason to keep going if length > 1536 mm (i.e. if HIGH(length) > 6 feet)
-	ld a, [wMagikarpLength]
-	cp HIGH(1536) ; should be "cp 5", since 1536 mm = 5'0", but HIGH(1536) = 6
-	jr nz, .CheckMagikarpArea
-
-; 5% chance of skipping both size checks
-	call Random
-	cp 5 percent
-	jr c, .CheckMagikarpArea
-; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
-	ld a, [wMagikarpLength + 1]
-	cp LOW(1616) ; should be "cp 4", since 1616 mm = 5'4", but LOW(1616) = 80
-	jr nc, .GenerateDVs
-
-; 20% chance of skipping this check
-	call Random
-	cp 20 percent - 1
-	jr c, .CheckMagikarpArea
-; Try again if length >= 1600 mm (i.e. if LOW(length) >= 3 inches)
-	ld a, [wMagikarpLength + 1]
-	cp LOW(1600) ; should be "cp 3", since 1600 mm = 5'3", but LOW(1600) = 64
-	jr nc, .GenerateDVs
-
-.CheckMagikarpArea:
-; The "jr z" checks are supposed to be "jr nz".
-
-; Instead, all maps in GROUP_LAKE_OF_RAGE (Mahogany area)
-; and Routes 20 and 44 are treated as Lake of Rage.
-
-; This also means Lake of Rage Magikarp can be smaller than ones
-; caught elsewhere rather than the other way around.
-
-; Intended behavior enforces a minimum size at Lake of Rage.
-; The real behavior prevents a minimum size in the Lake of Rage area.
-
-; Moreover, due to the check not being translated to feet+inches, all Magikarp
-; smaller than 4'0" may be caught by the filter, a lot more than intended.
-	ld a, [wMapGroup]
-	cp GROUP_LAKE_OF_RAGE
-	jr z, .Happiness
-	ld a, [wMapNumber]
-	cp MAP_LAKE_OF_RAGE
-	jr z, .Happiness
-; 40% chance of not flooring
-	call Random
-	cp 40 percent - 2
-	jr c, .Happiness
-; Try again if length < 1024 mm (i.e. if HIGH(length) < 3 feet)
-	ld a, [wMagikarpLength]
-	cp HIGH(1024) ; should be "cp 3", since 1024 mm = 3'4", but HIGH(1024) = 4
-	jr c, .GenerateDVs ; try again
-
-; Finally done with DVs
 
 .Happiness:
 ; Set happiness
