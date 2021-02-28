@@ -72,3 +72,5 @@
 	const CRY_AIPOM
 	const CRY_DUNSPARCE
 	const CRY_DONPHAN
+
+CRY_SAMPLED EQU $ff

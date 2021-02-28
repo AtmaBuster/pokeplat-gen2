@@ -1074,3 +1074,22 @@ ENDM
 checkmaplockedmons: MACRO
 	db checkmaplockedmons_command
 ENDM
+
+	enum jumptextsign_command ; $ac
+jumptextsign: MACRO
+	db jumptextsign_command
+	dw \1 ; text_pointer
+ENDM
+
+	enum settableindex_command ; $ad
+settableindex: MACRO
+	db settableindex_command
+	db \1 ; index value
+ENDM
+
+	enum applymovementtable_command ; $ae
+applymovementtable: MACRO
+	db applymovementtable_command
+	db \1 ; object id
+	dw \2 ; data
+ENDM

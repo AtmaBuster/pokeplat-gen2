@@ -89,7 +89,10 @@ wMusicFade:: ; c2a7
 wMusicFadeCount:: db ; c2a8
 wMusicFadeID:: dw ; c2a9
 
-	ds 5
+wSampleData::
+wSamplePointer:: dw ; c2ab
+wSampleSize:: dw ; c2ad
+wSampleBank:: db ; c2af
 
 wCryPitch:: dw ; c2b0
 wCryLength:: dw ; c2b2
@@ -261,7 +264,7 @@ ENDU ; c3b4
 wSpriteAnimCount:: db
 wCurSpriteOAMAddr:: db
 
-wCurIcon:: db ; c3b6
+wCurIcon:: dw ; c3b6
 
 wCurIconTile:: db
 wSpriteAnimAddrBackup::
@@ -277,7 +280,8 @@ wGlobalAnimYOffset:: db
 wGlobalAnimXOffset:: db
 wSpriteAnimsEnd::
 
-	ds 11
+wPartyMenuIconPals:: ds 6
+	ds 4
 
 ; mobile data
 wc3cc:: ds 1
@@ -438,13 +442,13 @@ wPlayerSubStatus1:: ; c668
 	db
 wPlayerSubStatus2:: ; c669
 ; bit
-; 7
-; 6
-; 5
-; 4
-; 3
-; 2
-; 1
+; 7 power trick
+; 6 embargo
+; 5 miracle eye
+; 4 grudge
+; 3 imprison
+; 2 yawn2
+; 1 yawn
 ; 0 curled
 	db
 wPlayerSubStatus3:: ; c66a
@@ -464,7 +468,7 @@ wPlayerSubStatus4:: ; c66b
 ; 6 rage
 ; 5 recharge
 ; 4 substitute
-; 3
+; 3 ingrain
 ; 2 focus energy
 ; 1 mist
 ; 0 x accuracy
@@ -476,9 +480,21 @@ wPlayerSubStatus5:: ; c66c
 ; 5 lock-on
 ; 4 encored
 ; 3 transformed
+; 2 torment
+; 1 charge
+; 0 toxic
+	db
+
+wPlayerSubStatus6::
+; bit
+; 7
+; 6
+; 5
+; 4
+; 3
 ; 2
 ; 1
-; 0 toxic
+; 0
 	db
 
 wEnemySubStatus1:: ; c66d
@@ -496,6 +512,9 @@ wEnemySubStatus4:: ; c670
 wEnemySubStatus5:: ; c671
 ; see wPlayerSubStatus5
 	db
+wEnemySubStatus6::
+; see wPlayerSubStatus6
+	db
 
 wPlayerRolloutCount:: db ; c672
 wPlayerConfuseCount:: db ; c673
@@ -505,6 +524,12 @@ wPlayerEncoreCount:: db ; c676
 wPlayerPerishCount:: db ; c677
 wPlayerFuryCutterCount:: db ; c678
 wPlayerProtectCount:: db ; c679
+wPlayerWishCount:: db
+wPlayerTailwindCount:: db
+wPlayerHealBlockCount:: db
+wPlayerLuckyChantCount:: db
+wPlayerMagnetRiseCount:: db
+wPlayerLastResortFlags:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -514,6 +539,12 @@ wEnemyEncoreCount:: db ; c67e
 wEnemyPerishCount:: db ; c67f
 wEnemyFuryCutterCount:: db ; c680
 wEnemyProtectCount:: db ; c681
+wEnemyWishCount:: db
+wEnemyTailwindCount:: db
+wEnemyHealBlockCount:: db
+wEnemyLuckyChantCount:: db
+wEnemyMagnetRiseCount:: db
+wEnemyLastResortFlags:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684
@@ -617,13 +648,13 @@ wBattleLowHealthAlarm:: db ; c6fd
 wPlayerMinimized:: db ; c6fe
 wPlayerScreens:: ; c6ff
 ; bit
-; 7
-; 6
-; 5
+; 7 toxic spikes2
+; 6 toxic spikes
+; 5 stealth rock
 ; 4 reflect
 ; 3 light screen
 ; 2 safeguard
-; 1
+; 1 spikes2
 ; 0 spikes
 	db
 
@@ -646,14 +677,19 @@ wBattleWeather:: ; c70a
 ; 01 rain
 ; 02 sun
 ; 03 sandstorm
-; 04 rain stopped
-; 05 sunliight faded
-; 06 sandstorm subsided
+; 04 hail
+; 05 rain stopped
+; 06 sunliight faded
+; 07 sandstorm subsided
+; 08 hail stopped
 	db
 
 wWeatherCount:: ; c70b
 ; # turns remaining
 	db
+
+wTrickRoomCount:: db
+wGravityCount:: db
 
 wLoweredStat:: db ; c70c
 wEffectFailed:: db ; c70d
@@ -678,6 +714,8 @@ wLastEnemyMove:: db ; c71c
 
 wPlayerFutureSightCount:: db ; c71d
 wEnemyFutureSightCount:: db ; c71e
+wPlayerFutureSightMode:: db
+wEnemyFutureSightMode:: db
 
 wGivingExperienceToExpShareHolders:: db ; c71f
 
@@ -747,6 +785,24 @@ NEXTU ; c608
 wOddEgg:: party_struct wOddEgg
 wOddEggName:: ds MON_NAME_LENGTH
 wOddEggOTName:: ds NAME_LENGTH
+
+NEXTU
+; debug mon color picker
+wDebugMiddleColors::
+wDebugLightColor:: ds 2
+wDebugDarkColor::  ds 2
+	ds 6
+wDebugRedChannel::   db
+wDebugGreenChannel:: db
+wDebugBlueChannel::  db
+
+NEXTU
+; debug tileset color picker
+wDebugPalette::
+wDebugWhiteTileColor:: ds 2
+wDebugLightTileColor:: ds 2
+wDebugDarkTileColor::  ds 2
+wDebugBlackTileColor:: ds 2
 
 NEXTU ; c608
 ; mobile data
@@ -992,6 +1048,10 @@ wBillsPCDataEnd::
 NEXTU ; c800
 ; Hall of Fame data
 wHallOfFamePokemonList:: hall_of_fame wHallOfFamePokemonList
+
+NEXTU
+; debug color picker
+wDebugOriginalColors:: ds 256 * 4
 
 NEXTU ; c800
 ; raw link data
@@ -1408,6 +1468,18 @@ wHoldingUnownPuzzlePiece:: db
 wUnownPuzzleCursorPosition:: db
 wUnownPuzzleHeldPiece:: db
 
+NEXTU
+; debug mon color picker
+wDebugColorRGBJumptableIndex:: db
+wDebugColorCurColor:: db
+wDebugColorCurMon:: db
+
+NEXTU
+; debug tileset color picker
+wDebugTilesetCurPalette:: db
+wDebugTilesetRGBJumptableIndex:: db
+wDebugTilesetCurColor:: db
+
 NEXTU ; cf64
 ; miscellaneous
 wFrameCounter::
@@ -1741,6 +1813,12 @@ wSuicuneFrame::
 wStartFlypoint:: db
 wEndFlypoint:: db
 
+NEXTU
+; debug color picker
+wDebugColorIsTrainer:: db
+wDebugColorIsShiny:: db
+wDebugColorCurTMHM:: db
+
 NEXTU ; d002
 ; unidentified
 wd002:: db
@@ -1923,7 +2001,7 @@ wBallsPocketCursor::    db
 wTMHMPocketCursor::     db
 
 wPCItemsScrollPosition::        db
-wPartyMenuScrollPosition::      db ; unused
+wScriptTableIndex::             db ; was unused byte
 wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
@@ -2668,9 +2746,9 @@ wFastShipB1FSceneID::                             db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
-
 	ds 49
 
+assert @==$d9f2
 ; fight counts
 wJackFightCount::    db ; d9f2
 wBeverlyFightCount:: db ; unused
@@ -2798,7 +2876,7 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
+;	ds 18
 
 wStepCount:: db ; dc73
 wPoisonStepCount:: db ; dc74
@@ -2812,7 +2890,7 @@ wSafariTimeRemaining:: dw ; dc7a
 
 wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 ; dc86
-	ds 23
+;	ds 23
 
 wLuckyNumberShowFlag:: db ; dc9d
 	ds 1
@@ -2837,8 +2915,6 @@ wDigMapNumber::  db ; dcac
 wBackupWarpNumber:: db ; dcad
 wBackupMapGroup::   db ; dcae
 wBackupMapNumber::  db ; dcaf
-
-	ds 3
 
 wLastSpawnMapGroup:: db
 wLastSpawnMapNumber:: db

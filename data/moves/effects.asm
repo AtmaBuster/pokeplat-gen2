@@ -188,72 +188,42 @@ AttackUp:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat ATTACK
 	endmove
 
 DefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat DEFENSE
 	endmove
 
 SpeedUp:
 	checkobedience
 	usedmovetext
 	doturn
-	speedup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat SPEED
 	endmove
 
 SpecialAttackUp:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat SP_ATTACK
 	endmove
 
 SpecialDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
-	specialdefenseup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat SP_DEFENSE
 	endmove
 
 AccuracyUp:
 	checkobedience
 	usedmovetext
 	doturn
-	accuracyup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat ACCURACY
 	endmove
 
 EvasionUp:
@@ -261,96 +231,56 @@ EvasionUp:
 	usedmovetext
 	doturn
 	lowersub
-	evasionup
-	statupanim
-	lowersubnoanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat EVASION
 	endmove
 
 AttackUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | ATTACK
 	endmove
 
 DefenseUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | DEFENSE
 	endmove
 
 SpeedUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	speedup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | SPEED
 	endmove
 
 SpecialAttackUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | SP_ATTACK
 	endmove
 
 SpecialDefenseUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	specialdefenseup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | SP_DEFENSE
 	endmove
 
 AccuracyUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	accuracyup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | ACCURACY
 	endmove
 
 EvasionUp2:
 	checkobedience
 	usedmovetext
 	doturn
-	evasionup2
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	forceraisestat $10 | EVASION
 	endmove
 
 AttackDown:
@@ -358,12 +288,7 @@ AttackDown:
 	usedmovetext
 	doturn
 	checkhit
-	attackdown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat ATTACK
 	endmove
 
 DefenseDown:
@@ -371,12 +296,7 @@ DefenseDown:
 	usedmovetext
 	doturn
 	checkhit
-	defensedown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat DEFENSE
 	endmove
 
 SpeedDown:
@@ -384,12 +304,7 @@ SpeedDown:
 	usedmovetext
 	doturn
 	checkhit
-	speeddown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat SPEED
 	endmove
 
 SpecialAttackDown:
@@ -397,12 +312,7 @@ SpecialAttackDown:
 	usedmovetext
 	doturn
 	checkhit
-	specialattackdown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat SP_ATTACK
 	endmove
 
 SpecialDefenseDown:
@@ -410,12 +320,7 @@ SpecialDefenseDown:
 	usedmovetext
 	doturn
 	checkhit
-	specialdefensedown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat SP_DEFENSE
 	endmove
 
 AccuracyDown:
@@ -423,12 +328,7 @@ AccuracyDown:
 	usedmovetext
 	doturn
 	checkhit
-	accuracydown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat ACCURACY
 	endmove
 
 EvasionDown:
@@ -436,12 +336,7 @@ EvasionDown:
 	usedmovetext
 	doturn
 	checkhit
-	evasiondown
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat EVASION
 	endmove
 
 AttackDown2:
@@ -449,12 +344,7 @@ AttackDown2:
 	usedmovetext
 	doturn
 	checkhit
-	attackdown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | ATTACK
 	endmove
 
 DefenseDown2:
@@ -462,12 +352,7 @@ DefenseDown2:
 	usedmovetext
 	doturn
 	checkhit
-	defensedown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | DEFENSE
 	endmove
 
 SpeedDown2:
@@ -475,12 +360,7 @@ SpeedDown2:
 	usedmovetext
 	doturn
 	checkhit
-	speeddown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | SPEED
 	endmove
 
 SpecialAttackDown2:
@@ -488,12 +368,7 @@ SpecialAttackDown2:
 	usedmovetext
 	doturn
 	checkhit
-	specialattackdown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | SP_ATTACK
 	endmove
 
 SpecialDefenseDown2:
@@ -501,12 +376,7 @@ SpecialDefenseDown2:
 	usedmovetext
 	doturn
 	checkhit
-	specialdefensedown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | SP_DEFENSE
 	endmove
 
 AccuracyDown2:
@@ -514,12 +384,7 @@ AccuracyDown2:
 	usedmovetext
 	doturn
 	checkhit
-	accuracydown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | ACCURACY
 	endmove
 
 EvasionDown2:
@@ -527,12 +392,7 @@ EvasionDown2:
 	usedmovetext
 	doturn
 	checkhit
-	evasiondown2
-	lowersub
-	statdownanim
-	raisesub
-	statdownmessage
-	statdownfailtext
+	loweroppstat $10 | EVASION
 	endmove
 
 AttackDownHit:
@@ -553,8 +413,7 @@ AttackDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	attackdown
-	statdownmessage
+	loweroppstathit ATTACK
 	endmove
 
 DefenseDownHit:
@@ -575,9 +434,7 @@ DefenseDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	effectchance ; bug: duplicate effectchance shouldn't be here
-	defensedown
-	statdownmessage
+	loweroppstathit DEFENSE
 	endmove
 
 SpeedDownHit:
@@ -598,8 +455,7 @@ SpeedDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	speeddown
-	statdownmessage
+	loweroppstathit SPEED
 	endmove
 
 SpecialAttackDownHit:
@@ -620,8 +476,7 @@ SpecialAttackDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	specialattackdown
-	statdownmessage
+	loweroppstathit SP_ATTACK
 	endmove
 
 SpecialDefenseDownHit:
@@ -642,8 +497,7 @@ SpecialDefenseDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	specialdefensedown
-	statdownmessage
+	loweroppstathit SP_DEFENSE
 	endmove
 
 AccuracyDownHit:
@@ -664,8 +518,7 @@ AccuracyDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	accuracydown
-	statdownmessage
+	loweroppstathit ACCURACY
 	endmove
 
 EvasionDownHit:
@@ -686,8 +539,7 @@ EvasionDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	evasiondown
-	statdownmessage
+	loweroppstathit EVASION
 	endmove
 
 DefenseUpHit:
@@ -708,8 +560,7 @@ DefenseUpHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	defenseup
-	statupmessage
+	raisestathit DEFENSE
 	endmove
 
 AttackUpHit:
@@ -730,8 +581,7 @@ AttackUpHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	attackup
-	statupmessage
+	raisestathit ATTACK
 	endmove
 
 AllUpHit:
@@ -752,7 +602,11 @@ AllUpHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	allstatsup
+	raisestathit ATTACK
+	raisestathit DEFENSE
+	raisestathit SPEED
+	raisestathit SP_ATTACK
+	raisestathit SP_DEFENSE
 	endmove
 
 PayDay:
@@ -1340,12 +1194,12 @@ Sketch:
 	sketch
 	endmove
 
-DefrostOpponent:
-	checkobedience
-	usedmovetext
-	doturn
-	defrostopponent
-	endmove
+;DefrostOpponent:
+;	checkobedience
+;	usedmovetext
+;	doturn
+;	defrostopponent
+;	endmove
 
 SleepTalk:
 	checkobedience
@@ -1560,16 +1414,7 @@ Swagger:
 	usedmovetext
 	doturn
 	checkhit
-	switchturn
-	attackup2
-	switchturn
-	lowersub
-	statupanim
-	raisesub
-	failuretext
-	switchturn
-	statupmessage
-	switchturn
+	raiseoppstat $10 | ATTACK
 	confusetarget
 	endmove
 
@@ -1824,10 +1669,21 @@ FakeOut:
 	checkobedience
 	usedmovetext
 	doturn
-	checkhit
 	fakeout
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
 	moveanim
 	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	flinchtarget
 	endmove
 
 BellyDrum:
@@ -1878,8 +1734,7 @@ SkullBash:
 	buildopponentrage
 	kingsrock
 	endturn
-	defenseup
-	statupmessage
+	forceraisestat DEFENSE
 	endmove
 
 Twister:
@@ -2067,11 +1922,6 @@ DefenseCurl:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup
+	forceraisestat DEFENSE
 	curl
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
 	endmove

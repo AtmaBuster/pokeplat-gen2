@@ -17,6 +17,8 @@ INCLUDE "engine/events/happiness_egg.asm"
 INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
 
+INCLUDE "audio/sample_cry.asm"
+
 
 SECTION "bank2", ROMX
 
@@ -249,6 +251,7 @@ INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
+INCLUDE "engine/pokemon/categories.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
 INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
@@ -256,11 +259,15 @@ INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
-INCLUDE "data/pokemon/names.asm"
 
 UnknownEggPic::
 ; Another egg pic. This is shifted up a few pixels.
 INCBIN "gfx/unknown/unknown_egg.2bpp.lz"
+
+
+SECTION "Battle Stat Changes", ROMX
+
+INCLUDE "engine/battle/stats.asm"
 
 
 SECTION "Crystal Phone Text", ROMX
@@ -287,6 +294,7 @@ INCLUDE "engine/overworld/player_movement.asm"
 INCLUDE "engine/events/engine_flags.asm"
 INCLUDE "engine/overworld/variables.asm"
 INCLUDE "data/text/battle.asm"
+INCLUDE "engine/debug/color_picker.asm"
 
 
 SECTION "bank21", ROMX
@@ -512,9 +520,7 @@ INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
 
-
 INCLUDE "mobile/mobile_40.asm"
-
 
 SECTION "bank41", ROMX
 
@@ -709,21 +715,25 @@ SECTION "Mobile Stadium 2", ROMX
 
 INCBIN "mobile/stadium/stadium2.bin"
 
+SECTION "Pokemon Names", ROMX
+
+INCLUDE "data/pokemon/names.asm"
+
+SECTION "Footprints", ROMX
+Footprints:
+INCLUDE "gfx/footprints.asm"
+
 SECTION "16-bit ID stuff", ROMX
 
 INCLUDE "engine/16/table_functions.asm"
 
-SECTION "EvosAttacksPointers4", ROMX
-
-INCLUDE "data/pokemon/evos_attacks_hoenn.asm"
-
-SECTION "Egg Moves 4", ROMX
 INCLUDE "data/pokemon/egg_moves_hoenn.asm"
 
 
 ; own section
 INCLUDE "data/trainers/parties.asm"
 
-SECTION "Footprints", ROMX
-Footprints:
-INCLUDE "gfx/footprints.asm"
+SECTION "Debug Menu", ROMX
+if DEF(_DEBUG)
+INCLUDE "engine/debug/debug_menu.asm"
+endc

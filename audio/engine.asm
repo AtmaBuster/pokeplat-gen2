@@ -145,8 +145,11 @@ _UpdateSound::
 	ld a, [wCurChannel]
 	cp NUM_MUSIC_CHANS
 	jr nc, .next
-	; are any sfx channels active?
+	; are any sfx channels or sample active?
 	; if so, mute
+	ldh a, [hSamplePlaying]
+	and a
+	jr nz, .restnote
 	ld hl, wChannel5Flags1
 	bit SOUND_CHANNEL_ON, [hl]
 	jr nz, .restnote
@@ -427,6 +430,10 @@ endr
 	ld de, WaveSamples
 	add hl, de
 	; load wavepattern into rWave_0-rWave_f
+	; ...unless sample is playing, then ignore
+	ldh a, [hSamplePlaying]
+	and a
+	jr nz, .skip_wavepattern
 	ld a, [hli]
 	ldh [rWave_0], a
 	ld a, [hli]
@@ -459,6 +466,7 @@ endr
 	ldh [rWave_e], a
 	ld a, [hli]
 	ldh [rWave_f], a
+.skip_wavepattern
 	pop hl
 	ld a, [wCurTrackIntensity]
 	and $f0

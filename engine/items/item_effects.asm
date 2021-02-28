@@ -2110,8 +2110,6 @@ DireHitEffect:
 	jp UseItemText
 
 XItemEffect:
-	call UseItemText
-
 	ld a, [wCurItem]
 	ld hl, XItemStats
 
@@ -2129,11 +2127,19 @@ XItemEffect:
 	ldh [hBattleTurn], a
 	ld [wAttackMissed], a
 	ld [wEffectFailed], a
-	farcall RaiseStat
-	call WaitSFX
+	ld a, STAT_SKIPTEXT | STAT_SILENT
+	farcall _ForceRaiseStat
+	ld a, [wFailedMessage]
+	and a
+	jp nz, WontHaveAnyEffect_NotUsedMessage
 
-	farcall BattleCommand_StatUpMessage
-	farcall BattleCommand_StatUpFailText
+	push bc
+	call UseItemText
+	pop bc
+
+	farcall GetStatRaiseMessage
+	or 1
+	farcall DoPrintStatChange
 
 	ld a, [wCurBattleMon]
 	ld [wCurPartyMon], a

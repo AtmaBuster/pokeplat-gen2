@@ -3,6 +3,11 @@ command: MACRO
 \1 EQUS "db \1_command"
 ENDM
 
+commandx: MACRO
+	enum \1_command
+\1 EQUS "db \1_command,"
+ENDM
+
 ; BattleCommandPointers indexes (see data/battle/effect_command_pointers.asm)
 	enum_start 1
 	command checkturn               ; 01
@@ -32,8 +37,8 @@ ENDM
 	command paralyzetarget          ; 19
 	command selfdestruct            ; 1a
 	command mirrormove              ; 1b
-	command statup                  ; 1c
-	command statdown                ; 1d
+;	command statup                  ; 1c
+;	command statdown                ; 1d
 	command payday                  ; 1e
 	command conversion              ; 1f
 	command resetstats              ; 20
@@ -75,7 +80,7 @@ ENDM
 	command conversion2             ; 44
 	command lockon                  ; 45
 	command sketch                  ; 46
-	command defrostopponent         ; 47
+;	command defrostopponent         ; 47
 	command sleeptalk               ; 48
 	command destinybond             ; 49
 	command spite                   ; 4a
@@ -116,41 +121,41 @@ ENDM
 	command hiddenpower             ; 6d
 	command startrain               ; 6e
 	command startsun                ; 6f
-	command attackup                ; 70
-	command defenseup               ; 71
-	command speedup                 ; 72
-	command specialattackup         ; 73
-	command specialdefenseup        ; 74
-	command accuracyup              ; 75
-	command evasionup               ; 76
-	command attackup2               ; 77
-	command defenseup2              ; 78
-	command speedup2                ; 79
-	command specialattackup2        ; 7a
-	command specialdefenseup2       ; 7b
-	command accuracyup2             ; 7c
-	command evasionup2              ; 7d
-	command attackdown              ; 7e
-	command defensedown             ; 7f
-	command speeddown               ; 80
-	command specialattackdown       ; 81
-	command specialdefensedown      ; 82
-	command accuracydown            ; 83
-	command evasiondown             ; 84
-	command attackdown2             ; 85
-	command defensedown2            ; 86
-	command speeddown2              ; 87
-	command specialattackdown2      ; 88
-	command specialdefensedown2     ; 89
-	command accuracydown2           ; 8a
-	command evasiondown2            ; 8b
-	command statupmessage           ; 8c
-	command statdownmessage         ; 8d
-	command statupfailtext          ; 8e
-	command statdownfailtext        ; 8f
+;	command attackup                ; 70
+;	command defenseup               ; 71
+;	command speedup                 ; 72
+;	command specialattackup         ; 73
+;	command specialdefenseup        ; 74
+;	command accuracyup              ; 75
+;	command evasionup               ; 76
+;	command attackup2               ; 77
+;	command defenseup2              ; 78
+;	command speedup2                ; 79
+;	command specialattackup2        ; 7a
+;	command specialdefenseup2       ; 7b
+;	command accuracyup2             ; 7c
+;	command evasionup2              ; 7d
+;	command attackdown              ; 7e
+;	command defensedown             ; 7f
+;	command speeddown               ; 80
+;	command specialattackdown       ; 81
+;	command specialdefensedown      ; 82
+;	command accuracydown            ; 83
+;	command evasiondown             ; 84
+;	command attackdown2             ; 85
+;	command defensedown2            ; 86
+;	command speeddown2              ; 87
+;	command specialattackdown2      ; 88
+;	command specialdefensedown2     ; 89
+;	command accuracydown2           ; 8a
+;	command evasiondown2            ; 8b
+;	command statupmessage           ; 8c
+;	command statdownmessage         ; 8d
+;	command statupfailtext          ; 8e
+;	command statdownfailtext        ; 8f
 	command effectchance            ; 90
-	command statdownanim            ; 91
-	command statupanim              ; 92
+;	command statdownanim            ; 91
+;	command statupanim              ; 92
 	command switchturn              ; 93
 	command fakeout                 ; 94
 	command bellydrum               ; 95
@@ -168,7 +173,7 @@ ENDM
 	command beatup                  ; a1
 	command ragedamage              ; a2
 	command resettypematchup        ; a3
-	command allstatsup              ; a4
+;	command allstatsup              ; a4
 	command bidefailtext            ; a5
 	command raisesubnoanim          ; a6
 	command lowersubnoanim          ; a7
@@ -180,6 +185,19 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
+
+	commandx raisestat
+	commandx lowerstat
+	commandx forceraisestat
+	commandx forcelowerstat
+	commandx raisestathit
+	commandx lowerstathit
+	commandx raiseoppstat
+	commandx loweroppstat
+	commandx forceraiseoppstat
+	commandx forceloweroppstat
+	commandx raiseoppstathit
+	commandx loweroppstathit
 
 	enum_start $fe
 	command endturn                 ; fe

@@ -1,5 +1,6 @@
 FarCall    EQU $08
 Bankswitch EQU $10
+FarCall2   EQU $18
 JumpTable  EQU $28
 
 farcall: MACRO ; bank, address
@@ -22,4 +23,10 @@ homecall: MACRO
 	call \1
 	pop af
 	rst Bankswitch
+ENDM
+
+farcall2: MACRO
+	rst FarCall2
+	db BANK(\1)
+	dw \1
 ENDM

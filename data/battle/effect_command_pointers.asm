@@ -31,8 +31,8 @@ BattleCommandPointers:
 	dw BattleCommand_ParalyzeTarget
 	dw BattleCommand_Selfdestruct
 	dw BattleCommand_MirrorMove
-	dw BattleCommand_StatUp
-	dw BattleCommand_StatDown
+;	dw BattleCommand_StatUp
+;	dw BattleCommand_StatDown
 	dw BattleCommand_PayDay
 	dw BattleCommand_Conversion
 	dw BattleCommand_ResetStats
@@ -74,7 +74,7 @@ BattleCommandPointers:
 	dw BattleCommand_Conversion2
 	dw BattleCommand_LockOn
 	dw BattleCommand_Sketch
-	dw BattleCommand_DefrostOpponent
+;	dw BattleCommand_DefrostOpponent
 	dw BattleCommand_SleepTalk
 	dw BattleCommand_DestinyBond
 	dw BattleCommand_Spite
@@ -115,41 +115,41 @@ BattleCommandPointers:
 	dw BattleCommand_HiddenPower
 	dw BattleCommand_StartRain
 	dw BattleCommand_StartSun
-	dw BattleCommand_AttackUp
-	dw BattleCommand_DefenseUp
-	dw BattleCommand_SpeedUp
-	dw BattleCommand_SpecialAttackUp
-	dw BattleCommand_SpecialDefenseUp
-	dw BattleCommand_AccuracyUp
-	dw BattleCommand_EvasionUp
-	dw BattleCommand_AttackUp2
-	dw BattleCommand_DefenseUp2
-	dw BattleCommand_SpeedUp2
-	dw BattleCommand_SpecialAttackUp2
-	dw BattleCommand_SpecialDefenseUp2
-	dw BattleCommand_AccuracyUp2
-	dw BattleCommand_EvasionUp2
-	dw BattleCommand_AttackDown
-	dw BattleCommand_DefenseDown
-	dw BattleCommand_SpeedDown
-	dw BattleCommand_SpecialAttackDown
-	dw BattleCommand_SpecialDefenseDown
-	dw BattleCommand_AccuracyDown
-	dw BattleCommand_EvasionDown
-	dw BattleCommand_AttackDown2
-	dw BattleCommand_DefenseDown2
-	dw BattleCommand_SpeedDown2
-	dw BattleCommand_SpecialAttackDown2
-	dw BattleCommand_SpecialDefenseDown2
-	dw BattleCommand_AccuracyDown2
-	dw BattleCommand_EvasionDown2
-	dw BattleCommand_StatUpMessage
-	dw BattleCommand_StatDownMessage
-	dw BattleCommand_StatUpFailText
-	dw BattleCommand_StatDownFailText
+;	dw BattleCommand_AttackUp
+;	dw BattleCommand_DefenseUp
+;	dw BattleCommand_SpeedUp
+;	dw BattleCommand_SpecialAttackUp
+;	dw BattleCommand_SpecialDefenseUp
+;	dw BattleCommand_AccuracyUp
+;	dw BattleCommand_EvasionUp
+;	dw BattleCommand_AttackUp2
+;	dw BattleCommand_DefenseUp2
+;	dw BattleCommand_SpeedUp2
+;	dw BattleCommand_SpecialAttackUp2
+;	dw BattleCommand_SpecialDefenseUp2
+;	dw BattleCommand_AccuracyUp2
+;	dw BattleCommand_EvasionUp2
+;	dw BattleCommand_AttackDown
+;	dw BattleCommand_DefenseDown
+;	dw BattleCommand_SpeedDown
+;	dw BattleCommand_SpecialAttackDown
+;	dw BattleCommand_SpecialDefenseDown
+;	dw BattleCommand_AccuracyDown
+;	dw BattleCommand_EvasionDown
+;	dw BattleCommand_AttackDown2
+;	dw BattleCommand_DefenseDown2
+;	dw BattleCommand_SpeedDown2
+;	dw BattleCommand_SpecialAttackDown2
+;	dw BattleCommand_SpecialDefenseDown2
+;	dw BattleCommand_AccuracyDown2
+;	dw BattleCommand_EvasionDown2
+;	dw BattleCommand_StatUpMessage
+;	dw BattleCommand_StatDownMessage
+;	dw BattleCommand_StatUpFailText
+;	dw BattleCommand_StatDownFailText
 	dw BattleCommand_EffectChance
-	dw BattleCommand_StatDownAnim
-	dw BattleCommand_StatUpAnim
+;	dw BattleCommand_StatDownAnim
+;	dw BattleCommand_StatUpAnim
 	dw BattleCommand_SwitchTurn
 	dw BattleCommand_FakeOut
 	dw BattleCommand_BellyDrum
@@ -167,7 +167,7 @@ BattleCommandPointers:
 	dw BattleCommand_BeatUp
 	dw BattleCommand_RageDamage
 	dw BattleCommand_ResetTypeMatchup
-	dw BattleCommand_AllStatsUp
+;	dw BattleCommand_AllStatsUp
 	dw BattleCommand_BideFailText
 	dw BattleCommand_RaiseSubNoAnim
 	dw BattleCommand_LowerSubNoAnim
@@ -179,3 +179,16 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
+
+	dw BattleCommand_RaiseStat
+	dw BattleCommand_LowerStat
+	dw BattleCommand_ForceRaiseStat
+	dw BattleCommand_ForceLowerStat
+	dw BattleCommand_RaiseStatHit
+	dw BattleCommand_LowerStatHit
+	dw BattleCommand_RaiseOppStat
+	dw BattleCommand_LowerOppStat
+	dw BattleCommand_ForceRaiseOppStat
+	dw BattleCommand_ForceLowerOppStat
+	dw BattleCommand_RaiseOppStatHit
+	dw BattleCommand_LowerOppStatHit

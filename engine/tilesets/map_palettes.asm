@@ -5,40 +5,41 @@ SwapTextboxPalettes::
 .loop
 	push bc
 	ld c, SCREEN_WIDTH
-.innerloop
-	ld a, [hl]
-	push hl
-	srl a
-	jr c, .UpperNybble
-	ld hl, wTilesetPalettes
-	add [hl]
-	ld l, a
-	ld a, [wTilesetPalettes + 1]
-	adc 0
-	ld h, a
-	ld a, [hl]
-	and $f
-	jr .next
-
-.UpperNybble:
-	ld hl, wTilesetPalettes
-	add [hl]
-	ld l, a
-	ld a, [wTilesetPalettes + 1]
-	adc 0
-	ld h, a
-	ld a, [hl]
-	swap a
-	and $f
-
-.next
-	pop hl
-	ld [de], a
-	res 7, [hl]
-	inc hl
-	inc de
-	dec c
-	jr nz, .innerloop
+	call GetBGMapTilePalettes
+;.innerloop
+;	ld a, [hl]
+;	push hl
+;	srl a
+;	jr c, .UpperNybble
+;	ld hl, wTilesetPalettes
+;	add [hl]
+;	ld l, a
+;	ld a, [wTilesetPalettes + 1]
+;	adc 0
+;	ld h, a
+;	ld a, [hl]
+;	and $f
+;	jr .next
+;
+;.UpperNybble:
+;	ld hl, wTilesetPalettes
+;	add [hl]
+;	ld l, a
+;	ld a, [wTilesetPalettes + 1]
+;	adc 0
+;	ld h, a
+;	ld a, [hl]
+;	swap a
+;	and $f
+;
+;.next
+;	pop hl
+;	ld [de], a
+;	res 7, [hl]
+;	inc hl
+;	inc de
+;	dec c
+;	jr nz, .innerloop
 	pop bc
 	dec b
 	jr nz, .loop
@@ -47,12 +48,14 @@ SwapTextboxPalettes::
 ScrollBGMapPalettes::
 	ld hl, wBGMapBuffer
 	ld de, wBGMapPalBuffer
+	; fallthrough
+GetBGMapTilePalettes:
 .loop
 	ld a, [hl]
 	push hl
-	srl a
-	jr c, .UpperNybble
-
+;	srl a
+;	jr c, .UpperNybble
+;
 ; .LowerNybble
 	ld hl, wTilesetPalettes
 	add [hl]
@@ -61,21 +64,21 @@ ScrollBGMapPalettes::
 	adc 0
 	ld h, a
 	ld a, [hl]
-	and $f
-	jr .next
-
-.UpperNybble:
-	ld hl, wTilesetPalettes
-	add [hl]
-	ld l, a
-	ld a, [wTilesetPalettes + 1]
-	adc 0
-	ld h, a
-	ld a, [hl]
-	swap a
-	and $f
-
-.next
+;	and $f
+;	jr .next
+;
+;.UpperNybble:
+;	ld hl, wTilesetPalettes
+;	add [hl]
+;	ld l, a
+;	ld a, [wTilesetPalettes + 1]
+;	adc 0
+;	ld h, a
+;	ld a, [hl]
+;	swap a
+;	and $f
+;
+;.next
 	pop hl
 	ld [de], a
 	res 7, [hl]
