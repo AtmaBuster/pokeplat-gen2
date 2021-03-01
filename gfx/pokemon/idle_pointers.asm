@@ -320,4 +320,7 @@ AnimationIdlePointers:
 	dw LotadAnimationIdle
 	dw LombreAnimationIdle
 	dw LudicoloAnimationIdle
+	dw SeedotAnimationIdle
+	dw NuzleafAnimationIdle
+	dw ShiftryAnimationIdle
 	

@@ -866,10 +866,13 @@ LombreFrontpic:      INCBIN "gfx/pokemon/lombre/front.animated.2bpp.lz"
 LombreBackpic:       INCBIN "gfx/pokemon/lombre/back.2bpp.lz"
 LudicoloFrontpic:    INCBIN "gfx/pokemon/ludicolo/front.animated.2bpp.lz"
 LudicoloBackpic:     INCBIN "gfx/pokemon/ludicolo/back.2bpp.lz"
+SeedotFrontpic:      INCBIN "gfx/pokemon/seedot/front.animated.2bpp.lz"
+SeedotBackpic:       INCBIN "gfx/pokemon/seedot/back.2bpp.lz"
+NuzleafFrontpic:     INCBIN "gfx/pokemon/nuzleaf/front.animated.2bpp.lz"
+NuzleafBackpic:      INCBIN "gfx/pokemon/nuzleaf/back.2bpp.lz"
+ShiftryFrontpic:     INCBIN "gfx/pokemon/shiftry/front.animated.2bpp.lz"
+ShiftryBackpic:      INCBIN "gfx/pokemon/shiftry/back.2bpp.lz"
 
-SeedotFrontpic:
-NuzleafFrontpic:
-ShiftryFrontpic:
 TaillowFrontpic:
 SwellowFrontpic:
 WingullFrontpic:
@@ -1107,9 +1110,6 @@ GiratinaOriginFrontpic:
 ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
-SeedotBackpic:
-NuzleafBackpic:
-ShiftryBackpic:
 TaillowBackpic:
 SwellowBackpic:
 WingullBackpic:

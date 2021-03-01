@@ -320,4 +320,7 @@ BitmasksPointers:
 	dw LotadBitmasks
 	dw LombreBitmasks
 	dw LudicoloBitmasks
+	dw SeedotBitmasks
+	dw NuzleafBitmasks
+	dw ShiftryBitmasks
 	

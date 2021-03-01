@@ -320,4 +320,7 @@ AnimationPointers:
 	dw LotadAnimation
 	dw LombreAnimation
 	dw LudicoloAnimation
+	dw SeedotAnimation
+	dw NuzleafAnimation
+	dw ShiftryAnimation
 	

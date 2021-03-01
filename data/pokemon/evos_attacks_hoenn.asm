@@ -481,8 +481,42 @@ LudicoloEvosAttacks:
 	db 0 ; no more level-up moves
 	
 SeedotEvosAttacks:
+	dbbw EVOLVE_LEVEL, 14, NUZLEAF
+	db 0 ; no more evolutions
+	dbw 1, BIDE
+	dbw 3, HARDEN
+	dbw 7, GROWTH
+	dbw 13, NATURE_POWER
+	dbw 21, SYNTHESIS
+	dbw 31, SUNNY_DAY
+	dbw 43, EXPLOSION
+	db 0 ; no more level-up moves
+	
 NuzleafEvosAttacks:
+	dbbw EVOLVE_ITEM, LEAF_STONE, SHIFTRY
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, RAZOR_LEAF
+	dbw 3, HARDEN
+	dbw 7, GROWTH
+	dbw 13, NATURE_POWER
+	dbw 19, FAKE_OUT
+	dbw 25, TORMENT
+	dbw 31, FAINT_ATTACK
+	dbw 37, RAZOR_WIND
+	dbw 43, SWAGGER
+	dbw 49, EXTRASENSORY
+	db 0 ; no more level-up moves
+	
 ShiftryEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, FAINT_ATTACK
+	dbw 1, NASTY_PLOT
+	dbw 1, RAZOR_LEAF
+	dbw 1, WHIRLWIND
+	dbw 49, LEAF_STORM
+	db 0 ; no more level-up moves
+	
 TaillowEvosAttacks:
 SwellowEvosAttacks:
 WingullEvosAttacks:

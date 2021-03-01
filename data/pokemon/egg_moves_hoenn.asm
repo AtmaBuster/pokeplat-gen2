@@ -22,6 +22,9 @@ EggMovePointers4::
 	dw LotadEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw SeedotEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -98,6 +101,17 @@ LotadEggMoves:
 	dw SWEET_SCENT
 	dw TICKLE
 	dw WATER_GUN
+	dw -1 ; end
+	
+SeedotEggMoves:
+	dw AMNESIA
+	dw FALSE_SWIPE
+	dw LEECH_SEED
+	dw NASTY_PLOT
+	dw QUICK_ATTACK
+	dw RAZOR_WIND
+	dw TAKE_DOWN
+	dw WORRY_SEED
 	dw -1 ; end
 
 NoEggMoves4:
