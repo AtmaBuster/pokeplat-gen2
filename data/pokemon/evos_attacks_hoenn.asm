@@ -550,7 +550,43 @@ SwellowEvosAttacks:
 	db 0 ; no more level-up moves
 	
 WingullEvosAttacks:
+	dbbw EVOLVE_LEVEL, 25, SWELLOW
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, WATER_GUN
+	dbw 6, SUPERSONIC
+	dbw 11, WING_ATTACK
+	dbw 16, MIST
+	dbw 19, WATER_PULSE
+	dbw 24, QUICK_ATTACK
+	dbw 29, ROOST
+	dbw 34, PURSUIT
+	dbw 37, AGILITY
+	dbw 42, AERIAL_ACE
+	dbw 47, AIR_SLASH
+	db 0 ; no more level-up moves
+	
 PelipperEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, WATER_GUN
+	dbw 1, WATER_SPORT
+	dbw 1, WING_ATTACK
+	dbw 6, SUPERSONIC
+	dbw 11, WING_ATTACK
+	dbw 16, MIST
+	dbw 19, WATER_PULSE
+	dbw 24, PAYBACK
+	dbw 25, PROTECT
+	dbw 31, ROOST
+	dbw 38, SPIT_UP
+	dbw 38, STOCKPILE
+	dbw 38, SWALLOW
+	dbw 43, FLING
+	dbw 50, TAILWIND
+	dbw 57, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
 RaltsEvosAttacks:
 KirliaEvosAttacks:
 GardevoirEvosAttacks:

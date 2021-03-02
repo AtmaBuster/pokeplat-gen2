@@ -27,6 +27,8 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw TaillowEggMoves
 	dw NoEggMoves4
+	dw WingullEggMoves
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -125,6 +127,16 @@ TaillowEggMoves:
 	dw SKY_ATTACK
 	dw SUPERSONIC
 	dw WHIRLWIND
+	dw -1 ; end
+
+WingullEggMoves:
+	dw AGILITY
+	dw AQUA_RING
+	dw GUST
+	dw KNOCK_OFF
+	dw MIST
+	dw TWISTER
+	dw WATER_SPORT
 	dw -1 ; end
 
 NoEggMoves4:

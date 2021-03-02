@@ -325,4 +325,6 @@ FramesPointers:
 	dba ShiftryFrames
 	dba TaillowFrames
 	dba SwellowFrames
+	dba WingullFrames
+	dba PelipperFrames
 	

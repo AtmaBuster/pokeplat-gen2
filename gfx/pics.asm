@@ -876,9 +876,11 @@ TaillowFrontpic:     INCBIN "gfx/pokemon/taillow/front.animated.2bpp.lz"
 TaillowBackpic:      INCBIN "gfx/pokemon/taillow/back.2bpp.lz"
 SwellowFrontpic:     INCBIN "gfx/pokemon/swellow/front.animated.2bpp.lz"
 SwellowBackpic:      INCBIN "gfx/pokemon/swellow/back.2bpp.lz"
+WingullFrontpic:     INCBIN "gfx/pokemon/wingull/front.animated.2bpp.lz"
+WingullBackpic:      INCBIN "gfx/pokemon/wingull/back.2bpp.lz"
+PelipperFrontpic:    INCBIN "gfx/pokemon/pelipper/front.animated.2bpp.lz"
+PelipperBackpic:     INCBIN "gfx/pokemon/pelipper/back.2bpp.lz"
 
-WingullFrontpic:
-PelipperFrontpic:
 RaltsFrontpic:
 KirliaFrontpic:
 GardevoirFrontpic:
@@ -1113,8 +1115,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-WingullBackpic:
-PelipperBackpic:
 RaltsBackpic:
 KirliaBackpic:
 GardevoirBackpic:

@@ -682,3 +682,7 @@ TaillowPal:         INCBIN "gfx/pokemon/taillow/front.gbcpal", middle_colors
 TaillowShinyPal:    INCLUDE "gfx/pokemon/taillow/shiny.pal"
 SwellowPal:         INCBIN "gfx/pokemon/swellow/front.gbcpal", middle_colors
 SwellowShinyPal:    INCLUDE "gfx/pokemon/swellow/shiny.pal"
+WingullPal:         INCBIN "gfx/pokemon/wingull/front.gbcpal", middle_colors
+WingullShinyPal:    INCLUDE "gfx/pokemon/wingull/shiny.pal"
+PelipperPal:        INCBIN "gfx/pokemon/pelipper/front.gbcpal", middle_colors
+PelipperShinyPal:   INCLUDE "gfx/pokemon/pelipper/shiny.pal"

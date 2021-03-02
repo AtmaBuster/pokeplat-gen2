@@ -329,8 +329,8 @@ MonMenuIcons:
 	db ICON_MONSTER     ; SHIFTRY
 	db ICON_BIRD        ; TAILLOW
 	db ICON_BIRD        ; SWELLOW
-	db ICON_UNOWN
-	db ICON_UNOWN
+	db ICON_BIRD        ; WINGULL
+	db ICON_BIRD        ; PELIPPER
 	db ICON_UNOWN
 	db ICON_UNOWN
 	db ICON_UNOWN
