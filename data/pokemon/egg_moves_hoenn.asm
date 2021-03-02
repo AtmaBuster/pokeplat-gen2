@@ -25,6 +25,8 @@ EggMovePointers4::
 	dw SeedotEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw TaillowEggMoves
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -112,6 +114,17 @@ SeedotEggMoves:
 	dw RAZOR_WIND
 	dw TAKE_DOWN
 	dw WORRY_SEED
+	dw -1 ; end
+	
+TaillowEggMoves:
+	dw BRAVE_BIRD
+	dw MIRROR_MOVE
+	dw PURSUIT
+	dw RAGE
+	dw REFRESH
+	dw SKY_ATTACK
+	dw SUPERSONIC
+	dw WHIRLWIND
 	dw -1 ; end
 
 NoEggMoves4:

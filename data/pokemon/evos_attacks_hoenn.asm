@@ -518,7 +518,37 @@ ShiftryEvosAttacks:
 	db 0 ; no more level-up moves
 	
 TaillowEvosAttacks:
+	dbbw EVOLVE_LEVEL, 22, SWELLOW
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, PECK
+	dbw 4, FOCUS_ENERGY
+	dbw 8, QUICK_ATTACK
+	dbw 13, WING_ATTACK
+	dbw 19, DOUBLE_TEAM
+	dbw 26, ENDEAVOR
+	dbw 34, AERIAL_ACE
+	dbw 43, AGILITY
+	dbw 53, AIR_SLASH
+	db 0 ; no more level-up moves
+	
 SwellowEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, FOCUS_ENERGY
+	dbw 1, GROWL
+	dbw 1, PECK
+	dbw 1, PLUCK
+	dbw 1, QUICK_ATTACK
+	dbw 4, FOCUS_ENERGY
+	dbw 8, QUICK_ATTACK
+	dbw 13, WING_ATTACK
+	dbw 19, DOUBLE_TEAM
+	dbw 28, ENDEAVOR
+	dbw 38, AERIAL_ACE
+	dbw 49, AGILITY
+	dbw 61, AIR_SLASH 
+	db 0 ; no more level-up moves
+	
 WingullEvosAttacks:
 PelipperEvosAttacks:
 RaltsEvosAttacks:

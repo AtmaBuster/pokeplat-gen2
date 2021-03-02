@@ -323,4 +323,6 @@ BitmasksPointers:
 	dw SeedotBitmasks
 	dw NuzleafBitmasks
 	dw ShiftryBitmasks
+	dw TaillowBitmasks
+	dw SwellowBitmasks
 	

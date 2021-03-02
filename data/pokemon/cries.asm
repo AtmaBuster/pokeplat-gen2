@@ -339,8 +339,8 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; SEEDOT
 	mon_cry CRY_RATTATA,     $000,  $001 ; NUZLEAF
 	mon_cry CRY_RATTATA,     $000,  $001 ; SHIFTRY
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; TAILLOW
+	mon_cry CRY_RATTATA,     $000,  $001 ; SWELLOW
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
