@@ -880,14 +880,21 @@ WingullFrontpic:     INCBIN "gfx/pokemon/wingull/front.animated.2bpp.lz"
 WingullBackpic:      INCBIN "gfx/pokemon/wingull/back.2bpp.lz"
 PelipperFrontpic:    INCBIN "gfx/pokemon/pelipper/front.animated.2bpp.lz"
 PelipperBackpic:     INCBIN "gfx/pokemon/pelipper/back.2bpp.lz"
+RaltsFrontpic:       INCBIN "gfx/pokemon/ralts/front.animated.2bpp.lz"
+RaltsBackpic:        INCBIN "gfx/pokemon/ralts/back.2bpp.lz"
+KirliaFrontpic:      INCBIN "gfx/pokemon/kirlia/front.animated.2bpp.lz"
+KirliaBackpic:       INCBIN "gfx/pokemon/kirlia/back.2bpp.lz"
+GardevoirFrontpic:   INCBIN "gfx/pokemon/gardevoir/front.animated.2bpp.lz"
+GardevoirBackpic:    INCBIN "gfx/pokemon/gardevoir/back.2bpp.lz"
+SurskitFrontpic:     INCBIN "gfx/pokemon/surskit/front.animated.2bpp.lz"
+SurskitBackpic:      INCBIN "gfx/pokemon/surskit/back.2bpp.lz"
+MasquerainFrontpic:  INCBIN "gfx/pokemon/masquerain/front.animated.2bpp.lz"
+MasquerainBackpic:   INCBIN "gfx/pokemon/masquerain/back.2bpp.lz"
+ShroomishFrontpic:   INCBIN "gfx/pokemon/shroomish/front.animated.2bpp.lz"
+ShroomishBackpic:    INCBIN "gfx/pokemon/shroomish/back.2bpp.lz"
+BreloomFrontpic:     INCBIN "gfx/pokemon/breloom/front.animated.2bpp.lz"
+BreloomBackpic:      INCBIN "gfx/pokemon/breloom/back.2bpp.lz"
 
-RaltsFrontpic:
-KirliaFrontpic:
-GardevoirFrontpic:
-SurskitFrontpic:
-MasquerainFrontpic:
-ShroomishFrontpic:
-BreloomFrontpic:
 SlakothFrontpic:
 VigorothFrontpic:
 SlakingFrontpic:
@@ -1115,13 +1122,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-RaltsBackpic:
-KirliaBackpic:
-GardevoirBackpic:
-SurskitBackpic:
-MasquerainBackpic:
-ShroomishBackpic:
-BreloomBackpic:
 SlakothBackpic:
 VigorothBackpic:
 SlakingBackpic:

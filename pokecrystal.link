@@ -333,12 +333,13 @@ ROMX $88
 ROMX $89
 	"Footprints"
 ROMX $8a
-	"Pics 21"
 	"Evolutions and Attacks 3"
 	"Evolutions and Attacks 4"
 	"Evolutions and Attacks 5"
 ROMX $8b
 	"Pokedex Entries 129-192"
+ROMX $8c
+	"Pics 21"
 WRAM0
 	"Stack"
 	"Audio RAM"

@@ -327,4 +327,11 @@ AnimationPointers:
 	dw SwellowAnimation
 	dw WingullAnimation
 	dw PelipperAnimation
+	dw RaltsAnimation
+	dw KirliaAnimation
+	dw GardevoirAnimation
+	dw SurskitAnimation
+	dw MasquerainAnimation
+	dw ShroomishAnimation
+	dw BreloomAnimation
 	

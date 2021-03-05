@@ -343,13 +343,13 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; SWELLOW
 	mon_cry CRY_RATTATA,     $000,  $001 ; WINGULL
 	mon_cry CRY_RATTATA,     $000,  $001 ; PELIPPER
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; RALTS
+	mon_cry CRY_RATTATA,     $000,  $001 ; KIRLIA
+	mon_cry CRY_RATTATA,     $000,  $001 ; GARDEVOIR
+	mon_cry CRY_RATTATA,     $000,  $001 ; SURSKIT
+	mon_cry CRY_RATTATA,     $000,  $001 ; MASQUERAIN
+	mon_cry CRY_RATTATA,     $000,  $001 ; SHROOMISH
+	mon_cry CRY_RATTATA,     $000,  $001 ; BRELOOM
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

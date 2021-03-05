@@ -29,6 +29,13 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw WingullEggMoves
 	dw NoEggMoves4
+	dw RaltsEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw SurskitEggMoves
+	dw NoEggMoves4
+	dw ShroomishEggMoves
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -137,6 +144,38 @@ WingullEggMoves:
 	dw MIST
 	dw TWISTER
 	dw WATER_SPORT
+	dw -1 ; end
+
+RaltsEggMoves:
+	dw CONFUSE_RAY
+	dw DESTINY_BOND
+	dw DISABLE
+	dw GRUDGE
+	dw MEAN_LOOK
+	dw MEMENTO
+	dw SHADOW_SNEAK
+	dw WILL_O_WISP
+	dw -1 ; end
+
+SurskitEggMoves:
+	dw BUG_BITE
+	dw FORESIGHT
+	dw HYDRO_PUMP
+	dw MIND_READER
+	dw MUD_SHOT
+	dw PSYBEAM
+	dw SIGNAL_BEAM
+	dw -1 ; end
+
+ShroomishEggMoves:
+	dw CHARM
+	dw FAKE_TEARS
+	dw FALSE_SWIPE
+	dw HELPING_HAND
+	dw SEED_BOMB
+	dw SWAGGER
+	dw WAKE_UP_SLAP
+	dw WORRY_SEED
 	dw -1 ; end
 
 NoEggMoves4:

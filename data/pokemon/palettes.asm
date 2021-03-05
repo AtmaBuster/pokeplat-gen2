@@ -686,3 +686,17 @@ WingullPal:         INCBIN "gfx/pokemon/wingull/front.gbcpal", middle_colors
 WingullShinyPal:    INCLUDE "gfx/pokemon/wingull/shiny.pal"
 PelipperPal:        INCBIN "gfx/pokemon/pelipper/front.gbcpal", middle_colors
 PelipperShinyPal:   INCLUDE "gfx/pokemon/pelipper/shiny.pal"
+RaltsPal:           INCBIN "gfx/pokemon/ralts/front.gbcpal", middle_colors
+RaltsShinyPal:      INCLUDE "gfx/pokemon/ralts/shiny.pal"
+KirliaPal:          INCBIN "gfx/pokemon/kirlia/front.gbcpal", middle_colors
+KirliaShinyPal:     INCLUDE "gfx/pokemon/kirlia/shiny.pal"
+GardevoirPal:       INCBIN "gfx/pokemon/gardevoir/front.gbcpal", middle_colors
+GardevoirShinyPal:  INCLUDE "gfx/pokemon/gardevoir/shiny.pal"
+SurskitPal:         INCBIN "gfx/pokemon/surskit/front.gbcpal", middle_colors
+SurskitShinyPal:    INCLUDE "gfx/pokemon/surskit/shiny.pal"
+MasquerainPal:      INCBIN "gfx/pokemon/masquerain/front.gbcpal", middle_colors
+MasquerainShinyPal: INCLUDE "gfx/pokemon/masquerain/shiny.pal"
+ShroomishPal:       INCBIN "gfx/pokemon/shroomish/front.gbcpal", middle_colors
+ShroomishShinyPal:  INCLUDE "gfx/pokemon/shroomish/shiny.pal"
+BreloomPal:         INCBIN "gfx/pokemon/breloom/front.gbcpal", middle_colors
+BreloomShinyPal:    INCLUDE "gfx/pokemon/breloom/shiny.pal"
