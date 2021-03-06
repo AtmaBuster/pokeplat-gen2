@@ -334,4 +334,7 @@ AnimationIdlePointers:
 	dw MasquerainAnimationIdle
 	dw ShroomishAnimationIdle
 	dw BreloomAnimationIdle
+	dw SlakothAnimationIdle
+	dw VigorothAnimationIdle
+	dw SlakingAnimationIdle
 	

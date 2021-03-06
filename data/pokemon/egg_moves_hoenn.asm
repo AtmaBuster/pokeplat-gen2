@@ -36,6 +36,9 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw ShroomishEggMoves
 	dw NoEggMoves4
+	dw SlakothEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -176,6 +179,18 @@ ShroomishEggMoves:
 	dw SWAGGER
 	dw WAKE_UP_SLAP
 	dw WORRY_SEED
+	dw -1 ; end
+
+SlakothEggMoves:
+	dw BODY_SLAM
+	dw CRUSH_CLAW
+	dw CURSE
+	dw HAMMER_ARM
+	dw NIGHT_SLASH
+	dw PURSUIT
+	dw SLASH
+	dw SLEEP_TALK
+	dw SNORE
 	dw -1 ; end
 
 NoEggMoves4:

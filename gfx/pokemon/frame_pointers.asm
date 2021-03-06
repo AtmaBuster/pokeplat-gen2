@@ -334,4 +334,7 @@ FramesPointers:
 	dba MasquerainFrames
 	dba ShroomishFrames
 	dba BreloomFrames
+	dba SlakothFrames
+	dba VigorothFrames
+	dba SlakingFrames
 	

@@ -260,10 +260,6 @@ INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 
-UnknownEggPic::
-; Another egg pic. This is shifted up a few pixels.
-INCBIN "gfx/unknown/unknown_egg.2bpp.lz"
-
 
 SECTION "Battle Stat Changes", ROMX
 

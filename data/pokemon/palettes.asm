@@ -700,3 +700,9 @@ ShroomishPal:       INCBIN "gfx/pokemon/shroomish/front.gbcpal", middle_colors
 ShroomishShinyPal:  INCLUDE "gfx/pokemon/shroomish/shiny.pal"
 BreloomPal:         INCBIN "gfx/pokemon/breloom/front.gbcpal", middle_colors
 BreloomShinyPal:    INCLUDE "gfx/pokemon/breloom/shiny.pal"
+SlakothPal:         INCBIN "gfx/pokemon/slakoth/front.gbcpal", middle_colors
+SlakothShinyPal:    INCLUDE "gfx/pokemon/slakoth/shiny.pal"
+VigorothPal:        INCBIN "gfx/pokemon/vigoroth/front.gbcpal", middle_colors
+VigorothShinyPal:   INCLUDE "gfx/pokemon/vigoroth/shiny.pal"
+SlakingPal:         INCBIN "gfx/pokemon/slaking/front.gbcpal", middle_colors
+SlakingShinyPal:    INCLUDE "gfx/pokemon/slaking/shiny.pal"

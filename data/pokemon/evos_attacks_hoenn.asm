@@ -718,20 +718,67 @@ BreloomEvosAttacks:
 	db 0 ; no more level-up moves
 	
 SlakothEvosAttacks:
+	dbbw EVOLVE_LEVEL, 18, VIGOROTH
 	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, YAWN
+	dbw 7, ENCORE
+	dbw 13, SLACK_OFF
+	dbw 19, FAINT_ATTACK
+	dbw 25, AMNESIA
+	dbw 31, COVET
+	dbw 37, COUNTER
+	dbw 43, FLAIL
 	db 0 ; no more level-up moves
 	
 VigorothEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, SLAKING
 	db 0 ; no more evolutions
+	dbw 1, ENCORE
+	dbw 1, FOCUS_ENERGY
+	dbw 1, SCRATCH
+	dbw 1, UPROAR
+	dbw 7, ENCORE
+	dbw 13, UPROAR
+	dbw 19, FURY_SWIPES
+	dbw 25, ENDURE
+	dbw 31, SLASH
+	dbw 37, COUNTER
+	dbw 43, FOCUS_PUNCH
+	dbw 49, REVERSAL
 	db 0 ; no more level-up moves
 	
 SlakingEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, ENCORE
+	dbw 1, SCRATCH
+	dbw 1, SLACK_OFF
+	dbw 1, YAWN
+	dbw 7, ENCORE
+	dbw 13, SLACK_OFF
+	dbw 19, FAINT_ATTACK
+	dbw 25, AMNESIA
+	dbw 31, COVET
+	dbw 36, SWAGGER
+	dbw 37, COUNTER
+	dbw 43, FLAIL
+	dbw 49, FLING
+	dbw 55, PUNISHMENT
+	dbw 61, HAMMER_ARM
 	db 0 ; no more level-up moves
 	
 NincadaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 NinjaskEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ShedinjaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 WhismurEvosAttacks:
 LoudredEvosAttacks:
 ExploudEvosAttacks:

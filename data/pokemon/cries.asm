@@ -350,9 +350,9 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; MASQUERAIN
 	mon_cry CRY_RATTATA,     $000,  $001 ; SHROOMISH
 	mon_cry CRY_RATTATA,     $000,  $001 ; BRELOOM
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; SLAKOTH
+	mon_cry CRY_RATTATA,     $000,  $001 ; VIGOROTH
+	mon_cry CRY_RATTATA,     $000,  $001 ; SLAKING
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
