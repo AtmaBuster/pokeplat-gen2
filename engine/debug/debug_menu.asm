@@ -70,7 +70,7 @@ DebugMenu::
 	db "Sound Test@"
 	db "Subgame@"
 	db "Warp@"
-	db "NULL@"
+	db "Color@"
 	db "NULL@"
 	db "NULL@"
 	db "NULL@"
@@ -85,7 +85,7 @@ DebugMenu::
 	dw Debug_SoundTest
 	dw Debug_SubgameMenu
 	dw Debug_Warp
-	dw NULL
+	dw Debug_ColorPicker
 	dw NULL
 	dw NULL
 	dw NULL
@@ -391,7 +391,7 @@ endr
 	db "VIRIDIAN@@@@@"
 	db "PEWTER@@@@@@@"
 	db "CERULEAN@@@@@"
-	db "ROCK_TUNNEL@@"
+	db "ROCK TUNNEL@@"
 	db "VERMILION@@@@"
 	db "LAVENDER@@@@@"
 	db "SAFFRON@@@@@@"
@@ -399,17 +399,23 @@ endr
 	db "FUCHSIA@@@@@@"
 	db "CINNABAR@@@@@"
 	db "INDIGO@@@@@@@"
-	db "NEW_BARK@@@@@"
+	db "NEW BARK@@@@@"
 	db "CHERRYGROVE@@"
 	db "VIOLET@@@@@@@"
-	db "UNION_CAVE@@@"
+	db "UNION CAVE@@@"
 	db "AZALEA@@@@@@@"
 	db "CIANWOOD@@@@@"
 	db "GOLDENROD@@@@"
 	db "OLIVINE@@@@@@"
 	db "ECRUTEAK@@@@@"
 	db "MAHOGANY@@@@@"
-	db "LAKE_OF_RAGE@"
+	db "LAKE OF RAGE@"
 	db "BLACKTHORN@@@"
-	db "MT_SILVER@@@@"
-	db "FAST_SHIP@@@@"
+	db "MT. SILVER@@@"
+	db "FAST SHIP@@@@"
+
+Debug_ColorPicker:
+	farcall DebugColorPicker
+	ret
+
+INCLUDE "engine/debug/color_picker.asm"

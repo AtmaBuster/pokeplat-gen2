@@ -2719,18 +2719,27 @@ Pokedex_LoadAnyFootprint:
 	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	dec hl
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	add hl, hl
 	ld de, Footprints
+	lb bc, BANK(Footprints), 4
+	ld a, h
+	and $fe
+	jr z, .got_footprint_table
+	ld de, -512
+	add hl, de
+	ld de, Footprints2
+	lb bc, BANK(Footprints2), 4
+
+.got_footprint_table
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, hl
 	add hl, de
 
 	ld e, l
 	ld d, h
 	ld hl, vTiles2 tile $62
-	lb bc, BANK(Footprints), 4
 	jp Request1bpp
 
 Pokedex_LoadGFX:

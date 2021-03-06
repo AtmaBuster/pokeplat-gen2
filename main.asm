@@ -714,8 +714,6 @@ SECTION "Pokemon Names", ROMX
 
 INCLUDE "data/pokemon/names.asm"
 
-SECTION "Footprints", ROMX
-Footprints:
 INCLUDE "gfx/footprints.asm"
 
 SECTION "16-bit ID stuff", ROMX

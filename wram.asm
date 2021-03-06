@@ -284,6 +284,11 @@ wPartyMenuIconPals:: ds 6
 	ds 4
 
 ; mobile data
+UNION
+if DEF(_DEBUG)
+wDebugColorPickerPal:: ds 1 palettes
+endc
+NEXTU
 wc3cc:: ds 1
 wc3cd:: ds 31
 wc3ec:: ds 1
@@ -303,6 +308,7 @@ wc3f9:: ds 1
 wc3fa:: ds 1
 wc3fb:: ds 1
 wc3fc:: ds 1
+ENDU
 
 	ds 3
 
