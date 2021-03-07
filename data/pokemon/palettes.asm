@@ -706,3 +706,9 @@ VigorothPal:        INCBIN "gfx/pokemon/vigoroth/front.gbcpal", middle_colors
 VigorothShinyPal:   INCLUDE "gfx/pokemon/vigoroth/shiny.pal"
 SlakingPal:         INCBIN "gfx/pokemon/slaking/front.gbcpal", middle_colors
 SlakingShinyPal:    INCLUDE "gfx/pokemon/slaking/shiny.pal"
+NincadaPal:         INCBIN "gfx/pokemon/nincada/front.gbcpal", middle_colors
+NincadaShinyPal:    INCLUDE "gfx/pokemon/nincada/shiny.pal"
+NinjaskPal:         INCBIN "gfx/pokemon/ninjask/front.gbcpal", middle_colors
+NinjaskShinyPal:    INCLUDE "gfx/pokemon/ninjask/shiny.pal"
+ShedinjaPal:        INCBIN "gfx/pokemon/shedinja/front.gbcpal", middle_colors
+ShedinjaShinyPal:   INCLUDE "gfx/pokemon/shedinja/shiny.pal"

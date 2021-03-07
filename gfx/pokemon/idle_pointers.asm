@@ -337,4 +337,7 @@ AnimationIdlePointers:
 	dw SlakothAnimationIdle
 	dw VigorothAnimationIdle
 	dw SlakingAnimationIdle
+	dw NincadaAnimationIdle
+	dw NinjaskAnimationIdle
+	dw ShedinjaAnimationIdle
 	

@@ -337,4 +337,7 @@ BitmasksPointers:
 	dw SlakothBitmasks
 	dw VigorothBitmasks
 	dw SlakingBitmasks
+	dw NincadaBitmasks
+	dw NinjaskBitmasks
+	dw ShedinjaBitmasks
 	

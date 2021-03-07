@@ -900,10 +900,13 @@ VigorothFrontpic:	 INCBIN "gfx/pokemon/vigoroth/front.animated.2bpp.lz"
 VigorothBackpic:     INCBIN "gfx/pokemon/vigoroth/back.2bpp.lz"
 SlakingFrontpic:	 INCBIN "gfx/pokemon/slaking/front.animated.2bpp.lz"
 SlakingBackpic:      INCBIN "gfx/pokemon/slaking/back.2bpp.lz"
+NincadaFrontpic:     INCBIN "gfx/pokemon/nincada/front.animated.2bpp.lz"
+NincadaBackpic:      INCBIN "gfx/pokemon/nincada/back.2bpp.lz"
+NinjaskFrontpic:     INCBIN "gfx/pokemon/ninjask/front.animated.2bpp.lz"
+NinjaskBackpic:      INCBIN "gfx/pokemon/ninjask/back.2bpp.lz"
+ShedinjaFrontpic:    INCBIN "gfx/pokemon/shedinja/front.animated.2bpp.lz"
+ShedinjaBackpic:     INCBIN "gfx/pokemon/shedinja/back.2bpp.lz"
 
-NincadaFrontpic:
-NinjaskFrontpic:
-ShedinjaFrontpic:
 WhismurFrontpic:
 LoudredFrontpic:
 ExploudFrontpic:
@@ -1125,9 +1128,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-NincadaBackpic:
-NinjaskBackpic:
-ShedinjaBackpic:
 WhismurBackpic:
 LoudredBackpic:
 ExploudBackpic:

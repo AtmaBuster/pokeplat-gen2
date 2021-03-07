@@ -39,6 +39,9 @@ EggMovePointers4::
 	dw SlakothEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw NincadaEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -191,6 +194,16 @@ SlakothEggMoves:
 	dw SLASH
 	dw SLEEP_TALK
 	dw SNORE
+	dw -1 ; end
+
+NincadaEggMoves:
+	dw BUG_BITE
+	dw BUG_BUZZ
+	dw ENDURE
+	dw FAINT_ATTACK
+	dw GUST
+	dw NIGHT_SLASH
+	dw SILVER_WIND
 	dw -1 ; end
 
 NoEggMoves4:

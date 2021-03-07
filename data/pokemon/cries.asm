@@ -353,9 +353,9 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; SLAKOTH
 	mon_cry CRY_RATTATA,     $000,  $001 ; VIGOROTH
 	mon_cry CRY_RATTATA,     $000,  $001 ; SLAKING
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; NINCADA
+	mon_cry CRY_RATTATA,     $000,  $001 ; NINJASK
+	mon_cry CRY_RATTATA,     $000,  $001 ; SHEDINJA
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

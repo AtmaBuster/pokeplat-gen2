@@ -218,8 +218,8 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
-	pokepic SHROOMISH
-	cry SHROOMISH
+	pokepic SHEDINJA
+	cry SHEDINJA
 	waitbutton
 	closepokepic
 	opentext
@@ -231,12 +231,12 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	getmonname STRING_BUFFER_3, SHROOMISH
+	getmonname STRING_BUFFER_3, SHEDINJA
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke SHROOMISH, 5, BERRY
+	givepoke SHEDINJA, 20, BERRY
 	callasm .asm
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement

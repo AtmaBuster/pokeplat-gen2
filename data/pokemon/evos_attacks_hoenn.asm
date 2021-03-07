@@ -768,15 +768,56 @@ SlakingEvosAttacks:
 	db 0 ; no more level-up moves
 	
 NincadaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, NINJASK
+	;dbbw EVOLVE_LEVEL, 20, SHEDINJA
 	db 0 ; no more evolutions
+	dbw 1, HARDEN
+	dbw 1, SCRATCH
+	dbw 5, LEECH_LIFE
+	dbw 9, SAND_ATTACK
+	dbw 14, FURY_SWIPES
+	dbw 19, MIND_READER
+	dbw 25, FALSE_SWIPE
+	dbw 31, MUD_SLAP
+	dbw 38, METAL_CLAW
+	dbw 45, DIG
 	db 0 ; no more level-up moves
 	
 NinjaskEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, BUG_BITE
+	dbw 1, HARDEN
+	dbw 1, LEECH_LIFE
+	dbw 1, SAND_ATTACK
+	dbw 1, SCRATCH
+	dbw 5, LEECH_LIFE
+	dbw 9, SAND_ATTACK
+	dbw 14, FURY_SWIPES
+	dbw 19, MIND_READER
+	dbw 20, DOUBLE_TEAM
+	dbw 20, FURY_CUTTER
+	dbw 20, SCREECH
+	dbw 25, SWORDS_DANCE
+	dbw 31, SLASH
+	dbw 38, AGILITY
+	dbw 45, BATON_PASS
+	dbw 52, X_SCISSOR
 	db 0 ; no more level-up moves
 	
 ShedinjaEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, HARDEN
+	dbw 1, SCRATCH
+	dbw 5, LEECH_LIFE
+	dbw 9, SAND_ATTACK
+	dbw 14, FURY_SWIPES
+	dbw 19, MIND_READER
+	dbw 25, SPITE
+	dbw 31, CONFUSE_RAY
+	dbw 38, SHADOW_SNEAK
+	dbw 45, GRUDGE
+	dbw 52, HEAL_BLOCK
+	dbw 59, SHADOW_BALL
 	db 0 ; no more level-up moves
 	
 WhismurEvosAttacks:

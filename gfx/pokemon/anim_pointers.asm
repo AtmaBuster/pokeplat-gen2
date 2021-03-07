@@ -337,4 +337,7 @@ AnimationPointers:
 	dw SlakothAnimation
 	dw VigorothAnimation
 	dw SlakingAnimation
+	dw NincadaAnimation
+	dw NinjaskAnimation
+	dw ShedinjaAnimation
 	
