@@ -343,4 +343,6 @@ BitmasksPointers:
 	dw WhismurBitmasks
 	dw LoudredBitmasks
 	dw ExploudBitmasks
+	dw MakuhitaBitmasks
+	dw HariyamaBitmasks
 	

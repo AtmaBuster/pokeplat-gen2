@@ -343,4 +343,6 @@ AnimationIdlePointers:
 	dw WhismurAnimationIdle
 	dw LoudredAnimationIdle
 	dw ExploudAnimationIdle
+	dw MakuhitaAnimationIdle
+	dw HariyamaAnimationIdle
 	

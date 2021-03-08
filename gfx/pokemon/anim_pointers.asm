@@ -343,4 +343,6 @@ AnimationPointers:
 	dw WhismurAnimation
 	dw LoudredAnimation
 	dw ExploudAnimation
+	dw MakuhitaAnimation
+	dw HariyamaAnimation
 	

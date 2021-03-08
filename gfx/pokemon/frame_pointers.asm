@@ -343,4 +343,6 @@ FramesPointers:
 	dba WhismurFrames
 	dba LoudredFrames
 	dba ExploudFrames
+	dba MakuhitaFrames
+	dba HariyamaFrames
 	

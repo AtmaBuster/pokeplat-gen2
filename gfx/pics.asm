@@ -915,9 +915,11 @@ LoudredFrontpic:     INCBIN "gfx/pokemon/loudred/front.animated.2bpp.lz"
 LoudredBackpic:      INCBIN "gfx/pokemon/loudred/back.2bpp.lz"
 ExploudFrontpic:     INCBIN "gfx/pokemon/exploud/front.animated.2bpp.lz"
 ExploudBackpic:      INCBIN "gfx/pokemon/exploud/back.2bpp.lz"
+MakuhitaFrontpic:    INCBIN "gfx/pokemon/makuhita/front.animated.2bpp.lz"
+MakuhitaBackpic:     INCBIN "gfx/pokemon/makuhita/back.2bpp.lz"
+HariyamaFrontpic:    INCBIN "gfx/pokemon/hariyama/front.animated.2bpp.lz"
+HariyamaBackpic:     INCBIN "gfx/pokemon/hariyama/back.2bpp.lz"
 
-MakuhitaFrontpic:
-HariyamaFrontpic:
 AzurillFrontpic:
 NosepassFrontpic:
 SkittyFrontpic:
@@ -1134,9 +1136,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-
-MakuhitaBackpic:
-HariyamaBackpic:
 AzurillBackpic:
 NosepassBackpic:
 SkittyBackpic:

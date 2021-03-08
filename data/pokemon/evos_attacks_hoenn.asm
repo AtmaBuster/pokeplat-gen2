@@ -881,101 +881,401 @@ ExploudEvosAttacks:
 	db 0 ; no more level-up moves
 	
 MakuhitaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 24, HARIYAMA
 	db 0 ; no more evolutions
+	dbw 1, FOCUS_ENERGY
+	dbw 1, TACKLE
+	dbw 4, SAND_ATTACK
+	dbw 7, ARM_THRUST
+	dbw 10, VITAL_THROW
+	dbw 13, FAKE_OUT
+	dbw 16, WHIRLWIND
+	dbw 19, KNOCK_OFF
+	dbw 22, SMELLINGSALT
+	dbw 25, BELLY_DRUM
+	dbw 28, FORCE_PALM
+	dbw 31, SEISMIC_TOSS
+	dbw 34, WAKE_UP_SLAP
+	dbw 37, ENDURE
+	dbw 40, CLOSE_COMBAT
+	dbw 43, REVERSAL
 	db 0 ; no more level-up moves
 	
 HariyamaEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, ARM_THRUST
+	dbw 1, BRINE
+	dbw 1, FOCUS_ENERGY
+	dbw 1, SAND_ATTACK
+	dbw 1, TACKLE
+	dbw 4, SAND_ATTACK
+	dbw 7, ARM_THRUST
+	dbw 10, VITAL_THROW
+	dbw 13, FAKE_OUT
+	dbw 16, WHIRLWIND
+	dbw 19, KNOCK_OFF
+	dbw 22, SMELLINGSALT
+	dbw 27, BELLY_DRUM
+	dbw 32, FORCE_PALM
+	dbw 37, SEISMIC_TOSS
+	dbw 42, WAKE_UP_SLAP
+	dbw 47, ENDURE
+	dbw 52, CLOSE_COMBAT
+	dbw 57, REVERSAL
 	db 0 ; no more level-up moves
 	
 AzurillEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 NosepassEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SkittyEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 DelcattyEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SableyeEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MawileEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 AronEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 LaironEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 AggronEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MedititeEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MedichamEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ElectrikeEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ManectricEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 PlusleEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MinunEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 VolbeatEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 IllumiseEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 RoseliaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 GulpinEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SwalotEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CarvanhaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SharpedoEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 WailmerEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 WailordEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 NumelEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CameruptEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 TorkoalEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SpoinkEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 GrumpigEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SpindaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 TrapinchEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 VibravaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 FlygonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CacneaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CacturneEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SwabluEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 AltariaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ZangooseEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SeviperEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 LunatoneEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SolrockEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 BarboachEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 WhiscashEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CorphishEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CrawdauntEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 BaltoyEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ClaydolEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 LileepEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CradilyEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 AnorithEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ArmaldoEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 FeebasEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MiloticEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 CastformEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 KecleonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ShuppetEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 BanetteEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 DuskullEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 DusclopsEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 TropiusEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ChimechoEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 AbsolEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 WynautEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SnoruntEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 GlalieEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SphealEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SealeoEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 WalreinEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ClamperlEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 HuntailEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 GorebyssEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 RelicanthEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 LuvdiscEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 BagonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 ShelgonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 SalamenceEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 BeldumEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MetangEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 MetagrossEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 RegirockEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 RegiceEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 RegisteelEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 LatiasEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 LatiosEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 KyogreEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 GroudonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 RayquazaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 JirachiEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 DeoxysEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SPLASH

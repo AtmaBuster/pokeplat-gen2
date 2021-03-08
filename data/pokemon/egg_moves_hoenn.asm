@@ -45,6 +45,8 @@ EggMovePointers4::
 	dw WhismurEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw MakuhitaEggMoves
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -217,6 +219,19 @@ WhismurEggMoves:
 	dw SNORE
 	dw SWAGGER
 	dw TAKE_DOWN
+	dw -1 ; end
+
+MakuhitaEggMoves:
+	dw BULLET_PUNCH
+	dw COUNTER
+	dw CROSS_CHOP
+	dw DETECT
+	dw DYNAMICPUNCH
+	dw FAINT_ATTACK
+	dw FORESIGHT
+	dw HELPING_HAND
+	dw REVENGE
+	dw WAKE_UP_SLAP
 	dw -1 ; end
 
 NoEggMoves4:

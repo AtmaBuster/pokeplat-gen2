@@ -718,3 +718,7 @@ LoudredPal:         INCBIN "gfx/pokemon/loudred/front.gbcpal", middle_colors
 LoudredShinyPal:    INCLUDE "gfx/pokemon/loudred/shiny.pal"
 ExploudPal:         INCBIN "gfx/pokemon/exploud/front.gbcpal", middle_colors
 ExploudShinyPal:    INCLUDE "gfx/pokemon/exploud/shiny.pal"
+MakuhitaPal:        INCBIN "gfx/pokemon/makuhita/front.gbcpal", middle_colors
+MakuhitaShinyPal:   INCLUDE "gfx/pokemon/makuhita/shiny.pal"
+HariyamaPal:        INCBIN "gfx/pokemon/hariyama/front.gbcpal", middle_colors
+HariyamaShinyPal:   INCLUDE "gfx/pokemon/hariyama/shiny.pal"
