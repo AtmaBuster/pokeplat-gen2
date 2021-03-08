@@ -356,9 +356,9 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; NINCADA
 	mon_cry CRY_RATTATA,     $000,  $001 ; NINJASK
 	mon_cry CRY_RATTATA,     $000,  $001 ; SHEDINJA
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; WHISMUR
+	mon_cry CRY_RATTATA,     $000,  $001 ; LOUDRED
+	mon_cry CRY_RATTATA,     $000,  $001 ; EXPLOUD
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

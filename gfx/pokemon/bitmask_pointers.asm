@@ -340,4 +340,7 @@ BitmasksPointers:
 	dw NincadaBitmasks
 	dw NinjaskBitmasks
 	dw ShedinjaBitmasks
+	dw WhismurBitmasks
+	dw LoudredBitmasks
+	dw ExploudBitmasks
 	

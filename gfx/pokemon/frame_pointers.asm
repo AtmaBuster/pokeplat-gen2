@@ -340,4 +340,7 @@ FramesPointers:
 	dba NincadaFrames
 	dba NinjaskFrames
 	dba ShedinjaFrames
+	dba WhismurFrames
+	dba LoudredFrames
+	dba ExploudFrames
 	

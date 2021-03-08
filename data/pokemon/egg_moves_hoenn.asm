@@ -42,6 +42,9 @@ EggMovePointers4::
 	dw NincadaEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw WhismurEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -204,6 +207,16 @@ NincadaEggMoves:
 	dw GUST
 	dw NIGHT_SLASH
 	dw SILVER_WIND
+	dw -1 ; end
+
+WhismurEggMoves:
+	dw ENDEAVOR
+	dw EXTRASENSORY
+	dw SMELLINGSALT
+	dw SMOKESCREEN
+	dw SNORE
+	dw SWAGGER
+	dw TAKE_DOWN
 	dw -1 ; end
 
 NoEggMoves4:

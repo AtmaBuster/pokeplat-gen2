@@ -821,10 +821,73 @@ ShedinjaEvosAttacks:
 	db 0 ; no more level-up moves
 	
 WhismurEvosAttacks:
+	dbbw EVOLVE_LEVEL, 20, LOUDRED
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 5, UPROAR
+	dbw 11, ASTONISH
+	dbw 15, HOWL
+	dbw 21, SUPERSONIC
+	dbw 25, STOMP
+	dbw 31, SCREECH
+	dbw 35, ROAR
+	dbw 41, REST
+	dbw 41, SLEEP_TALK
+	dbw 45, HYPER_VOICE
+	db 0 ; no more level-up moves
+	
 LoudredEvosAttacks:
+	dbbw EVOLVE_LEVEL, 40, EXPLOUD
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 1, HOWL
+	dbw 1, POUND
+	dbw 1, UPROAR
+	dbw 5, UPROAR
+	dbw 11, ASTONISH
+	dbw 15, HOWL
+	dbw 20, BITE
+	dbw 23, SUPERSONIC
+	dbw 29, STOMP
+	dbw 37, SCREECH
+	dbw 43, ROAR
+	dbw 51, REST
+	dbw 51, SLEEP_TALK
+	dbw 57, HYPER_VOICE
+	db 0 ; no more level-up moves
+	
 ExploudEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 1, FIRE_FANG
+	dbw 1, HOWL
+	dbw 1, ICE_FANG
+	dbw 1, POUND
+	dbw 1, THUNDER_FANG
+	dbw 1, UPROAR
+	dbw 5, UPROAR
+	dbw 11, ASTONISH
+	dbw 15, HOWL
+	dbw 20, BITE
+	dbw 23, SUPERSONIC
+	dbw 29, STOMP
+	dbw 37, SCREECH
+	dbw 40, CRUNCH
+	dbw 45, ROAR
+	dbw 55, REST
+	dbw 55, SLEEP_TALK
+	dbw 63, HYPER_VOICE
+	dbw 71, HYPER_BEAM
+	db 0 ; no more level-up moves
+	
 MakuhitaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 HariyamaEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+	
 AzurillEvosAttacks:
 NosepassEvosAttacks:
 SkittyEvosAttacks:

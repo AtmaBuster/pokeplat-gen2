@@ -906,10 +906,16 @@ NinjaskFrontpic:     INCBIN "gfx/pokemon/ninjask/front.animated.2bpp.lz"
 NinjaskBackpic:      INCBIN "gfx/pokemon/ninjask/back.2bpp.lz"
 ShedinjaFrontpic:    INCBIN "gfx/pokemon/shedinja/front.animated.2bpp.lz"
 ShedinjaBackpic:     INCBIN "gfx/pokemon/shedinja/back.2bpp.lz"
+WhismurFrontpic:     INCBIN "gfx/pokemon/whismur/front.animated.2bpp.lz"
+WhismurBackpic:      INCBIN "gfx/pokemon/whismur/back.2bpp.lz"
 
-WhismurFrontpic:
-LoudredFrontpic:
-ExploudFrontpic:
+SECTION "Pics 23", ROMX
+
+LoudredFrontpic:     INCBIN "gfx/pokemon/loudred/front.animated.2bpp.lz"
+LoudredBackpic:      INCBIN "gfx/pokemon/loudred/back.2bpp.lz"
+ExploudFrontpic:     INCBIN "gfx/pokemon/exploud/front.animated.2bpp.lz"
+ExploudBackpic:      INCBIN "gfx/pokemon/exploud/back.2bpp.lz"
+
 MakuhitaFrontpic:
 HariyamaFrontpic:
 AzurillFrontpic:
@@ -1128,9 +1134,7 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-WhismurBackpic:
-LoudredBackpic:
-ExploudBackpic:
+
 MakuhitaBackpic:
 HariyamaBackpic:
 AzurillBackpic:
