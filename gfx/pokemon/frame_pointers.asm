@@ -345,4 +345,8 @@ FramesPointers:
 	dba ExploudFrames
 	dba MakuhitaFrames
 	dba HariyamaFrames
+	dba AzurillFrames
+	dba NosepassFrames
+	dba SkittyFrames
+	dba DelcattyFrames
 	

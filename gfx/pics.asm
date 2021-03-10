@@ -919,11 +919,15 @@ MakuhitaFrontpic:    INCBIN "gfx/pokemon/makuhita/front.animated.2bpp.lz"
 MakuhitaBackpic:     INCBIN "gfx/pokemon/makuhita/back.2bpp.lz"
 HariyamaFrontpic:    INCBIN "gfx/pokemon/hariyama/front.animated.2bpp.lz"
 HariyamaBackpic:     INCBIN "gfx/pokemon/hariyama/back.2bpp.lz"
+AzurillFrontpic:     INCBIN "gfx/pokemon/azurill/front.animated.2bpp.lz"
+AzurillBackpic:      INCBIN "gfx/pokemon/azurill/back.2bpp.lz"
+NosepassFrontpic:    INCBIN "gfx/pokemon/nosepass/front.animated.2bpp.lz"
+NosepassBackpic:     INCBIN "gfx/pokemon/nosepass/back.2bpp.lz"
+SkittyFrontpic:      INCBIN "gfx/pokemon/skitty/front.animated.2bpp.lz"
+SkittyBackpic:       INCBIN "gfx/pokemon/skitty/back.2bpp.lz"
+DelcattyFrontpic:    INCBIN "gfx/pokemon/delcatty/front.animated.2bpp.lz"
+DelcattyBackpic:     INCBIN "gfx/pokemon/delcatty/back.2bpp.lz"
 
-AzurillFrontpic:
-NosepassFrontpic:
-SkittyFrontpic:
-DelcattyFrontpic:
 SableyeFrontpic:
 MawileFrontpic:
 AronFrontpic:
@@ -1136,10 +1140,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-AzurillBackpic:
-NosepassBackpic:
-SkittyBackpic:
-DelcattyBackpic:
 SableyeBackpic:
 MawileBackpic:
 AronBackpic:

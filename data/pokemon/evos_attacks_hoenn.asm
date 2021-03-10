@@ -925,19 +925,62 @@ HariyamaEvosAttacks:
 	db 0 ; no more level-up moves
 	
 AzurillEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MARILL
 	db 0 ; no more evolutions
+	dbw 1, SPLASH
+	dbw 2, CHARM
+	dbw 7, TAIL_WHIP
+	dbw 10, BUBBLE
+	dbw 15, SLAM
+	dbw 18, WATER_GUN
 	db 0 ; no more level-up moves
 	
 NosepassEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 7, HARDEN
+	dbw 13, ROCK_THROW
+	dbw 19, BLOCK
+	dbw 25, THUNDER_WAVE
+	dbw 31, ROCK_SLIDE
+	dbw 37, SANDSTORM
+	dbw 43, REST
+	dbw 49, POWER_GEM
+	dbw 55, DISCHARGE
+	dbw 61, STONE_EDGE
+	dbw 67, ZAP_CANNON
+	dbw 73, LOCK_ON
+	dbw 79, EARTH_POWER
 	db 0 ; no more level-up moves
 	
 SkittyEvosAttacks:
+	dbbw EVOLVE_ITEM, MOON_STONE, DELCATTY
 	db 0 ; no more evolutions
+	dbw 1, FAKE_OUT
+	dbw 1, GROWL
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 4, FORESIGHT
+	dbw 8, ATTRACT
+	dbw 11, SING
+	dbw 15, DOUBLESLAP
+	dbw 18, COPYCAT
+	dbw 22, ASSIST
+	dbw 25, CHARM
+	dbw 29, FAINT_ATTACK
+	dbw 32, WAKE_UP_SLAP
+	dbw 36, COVET
+	dbw 39, HEAL_BELL
+	dbw 42, DOUBLE_EDGE
+	dbw 46, CAPTIVATE
 	db 0 ; no more level-up moves
 	
 DelcattyEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, ATTRACT
+	dbw 1, DOUBLESLAP
+	dbw 1, FAKE_OUT
+	dbw 1, SING
 	db 0 ; no more level-up moves
 	
 SableyeEvosAttacks:

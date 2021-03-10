@@ -361,10 +361,10 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; EXPLOUD
 	mon_cry CRY_RATTATA,     $000,  $001 ; MAKUHITA
 	mon_cry CRY_RATTATA,     $000,  $001 ; HARIYAMA
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; AZURILL
+	mon_cry CRY_RATTATA,     $000,  $001 ; NOSEPASS
+	mon_cry CRY_RATTATA,     $000,  $001 ; SKITTY
+	mon_cry CRY_RATTATA,     $000,  $001 ; DELCATTY
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

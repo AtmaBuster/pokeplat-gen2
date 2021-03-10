@@ -47,6 +47,10 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw MakuhitaEggMoves
 	dw NoEggMoves4
+	dw AzurillEggMoves
+	dw NosepassEggMoves
+	dw SkittyEggMoves
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -233,6 +237,38 @@ MakuhitaEggMoves:
 	dw REVENGE
 	dw WAKE_UP_SLAP
 	dw -1 ; end
-
+	
+AzurillEggMoves:
+	dw ENCORE
+	dw FAKE_TEARS
+	dw REFRESH
+	dw SING
+	dw SLAM
+	dw TICKLE
+	dw -1 ; end
+	
+NosepassEggMoves:
+	dw BLOCK
+	dw DOUBLE_EDGE
+	dw EXPLOSION
+	dw MAGNITUDE
+	dw ROLLOUT
+	dw -1 ; end
+	
+SkittyEggMoves:
+	dw BATON_PASS
+	dw FAKE_OUT
+	dw FAKE_TEARS
+	dw HELPING_HAND
+	dw LAST_RESORT
+	dw PSYCH_UP
+	dw SUBSTITUTE
+	dw SUCKER_PUNCH
+	dw TICKLE
+	dw UPROAR
+	dw WISH
+	dw ZEN_HEADBUTT
+	dw -1 ; end
+	
 NoEggMoves4:
 	dw -1 ; end

@@ -722,3 +722,11 @@ MakuhitaPal:        INCBIN "gfx/pokemon/makuhita/front.gbcpal", middle_colors
 MakuhitaShinyPal:   INCLUDE "gfx/pokemon/makuhita/shiny.pal"
 HariyamaPal:        INCBIN "gfx/pokemon/hariyama/front.gbcpal", middle_colors
 HariyamaShinyPal:   INCLUDE "gfx/pokemon/hariyama/shiny.pal"
+AzurillPal:         INCBIN "gfx/pokemon/azurill/front.gbcpal", middle_colors
+AzurillShinyPal:    INCLUDE "gfx/pokemon/azurill/shiny.pal"
+NosepassPal:        INCBIN "gfx/pokemon/nosepass/front.gbcpal", middle_colors
+NosepassShinyPal:   INCLUDE "gfx/pokemon/nosepass/shiny.pal"
+SkittyPal:          INCBIN "gfx/pokemon/skitty/front.gbcpal", middle_colors
+SkittyShinyPal:     INCLUDE "gfx/pokemon/skitty/shiny.pal"
+DelcattyPal:        INCBIN "gfx/pokemon/delcatty/front.gbcpal", middle_colors
+DelcattyShinyPal:   INCLUDE "gfx/pokemon/delcatty/shiny.pal"

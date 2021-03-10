@@ -345,4 +345,8 @@ AnimationPointers:
 	dw ExploudAnimation
 	dw MakuhitaAnimation
 	dw HariyamaAnimation
+	dw AzurillAnimation
+	dw NosepassAnimation
+	dw SkittyAnimation
+	dw DelcattyAnimation
 	

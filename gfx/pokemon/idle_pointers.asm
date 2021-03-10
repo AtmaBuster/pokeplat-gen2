@@ -345,4 +345,8 @@ AnimationIdlePointers:
 	dw ExploudAnimationIdle
 	dw MakuhitaAnimationIdle
 	dw HariyamaAnimationIdle
+	dw AzurillAnimationIdle
+	dw NosepassAnimationIdle
+	dw SkittyAnimationIdle
+	dw DelcattyAnimationIdle
 	

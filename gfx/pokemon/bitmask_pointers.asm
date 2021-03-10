@@ -345,4 +345,8 @@ BitmasksPointers:
 	dw ExploudBitmasks
 	dw MakuhitaBitmasks
 	dw HariyamaBitmasks
+	dw AzurillBitmasks
+	dw NosepassBitmasks
+	dw SkittyBitmasks
+	dw DelcattyBitmasks
 	
