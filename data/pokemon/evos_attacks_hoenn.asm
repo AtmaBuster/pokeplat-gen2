@@ -985,22 +985,104 @@ DelcattyEvosAttacks:
 	
 SableyeEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, LEER
+	dbw 1, SCRATCH
+	dbw 4, FORESIGHT
+	dbw 8, NIGHT_SLASH
+	dbw 11, ASTONISH
+	dbw 15, FURY_SWIPES
+	dbw 18, FAKE_OUT
+	dbw 22, DETECT
+	dbw 25, SHADOW_SNEAK
+	dbw 29, KNOCK_OFF
+	dbw 32, FAINT_ATTACK
+	dbw 36, PUNISHMENT
+	dbw 39, SHADOW_CLAW
+	dbw 43, POWER_GEM
+	dbw 46, CONFUSE_RAY
+	dbw 50, ZEN_HEADBUTT
+	dbw 53, SHADOW_BALL
+	dbw 57, MEAN_LOOK
 	db 0 ; no more level-up moves
 	
 MawileEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, ASTONISH
+	dbw 6, FAKE_TEARS
+	dbw 11, BITE
+	dbw 16, SWEET_SCENT
+	dbw 21, VICEGRIP
+	dbw 26, FAINT_ATTACK
+	dbw 31, BATON_PASS
+	dbw 36, CRUNCH
+	dbw 41, IRON_DEFENSE
+	dbw 46, SUCKER_PUNCH
+	dbw 51, SPIT_UP
+	dbw 51, STOCKPILE
+	dbw 51, SWALLOW
+	dbw 56, IRON_HEAD
 	db 0 ; no more level-up moves
 	
 AronEvosAttacks:
+	dbbw EVOLVE_LEVEL, 32, LAIRON
 	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 4, HARDEN
+	dbw 8, MUD_SLAP
+	dbw 11, HEADBUTT
+	dbw 15, METAL_CLAW
+	dbw 18, IRON_DEFENSE
+	dbw 22, ROAR
+	dbw 25, TAKE_DOWN
+	dbw 29, IRON_HEAD
+	dbw 32, PROTECT
+	dbw 36, METAL_SOUND
+	dbw 39, IRON_TAIL
+	dbw 43, DOUBLE_EDGE
+	dbw 46, METAL_BURST
 	db 0 ; no more level-up moves
 	
 LaironEvosAttacks:
+	dbbw EVOLVE_LEVEL, 42, AGGRON
 	db 0 ; no more evolutions
+	dbw 1, HARDEN
+	dbw 1, HEADBUTT
+	dbw 1, MUD_SLAP
+	dbw 1, TACKLE
+	dbw 4, HARDEN
+	dbw 8, MUD_SLAP
+	dbw 11, HEADBUTT
+	dbw 15, METAL_CLAW
+	dbw 18, IRON_DEFENSE
+	dbw 22, ROAR
+	dbw 25, TAKE_DOWN
+	dbw 29, IRON_HEAD
+	dbw 34, PROTECT
+	dbw 40, METAL_SOUND
+	dbw 45, IRON_TAIL
+	dbw 51, DOUBLE_EDGE
+	dbw 56, METAL_BURST
 	db 0 ; no more level-up moves
 	
 AggronEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, HARDEN
+	dbw 1, HEADBUTT
+	dbw 1, MUD_SLAP
+	dbw 1, TACKLE
+	dbw 4, HARDEN
+	dbw 8, MUD_SLAP
+	dbw 11, HEADBUTT
+	dbw 15, METAL_CLAW
+	dbw 18, IRON_DEFENSE
+	dbw 22, ROAR
+	dbw 25, TAKE_DOWN
+	dbw 29, IRON_HEAD
+	dbw 34, PROTECT
+	dbw 40, METAL_SOUND
+	dbw 48, IRON_TAIL
+	dbw 57, DOUBLE_EDGE
+	dbw 65, METAL_BURST
 	db 0 ; no more level-up moves
 	
 MedititeEvosAttacks:

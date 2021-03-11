@@ -365,11 +365,11 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; NOSEPASS
 	mon_cry CRY_RATTATA,     $000,  $001 ; SKITTY
 	mon_cry CRY_RATTATA,     $000,  $001 ; DELCATTY
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; SABLEYE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MAWILE
+	mon_cry CRY_RATTATA,     $000,  $001 ; ARON
+	mon_cry CRY_RATTATA,     $000,  $001 ; LAIRON
+	mon_cry CRY_RATTATA,     $000,  $001 ; AGGRON
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

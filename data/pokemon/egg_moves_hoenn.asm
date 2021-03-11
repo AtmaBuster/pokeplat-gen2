@@ -51,6 +51,11 @@ EggMovePointers4::
 	dw NosepassEggMoves
 	dw SkittyEggMoves
 	dw NoEggMoves4
+	dw SableyeEggMoves
+	dw MawileEggMoves
+	dw AronEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -268,6 +273,39 @@ SkittyEggMoves:
 	dw UPROAR
 	dw WISH
 	dw ZEN_HEADBUTT
+	dw -1 ; end
+	
+SableyeEggMoves:
+	dw FLATTER
+	dw MOONLIGHT
+	dw NASTY_PLOT
+	dw PSYCH_UP
+	dw RECOVER
+	dw -1 ; end
+	
+MawileEggMoves:
+	dw ANCIENTPOWER
+	dw FALSE_SWIPE
+	dw FIRE_FANG
+	dw ICE_FANG
+	dw POISON_FANG
+	dw PSYCH_UP
+	dw PUNISHMENT
+	dw SUCKER_PUNCH
+	dw SWORDS_DANCE
+	dw THUNDER_FANG
+	dw TICKLE
+	dw -1 ; end
+	
+AronEggMoves:
+	dw BODY_SLAM
+	dw CURSE
+	dw DRAGON_RUSH
+	dw ENDEAVOR
+	dw IRON_HEAD
+	dw SCREECH
+	dw SMELLINGSALT
+	dw STOMP
 	dw -1 ; end
 	
 NoEggMoves4:

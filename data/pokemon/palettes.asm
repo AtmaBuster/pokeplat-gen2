@@ -730,3 +730,13 @@ SkittyPal:          INCBIN "gfx/pokemon/skitty/front.gbcpal", middle_colors
 SkittyShinyPal:     INCLUDE "gfx/pokemon/skitty/shiny.pal"
 DelcattyPal:        INCBIN "gfx/pokemon/delcatty/front.gbcpal", middle_colors
 DelcattyShinyPal:   INCLUDE "gfx/pokemon/delcatty/shiny.pal"
+SableyePal:         INCBIN "gfx/pokemon/sableye/front.gbcpal", middle_colors
+SableyeShinyPal:    INCLUDE "gfx/pokemon/sableye/shiny.pal"
+MawilePal:          INCBIN "gfx/pokemon/mawile/front.gbcpal", middle_colors
+MawileShinyPal:     INCLUDE "gfx/pokemon/mawile/shiny.pal"
+AronPal:            INCBIN "gfx/pokemon/aron/front.gbcpal", middle_colors
+AronShinyPal:       INCLUDE "gfx/pokemon/aron/shiny.pal"
+LaironPal:          INCBIN "gfx/pokemon/lairon/front.gbcpal", middle_colors
+LaironShinyPal:     INCLUDE "gfx/pokemon/lairon/shiny.pal"
+AggronPal:          INCBIN "gfx/pokemon/aggron/front.gbcpal", middle_colors
+AggronShinyPal:     INCLUDE "gfx/pokemon/aggron/shiny.pal"

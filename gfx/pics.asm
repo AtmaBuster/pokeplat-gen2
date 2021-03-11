@@ -927,12 +927,17 @@ SkittyFrontpic:      INCBIN "gfx/pokemon/skitty/front.animated.2bpp.lz"
 SkittyBackpic:       INCBIN "gfx/pokemon/skitty/back.2bpp.lz"
 DelcattyFrontpic:    INCBIN "gfx/pokemon/delcatty/front.animated.2bpp.lz"
 DelcattyBackpic:     INCBIN "gfx/pokemon/delcatty/back.2bpp.lz"
+SableyeFrontpic:     INCBIN "gfx/pokemon/sableye/front.animated.2bpp.lz"
+SableyeBackpic:      INCBIN "gfx/pokemon/sableye/back.2bpp.lz"
+MawileFrontpic:      INCBIN "gfx/pokemon/mawile/front.animated.2bpp.lz"
+MawileBackpic:       INCBIN "gfx/pokemon/mawile/back.2bpp.lz"
+AronFrontpic:        INCBIN "gfx/pokemon/aron/front.animated.2bpp.lz"
+AronBackpic:         INCBIN "gfx/pokemon/aron/back.2bpp.lz"
+LaironFrontpic:      INCBIN "gfx/pokemon/lairon/front.animated.2bpp.lz"
+LaironBackpic:       INCBIN "gfx/pokemon/lairon/back.2bpp.lz"
+AggronFrontpic:      INCBIN "gfx/pokemon/aggron/front.animated.2bpp.lz"
+AggronBackpic:       INCBIN "gfx/pokemon/aggron/back.2bpp.lz"
 
-SableyeFrontpic:
-MawileFrontpic:
-AronFrontpic:
-LaironFrontpic:
-AggronFrontpic:
 MedititeFrontpic:
 MedichamFrontpic:
 ElectrikeFrontpic:
@@ -1140,11 +1145,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-SableyeBackpic:
-MawileBackpic:
-AronBackpic:
-LaironBackpic:
-AggronBackpic:
 MedititeBackpic:
 MedichamBackpic:
 ElectrikeBackpic:
