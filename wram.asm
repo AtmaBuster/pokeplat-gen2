@@ -766,6 +766,10 @@ wUnownPuzzleEnd::
 
 NEXTU ; c608
 
+wBoxNameBuffer:: ds BOX_NAME_LENGTH
+
+NEXTU ; c608
+
 ; This union spans 200 bytes from c608 to c6d0.
 UNION ; c608
 ; timeset temp storage
@@ -2797,8 +2801,7 @@ wCurBox:: db ; db72
 
 	ds 2
 
-; 8 chars + $50
-wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES ; db75
+	ds BOX_NAME_LENGTH * 14
 
 wCelebiEvent:: ; dbf3
 ; bit 2: forest is restless
@@ -3068,6 +3071,11 @@ SECTION "16-bit WRAM tables", WRAMX
 ; align this section to $100
 	wram_conversion_table wPokemonIndexTable, MON_TABLE
 	wram_conversion_table wMoveIndexTable, MOVE_TABLE
+
+
+SECTION "Box Names", WRAMX
+; 8 chars + $50
+wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES ; db75
 
 
 SECTION "Battle Tower RAM", WRAMX

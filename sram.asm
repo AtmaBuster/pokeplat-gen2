@@ -283,6 +283,49 @@ sBox12PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox13PokemonIndexes:: ds 2 * MONS_PER_BOX
 sBox14PokemonIndexes:: ds 2 * MONS_PER_BOX
 
+
+SECTION "Boxes 15-21", SRAM
+
+sBox15:: box sBox15
+sBox16:: box sBox16
+sBox17:: box sBox17
+sBox18:: box sBox18
+sBox19:: box sBox19
+sBox20:: box sBox20
+sBox21:: box sBox21
+
+sBox15PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox16PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox17PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox18PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox19PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox20PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox21PokemonIndexes:: ds 2 * MONS_PER_BOX
+
+
+SECTION "Boxes 22-28", SRAM
+
+sBox22:: box sBox22
+sBox23:: box sBox23
+sBox24:: box sBox24
+sBox25:: box sBox25
+sBox26:: box sBox26
+sBox27:: box sBox27
+sBox28:: box sBox28
+
+sBox22PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox23PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox24PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox25PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox26PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox27PokemonIndexes:: ds 2 * MONS_PER_BOX
+sBox28PokemonIndexes:: ds 2 * MONS_PER_BOX
+
+SECTION "SRAM Box Names", SRAM
+
+sBoxNames::
+	ds BOX_NAME_LENGTH * NUM_BOXES
+
 SECTION "SRAM Mobile 1", SRAM
 
 	ds $13

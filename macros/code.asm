@@ -104,3 +104,15 @@ if _NARG == 0
 	sine_table 32
 endc
 ENDM
+
+pushwrambank: MACRO
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(\1)
+	ldh [rSVBK], a
+ENDM
+
+popwrambank: MACRO
+	pop af
+	ldh [rSVBK], a
+ENDM

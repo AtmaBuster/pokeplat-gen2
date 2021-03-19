@@ -998,11 +998,14 @@ BillsPC_BoxName:
 	call AddNTimes
 	ld e, l
 	ld d, h
-	jr .print
+	hlcoord 10, 1
+	pushwrambank wBoxNames
+	call PlaceString
+	popwrambank
+	ret
 
 .party
 	ld de, .PartyPKMN
-.print
 	hlcoord 10, 1
 	call PlaceString
 	ret
@@ -2229,6 +2232,20 @@ GetBoxPointer:
 	dba sBox12
 	dba sBox13
 	dba sBox14
+	dba sBox15
+	dba sBox16
+	dba sBox17
+	dba sBox18
+	dba sBox19
+	dba sBox20
+	dba sBox21
+	dba sBox22
+	dba sBox23
+	dba sBox24
+	dba sBox25
+	dba sBox26
+	dba sBox27
+	dba sBox28
 
 BillsPC_ApplyPalettes:
 	ld b, a
@@ -2354,7 +2371,9 @@ endr
 	dec a
 	call GetBoxName
 	pop hl
+	pushwrambank wBoxNames
 	call PlaceString
+	popwrambank
 	ret
 
 GetBoxName:
@@ -2451,6 +2470,20 @@ GetBoxCount:
 	dba sBox12
 	dba sBox13
 	dba sBox14
+	dba sBox15
+	dba sBox16
+	dba sBox17
+	dba sBox18
+	dba sBox19
+	dba sBox20
+	dba sBox21
+	dba sBox22
+	dba sBox23
+	dba sBox24
+	dba sBox25
+	dba sBox26
+	dba sBox27
+	dba sBox28
 
 BillsPC_PrintBoxName:
 	hlcoord 0, 0
@@ -2464,7 +2497,9 @@ BillsPC_PrintBoxName:
 	and $f
 	call GetBoxName
 	hlcoord 11, 2
+	pushwrambank wBoxNames
 	call PlaceString
+	popwrambank
 	ret
 
 .Current:
@@ -2527,14 +2562,14 @@ BillsPC_ChangeBoxSubmenu:
 	call GetBoxName
 	ld e, l
 	ld d, h
-	ld hl, wd002
-	ld c, BOX_NAME_LENGTH - 1
-	call InitString
+	call InitString2
 	ld a, [wMenuSelection]
 	dec a
 	call GetBoxName
-	ld de, wd002
+	ld de, wBoxNameBuffer
+	pushwrambank wBoxNames
 	call CopyName2
+	popwrambank
 	ret
 
 	hlcoord 11, 7 ; unused
@@ -2552,6 +2587,37 @@ BillsPC_ChangeBoxSubmenu:
 	db "NAME@"
 	db "PRINT@"
 	db "QUIT@"
+
+InitString2:
+	ld c, BOX_NAME_LENGTH - 1
+	ld de, wBoxNameBuffer
+	push hl
+	ld hl, wd002
+.loop
+	ld a, [hli]
+	cp "@"
+	jr z, .blank
+	cp " "
+	jr nz, .notblank
+	dec c
+	jr nz, .loop
+.blank
+	ld l, e
+	ld h, d
+	pop de
+	ld bc, BOX_NAME_LENGTH
+	pushwrambank wBoxNames
+	call CopyName2
+	popwrambank
+	ret
+
+.notblank
+	pop hl
+	ld hl, wBoxNameBuffer
+	ld de, wd002
+	ld bc, BOX_NAME_LENGTH
+	call CopyName2
+	ret
 
 BillsPC_PlaceChooseABoxString:
 	ld de, .ChooseABox

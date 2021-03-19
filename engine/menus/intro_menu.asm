@@ -239,6 +239,10 @@ endc
 	ret
 
 SetDefaultBoxNames:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBoxNames)
+	ldh [rSVBK], a
 	ld hl, wBoxNames
 	ld c, 0
 .loop
@@ -251,6 +255,14 @@ SetDefaultBoxNames:
 	cp 10
 	jr c, .less
 	sub 10
+	cp 10
+	jr c, .less_than_20
+	sub 10
+	ld [hl], "2"
+	inc hl
+	jr .less
+
+.less_than_20
 	ld [hl], "1"
 	inc hl
 
@@ -265,6 +277,8 @@ SetDefaultBoxNames:
 	ld a, c
 	cp NUM_BOXES
 	jr c, .loop
+	pop af
+	ldh [rSVBK], a
 	ret
 
 .Box:

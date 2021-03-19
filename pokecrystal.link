@@ -396,8 +396,12 @@ SRAM $02
 SRAM $03
 	"Boxes 8-14"
 SRAM $04
-	"SRAM Mobile 1"
+	"Boxes 15-21"
 SRAM $05
+	"Boxes 22-28"
+SRAM $06
+	"SRAM Mobile 1"
+SRAM $07
 	"SRAM Mobile 2"
 HRAM
 	"HRAM"

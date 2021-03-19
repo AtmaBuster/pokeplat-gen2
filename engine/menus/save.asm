@@ -241,6 +241,7 @@ SaveGameData:
 	call SavePokemonData
 	call SaveIndexTables
 	call SaveBox
+	call SaveBoxNames
 	call SaveChecksum
 	call ValidateBackupSave
 	call SaveBackupOptions
@@ -484,6 +485,17 @@ SaveIndexTables:
 	ldh [rSVBK], a
 	jp CloseSRAM
 
+SaveBoxNames:
+	ld a, BANK(sBoxNames)
+	call GetSRAMBank
+	ld hl, wBoxNames
+	ld bc, BOX_NAME_LENGTH * NUM_BOXES
+	ld de, sBoxNames
+	pushwrambank wBoxNames
+	call CopyBytes
+	popwrambank
+	jp CloseSRAM
+
 SaveBox:
 	call GetBoxAddress
 	push de
@@ -622,6 +634,7 @@ TryLoadSaveFile:
 	call LoadPokemonData
 	call LoadIndexTables
 	call LoadBox
+	call LoadBoxNames
 	farcall RestorePartyMonMail
 	farcall RestoreMobileEventIndex
 	farcall RestoreMysteryGift
@@ -641,6 +654,7 @@ TryLoadSaveFile:
 	call LoadBackupPokemonData
 	call LoadBackupIndexTables
 	call LoadBox
+	call LoadBoxNames
 	farcall RestorePartyMonMail
 	farcall RestoreMobileEventIndex
 	farcall RestoreMysteryGift
@@ -808,6 +822,17 @@ LoadIndexTables:
 	call CopyBytes
 	pop af
 	ldh [rSVBK], a
+	jp CloseSRAM
+
+LoadBoxNames:
+	ld a, BANK(sBoxNames)
+	call GetSRAMBank
+	ld hl, sBoxNames
+	ld bc, BOX_NAME_LENGTH * NUM_BOXES
+	ld de, wBoxNames
+	pushwrambank wBoxNames
+	call CopyBytes
+	popwrambank
 	jp CloseSRAM
 
 LoadBox:
@@ -1316,6 +1341,7 @@ EraseBoxes:
 	ld bc, 2 * MONS_PER_BOX
 	call ByteFill
 	pop hl
+	call CloseSRAM
 	dec e
 	jr nz, .index_loop
 	ret
@@ -1336,6 +1362,20 @@ BoxAddresses:
 	dbww BANK(sBox12), sBox12, sBox12End
 	dbww BANK(sBox13), sBox13, sBox13End
 	dbww BANK(sBox14), sBox14, sBox14End
+	dbww BANK(sBox15), sBox15, sBox15End
+	dbww BANK(sBox16), sBox16, sBox16End
+	dbww BANK(sBox17), sBox17, sBox17End
+	dbww BANK(sBox18), sBox18, sBox18End
+	dbww BANK(sBox19), sBox19, sBox19End
+	dbww BANK(sBox20), sBox20, sBox20End
+	dbww BANK(sBox21), sBox21, sBox21End
+	dbww BANK(sBox22), sBox22, sBox22End
+	dbww BANK(sBox23), sBox23, sBox23End
+	dbww BANK(sBox24), sBox24, sBox24End
+	dbww BANK(sBox25), sBox25, sBox25End
+	dbww BANK(sBox26), sBox26, sBox26End
+	dbww BANK(sBox27), sBox27, sBox27End
+	dbww BANK(sBox28), sBox28, sBox28End
 
 	; index addresses
 	dba sBox1PokemonIndexes
@@ -1352,6 +1392,20 @@ BoxAddresses:
 	dba sBox12PokemonIndexes
 	dba sBox13PokemonIndexes
 	dba sBox14PokemonIndexes
+	dba sBox15PokemonIndexes
+	dba sBox16PokemonIndexes
+	dba sBox17PokemonIndexes
+	dba sBox18PokemonIndexes
+	dba sBox19PokemonIndexes
+	dba sBox20PokemonIndexes
+	dba sBox21PokemonIndexes
+	dba sBox22PokemonIndexes
+	dba sBox23PokemonIndexes
+	dba sBox24PokemonIndexes
+	dba sBox25PokemonIndexes
+	dba sBox26PokemonIndexes
+	dba sBox27PokemonIndexes
+	dba sBox28PokemonIndexes
 
 Checksum:
 	ld de, 0
