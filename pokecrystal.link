@@ -340,6 +340,8 @@ ROMX $8b
 	"Pokedex Entries 129-192"
 ROMX $8c
 	"Pics 21"
+ROMX $8d
+	"Pics 22"
 WRAM0
 	"Stack"
 	"Audio RAM"

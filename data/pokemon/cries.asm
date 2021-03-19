@@ -353,29 +353,29 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; SLAKOTH
 	mon_cry CRY_RATTATA,     $000,  $001 ; VIGOROTH
 	mon_cry CRY_RATTATA,     $000,  $001 ; SLAKING
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; NINCADA
+	mon_cry CRY_RATTATA,     $000,  $001 ; NINJASK
+	mon_cry CRY_RATTATA,     $000,  $001 ; SHEDINJA
+	mon_cry CRY_RATTATA,     $000,  $001 ; WHISMUR
+	mon_cry CRY_RATTATA,     $000,  $001 ; LOUDRED
+	mon_cry CRY_RATTATA,     $000,  $001 ; EXPLOUD
+	mon_cry CRY_RATTATA,     $000,  $001 ; MAKUHITA
+	mon_cry CRY_RATTATA,     $000,  $001 ; HARIYAMA
+	mon_cry CRY_RATTATA,     $000,  $001 ; AZURILL
+	mon_cry CRY_RATTATA,     $000,  $001 ; NOSEPASS
+	mon_cry CRY_RATTATA,     $000,  $001 ; SKITTY
+	mon_cry CRY_RATTATA,     $000,  $001 ; DELCATTY
+	mon_cry CRY_RATTATA,     $000,  $001 ; SABLEYE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MAWILE
+	mon_cry CRY_RATTATA,     $000,  $001 ; ARON
+	mon_cry CRY_RATTATA,     $000,  $001 ; LAIRON
+	mon_cry CRY_RATTATA,     $000,  $001 ; AGGRON
+	mon_cry CRY_RATTATA,     $000,  $001 ; MEDITITE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MEDICHAM
+	mon_cry CRY_RATTATA,     $000,  $001 ; ELECTRIKE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MANECTRIC
+	mon_cry CRY_RATTATA,     $000,  $001 ; PLUSLE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MINUN
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

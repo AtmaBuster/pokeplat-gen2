@@ -900,30 +900,56 @@ VigorothFrontpic:	 INCBIN "gfx/pokemon/vigoroth/front.animated.2bpp.lz"
 VigorothBackpic:     INCBIN "gfx/pokemon/vigoroth/back.2bpp.lz"
 SlakingFrontpic:	 INCBIN "gfx/pokemon/slaking/front.animated.2bpp.lz"
 SlakingBackpic:      INCBIN "gfx/pokemon/slaking/back.2bpp.lz"
+NincadaFrontpic:     INCBIN "gfx/pokemon/nincada/front.animated.2bpp.lz"
+NincadaBackpic:      INCBIN "gfx/pokemon/nincada/back.2bpp.lz"
+NinjaskFrontpic:     INCBIN "gfx/pokemon/ninjask/front.animated.2bpp.lz"
+NinjaskBackpic:      INCBIN "gfx/pokemon/ninjask/back.2bpp.lz"
+ShedinjaFrontpic:    INCBIN "gfx/pokemon/shedinja/front.animated.2bpp.lz"
+ShedinjaBackpic:     INCBIN "gfx/pokemon/shedinja/back.2bpp.lz"
+WhismurFrontpic:     INCBIN "gfx/pokemon/whismur/front.animated.2bpp.lz"
+WhismurBackpic:      INCBIN "gfx/pokemon/whismur/back.2bpp.lz"
 
-NincadaFrontpic:
-NinjaskFrontpic:
-ShedinjaFrontpic:
-WhismurFrontpic:
-LoudredFrontpic:
-ExploudFrontpic:
-MakuhitaFrontpic:
-HariyamaFrontpic:
-AzurillFrontpic:
-NosepassFrontpic:
-SkittyFrontpic:
-DelcattyFrontpic:
-SableyeFrontpic:
-MawileFrontpic:
-AronFrontpic:
-LaironFrontpic:
-AggronFrontpic:
-MedititeFrontpic:
-MedichamFrontpic:
-ElectrikeFrontpic:
-ManectricFrontpic:
-PlusleFrontpic:
-MinunFrontpic:
+SECTION "Pics 23", ROMX
+
+LoudredFrontpic:     INCBIN "gfx/pokemon/loudred/front.animated.2bpp.lz"
+LoudredBackpic:      INCBIN "gfx/pokemon/loudred/back.2bpp.lz"
+ExploudFrontpic:     INCBIN "gfx/pokemon/exploud/front.animated.2bpp.lz"
+ExploudBackpic:      INCBIN "gfx/pokemon/exploud/back.2bpp.lz"
+MakuhitaFrontpic:    INCBIN "gfx/pokemon/makuhita/front.animated.2bpp.lz"
+MakuhitaBackpic:     INCBIN "gfx/pokemon/makuhita/back.2bpp.lz"
+HariyamaFrontpic:    INCBIN "gfx/pokemon/hariyama/front.animated.2bpp.lz"
+HariyamaBackpic:     INCBIN "gfx/pokemon/hariyama/back.2bpp.lz"
+AzurillFrontpic:     INCBIN "gfx/pokemon/azurill/front.animated.2bpp.lz"
+AzurillBackpic:      INCBIN "gfx/pokemon/azurill/back.2bpp.lz"
+NosepassFrontpic:    INCBIN "gfx/pokemon/nosepass/front.animated.2bpp.lz"
+NosepassBackpic:     INCBIN "gfx/pokemon/nosepass/back.2bpp.lz"
+SkittyFrontpic:      INCBIN "gfx/pokemon/skitty/front.animated.2bpp.lz"
+SkittyBackpic:       INCBIN "gfx/pokemon/skitty/back.2bpp.lz"
+DelcattyFrontpic:    INCBIN "gfx/pokemon/delcatty/front.animated.2bpp.lz"
+DelcattyBackpic:     INCBIN "gfx/pokemon/delcatty/back.2bpp.lz"
+SableyeFrontpic:     INCBIN "gfx/pokemon/sableye/front.animated.2bpp.lz"
+SableyeBackpic:      INCBIN "gfx/pokemon/sableye/back.2bpp.lz"
+MawileFrontpic:      INCBIN "gfx/pokemon/mawile/front.animated.2bpp.lz"
+MawileBackpic:       INCBIN "gfx/pokemon/mawile/back.2bpp.lz"
+AronFrontpic:        INCBIN "gfx/pokemon/aron/front.animated.2bpp.lz"
+AronBackpic:         INCBIN "gfx/pokemon/aron/back.2bpp.lz"
+LaironFrontpic:      INCBIN "gfx/pokemon/lairon/front.animated.2bpp.lz"
+LaironBackpic:       INCBIN "gfx/pokemon/lairon/back.2bpp.lz"
+AggronFrontpic:      INCBIN "gfx/pokemon/aggron/front.animated.2bpp.lz"
+AggronBackpic:       INCBIN "gfx/pokemon/aggron/back.2bpp.lz"
+MedititeFrontpic:    INCBIN "gfx/pokemon/meditite/front.animated.2bpp.lz"
+MedititeBackpic:     INCBIN "gfx/pokemon/meditite/back.2bpp.lz"
+MedichamFrontpic:    INCBIN "gfx/pokemon/medicham/front.animated.2bpp.lz"
+MedichamBackpic:     INCBIN "gfx/pokemon/medicham/back.2bpp.lz"
+ElectrikeFrontpic:   INCBIN "gfx/pokemon/electrike/front.animated.2bpp.lz"
+ElectrikeBackpic:    INCBIN "gfx/pokemon/electrike/back.2bpp.lz"
+ManectricFrontpic:   INCBIN "gfx/pokemon/manectric/front.animated.2bpp.lz"
+ManectricBackpic:    INCBIN "gfx/pokemon/manectric/back.2bpp.lz"
+PlusleFrontpic:      INCBIN "gfx/pokemon/plusle/front.animated.2bpp.lz"
+PlusleBackpic:       INCBIN "gfx/pokemon/plusle/back.2bpp.lz"
+MinunFrontpic:       INCBIN "gfx/pokemon/minun/front.animated.2bpp.lz"
+MinunBackpic:        INCBIN "gfx/pokemon/minun/back.2bpp.lz"
+
 VolbeatFrontpic:
 IllumiseFrontpic:
 RoseliaFrontpic:
@@ -1125,29 +1151,7 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-NincadaBackpic:
-NinjaskBackpic:
-ShedinjaBackpic:
-WhismurBackpic:
-LoudredBackpic:
-ExploudBackpic:
-MakuhitaBackpic:
-HariyamaBackpic:
-AzurillBackpic:
-NosepassBackpic:
-SkittyBackpic:
-DelcattyBackpic:
-SableyeBackpic:
-MawileBackpic:
-AronBackpic:
-LaironBackpic:
-AggronBackpic:
-MedititeBackpic:
-MedichamBackpic:
-ElectrikeBackpic:
-ManectricBackpic:
-PlusleBackpic:
-MinunBackpic:
+
 VolbeatBackpic:
 IllumiseBackpic:
 RoseliaBackpic:

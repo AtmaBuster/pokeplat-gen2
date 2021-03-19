@@ -337,4 +337,27 @@ FramesPointers:
 	dba SlakothFrames
 	dba VigorothFrames
 	dba SlakingFrames
+	dba NincadaFrames
+	dba NinjaskFrames
+	dba ShedinjaFrames
+	dba WhismurFrames
+	dba LoudredFrames
+	dba ExploudFrames
+	dba MakuhitaFrames
+	dba HariyamaFrames
+	dba AzurillFrames
+	dba NosepassFrames
+	dba SkittyFrames
+	dba DelcattyFrames
+	dba SableyeFrames
+	dba MawileFrames
+	dba AronFrames
+	dba LaironFrames
+	dba AggronFrames
+	dba MedititeFrames
+	dba MedichamFrames
+	dba ElectrikeFrames
+	dba ManectricFrames
+	dba PlusleFrames
+	dba MinunFrames
 	

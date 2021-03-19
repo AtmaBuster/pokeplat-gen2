@@ -337,4 +337,27 @@ BitmasksPointers:
 	dw SlakothBitmasks
 	dw VigorothBitmasks
 	dw SlakingBitmasks
+	dw NincadaBitmasks
+	dw NinjaskBitmasks
+	dw ShedinjaBitmasks
+	dw WhismurBitmasks
+	dw LoudredBitmasks
+	dw ExploudBitmasks
+	dw MakuhitaBitmasks
+	dw HariyamaBitmasks
+	dw AzurillBitmasks
+	dw NosepassBitmasks
+	dw SkittyBitmasks
+	dw DelcattyBitmasks
+	dw SableyeBitmasks
+	dw MawileBitmasks
+	dw AronBitmasks
+	dw LaironBitmasks
+	dw AggronBitmasks
+	dw MedititeBitmasks
+	dw MedichamBitmasks
+	dw ElectrikeBitmasks
+	dw ManectricBitmasks
+	dw PlusleBitmasks
+	dw MinunBitmasks
 	

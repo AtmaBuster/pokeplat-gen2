@@ -337,4 +337,27 @@ AnimationIdlePointers:
 	dw SlakothAnimationIdle
 	dw VigorothAnimationIdle
 	dw SlakingAnimationIdle
+	dw NincadaAnimationIdle
+	dw NinjaskAnimationIdle
+	dw ShedinjaAnimationIdle
+	dw WhismurAnimationIdle
+	dw LoudredAnimationIdle
+	dw ExploudAnimationIdle
+	dw MakuhitaAnimationIdle
+	dw HariyamaAnimationIdle
+	dw AzurillAnimationIdle
+	dw NosepassAnimationIdle
+	dw SkittyAnimationIdle
+	dw DelcattyAnimationIdle
+	dw SableyeAnimationIdle
+	dw MawileAnimationIdle
+	dw AronAnimationIdle
+	dw LaironAnimationIdle
+	dw AggronAnimationIdle
+	dw MedititeAnimationIdle
+	dw MedichamAnimationIdle
+	dw ElectrikeAnimationIdle
+	dw ManectricAnimationIdle
+	dw PlusleAnimationIdle
+	dw MinunAnimationIdle
 	

@@ -39,6 +39,29 @@ EggMovePointers4::
 	dw SlakothEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw NincadaEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw WhismurEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw MakuhitaEggMoves
+	dw NoEggMoves4
+	dw AzurillEggMoves
+	dw NosepassEggMoves
+	dw SkittyEggMoves
+	dw NoEggMoves4
+	dw SableyeEggMoves
+	dw MawileEggMoves
+	dw AronEggMoves
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw MedititeEggMoves
+	dw NoEggMoves4
+	dw ElectrikeEggMoves
+	dw NoEggMoves4
+	dw PlusleEggMoves
+	dw MinunEggMoves
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -191,6 +214,144 @@ SlakothEggMoves:
 	dw SLASH
 	dw SLEEP_TALK
 	dw SNORE
+	dw -1 ; end
+
+NincadaEggMoves:
+	dw BUG_BITE
+	dw BUG_BUZZ
+	dw ENDURE
+	dw FAINT_ATTACK
+	dw GUST
+	dw NIGHT_SLASH
+	dw SILVER_WIND
+	dw -1 ; end
+
+WhismurEggMoves:
+	dw ENDEAVOR
+	dw EXTRASENSORY
+	dw SMELLINGSALT
+	dw SMOKESCREEN
+	dw SNORE
+	dw SWAGGER
+	dw TAKE_DOWN
+	dw -1 ; end
+
+MakuhitaEggMoves:
+	dw BULLET_PUNCH
+	dw COUNTER
+	dw CROSS_CHOP
+	dw DETECT
+	dw DYNAMICPUNCH
+	dw FAINT_ATTACK
+	dw FORESIGHT
+	dw HELPING_HAND
+	dw REVENGE
+	dw WAKE_UP_SLAP
+	dw -1 ; end
+	
+AzurillEggMoves:
+	dw ENCORE
+	dw FAKE_TEARS
+	dw REFRESH
+	dw SING
+	dw SLAM
+	dw TICKLE
+	dw -1 ; end
+	
+NosepassEggMoves:
+	dw BLOCK
+	dw DOUBLE_EDGE
+	dw EXPLOSION
+	dw MAGNITUDE
+	dw ROLLOUT
+	dw -1 ; end
+	
+SkittyEggMoves:
+	dw BATON_PASS
+	dw FAKE_OUT
+	dw FAKE_TEARS
+	dw HELPING_HAND
+	dw LAST_RESORT
+	dw PSYCH_UP
+	dw SUBSTITUTE
+	dw SUCKER_PUNCH
+	dw TICKLE
+	dw UPROAR
+	dw WISH
+	dw ZEN_HEADBUTT
+	dw -1 ; end
+	
+SableyeEggMoves:
+	dw FLATTER
+	dw MOONLIGHT
+	dw NASTY_PLOT
+	dw PSYCH_UP
+	dw RECOVER
+	dw -1 ; end
+	
+MawileEggMoves:
+	dw ANCIENTPOWER
+	dw FALSE_SWIPE
+	dw FIRE_FANG
+	dw ICE_FANG
+	dw POISON_FANG
+	dw PSYCH_UP
+	dw PUNISHMENT
+	dw SUCKER_PUNCH
+	dw SWORDS_DANCE
+	dw THUNDER_FANG
+	dw TICKLE
+	dw -1 ; end
+	
+AronEggMoves:
+	dw BODY_SLAM
+	dw CURSE
+	dw DRAGON_RUSH
+	dw ENDEAVOR
+	dw IRON_HEAD
+	dw SCREECH
+	dw SMELLINGSALT
+	dw STOMP
+	dw -1 ; end
+	
+MedititeEggMoves:
+	dw BATON_PASS
+	dw BULLET_PUNCH
+	dw DYNAMICPUNCH
+	dw FAKE_OUT
+	dw FIRE_PUNCH
+	dw FORESIGHT
+	dw GUARD_SWAP
+	dw ICE_PUNCH
+	dw POWER_SWAP
+	dw PSYCHO_CUT
+	dw THUNDERPUNCH
+	dw -1 ; end
+	
+ElectrikeEggMoves:
+	dw CRUNCH
+	dw CURSE
+	dw DISCHARGE
+	dw FIRE_FANG
+	dw HEADBUTT
+	dw ICE_FANG
+	dw SWIFT
+	dw THUNDER_FANG
+	dw UPROAR
+	dw -1 ; end
+	
+PlusleEggMoves:
+	dw SING
+	dw SUBSTITUTE
+	dw SWEET_KISS
+	dw WISH
+	dw -1 ; end
+
+MinunEggMoves:
+	dw SING
+	dw SUBSTITUTE
+	dw SWEET_KISS
+	dw WISH
 	dw -1 ; end
 
 NoEggMoves4:
