@@ -740,3 +740,15 @@ LaironPal:          INCBIN "gfx/pokemon/lairon/front.gbcpal", middle_colors
 LaironShinyPal:     INCLUDE "gfx/pokemon/lairon/shiny.pal"
 AggronPal:          INCBIN "gfx/pokemon/aggron/front.gbcpal", middle_colors
 AggronShinyPal:     INCLUDE "gfx/pokemon/aggron/shiny.pal"
+MedititePal:        INCBIN "gfx/pokemon/meditite/front.gbcpal", middle_colors
+MedititeShinyPal:   INCLUDE "gfx/pokemon/meditite/shiny.pal"
+MedichamPal:        INCBIN "gfx/pokemon/medicham/front.gbcpal", middle_colors
+MedichamShinyPal:   INCLUDE "gfx/pokemon/medicham/shiny.pal"
+ElectrikePal:       INCBIN "gfx/pokemon/electrike/front.gbcpal", middle_colors
+ElectrikeShinyPal:  INCLUDE "gfx/pokemon/electrike/shiny.pal"
+ManectricPal:       INCBIN "gfx/pokemon/manectric/front.gbcpal", middle_colors
+ManectricShinyPal:  INCLUDE "gfx/pokemon/manectric/shiny.pal"
+PluslePal:          INCBIN "gfx/pokemon/plusle/front.gbcpal", middle_colors
+PlusleShinyPal:     INCLUDE "gfx/pokemon/plusle/shiny.pal"
+MinunPal:           INCBIN "gfx/pokemon/minun/front.gbcpal", middle_colors
+MinunShinyPal:      INCLUDE "gfx/pokemon/minun/shiny.pal"

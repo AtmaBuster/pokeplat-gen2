@@ -1086,27 +1086,124 @@ AggronEvosAttacks:
 	db 0 ; no more level-up moves
 	
 MedititeEvosAttacks:
+	dbbw EVOLVE_LEVEL, 37, MEDICHAM
 	db 0 ; no more evolutions
+	dbw 1, BIDE
+	dbw 4, MEDITATE
+	dbw 8, CONFUSION
+	dbw 11, DETECT
+	dbw 15, HIDDEN_POWER
+	dbw 18, MIND_READER
+	dbw 22, FEINT
+	dbw 25, CALM_MIND
+	dbw 29, FORCE_PALM
+	dbw 32, HI_JUMP_KICK
+	dbw 36, PSYCH_UP
+	dbw 43, REVERSAL
+	dbw 46, RECOVER
 	db 0 ; no more level-up moves
 	
 MedichamEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, BIDE
+	dbw 1, CONFUSION
+	dbw 1, DETECT
+	dbw 1, FIRE_PUNCH
+	dbw 1, ICE_PUNCH
+	dbw 1, MEDITATE
+	dbw 1, THUNDERPUNCH
+	dbw 4, MEDITATE
+	dbw 8, CONFUSION
+	dbw 11, DETECT
+	dbw 15, HIDDEN_POWER
+	dbw 18, MIND_READER
+	dbw 22, FEINT
+	dbw 25, CALM_MIND
+	dbw 29, FORCE_PALM
+	dbw 32, HI_JUMP_KICK
+	dbw 36, PSYCH_UP
+	dbw 42, POWER_TRICK
+	dbw 49, REVERSAL
+	dbw 55, RECOVER
 	db 0 ; no more level-up moves
 	
 ElectrikeEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, MANECTRIC
 	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 4, THUNDER_WAVE
+	dbw 9, LEER
+	dbw 12, HOWL
+	dbw 17, QUICK_ATTACK
+	dbw 20, SPARK
+	dbw 25, ODOR_SLEUTH
+	dbw 28, BITE
+	dbw 33, THUNDER_FANG
+	dbw 36, ROAR
+	dbw 41, DISCHARGE
+	dbw 44, CHARGE
+	dbw 49, THUNDER
 	db 0 ; no more level-up moves
 	
 ManectricEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, FIRE_FANG
+	dbw 1, HOWL
+	dbw 1, LEER
+	dbw 1, TACKLE
+	dbw 1, THUNDER_WAVE
+	dbw 4, THUNDER_WAVE
+	dbw 9, LEER
+	dbw 12, HOWL
+	dbw 17, QUICK_ATTACK
+	dbw 20, SPARK
+	dbw 25, ODOR_SLEUTH
+	dbw 30, BITE
+	dbw 37, THUNDER_FANG
+	dbw 42, ROAR
+	dbw 49, DISCHARGE
+	dbw 54, CHARGE
+	dbw 61, THUNDER
 	db 0 ; no more level-up moves
 	
 PlusleEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 3, THUNDER_WAVE
+	dbw 7, QUICK_ATTACK
+	dbw 10, HELPING_HAND
+	dbw 15, SPARK
+	dbw 17, ENCORE
+	dbw 21, FAKE_TEARS
+	dbw 24, COPYCAT
+	dbw 29, SWIFT
+	dbw 31, FAKE_TEARS
+	dbw 35, CHARGE
+	dbw 38, THUNDER
+	dbw 42, BATON_PASS
+	dbw 44, AGILITY
+	dbw 48, LAST_RESORT
+	dbw 51, NASTY_PLOT
 	db 0 ; no more level-up moves
 	
 MinunEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 3, THUNDER_WAVE
+	dbw 7, QUICK_ATTACK
+	dbw 10, HELPING_HAND
+	dbw 15, SPARK
+	dbw 17, ENCORE
+	dbw 21, CHARM
+	dbw 24, COPYCAT
+	dbw 29, SWIFT
+	dbw 31, FAKE_TEARS
+	dbw 35, CHARGE
+	dbw 38, THUNDER
+	dbw 42, BATON_PASS
+	dbw 44, AGILITY
+	dbw 48, TRUMP_CARD
+	dbw 51, NASTY_PLOT
 	db 0 ; no more level-up moves
 	
 VolbeatEvosAttacks:

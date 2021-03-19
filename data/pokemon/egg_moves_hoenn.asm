@@ -56,6 +56,12 @@ EggMovePointers4::
 	dw AronEggMoves
 	dw NoEggMoves4
 	dw NoEggMoves4
+	dw MedititeEggMoves
+	dw NoEggMoves4
+	dw ElectrikeEggMoves
+	dw NoEggMoves4
+	dw PlusleEggMoves
+	dw MinunEggMoves
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -308,5 +314,45 @@ AronEggMoves:
 	dw STOMP
 	dw -1 ; end
 	
+MedititeEggMoves:
+	dw BATON_PASS
+	dw BULLET_PUNCH
+	dw DYNAMICPUNCH
+	dw FAKE_OUT
+	dw FIRE_PUNCH
+	dw FORESIGHT
+	dw GUARD_SWAP
+	dw ICE_PUNCH
+	dw POWER_SWAP
+	dw PSYCHO_CUT
+	dw THUNDERPUNCH
+	dw -1 ; end
+	
+ElectrikeEggMoves:
+	dw CRUNCH
+	dw CURSE
+	dw DISCHARGE
+	dw FIRE_FANG
+	dw HEADBUTT
+	dw ICE_FANG
+	dw SWIFT
+	dw THUNDER_FANG
+	dw UPROAR
+	dw -1 ; end
+	
+PlusleEggMoves:
+	dw SING
+	dw SUBSTITUTE
+	dw SWEET_KISS
+	dw WISH
+	dw -1 ; end
+
+MinunEggMoves:
+	dw SING
+	dw SUBSTITUTE
+	dw SWEET_KISS
+	dw WISH
+	dw -1 ; end
+
 NoEggMoves4:
 	dw -1 ; end

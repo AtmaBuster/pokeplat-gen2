@@ -937,13 +937,19 @@ LaironFrontpic:      INCBIN "gfx/pokemon/lairon/front.animated.2bpp.lz"
 LaironBackpic:       INCBIN "gfx/pokemon/lairon/back.2bpp.lz"
 AggronFrontpic:      INCBIN "gfx/pokemon/aggron/front.animated.2bpp.lz"
 AggronBackpic:       INCBIN "gfx/pokemon/aggron/back.2bpp.lz"
+MedititeFrontpic:    INCBIN "gfx/pokemon/meditite/front.animated.2bpp.lz"
+MedititeBackpic:     INCBIN "gfx/pokemon/meditite/back.2bpp.lz"
+MedichamFrontpic:    INCBIN "gfx/pokemon/medicham/front.animated.2bpp.lz"
+MedichamBackpic:     INCBIN "gfx/pokemon/medicham/back.2bpp.lz"
+ElectrikeFrontpic:   INCBIN "gfx/pokemon/electrike/front.animated.2bpp.lz"
+ElectrikeBackpic:    INCBIN "gfx/pokemon/electrike/back.2bpp.lz"
+ManectricFrontpic:   INCBIN "gfx/pokemon/manectric/front.animated.2bpp.lz"
+ManectricBackpic:    INCBIN "gfx/pokemon/manectric/back.2bpp.lz"
+PlusleFrontpic:      INCBIN "gfx/pokemon/plusle/front.animated.2bpp.lz"
+PlusleBackpic:       INCBIN "gfx/pokemon/plusle/back.2bpp.lz"
+MinunFrontpic:       INCBIN "gfx/pokemon/minun/front.animated.2bpp.lz"
+MinunBackpic:        INCBIN "gfx/pokemon/minun/back.2bpp.lz"
 
-MedititeFrontpic:
-MedichamFrontpic:
-ElectrikeFrontpic:
-ManectricFrontpic:
-PlusleFrontpic:
-MinunFrontpic:
 VolbeatFrontpic:
 IllumiseFrontpic:
 RoseliaFrontpic:
@@ -1145,12 +1151,7 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-MedititeBackpic:
-MedichamBackpic:
-ElectrikeBackpic:
-ManectricBackpic:
-PlusleBackpic:
-MinunBackpic:
+
 VolbeatBackpic:
 IllumiseBackpic:
 RoseliaBackpic:

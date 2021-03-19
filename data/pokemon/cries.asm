@@ -370,12 +370,12 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; ARON
 	mon_cry CRY_RATTATA,     $000,  $001 ; LAIRON
 	mon_cry CRY_RATTATA,     $000,  $001 ; AGGRON
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; MEDITITE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MEDICHAM
+	mon_cry CRY_RATTATA,     $000,  $001 ; ELECTRIKE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MANECTRIC
+	mon_cry CRY_RATTATA,     $000,  $001 ; PLUSLE
+	mon_cry CRY_RATTATA,     $000,  $001 ; MINUN
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

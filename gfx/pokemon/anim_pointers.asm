@@ -354,4 +354,10 @@ AnimationPointers:
 	dw AronAnimation
 	dw LaironAnimation
 	dw AggronAnimation
+	dw MedititeAnimation
+	dw MedichamAnimation
+	dw ElectrikeAnimation
+	dw ManectricAnimation
+	dw PlusleAnimation
+	dw MinunAnimation
 	
