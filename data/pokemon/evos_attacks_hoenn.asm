@@ -1208,10 +1208,35 @@ MinunEvosAttacks:
 	
 VolbeatEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, FLASH
+	dbw 1, TACKLE
+	dbw 5, DOUBLE_TEAM
+	dbw 9, CONFUSE_RAY
+	dbw 13, MOONLIGHT
+	dbw 17, QUICK_ATTACK
+	dbw 21, TAIL_GLOW
+	dbw 25, SIGNAL_BEAM
+	dbw 29, PROTECT
+	dbw 33, HELPING_HAND
+	dbw 37, ZEN_HEADBUTT
+	dbw 41, BUG_BUZZ
+	dbw 45, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 IllumiseEvosAttacks:
 	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 5, SWEET_SCENT
+	dbw 9, CHARM
+	dbw 13, MOONLIGHT
+	dbw 17, QUICK_ATTACK
+	dbw 21, WISH
+	dbw 25, ENCORE
+	dbw 29, FLATTER
+	dbw 33, HELPING_HAND
+	dbw 37, ZEN_HEADBUTT
+	dbw 41, BUG_BITE
+	dbw 45, COVET
 	db 0 ; no more level-up moves
 	
 RoseliaEvosAttacks:

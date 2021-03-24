@@ -949,9 +949,11 @@ PlusleFrontpic:      INCBIN "gfx/pokemon/plusle/front.animated.2bpp.lz"
 PlusleBackpic:       INCBIN "gfx/pokemon/plusle/back.2bpp.lz"
 MinunFrontpic:       INCBIN "gfx/pokemon/minun/front.animated.2bpp.lz"
 MinunBackpic:        INCBIN "gfx/pokemon/minun/back.2bpp.lz"
+VolbeatFrontpic:     INCBIN "gfx/pokemon/volbeat/front.animated.2bpp.lz"
+VolbeatBackpic:      INCBIN "gfx/pokemon/volbeat/back.2bpp.lz"
+IllumiseFrontpic:    INCBIN "gfx/pokemon/illumise/front.animated.2bpp.lz"
+IllumiseBackpic:     INCBIN "gfx/pokemon/illumise/back.2bpp.lz"
 
-VolbeatFrontpic:
-IllumiseFrontpic:
 RoseliaFrontpic:
 GulpinFrontpic:
 SwalotFrontpic:
@@ -1152,8 +1154,7 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-VolbeatBackpic:
-IllumiseBackpic:
+
 RoseliaBackpic:
 GulpinBackpic:
 SwalotBackpic:

@@ -360,4 +360,6 @@ FramesPointers:
 	dba ManectricFrames
 	dba PlusleFrames
 	dba MinunFrames
+	dba VolbeatFrames
+	dba IllumiseFrames
 	

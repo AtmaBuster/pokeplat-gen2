@@ -752,3 +752,7 @@ PluslePal:          INCBIN "gfx/pokemon/plusle/front.gbcpal", middle_colors
 PlusleShinyPal:     INCLUDE "gfx/pokemon/plusle/shiny.pal"
 MinunPal:           INCBIN "gfx/pokemon/minun/front.gbcpal", middle_colors
 MinunShinyPal:      INCLUDE "gfx/pokemon/minun/shiny.pal"
+VolbeatPal:         INCBIN "gfx/pokemon/volbeat/front.gbcpal", middle_colors
+VolbeatShinyPal:    INCLUDE "gfx/pokemon/volbeat/shiny.pal"
+IllumisePal:        INCBIN "gfx/pokemon/illumise/front.gbcpal", middle_colors
+IllumiseShinyPal:   INCLUDE "gfx/pokemon/illumise/shiny.pal"

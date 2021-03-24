@@ -361,13 +361,13 @@ DebugMenu_PokePics:
 	ld bc, SCREEN_WIDTH
 	ld d, 4
 .loop
-	ld a, "B"
+	ld a, "R"
 	ld [hl], a
 	add hl, bc
 	ld a, "G"
 	ld [hl], a
 	add hl, bc
-	ld a, "R"
+	ld a, "B"
 	ld [hl], a
 	add hl, bc
 	dec d

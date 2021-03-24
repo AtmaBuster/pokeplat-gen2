@@ -360,4 +360,6 @@ BitmasksPointers:
 	dw ManectricBitmasks
 	dw PlusleBitmasks
 	dw MinunBitmasks
+	dw VolbeatBitmasks
+	dw IllumiseBitmasks
 	

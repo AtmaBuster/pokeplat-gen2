@@ -62,6 +62,8 @@ EggMovePointers4::
 	dw NoEggMoves4
 	dw PlusleEggMoves
 	dw MinunEggMoves
+	dw VolbeatEggMoves
+	dw IllumiseEggMoves
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -352,6 +354,22 @@ MinunEggMoves:
 	dw SUBSTITUTE
 	dw SWEET_KISS
 	dw WISH
+	dw -1 ; end
+
+VolbeatEggMoves:
+	dw BATON_PASS
+	dw BUG_BUZZ
+	dw ENCORE
+	dw SILVER_WIND
+	dw TRICK
+	dw -1 ; end
+
+IllumiseEggMoves:
+	dw BATON_PASS
+	dw BUG_BUZZ
+	dw ENCORE
+	dw GROWTH
+	dw SILVER_WIND
 	dw -1 ; end
 
 NoEggMoves4:

@@ -360,4 +360,6 @@ AnimationIdlePointers:
 	dw ManectricAnimationIdle
 	dw PlusleAnimationIdle
 	dw MinunAnimationIdle
+	dw VolbeatAnimationIdle
+	dw IllumiseAnimationIdle
 	

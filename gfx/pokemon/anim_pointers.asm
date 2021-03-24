@@ -360,4 +360,6 @@ AnimationPointers:
 	dw ManectricAnimation
 	dw PlusleAnimation
 	dw MinunAnimation
+	dw VolbeatAnimation
+	dw IllumiseAnimation
 	

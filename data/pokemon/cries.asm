@@ -376,8 +376,8 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; MANECTRIC
 	mon_cry CRY_RATTATA,     $000,  $001 ; PLUSLE
 	mon_cry CRY_RATTATA,     $000,  $001 ; MINUN
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; VOLBEAT
+	mon_cry CRY_RATTATA,     $000,  $001 ; ILLUMISE
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
