@@ -2494,7 +2494,7 @@ BillsPC_PrintBoxName:
 	ld de, .Current
 	call PlaceString
 	ld a, [wCurBox]
-	and $f
+	and $1f
 	call GetBoxName
 	hlcoord 11, 2
 	pushwrambank wBoxNames

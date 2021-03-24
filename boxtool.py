@@ -1,5 +1,14 @@
 import sys, struct
 
+if len(sys.argv) != 3 and len(sys.argv) != 4:
+	print('usage: python3 {} savefile romfile [-s]'.format(sys.argv[0]))
+	exit()
+
+if len(sys.argv) == 4 and sys.argv[3] == '-s':
+	MAKE_SHINY = True
+else:
+	MAKE_SHINY = False
+
 NAME_TABLE_ADDR = 0x20801e
 MONS_PER_BOX = 20
 BOX_STRUCT_LEN = 4 + 55 * MONS_PER_BOX
@@ -11,7 +20,11 @@ def get_poke_name(rom, ind):
 def make_poke(ind):
 	speciesid = struct.pack('B', ind)
 	dat = speciesid + b'\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00'
-	dat += b'\xff' * 2 * 6
+	dat += b'\xff' * 2 * 4
+	if MAKE_SHINY:
+		dat += b'\xaa' * 2
+	else:
+		dat += b'\xff' * 2
 	dat += b'\x00' * 8
 	dat += b'\x64'
 	assert len(dat) == 32
