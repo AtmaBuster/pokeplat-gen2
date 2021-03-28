@@ -369,4 +369,9 @@ AnimationIdlePointers:
 	dw SharpedoAnimationIdle
 	dw WailmerAnimationIdle
 	dw WailordAnimationIdle
+	dw NumelAnimationIdle
+	dw CameruptAnimationIdle
+	dw TorkoalAnimationIdle
+	dw SpoinkAnimationIdle
+	dw GrumpigAnimationIdle
 	

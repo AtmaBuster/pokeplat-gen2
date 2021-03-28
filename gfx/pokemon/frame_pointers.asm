@@ -369,4 +369,9 @@ FramesPointers:
 	dba SharpedoFrames
 	dba WailmerFrames
 	dba WailordFrames
+	dba NumelFrames
+	dba CameruptFrames
+	dba TorkoalFrames
+	dba SpoinkFrames
+	dba GrumpigFrames
 	

@@ -970,12 +970,17 @@ WailmerFrontpic:	 INCBIN "gfx/pokemon/wailmer/front.animated.2bpp.lz"
 WailmerBackpic:      INCBIN "gfx/pokemon/wailmer/back.2bpp.lz"
 WailordFrontpic:	 INCBIN "gfx/pokemon/wailord/front.animated.2bpp.lz"
 WailordBackpic:      INCBIN "gfx/pokemon/wailord/back.2bpp.lz"
+NumelFrontpic:		 INCBIN "gfx/pokemon/numel/front.animated.2bpp.lz"
+NumelBackpic:        INCBIN "gfx/pokemon/numel/back.2bpp.lz"
+CameruptFrontpic:	 INCBIN "gfx/pokemon/camerupt/front.animated.2bpp.lz"
+CameruptBackpic:     INCBIN "gfx/pokemon/camerupt/back.2bpp.lz"
+TorkoalFrontpic:	 INCBIN "gfx/pokemon/torkoal/front.animated.2bpp.lz"
+TorkoalBackpic:      INCBIN "gfx/pokemon/torkoal/back.2bpp.lz"
+SpoinkFrontpic:	 	 INCBIN "gfx/pokemon/spoink/front.animated.2bpp.lz"
+SpoinkBackpic:       INCBIN "gfx/pokemon/spoink/back.2bpp.lz"
+GrumpigFrontpic:	 INCBIN "gfx/pokemon/grumpig/front.animated.2bpp.lz"
+GrumpigBackpic:      INCBIN "gfx/pokemon/grumpig/back.2bpp.lz"
 
-NumelFrontpic:
-CameruptFrontpic:
-TorkoalFrontpic:
-SpoinkFrontpic:
-GrumpigFrontpic:
 SpindaFrontpic:
 TrapinchFrontpic:
 VibravaFrontpic:
@@ -1164,11 +1169,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-NumelBackpic:
-CameruptBackpic:
-TorkoalBackpic:
-SpoinkBackpic:
-GrumpigBackpic:
 SpindaBackpic:
 TrapinchBackpic:
 VibravaBackpic:

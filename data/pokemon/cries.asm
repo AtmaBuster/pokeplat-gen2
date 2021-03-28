@@ -384,11 +384,11 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; SHARPEDO
 	mon_cry CRY_RATTATA,     $000,  $001 ; WAILMER
 	mon_cry CRY_RATTATA,     $000,  $001 ; WAILORD
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; NUMEL
+	mon_cry CRY_RATTATA,     $000,  $001 ; CAMERUPT
+	mon_cry CRY_RATTATA,     $000,  $001 ; TORKOAL
+	mon_cry CRY_RATTATA,     $000,  $001 ; SPOINK
+	mon_cry CRY_RATTATA,     $000,  $001 ; GRUMPIG
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

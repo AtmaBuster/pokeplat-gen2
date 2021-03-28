@@ -770,3 +770,13 @@ WailmerPal:         INCBIN "gfx/pokemon/wailmer/front.gbcpal", middle_colors
 WailmerShinyPal:    INCLUDE "gfx/pokemon/wailmer/shiny.pal"
 WailordPal:         INCBIN "gfx/pokemon/wailord/front.gbcpal", middle_colors
 WailordShinyPal:    INCLUDE "gfx/pokemon/wailord/shiny.pal"
+NumelPal:           INCBIN "gfx/pokemon/numel/front.gbcpal", middle_colors
+NumelShinyPal:      INCLUDE "gfx/pokemon/numel/shiny.pal"
+CameruptPal:        INCBIN "gfx/pokemon/camerupt/front.gbcpal", middle_colors
+CameruptShinyPal:   INCLUDE "gfx/pokemon/camerupt/shiny.pal"
+TorkoalPal:         INCBIN "gfx/pokemon/torkoal/front.gbcpal", middle_colors
+TorkoalShinyPal:    INCLUDE "gfx/pokemon/torkoal/shiny.pal"
+SpoinkPal:          INCBIN "gfx/pokemon/spoink/front.gbcpal", middle_colors
+SpoinkShinyPal:     INCLUDE "gfx/pokemon/spoink/shiny.pal"
+GrumpigPal:         INCBIN "gfx/pokemon/grumpig/front.gbcpal", middle_colors
+GrumpigShinyPal:    INCLUDE "gfx/pokemon/grumpig/shiny.pal"

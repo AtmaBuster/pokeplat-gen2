@@ -369,4 +369,9 @@ AnimationPointers:
 	dw SharpedoAnimation
 	dw WailmerAnimation
 	dw WailordAnimation
+	dw NumelAnimation
+	dw CameruptAnimation
+	dw TorkoalAnimation
+	dw SpoinkAnimation
+	dw GrumpigAnimation
 	

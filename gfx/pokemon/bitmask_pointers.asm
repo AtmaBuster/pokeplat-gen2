@@ -369,4 +369,9 @@ BitmasksPointers:
 	dw SharpedoBitmasks
 	dw WailmerBitmasks
 	dw WailordBitmasks
+	dw NumelBitmasks
+	dw CameruptBitmasks
+	dw TorkoalBitmasks
+	dw SpoinkBitmasks
+	dw GrumpigBitmasks
 	
