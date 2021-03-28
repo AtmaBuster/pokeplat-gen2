@@ -362,4 +362,11 @@ BitmasksPointers:
 	dw MinunBitmasks
 	dw VolbeatBitmasks
 	dw IllumiseBitmasks
+	dw RoseliaBitmasks
+	dw GulpinBitmasks
+	dw SwalotBitmasks
+	dw CarvanhaBitmasks
+	dw SharpedoBitmasks
+	dw WailmerBitmasks
+	dw WailordBitmasks
 	

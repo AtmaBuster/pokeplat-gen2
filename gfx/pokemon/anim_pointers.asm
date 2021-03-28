@@ -362,4 +362,11 @@ AnimationPointers:
 	dw MinunAnimation
 	dw VolbeatAnimation
 	dw IllumiseAnimation
+	dw RoseliaAnimation
+	dw GulpinAnimation
+	dw SwalotAnimation
+	dw CarvanhaAnimation
+	dw SharpedoAnimation
+	dw WailmerAnimation
+	dw WailordAnimation
 	

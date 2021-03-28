@@ -362,4 +362,11 @@ FramesPointers:
 	dba MinunFrames
 	dba VolbeatFrames
 	dba IllumiseFrames
+	dba RoseliaFrames
+	dba GulpinFrames
+	dba SwalotFrames
+	dba CarvanhaFrames
+	dba SharpedoFrames
+	dba WailmerFrames
+	dba WailordFrames
 	

@@ -378,12 +378,12 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; MINUN
 	mon_cry CRY_RATTATA,     $000,  $001 ; VOLBEAT
 	mon_cry CRY_RATTATA,     $000,  $001 ; ILLUMISE
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; ROSELIA
+	mon_cry CRY_RATTATA,     $000,  $001 ; GULPIN
+	mon_cry CRY_RATTATA,     $000,  $001 ; CARVANHA
+	mon_cry CRY_RATTATA,     $000,  $001 ; SHARPEDO
+	mon_cry CRY_RATTATA,     $000,  $001 ; WAILMER
+	mon_cry CRY_RATTATA,     $000,  $001 ; WAILORD
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

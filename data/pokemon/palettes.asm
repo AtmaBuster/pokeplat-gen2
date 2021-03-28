@@ -756,3 +756,17 @@ VolbeatPal:         INCBIN "gfx/pokemon/volbeat/front.gbcpal", middle_colors
 VolbeatShinyPal:    INCLUDE "gfx/pokemon/volbeat/shiny.pal"
 IllumisePal:        INCBIN "gfx/pokemon/illumise/front.gbcpal", middle_colors
 IllumiseShinyPal:   INCLUDE "gfx/pokemon/illumise/shiny.pal"
+RoseliaPal:         INCBIN "gfx/pokemon/roselia/front.gbcpal", middle_colors
+RoseliaShinyPal:    INCLUDE "gfx/pokemon/roselia/shiny.pal"
+GulpinPal:          INCBIN "gfx/pokemon/gulpin/front.gbcpal", middle_colors
+GulpinShinyPal:     INCLUDE "gfx/pokemon/gulpin/shiny.pal"
+SwalotPal:          INCBIN "gfx/pokemon/swalot/front.gbcpal", middle_colors
+SwalotShinyPal:     INCLUDE "gfx/pokemon/swalot/shiny.pal"
+CarvanhaPal:        INCBIN "gfx/pokemon/carvanha/front.gbcpal", middle_colors
+CarvanhaShinyPal:   INCLUDE "gfx/pokemon/carvanha/shiny.pal"
+SharpedoPal:        INCBIN "gfx/pokemon/sharpedo/front.gbcpal", middle_colors
+SharpedoShinyPal:   INCLUDE "gfx/pokemon/sharpedo/shiny.pal"
+WailmerPal:         INCBIN "gfx/pokemon/wailmer/front.gbcpal", middle_colors
+WailmerShinyPal:    INCLUDE "gfx/pokemon/wailmer/shiny.pal"
+WailordPal:         INCBIN "gfx/pokemon/wailord/front.gbcpal", middle_colors
+WailordShinyPal:    INCLUDE "gfx/pokemon/wailord/shiny.pal"

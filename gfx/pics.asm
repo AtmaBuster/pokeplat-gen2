@@ -953,14 +953,24 @@ VolbeatFrontpic:     INCBIN "gfx/pokemon/volbeat/front.animated.2bpp.lz"
 VolbeatBackpic:      INCBIN "gfx/pokemon/volbeat/back.2bpp.lz"
 IllumiseFrontpic:    INCBIN "gfx/pokemon/illumise/front.animated.2bpp.lz"
 IllumiseBackpic:     INCBIN "gfx/pokemon/illumise/back.2bpp.lz"
+RoseliaFrontpic:	 INCBIN "gfx/pokemon/roselia/front.animated.2bpp.lz"
+RoseliaBackpic:      INCBIN "gfx/pokemon/roselia/back.2bpp.lz"
+GulpinFrontpic:		 INCBIN "gfx/pokemon/gulpin/front.animated.2bpp.lz"
+GulpinBackpic:       INCBIN "gfx/pokemon/gulpin/back.2bpp.lz"
+SwalotFrontpic:		 INCBIN "gfx/pokemon/swalot/front.animated.2bpp.lz"
+SwalotBackpic:       INCBIN "gfx/pokemon/swalot/back.2bpp.lz"
 
-RoseliaFrontpic:
-GulpinFrontpic:
-SwalotFrontpic:
-CarvanhaFrontpic:
-SharpedoFrontpic:
-WailmerFrontpic:
-WailordFrontpic:
+SECTION "Pics 24", ROMX
+
+CarvanhaFrontpic:	 INCBIN "gfx/pokemon/carvanha/front.animated.2bpp.lz"
+CarvanhaBackpic:     INCBIN "gfx/pokemon/carvanha/back.2bpp.lz"
+SharpedoFrontpic:	 INCBIN "gfx/pokemon/sharpedo/front.animated.2bpp.lz"
+SharpedoBackpic:     INCBIN "gfx/pokemon/sharpedo/back.2bpp.lz"
+WailmerFrontpic:	 INCBIN "gfx/pokemon/wailmer/front.animated.2bpp.lz"
+WailmerBackpic:      INCBIN "gfx/pokemon/wailmer/back.2bpp.lz"
+WailordFrontpic:	 INCBIN "gfx/pokemon/wailord/front.animated.2bpp.lz"
+WailordBackpic:      INCBIN "gfx/pokemon/wailord/back.2bpp.lz"
+
 NumelFrontpic:
 CameruptFrontpic:
 TorkoalFrontpic:
@@ -1154,14 +1164,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-
-RoseliaBackpic:
-GulpinBackpic:
-SwalotBackpic:
-CarvanhaBackpic:
-SharpedoBackpic:
-WailmerBackpic:
-WailordBackpic:
 NumelBackpic:
 CameruptBackpic:
 TorkoalBackpic:

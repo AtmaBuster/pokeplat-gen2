@@ -362,4 +362,11 @@ AnimationIdlePointers:
 	dw MinunAnimationIdle
 	dw VolbeatAnimationIdle
 	dw IllumiseAnimationIdle
+	dw RoseliaAnimationIdle
+	dw GulpinAnimationIdle
+	dw SwalotAnimationIdle
+	dw CarvanhaAnimationIdle
+	dw SharpedoAnimationIdle
+	dw WailmerAnimationIdle
+	dw WailordAnimationIdle
 	
