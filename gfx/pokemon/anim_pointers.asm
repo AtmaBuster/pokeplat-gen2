@@ -374,4 +374,10 @@ AnimationPointers:
 	dw TorkoalAnimation
 	dw SpoinkAnimation
 	dw GrumpigAnimation
+	dw SpindaAnimation
+	dw TrapinchAnimation
+	dw VibravaAnimation
+	dw FlygonAnimation
+	dw CacneaAnimation
+	dw CacturneAnimation
 	

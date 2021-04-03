@@ -980,13 +980,20 @@ SpoinkFrontpic:	 	 INCBIN "gfx/pokemon/spoink/front.animated.2bpp.lz"
 SpoinkBackpic:       INCBIN "gfx/pokemon/spoink/back.2bpp.lz"
 GrumpigFrontpic:	 INCBIN "gfx/pokemon/grumpig/front.animated.2bpp.lz"
 GrumpigBackpic:      INCBIN "gfx/pokemon/grumpig/back.2bpp.lz"
+SpindaFrontpic:      INCBIN "gfx/pokemon/spinda/front.animated.2bpp.lz"
+SpindaBackpic:       INCBIN "gfx/pokemon/spinda/back.2bpp.lz"
+TrapinchFrontpic:    INCBIN "gfx/pokemon/trapinch/front.animated.2bpp.lz"
+TrapinchBackpic:     INCBIN "gfx/pokemon/trapinch/back.2bpp.lz"
+VibravaFrontpic:     INCBIN "gfx/pokemon/vibrava/front.animated.2bpp.lz"
+VibravaBackpic:      INCBIN "gfx/pokemon/vibrava/back.2bpp.lz"
+FlygonFrontpic:      INCBIN "gfx/pokemon/flygon/front.animated.2bpp.lz"
+FlygonBackpic:       INCBIN "gfx/pokemon/flygon/back.2bpp.lz"
+CacneaFrontpic:      INCBIN "gfx/pokemon/cacnea/front.animated.2bpp.lz"
+CacneaBackpic:       INCBIN "gfx/pokemon/cacnea/back.2bpp.lz"
+CacturneFrontpic:    INCBIN "gfx/pokemon/cacturne/front.animated.2bpp.lz"
+CacturneBackpic:     INCBIN "gfx/pokemon/cacturne/back.2bpp.lz"
 
-SpindaFrontpic:
-TrapinchFrontpic:
-VibravaFrontpic:
-FlygonFrontpic:
-CacneaFrontpic:
-CacturneFrontpic:
+
 SwabluFrontpic:
 AltariaFrontpic:
 ZangooseFrontpic:
@@ -1169,12 +1176,7 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-SpindaBackpic:
-TrapinchBackpic:
-VibravaBackpic:
-FlygonBackpic:
-CacneaBackpic:
-CacturneBackpic:
+
 SwabluBackpic:
 AltariaBackpic:
 ZangooseBackpic:

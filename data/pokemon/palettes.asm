@@ -780,3 +780,15 @@ SpoinkPal:          INCBIN "gfx/pokemon/spoink/front.gbcpal", middle_colors
 SpoinkShinyPal:     INCLUDE "gfx/pokemon/spoink/shiny.pal"
 GrumpigPal:         INCBIN "gfx/pokemon/grumpig/front.gbcpal", middle_colors
 GrumpigShinyPal:    INCLUDE "gfx/pokemon/grumpig/shiny.pal"
+SpindaPal:          INCBIN "gfx/pokemon/spinda/front.gbcpal", middle_colors
+SpindaShinyPal:     INCLUDE "gfx/pokemon/spinda/shiny.pal"
+TrapinchPal:        INCBIN "gfx/pokemon/trapinch/front.gbcpal", middle_colors
+TrapinchShinyPal:   INCLUDE "gfx/pokemon/trapinch/shiny.pal"
+VibravaPal:         INCBIN "gfx/pokemon/vibrava/front.gbcpal", middle_colors
+VibravaShinyPal:    INCLUDE "gfx/pokemon/vibrava/shiny.pal"
+FlygonPal:          INCBIN "gfx/pokemon/flygon/front.gbcpal", middle_colors
+FlygonShinyPal:     INCLUDE "gfx/pokemon/flygon/shiny.pal"
+CacneaPal:          INCBIN "gfx/pokemon/cacnea/front.gbcpal", middle_colors
+CacneaShinyPal:     INCLUDE "gfx/pokemon/cacnea/shiny.pal"
+CacturnePal:        INCBIN "gfx/pokemon/cacturne/front.gbcpal", middle_colors
+CacturneShinyPal:   INCLUDE "gfx/pokemon/cacturne/shiny.pal"

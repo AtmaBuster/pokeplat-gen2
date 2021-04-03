@@ -374,4 +374,10 @@ BitmasksPointers:
 	dw TorkoalBitmasks
 	dw SpoinkBitmasks
 	dw GrumpigBitmasks
+	dw SpindaBitmasks
+	dw TrapinchBitmasks
+	dw VibravaBitmasks
+	dw FlygonBitmasks
+	dw CacneaBitmasks
+	dw CacturneBitmasks
 	

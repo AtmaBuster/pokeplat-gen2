@@ -374,4 +374,10 @@ FramesPointers:
 	dba TorkoalFrames
 	dba SpoinkFrames
 	dba GrumpigFrames
+	dba SpindaFrames
+	dba TrapinchFrames
+	dba VibravaFrames
+	dba FlygonFrames
+	dba CacneaFrames
+	dba CacturneFrames
 	

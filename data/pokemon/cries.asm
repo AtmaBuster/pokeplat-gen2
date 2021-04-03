@@ -389,12 +389,12 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; TORKOAL
 	mon_cry CRY_RATTATA,     $000,  $001 ; SPOINK
 	mon_cry CRY_RATTATA,     $000,  $001 ; GRUMPIG
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; SPINDA
+	mon_cry CRY_RATTATA,     $000,  $001 ; TRAPINCH
+	mon_cry CRY_RATTATA,     $000,  $001 ; VIBRAVA
+	mon_cry CRY_RATTATA,     $000,  $001 ; FLYGON
+	mon_cry CRY_RATTATA,     $000,  $001 ; CACNEA
+	mon_cry CRY_RATTATA,     $000,  $001 ; CACTURNE
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

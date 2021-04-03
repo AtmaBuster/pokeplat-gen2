@@ -374,4 +374,10 @@ AnimationIdlePointers:
 	dw TorkoalAnimationIdle
 	dw SpoinkAnimationIdle
 	dw GrumpigAnimationIdle
+	dw SpindaAnimationIdle
+	dw TrapinchAnimationIdle
+	dw VibravaAnimationIdle
+	dw FlygonAnimationIdle
+	dw CacneaAnimationIdle
+	dw CacturneAnimationIdle
 	
