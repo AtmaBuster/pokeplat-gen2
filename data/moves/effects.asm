@@ -1409,6 +1409,15 @@ Rollout:
 	kingsrock
 	endmove
 
+Flatter:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	raiseoppstat $10 | SP_ATTACK
+	confusetarget
+	endmove
+
 Swagger:
 	checkobedience
 	usedmovetext
@@ -1924,4 +1933,34 @@ DefenseCurl:
 	doturn
 	forceraisestat DEFENSE
 	curl
+	endmove
+
+WillOWisp:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	checksafeguard
+	burntarget
+	endmove
+
+Superpower:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	forcelowerstat ATTACK
+	forcelowerstat DEFENSE
 	endmove

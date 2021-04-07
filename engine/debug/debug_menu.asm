@@ -71,7 +71,7 @@ DebugMenu::
 	db "Subgame@"
 	db "Warp@"
 	db "Color@"
-	db "NULL@"
+	db "Fill Dex@"
 	db "NULL@"
 	db "NULL@"
 	db "NULL@"
@@ -86,7 +86,7 @@ DebugMenu::
 	dw Debug_SubgameMenu
 	dw Debug_Warp
 	dw Debug_ColorPicker
-	dw NULL
+	dw Debug_FillDex
 	dw NULL
 	dw NULL
 	dw NULL
@@ -419,3 +419,25 @@ Debug_ColorPicker:
 	ret
 
 INCLUDE "engine/debug/color_picker.asm"
+
+Debug_FillDex:
+; give pokedex
+	ld de, ENGINE_POKEDEX
+	ld b, SET_FLAG
+	farcall EngineFlagAction
+; set flags
+	ld hl, 0
+.loop
+	inc hl
+	ld a, h
+	cp HIGH(ALT_FORMS)
+	jr nz, .setflag
+	ld a, l
+	cp LOW(ALT_FORMS)
+	ret z
+.setflag
+	push hl
+	call GetPokemonIDFromIndex
+	call SetSeenAndCaughtMon
+	pop hl
+	jr .loop

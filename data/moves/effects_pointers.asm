@@ -1,5 +1,6 @@
 MoveEffectsPointers:
-                                 ; entries correspond to EFFECT_* constants
+; entries correspond to EFFECT_* constants
+
 	dw NormalHit             ; NORMAL_HIT
 	dw DoSleep               ; SLEEP
 	dw PoisonHit             ; POISON_HIT
@@ -164,8 +165,8 @@ MoveEffectsPointers:
 	dw Splash                ; SWALLOW
 	dw Splash                ; HAIL
 	dw Splash                ; TORMENT
-	dw Splash                ; FLATTER
-	dw Splash                ; WILL_O_WISP
+	dw Flatter               ; FLATTER
+	dw WillOWisp             ; WILL_O_WISP
 	dw Splash                ; MEMENTO
 	dw Splash                ; FACADE
 	dw Splash                ; FOCUS_PUNCH
@@ -178,7 +179,7 @@ MoveEffectsPointers:
 	dw Splash                ; WISH
 	dw Splash                ; ASSIST
 	dw Splash                ; INGRAIN
-	dw Splash                ; SUPERPOWER
+	dw Superpower            ; SUPERPOWER
 	dw Splash                ; MAGIC_COAT
 	dw Splash                ; RECYCLE
 	dw Splash                ; REVENGE

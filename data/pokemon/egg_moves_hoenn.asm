@@ -447,13 +447,13 @@ IllumiseEggMoves:
 RoseliaEggMoves:
 	dw COTTON_SPORE
 	dw EXTRASENSORY
-	db LEAF_STORM
-	db MIND_READER
-	db PIN_MISSILE
-	db RAZOR_LEAF
-	db SLEEP_POWDER
-	db SPIKES
-	db SYNTHESIS
+	dw LEAF_STORM
+	dw MIND_READER
+	dw PIN_MISSILE
+	dw RAZOR_LEAF
+	dw SLEEP_POWDER
+	dw SPIKES
+	dw SYNTHESIS
 	dw -1 ; end
 
 GulpinEggMoves:
