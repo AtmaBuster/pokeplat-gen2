@@ -992,14 +992,19 @@ CacneaFrontpic:      INCBIN "gfx/pokemon/cacnea/front.animated.2bpp.lz"
 CacneaBackpic:       INCBIN "gfx/pokemon/cacnea/back.2bpp.lz"
 CacturneFrontpic:    INCBIN "gfx/pokemon/cacturne/front.animated.2bpp.lz"
 CacturneBackpic:     INCBIN "gfx/pokemon/cacturne/back.2bpp.lz"
+SwabluFrontpic:      INCBIN "gfx/pokemon/swablu/front.animated.2bpp.lz"
+SwabluBackpic:       INCBIN "gfx/pokemon/swablu/back.2bpp.lz"
+AltariaFrontpic:     INCBIN "gfx/pokemon/altaria/front.animated.2bpp.lz"
+AltariaBackpic:      INCBIN "gfx/pokemon/altaria/back.2bpp.lz"
+ZangooseFrontpic:    INCBIN "gfx/pokemon/zangoose/front.animated.2bpp.lz"
+ZangooseBackpic:     INCBIN "gfx/pokemon/zangoose/back.2bpp.lz"
+SeviperFrontpic:     INCBIN "gfx/pokemon/seviper/front.animated.2bpp.lz"
+SeviperBackpic:      INCBIN "gfx/pokemon/seviper/back.2bpp.lz"
+LunatoneFrontpic:    INCBIN "gfx/pokemon/lunatone/front.animated.2bpp.lz"
+LunatoneBackpic:     INCBIN "gfx/pokemon/lunatone/back.2bpp.lz"
+SolrockFrontpic:     INCBIN "gfx/pokemon/solrock/front.animated.2bpp.lz"
+SolrockBackpic:      INCBIN "gfx/pokemon/solrock/back.2bpp.lz"
 
-
-SwabluFrontpic:
-AltariaFrontpic:
-ZangooseFrontpic:
-SeviperFrontpic:
-LunatoneFrontpic:
-SolrockFrontpic:
 BarboachFrontpic:
 WhiscashFrontpic:
 CorphishFrontpic:
@@ -1176,13 +1181,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-
-SwabluBackpic:
-AltariaBackpic:
-ZangooseBackpic:
-SeviperBackpic:
-LunatoneBackpic:
-SolrockBackpic:
 BarboachBackpic:
 WhiscashBackpic:
 CorphishBackpic:

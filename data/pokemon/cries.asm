@@ -395,12 +395,12 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; FLYGON
 	mon_cry CRY_RATTATA,     $000,  $001 ; CACNEA
 	mon_cry CRY_RATTATA,     $000,  $001 ; CACTURNE
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; SWABLU
+	mon_cry CRY_RATTATA,     $000,  $001 ; ALTARIA
+	mon_cry CRY_RATTATA,     $000,  $001 ; ZANGOOSE
+	mon_cry CRY_RATTATA,     $000,  $001 ; SEVIPER
+	mon_cry CRY_RATTATA,     $000,  $001 ; LUNATONE
+	mon_cry CRY_RATTATA,     $000,  $001 ; SOLROCK
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

@@ -380,4 +380,10 @@ AnimationIdlePointers:
 	dw FlygonAnimationIdle
 	dw CacneaAnimationIdle
 	dw CacturneAnimationIdle
+	dw SwabluAnimationIdle
+	dw AltariaAnimationIdle
+	dw ZangooseAnimationIdle
+	dw SeviperAnimationIdle
+	dw LunatoneAnimationIdle
+	dw SolrockAnimationIdle
 	
