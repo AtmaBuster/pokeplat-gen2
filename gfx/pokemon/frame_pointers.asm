@@ -380,4 +380,10 @@ FramesPointers:
 	dba FlygonFrames
 	dba CacneaFrames
 	dba CacturneFrames
+	dba SwabluFrames
+	dba AltariaFrames
+	dba ZangooseFrames
+	dba SeviperFrames
+	dba LunatoneFrames
+	dba SolrockFrames
 	

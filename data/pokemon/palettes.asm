@@ -792,3 +792,15 @@ CacneaPal:          INCBIN "gfx/pokemon/cacnea/front.gbcpal", middle_colors
 CacneaShinyPal:     INCLUDE "gfx/pokemon/cacnea/shiny.pal"
 CacturnePal:        INCBIN "gfx/pokemon/cacturne/front.gbcpal", middle_colors
 CacturneShinyPal:   INCLUDE "gfx/pokemon/cacturne/shiny.pal"
+SwabluPal:          INCBIN "gfx/pokemon/swablu/front.gbcpal", middle_colors
+SwabluShinyPal:     INCLUDE "gfx/pokemon/swablu/shiny.pal"
+AltariaPal:         INCBIN "gfx/pokemon/altaria/front.gbcpal", middle_colors
+AltariaShinyPal:    INCLUDE "gfx/pokemon/altaria/shiny.pal"
+ZangoosePal:        INCBIN "gfx/pokemon/zangoose/front.gbcpal", middle_colors
+ZangooseShinyPal:   INCLUDE "gfx/pokemon/zangoose/shiny.pal"
+SeviperPal:         INCBIN "gfx/pokemon/seviper/front.gbcpal", middle_colors
+SeviperShinyPal:    INCLUDE "gfx/pokemon/seviper/shiny.pal"
+LunatonePal:        INCBIN "gfx/pokemon/lunatone/front.gbcpal", middle_colors
+LunatoneShinyPal:   INCLUDE "gfx/pokemon/lunatone/shiny.pal"
+SolrockPal:         INCBIN "gfx/pokemon/solrock/front.gbcpal", middle_colors
+SolrockShinyPal:    INCLUDE "gfx/pokemon/solrock/shiny.pal"

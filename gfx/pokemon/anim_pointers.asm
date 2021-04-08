@@ -380,4 +380,10 @@ AnimationPointers:
 	dw FlygonAnimation
 	dw CacneaAnimation
 	dw CacturneAnimation
+	dw SwabluAnimation
+	dw AltariaAnimation
+	dw ZangooseAnimation
+	dw SeviperAnimation
+	dw LunatoneAnimation
+	dw SolrockAnimation
 	

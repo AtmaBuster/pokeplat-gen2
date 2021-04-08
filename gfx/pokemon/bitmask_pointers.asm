@@ -380,4 +380,10 @@ BitmasksPointers:
 	dw FlygonBitmasks
 	dw CacneaBitmasks
 	dw CacturneBitmasks
+	dw SwabluBitmasks
+	dw AltariaBitmasks
+	dw ZangooseBitmasks
+	dw SeviperBitmasks
+	dw LunatoneBitmasks
+	dw SolrockBitmasks
 	
