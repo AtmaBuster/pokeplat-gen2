@@ -194,7 +194,7 @@
 	const EFFECT_SNATCH            ; bf
 	const EFFECT_SECRET_POWER      ; c0
 	const EFFECT_CAMOUFLAGE        ; c1
-	const EFFECT_TEETER_DANCE      ; c2
+	const EFFECT_UNUSED_C2         ; c2
 	const EFFECT_MUD_SPORT         ; c3
 	const EFFECT_POISON_FANG       ; c4
 	const EFFECT_WEATHER_BALL      ; c5

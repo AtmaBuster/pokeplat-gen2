@@ -1,7 +1,7 @@
-BattleCommand_Substitute:
+BattleCommand_substitute:
 ; substitute
 
-	call BattleCommand_MoveDelay
+	call BattleCommand_movedelay
 	ld hl, wBattleMonMaxHP
 	ld de, wPlayerSubstituteHP
 	ldh a, [hBattleTurn]
@@ -68,7 +68,7 @@ BattleCommand_Substitute:
 	jr .finish
 
 .no_anim
-	call BattleCommand_RaiseSubNoAnim
+	call BattleCommand_raisesubnoanim
 .finish
 	ld hl, MadeSubstituteText
 	call StdBattleTextbox
@@ -76,13 +76,13 @@ BattleCommand_Substitute:
 
 .already_has_sub
 	call CheckUserIsCharging
-	call nz, BattleCommand_RaiseSub
+	call nz, BattleCommand_raisesub
 	ld hl, HasSubstituteText
 	jr .jp_stdbattletextbox
 
 .too_weak_to_sub
 	call CheckUserIsCharging
-	call nz, BattleCommand_RaiseSub
+	call nz, BattleCommand_raisesub
 	ld hl, TooWeakSubText
 .jp_stdbattletextbox
 	jp StdBattleTextbox

@@ -1,4 +1,4 @@
-BattleCommand_PerishSong:
+BattleCommand_perishsong:
 ; perishsong
 
 	ld hl, wPlayerSubStatus1

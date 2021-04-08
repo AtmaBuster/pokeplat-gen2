@@ -1,4 +1,4 @@
-BattleCommand_Counter:
+BattleCommand_counter:
 ; counter
 
 	ld a, 1
@@ -14,7 +14,7 @@ BattleCommand_Counter:
 	cp EFFECT_COUNTER
 	ret z
 
-	call BattleCommand_ResetTypeMatchup
+	call BattleCommand_resettypematchup
 	ld a, [wTypeMatchup]
 	and a
 	ret z

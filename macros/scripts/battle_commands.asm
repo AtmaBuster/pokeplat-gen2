@@ -1,3 +1,5 @@
+IF 0
+
 command: MACRO
 	enum \1_command
 \1 EQUS "db \1_command"
@@ -202,3 +204,4 @@ ENDM
 	enum_start $fe
 	command endturn                 ; fe
 	command endmove                 ; ff
+ENDC

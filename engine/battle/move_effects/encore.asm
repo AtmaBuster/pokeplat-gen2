@@ -1,4 +1,4 @@
-BattleCommand_Encore:
+BattleCommand_encore:
 ; encore
 
 	ld hl, wEnemyMonMoves

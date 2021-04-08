@@ -1,4 +1,4 @@
-BattleCommand_Selfdestruct:
+BattleCommand_selfdestruct:
 	farcall StubbedTrainerRankings_Selfdestruct
 	ld a, BATTLEANIM_PLAYER_DAMAGE
 	ld [wNumHits], a
@@ -13,7 +13,7 @@ BattleCommand_Selfdestruct:
 	ld [hl], a
 	ld a, $1
 	ld [wKickCounter], a
-	call BattleCommand_LowerSub
+	call BattleCommand_lowersub
 	call LoadMoveAnim
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr

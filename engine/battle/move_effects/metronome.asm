@@ -1,4 +1,4 @@
-BattleCommand_Metronome:
+BattleCommand_metronome:
 ; metronome
 
 	call ClearLastMove
@@ -7,7 +7,7 @@ BattleCommand_Metronome:
 
 	ld a, [wKickCounter]
 	push af
-	call BattleCommand_LowerSub
+	call BattleCommand_lowersub
 	pop af
 	ld [wKickCounter], a
 

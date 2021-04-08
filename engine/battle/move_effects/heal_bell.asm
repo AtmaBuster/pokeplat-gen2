@@ -1,4 +1,4 @@
-BattleCommand_HealBell:
+BattleCommand_healbell:
 ; healbell
 
 	ld a, BATTLE_VARS_SUBSTATUS1

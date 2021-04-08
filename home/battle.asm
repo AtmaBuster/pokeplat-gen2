@@ -253,7 +253,7 @@ CheckAlreadyFailed::
 	dec a
 	ret
 
-BattleCommand_SwitchTurn::
+BattleCommand_switchturn::
 ; switchturn
 	ldh a, [hBattleTurn]
 	xor 1

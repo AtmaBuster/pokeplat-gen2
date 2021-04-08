@@ -1,4 +1,4 @@
-BattleCommand_FuryCutter:
+BattleCommand_furycutter:
 ; furycutter
 
 	ld hl, wPlayerFuryCutterCount

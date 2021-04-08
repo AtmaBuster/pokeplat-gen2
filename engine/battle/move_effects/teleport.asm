@@ -1,4 +1,4 @@
-BattleCommand_Teleport:
+BattleCommand_teleport:
 ; teleport
 
 	ld a, [wBattleType]
@@ -79,7 +79,7 @@ BattleCommand_Teleport:
 	ld [wForcedSwitch], a
 	ld [wKickCounter], a
 	call SetBattleDraw
-	call BattleCommand_LowerSub
+	call BattleCommand_lowersub
 	call LoadMoveAnim
 	ld c, 20
 	call DelayFrames

@@ -1,4 +1,4 @@
-BattleCommand_PainSplit:
+BattleCommand_painsplit:
 ; painsplit
 
 	ld a, [wAttackMissed]

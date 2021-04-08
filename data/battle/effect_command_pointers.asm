@@ -1,194 +1,176 @@
+battlecmd: MACRO
+	dw BattleCommand_\1
+\1 EQUS "db \1_command"
+	enum \1_command
+ENDM
+
+battlecmd2: MACRO
+	dw BattleCommand_\1
+\1 EQUS "db \1_command,"
+	enum \1_command
+ENDM
+
+battlecmd3: MACRO
+	enum \1_command
+\1 EQUS "db \1_command"
+ENDM
+
 ; battle commands are defined in engine/battle/effect_commands.asm
 
 	dw 0 ; padding
 
 BattleCommandPointers:
 ; entries correspond to macros/scripts/battle_commands.asm
-	dw BattleCommand_CheckTurn
-	dw BattleCommand_CheckObedience
-	dw BattleCommand_UsedMoveText
-	dw BattleCommand_DoTurn
-	dw BattleCommand_Critical
-	dw BattleCommand_DamageStats
-	dw BattleCommand_Stab
-	dw BattleCommand_DamageVariation
-	dw BattleCommand_CheckHit
-	dw BattleCommand_LowerSub
-	dw BattleCommand_MoveAnimNoSub
-	dw BattleCommand_RaiseSub
-	dw BattleCommand_FailureText
-	dw BattleCommand_ApplyDamage
-	dw BattleCommand_CriticalText
-	dw BattleCommand_SuperEffectiveText
-	dw BattleCommand_CheckFaint
-	dw BattleCommand_BuildOpponentRage
-	dw BattleCommand_PoisonTarget
-	dw BattleCommand_SleepTarget
-	dw BattleCommand_DrainTarget
-	dw BattleCommand_EatDream
-	dw BattleCommand_BurnTarget
-	dw BattleCommand_FreezeTarget
-	dw BattleCommand_ParalyzeTarget
-	dw BattleCommand_Selfdestruct
-	dw BattleCommand_MirrorMove
-;	dw BattleCommand_StatUp
-;	dw BattleCommand_StatDown
-	dw BattleCommand_PayDay
-	dw BattleCommand_Conversion
-	dw BattleCommand_ResetStats
-	dw BattleCommand_StoreEnergy
-	dw BattleCommand_UnleashEnergy
-	dw BattleCommand_ForceSwitch
-	dw BattleCommand_EndLoop
-	dw BattleCommand_FlinchTarget
-	dw BattleCommand_OHKO
-	dw BattleCommand_Recoil
-	dw BattleCommand_Mist
-	dw BattleCommand_FocusEnergy
-	dw BattleCommand_Confuse
-	dw BattleCommand_ConfuseTarget
-	dw BattleCommand_Heal
-	dw BattleCommand_Transform
-	dw BattleCommand_Screen
-	dw BattleCommand_Poison
-	dw BattleCommand_Paralyze
-	dw BattleCommand_Substitute
-	dw BattleCommand_RechargeNextTurn
-	dw BattleCommand_Mimic
-	dw BattleCommand_Metronome
-	dw BattleCommand_LeechSeed
-	dw BattleCommand_Splash
-	dw BattleCommand_Disable
-	dw BattleCommand_ClearText
-	dw BattleCommand_Charge
-	dw BattleCommand_CheckCharge
-	dw BattleCommand_TrapTarget
-	dw BattleCommand3c
-	dw BattleCommand_Rampage
-	dw BattleCommand_CheckRampage
-	dw BattleCommand_ConstantDamage
-	dw BattleCommand_Counter
-	dw BattleCommand_Encore
-	dw BattleCommand_PainSplit
-	dw BattleCommand_Snore
-	dw BattleCommand_Conversion2
-	dw BattleCommand_LockOn
-	dw BattleCommand_Sketch
-;	dw BattleCommand_DefrostOpponent
-	dw BattleCommand_SleepTalk
-	dw BattleCommand_DestinyBond
-	dw BattleCommand_Spite
-	dw BattleCommand_FalseSwipe
-	dw BattleCommand_HealBell
-	dw BattleCommand_HeldFlinch
-	dw BattleCommand_TripleKick
-	dw BattleCommand_KickCounter
-	dw BattleCommand_Thief
-	dw BattleCommand_ArenaTrap
-	dw BattleCommand_Nightmare
-	dw BattleCommand_Defrost
-	dw BattleCommand_Curse
-	dw BattleCommand_Protect
-	dw BattleCommand_Spikes
-	dw BattleCommand_Foresight
-	dw BattleCommand_PerishSong
-	dw BattleCommand_StartSandstorm
-	dw BattleCommand_Endure
-	dw BattleCommand_CheckCurl
-	dw BattleCommand_RolloutPower
-	dw BattleCommand5d
-	dw BattleCommand_FuryCutter
-	dw BattleCommand_Attract
-	dw BattleCommand_HappinessPower
-	dw BattleCommand_Present
-	dw BattleCommand_DamageCalc
-	dw BattleCommand_FrustrationPower
-	dw BattleCommand_Safeguard
-	dw BattleCommand_CheckSafeguard
-	dw BattleCommand_GetMagnitude
-	dw BattleCommand_BatonPass
-	dw BattleCommand_Pursuit
-	dw BattleCommand_ClearHazards
-	dw BattleCommand_HealMorn
-	dw BattleCommand_HealDay
-	dw BattleCommand_HealNite
-	dw BattleCommand_HiddenPower
-	dw BattleCommand_StartRain
-	dw BattleCommand_StartSun
-;	dw BattleCommand_AttackUp
-;	dw BattleCommand_DefenseUp
-;	dw BattleCommand_SpeedUp
-;	dw BattleCommand_SpecialAttackUp
-;	dw BattleCommand_SpecialDefenseUp
-;	dw BattleCommand_AccuracyUp
-;	dw BattleCommand_EvasionUp
-;	dw BattleCommand_AttackUp2
-;	dw BattleCommand_DefenseUp2
-;	dw BattleCommand_SpeedUp2
-;	dw BattleCommand_SpecialAttackUp2
-;	dw BattleCommand_SpecialDefenseUp2
-;	dw BattleCommand_AccuracyUp2
-;	dw BattleCommand_EvasionUp2
-;	dw BattleCommand_AttackDown
-;	dw BattleCommand_DefenseDown
-;	dw BattleCommand_SpeedDown
-;	dw BattleCommand_SpecialAttackDown
-;	dw BattleCommand_SpecialDefenseDown
-;	dw BattleCommand_AccuracyDown
-;	dw BattleCommand_EvasionDown
-;	dw BattleCommand_AttackDown2
-;	dw BattleCommand_DefenseDown2
-;	dw BattleCommand_SpeedDown2
-;	dw BattleCommand_SpecialAttackDown2
-;	dw BattleCommand_SpecialDefenseDown2
-;	dw BattleCommand_AccuracyDown2
-;	dw BattleCommand_EvasionDown2
-;	dw BattleCommand_StatUpMessage
-;	dw BattleCommand_StatDownMessage
-;	dw BattleCommand_StatUpFailText
-;	dw BattleCommand_StatDownFailText
-	dw BattleCommand_EffectChance
-;	dw BattleCommand_StatDownAnim
-;	dw BattleCommand_StatUpAnim
-	dw BattleCommand_SwitchTurn
-	dw BattleCommand_FakeOut
-	dw BattleCommand_BellyDrum
-	dw BattleCommand_PsychUp
-	dw BattleCommand_Rage
-	dw BattleCommand_DoubleFlyingDamage
-	dw BattleCommand_DoubleUndergroundDamage
-	dw BattleCommand_MirrorCoat
-	dw BattleCommand_CheckFutureSight
-	dw BattleCommand_FutureSight
-	dw BattleCommand_DoubleMinimizeDamage
-	dw BattleCommand_SkipSunCharge
-	dw BattleCommand_ThunderAccuracy
-	dw BattleCommand_Teleport
-	dw BattleCommand_BeatUp
-	dw BattleCommand_RageDamage
-	dw BattleCommand_ResetTypeMatchup
-;	dw BattleCommand_AllStatsUp
-	dw BattleCommand_BideFailText
-	dw BattleCommand_RaiseSubNoAnim
-	dw BattleCommand_LowerSubNoAnim
-	dw BattleCommand_BeatUpFailText
-	dw BattleCommand_ClearMissDamage
-	dw BattleCommand_MoveDelay
-	dw BattleCommand_MoveAnim
-	dw BattleCommand_TriStatusChance
-	dw BattleCommand_SuperEffectiveLoopText
-	dw BattleCommand_StartLoop
-	dw BattleCommand_Curl
+	enum_start 1
+	battlecmd checkturn               ; 01
+	battlecmd checkobedience          ; 02
+	battlecmd usedmovetext            ; 03
+	battlecmd doturn                  ; 04
+	battlecmd critical                ; 05
+	battlecmd damagestats             ; 06
+	battlecmd stab                    ; 07
+	battlecmd damagevariation         ; 08
+	battlecmd checkhit                ; 09
+	battlecmd lowersub                ; 0a
+	battlecmd moveanimnosub           ; 0b
+	battlecmd raisesub                ; 0c
+	battlecmd failuretext             ; 0d
+	battlecmd applydamage             ; 0e
+	battlecmd criticaltext            ; 0f
+	battlecmd supereffectivetext      ; 10
+	battlecmd checkfaint              ; 11
+	battlecmd buildopponentrage       ; 12
+	battlecmd poisontarget            ; 13
+	battlecmd sleeptarget             ; 14
+	battlecmd draintarget             ; 15
+	battlecmd eatdream                ; 16
+	battlecmd burntarget              ; 17
+	battlecmd freezetarget            ; 18
+	battlecmd paralyzetarget          ; 19
+	battlecmd selfdestruct            ; 1a
+	battlecmd mirrormove              ; 1b
+	battlecmd payday                  ; 1c
+	battlecmd conversion              ; 1d
+	battlecmd resetstats              ; 1e
+	battlecmd storeenergy             ; 1f
+	battlecmd unleashenergy           ; 20
+	battlecmd forceswitch             ; 21
+	battlecmd endloop                 ; 22
+	battlecmd flinchtarget            ; 23
+	battlecmd ohko                    ; 24
+	battlecmd recoil                  ; 25
+	battlecmd mist                    ; 26
+	battlecmd focusenergy             ; 27
+	battlecmd confuse                 ; 28
+	battlecmd confusetarget           ; 29
+	battlecmd heal                    ; 2a
+	battlecmd transform               ; 2b
+	battlecmd screen                  ; 2c
+	battlecmd poison                  ; 2d
+	battlecmd paralyze                ; 2e
+	battlecmd substitute              ; 2f
+	battlecmd rechargenextturn        ; 30
+	battlecmd mimic                   ; 31
+	battlecmd metronome               ; 32
+	battlecmd leechseed               ; 33
+	battlecmd splash                  ; 34
+	battlecmd disable                 ; 35
+	battlecmd cleartext               ; 36
+	battlecmd charge                  ; 37
+	battlecmd checkcharge             ; 38
+	battlecmd traptarget              ; 39
+	battlecmd rampage                 ; 3b
+	battlecmd checkrampage            ; 3c
+	battlecmd constantdamage          ; 3d
+	battlecmd counter                 ; 3e
+	battlecmd encore                  ; 3f
+	battlecmd painsplit               ; 40
+	battlecmd snore                   ; 41
+	battlecmd conversion2             ; 42
+	battlecmd lockon                  ; 43
+	battlecmd sketch                  ; 44
+	battlecmd sleeptalk               ; 45
+	battlecmd destinybond             ; 46
+	battlecmd spite                   ; 47
+	battlecmd falseswipe              ; 48
+	battlecmd healbell                ; 49
+	battlecmd heldflinch              ; 4a
+	battlecmd triplekick              ; 4b
+	battlecmd kickcounter             ; 4c
+	battlecmd thief                   ; 4d
+	battlecmd arenatrap               ; 4e
+	battlecmd nightmare               ; 4f
+	battlecmd defrost                 ; 50
+	battlecmd curse                   ; 51
+	battlecmd protect                 ; 52
+	battlecmd spikes                  ; 53
+	battlecmd foresight               ; 54
+	battlecmd perishsong              ; 55
+	battlecmd startsandstorm          ; 56
+	battlecmd endure                  ; 57
+	battlecmd checkcurl               ; 58
+	battlecmd rolloutpower            ; 59
+	battlecmd furycutter              ; 5b
+	battlecmd attract                 ; 5c
+	battlecmd happinesspower          ; 5d
+	battlecmd present                 ; 5e
+	battlecmd damagecalc              ; 5f
+	battlecmd frustrationpower        ; 60
+	battlecmd safeguard               ; 61
+	battlecmd checksafeguard          ; 62
+	battlecmd getmagnitude            ; 63
+	battlecmd batonpass               ; 64
+	battlecmd pursuit                 ; 65
+	battlecmd clearhazards            ; 66
+	battlecmd healmorn                ; 67
+	battlecmd healday                 ; 68
+	battlecmd healnite                ; 69
+	battlecmd hiddenpower             ; 6a
+	battlecmd startrain               ; 6b
+	battlecmd startsun                ; 6c
+	battlecmd effectchance            ; 6d
+	battlecmd switchturn              ; 6e
+	battlecmd fakeout                 ; 6f
+	battlecmd bellydrum               ; 70
+	battlecmd psychup                 ; 71
+	battlecmd rage                    ; 72
+	battlecmd doubleflyingdamage      ; 73
+	battlecmd doubleundergrounddamage ; 74
+	battlecmd mirrorcoat              ; 75
+	battlecmd checkfuturesight        ; 76
+	battlecmd futuresight             ; 77
+	battlecmd doubleminimizedamage    ; 78
+	battlecmd skipsuncharge           ; 79
+	battlecmd thunderaccuracy         ; 7a
+	battlecmd teleport                ; 7b
+	battlecmd beatup                  ; 7c
+	battlecmd ragedamage              ; 7d
+	battlecmd resettypematchup        ; 7e
+	battlecmd bidefailtext            ; 7f
+	battlecmd raisesubnoanim          ; 80
+	battlecmd lowersubnoanim          ; 81
+	battlecmd beatupfailtext          ; 82
+	battlecmd clearmissdamage         ; 83
+	battlecmd movedelay               ; 84
+	battlecmd moveanim                ; 85
+	battlecmd tristatuschance         ; 86
+	battlecmd supereffectivelooptext  ; 87
+	battlecmd startloop               ; 88
+	battlecmd curl                    ; 89
 
-	dw BattleCommand_RaiseStat
-	dw BattleCommand_LowerStat
-	dw BattleCommand_ForceRaiseStat
-	dw BattleCommand_ForceLowerStat
-	dw BattleCommand_RaiseStatHit
-	dw BattleCommand_LowerStatHit
-	dw BattleCommand_RaiseOppStat
-	dw BattleCommand_LowerOppStat
-	dw BattleCommand_ForceRaiseOppStat
-	dw BattleCommand_ForceLowerOppStat
-	dw BattleCommand_RaiseOppStatHit
-	dw BattleCommand_LowerOppStatHit
+	battlecmd2 raisestat
+	battlecmd2 lowerstat
+	battlecmd2 forceraisestat
+	battlecmd2 forcelowerstat
+	battlecmd2 raisestathit
+	battlecmd2 lowerstathit
+	battlecmd2 raiseoppstat
+	battlecmd2 loweroppstat
+	battlecmd2 forceraiseoppstat
+	battlecmd2 forceloweroppstat
+	battlecmd2 raiseoppstathit
+	battlecmd2 loweroppstathit
+
+	enum_start $fe
+	battlecmd3 endturn
+	battlecmd3 endmove

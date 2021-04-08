@@ -85,7 +85,7 @@ FarChangeStat:
 .not_target
 .not_lower
 	bit STAT_TARGET_F, b
-	call nz, BattleCommand_SwitchTurn
+	call nz, BattleCommand_switchturn
 	push bc
 	bit STAT_LOWER_F, b
 	jr nz, .lower
@@ -101,7 +101,7 @@ FarChangeStat:
 	call GetStatName
 	pop bc
 	bit STAT_TARGET_F, b
-	call nz, BattleCommand_SwitchTurn
+	call nz, BattleCommand_switchturn
 	ld a, [wFailedMessage]
 	and a
 	jr z, .check_anim
@@ -136,10 +136,10 @@ DoPrintStatChange:
 	bit STAT_TARGET_F, b
 	jr z, .do_print
 	push af
-	call BattleCommand_SwitchTurn
+	call BattleCommand_switchturn
 	pop af
 	call .do_print
-	jp BattleCommand_SwitchTurn
+	jp BattleCommand_switchturn
 
 .do_print
 	bit STAT_LOWER_F, b

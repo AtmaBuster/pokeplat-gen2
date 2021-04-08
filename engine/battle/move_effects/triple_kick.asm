@@ -1,4 +1,4 @@
-BattleCommand_TripleKick:
+BattleCommand_triplekick:
 ; triplekick
 
 	ld a, [wKickCounter]
@@ -26,7 +26,7 @@ BattleCommand_TripleKick:
 	ld [hl], a
 	ret
 
-BattleCommand_KickCounter:
+BattleCommand_kickcounter:
 ; kickcounter
 
 	ld hl, wKickCounter

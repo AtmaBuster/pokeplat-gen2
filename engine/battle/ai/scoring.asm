@@ -1668,8 +1668,8 @@ AI_Smart_PriorityHit:
 	ldh [hBattleTurn], a
 	push hl
 	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	callfar BattleCommand_damagecalc
+	callfar BattleCommand_stab
 	pop hl
 	ld a, [wCurDamage + 1]
 	ld c, a
@@ -3063,13 +3063,13 @@ AIDamageCalc:
 	ld hl, ConstantDamageEffects
 	call IsInArray
 	jr nc, .asm_39400
-	callfar BattleCommand_ConstantDamage
+	callfar BattleCommand_constantdamage
 	ret
 
 .asm_39400
 	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	callfar BattleCommand_damagecalc
+	callfar BattleCommand_stab
 	ret
 
 INCLUDE "data/battle/ai/constant_damage_effects.asm"

@@ -1,4 +1,4 @@
-BattleCommand_FrustrationPower:
+BattleCommand_frustrationpower:
 ; frustrationpower
 
 	push bc

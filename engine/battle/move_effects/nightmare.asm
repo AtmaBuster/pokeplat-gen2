@@ -1,4 +1,4 @@
-BattleCommand_Nightmare:
+BattleCommand_nightmare:
 ; nightmare
 
 ; Can't hit an absent opponent.

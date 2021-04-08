@@ -1,4 +1,4 @@
-BattleCommand_Snore:
+BattleCommand_snore:
 ; snore
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar

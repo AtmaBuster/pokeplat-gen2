@@ -1,4 +1,4 @@
-BattleCommand_BatonPass:
+BattleCommand_batonpass:
 ; batonpass
 
 	ldh a, [hBattleTurn]

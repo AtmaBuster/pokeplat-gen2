@@ -1,4 +1,4 @@
-BattleCommand_Spikes:
+BattleCommand_spikes:
 ; spikes
 
 	ld hl, wEnemyScreens

@@ -1,4 +1,4 @@
-BattleCommand_Thief:
+BattleCommand_thief:
 ; thief
 
 	ldh a, [hBattleTurn]

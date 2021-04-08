@@ -1,4 +1,4 @@
-BattleCommand_ThunderAccuracy:
+BattleCommand_thunderaccuracy:
 ; thunderaccuracy
 
 	ld a, BATTLE_VARS_MOVE_TYPE

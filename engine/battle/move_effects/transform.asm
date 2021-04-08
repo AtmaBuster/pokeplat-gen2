@@ -1,4 +1,4 @@
-BattleCommand_Transform:
+BattleCommand_transform:
 ; transform
 
 	call ClearLastMove
@@ -126,8 +126,8 @@ BattleCommand_Transform:
 	jr .after_anim
 
 .mimic_anims
-	call BattleCommand_MoveDelay
-	call BattleCommand_RaiseSubNoAnim
+	call BattleCommand_movedelay
+	call BattleCommand_raisesubnoanim
 .after_anim
 	xor a
 	ld [wNumHits], a

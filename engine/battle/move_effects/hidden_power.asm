@@ -1,4 +1,4 @@
-BattleCommand_HiddenPower:
+BattleCommand_hiddenpower:
 ; hiddenpower
 
 	ld a, [wAttackMissed]

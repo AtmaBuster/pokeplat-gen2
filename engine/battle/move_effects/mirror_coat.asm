@@ -1,4 +1,4 @@
-BattleCommand_MirrorCoat:
+BattleCommand_mirrorcoat:
 ; mirrorcoat
 
 	ld a, 1
@@ -15,7 +15,7 @@ BattleCommand_MirrorCoat:
 	cp EFFECT_MIRROR_COAT
 	ret z
 
-	call BattleCommand_ResetTypeMatchup
+	call BattleCommand_resettypematchup
 	ld a, [wTypeMatchup]
 	and a
 	ret z

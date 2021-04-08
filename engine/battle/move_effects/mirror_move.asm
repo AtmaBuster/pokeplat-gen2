@@ -1,4 +1,4 @@
-BattleCommand_MirrorMove:
+BattleCommand_mirrormove:
 ; mirrormove
 
 	call ClearLastMove
@@ -41,10 +41,10 @@ BattleCommand_MirrorMove:
 
 	ld a, [wKickCounter]
 	push af
-	call BattleCommand_LowerSub
+	call BattleCommand_lowersub
 	pop af
 	ld [wKickCounter], a
 
 .done
-	call BattleCommand_MoveDelay
+	call BattleCommand_movedelay
 	jp ResetTurn

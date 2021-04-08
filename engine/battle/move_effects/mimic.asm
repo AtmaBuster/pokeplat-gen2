@@ -1,8 +1,8 @@
-BattleCommand_Mimic:
+BattleCommand_mimic:
 ; mimic
 
 	call ClearLastMove
-	call BattleCommand_MoveDelay
+	call BattleCommand_movedelay
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .fail

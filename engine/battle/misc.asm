@@ -13,11 +13,11 @@ _DisappearUser:
 	jr FinishAppearDisappearUser
 
 _AppearUserRaiseSub:
-	farcall BattleCommand_RaiseSubNoAnim
+	farcall BattleCommand_raisesubnoanim
 	jr AppearUser
 
 _AppearUserLowerSub:
-	farcall BattleCommand_LowerSubNoAnim
+	farcall BattleCommand_lowersubnoanim
 
 AppearUser:
 	xor a

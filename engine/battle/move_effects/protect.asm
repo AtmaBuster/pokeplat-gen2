@@ -1,4 +1,4 @@
-BattleCommand_Protect:
+BattleCommand_protect:
 ; protect
 	call ProtectChance
 	ret c

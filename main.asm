@@ -102,6 +102,12 @@ SECTION "Clock Reset", ROMX
 INCLUDE "engine/rtc/restart_clock.asm"
 
 
+SECTION "Effect Command Pointers", ROMX
+
+; must come before data/moves/effects.asm and engine/battle/effect_commands.asm
+INCLUDE "data/battle/effect_command_pointers.asm"
+
+
 SECTION "bank9", ROMX
 
 INCLUDE "data/text_buffers.asm"
@@ -168,7 +174,6 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
-INCLUDE "data/battle/effect_command_pointers.asm"
 
 
 SECTION "bank10", ROMX
