@@ -199,7 +199,7 @@ MoveEffectsPointers:
 	dw Splash                        ; MUD_SPORT
 	dw PoisonFang                    ; POISON_FANG
 	dw Splash                        ; WEATHER_BALL
-	dw Splash                        ; HP_SCALING_HIT
+	dw HPScaleHit                    ; HP_SCALING_HIT
 	dw Splash                        ; SKY_UPPERCUT
 	dw Splash                        ; BOUNCE
 	dw Splash                        ; VOLT_TACKLE

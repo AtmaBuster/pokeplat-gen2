@@ -2116,3 +2116,24 @@ SpecialDefenseDown2Hit:
 	buildopponentrage
 	loweroppstathit $10 | SP_DEFENSE
 	endmove
+
+HPScaleHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	lifepower
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove

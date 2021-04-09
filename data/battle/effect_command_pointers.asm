@@ -157,6 +157,7 @@ BattleCommandPointers:
 	battlecmd supereffectivelooptext  ; 87
 	battlecmd startloop               ; 88
 	battlecmd curl                    ; 89
+	battlecmd lifepower               ; 8a
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

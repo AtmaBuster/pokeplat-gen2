@@ -72,7 +72,7 @@ DebugMenu::
 	db "Warp@"
 	db "Color@"
 	db "Fill Dex@"
-	db "NULL@"
+	db "Teach Move@"
 	db "NULL@"
 	db "NULL@"
 
@@ -87,7 +87,7 @@ DebugMenu::
 	dw Debug_Warp
 	dw Debug_ColorPicker
 	dw Debug_FillDex
-	dw NULL
+	dw Debug_TeachMove
 	dw NULL
 	dw NULL
 
@@ -441,3 +441,169 @@ Debug_FillDex:
 	call SetSeenAndCaughtMon
 	pop hl
 	jr .loop
+
+Debug_TeachMove:
+	xor a
+	ldh [hDebugMenuDataBuffer], a
+	ldh [hDebugMenuDataBuffer + 1], a
+	hlcoord 0, 0
+	lb bc, 6, SCREEN_WIDTH - 2
+	call Textbox
+	call WaitBGMap2
+	call .update_display
+.loop
+	call JoyTextDelay
+	ldh a, [hJoyLast]
+	cp B_BUTTON
+	ret z
+	cp A_BUTTON
+	jr z, .teach
+	ld b, a
+	ldh a, [hJoyDown]
+	and $f
+	or b
+	cp D_LEFT
+	jr z, .left1
+	cp D_RIGHT
+	jr z, .right1
+	cp D_DOWN
+	jr z, .left10
+	cp D_UP
+	jr z, .right10
+	cp D_LEFT | SELECT
+	jr z, .left100
+	cp D_RIGHT | SELECT
+	jr z, .right100
+	jr .loop
+
+.left1
+	call .left
+	call .update_display
+	jr .loop
+
+.right1
+	call .right
+	call .update_display
+	jr .loop
+
+.left100
+	ld c, 100
+	jr .left10loop
+
+.right100
+	ld c, 100
+	jr .right10loop
+
+.left10
+	ld c, 10
+.left10loop
+	call .left
+	dec c
+	jr nz, .left10loop
+	call .update_display
+	jr .loop
+
+.right10
+	ld c, 10
+.right10loop
+	call .right
+	dec c
+	jr nz, .right10loop
+	call .update_display
+	jr .loop
+
+.teach
+	xor a
+	ld [wCurPartyMon], a
+	ldh a, [hDebugMenuDataBuffer]
+	ld h, a
+	ldh a, [hDebugMenuDataBuffer + 1]
+	ld l, a
+	call GetMoveIDFromIndex
+	ld [wTempTMHM], a
+	ld [wPutativeTMHMMove], a
+	call GetMoveName
+	ld de, wStringBuffer2
+	ld hl, wStringBuffer1
+	ld bc, 12
+	call CopyBytes
+	predef LearnMove
+	ret
+
+.left
+	ldh a, [hDebugMenuDataBuffer + 1]
+	and a
+	jr nz, .go_left
+	ldh a, [hDebugMenuDataBuffer]
+	and a
+	jr nz, .go_left2
+	ld a, HIGH(NUM_ATTACKS - 1)
+	ldh [hDebugMenuDataBuffer], a
+	ld a, LOW(NUM_ATTACKS - 1)
+	ldh [hDebugMenuDataBuffer + 1], a
+	ret
+
+.go_left2
+	dec a
+	ldh [hDebugMenuDataBuffer], a
+	xor a
+.go_left
+	dec a
+	ldh [hDebugMenuDataBuffer + 1], a
+	ret
+
+.right
+	ldh a, [hDebugMenuDataBuffer + 1]
+	cp LOW(NUM_ATTACKS - 1)
+	jr nz, .go_right
+	ldh a, [hDebugMenuDataBuffer]
+	cp HIGH(NUM_ATTACKS - 1)
+	jr nz, .go_right
+	xor a
+	ldh [hDebugMenuDataBuffer], a
+	ldh [hDebugMenuDataBuffer + 1], a
+	ret
+
+.go_right
+	ldh a, [hDebugMenuDataBuffer + 1]
+	inc a
+	ldh [hDebugMenuDataBuffer + 1], a
+	ret nz
+	ldh a, [hDebugMenuDataBuffer]
+	inc a
+	ldh [hDebugMenuDataBuffer], a
+	ret
+
+.update_display
+	hlcoord 3, 2
+	ld a, " "
+	ldi [hl], a
+	ldi [hl], a
+	ldi [hl], a
+	ldi [hl], a
+	ld [hl], a
+	hlcoord 3, 2
+	ld de, hDebugMenuDataBuffer
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	hlcoord 1, 3
+	ld a, " "
+	ld bc, 18
+	call ByteFill
+	ld hl, hDebugMenuDataBuffer
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	and a
+	jr nz, .doname
+	ld a, l
+	and a
+	ret z
+.doname
+	call GetMoveIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	hlcoord 1, 3
+	ld de, wStringBuffer1
+	call PlaceString
+	ret

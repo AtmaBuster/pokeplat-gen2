@@ -6649,6 +6649,8 @@ BattleCommand_defrost:
 	ld hl, WasDefrostedText
 	jp StdBattleTextbox
 
+INCLUDE "engine/battle/move_effects/water_spout.asm"
+
 INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
