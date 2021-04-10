@@ -2137,3 +2137,48 @@ HPScaleHit:
 	buildopponentrage
 	heldflinch
 	endmove
+
+Facade:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	facade
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Bounce:
+	checkcharge
+	checkobedience
+	doturn
+	charge
+	usedmovetext
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanimnosub
+	raisesub
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	paralyzetarget
+	endmove

@@ -1,3 +1,23 @@
+smartcp: MACRO
+IF \1 == 0
+	and a
+ELSE
+	cp \1
+ENDC
+ENDM
+
+cphl16: MACRO
+; arg1: 16 bit register
+; arg2: value to compare to
+	ld a, h
+	smartcp HIGH(\1)
+	jr c, .done\@
+	jr nz, .done\@
+	ld a, l
+	smartcp LOW(\1)
+.done\@
+ENDM
+
 DebugMenu::
 	call ClearWindowData
 
@@ -73,7 +93,7 @@ DebugMenu::
 	db "Color@"
 	db "Fill Dex@"
 	db "Teach Move@"
-	db "NULL@"
+	db "Give #@"
 	db "NULL@"
 
 .MenuItems
@@ -88,7 +108,7 @@ DebugMenu::
 	dw Debug_ColorPicker
 	dw Debug_FillDex
 	dw Debug_TeachMove
-	dw NULL
+	dw Debug_GivePoke
 	dw NULL
 
 Debug_SoundTest:
@@ -605,5 +625,223 @@ Debug_TeachMove:
 	call GetMoveName
 	hlcoord 1, 3
 	ld de, wStringBuffer1
+	call PlaceString
+	ret
+
+Debug_GivePoke:
+	xor a
+	ldh [hDebugMenuDataBuffer], a
+	ldh [hDebugMenuDataBuffer + 1], a
+	ldh [hDebugMenuDataBuffer + 2], a
+	ldh [hDebugMenuDataBuffer + 3], a
+	ldh [hDebugMenuDataBuffer + 4], a
+	ldh [hDebugMenuDataBuffer + 5], a
+	hlcoord 0, 0
+	lb bc, 8, SCREEN_WIDTH - 2
+	call Textbox
+	call WaitBGMap2
+	ld a, 2
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	ld a, 1
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	xor a
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+
+.loop
+	call JoyTextDelay
+	ldh a, [hJoyDown]
+	and $e
+	ld b, a
+	ldh a, [hJoyLast]
+	or b
+	bit A_BUTTON_F, a
+	jr nz, .givepoke
+	bit B_BUTTON_F, a
+	ret nz
+	bit D_DOWN_F, a
+	jr nz, .down
+	bit D_UP_F, a
+	jr nz, .up
+	ld b, 1
+	bit START_F, a
+	jr nz, .start
+	bit SELECT_F, a
+	jr z, .select
+	ld b, 10
+	jr .select
+.start
+	ld b, 100
+.select
+	bit D_LEFT_F, a
+	jr nz, .left
+	bit D_RIGHT_F, a
+	jr nz, .right
+	jr .loop
+
+.up
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	jr nz, .do_up
+	ld a, 3
+.do_up
+	dec a
+	jr .curchange
+
+.down
+	ldh a, [hDebugMenuCursorPos]
+	cp 2
+	jr nz, .do_down
+	ld a, -1
+.do_down
+	inc a
+.curchange
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	jr .loop
+
+.left
+	call .getdat
+.leftloop
+	dec hl
+	dec b
+	jr nz, .leftloop
+	call .putdat
+	call .update_display
+	jr .loop
+
+.right
+	call .getdat
+.rightloop
+	inc hl
+	dec b
+	jr nz, .rightloop
+	call .putdat
+	call .update_display
+	jr .loop
+
+.getdat
+	ldh a, [hDebugMenuCursorPos]
+	add a
+	add LOW(hDebugMenuDataBuffer)
+	ld c, a
+	ldh a, [c]
+	ld h, a
+	inc c
+	ldh a, [c]
+	ld l, a
+	dec c
+	ret
+
+.putdat
+	ld a, h
+	ldh [c], a
+	inc c
+	ld a, l
+	ldh [c], a
+	ret
+
+.givepoke
+	ldh a, [hDebugMenuDataBuffer]
+	ld h, a
+	ldh a, [hDebugMenuDataBuffer + 1]
+	ld l, a
+	cphl16 0
+	jp z, .loop
+	cphl16 NUM_POKEMON
+	jp nc, .loop
+	ldh a, [hDebugMenuDataBuffer + 5]
+	and a
+	jp z, .loop
+	cp 101
+	jp nc, .loop
+	ld [wCurPartyLevel], a
+	ldh a, [hDebugMenuDataBuffer + 3]
+	ld [wCurItem], a
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	ld b, 0
+	farcall GivePoke
+	ret
+
+.update_display
+	ld a, " "
+	hlcoord 1, 2
+	ld [hl], a
+	hlcoord 1, 5
+	ld [hl], a
+	hlcoord 1, 8
+	ld [hl], a
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	jr z, .put_mon
+	dec a
+	jr z, .put_item
+
+; fallthrough
+.put_level
+	hlcoord 1, 8
+	ld a, "▶"
+	ld [hl], a
+	hlcoord 3, 8
+	ld a, "L"
+	ld [hli], a
+	ld a, "v"
+	ld [hli], a
+	inc hl
+	ld de, hDebugMenuDataBuffer + 5
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	ret
+
+.put_mon
+	hlcoord 1, 2
+	ld a, "▶"
+	ld [hl], a
+	hlcoord 3, 2
+	ld de, hDebugMenuDataBuffer
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	ldh a, [hDebugMenuDataBuffer]
+	ld h, a
+	ldh a, [hDebugMenuDataBuffer + 1]
+	ld l, a
+	cphl16 0
+	ret z
+	cphl16 NUM_POKEMON
+	ret nc
+	push hl
+	hlcoord 1, 3
+	ld a, " "
+	ld bc, 18
+	call ByteFill
+	pop hl
+	call GetPokemonIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	call GetPokemonName
+	ld de, wStringBuffer1
+	hlcoord 1, 3
+	call PlaceString
+	ret
+
+.put_item
+	hlcoord 1, 5
+	ld a, "▶"
+	ld [hl], a
+	hlcoord 3, 5
+	ld de, hDebugMenuDataBuffer + 3
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	hlcoord 1, 6
+	ld bc, 18
+	ld a, " "
+	call ByteFill
+	ldh a, [hDebugMenuDataBuffer + 3]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld de, wStringBuffer1
+	hlcoord 1, 6
 	call PlaceString
 	ret

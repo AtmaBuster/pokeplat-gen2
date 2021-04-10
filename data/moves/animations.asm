@@ -582,7 +582,6 @@ BattleAnim_Howl:
 BattleAnim_DragonClaw:
 BattleAnim_FrenzyPlant:
 BattleAnim_BulkUp:
-BattleAnim_Bounce:
 BattleAnim_MudShot:
 BattleAnim_PoisonTail:
 BattleAnim_Covet:
@@ -2016,6 +2015,7 @@ BattleAnim_Teleport:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_Bounce:
 BattleAnim_Fly:
 	anim_if_param_equal $1, BattleAnim_Fly_branch_c9e89
 	anim_if_param_equal $2, BattleAnim_Fly_branch_c9e82

@@ -699,6 +699,11 @@ UnknownText_0x1c0d6c::
 	line "dug a hole!"
 	prompt
 
+_SprangUpText::
+	text_start
+	line "sprang up!"
+	prompt
+
 _ActorNameText::
 	text "<USER>@"
 	text_end

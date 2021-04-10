@@ -5778,11 +5778,12 @@ BattleCommand_charge:
 	call CompareMove
 	ld a, 1 << SUBSTATUS_FLYING
 	jr z, .got_move_type
-	if HIGH(FLY) != HIGH(DIG)
-		ld bc, DIG
-	else
-		ld c, LOW(DIG)
-	endc
+	ld bc, BOUNCE
+	ld a, h
+	call CompareMove
+	ld a, 1 << SUBSTATUS_FLYING
+	jr z, .got_move_type
+	ld bc, DIG
 	ld a, h
 	call CompareMove
 	ld a, 1 << SUBSTATUS_UNDERGROUND
@@ -5854,6 +5855,7 @@ BattleCommand_charge:
 	dw SKY_ATTACK, .SkyAttack
 	dw FLY,        .Fly
 	dw DIG,        .Dig
+	dw BOUNCE,     .Bounce
 	dw -1
 
 .RazorWind:
@@ -5884,6 +5886,11 @@ BattleCommand_charge:
 .Dig:
 ; 'dug a hole!'
 	text_far UnknownText_0x1c0d6c
+	text_end
+
+.Bounce:
+; 'sprang up!'
+	text_far _SprangUpText
 	text_end
 
 BattleCommand_traptarget:
@@ -6716,6 +6723,31 @@ INCLUDE "engine/battle/move_effects/baton_pass.asm"
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
+
+BattleCommand_facade:
+; facade
+	ld hl, wBattleMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonStatus
+.ok
+	bit PSN, [hl]
+	jr nz, .double
+	bit PAR, [hl]
+	jr nz, .double
+	bit BRN, [hl]
+	ret z
+.double
+	ld a, b
+	add a
+	jr c, .max
+	ld b, a
+	ret
+
+.max
+	ld b, $ff
+	ret
 
 BattleCommand_healmorn:
 ; healmorn

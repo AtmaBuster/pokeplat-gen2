@@ -168,7 +168,7 @@ MoveEffectsPointers:
 	dw Flatter                       ; FLATTER
 	dw WillOWisp                     ; WILL_O_WISP
 	dw Splash                        ; MEMENTO
-	dw Splash                        ; FACADE
+	dw Facade                        ; FACADE
 	dw Splash                        ; FOCUS_PUNCH
 	dw Splash                        ; SMELLINGSALT
 	dw Splash                        ; NATURE_POWER
@@ -201,7 +201,7 @@ MoveEffectsPointers:
 	dw Splash                        ; WEATHER_BALL
 	dw HPScaleHit                    ; HP_SCALING_HIT
 	dw Splash                        ; SKY_UPPERCUT
-	dw Splash                        ; BOUNCE
+	dw Bounce                        ; BOUNCE
 	dw Splash                        ; VOLT_TACKLE
 	dw Splash                        ; WATER_SPORT
 	dw Splash                        ; DOOM_DESIRE

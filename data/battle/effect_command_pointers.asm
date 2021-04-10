@@ -158,6 +158,7 @@ BattleCommandPointers:
 	battlecmd startloop               ; 88
 	battlecmd curl                    ; 89
 	battlecmd lifepower               ; 8a
+	battlecmd facade                  ; 8b
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat
