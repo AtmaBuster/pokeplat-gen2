@@ -6670,8 +6670,6 @@ INCLUDE "engine/battle/move_effects/foresight.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
-INCLUDE "engine/battle/move_effects/sandstorm.asm"
-
 INCLUDE "engine/battle/move_effects/rollout.asm"
 
 INCLUDE "engine/battle/move_effects/fury_cutter.asm"
@@ -6848,15 +6846,52 @@ BattleCommand_timebasedhealcontinue:
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
 
-INCLUDE "engine/battle/move_effects/rain_dance.asm"
-
-INCLUDE "engine/battle/move_effects/sunny_day.asm"
-
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 
 INCLUDE "engine/battle/move_effects/psych_up.asm"
 
 INCLUDE "engine/battle/move_effects/mirror_coat.asm"
+
+BattleCommand_starthail:
+; starthail
+	ld b, WEATHER_HAIL
+	ld hl, StartedToHailText
+	jr Battle_StartWeather
+
+BattleCommand_startsun:
+; startsun
+	ld b, WEATHER_SUN
+	ld hl, SunGotBrightText
+	jr Battle_StartWeather
+
+BattleCommand_startrain:
+; startrain
+	ld b, WEATHER_RAIN
+	ld hl, DownpourText
+	jr Battle_StartWeather
+
+BattleCommand_startsandstorm:
+; startsandstorm
+	ld b, WEATHER_SANDSTORM
+	ld hl, SandstormBrewedText
+
+; fallthrough
+
+Battle_StartWeather:
+	ld a, [wBattleWeather]
+	cp b
+	jr z, .failed
+
+	ld a, b
+	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
+	call AnimateCurrentMove
+	jp StdBattleTextbox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
 
 BattleCommand_doubleminimizedamage:
 ; doubleminimizedamage

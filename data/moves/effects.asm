@@ -1675,6 +1675,13 @@ SunnyDay:
 	startsun
 	endmove
 
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
+	endmove
+
 FakeOut:
 	checkobedience
 	usedmovetext
