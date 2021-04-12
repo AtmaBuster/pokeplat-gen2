@@ -1019,13 +1019,19 @@ BaltoyFrontpic:		 INCBIN "gfx/pokemon/baltoy/front.animated.2bpp.lz"
 BaltoyBackpic:       INCBIN "gfx/pokemon/baltoy/back.2bpp.lz"
 ClaydolFrontpic:	 INCBIN "gfx/pokemon/claydol/front.animated.2bpp.lz"
 ClaydolBackpic:      INCBIN "gfx/pokemon/claydol/back.2bpp.lz"
+LileepFrontpic:      INCBIN "gfx/pokemon/lileep/front.animated.2bpp.lz"
+LileepBackpic:       INCBIN "gfx/pokemon/lileep/back.2bpp.lz"
+CradilyFrontpic:     INCBIN "gfx/pokemon/cradily/front.animated.2bpp.lz"
+CradilyBackpic:      INCBIN "gfx/pokemon/cradily/back.2bpp.lz"
+AnorithFrontpic:     INCBIN "gfx/pokemon/anorith/front.animated.2bpp.lz"
+AnorithBackpic:      INCBIN "gfx/pokemon/anorith/back.2bpp.lz"
+ArmaldoFrontpic:     INCBIN "gfx/pokemon/armaldo/front.animated.2bpp.lz"
+ArmaldoBackpic:      INCBIN "gfx/pokemon/armaldo/back.2bpp.lz"
+FeebasFrontpic:      INCBIN "gfx/pokemon/feebas/front.animated.2bpp.lz"
+FeebasBackpic:       INCBIN "gfx/pokemon/feebas/back.2bpp.lz"
+MiloticFrontpic:     INCBIN "gfx/pokemon/milotic/front.animated.2bpp.lz"
+MiloticBackpic:      INCBIN "gfx/pokemon/milotic/back.2bpp.lz"
 
-LileepFrontpic:
-CradilyFrontpic:
-AnorithFrontpic:
-ArmaldoFrontpic:
-FeebasFrontpic:
-MiloticFrontpic:
 CastformFrontpic:
 KecleonFrontpic:
 ShuppetFrontpic:
@@ -1191,12 +1197,7 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-LileepBackpic:
-CradilyBackpic:
-AnorithBackpic:
-ArmaldoBackpic:
-FeebasBackpic:
-MiloticBackpic:
+
 CastformBackpic:
 KecleonBackpic:
 ShuppetBackpic:

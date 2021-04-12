@@ -392,4 +392,10 @@ BitmasksPointers:
 	dw CrawdauntBitmasks
 	dw BaltoyBitmasks
 	dw ClaydolBitmasks
+	dw LileepBitmasks
+	dw CradilyBitmasks
+	dw AnorithBitmasks
+	dw ArmaldoBitmasks
+	dw FeebasBitmasks
+	dw MiloticBitmasks
 	
