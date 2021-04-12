@@ -163,7 +163,7 @@ MoveEffectsPointers:
 	dw Splash                        ; STOCKPILE
 	dw Splash                        ; SPIT_UP
 	dw Splash                        ; SWALLOW
-	dw Splash                        ; HAIL
+	dw Hail                          ; HAIL
 	dw Splash                        ; TORMENT
 	dw Flatter                       ; FLATTER
 	dw WillOWisp                     ; WILL_O_WISP
