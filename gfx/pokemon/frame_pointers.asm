@@ -386,4 +386,10 @@ FramesPointers:
 	dba SeviperFrames
 	dba LunatoneFrames
 	dba SolrockFrames
+	dba BarboachFrames
+	dba WhiscashFrames
+	dba CorphishFrames
+	dba CrawdauntFrames
+	dba BaltoyFrames
+	dba ClaydolFrames
 	

@@ -386,4 +386,10 @@ BitmasksPointers:
 	dw SeviperBitmasks
 	dw LunatoneBitmasks
 	dw SolrockBitmasks
+	dw BarboachBitmasks
+	dw WhiscashBitmasks
+	dw CorphishBitmasks
+	dw CrawdauntBitmasks
+	dw BaltoyBitmasks
+	dw ClaydolBitmasks
 	

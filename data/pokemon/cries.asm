@@ -401,54 +401,54 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; SEVIPER
 	mon_cry CRY_RATTATA,     $000,  $001 ; LUNATONE
 	mon_cry CRY_RATTATA,     $000,  $001 ; SOLROCK
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
-	mon_cry CRY_RATTATA,     $000,  $001 ;
+	mon_cry CRY_RATTATA,     $000,  $001 ; BARBOACH
+	mon_cry CRY_RATTATA,     $000,  $001 ; WHISCASH
+	mon_cry CRY_RATTATA,     $000,  $001 ; CORPHISH
+	mon_cry CRY_RATTATA,     $000,  $001 ; CRAWDAUNT
+	mon_cry CRY_RATTATA,     $000,  $001 ; BALTOY
+	mon_cry CRY_RATTATA,     $000,  $001 ; CLAYDOL
+	mon_cry CRY_RATTATA,     $000,  $001 ; LILEEP
+	mon_cry CRY_RATTATA,     $000,  $001 ; CRADILY
+	mon_cry CRY_RATTATA,     $000,  $001 ; ANORITH
+	mon_cry CRY_RATTATA,     $000,  $001 ; ARMALDO
+	mon_cry CRY_RATTATA,     $000,  $001 ; FEEBAS
+	mon_cry CRY_RATTATA,     $000,  $001 ; MILOTIC
+	mon_cry CRY_RATTATA,     $000,  $001 ; CASTFORM
+	mon_cry CRY_RATTATA,     $000,  $001 ; KECLEON
+	mon_cry CRY_RATTATA,     $000,  $001 ; SHUPPET
+	mon_cry CRY_RATTATA,     $000,  $001 ; BANETTE
+	mon_cry CRY_RATTATA,     $000,  $001 ; DUSKULL
+	mon_cry CRY_RATTATA,     $000,  $001 ; DUSCLOPS
+	mon_cry CRY_RATTATA,     $000,  $001 ; TROPIUS
+	mon_cry CRY_RATTATA,     $000,  $001 ; CHIMECHO
+	mon_cry CRY_RATTATA,     $000,  $001 ; ABSOL
+	mon_cry CRY_RATTATA,     $000,  $001 ; WYNAUT
+	mon_cry CRY_RATTATA,     $000,  $001 ; SNORUNT
+	mon_cry CRY_RATTATA,     $000,  $001 ; GLALIE
+	mon_cry CRY_RATTATA,     $000,  $001 ; SPHEAL
+	mon_cry CRY_RATTATA,     $000,  $001 ; SEALEO
+	mon_cry CRY_RATTATA,     $000,  $001 ; WALREIN
+	mon_cry CRY_RATTATA,     $000,  $001 ; CLAMPERL
+	mon_cry CRY_RATTATA,     $000,  $001 ; HUNTAIL
+	mon_cry CRY_RATTATA,     $000,  $001 ; GOREBYSS
+	mon_cry CRY_RATTATA,     $000,  $001 ; RELICANTH
+	mon_cry CRY_RATTATA,     $000,  $001 ; LUVDISC
+	mon_cry CRY_RATTATA,     $000,  $001 ; BAGON
+	mon_cry CRY_RATTATA,     $000,  $001 ; SHELGON
+	mon_cry CRY_RATTATA,     $000,  $001 ; SALAMENCE
+	mon_cry CRY_RATTATA,     $000,  $001 ; BELDUM
+	mon_cry CRY_RATTATA,     $000,  $001 ; METANG
+	mon_cry CRY_RATTATA,     $000,  $001 ; METAGROSS
+	mon_cry CRY_RATTATA,     $000,  $001 ; REGIROCK
+	mon_cry CRY_RATTATA,     $000,  $001 ; REGICE
+	mon_cry CRY_RATTATA,     $000,  $001 ; REGISTEEL
+	mon_cry CRY_RATTATA,     $000,  $001 ; LATIAS
+	mon_cry CRY_RATTATA,     $000,  $001 ; LATIOS
+	mon_cry CRY_RATTATA,     $000,  $001 ; KYOGRE
+	mon_cry CRY_RATTATA,     $000,  $001 ; GROUDON
+	mon_cry CRY_RATTATA,     $000,  $001 ; RAYQUAZA
+	mon_cry CRY_RATTATA,     $000,  $001 ; JIRACHI
+	mon_cry CRY_RATTATA,     $000,  $001 ; DEOXYS
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;
 	mon_cry CRY_RATTATA,     $000,  $001 ;

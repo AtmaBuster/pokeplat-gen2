@@ -804,3 +804,15 @@ LunatonePal:        INCBIN "gfx/pokemon/lunatone/front.gbcpal", middle_colors
 LunatoneShinyPal:   INCLUDE "gfx/pokemon/lunatone/shiny.pal"
 SolrockPal:         INCBIN "gfx/pokemon/solrock/front.gbcpal", middle_colors
 SolrockShinyPal:    INCLUDE "gfx/pokemon/solrock/shiny.pal"
+BarboachPal:        INCBIN "gfx/pokemon/barboach/front.gbcpal", middle_colors
+BarboachShinyPal:   INCLUDE "gfx/pokemon/barboach/shiny.pal"
+WhiscashPal:        INCBIN "gfx/pokemon/whiscash/front.gbcpal", middle_colors
+WhiscashShinyPal:   INCLUDE "gfx/pokemon/whiscash/shiny.pal"
+CorphishPal:        INCBIN "gfx/pokemon/corphish/front.gbcpal", middle_colors
+CorphishShinyPal:   INCLUDE "gfx/pokemon/corphish/shiny.pal"
+CrawdauntPal:       INCBIN "gfx/pokemon/crawdaunt/front.gbcpal", middle_colors
+CrawdauntShinyPal:  INCLUDE "gfx/pokemon/crawdaunt/shiny.pal"
+BaltoyPal:          INCBIN "gfx/pokemon/baltoy/front.gbcpal", middle_colors
+BaltoyShinyPal:     INCLUDE "gfx/pokemon/baltoy/shiny.pal"
+ClaydolPal:         INCBIN "gfx/pokemon/claydol/front.gbcpal", middle_colors
+ClaydolShinyPal:    INCLUDE "gfx/pokemon/claydol/shiny.pal"

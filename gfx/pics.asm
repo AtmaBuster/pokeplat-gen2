@@ -1004,13 +1004,22 @@ LunatoneFrontpic:    INCBIN "gfx/pokemon/lunatone/front.animated.2bpp.lz"
 LunatoneBackpic:     INCBIN "gfx/pokemon/lunatone/back.2bpp.lz"
 SolrockFrontpic:     INCBIN "gfx/pokemon/solrock/front.animated.2bpp.lz"
 SolrockBackpic:      INCBIN "gfx/pokemon/solrock/back.2bpp.lz"
+BarboachFrontpic:	 INCBIN "gfx/pokemon/barboach/front.animated.2bpp.lz"
+BarboachBackpic:     INCBIN "gfx/pokemon/barboach/back.2bpp.lz"
+WhiscashFrontpic:	 INCBIN "gfx/pokemon/whiscash/front.animated.2bpp.lz"
+WhiscashBackpic:     INCBIN "gfx/pokemon/whiscash/back.2bpp.lz"
+CorphishFrontpic:	 INCBIN "gfx/pokemon/corphish/front.animated.2bpp.lz"
+CorphishBackpic:     INCBIN "gfx/pokemon/corphish/back.2bpp.lz"
+CrawdauntFrontpic:	 INCBIN "gfx/pokemon/crawdaunt/front.animated.2bpp.lz"
+CrawdauntBackpic:    INCBIN "gfx/pokemon/crawdaunt/back.2bpp.lz"
 
-BarboachFrontpic:
-WhiscashFrontpic:
-CorphishFrontpic:
-CrawdauntFrontpic:
-BaltoyFrontpic:
-ClaydolFrontpic:
+SECTION "Pics 25", ROMX
+
+BaltoyFrontpic:		 INCBIN "gfx/pokemon/baltoy/front.animated.2bpp.lz"
+BaltoyBackpic:       INCBIN "gfx/pokemon/baltoy/back.2bpp.lz"
+ClaydolFrontpic:	 INCBIN "gfx/pokemon/claydol/front.animated.2bpp.lz"
+ClaydolBackpic:      INCBIN "gfx/pokemon/claydol/back.2bpp.lz"
+
 LileepFrontpic:
 CradilyFrontpic:
 AnorithFrontpic:
@@ -1181,12 +1190,7 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-BarboachBackpic:
-WhiscashBackpic:
-CorphishBackpic:
-CrawdauntBackpic:
-BaltoyBackpic:
-ClaydolBackpic:
+
 LileepBackpic:
 CradilyBackpic:
 AnorithBackpic:
