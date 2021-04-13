@@ -2690,6 +2690,9 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	ld hl, wEnemyMonType
+	call TrySandstormSpDefBoost
+
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -2705,6 +2708,9 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	ld hl, wEnemyMonType
+	call TrySandstormSpDefBoost
+
 	ld hl, wPlayerSpAtk
 
 .lightball
@@ -2725,6 +2731,29 @@ PlayerAttackDamage:
 
 	ld a, 1
 	and a
+	ret
+
+TrySandstormSpDefBoost:
+; multiply bc by 1.5 if rock type and sandstorm
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret nz
+
+	ld a, [hli]
+	cp ROCK
+	jr z, .sandstorm_boost
+	ld a, [hl]
+	cp ROCK
+	ret nz
+
+.sandstorm_boost
+	ld h, b
+	ld l, c
+	rrc h
+	rr l
+	add hl, bc
+	ld b, h
+	ld c, l
 	ret
 
 TruncateHL_BC:
@@ -2943,6 +2972,9 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	ld hl, wBattleMonType
+	call TrySandstormSpDefBoost
+
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -2957,6 +2989,9 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	ld hl, wBattleMonType
+	call TrySandstormSpDefBoost
+
 	ld hl, wEnemySpAtk
 
 .lightball
@@ -6737,10 +6772,10 @@ BattleCommand_facade:
 	bit BRN, [hl]
 	ret z
 .double
-	ld a, b
+	ld a, d
 	add a
 	jr c, .max
-	ld b, a
+	ld d, a
 	ret
 
 .max
