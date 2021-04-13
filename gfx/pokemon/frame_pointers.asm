@@ -392,4 +392,10 @@ FramesPointers:
 	dba CrawdauntFrames
 	dba BaltoyFrames
 	dba ClaydolFrames
+	dba LileepFrames
+	dba CradilyFrames
+	dba AnorithFrames
+	dba ArmaldoFrames
+	dba FeebasFrames
+	dba MiloticFrames
 	

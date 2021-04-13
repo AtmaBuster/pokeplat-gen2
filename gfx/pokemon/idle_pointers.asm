@@ -392,4 +392,10 @@ AnimationIdlePointers:
 	dw CrawdauntAnimationIdle
 	dw BaltoyAnimationIdle
 	dw ClaydolAnimationIdle
+	dw LileepAnimationIdle
+	dw CradilyAnimationIdle
+	dw AnorithAnimationIdle
+	dw ArmaldoAnimationIdle
+	dw FeebasAnimationIdle
+	dw MiloticAnimationIdle
 	
