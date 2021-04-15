@@ -160,6 +160,7 @@ BattleCommandPointers:
 	battlecmd lifepower               ; 8a
 	battlecmd facade                  ; 8b
 	battlecmd starthail               ; 8c
+	battlecmd breakscreens            ; 8d
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

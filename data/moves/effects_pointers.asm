@@ -183,7 +183,7 @@ MoveEffectsPointers:
 	dw Splash                        ; MAGIC_COAT
 	dw Splash                        ; RECYCLE
 	dw Splash                        ; REVENGE
-	dw Splash                        ; BRICK_BREAK
+	dw BrickBreak                    ; BRICK_BREAK
 	dw Splash                        ; YAWN
 	dw Splash                        ; KNOCK_OFF
 	dw Splash                        ; ENDEAVOR

@@ -1155,3 +1155,18 @@ StatHarshlyFellText:
 	text_pause
 	text "<SCROLL>sharply fell!"
 	prompt
+
+BrokeScreensText:
+	text "It shattered the"
+	line "barrier!"
+	prompt
+
+LightScreenWoreOffText:
+	text "<TARGET>'s"
+	line "LIGHT SCREEN fell!"
+	prompt
+
+ReflectWoreOffText:
+	text "<TARGET>'s"
+	line "REFLECT faded!"
+	prompt

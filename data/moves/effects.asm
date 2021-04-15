@@ -2189,3 +2189,24 @@ Bounce:
 	buildopponentrage
 	paralyzetarget
 	endmove
+
+BrickBreak:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	breakscreens
+	endmove

@@ -6962,6 +6962,8 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
+INCLUDE "engine/battle/move_effects/brick_break.asm"
+
 CheckHiddenOpponent:
 ; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_checkhit does these checks properly.
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
