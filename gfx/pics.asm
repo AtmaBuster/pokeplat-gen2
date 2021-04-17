@@ -1043,13 +1043,19 @@ DuskullFrontpic:     INCBIN "gfx/pokemon/duskull/front.animated.2bpp.lz"
 DuskullBackpic:      INCBIN "gfx/pokemon/duskull/back.2bpp.lz"
 DusclopsFrontpic:    INCBIN "gfx/pokemon/dusclops/front.animated.2bpp.lz"
 DusclopsBackpic:     INCBIN "gfx/pokemon/dusclops/back.2bpp.lz"
+TropiusFrontpic:     INCBIN "gfx/pokemon/tropius/front.animated.2bpp.lz"
+TropiusBackpic:      INCBIN "gfx/pokemon/tropius/back.2bpp.lz"
+ChimechoFrontpic:    INCBIN "gfx/pokemon/chimecho/front.animated.2bpp.lz"
+ChimechoBackpic:     INCBIN "gfx/pokemon/chimecho/back.2bpp.lz"
+AbsolFrontpic:       INCBIN "gfx/pokemon/absol/front.animated.2bpp.lz"
+AbsolBackpic:        INCBIN "gfx/pokemon/absol/back.2bpp.lz"
+WynautFrontpic:      INCBIN "gfx/pokemon/wynaut/front.animated.2bpp.lz"
+WynautBackpic:       INCBIN "gfx/pokemon/wynaut/back.2bpp.lz"
+SnoruntFrontpic:     INCBIN "gfx/pokemon/snorunt/front.animated.2bpp.lz"
+SnoruntBackpic:      INCBIN "gfx/pokemon/snorunt/back.2bpp.lz"
+GlalieFrontpic:      INCBIN "gfx/pokemon/glalie/front.animated.2bpp.lz"
+GlalieBackpic:       INCBIN "gfx/pokemon/glalie/back.2bpp.lz"
 
-TropiusFrontpic:
-ChimechoFrontpic:
-AbsolFrontpic:
-WynautFrontpic:
-SnoruntFrontpic:
-GlalieFrontpic:
 SphealFrontpic:
 SealeoFrontpic:
 WalreinFrontpic:
@@ -1201,15 +1207,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-
-
-
-TropiusBackpic:
-ChimechoBackpic:
-AbsolBackpic:
-WynautBackpic:
-SnoruntBackpic:
-GlalieBackpic:
 SphealBackpic:
 SealeoBackpic:
 WalreinBackpic:

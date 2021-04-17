@@ -840,3 +840,15 @@ DuskullPal:         INCBIN "gfx/pokemon/duskull/front.gbcpal", middle_colors
 DuskullShinyPal:    INCLUDE "gfx/pokemon/duskull/shiny.pal"
 DusclopsPal:        INCBIN "gfx/pokemon/dusclops/front.gbcpal", middle_colors
 DusclopsShinyPal:   INCLUDE "gfx/pokemon/dusclops/shiny.pal"
+TropiusPal:         INCBIN "gfx/pokemon/tropius/front.gbcpal", middle_colors
+TropiusShinyPal:    INCLUDE "gfx/pokemon/tropius/shiny.pal"
+ChimechoPal:        INCBIN "gfx/pokemon/chimecho/front.gbcpal", middle_colors
+ChimechoShinyPal:   INCLUDE "gfx/pokemon/chimecho/shiny.pal"
+AbsolPal:           INCBIN "gfx/pokemon/absol/front.gbcpal", middle_colors
+AbsolShinyPal:      INCLUDE "gfx/pokemon/absol/shiny.pal"
+WynautPal:          INCBIN "gfx/pokemon/wynaut/front.gbcpal", middle_colors
+WynautShinyPal:     INCLUDE "gfx/pokemon/wynaut/shiny.pal"
+SnoruntPal:         INCBIN "gfx/pokemon/snorunt/front.gbcpal", middle_colors
+SnoruntShinyPal:    INCLUDE "gfx/pokemon/snorunt/shiny.pal"
+GlaliePal:          INCBIN "gfx/pokemon/glalie/front.gbcpal", middle_colors
+GlalieShinyPal:     INCLUDE "gfx/pokemon/glalie/shiny.pal"
