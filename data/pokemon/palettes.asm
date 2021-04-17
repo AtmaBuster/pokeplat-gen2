@@ -828,3 +828,15 @@ FeebasPal:          INCBIN "gfx/pokemon/feebas/front.gbcpal", middle_colors
 FeebasShinyPal:     INCLUDE "gfx/pokemon/feebas/shiny.pal"
 MiloticPal:         INCBIN "gfx/pokemon/milotic/front.gbcpal", middle_colors
 MiloticShinyPal:    INCLUDE "gfx/pokemon/milotic/shiny.pal"
+CastformPal:        INCBIN "gfx/pokemon/castform/front.gbcpal", middle_colors
+CastformShinyPal:   INCLUDE "gfx/pokemon/castform/shiny.pal"
+KecleonPal:         INCBIN "gfx/pokemon/kecleon/front.gbcpal", middle_colors
+KecleonShinyPal:    INCLUDE "gfx/pokemon/kecleon/shiny.pal"
+ShuppetPal:         INCBIN "gfx/pokemon/shuppet/front.gbcpal", middle_colors
+ShuppetShinyPal:    INCLUDE "gfx/pokemon/shuppet/shiny.pal"
+BanettePal:         INCBIN "gfx/pokemon/banette/front.gbcpal", middle_colors
+BanetteShinyPal:    INCLUDE "gfx/pokemon/banette/shiny.pal"
+DuskullPal:         INCBIN "gfx/pokemon/duskull/front.gbcpal", middle_colors
+DuskullShinyPal:    INCLUDE "gfx/pokemon/duskull/shiny.pal"
+DusclopsPal:        INCBIN "gfx/pokemon/dusclops/front.gbcpal", middle_colors
+DusclopsShinyPal:   INCLUDE "gfx/pokemon/dusclops/shiny.pal"

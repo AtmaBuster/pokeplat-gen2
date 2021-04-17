@@ -398,4 +398,10 @@ AnimationPointers:
 	dw ArmaldoAnimation
 	dw FeebasAnimation
 	dw MiloticAnimation
+	dw CastformAnimation
+	dw KecleonAnimation
+	dw ShuppetAnimation
+	dw BanetteAnimation
+	dw DuskullAnimation
+	dw DusclopsAnimation
 	

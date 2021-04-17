@@ -1031,13 +1031,19 @@ FeebasFrontpic:      INCBIN "gfx/pokemon/feebas/front.animated.2bpp.lz"
 FeebasBackpic:       INCBIN "gfx/pokemon/feebas/back.2bpp.lz"
 MiloticFrontpic:     INCBIN "gfx/pokemon/milotic/front.animated.2bpp.lz"
 MiloticBackpic:      INCBIN "gfx/pokemon/milotic/back.2bpp.lz"
+CastformFrontpic:    INCBIN "gfx/pokemon/castform/front.animated.2bpp.lz"
+CastformBackpic:     INCBIN "gfx/pokemon/castform/back.2bpp.lz"
+KecleonFrontpic:     INCBIN "gfx/pokemon/kecleon/front.animated.2bpp.lz"
+KecleonBackpic:      INCBIN "gfx/pokemon/kecleon/back.2bpp.lz"
+ShuppetFrontpic:     INCBIN "gfx/pokemon/shuppet/front.animated.2bpp.lz"
+ShuppetBackpic:      INCBIN "gfx/pokemon/shuppet/back.2bpp.lz"
+BanetteFrontpic:     INCBIN "gfx/pokemon/banette/front.animated.2bpp.lz"
+BanetteBackpic:      INCBIN "gfx/pokemon/banette/back.2bpp.lz"
+DuskullFrontpic:     INCBIN "gfx/pokemon/duskull/front.animated.2bpp.lz"
+DuskullBackpic:      INCBIN "gfx/pokemon/duskull/back.2bpp.lz"
+DusclopsFrontpic:    INCBIN "gfx/pokemon/dusclops/front.animated.2bpp.lz"
+DusclopsBackpic:     INCBIN "gfx/pokemon/dusclops/back.2bpp.lz"
 
-CastformFrontpic:
-KecleonFrontpic:
-ShuppetFrontpic:
-BanetteFrontpic:
-DuskullFrontpic:
-DusclopsFrontpic:
 TropiusFrontpic:
 ChimechoFrontpic:
 AbsolFrontpic:
@@ -1198,12 +1204,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-CastformBackpic:
-KecleonBackpic:
-ShuppetBackpic:
-BanetteBackpic:
-DuskullBackpic:
-DusclopsBackpic:
 TropiusBackpic:
 ChimechoBackpic:
 AbsolBackpic:

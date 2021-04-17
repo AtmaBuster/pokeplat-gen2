@@ -398,4 +398,9 @@ AnimationIdlePointers:
 	dw ArmaldoAnimationIdle
 	dw FeebasAnimationIdle
 	dw MiloticAnimationIdle
+	dw CastformAnimationIdle
+	dw ShuppetAnimationIdle
+	dw BanetteAnimationIdle
+	dw DuskullAnimationIdle
+	dw DusclopsAnimationIdle
 	
