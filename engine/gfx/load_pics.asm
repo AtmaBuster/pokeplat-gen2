@@ -72,7 +72,6 @@ GetAnimatedFrontpic:
 	call _GetFrontpic
 	ld a, BANK(vTiles3)
 	ldh [rVBK], a
-	call GetAnimatedEnemyFrontpic
 	xor a
 	ldh [rVBK], a
 	pop af
@@ -160,95 +159,7 @@ GetFrontpicPointer:
 	call GetFarHalfword
 	pop bc
 	ret
-
-GetAnimatedEnemyFrontpic:
-	push hl
-	ld de, sPaddedEnemyFrontPic
-	ld c, 7 * 7
-	ldh a, [hROMBank]
-	ld b, a
-	call Get2bpp
-	pop hl
-	ld de, 7 * 7 tiles
-	add hl, de
-	push hl
-	ld a, BANK(wBasePicSize)
-	ld hl, wBasePicSize
-	call GetFarWRAMByte
-	pop hl
-	and $f
-	ld de, wDecompressScratch + 5 * 5 tiles
-	ld c, 5 * 5
-	cp 5
-	jr z, .got_dims
-	ld de, wDecompressScratch + 6 * 6 tiles
-	ld c, 6 * 6
-	cp 6
-	jr z, .got_dims
-	ld de, wDecompressScratch + 7 * 7 tiles
-	ld c, 7 * 7
-.got_dims
-	; calculate the number of tiles dedicated to animation
-	ld a, [sEnemyFrontPicTileCount]
-	sub c
-	; exit early if none
-	ret z
-	ld c, a
-	push hl
-	push bc
-	call LoadFrontpicTiles
-	pop bc
-	pop hl
-	ld de, wDecompressScratch
-	ldh a, [hROMBank]
-	ld b, a
-	; if the tiles fit in a single VRAM block ($80 tiles), load them...
-	ld a, c
-	sub 128 - 7 * 7
-	jr c, .finish
-	; otherwise, load as many as we can...
-	inc a
-	ld [sEnemyFrontPicTileCount], a ; save the remainder
-	ld c, 127 - 7 * 7
-	call Get2bpp
-	; ...and load the rest into vTiles4
-	ld de, wDecompressScratch + (127 - 7 * 7) tiles
-	ld hl, vTiles4
-	ldh a, [hROMBank]
-	ld b, a
-	ld a, [sEnemyFrontPicTileCount]
-	ld c, a
-.finish
-	jp Get2bpp
-
-LoadFrontpicTiles:
-	ld hl, wDecompressScratch
-	swap c
-	ld a, c
-	and $f
-	ld b, a
-	ld a, c
-	and $f0
-	ld c, a
-	push bc
-	call LoadOrientedFrontpic
-	pop bc
-	ld a, c
-	and a
-	jr z, .handle_loop
-	inc b
-	jr .handle_loop
-
-.loop
-	push bc
-	ld c, 0
-	call LoadOrientedFrontpic
-	pop bc
-.handle_loop
-	dec b
-	jr nz, .loop
-	ret
-
+	
 GetMonBackpic:
 	ld a, [wCurPartySpecies]
 	call IsAPokemon
