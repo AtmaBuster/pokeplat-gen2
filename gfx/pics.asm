@@ -1092,14 +1092,21 @@ RegiceFrontpic:		 INCBIN "gfx/pokemon/regice/front.animated.2bpp.lz"
 RegiceBackpic:       INCBIN "gfx/pokemon/regice/back.2bpp.lz"
 RegisteelFrontpic:   INCBIN "gfx/pokemon/registeel/front.animated.2bpp.lz"
 RegisteelBackpic:    INCBIN "gfx/pokemon/registeel/back.2bpp.lz"
+LatiasFrontpic:      INCBIN "gfx/pokemon/latias/front.animated.2bpp.lz"
+LatiasBackpic:       INCBIN "gfx/pokemon/latias/back.2bpp.lz"
+LatiosFrontpic:      INCBIN "gfx/pokemon/latios/front.animated.2bpp.lz"
+LatiosBackpic:       INCBIN "gfx/pokemon/latios/back.2bpp.lz"
+KyogreFrontpic:      INCBIN "gfx/pokemon/kyogre/front.animated.2bpp.lz"
+KyogreBackpic:       INCBIN "gfx/pokemon/kyogre/back.2bpp.lz"
+GroudonFrontpic:     INCBIN "gfx/pokemon/groudon/front.animated.2bpp.lz"
+GroudonBackpic:      INCBIN "gfx/pokemon/groudon/back.2bpp.lz"
+RayquazaFrontpic:    INCBIN "gfx/pokemon/rayquaza/front.animated.2bpp.lz"
+RayquazaBackpic:     INCBIN "gfx/pokemon/rayquaza/back.2bpp.lz"
+JirachiFrontpic:     INCBIN "gfx/pokemon/jirachi/front.animated.2bpp.lz"
+JirachiBackpic:      INCBIN "gfx/pokemon/jirachi/back.2bpp.lz"
+DeoxysFrontpic:      INCBIN "gfx/pokemon/deoxys/front.animated.2bpp.lz"
+DeoxysBackpic:       INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"
 
-LatiasFrontpic:
-LatiosFrontpic:
-KyogreFrontpic:
-GroudonFrontpic:
-RayquazaFrontpic:
-JirachiFrontpic:
-DeoxysFrontpic:
 TurtwigFrontpic:
 GrotleFrontpic:
 TorterraFrontpic:
@@ -1227,14 +1234,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-
-LatiasBackpic:
-LatiosBackpic:
-KyogreBackpic:
-GroudonBackpic:
-RayquazaBackpic:
-JirachiBackpic:
-DeoxysBackpic:
 TurtwigBackpic:
 GrotleBackpic:
 TorterraBackpic:

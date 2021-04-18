@@ -886,3 +886,17 @@ RegicePal:          INCBIN "gfx/pokemon/regice/front.gbcpal", middle_colors
 RegiceShinyPal:     INCLUDE "gfx/pokemon/regice/shiny.pal"
 RegisteelPal:       INCBIN "gfx/pokemon/registeel/front.gbcpal", middle_colors
 RegisteelShinyPal:  INCLUDE "gfx/pokemon/registeel/shiny.pal"
+LatiasPal:          INCBIN "gfx/pokemon/latias/front.gbcpal", middle_colors
+LatiasShinyPal:     INCLUDE "gfx/pokemon/latias/shiny.pal"
+LatiosPal:          INCBIN "gfx/pokemon/latios/front.gbcpal", middle_colors
+LatiosShinyPal:     INCLUDE "gfx/pokemon/latios/shiny.pal"
+KyogrePal:          INCBIN "gfx/pokemon/kyogre/front.gbcpal", middle_colors
+KyogreShinyPal:     INCLUDE "gfx/pokemon/kyogre/shiny.pal"
+GroudonPal:         INCBIN "gfx/pokemon/groudon/front.gbcpal", middle_colors
+GroudonShinyPal:    INCLUDE "gfx/pokemon/groudon/shiny.pal"
+RayquazaPal:        INCBIN "gfx/pokemon/rayquaza/front.gbcpal", middle_colors
+RayquazaShinyPal:   INCLUDE "gfx/pokemon/rayquaza/shiny.pal"
+JirachiPal:         INCBIN "gfx/pokemon/jirachi/front.gbcpal", middle_colors
+JirachiShinyPal:    INCLUDE "gfx/pokemon/jirachi/shiny.pal"
+DeoxysPal:          INCBIN "gfx/pokemon/deoxys/front.gbcpal", middle_colors
+DeoxysShinyPal:     INCLUDE "gfx/pokemon/deoxys/shiny.pal"
