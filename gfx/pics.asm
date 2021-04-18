@@ -1070,12 +1070,17 @@ HuntailFrontpic:     INCBIN "gfx/pokemon/huntail/front.animated.2bpp.lz"
 HuntailBackpic:      INCBIN "gfx/pokemon/huntail/back.2bpp.lz"
 GorebyssFrontpic:    INCBIN "gfx/pokemon/gorebyss/front.animated.2bpp.lz"
 GorebyssBackpic:     INCBIN "gfx/pokemon/gorebyss/back.2bpp.lz"
+RelicanthFrontpic:   INCBIN "gfx/pokemon/relicanth/front.animated.2bpp.lz"
+RelicanthBackpic:    INCBIN "gfx/pokemon/relicanth/back.2bpp.lz"
+LuvdiscFrontpic:     INCBIN "gfx/pokemon/luvdisc/front.animated.2bpp.lz"
+LuvdiscBackpic:      INCBIN "gfx/pokemon/luvdisc/back.2bpp.lz"
+BagonFrontpic:       INCBIN "gfx/pokemon/bagon/front.animated.2bpp.lz"
+BagonBackpic:        INCBIN "gfx/pokemon/bagon/back.2bpp.lz"
+ShelgonFrontpic:     INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
+ShelgonBackpic:      INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
+SalamenceFrontpic:   INCBIN "gfx/pokemon/salamence/front.animated.2bpp.lz"
+SalamenceBackpic:    INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
 
-RelicanthFrontpic:
-LuvdiscFrontpic:
-BagonFrontpic:
-ShelgonFrontpic:
-SalamenceFrontpic:
 BeldumFrontpic:
 MetangFrontpic:
 MetagrossFrontpic:
@@ -1217,11 +1222,7 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-RelicanthBackpic:
-LuvdiscBackpic:
-BagonBackpic:
-ShelgonBackpic:
-SalamenceBackpic:
+
 BeldumBackpic:
 MetangBackpic:
 MetagrossBackpic:

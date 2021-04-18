@@ -864,3 +864,13 @@ HuntailPal:         INCBIN "gfx/pokemon/huntail/front.gbcpal", middle_colors
 HuntailShinyPal:    INCLUDE "gfx/pokemon/huntail/shiny.pal"
 GorebyssPal:        INCBIN "gfx/pokemon/gorebyss/front.gbcpal", middle_colors
 GorebyssShinyPal:   INCLUDE "gfx/pokemon/gorebyss/shiny.pal"
+RelicanthPal:       INCBIN "gfx/pokemon/relicanth/front.gbcpal", middle_colors
+RelicanthShinyPal:  INCLUDE "gfx/pokemon/relicanth/shiny.pal"
+LuvdiscPal:         INCBIN "gfx/pokemon/luvdisc/front.gbcpal", middle_colors
+LuvdiscShinyPal:    INCLUDE "gfx/pokemon/luvdisc/shiny.pal"
+BagonPal:           INCBIN "gfx/pokemon/bagon/front.gbcpal", middle_colors
+BagonShinyPal:      INCLUDE "gfx/pokemon/bagon/shiny.pal"
+ShelgonPal:         INCBIN "gfx/pokemon/shelgon/front.gbcpal", middle_colors
+ShelgonShinyPal:    INCLUDE "gfx/pokemon/shelgon/shiny.pal"
+SalamencePal:       INCBIN "gfx/pokemon/salamence/front.gbcpal", middle_colors
+SalamenceShinyPal:  INCLUDE "gfx/pokemon/salamence/shiny.pal"
