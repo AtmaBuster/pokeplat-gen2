@@ -1055,13 +1055,22 @@ SnoruntFrontpic:     INCBIN "gfx/pokemon/snorunt/front.animated.2bpp.lz"
 SnoruntBackpic:      INCBIN "gfx/pokemon/snorunt/back.2bpp.lz"
 GlalieFrontpic:      INCBIN "gfx/pokemon/glalie/front.animated.2bpp.lz"
 GlalieBackpic:       INCBIN "gfx/pokemon/glalie/back.2bpp.lz"
+SphealFrontpic:      INCBIN "gfx/pokemon/spheal/front.animated.2bpp.lz"
+SphealBackpic:       INCBIN "gfx/pokemon/spheal/back.2bpp.lz"
+SealeoFrontpic:      INCBIN "gfx/pokemon/sealeo/front.animated.2bpp.lz"
+SealeoBackpic:       INCBIN "gfx/pokemon/sealeo/back.2bpp.lz"
+WalreinFrontpic:     INCBIN "gfx/pokemon/walrein/front.animated.2bpp.lz"
+WalreinBackpic:      INCBIN "gfx/pokemon/walrein/back.2bpp.lz"
+ClamperlFrontpic:    INCBIN "gfx/pokemon/clamperl/front.animated.2bpp.lz"
+ClamperlBackpic:     INCBIN "gfx/pokemon/clamperl/back.2bpp.lz"
 
-SphealFrontpic:
-SealeoFrontpic:
-WalreinFrontpic:
-ClamperlFrontpic:
-HuntailFrontpic:
-GorebyssFrontpic:
+SECTION "Pics 26", ROMX
+
+HuntailFrontpic:     INCBIN "gfx/pokemon/huntail/front.animated.2bpp.lz"
+HuntailBackpic:      INCBIN "gfx/pokemon/huntail/back.2bpp.lz"
+GorebyssFrontpic:    INCBIN "gfx/pokemon/gorebyss/front.animated.2bpp.lz"
+GorebyssBackpic:     INCBIN "gfx/pokemon/gorebyss/back.2bpp.lz"
+
 RelicanthFrontpic:
 LuvdiscFrontpic:
 BagonFrontpic:
@@ -1207,12 +1216,7 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-SphealBackpic:
-SealeoBackpic:
-WalreinBackpic:
-ClamperlBackpic:
-HuntailBackpic:
-GorebyssBackpic:
+
 RelicanthBackpic:
 LuvdiscBackpic:
 BagonBackpic:

@@ -852,3 +852,15 @@ SnoruntPal:         INCBIN "gfx/pokemon/snorunt/front.gbcpal", middle_colors
 SnoruntShinyPal:    INCLUDE "gfx/pokemon/snorunt/shiny.pal"
 GlaliePal:          INCBIN "gfx/pokemon/glalie/front.gbcpal", middle_colors
 GlalieShinyPal:     INCLUDE "gfx/pokemon/glalie/shiny.pal"
+SphealPal:          INCBIN "gfx/pokemon/spheal/front.gbcpal", middle_colors
+SphealShinyPal:     INCLUDE "gfx/pokemon/spheal/shiny.pal"
+SealeoPal:          INCBIN "gfx/pokemon/Sealeo/front.gbcpal", middle_colors
+SealeoShinyPal:     INCLUDE "gfx/pokemon/Sealeo/shiny.pal"
+WalreinPal:         INCBIN "gfx/pokemon/walrein/front.gbcpal", middle_colors
+WalreinShinyPal:    INCLUDE "gfx/pokemon/walrein/shiny.pal"
+ClamperlPal:        INCBIN "gfx/pokemon/clamperl/front.gbcpal", middle_colors
+ClamperlShinyPal:   INCLUDE "gfx/pokemon/clamperl/shiny.pal"
+HuntailPal:         INCBIN "gfx/pokemon/huntail/front.gbcpal", middle_colors
+HuntailShinyPal:    INCLUDE "gfx/pokemon/huntail/shiny.pal"
+GorebyssPal:        INCBIN "gfx/pokemon/gorebyss/front.gbcpal", middle_colors
+GorebyssShinyPal:   INCLUDE "gfx/pokemon/gorebyss/shiny.pal"
