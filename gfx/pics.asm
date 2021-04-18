@@ -1080,13 +1080,19 @@ ShelgonFrontpic:     INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
 ShelgonBackpic:      INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
 SalamenceFrontpic:   INCBIN "gfx/pokemon/salamence/front.animated.2bpp.lz"
 SalamenceBackpic:    INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
+BeldumFrontpic:		 INCBIN "gfx/pokemon/beldum/front.animated.2bpp.lz"
+BeldumBackpic:       INCBIN "gfx/pokemon/beldum/back.2bpp.lz"
+MetangFrontpic:      INCBIN "gfx/pokemon/metang/front.animated.2bpp.lz"
+MetangBackpic:       INCBIN "gfx/pokemon/metang/back.2bpp.lz"
+MetagrossFrontpic:   INCBIN "gfx/pokemon/metagross/front.animated.2bpp.lz"
+MetagrossBackpic:    INCBIN "gfx/pokemon/metagross/back.2bpp.lz"
+RegirockFrontpic:    INCBIN "gfx/pokemon/regirock/front.animated.2bpp.lz"
+RegirockBackpic:     INCBIN "gfx/pokemon/regirock/back.2bpp.lz"
+RegiceFrontpic:		 INCBIN "gfx/pokemon/regice/front.animated.2bpp.lz"
+RegiceBackpic:       INCBIN "gfx/pokemon/regice/back.2bpp.lz"
+RegisteelFrontpic:   INCBIN "gfx/pokemon/registeel/front.animated.2bpp.lz"
+RegisteelBackpic:    INCBIN "gfx/pokemon/registeel/back.2bpp.lz"
 
-BeldumFrontpic:
-MetangFrontpic:
-MetagrossFrontpic:
-RegirockFrontpic:
-RegiceFrontpic:
-RegisteelFrontpic:
 LatiasFrontpic:
 LatiosFrontpic:
 KyogreFrontpic:
@@ -1222,13 +1228,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-
-BeldumBackpic:
-MetangBackpic:
-MetagrossBackpic:
-RegirockBackpic:
-RegiceBackpic:
-RegisteelBackpic:
 LatiasBackpic:
 LatiosBackpic:
 KyogreBackpic:

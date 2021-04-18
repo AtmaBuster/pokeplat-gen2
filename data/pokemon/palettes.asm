@@ -874,3 +874,15 @@ ShelgonPal:         INCBIN "gfx/pokemon/shelgon/front.gbcpal", middle_colors
 ShelgonShinyPal:    INCLUDE "gfx/pokemon/shelgon/shiny.pal"
 SalamencePal:       INCBIN "gfx/pokemon/salamence/front.gbcpal", middle_colors
 SalamenceShinyPal:  INCLUDE "gfx/pokemon/salamence/shiny.pal"
+BeldumPal:          INCBIN "gfx/pokemon/beldum/front.gbcpal", middle_colors
+BeldumShinyPal:     INCLUDE "gfx/pokemon/beldum/shiny.pal"
+MetangPal:          INCBIN "gfx/pokemon/metang/front.gbcpal", middle_colors
+MetangShinyPal:     INCLUDE "gfx/pokemon/metang/shiny.pal"
+MetagrossPal:       INCBIN "gfx/pokemon/metagross/front.gbcpal", middle_colors
+MetagrossShinyPal:  INCLUDE "gfx/pokemon/metagross/shiny.pal"
+RegirockPal:        INCBIN "gfx/pokemon/regirock/front.gbcpal", middle_colors
+RegirockShinyPal:   INCLUDE "gfx/pokemon/regirock/shiny.pal"
+RegicePal:          INCBIN "gfx/pokemon/regice/front.gbcpal", middle_colors
+RegiceShinyPal:     INCLUDE "gfx/pokemon/regice/shiny.pal"
+RegisteelPal:       INCBIN "gfx/pokemon/registeel/front.gbcpal", middle_colors
+RegisteelShinyPal:  INCLUDE "gfx/pokemon/registeel/shiny.pal"
