@@ -597,7 +597,7 @@ RaltsEvosAttacks:
 	dbw 17, LUCKY_CHANT
 	dbw 21, MAGICAL_LEAF
 	dbw 23, CALM_MIND
-	dbw 28, PSYCHIC
+	dbw 28, PSYCHIC_M
 	dbw 32, IMPRISON
 	dbw 34, FUTURE_SIGHT
 	dbw 39, CHARM
@@ -618,7 +618,7 @@ KirliaEvosAttacks:
 	dbw 17, LUCKY_CHANT
 	dbw 22, MAGICAL_LEAF
 	dbw 25, CALM_MIND
-	dbw 31, PSYCHIC
+	dbw 31, PSYCHIC_M
 	dbw 36, IMPRISON
 	dbw 39, FUTURE_SIGHT
 	dbw 45, CHARM
@@ -639,7 +639,7 @@ GardevoirEvosAttacks:
 	dbw 17, WISH
 	dbw 22, MAGICAL_LEAF
 	dbw 25, CALM_MIND
-	dbw 33, PSYCHIC
+	dbw 33, PSYCHIC_M
 	dbw 40, IMPRISON
 	dbw 45, FUTURE_SIGHT
 	dbw 53, CAPTIVATE
@@ -1453,7 +1453,7 @@ SpoinkEvosAttacks:
 	dbw 29, REST
 	dbw 29, SNORE
 	dbw 34, PAYBACK
-	dbw 41, PSYCHIC
+	dbw 41, PSYCHIC_M
 	dbw 46, POWER_GEM
 	dbw 48, BOUNCE
 	db 0 ; no more level-up moves
@@ -1474,7 +1474,7 @@ GrumpigEvosAttacks:
 	dbw 29, REST
 	dbw 29, SNORE
 	dbw 37, PAYBACK
-	dbw 47, PSYCHIC
+	dbw 47, PSYCHIC_M
 	dbw 55, POWER_GEM
 	dbw 60, BOUNCE
 	db 0 ; no more level-up moves
@@ -1678,7 +1678,7 @@ LunatoneEvosAttacks:
 	dbw 31, EMBARGO
 	dbw 34, COSMIC_POWER
 	dbw 42, HEAL_BLOCK
-	dbw 45, PSYCHIC
+	dbw 45, PSYCHIC_M
 	dbw 53, FUTURE_SIGHT
 	dbw 56, EXPLOSION
 	db 0 ; no more level-up moves
@@ -2233,7 +2233,7 @@ GorebyssEvosAttacks:
 	dbw 28, CAPTIVATE
 	dbw 33, BATON_PASS
 	dbw 37, DIVE
-	dbw 42, PSYCHIC
+	dbw 42, PSYCHIC_M
 	dbw 46, AQUA_TAIL
 	dbw 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2351,7 +2351,7 @@ MetangEvosAttacks:
 	dbw 24, SCARY_FACE
 	dbw 28, PURSUIT
 	dbw 32, BULLET_PUNCH
-	dbw 36, PSYCHIC
+	dbw 36, PSYCHIC_M
 	dbw 40, IRON_DEFENSE
 	dbw 44, AGILITY
 	dbw 48, METEOR_MASH
@@ -2370,7 +2370,7 @@ MetagrossEvosAttacks:
 	dbw 24, SCARY_FACE
 	dbw 28, PURSUIT
 	dbw 32, BULLET_PUNCH
-	dbw 36, PSYCHIC
+	dbw 36, PSYCHIC_M
 	dbw 40, IRON_DEFENSE
 	dbw 44, AGILITY
 	dbw 45, HAMMER_ARM
@@ -2447,7 +2447,7 @@ LatiasEvosAttacks:
 	dbw 50, PSYCHO_SHIFT
 	dbw 55, CHARM
 	dbw 60, HEALING_WISH
-	dbw 65, PSYCHIC
+	dbw 65, PSYCHIC_M
 	dbw 70, DRAGON_PULSE
 	db 0 ; no more level-up moves
 
@@ -2466,7 +2466,7 @@ LatiosEvosAttacks:
 	dbw 50, PSYCHO_SHIFT
 	dbw 55, DRAGON_DANCE
 	dbw 60, MEMENTO
-	dbw 65, PSYCHIC
+	dbw 65, PSYCHIC_M
 	dbw 70, DRAGON_PULSE
 	db 0 ; no more level-up moves
 
@@ -2525,7 +2525,7 @@ JirachiEvosAttacks:
 	dbw 5, REST
 	dbw 10, SWIFT
 	dbw 15, HELPING_HAND
-	dbw 20, PSYCHIC
+	dbw 20, PSYCHIC_M
 	dbw 25, REFRESH
 	dbw 30, REST
 	dbw 35, ZEN_HEADBUTT
@@ -2546,7 +2546,7 @@ DeoxysEvosAttacks:
 	dbw 17, TELEPORT
 	dbw 25, KNOCK_OFF
 	dbw 33, PURSUIT
-	dbw 41, PSYCHIC
+	dbw 41, PSYCHIC_M
 	dbw 49, SNATCH
 	dbw 57, PSYCHO_SHIFT
 	dbw 65, ZEN_HEADBUTT

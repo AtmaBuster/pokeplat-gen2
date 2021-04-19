@@ -415,7 +415,7 @@ SpinarakEvosAttacks:
 	dbw 29, SPIDER_WEB
 	dbw 33, AGILITY
 	dbw 36, PIN_MISSILE
-	dbw 40, PSYCHIC
+	dbw 40, PSYCHIC_M
 	dbw 43, POISON_JAB
 	db 0 ; no more level-up moves
 
@@ -436,7 +436,7 @@ AriadosEvosAttacks:
 	dbw 32, SPIDER_WEB
 	dbw 37, AGILITY
 	dbw 41, PIN_MISSILE
-	dbw 46, PSYCHIC
+	dbw 46, PSYCHIC_M
 	dbw 50, POISON_JAB
 	db 0 ; no more level-up moves
 
@@ -589,7 +589,7 @@ NatuEvosAttacks:
 	dbw 39, OMINOUS_WIND
 	dbw 44, POWER_SWAP
 	dbw 44, GUARD_SWAP
-	dbw 47, PSYCHIC
+	dbw 47, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 XatuEvosAttacks:
@@ -609,7 +609,7 @@ XatuEvosAttacks:
 	dbw 47, OMINOUS_WIND
 	dbw 54, POWER_SWAP
 	dbw 54, GUARD_SWAP
-	dbw 59, PSYCHIC
+	dbw 59, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MareepEvosAttacks:
@@ -934,7 +934,7 @@ EspeonEvosAttacks:
 	dbw 43, FUTURE_SIGHT
 	dbw 50, LAST_RESORT
 	dbw 57, PSYCH_UP
-	dbw 64, PSYCHIC
+	dbw 64, PSYCHIC_M
 	dbw 71, MORNING_SUN
 	dbw 78, POWER_SWAP
 	db 0 ; no more level-up moves
@@ -988,7 +988,7 @@ SlowkingEvosAttacks:
 	dbw 34, ZEN_HEADBUTT
 	dbw 39, NASTY_PLOT
 	dbw 43, SWAGGER
-	dbw 48, PSYCHIC
+	dbw 48, PSYCHIC_M
 	dbw 53, TRUMP_CARD
 	dbw 57, PSYCH_UP
 	db 0 ; no more level-up moves
@@ -1038,7 +1038,7 @@ GirafarigEvosAttacks:
 	dbw 23, BATON_PASS
 	dbw 28, ASSURANCE
 	dbw 32, DOUBLE_HIT
-	dbw 37, PSYCHIC
+	dbw 37, PSYCHIC_M
 	dbw 41, ZEN_HEADBUTT
 	dbw 46, CRUNCH
 	db 0 ; no more level-up moves
@@ -1686,7 +1686,7 @@ SmoochumEvosAttacks:
 	dbw 25, FAKE_TEARS
 	dbw 28, LUCKY_CHANT
 	dbw 31, AVALANCHE
-	dbw 35, PSYCHIC
+	dbw 35, PSYCHIC_M
 	dbw 38, COPYCAT
 	dbw 41, PERISH_SONG
 	dbw 45, BLIZZARD

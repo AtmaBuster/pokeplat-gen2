@@ -1055,31 +1055,58 @@ SnoruntFrontpic:     INCBIN "gfx/pokemon/snorunt/front.animated.2bpp.lz"
 SnoruntBackpic:      INCBIN "gfx/pokemon/snorunt/back.2bpp.lz"
 GlalieFrontpic:      INCBIN "gfx/pokemon/glalie/front.animated.2bpp.lz"
 GlalieBackpic:       INCBIN "gfx/pokemon/glalie/back.2bpp.lz"
+SphealFrontpic:      INCBIN "gfx/pokemon/spheal/front.animated.2bpp.lz"
+SphealBackpic:       INCBIN "gfx/pokemon/spheal/back.2bpp.lz"
+SealeoFrontpic:      INCBIN "gfx/pokemon/sealeo/front.animated.2bpp.lz"
+SealeoBackpic:       INCBIN "gfx/pokemon/sealeo/back.2bpp.lz"
+WalreinFrontpic:     INCBIN "gfx/pokemon/walrein/front.animated.2bpp.lz"
+WalreinBackpic:      INCBIN "gfx/pokemon/walrein/back.2bpp.lz"
+ClamperlFrontpic:    INCBIN "gfx/pokemon/clamperl/front.animated.2bpp.lz"
+ClamperlBackpic:     INCBIN "gfx/pokemon/clamperl/back.2bpp.lz"
 
-SphealFrontpic:
-SealeoFrontpic:
-WalreinFrontpic:
-ClamperlFrontpic:
-HuntailFrontpic:
-GorebyssFrontpic:
-RelicanthFrontpic:
-LuvdiscFrontpic:
-BagonFrontpic:
-ShelgonFrontpic:
-SalamenceFrontpic:
-BeldumFrontpic:
-MetangFrontpic:
-MetagrossFrontpic:
-RegirockFrontpic:
-RegiceFrontpic:
-RegisteelFrontpic:
-LatiasFrontpic:
-LatiosFrontpic:
-KyogreFrontpic:
-GroudonFrontpic:
-RayquazaFrontpic:
-JirachiFrontpic:
-DeoxysFrontpic:
+SECTION "Pics 26", ROMX
+
+HuntailFrontpic:     INCBIN "gfx/pokemon/huntail/front.animated.2bpp.lz"
+HuntailBackpic:      INCBIN "gfx/pokemon/huntail/back.2bpp.lz"
+GorebyssFrontpic:    INCBIN "gfx/pokemon/gorebyss/front.animated.2bpp.lz"
+GorebyssBackpic:     INCBIN "gfx/pokemon/gorebyss/back.2bpp.lz"
+RelicanthFrontpic:   INCBIN "gfx/pokemon/relicanth/front.animated.2bpp.lz"
+RelicanthBackpic:    INCBIN "gfx/pokemon/relicanth/back.2bpp.lz"
+LuvdiscFrontpic:     INCBIN "gfx/pokemon/luvdisc/front.animated.2bpp.lz"
+LuvdiscBackpic:      INCBIN "gfx/pokemon/luvdisc/back.2bpp.lz"
+BagonFrontpic:       INCBIN "gfx/pokemon/bagon/front.animated.2bpp.lz"
+BagonBackpic:        INCBIN "gfx/pokemon/bagon/back.2bpp.lz"
+ShelgonFrontpic:     INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
+ShelgonBackpic:      INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
+SalamenceFrontpic:   INCBIN "gfx/pokemon/salamence/front.animated.2bpp.lz"
+SalamenceBackpic:    INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
+BeldumFrontpic:		 INCBIN "gfx/pokemon/beldum/front.animated.2bpp.lz"
+BeldumBackpic:       INCBIN "gfx/pokemon/beldum/back.2bpp.lz"
+MetangFrontpic:      INCBIN "gfx/pokemon/metang/front.animated.2bpp.lz"
+MetangBackpic:       INCBIN "gfx/pokemon/metang/back.2bpp.lz"
+MetagrossFrontpic:   INCBIN "gfx/pokemon/metagross/front.animated.2bpp.lz"
+MetagrossBackpic:    INCBIN "gfx/pokemon/metagross/back.2bpp.lz"
+RegirockFrontpic:    INCBIN "gfx/pokemon/regirock/front.animated.2bpp.lz"
+RegirockBackpic:     INCBIN "gfx/pokemon/regirock/back.2bpp.lz"
+RegiceFrontpic:		 INCBIN "gfx/pokemon/regice/front.animated.2bpp.lz"
+RegiceBackpic:       INCBIN "gfx/pokemon/regice/back.2bpp.lz"
+RegisteelFrontpic:   INCBIN "gfx/pokemon/registeel/front.animated.2bpp.lz"
+RegisteelBackpic:    INCBIN "gfx/pokemon/registeel/back.2bpp.lz"
+LatiasFrontpic:      INCBIN "gfx/pokemon/latias/front.animated.2bpp.lz"
+LatiasBackpic:       INCBIN "gfx/pokemon/latias/back.2bpp.lz"
+LatiosFrontpic:      INCBIN "gfx/pokemon/latios/front.animated.2bpp.lz"
+LatiosBackpic:       INCBIN "gfx/pokemon/latios/back.2bpp.lz"
+KyogreFrontpic:      INCBIN "gfx/pokemon/kyogre/front.animated.2bpp.lz"
+KyogreBackpic:       INCBIN "gfx/pokemon/kyogre/back.2bpp.lz"
+GroudonFrontpic:     INCBIN "gfx/pokemon/groudon/front.animated.2bpp.lz"
+GroudonBackpic:      INCBIN "gfx/pokemon/groudon/back.2bpp.lz"
+RayquazaFrontpic:    INCBIN "gfx/pokemon/rayquaza/front.animated.2bpp.lz"
+RayquazaBackpic:     INCBIN "gfx/pokemon/rayquaza/back.2bpp.lz"
+JirachiFrontpic:     INCBIN "gfx/pokemon/jirachi/front.animated.2bpp.lz"
+JirachiBackpic:      INCBIN "gfx/pokemon/jirachi/back.2bpp.lz"
+DeoxysFrontpic:      INCBIN "gfx/pokemon/deoxys/front.animated.2bpp.lz"
+DeoxysBackpic:       INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"
+
 TurtwigFrontpic:
 GrotleFrontpic:
 TorterraFrontpic:
@@ -1207,30 +1234,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-SphealBackpic:
-SealeoBackpic:
-WalreinBackpic:
-ClamperlBackpic:
-HuntailBackpic:
-GorebyssBackpic:
-RelicanthBackpic:
-LuvdiscBackpic:
-BagonBackpic:
-ShelgonBackpic:
-SalamenceBackpic:
-BeldumBackpic:
-MetangBackpic:
-MetagrossBackpic:
-RegirockBackpic:
-RegiceBackpic:
-RegisteelBackpic:
-LatiasBackpic:
-LatiosBackpic:
-KyogreBackpic:
-GroudonBackpic:
-RayquazaBackpic:
-JirachiBackpic:
-DeoxysBackpic:
 TurtwigBackpic:
 GrotleBackpic:
 TorterraBackpic:

@@ -942,7 +942,7 @@ VenonatEvosAttacks:
 	dbw 35, SIGNAL_BEAM
 	dbw 37, ZEN_HEADBUTT
 	dbw 41, POISON_FANG
-	dbw 47, PSYCHIC
+	dbw 47, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 VenomothEvosAttacks:
@@ -963,7 +963,7 @@ VenomothEvosAttacks:
 	dbw 37, SIGNAL_BEAM
 	dbw 41, ZEN_HEADBUTT
 	dbw 47, POISON_FANG
-	dbw 55, PSYCHIC
+	dbw 55, PSYCHIC_M
 	dbw 59, BUG_BUZZ
 	db 0 ; no more level-up moves
 
@@ -1225,7 +1225,7 @@ KadabraEvosAttacks:
 	dbw 30, RECOVER
 	dbw 34, PSYCHO_CUT
 	dbw 36, ROLE_PLAY
-	dbw 40, PSYCHIC
+	dbw 40, PSYCHIC_M
 	dbw 42, FUTURE_SIGHT
 	dbw 46, TRICK
 	db 0 ; no more level-up moves
@@ -1243,7 +1243,7 @@ AlakazamEvosAttacks:
 	dbw 30, RECOVER
 	dbw 34, PSYCHO_CUT
 	dbw 36, CALM_MIND
-	dbw 40, PSYCHIC
+	dbw 40, PSYCHIC_M
 	dbw 42, FUTURE_SIGHT
 	dbw 46, TRICK
 	db 0 ; no more level-up moves
@@ -1503,7 +1503,7 @@ SlowpokeEvosAttacks:
 	dbw 34, ZEN_HEADBUTT
 	dbw 39, SLACK_OFF
 	dbw 43, AMNESIA
-	dbw 48, PSYCHIC
+	dbw 48, PSYCHIC_M
 	dbw 53, RAIN_DANCE
 	dbw 57, PSYCH_UP
 	db 0 ; no more level-up moves
@@ -1524,7 +1524,7 @@ SlowbroEvosAttacks:
 	dbw 37, WITHDRAW
 	dbw 41, SLACK_OFF
 	dbw 47, AMNESIA
-	dbw 54, PSYCHIC
+	dbw 54, PSYCHIC_M
 	dbw 61, RAIN_DANCE
 	dbw 67, PSYCH_UP
 	db 0 ; no more level-up moves
@@ -1838,7 +1838,7 @@ DrowzeeEvosAttacks:
 	dbw 29, PSYCH_UP
 	dbw 32, HEADBUTT
 	dbw 37, SWAGGER
-	dbw 40, PSYCHIC
+	dbw 40, PSYCHIC_M
 	dbw 43, NASTY_PLOT
 	dbw 50, ZEN_HEADBUTT
 	dbw 53, FUTURE_SIGHT
@@ -1861,7 +1861,7 @@ HypnoEvosAttacks:
 	dbw 33, PSYCH_UP
 	dbw 38, HEADBUTT
 	dbw 45, SWAGGER
-	dbw 50, PSYCHIC
+	dbw 50, PSYCHIC_M
 	dbw 55, NASTY_PLOT
 	dbw 64, ZEN_HEADBUTT
 	dbw 69, FUTURE_SIGHT
@@ -1963,7 +1963,7 @@ ExeggcuteEvosAttacks:
 	dbw 33, WORRY_SEED
 	dbw 37, NATURAL_GIFT
 	dbw 43, SOLARBEAM
-	dbw 47, PSYCHIC
+	dbw 47, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 ExeggutorEvosAttacks:
@@ -2328,7 +2328,7 @@ MrMimeEvosAttacks:
 	dbw 29, SUBSTITUTE
 	dbw 32, RECYCLE
 	dbw 36, TRICK
-	dbw 39, PSYCHIC
+	dbw 39, PSYCHIC_M
 	dbw 43, ROLE_PLAY
 	dbw 46, BATON_PASS
 	dbw 50, SAFEGUARD
@@ -2832,7 +2832,7 @@ MewtwoEvosAttacks:
 	dbw 57, AMNESIA
 	dbw 64, POWER_SWAP
 	dbw 64, GUARD_SWAP
-	dbw 71, PSYCHIC
+	dbw 71, PSYCHIC_M
 	dbw 79, ME_FIRST
 	dbw 86, RECOVER
 	dbw 93, SAFEGUARD
@@ -2845,7 +2845,7 @@ MewEvosAttacks:
 	dbw 1, TRANSFORM
 	dbw 10, MEGA_PUNCH
 	dbw 20, METRONOME
-	dbw 30, PSYCHIC
+	dbw 30, PSYCHIC_M
 	dbw 40, BARRIER
 	dbw 50, ANCIENTPOWER
 	dbw 60, AMNESIA

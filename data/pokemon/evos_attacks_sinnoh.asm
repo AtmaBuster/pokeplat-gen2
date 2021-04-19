@@ -549,7 +549,7 @@ WormadamEvosAttacks:
 	dbw 35, CAPTIVATE
 	dbw 38, FLAIL
 	dbw 41, ATTRACT
-	dbw 44, PSYCHIC
+	dbw 44, PSYCHIC_M
 	dbw 47, LEAF_STORM
 	db 0 ; no more level-up moves
 
@@ -566,7 +566,7 @@ MothimEvosAttacks:
 	dbw 35, CAMOUFLAGE
 	dbw 38, SILVER_WIND
 	dbw 41, AIR_SLASH
-	dbw 44, PSYCHIC
+	dbw 44, PSYCHIC_M
 	dbw 47, BUG_BUZZ
 	db 0 ; no more level-up moves
 
@@ -973,7 +973,7 @@ MimeJrEvosAttacks:
 	dbw 29, SUBSTITUTE
 	dbw 32, RECYCLE
 	dbw 36, TRICK
-	dbw 39, PSYCHIC
+	dbw 39, PSYCHIC_M
 	dbw 43, ROLE_PLAY
 	dbw 46, BATON_PASS
 	dbw 50, SAFEGUARD
@@ -1854,7 +1854,7 @@ CresseliaEvosAttacks:
 	dbw 66, PSYCHO_CUT
 	dbw 75, PSYCHO_SHIFT
 	dbw 84, LUNAR_DANCE
-	dbw 93, PSYCHIC
+	dbw 93, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 PhioneEvosAttacks:
@@ -1961,7 +1961,7 @@ DeoxysAttackEvosAttacks:
 	dbw 17, TELEPORT
 	dbw 25, TAUNT
 	dbw 33, PURSUIT
-	dbw 41, PSYCHIC
+	dbw 41, PSYCHIC_M
 	dbw 49, SUPERPOWER
 	dbw 57, PSYCHO_SHIFT
 	dbw 65, ZEN_HEADBUTT
@@ -1979,7 +1979,7 @@ DeoxysDefenseEvosAttacks:
 	dbw 17, TELEPORT
 	dbw 25, KNOCK_OFF
 	dbw 33, SPIKES
-	dbw 41, PSYCHIC
+	dbw 41, PSYCHIC_M
 	dbw 49, SNATCH
 	dbw 57, PSYCHO_SHIFT
 	dbw 65, ZEN_HEADBUTT
@@ -1999,7 +1999,7 @@ DeoxysSpeedEvosAttacks:
 	dbw 17, DOUBLE_TEAM
 	dbw 25, KNOCK_OFF
 	dbw 33, PURSUIT
-	dbw 41, PSYCHIC
+	dbw 41, PSYCHIC_M
 	dbw 49, SWIFT
 	dbw 57, PSYCHO_SHIFT
 	dbw 65, ZEN_HEADBUTT
@@ -2038,7 +2038,7 @@ WormadamSandEvosAttacks:
 	dbw 35, CAPTIVATE
 	dbw 38, FLAIL
 	dbw 41, ATTRACT
-	dbw 44, PSYCHIC
+	dbw 44, PSYCHIC_M
 	dbw 47, FISSURE
 	db 0 ; no more level-up moves
 
@@ -2055,7 +2055,7 @@ WormadamTrashEvosAttacks:
 	dbw 35, CAPTIVATE
 	dbw 38, FLAIL
 	dbw 41, ATTRACT
-	dbw 44, PSYCHIC
+	dbw 44, PSYCHIC_M
 	dbw 47, IRON_HEAD
 	db 0 ; no more level-up moves
 
