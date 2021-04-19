@@ -1240,6 +1240,7 @@ IllumiseEvosAttacks:
 	db 0 ; no more level-up moves
 	
 RoseliaEvosAttacks:
+	;dbbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 4, GROWTH
