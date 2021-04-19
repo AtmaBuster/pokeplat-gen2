@@ -854,8 +854,8 @@ GlaliePal:          INCBIN "gfx/pokemon/glalie/front.gbcpal", middle_colors
 GlalieShinyPal:     INCLUDE "gfx/pokemon/glalie/shiny.pal"
 SphealPal:          INCBIN "gfx/pokemon/spheal/front.gbcpal", middle_colors
 SphealShinyPal:     INCLUDE "gfx/pokemon/spheal/shiny.pal"
-SealeoPal:          INCBIN "gfx/pokemon/Sealeo/front.gbcpal", middle_colors
-SealeoShinyPal:     INCLUDE "gfx/pokemon/Sealeo/shiny.pal"
+SealeoPal:          INCBIN "gfx/pokemon/sealeo/front.gbcpal", middle_colors
+SealeoShinyPal:     INCLUDE "gfx/pokemon/sealeo/shiny.pal"
 WalreinPal:         INCBIN "gfx/pokemon/walrein/front.gbcpal", middle_colors
 WalreinShinyPal:    INCLUDE "gfx/pokemon/walrein/shiny.pal"
 ClamperlPal:        INCBIN "gfx/pokemon/clamperl/front.gbcpal", middle_colors
