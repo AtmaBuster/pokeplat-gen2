@@ -70,8 +70,6 @@ ROMX $10
 ROMX $11
 	"bank11"
 ROMX $12
-	"Crystal Features 1"
-	"Egg Moves 2"
 	"Evolutions and Attacks 2"
 ROMX $13
 	"bank13"
@@ -140,7 +138,9 @@ ROMX $32
 ROMX $33
 	"Move Animations"
 	"Extra Songs 2"
-;ROMX $34
+ROMX $34
+	"Egg Moves 2"
+	"Crystal Features 1"
 ;ROMX $35
 ROMX $36
 	"Font Inversed"
