@@ -1780,7 +1780,7 @@ BattleCommand_checkhit:
 
 	bit SUBSTATUS_FLYING, a
 	ld hl, .FlyMoves
-	jr z, .check_move_in_list
+	jr nz, .check_move_in_list
 	ld hl, .DigMoves
 .check_move_in_list
 	; returns z (and a = 0) if the current move is in a given list, or nz (and a = 1) if not
@@ -1796,6 +1796,7 @@ BattleCommand_checkhit:
 	dw WHIRLWIND
 	dw THUNDER
 	dw TWISTER
+	dw SKY_UPPERCUT
 	dw -1
 
 .DigMoves:
@@ -5997,6 +5998,8 @@ INCLUDE "engine/battle/move_effects/focus_energy.asm"
 BattleCommand_recoil:
 ; recoil
 
+	farcall2 ReadMoveScriptByte
+	push af
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
 	and a
@@ -6006,15 +6009,23 @@ BattleCommand_recoil:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a
-; get 1/4 damage or 1 HP, whichever is higher
+	pop af
+; divide damage by parameter
+	ldh [hDivisor], a
+	xor a
+	ldh [hDividend], a
+	ldh [hDividend + 1], a
 	ld a, [wCurDamage]
-	ld b, a
+	ldh [hDividend + 2], a
 	ld a, [wCurDamage + 1]
+	ldh [hDividend + 3], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
 	ld c, a
-	srl b
-	rr c
-	srl b
-	rr c
+; if recoil damage is 0, set to 1
 	ld a, b
 	or c
 	jr nz, .min_damage

@@ -797,7 +797,7 @@ RecoilHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	recoil
+	recoil RECOIL_1_3
 	checkfaint
 	buildopponentrage
 	heldflinch
@@ -2209,4 +2209,90 @@ BrickBreak:
 	buildopponentrage
 	heldflinch
 	breakscreens
+	endmove
+
+RecoilHit1_2:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	recoil RECOIL_1_2
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+RecoilHit1_4:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	recoil RECOIL_1_4
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+VoltTackle:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	recoil RECOIL_1_3
+	checkfaint
+	buildopponentrage
+	paralyzetarget
+	endmove
+
+FlareBlitz:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	recoil RECOIL_1_3
+	checkfaint
+	buildopponentrage
+	burntarget
 	endmove

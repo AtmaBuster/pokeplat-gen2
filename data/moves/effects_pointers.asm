@@ -56,8 +56,8 @@ MoveEffectsPointers:
 	dw SpeedUp2                      ; SPEED_UP_2
 	dw SpecialAttackUp2              ; SP_ATK_UP_2
 	dw SpecialDefenseUp2             ; SP_DEF_UP_2
-	dw Splash                        ; RECOIL_1_2
-	dw Splash                        ; RECOIL_1_4
+	dw RecoilHit1_2                  ; RECOIL_1_2
+	dw RecoilHit1_4                  ; RECOIL_1_4
 	dw Transform                     ; TRANSFORM
 	dw AttackDown2                   ; ATTACK_DOWN_2
 	dw DefenseDown2                  ; DEFENSE_DOWN_2
@@ -200,9 +200,9 @@ MoveEffectsPointers:
 	dw PoisonFang                    ; POISON_FANG
 	dw Splash                        ; WEATHER_BALL
 	dw HPScaleHit                    ; HP_SCALING_HIT
-	dw Splash                        ; SKY_UPPERCUT
+	dw Splash                        ; UNUSED_C7
 	dw Bounce                        ; BOUNCE
-	dw Splash                        ; VOLT_TACKLE
+	dw VoltTackle                    ; VOLT_TACKLE
 	dw Splash                        ; WATER_SPORT
 	dw Splash                        ; DOOM_DESIRE
 	dw Splash                        ; ROOST
@@ -244,7 +244,7 @@ MoveEffectsPointers:
 	dw Splash                        ; HEART_SWAP
 	dw Splash                        ; AQUA_RING
 	dw Splash                        ; MAGNET_RISE
-	dw Splash                        ; FLARE_BLITZ
+	dw FlareBlitz                    ; FLARE_BLITZ
 	dw Splash                        ; DEFOG
 	dw Splash                        ; TRICK_ROOM
 	dw Splash                        ; CAPTIVATE
