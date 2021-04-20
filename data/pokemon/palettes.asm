@@ -900,3 +900,21 @@ JirachiPal:         INCBIN "gfx/pokemon/jirachi/front.gbcpal", middle_colors
 JirachiShinyPal:    INCLUDE "gfx/pokemon/jirachi/shiny.pal"
 DeoxysPal:          INCBIN "gfx/pokemon/deoxys/front.gbcpal", middle_colors
 DeoxysShinyPal:     INCLUDE "gfx/pokemon/deoxys/shiny.pal"
+TurtwigPal:         INCBIN "gfx/pokemon/turtwig/front.gbcpal", middle_colors
+TurtwigShinyPal:    INCLUDE "gfx/pokemon/turtwig/shiny.pal"
+GrotlePal:          INCBIN "gfx/pokemon/grotle/front.gbcpal", middle_colors
+GrotleShinyPal:     INCLUDE "gfx/pokemon/grotle/shiny.pal"
+TorterraPal:        INCBIN "gfx/pokemon/torterra/front.gbcpal", middle_colors
+TorterraShinyPal:   INCLUDE "gfx/pokemon/torterra/shiny.pal"
+ChimcharPal:        INCBIN "gfx/pokemon/chimchar/front.gbcpal", middle_colors
+ChimcharShinyPal:   INCLUDE "gfx/pokemon/chimchar/shiny.pal"
+MonfernoPal:        INCBIN "gfx/pokemon/monferno/front.gbcpal", middle_colors
+MonfernoShinyPal:   INCLUDE "gfx/pokemon/monferno/shiny.pal"
+InfernapePal:       INCBIN "gfx/pokemon/infernape/front.gbcpal", middle_colors
+InfernapeShinyPal:  INCLUDE "gfx/pokemon/infernape/shiny.pal"
+PiplupPal:          INCBIN "gfx/pokemon/piplup/front.gbcpal", middle_colors
+PiplupShinyPal:     INCLUDE "gfx/pokemon/piplup/shiny.pal"
+PrinplupPal:        INCBIN "gfx/pokemon/prinplup/front.gbcpal", middle_colors
+PrinplupShinyPal:   INCLUDE "gfx/pokemon/prinplup/shiny.pal"
+EmpoleonPal:        INCBIN "gfx/pokemon/empoleon/front.gbcpal", middle_colors
+EmpoleonShinyPal:   INCLUDE "gfx/pokemon/empoleon/shiny.pal"

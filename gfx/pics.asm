@@ -1106,16 +1106,28 @@ JirachiFrontpic:     INCBIN "gfx/pokemon/jirachi/front.animated.2bpp.lz"
 JirachiBackpic:      INCBIN "gfx/pokemon/jirachi/back.2bpp.lz"
 DeoxysFrontpic:      INCBIN "gfx/pokemon/deoxys/front.animated.2bpp.lz"
 DeoxysBackpic:       INCBIN "gfx/pokemon/deoxys/back.2bpp.lz"
+TurtwigFrontpic:     INCBIN "gfx/pokemon/turtwig/front.animated.2bpp.lz"
+TurtwigBackpic:      INCBIN "gfx/pokemon/turtwig/back.2bpp.lz"
+GrotleFrontpic:      INCBIN "gfx/pokemon/grotle/front.animated.2bpp.lz"
+GrotleBackpic:       INCBIN "gfx/pokemon/grotle/back.2bpp.lz"
+TorterraFrontpic:    INCBIN "gfx/pokemon/torterra/front.animated.2bpp.lz"
 
-TurtwigFrontpic:
-GrotleFrontpic:
-TorterraFrontpic:
-ChimcharFrontpic:
-MonfernoFrontpic:
-InfernapeFrontpic:
-PiplupFrontpic:
-PrinplupFrontpic:
-EmpoleonFrontpic:
+SECTION "Pics 27", ROMX
+
+TorterraBackpic:     INCBIN "gfx/pokemon/torterra/back.2bpp.lz"
+ChimcharFrontpic:    INCBIN "gfx/pokemon/chimchar/front.animated.2bpp.lz"
+ChimcharBackpic:     INCBIN "gfx/pokemon/chimchar/back.2bpp.lz"
+MonfernoFrontpic:    INCBIN "gfx/pokemon/monferno/front.animated.2bpp.lz"
+MonfernoBackpic:     INCBIN "gfx/pokemon/monferno/back.2bpp.lz"
+InfernapeFrontpic:   INCBIN "gfx/pokemon/infernape/front.animated.2bpp.lz"
+InfernapeBackpic:    INCBIN "gfx/pokemon/infernape/back.2bpp.lz"
+PiplupFrontpic:      INCBIN "gfx/pokemon/piplup/front.animated.2bpp.lz"
+PiplupBackpic:       INCBIN "gfx/pokemon/piplup/back.2bpp.lz"
+PrinplupFrontpic:    INCBIN "gfx/pokemon/prinplup/front.animated.2bpp.lz"
+PrinplupBackpic:     INCBIN "gfx/pokemon/prinplup/back.2bpp.lz"
+EmpoleonFrontpic:    INCBIN "gfx/pokemon/empoleon/front.animated.2bpp.lz"
+EmpoleonBackpic:     INCBIN "gfx/pokemon/empoleon/back.2bpp.lz"
+
 StarlyFrontpic:
 StaraviaFrontpic:
 StaraptorFrontpic:
@@ -1234,15 +1246,7 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-TurtwigBackpic:
-GrotleBackpic:
-TorterraBackpic:
-ChimcharBackpic:
-MonfernoBackpic:
-InfernapeBackpic:
-PiplupBackpic:
-PrinplupBackpic:
-EmpoleonBackpic:
+
 StarlyBackpic:
 StaraviaBackpic:
 StaraptorBackpic:
