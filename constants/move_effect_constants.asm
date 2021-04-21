@@ -199,7 +199,7 @@
 	const EFFECT_POISON_FANG       ; c4
 	const EFFECT_WEATHER_BALL      ; c5
 	const EFFECT_HP_SCALING_HIT    ; c6
-	const EFFECT_SKY_UPPERCUT      ; c7
+	const EFFECT_UNUSED_C7         ; c7
 	const EFFECT_BOUNCE            ; c8
 	const EFFECT_VOLT_TACKLE       ; c9
 	const EFFECT_WATER_SPORT       ; ca
