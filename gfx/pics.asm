@@ -1127,12 +1127,17 @@ PrinplupFrontpic:    INCBIN "gfx/pokemon/prinplup/front.animated.2bpp.lz"
 PrinplupBackpic:     INCBIN "gfx/pokemon/prinplup/back.2bpp.lz"
 EmpoleonFrontpic:    INCBIN "gfx/pokemon/empoleon/front.animated.2bpp.lz"
 EmpoleonBackpic:     INCBIN "gfx/pokemon/empoleon/back.2bpp.lz"
+StarlyFrontpic:		 INCBIN "gfx/pokemon/starly/front.animated.2bpp.lz"
+StarlyBackpic:       INCBIN "gfx/pokemon/starly/back.2bpp.lz"
+StaraviaFrontpic:	 INCBIN "gfx/pokemon/staravia/front.animated.2bpp.lz"
+StaraviaBackpic:     INCBIN "gfx/pokemon/staravia/back.2bpp.lz"
+StaraptorFrontpic:	 INCBIN "gfx/pokemon/staraptor/front.animated.2bpp.lz"
+StaraptorBackpic:    INCBIN "gfx/pokemon/staraptor/back.2bpp.lz"
+BidoofFrontpic:		 INCBIN "gfx/pokemon/bidoof/front.animated.2bpp.lz"
+BidoofBackpic:       INCBIN "gfx/pokemon/bidoof/back.2bpp.lz"
+BibarelFrontpic:	 INCBIN "gfx/pokemon/bibarel/front.animated.2bpp.lz"
+BibarelBackpic:      INCBIN "gfx/pokemon/bibarel/back.2bpp.lz"
 
-StarlyFrontpic:
-StaraviaFrontpic:
-StaraptorFrontpic:
-BidoofFrontpic:
-BibarelFrontpic:
 KricketotFrontpic:
 KricketuneFrontpic:
 ShinxFrontpic:
@@ -1246,12 +1251,6 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-
-StarlyBackpic:
-StaraviaBackpic:
-StaraptorBackpic:
-BidoofBackpic:
-BibarelBackpic:
 KricketotBackpic:
 KricketuneBackpic:
 ShinxBackpic:

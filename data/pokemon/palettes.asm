@@ -918,3 +918,13 @@ PrinplupPal:        INCBIN "gfx/pokemon/prinplup/front.gbcpal", middle_colors
 PrinplupShinyPal:   INCLUDE "gfx/pokemon/prinplup/shiny.pal"
 EmpoleonPal:        INCBIN "gfx/pokemon/empoleon/front.gbcpal", middle_colors
 EmpoleonShinyPal:   INCLUDE "gfx/pokemon/empoleon/shiny.pal"
+StarlyPal:          INCBIN "gfx/pokemon/starly/front.gbcpal", middle_colors
+StarlyShinyPal:     INCLUDE "gfx/pokemon/starly/shiny.pal"
+StaraviaPal:        INCBIN "gfx/pokemon/staravia/front.gbcpal", middle_colors
+StaraviaShinyPal:   INCLUDE "gfx/pokemon/staravia/shiny.pal"
+StaraptorPal:       INCBIN "gfx/pokemon/staraptor/front.gbcpal", middle_colors
+StaraptorShinyPal:  INCLUDE "gfx/pokemon/staraptor/shiny.pal"
+BidoofPal:          INCBIN "gfx/pokemon/bidoof/front.gbcpal", middle_colors
+BidoofShinyPal:     INCLUDE "gfx/pokemon/bidoof/shiny.pal"
+BibarelPal:         INCBIN "gfx/pokemon/bibarel/front.gbcpal", middle_colors
+BibarelShinyPal:    INCLUDE "gfx/pokemon/bibarel/shiny.pal"
