@@ -928,3 +928,17 @@ BidoofPal:          INCBIN "gfx/pokemon/bidoof/front.gbcpal", middle_colors
 BidoofShinyPal:     INCLUDE "gfx/pokemon/bidoof/shiny.pal"
 BibarelPal:         INCBIN "gfx/pokemon/bibarel/front.gbcpal", middle_colors
 BibarelShinyPal:    INCLUDE "gfx/pokemon/bibarel/shiny.pal"
+KricketotPal:       INCBIN "gfx/pokemon/kricketot/front.gbcpal", middle_colors
+KricketotShinyPal:  INCLUDE "gfx/pokemon/kricketot/shiny.pal"
+KricketunePal:      INCBIN "gfx/pokemon/kricketune/front.gbcpal", middle_colors
+KricketuneShinyPal: INCLUDE "gfx/pokemon/kricketune/shiny.pal"
+ShinxPal:           INCBIN "gfx/pokemon/shinx/front.gbcpal", middle_colors
+ShinxShinyPal:      INCLUDE "gfx/pokemon/shinx/shiny.pal"
+LuxioPal:           INCBIN "gfx/pokemon/luxio/front.gbcpal", middle_colors
+LuxioShinyPal:      INCLUDE "gfx/pokemon/luxio/shiny.pal"
+LuxrayPal:          INCBIN "gfx/pokemon/luxray/front.gbcpal", middle_colors
+LuxrayShinyPal:     INCLUDE "gfx/pokemon/luxray/shiny.pal"
+BudewPal:           INCBIN "gfx/pokemon/budew/front.gbcpal", middle_colors
+BudewShinyPal:      INCLUDE "gfx/pokemon/budew/shiny.pal"
+RoseradePal:        INCBIN "gfx/pokemon/roserade/front.gbcpal", middle_colors
+RoseradeShinyPal:   INCLUDE "gfx/pokemon/roserade/shiny.pal"

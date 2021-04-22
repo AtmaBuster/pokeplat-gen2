@@ -1137,14 +1137,21 @@ BidoofFrontpic:		 INCBIN "gfx/pokemon/bidoof/front.animated.2bpp.lz"
 BidoofBackpic:       INCBIN "gfx/pokemon/bidoof/back.2bpp.lz"
 BibarelFrontpic:	 INCBIN "gfx/pokemon/bibarel/front.animated.2bpp.lz"
 BibarelBackpic:      INCBIN "gfx/pokemon/bibarel/back.2bpp.lz"
+KricketotFrontpic:	 INCBIN "gfx/pokemon/kricketot/front.animated.2bpp.lz"
+KricketotBackpic:    INCBIN "gfx/pokemon/kricketot/back.2bpp.lz"
+KricketuneFrontpic:	 INCBIN "gfx/pokemon/kricketune/front.animated.2bpp.lz"
+KricketuneBackpic:   INCBIN "gfx/pokemon/kricketune/back.2bpp.lz"
+ShinxFrontpic:		 INCBIN "gfx/pokemon/shinx/front.animated.2bpp.lz"
+ShinxBackpic:        INCBIN "gfx/pokemon/shinx/back.2bpp.lz"
+LuxioFrontpic:		 INCBIN "gfx/pokemon/luxio/front.animated.2bpp.lz"
+LuxioBackpic:        INCBIN "gfx/pokemon/luxio/back.2bpp.lz"
+LuxrayFrontpic:		 INCBIN "gfx/pokemon/luxray/front.animated.2bpp.lz"
+LuxrayBackpic:       INCBIN "gfx/pokemon/luxray/back.2bpp.lz"
+BudewFrontpic:		 INCBIN "gfx/pokemon/budew/front.animated.2bpp.lz"
+BudewBackpic:        INCBIN "gfx/pokemon/budew/back.2bpp.lz"
+RoseradeFrontpic:	 INCBIN "gfx/pokemon/roserade/front.animated.2bpp.lz"
+RoseradeBackpic:     INCBIN "gfx/pokemon/roserade/back.2bpp.lz"
 
-KricketotFrontpic:
-KricketuneFrontpic:
-ShinxFrontpic:
-LuxioFrontpic:
-LuxrayFrontpic:
-BudewFrontpic:
-RoseradeFrontpic:
 CranidosFrontpic:
 RampardosFrontpic:
 ShieldonFrontpic:
@@ -1251,13 +1258,8 @@ ShayminSkyFrontpic:
 PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
-KricketotBackpic:
-KricketuneBackpic:
-ShinxBackpic:
-LuxioBackpic:
-LuxrayBackpic:
-BudewBackpic:
-RoseradeBackpic:
+
+
 CranidosBackpic:
 RampardosBackpic:
 ShieldonBackpic:
