@@ -553,6 +553,7 @@ TogepiEvosAttacks:
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
+	;dbbw EVOLVE_ITEM, SHINY_STONE, TOGEKISS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, METRONOME
@@ -866,6 +867,7 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
+	;dbbw EVOLVE_MOVE, ANCIENTPOWER, YANMEGA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, FORESIGHT
@@ -958,6 +960,7 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
+	;dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, ASTONISH
@@ -994,6 +997,7 @@ SlowkingEvosAttacks:
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
+	;dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
@@ -1105,6 +1109,7 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
+	;dbbw EVOLVE_HOLD_TIME, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 5, SAND_ATTACK
@@ -1262,6 +1267,7 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
+	;dbbw EVOLVE_HOLD, RAZOR_CLAW, WEAVILE
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -1372,6 +1378,7 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
+	;dbbw EVOLVE_MOVE, ANCIENTPOWER
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, POWDER_SNOW
@@ -1409,7 +1416,6 @@ CorsolaEvosAttacks:
 	dbw 44, POWER_GEM
 	dbw 48, MIRROR_COAT
 	dbw 53, EARTH_POWER
-;	dbw 65, CORAL_BEAM
 	db 0 ; no more level-up moves
 
 RemoraidEvosAttacks:
@@ -1593,6 +1599,7 @@ DonphanEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
+	;dbbw EVOLVE_TRADE, DUBIOUS_DISC, PORYGON_Z
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, DEFENSE_CURL

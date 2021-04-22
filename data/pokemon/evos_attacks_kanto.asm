@@ -1550,6 +1550,7 @@ MagnemiteEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
+	;EVOLVE_LOCATION, MAGNETIC_FIELD, MAGNEZONE
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, SUPERSONIC
@@ -2061,6 +2062,7 @@ HitmonchanEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
+	;dbbw EVOLVE_MOVE, ROLLOUT, LICKILICKY
 	db 0 ; no more evolutions
 	dbw 1, LICK
 	dbw 5, SUPERSONIC
@@ -2132,6 +2134,7 @@ RhyhornEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
+	;dbbw EVOLVE_TRADE, PROTECTOR, RHYPERIOR
 	db 0 ; no more evolutions
 	dbw 1, STOMP
 	dbw 1, HORN_ATTACK
@@ -2170,6 +2173,7 @@ ChanseyEvosAttacks:
 
 TangelaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 40, GELANIA
+	;dbbw EVOLVE_MOVE, ANCIENTPOWER, TANGROWTH
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 1, INGRAIN
@@ -2379,6 +2383,7 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
+	;dbbw EVOLVE_TRADE, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, THUNDERSHOCK
@@ -2396,6 +2401,7 @@ ElectabuzzEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
+	;dbbw EVOLVE_TRADE, MAGMARIZER, MAGMORTAR
 	db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, EMBER
@@ -2502,6 +2508,8 @@ EeveeEvosAttacks:
 	dbbw EVOLVE_ITEM, FIRE_STONE, FLAREON
 	dbbw EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
 	dbbw EVOLVE_HAPPINESS, TR_NITE, UMBREON
+	;dbbw EVOLVE_LOCATION, MOSS_ROCK, LEAFEON
+	;dbbw EVOLVE_LOCATION, ICE_ROCK, GLACEON
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
