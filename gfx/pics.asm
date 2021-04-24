@@ -1182,14 +1182,21 @@ CherubiFrontpic:     INCBIN "gfx/pokemon/cherubi/front.animated.2bpp.lz"
 CherubiBackpic:      INCBIN "gfx/pokemon/cherubi/back.2bpp.lz"
 CherrimFrontpic:     INCBIN "gfx/pokemon/cherrim/front.animated.2bpp.lz"
 CherrimBackpic:      INCBIN "gfx/pokemon/cherrim/back.2bpp.lz"
+ShellosFrontpic:	 INCBIN "gfx/pokemon/shellos/front.animated.2bpp.lz"
+ShellosBackpic:      INCBIN "gfx/pokemon/shellos/back.2bpp.lz"
+GastrodonFrontpic:   INCBIN "gfx/pokemon/gastrodon/front.animated.2bpp.lz"
+GastrodonBackpic:    INCBIN "gfx/pokemon/gastrodon/back.2bpp.lz"
+AmbipomFrontpic:     INCBIN "gfx/pokemon/ambipom/front.animated.2bpp.lz"
+AmbipomBackpic:      INCBIN "gfx/pokemon/ambipom/back.2bpp.lz"
+DrifloonFrontpic:    INCBIN "gfx/pokemon/drifloon/front.animated.2bpp.lz"
+DrifloonBackpic:     INCBIN "gfx/pokemon/drifloon/back.2bpp.lz"
+DrifblimFrontpic:    INCBIN "gfx/pokemon/drifblim/front.animated.2bpp.lz"
+DrifblimBackpic:     INCBIN "gfx/pokemon/drifblim/back.2bpp.lz"
+BunearyFrontpic:     INCBIN "gfx/pokemon/buneary/front.animated.2bpp.lz"
+BunearyBackpic:      INCBIN "gfx/pokemon/buneary/back.2bpp.lz"
+LopunnyFrontpic:     INCBIN "gfx/pokemon/lopunny/front.animated.2bpp.lz"
+LopunnyBackpic:      INCBIN "gfx/pokemon/lopunny/back.2bpp.lz"
 
-ShellosFrontpic:
-GastrodonFrontpic:
-AmbipomFrontpic:
-DrifloonFrontpic:
-DrifblimFrontpic:
-BunearyFrontpic:
-LopunnyFrontpic:
 MismagiusFrontpic:
 HonchkrowFrontpic:
 GlameowFrontpic:
@@ -1276,13 +1283,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-ShellosBackpic:
-GastrodonBackpic:
-AmbipomBackpic:
-DrifloonBackpic:
-DrifblimBackpic:
-BunearyBackpic:
-LopunnyBackpic:
 MismagiusBackpic:
 HonchkrowBackpic:
 GlameowBackpic:

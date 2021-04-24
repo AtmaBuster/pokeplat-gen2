@@ -970,3 +970,17 @@ CherubiPal:         INCBIN "gfx/pokemon/cherubi/front.gbcpal", middle_colors
 CherubiShinyPal:    INCLUDE "gfx/pokemon/cherubi/shiny.pal"
 CherrimPal:         INCBIN "gfx/pokemon/cherrim/front.gbcpal", middle_colors
 CherrimShinyPal:    INCLUDE "gfx/pokemon/cherrim/shiny.pal"
+ShellosPal:         INCBIN "gfx/pokemon/shellos/front.gbcpal", middle_colors
+ShellosShinyPal:    INCLUDE "gfx/pokemon/shellos/shiny.pal"
+GastrodonPal:       INCBIN "gfx/pokemon/gastrodon/front.gbcpal", middle_colors
+GastrodonShinyPal:  INCLUDE "gfx/pokemon/gastrodon/shiny.pal"
+AmbipomPal:         INCBIN "gfx/pokemon/ambipom/front.gbcpal", middle_colors
+AmbipomShinyPal:    INCLUDE "gfx/pokemon/ambipom/shiny.pal"
+DrifloonPal:        INCBIN "gfx/pokemon/drifloon/front.gbcpal", middle_colors
+DrifloonShinyPal:   INCLUDE "gfx/pokemon/drifloon/shiny.pal"
+DrifblimPal:        INCBIN "gfx/pokemon/drifblim/front.gbcpal", middle_colors
+DrifblimShinyPal:   INCLUDE "gfx/pokemon/drifblim/shiny.pal"
+BunearyPal:         INCBIN "gfx/pokemon/buneary/front.gbcpal", middle_colors
+BunearyShinyPal:    INCLUDE "gfx/pokemon/buneary/shiny.pal"
+LopunnyPal:         INCBIN "gfx/pokemon/lopunny/front.gbcpal", middle_colors
+LopunnyShinyPal:    INCLUDE "gfx/pokemon/lopunny/shiny.pal"
