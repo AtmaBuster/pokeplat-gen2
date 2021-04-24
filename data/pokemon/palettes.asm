@@ -942,3 +942,17 @@ BudewPal:           INCBIN "gfx/pokemon/budew/front.gbcpal", middle_colors
 BudewShinyPal:      INCLUDE "gfx/pokemon/budew/shiny.pal"
 RoseradePal:        INCBIN "gfx/pokemon/roserade/front.gbcpal", middle_colors
 RoseradeShinyPal:   INCLUDE "gfx/pokemon/roserade/shiny.pal"
+CranidosPal:        INCBIN "gfx/pokemon/cranidos/front.gbcpal", middle_colors
+CranidosShinyPal:   INCLUDE "gfx/pokemon/cranidos/shiny.pal"
+RampardosPal:       INCBIN "gfx/pokemon/rampardos/front.gbcpal", middle_colors
+RampardosShinyPal:  INCLUDE "gfx/pokemon/rampardos/shiny.pal"
+ShieldonPal:        INCBIN "gfx/pokemon/shieldon/front.gbcpal", middle_colors
+ShieldonShinyPal:   INCLUDE "gfx/pokemon/shieldon/shiny.pal"
+BastiodonPal:       INCBIN "gfx/pokemon/bastiodon/front.gbcpal", middle_colors
+BastiodonShinyPal:  INCLUDE "gfx/pokemon/bastiodon/shiny.pal"
+BurmyPal:           INCBIN "gfx/pokemon/burmy/front.gbcpal", middle_colors
+BurmyShinyPal:      INCLUDE "gfx/pokemon/burmy/shiny.pal"
+WormadamPal:        INCBIN "gfx/pokemon/wormadam/front.gbcpal", middle_colors
+WormadamShinyPal:   INCLUDE "gfx/pokemon/wormadam/shiny.pal"
+MothimPal:          INCBIN "gfx/pokemon/mothim/front.gbcpal", middle_colors
+MothimShinyPal:     INCLUDE "gfx/pokemon/mothim/shiny.pal"

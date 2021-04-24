@@ -1151,14 +1151,21 @@ BudewFrontpic:		 INCBIN "gfx/pokemon/budew/front.animated.2bpp.lz"
 BudewBackpic:        INCBIN "gfx/pokemon/budew/back.2bpp.lz"
 RoseradeFrontpic:	 INCBIN "gfx/pokemon/roserade/front.animated.2bpp.lz"
 RoseradeBackpic:     INCBIN "gfx/pokemon/roserade/back.2bpp.lz"
+CranidosFrontpic:    INCBIN "gfx/pokemon/cranidos/front.animated.2bpp.lz"
+CranidosBackpic:     INCBIN "gfx/pokemon/cranidos/back.2bpp.lz"
+RampardosFrontpic:   INCBIN "gfx/pokemon/rampardos/front.animated.2bpp.lz"
+RampardosBackpic:    INCBIN "gfx/pokemon/rampardos/back.2bpp.lz"
+ShieldonFrontpic:    INCBIN "gfx/pokemon/shieldon/front.animated.2bpp.lz"
+ShieldonBackpic:     INCBIN "gfx/pokemon/shieldon/back.2bpp.lz"
+BastiodonFrontpic:   INCBIN "gfx/pokemon/bastiodon/front.animated.2bpp.lz"
+BastiodonBackpic:    INCBIN "gfx/pokemon/bastiodon/back.2bpp.lz"
+BurmyFrontpic:       INCBIN "gfx/pokemon/burmy/front.animated.2bpp.lz"
+BurmyBackpic:        INCBIN "gfx/pokemon/burmy/back.2bpp.lz"
+WormadamFrontpic:    INCBIN "gfx/pokemon/wormadam/front.animated.2bpp.lz"
+WormadamBackpic:     INCBIN "gfx/pokemon/wormadam/back.2bpp.lz"
+MothimFrontpic:      INCBIN "gfx/pokemon/mothim/front.animated.2bpp.lz"
+MothimBackpic:       INCBIN "gfx/pokemon/mothim/back.2bpp.lz"
 
-CranidosFrontpic:
-RampardosFrontpic:
-ShieldonFrontpic:
-BastiodonFrontpic:
-BurmyFrontpic:
-WormadamFrontpic:
-MothimFrontpic:
 CombeeFrontpic:
 VespiquenFrontpic:
 PachirisuFrontpic:
@@ -1260,13 +1267,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-CranidosBackpic:
-RampardosBackpic:
-ShieldonBackpic:
-BastiodonBackpic:
-BurmyBackpic:
-WormadamBackpic:
-MothimBackpic:
 CombeeBackpic:
 VespiquenBackpic:
 PachirisuBackpic:
