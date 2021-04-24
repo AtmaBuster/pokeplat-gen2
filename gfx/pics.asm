@@ -1166,13 +1166,23 @@ WormadamBackpic:     INCBIN "gfx/pokemon/wormadam/back.2bpp.lz"
 MothimFrontpic:      INCBIN "gfx/pokemon/mothim/front.animated.2bpp.lz"
 MothimBackpic:       INCBIN "gfx/pokemon/mothim/back.2bpp.lz"
 
-CombeeFrontpic:
-VespiquenFrontpic:
-PachirisuFrontpic:
-BuizelFrontpic:
-FloatzelFrontpic:
-CherubiFrontpic:
-CherrimFrontpic:
+SECTION "Pics 28", ROMX
+
+CombeeFrontpic:		 INCBIN "gfx/pokemon/combee/front.animated.2bpp.lz"
+CombeeBackpic:       INCBIN "gfx/pokemon/combee/back.2bpp.lz"
+VespiquenFrontpic:   INCBIN "gfx/pokemon/vespiquen/front.animated.2bpp.lz"
+VespiquenBackpic:    INCBIN "gfx/pokemon/vespiquen/back.2bpp.lz"
+PachirisuFrontpic:	 INCBIN "gfx/pokemon/pachirisu/front.animated.2bpp.lz"
+PachirisuBackpic:    INCBIN "gfx/pokemon/pachirisu/back.2bpp.lz"
+BuizelFrontpic:		 INCBIN "gfx/pokemon/buizel/front.animated.2bpp.lz"
+BuizelBackpic:       INCBIN "gfx/pokemon/buizel/back.2bpp.lz"
+FloatzelFrontpic:    INCBIN "gfx/pokemon/floatzel/front.animated.2bpp.lz"
+FloatzelBackpic:     INCBIN "gfx/pokemon/floatzel/back.2bpp.lz"
+CherubiFrontpic:     INCBIN "gfx/pokemon/cherubi/front.animated.2bpp.lz"
+CherubiBackpic:      INCBIN "gfx/pokemon/cherubi/back.2bpp.lz"
+CherrimFrontpic:     INCBIN "gfx/pokemon/cherrim/front.animated.2bpp.lz"
+CherrimBackpic:      INCBIN "gfx/pokemon/cherrim/back.2bpp.lz"
+
 ShellosFrontpic:
 GastrodonFrontpic:
 AmbipomFrontpic:
@@ -1266,14 +1276,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-
-CombeeBackpic:
-VespiquenBackpic:
-PachirisuBackpic:
-BuizelBackpic:
-FloatzelBackpic:
-CherubiBackpic:
-CherrimBackpic:
 ShellosBackpic:
 GastrodonBackpic:
 AmbipomBackpic:

@@ -956,3 +956,17 @@ WormadamPal:        INCBIN "gfx/pokemon/wormadam/front.gbcpal", middle_colors
 WormadamShinyPal:   INCLUDE "gfx/pokemon/wormadam/shiny.pal"
 MothimPal:          INCBIN "gfx/pokemon/mothim/front.gbcpal", middle_colors
 MothimShinyPal:     INCLUDE "gfx/pokemon/mothim/shiny.pal"
+CombeePal:          INCBIN "gfx/pokemon/combee/front.gbcpal", middle_colors
+CombeeShinyPal:     INCLUDE "gfx/pokemon/combee/shiny.pal"
+VespiquenPal:       INCBIN "gfx/pokemon/vespiquen/front.gbcpal", middle_colors
+VespiquenShinyPal:  INCLUDE "gfx/pokemon/vespiquen/shiny.pal"
+PachirisuPal:       INCBIN "gfx/pokemon/pachirisu/front.gbcpal", middle_colors
+PachirisuShinyPal:  INCLUDE "gfx/pokemon/pachirisu/shiny.pal"
+BuizelPal:          INCBIN "gfx/pokemon/buizel/front.gbcpal", middle_colors
+BuizelShinyPal:     INCLUDE "gfx/pokemon/buizel/shiny.pal"
+FloatzelPal:        INCBIN "gfx/pokemon/floatzel/front.gbcpal", middle_colors
+FloatzelShinyPal:   INCLUDE "gfx/pokemon/floatzel/shiny.pal"
+CherubiPal:         INCBIN "gfx/pokemon/cherubi/front.gbcpal", middle_colors
+CherubiShinyPal:    INCLUDE "gfx/pokemon/cherubi/shiny.pal"
+CherrimPal:         INCBIN "gfx/pokemon/cherrim/front.gbcpal", middle_colors
+CherrimShinyPal:    INCLUDE "gfx/pokemon/cherrim/shiny.pal"
