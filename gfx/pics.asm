@@ -1239,13 +1239,19 @@ RioluFrontpic:       INCBIN "gfx/pokemon/riolu/front.animated.2bpp.lz"
 RioluBackpic:        INCBIN "gfx/pokemon/riolu/back.2bpp.lz"
 LucarioFrontpic:     INCBIN "gfx/pokemon/lucario/front.animated.2bpp.lz"
 LucarioBackpic:      INCBIN "gfx/pokemon/lucario/back.2bpp.lz"
+HippopotasFrontpic:  INCBIN "gfx/pokemon/hippopotas/front.animated.2bpp.lz"
+HippopotasBackpic:   INCBIN "gfx/pokemon/hippopotas/back.2bpp.lz"
+HippowdonFrontpic:   INCBIN "gfx/pokemon/hippowdon/front.animated.2bpp.lz"
+HippowdonBackpic:    INCBIN "gfx/pokemon/hippowdon/back.2bpp.lz"
+SkorupiFrontpic:     INCBIN "gfx/pokemon/skorupi/front.animated.2bpp.lz"
+SkorupiBackpic:      INCBIN "gfx/pokemon/skorupi/back.2bpp.lz"
+DrapionFrontpic:     INCBIN "gfx/pokemon/drapion/front.animated.2bpp.lz"
+DrapionBackpic:      INCBIN "gfx/pokemon/drapion/back.2bpp.lz"
+CroagunkFrontpic:    INCBIN "gfx/pokemon/croagunk/front.animated.2bpp.lz"
+CroagunkBackpic:     INCBIN "gfx/pokemon/croagunk/back.2bpp.lz"
+ToxicroakFrontpic:   INCBIN "gfx/pokemon/toxicroak/front.animated.2bpp.lz"
+ToxicroakBackpic:    INCBIN "gfx/pokemon/toxicroak/back.2bpp.lz"
 
-HippopotasFrontpic:
-HippowdonFrontpic:
-SkorupiFrontpic:
-DrapionFrontpic:
-CroagunkFrontpic:
-ToxicroakFrontpic:
 CarnivineFrontpic:
 FinneonFrontpic:
 LumineonFrontpic:
@@ -1306,12 +1312,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-HippopotasBackpic:
-HippowdonBackpic:
-SkorupiBackpic:
-DrapionBackpic:
-CroagunkBackpic:
-ToxicroakBackpic:
 CarnivineBackpic:
 FinneonBackpic:
 LumineonBackpic:

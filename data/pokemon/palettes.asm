@@ -1024,3 +1024,15 @@ RioluPal:           INCBIN "gfx/pokemon/riolu/front.gbcpal", middle_colors
 RioluShinyPal:      INCLUDE "gfx/pokemon/riolu/shiny.pal"
 LucarioPal:         INCBIN "gfx/pokemon/lucario/front.gbcpal", middle_colors
 LucarioShinyPal:    INCLUDE "gfx/pokemon/lucario/shiny.pal"
+HippopotasPal:      INCBIN "gfx/pokemon/hippopotas/front.gbcpal", middle_colors
+HippopotasShinyPal: INCLUDE "gfx/pokemon/hippopotas/shiny.pal"
+HippowdonPal:       INCBIN "gfx/pokemon/hippowdon/front.gbcpal", middle_colors
+HippowdonShinyPal:  INCLUDE "gfx/pokemon/hippowdon/shiny.pal"
+SkorupiPal:         INCBIN "gfx/pokemon/skorupi/front.gbcpal", middle_colors
+SkorupiShinyPal:    INCLUDE "gfx/pokemon/skorupi/shiny.pal"
+DrapionPal:         INCBIN "gfx/pokemon/drapion/front.gbcpal", middle_colors
+DrapionShinyPal:    INCLUDE "gfx/pokemon/drapion/shiny.pal"
+CroagunkPal:        INCBIN "gfx/pokemon/croagunk/front.gbcpal", middle_colors
+CroagunkShinyPal:   INCLUDE "gfx/pokemon/croagunk/shiny.pal"
+ToxicroakPal:       INCBIN "gfx/pokemon/toxicroak/front.gbcpal", middle_colors
+ToxicroakShinyPal:  INCLUDE "gfx/pokemon/toxicroak/shiny.pal"
