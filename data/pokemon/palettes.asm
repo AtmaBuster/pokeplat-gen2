@@ -998,3 +998,17 @@ StunkyPal:          INCBIN "gfx/pokemon/stunky/front.gbcpal", middle_colors
 StunkyShinyPal:     INCLUDE "gfx/pokemon/stunky/shiny.pal"
 SkuntankPal:        INCBIN "gfx/pokemon/skuntank/front.gbcpal", middle_colors
 SkuntankShinyPal:   INCLUDE "gfx/pokemon/skuntank/shiny.pal"
+BronzorPal:         INCBIN "gfx/pokemon/bronzor/front.gbcpal", middle_colors
+BronzorShinyPal:    INCLUDE "gfx/pokemon/bronzor/shiny.pal"
+BronzongPal:        INCBIN "gfx/pokemon/bronzong/front.gbcpal", middle_colors
+BronzongShinyPal:   INCLUDE "gfx/pokemon/bronzong/shiny.pal"
+BonslyPal:          INCBIN "gfx/pokemon/bonsly/front.gbcpal", middle_colors
+BonslyShinyPal:     INCLUDE "gfx/pokemon/bonsly/shiny.pal"
+MimeJrPal:          INCBIN "gfx/pokemon/mime_jr/front.gbcpal", middle_colors
+MimeJrShinyPal:     INCLUDE "gfx/pokemon/mime_jr/shiny.pal"
+HappinyPal:         INCBIN "gfx/pokemon/happiny/front.gbcpal", middle_colors
+HappinyShinyPal:    INCLUDE "gfx/pokemon/happiny/shiny.pal"
+ChatotPal:          INCBIN "gfx/pokemon/chatot/front.gbcpal", middle_colors
+ChatotShinyPal:     INCLUDE "gfx/pokemon/chatot/shiny.pal"
+SpiritombPal:       INCBIN "gfx/pokemon/spiritomb/front.gbcpal", middle_colors
+SpiritombShinyPal:  INCLUDE "gfx/pokemon/spiritomb/shiny.pal"

@@ -1210,14 +1210,24 @@ StunkyFrontpic:      INCBIN "gfx/pokemon/stunky/front.animated.2bpp.lz"
 StunkyBackpic:       INCBIN "gfx/pokemon/stunky/back.2bpp.lz"
 SkuntankFrontpic:    INCBIN "gfx/pokemon/skuntank/front.animated.2bpp.lz"
 SkuntankBackpic:     INCBIN "gfx/pokemon/skuntank/back.2bpp.lz"
+BronzorFrontpic:     INCBIN "gfx/pokemon/bronzor/front.animated.2bpp.lz"
+BronzorBackpic:      INCBIN "gfx/pokemon/bronzor/back.2bpp.lz"
+BronzongFrontpic:    INCBIN "gfx/pokemon/bronzong/front.animated.2bpp.lz"
+BronzongBackpic:     INCBIN "gfx/pokemon/bronzong/back.2bpp.lz"
+BonslyFrontpic:      INCBIN "gfx/pokemon/bonsly/front.animated.2bpp.lz"
+BonslyBackpic:       INCBIN "gfx/pokemon/bonsly/back.2bpp.lz"
+MimeJrFrontpic:      INCBIN "gfx/pokemon/mime_jr/front.animated.2bpp.lz"
 
-BronzorFrontpic:
-BronzongFrontpic:
-BonslyFrontpic:
-MimeJrFrontpic:
-HappinyFrontpic:
-ChatotFrontpic:
-SpiritombFrontpic:
+SECTION "Pics 29", ROMX
+
+MimeJrBackpic:       INCBIN "gfx/pokemon/mime_jr/back.2bpp.lz"
+HappinyFrontpic:     INCBIN "gfx/pokemon/happiny/front.animated.2bpp.lz"
+HappinyBackpic:      INCBIN "gfx/pokemon/happiny/back.2bpp.lz"
+ChatotFrontpic:      INCBIN "gfx/pokemon/chatot/front.animated.2bpp.lz"
+ChatotBackpic:       INCBIN "gfx/pokemon/chatot/back.2bpp.lz"
+SpiritombFrontpic:   INCBIN "gfx/pokemon/spiritomb/front.animated.2bpp.lz"
+SpiritombBackpic:    INCBIN "gfx/pokemon/spiritomb/back.2bpp.lz"
+
 GibleFrontpic:
 GabiteFrontpic:
 GarchompFrontpic:
@@ -1290,13 +1300,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-BronzorBackpic:
-BronzongBackpic:
-BonslyBackpic:
-MimeJrBackpic:
-HappinyBackpic:
-ChatotBackpic:
-SpiritombBackpic:
 GibleBackpic:
 GabiteBackpic:
 GarchompBackpic:
