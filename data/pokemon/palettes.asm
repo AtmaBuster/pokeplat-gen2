@@ -984,3 +984,17 @@ BunearyPal:         INCBIN "gfx/pokemon/buneary/front.gbcpal", middle_colors
 BunearyShinyPal:    INCLUDE "gfx/pokemon/buneary/shiny.pal"
 LopunnyPal:         INCBIN "gfx/pokemon/lopunny/front.gbcpal", middle_colors
 LopunnyShinyPal:    INCLUDE "gfx/pokemon/lopunny/shiny.pal"
+MismagiusPal:       INCBIN "gfx/pokemon/mismagius/front.gbcpal", middle_colors
+MismagiusShinyPal:  INCLUDE "gfx/pokemon/mismagius/shiny.pal"
+HonchkrowPal:       INCBIN "gfx/pokemon/honchkrow/front.gbcpal", middle_colors
+HonchkrowShinyPal:  INCLUDE "gfx/pokemon/honchkrow/shiny.pal"
+GlameowPal:         INCBIN "gfx/pokemon/glameow/front.gbcpal", middle_colors
+GlameowShinyPal:    INCLUDE "gfx/pokemon/glameow/shiny.pal"
+PuruglyPal:         INCBIN "gfx/pokemon/purugly/front.gbcpal", middle_colors
+PuruglyShinyPal:    INCLUDE "gfx/pokemon/purugly/shiny.pal"
+ChinglingPal:       INCBIN "gfx/pokemon/chingling/front.gbcpal", middle_colors
+ChinglingShinyPal:  INCLUDE "gfx/pokemon/chingling/shiny.pal"
+StunkyPal:          INCBIN "gfx/pokemon/stunky/front.gbcpal", middle_colors
+StunkyShinyPal:     INCLUDE "gfx/pokemon/stunky/shiny.pal"
+SkuntankPal:        INCBIN "gfx/pokemon/skuntank/front.gbcpal", middle_colors
+SkuntankShinyPal:   INCLUDE "gfx/pokemon/skuntank/shiny.pal"

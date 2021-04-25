@@ -1196,14 +1196,21 @@ BunearyFrontpic:     INCBIN "gfx/pokemon/buneary/front.animated.2bpp.lz"
 BunearyBackpic:      INCBIN "gfx/pokemon/buneary/back.2bpp.lz"
 LopunnyFrontpic:     INCBIN "gfx/pokemon/lopunny/front.animated.2bpp.lz"
 LopunnyBackpic:      INCBIN "gfx/pokemon/lopunny/back.2bpp.lz"
+MismagiusFrontpic:	 INCBIN "gfx/pokemon/mismagius/front.animated.2bpp.lz"
+MismagiusBackpic:    INCBIN "gfx/pokemon/mismagius/back.2bpp.lz"
+HonchkrowFrontpic:	 INCBIN "gfx/pokemon/honchkrow/front.animated.2bpp.lz"
+HonchkrowBackpic:    INCBIN "gfx/pokemon/honchkrow/back.2bpp.lz"
+GlameowFrontpic:     INCBIN "gfx/pokemon/glameow/front.animated.2bpp.lz"
+GlameowBackpic:      INCBIN "gfx/pokemon/glameow/back.2bpp.lz"
+PuruglyFrontpic:     INCBIN "gfx/pokemon/purugly/front.animated.2bpp.lz"
+PuruglyBackpic:      INCBIN "gfx/pokemon/purugly/back.2bpp.lz"
+ChinglingFrontpic:   INCBIN "gfx/pokemon/chingling/front.animated.2bpp.lz"
+ChinglingBackpic:    INCBIN "gfx/pokemon/chingling/back.2bpp.lz"
+StunkyFrontpic:      INCBIN "gfx/pokemon/stunky/front.animated.2bpp.lz"
+StunkyBackpic:       INCBIN "gfx/pokemon/stunky/back.2bpp.lz"
+SkuntankFrontpic:    INCBIN "gfx/pokemon/skuntank/front.animated.2bpp.lz"
+SkuntankBackpic:     INCBIN "gfx/pokemon/skuntank/back.2bpp.lz"
 
-MismagiusFrontpic:
-HonchkrowFrontpic:
-GlameowFrontpic:
-PuruglyFrontpic:
-ChinglingFrontpic:
-StunkyFrontpic:
-SkuntankFrontpic:
 BronzorFrontpic:
 BronzongFrontpic:
 BonslyFrontpic:
@@ -1283,13 +1290,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-MismagiusBackpic:
-HonchkrowBackpic:
-GlameowBackpic:
-PuruglyBackpic:
-ChinglingBackpic:
-StunkyBackpic:
-SkuntankBackpic:
 BronzorBackpic:
 BronzongBackpic:
 BonslyBackpic:
