@@ -1012,3 +1012,15 @@ ChatotPal:          INCBIN "gfx/pokemon/chatot/front.gbcpal", middle_colors
 ChatotShinyPal:     INCLUDE "gfx/pokemon/chatot/shiny.pal"
 SpiritombPal:       INCBIN "gfx/pokemon/spiritomb/front.gbcpal", middle_colors
 SpiritombShinyPal:  INCLUDE "gfx/pokemon/spiritomb/shiny.pal"
+GiblePal:           INCBIN "gfx/pokemon/gible/front.gbcpal", middle_colors
+GibleShinyPal:      INCLUDE "gfx/pokemon/gible/shiny.pal"
+GabitePal:          INCBIN "gfx/pokemon/gabite/front.gbcpal", middle_colors
+GabiteShinyPal:     INCLUDE "gfx/pokemon/gabite/shiny.pal"
+GarchompPal:        INCBIN "gfx/pokemon/garchomp/front.gbcpal", middle_colors
+GarchompShinyPal:   INCLUDE "gfx/pokemon/garchomp/shiny.pal"
+MunchlaxPal:        INCBIN "gfx/pokemon/munchlax/front.gbcpal", middle_colors
+MunchlaxShinyPal:   INCLUDE "gfx/pokemon/munchlax/shiny.pal"
+RioluPal:           INCBIN "gfx/pokemon/riolu/front.gbcpal", middle_colors
+RioluShinyPal:      INCLUDE "gfx/pokemon/riolu/shiny.pal"
+LucarioPal:         INCBIN "gfx/pokemon/lucario/front.gbcpal", middle_colors
+LucarioShinyPal:    INCLUDE "gfx/pokemon/lucario/shiny.pal"

@@ -1227,13 +1227,19 @@ ChatotFrontpic:      INCBIN "gfx/pokemon/chatot/front.animated.2bpp.lz"
 ChatotBackpic:       INCBIN "gfx/pokemon/chatot/back.2bpp.lz"
 SpiritombFrontpic:   INCBIN "gfx/pokemon/spiritomb/front.animated.2bpp.lz"
 SpiritombBackpic:    INCBIN "gfx/pokemon/spiritomb/back.2bpp.lz"
+GibleFrontpic:       INCBIN "gfx/pokemon/gible/front.animated.2bpp.lz"
+GibleBackpic:        INCBIN "gfx/pokemon/gible/back.2bpp.lz"
+GabiteFrontpic:      INCBIN "gfx/pokemon/gabite/front.animated.2bpp.lz"
+GabiteBackpic:       INCBIN "gfx/pokemon/gabite/back.2bpp.lz"
+GarchompFrontpic:    INCBIN "gfx/pokemon/garchomp/front.animated.2bpp.lz"
+GarchompBackpic:     INCBIN "gfx/pokemon/garchomp/back.2bpp.lz"
+MunchlaxFrontpic:    INCBIN "gfx/pokemon/munchlax/front.animated.2bpp.lz"
+MunchlaxBackpic:     INCBIN "gfx/pokemon/munchlax/back.2bpp.lz"
+RioluFrontpic:       INCBIN "gfx/pokemon/riolu/front.animated.2bpp.lz"
+RioluBackpic:        INCBIN "gfx/pokemon/riolu/back.2bpp.lz"
+LucarioFrontpic:     INCBIN "gfx/pokemon/lucario/front.animated.2bpp.lz"
+LucarioBackpic:      INCBIN "gfx/pokemon/lucario/back.2bpp.lz"
 
-GibleFrontpic:
-GabiteFrontpic:
-GarchompFrontpic:
-MunchlaxFrontpic:
-RioluFrontpic:
-LucarioFrontpic:
 HippopotasFrontpic:
 HippowdonFrontpic:
 SkorupiFrontpic:
@@ -1300,12 +1306,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-GibleBackpic:
-GabiteBackpic:
-GarchompBackpic:
-MunchlaxBackpic:
-RioluBackpic:
-LucarioBackpic:
 HippopotasBackpic:
 HippowdonBackpic:
 SkorupiBackpic:
