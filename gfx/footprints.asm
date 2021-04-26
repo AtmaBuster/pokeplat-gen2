@@ -509,15 +509,15 @@ INCBIN "gfx/footprints/lumineon.1bpp"
 INCBIN "gfx/footprints/mantyke.1bpp"
 INCBIN "gfx/footprints/snover.1bpp"
 INCBIN "gfx/footprints/abomasnow.1bpp"
-INCBIN "gfx/footprints/placeholder.1bpp"
-INCBIN "gfx/footprints/placeholder.1bpp"
-INCBIN "gfx/footprints/placeholder.1bpp"
+INCBIN "gfx/footprints/weavile.1bpp" ; Fuck Ganix
+INCBIN "gfx/footprints/magnezone.1bpp"
+INCBIN "gfx/footprints/lickilicky.1bpp"
 
 SECTION "Footprints 2", ROMX
 Footprints2:
-INCBIN "gfx/footprints/placeholder.1bpp"
-INCBIN "gfx/footprints/placeholder.1bpp"
-INCBIN "gfx/footprints/placeholder.1bpp"
+INCBIN "gfx/footprints/rhyperior.1bpp"
+INCBIN "gfx/footprints/tangrowth.1bpp"
+INCBIN "gfx/footprints/electivire.1bpp"
 INCBIN "gfx/footprints/placeholder.1bpp"
 INCBIN "gfx/footprints/placeholder.1bpp"
 INCBIN "gfx/footprints/placeholder.1bpp"

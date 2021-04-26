@@ -355,6 +355,8 @@ ROMX $94
 	"Pics 29"
 ROMX $95
 	"Mon and Trainer Palettes"
+ROMX $96
+	"Pics 30"
 WRAM0
 	"Stack"
 	"Audio RAM"

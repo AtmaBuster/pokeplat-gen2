@@ -1263,13 +1263,22 @@ SnoverFrontpic:      INCBIN "gfx/pokemon/snover/front.animated.2bpp.lz"
 SnoverBackpic:       INCBIN "gfx/pokemon/snover/back.2bpp.lz"
 AbomasnowFrontpic:   INCBIN "gfx/pokemon/abomasnow/front.animated.2bpp.lz"
 AbomasnowBackpic:    INCBIN "gfx/pokemon/abomasnow/back.2bpp.lz"
+WeavileFrontpic:     INCBIN "gfx/pokemon/weavile/front.animated.2bpp.lz"
+WeavileBackpic:      INCBIN "gfx/pokemon/weavile/back.2bpp.lz"
 
-WeavileFrontpic:
-MagnezoneFrontpic:
-LickilickyFrontpic:
-RhyperiorFrontpic:
-TangrowthFrontpic:
-ElectivireFrontpic:
+SECTION "Pics 30", ROMX
+
+MagnezoneFrontpic:   INCBIN "gfx/pokemon/magnezone/front.animated.2bpp.lz"
+MagnezoneBackpic:    INCBIN "gfx/pokemon/magnezone/back.2bpp.lz"
+LickilickyFrontpic:  INCBIN "gfx/pokemon/lickilicky/front.animated.2bpp.lz"
+LickilickyBackpic:   INCBIN "gfx/pokemon/lickilicky/back.2bpp.lz"
+RhyperiorFrontpic:   INCBIN "gfx/pokemon/rhyperior/front.animated.2bpp.lz"
+RhyperiorBackpic:    INCBIN "gfx/pokemon/rhyperior/back.2bpp.lz"
+TangrowthFrontpic:   INCBIN "gfx/pokemon/tangrowth/front.animated.2bpp.lz"
+TangrowthBackpic:    INCBIN "gfx/pokemon/tangrowth/back.2bpp.lz"
+ElectivireFrontpic:  INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
+ElectivireBackpic:   INCBIN "gfx/pokemon/electivire/back.2bpp.lz"
+
 MagmortarFrontpic:
 TogekissFrontpic:
 YanmegaFrontpic:
@@ -1318,12 +1327,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-WeavileBackpic:
-MagnezoneBackpic:
-LickilickyBackpic:
-RhyperiorBackpic:
-TangrowthBackpic:
-ElectivireBackpic:
 MagmortarBackpic:
 TogekissBackpic:
 YanmegaBackpic:

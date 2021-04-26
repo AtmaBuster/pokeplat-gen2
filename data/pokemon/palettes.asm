@@ -1048,3 +1048,15 @@ SnoverPal:          INCBIN "gfx/pokemon/snover/front.gbcpal", middle_colors
 SnoverShinyPal:     INCLUDE "gfx/pokemon/snover/shiny.pal"
 AbomasnowPal:       INCBIN "gfx/pokemon/abomasnow/front.gbcpal", middle_colors
 AbomasnowShinyPal:  INCLUDE "gfx/pokemon/abomasnow/shiny.pal"
+WeavilePal:         INCBIN "gfx/pokemon/weavile/front.gbcpal", middle_colors
+WeavileShinyPal:    INCLUDE "gfx/pokemon/weavile/shiny.pal"
+MagnezonePal:       INCBIN "gfx/pokemon/magnezone/front.gbcpal", middle_colors
+MagnezoneShinyPal:  INCLUDE "gfx/pokemon/magnezone/shiny.pal"
+LickilickyPal:      INCBIN "gfx/pokemon/lickilicky/front.gbcpal", middle_colors
+LickilickyShinyPal: INCLUDE "gfx/pokemon/lickilicky/shiny.pal"
+RhyperiorPal:       INCBIN "gfx/pokemon/rhyperior/front.gbcpal", middle_colors
+RhyperiorShinyPal:  INCLUDE "gfx/pokemon/rhyperior/shiny.pal"
+TangrowthPal:       INCBIN "gfx/pokemon/tangrowth/front.gbcpal", middle_colors
+TangrowthShinyPal:  INCLUDE "gfx/pokemon/tangrowth/shiny.pal"
+ElectivirePal:      INCBIN "gfx/pokemon/electivire/front.gbcpal", middle_colors
+ElectivireShinyPal: INCLUDE "gfx/pokemon/electivire/shiny.pal"
