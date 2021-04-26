@@ -234,7 +234,8 @@ Unreferenced_Function8b81:
 	ld de, wOBPals1
 	ld a, c
 	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	call LoadPalette_Mon
+;	call LoadPalette_White_Col1_Col2_Black
 	ret
 
 LoadTrainerClassPaletteAsNthBGPal:
@@ -270,7 +271,8 @@ got_palette_pointer_8bd7:
 	ld e, l
 	ld d, h
 	pop hl
-	call LoadPalette_White_Col1_Col2_Black
+	call LoadPalette_Mon
+;	call LoadPalette_White_Col1_Col2_Black
 	ret
 
 Unreferenced_Function8bec:
@@ -319,7 +321,8 @@ ApplyMonOrTrainerPals:
 
 .load_palettes
 	ld de, wBGPals1
-	call LoadPalette_White_Col1_Col2_Black
+	call LoadPalette_Mon
+;	call LoadPalette_White_Col1_Col2_Black
 	call WipeAttrMap
 	call ApplyAttrMap
 	call ApplyPals
@@ -1204,10 +1207,6 @@ INCLUDE "gfx/battle/hp_bar.pal"
 
 ExpBarPalette:
 INCLUDE "gfx/battle/exp_bar.pal"
-
-INCLUDE "data/pokemon/palettes.asm"
-
-INCLUDE "data/trainers/palettes.asm"
 
 LoadMapPals:
 	farcall LoadSpecialMapPalette

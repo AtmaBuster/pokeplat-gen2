@@ -698,6 +698,14 @@ INCLUDE "engine/16/table_functions.asm"
 INCLUDE "data/pokemon/egg_moves_hoenn.asm"
 
 
+SECTION "Mon and Trainer Palettes", ROMX
+
+INCLUDE "data/pokemon/palettes.asm"
+
+INCLUDE "data/trainers/palettes.asm"
+
+
+
 ; own section
 INCLUDE "data/trainers/parties.asm"
 
