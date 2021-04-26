@@ -1251,13 +1251,19 @@ CroagunkFrontpic:    INCBIN "gfx/pokemon/croagunk/front.animated.2bpp.lz"
 CroagunkBackpic:     INCBIN "gfx/pokemon/croagunk/back.2bpp.lz"
 ToxicroakFrontpic:   INCBIN "gfx/pokemon/toxicroak/front.animated.2bpp.lz"
 ToxicroakBackpic:    INCBIN "gfx/pokemon/toxicroak/back.2bpp.lz"
+CarnivineFrontpic:   INCBIN "gfx/pokemon/carnivine/front.animated.2bpp.lz"
+CarnivineBackpic:    INCBIN "gfx/pokemon/carnivine/back.2bpp.lz"
+FinneonFrontpic:     INCBIN "gfx/pokemon/finneon/front.animated.2bpp.lz"
+FinneonBackpic:      INCBIN "gfx/pokemon/finneon/back.2bpp.lz"
+LumineonFrontpic:    INCBIN "gfx/pokemon/lumineon/front.animated.2bpp.lz"
+LumineonBackpic:     INCBIN "gfx/pokemon/lumineon/back.2bpp.lz"
+MantykeFrontpic:     INCBIN "gfx/pokemon/mantyke/front.animated.2bpp.lz"
+MantykeBackpic:      INCBIN "gfx/pokemon/mantyke/back.2bpp.lz"
+SnoverFrontpic:      INCBIN "gfx/pokemon/snover/front.animated.2bpp.lz"
+SnoverBackpic:       INCBIN "gfx/pokemon/snover/back.2bpp.lz"
+AbomasnowFrontpic:   INCBIN "gfx/pokemon/abomasnow/front.animated.2bpp.lz"
+AbomasnowBackpic:    INCBIN "gfx/pokemon/abomasnow/back.2bpp.lz"
 
-CarnivineFrontpic:
-FinneonFrontpic:
-LumineonFrontpic:
-MantykeFrontpic:
-SnoverFrontpic:
-AbomasnowFrontpic:
 WeavileFrontpic:
 MagnezoneFrontpic:
 LickilickyFrontpic:
@@ -1312,12 +1318,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-CarnivineBackpic:
-FinneonBackpic:
-LumineonBackpic:
-MantykeBackpic:
-SnoverBackpic:
-AbomasnowBackpic:
 WeavileBackpic:
 MagnezoneBackpic:
 LickilickyBackpic:
