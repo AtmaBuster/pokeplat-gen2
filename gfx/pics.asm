@@ -1278,13 +1278,19 @@ TangrowthFrontpic:   INCBIN "gfx/pokemon/tangrowth/front.animated.2bpp.lz"
 TangrowthBackpic:    INCBIN "gfx/pokemon/tangrowth/back.2bpp.lz"
 ElectivireFrontpic:  INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
 ElectivireBackpic:   INCBIN "gfx/pokemon/electivire/back.2bpp.lz"
+MagmortarFrontpic:   INCBIN "gfx/pokemon/magmortar/front.animated.2bpp.lz"
+MagmortarBackpic:    INCBIN "gfx/pokemon/magmortar/back.2bpp.lz"
+TogekissFrontpic:    INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
+TogekissBackpic:     INCBIN "gfx/pokemon/togekiss/back.2bpp.lz"
+YanmegaFrontpic:     INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
+YanmegaBackpic:      INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
+LeafeonFrontpic:     INCBIN "gfx/pokemon/leafeon/front.animated.2bpp.lz"
+LeafeonBackpic:      INCBIN "gfx/pokemon/leafeon/back.2bpp.lz"
+GlaceonFrontpic:     INCBIN "gfx/pokemon/glaceon/front.animated.2bpp.lz"
+GlaceonBackpic:      INCBIN "gfx/pokemon/glaceon/back.2bpp.lz"
+GliscorFrontpic:     INCBIN "gfx/pokemon/gliscor/front.animated.2bpp.lz"
+GliscorBackpic:      INCBIN "gfx/pokemon/gliscor/back.2bpp.lz"
 
-MagmortarFrontpic:
-TogekissFrontpic:
-YanmegaFrontpic:
-LeafeonFrontpic:
-GlaceonFrontpic:
-GliscorFrontpic:
 MamoswineFrontpic:
 PorygonZFrontpic:
 GalladeFrontpic:
@@ -1327,12 +1333,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-MagmortarBackpic:
-TogekissBackpic:
-YanmegaBackpic:
-LeafeonBackpic:
-GlaceonBackpic:
-GliscorBackpic:
 MamoswineBackpic:
 PorygonZBackpic:
 GalladeBackpic:
