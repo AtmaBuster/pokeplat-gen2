@@ -1290,13 +1290,19 @@ GlaceonFrontpic:     INCBIN "gfx/pokemon/glaceon/front.animated.2bpp.lz"
 GlaceonBackpic:      INCBIN "gfx/pokemon/glaceon/back.2bpp.lz"
 GliscorFrontpic:     INCBIN "gfx/pokemon/gliscor/front.animated.2bpp.lz"
 GliscorBackpic:      INCBIN "gfx/pokemon/gliscor/back.2bpp.lz"
+MamoswineFrontpic:   INCBIN "gfx/pokemon/mamoswine/front.animated.2bpp.lz"
+MamoswineBackpic:    INCBIN "gfx/pokemon/mamoswine/back.2bpp.lz"
+PorygonZFrontpic:    INCBIN "gfx/pokemon/porygon_z/front.animated.2bpp.lz"
+PorygonZBackpic:     INCBIN "gfx/pokemon/porygon_z/back.2bpp.lz"
+GalladeFrontpic:     INCBIN "gfx/pokemon/gallade/front.animated.2bpp.lz"
+GalladeBackpic:      INCBIN "gfx/pokemon/gallade/back.2bpp.lz"
+ProbopassFrontpic:   INCBIN "gfx/pokemon/probopass/front.animated.2bpp.lz"
+ProbopassBackpic:    INCBIN "gfx/pokemon/probopass/back.2bpp.lz"
+DusknoirFrontpic:    INCBIN "gfx/pokemon/dusknoir/front.animated.2bpp.lz"
+DusknoirBackpic:     INCBIN "gfx/pokemon/dusknoir/back.2bpp.lz"
+FroslassFrontpic:    INCBIN "gfx/pokemon/froslass/front.animated.2bpp.lz"
+FroslassBackpic:     INCBIN "gfx/pokemon/froslass/back.2bpp.lz"
 
-MamoswineFrontpic:
-PorygonZFrontpic:
-GalladeFrontpic:
-ProbopassFrontpic:
-DusknoirFrontpic:
-FroslassFrontpic:
 RotomFrontpic:
 UxieFrontpic:
 MespritFrontpic:
@@ -1333,12 +1339,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-MamoswineBackpic:
-PorygonZBackpic:
-GalladeBackpic:
-ProbopassBackpic:
-DusknoirBackpic:
-FroslassBackpic:
 RotomBackpic:
 UxieBackpic:
 MespritBackpic:

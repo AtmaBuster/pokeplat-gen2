@@ -1072,3 +1072,15 @@ GlaceonPal:         INCBIN "gfx/pokemon/glaceon/front.gbcpal", middle_colors
 GlaceonShinyPal:    INCLUDE "gfx/pokemon/glaceon/shiny.pal"
 GliscorPal:         INCBIN "gfx/pokemon/gliscor/front.gbcpal", middle_colors
 GliscorShinyPal:    INCLUDE "gfx/pokemon/gliscor/shiny.pal"
+MamoswinePal:       INCBIN "gfx/pokemon/mamoswine/front.gbcpal", middle_colors
+MamoswineShinyPal:  INCLUDE "gfx/pokemon/mamoswine/shiny.pal"
+PorygonZPal:        INCBIN "gfx/pokemon/porygon_z/front.gbcpal", middle_colors
+PorygonZShinyPal:   INCLUDE "gfx/pokemon/porygon_z/shiny.pal"
+GalladePal:         INCBIN "gfx/pokemon/gallade/front.gbcpal", middle_colors
+GalladeShinyPal:    INCLUDE "gfx/pokemon/gallade/shiny.pal"
+ProbopassPal:       INCBIN "gfx/pokemon/probopass/front.gbcpal", middle_colors
+ProbopassShinyPal:  INCLUDE "gfx/pokemon/probopass/shiny.pal"
+DusknoirPal:        INCBIN "gfx/pokemon/dusknoir/front.gbcpal", middle_colors
+DusknoirShinyPal:   INCLUDE "gfx/pokemon/dusknoir/shiny.pal"
+FroslassPal:        INCBIN "gfx/pokemon/froslass/front.gbcpal", middle_colors
+FroslassShinyPal:   INCLUDE "gfx/pokemon/froslass/shiny.pal"
