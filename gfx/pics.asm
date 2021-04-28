@@ -1302,13 +1302,22 @@ DusknoirFrontpic:    INCBIN "gfx/pokemon/dusknoir/front.animated.2bpp.lz"
 DusknoirBackpic:     INCBIN "gfx/pokemon/dusknoir/back.2bpp.lz"
 FroslassFrontpic:    INCBIN "gfx/pokemon/froslass/front.animated.2bpp.lz"
 FroslassBackpic:     INCBIN "gfx/pokemon/froslass/back.2bpp.lz"
+RotomFrontpic:       INCBIN "gfx/pokemon/rotom/front.animated.2bpp.lz"
+RotomBackpic:        INCBIN "gfx/pokemon/rotom/back.2bpp.lz"
+UxieFrontpic:        INCBIN "gfx/pokemon/uxie/front.animated.2bpp.lz"
+UxieBackpic:         INCBIN "gfx/pokemon/uxie/back.2bpp.lz"
+MespritFrontpic:     INCBIN "gfx/pokemon/mesprit/front.animated.2bpp.lz"
+MespritBackpic:      INCBIN "gfx/pokemon/mesprit/back.2bpp.lz"
+AzelfFrontpic:       INCBIN "gfx/pokemon/azelf/front.animated.2bpp.lz"
+AzelfBackpic:        INCBIN "gfx/pokemon/azelf/back.2bpp.lz"
+DialgaFrontpic:      INCBIN "gfx/pokemon/dialga/front.animated.2bpp.lz"
 
-RotomFrontpic:
-UxieFrontpic:
-MespritFrontpic:
-AzelfFrontpic:
-DialgaFrontpic:
-PalkiaFrontpic:
+SECTION "Pics 31", ROMX
+
+DialgaBackpic:       INCBIN "gfx/pokemon/dialga/back.2bpp.lz"
+PalkiaFrontpic:      INCBIN "gfx/pokemon/palkia/front.animated.2bpp.lz"
+PalkiaBackpic:       INCBIN "gfx/pokemon/palkia/back.2bpp.lz"
+
 HeatranFrontpic:
 RegigigasFrontpic:
 GiratinaFrontpic:
@@ -1339,12 +1348,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-RotomBackpic:
-UxieBackpic:
-MespritBackpic:
-AzelfBackpic:
-DialgaBackpic:
-PalkiaBackpic:
 HeatranBackpic:
 RegigigasBackpic:
 GiratinaBackpic:
