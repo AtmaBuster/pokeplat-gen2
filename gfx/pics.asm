@@ -1317,16 +1317,25 @@ SECTION "Pics 31", ROMX
 DialgaBackpic:       INCBIN "gfx/pokemon/dialga/back.2bpp.lz"
 PalkiaFrontpic:      INCBIN "gfx/pokemon/palkia/front.animated.2bpp.lz"
 PalkiaBackpic:       INCBIN "gfx/pokemon/palkia/back.2bpp.lz"
+HeatranFrontpic:     INCBIN "gfx/pokemon/heatran/front.animated.2bpp.lz"
+HeatranBackpic:      INCBIN "gfx/pokemon/heatran/back.2bpp.lz"
+RegigigasFrontpic:   INCBIN "gfx/pokemon/regigigas/front.animated.2bpp.lz"
+RegigigasBackpic:    INCBIN "gfx/pokemon/regigigas/back.2bpp.lz"
+GiratinaFrontpic:    INCBIN "gfx/pokemon/giratina/front.animated.2bpp.lz"
+GiratinaBackpic:     INCBIN "gfx/pokemon/giratina/back.2bpp.lz"
+CresseliaFrontpic:   INCBIN "gfx/pokemon/cresselia/front.animated.2bpp.lz"
+CresseliaBackpic:    INCBIN "gfx/pokemon/cresselia/back.2bpp.lz"
+PhioneFrontpic:      INCBIN "gfx/pokemon/phione/front.animated.2bpp.lz"
+PhioneBackpic:       INCBIN "gfx/pokemon/phione/back.2bpp.lz"
+ManaphyFrontpic:     INCBIN "gfx/pokemon/manaphy/front.animated.2bpp.lz"
+ManaphyBackpic:      INCBIN "gfx/pokemon/manaphy/back.2bpp.lz"
+DarkraiFrontpic:     INCBIN "gfx/pokemon/darkrai/front.animated.2bpp.lz"
+DarkraiBackpic:      INCBIN "gfx/pokemon/darkrai/back.2bpp.lz"
+ShayminFrontpic:     INCBIN "gfx/pokemon/shaymin/front.animated.2bpp.lz"
+ShayminBackpic:      INCBIN "gfx/pokemon/shaymin/back.2bpp.lz"
+ArceusFrontpic:      INCBIN "gfx/pokemon/arceus/front.animated.2bpp.lz"
+ArceusBackpic:       INCBIN "gfx/pokemon/arceus/back.2bpp.lz"
 
-HeatranFrontpic:
-RegigigasFrontpic:
-GiratinaFrontpic:
-CresseliaFrontpic:
-PhioneFrontpic:
-ManaphyFrontpic:
-DarkraiFrontpic:
-ShayminFrontpic:
-ArceusFrontpic:
 PichuSpikyFrontpic:
 DeoxysAttackFrontpic:
 DeoxysDefenseFrontpic:
@@ -1348,15 +1357,6 @@ PlaceholderFrontpic: INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 
 
 
-HeatranBackpic:
-RegigigasBackpic:
-GiratinaBackpic:
-CresseliaBackpic:
-PhioneBackpic:
-ManaphyBackpic:
-DarkraiBackpic:
-ShayminBackpic:
-ArceusBackpic:
 PichuSpikyBackpic:
 DeoxysAttackBackpic:
 DeoxysDefenseBackpic:
