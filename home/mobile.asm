@@ -1,22 +1,9 @@
 Function3e32::
 Function3e60::
 MobileReceive::
+Function3eea::
 ; stubbed
 	ret
-
-Function3eea::
-	push hl
-	push bc
-	ld de, wAttrMap - wTileMap
-	add hl, de
-	inc b
-	inc b
-	inc c
-	inc c
-	call Function3f35
-	pop bc
-	pop hl
-	jp MobileHome_PlaceBox
 
 Function3f20::
 	hlcoord 0, 0, wAttrMap

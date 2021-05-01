@@ -607,7 +607,7 @@ RaltsEvosAttacks:
 
 KirliaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, GARDEVOIR
-	;dbbw EVOLVE_ITEM, DAWN_STONE, GALLADE
+	dbbw EVOLVE_ITEM_MALE, FIRE_STONE, GALLADE
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, CONFUSION
@@ -2108,7 +2108,8 @@ WynautEvosAttacks:
 	db 0 ; no more level-up moves
 
 SnoruntEvosAttacks:
-	;dbbw EVOLVE_ITEM, DAWN_STONE, FROSLASS
+	dbbw EVOLVE_LEVEL, 42, GLALIE
+	dbbw EVOLVE_ITEM_FEMALE, FIRE_STONE, FROSLASS
 	db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, POWDER_SNOW

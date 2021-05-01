@@ -64,7 +64,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 
 	cp EVOLVE_TRADE
-	jr z, .trade
+	jp z, .trade
 
 	ld a, [wLinkMode]
 	and a
@@ -73,15 +73,20 @@ EvolveAfterBattle_MasterLoop:
 	ld a, b
 	cp EVOLVE_ITEM
 	jp z, .item
+	cp EVOLVE_ITEM_MALE
+	jp z, .item_male
+	cp EVOLVE_ITEM_FEMALE
+	jp z, .item_female
 
 	ld a, [wForceEvolution]
 	and a
 	jp nz, .dont_evolve_check
 
 	ld a, b
-	cp EVOLVE_LEVEL
-	jp z, .level
+	and EVOLVE_LEVEL_AND
+	jp nz, .level
 
+	ld a, b
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
@@ -123,7 +128,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
-	jr z, .proceed
+	jp z, .proceed
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
@@ -131,7 +136,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp nz, .skip_evolution_species
-	jr .proceed
+	jp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
@@ -163,6 +168,25 @@ EvolveAfterBattle_MasterLoop:
 	xor a
 	ld [wTempMonItem], a
 	jr .proceed
+
+.item_male
+	ld a, TEMPMON
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jp c, .skip_evolution_species_parameter
+	jp z, .skip_evolution_species_parameter
+	jr .item
+
+.item_female
+	ld a, TEMPMON
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jp c, .skip_evolution_species_parameter
+	jp nz, .skip_evolution_species_parameter
 
 .item
 	call GetNextEvoAttackByte
@@ -648,8 +672,20 @@ SkipEvolutions::
 	jr SkipEvolutions
 
 DetermineEvolutionItemResults::
+	push bc
+	push de
+	farcall GetGender
+	ld a, -1
+	jr c, .got_gender
+	ld a, 1
+	jr nz, .got_gender
+	xor a
+.got_gender
+	pop de
+	pop bc
+	ld c, a
 ; in: b:de: pointer to evos and attacks struct, wCurItem: item
-; out: de: species ID or zero; a, b, hl: clobbered
+; out: de: species ID or zero; a, b, c, hl: clobbered
 	ld h, d
 	ld l, e
 	ld de, 0
@@ -662,7 +698,26 @@ DetermineEvolutionItemResults::
 	cp EVOLVE_STAT
 	jr z, .skip_species_two_parameters
 	cp EVOLVE_ITEM
+	jr z, .item
+	cp EVOLVE_ITEM_FEMALE
+	jr z, .item_female
+	cp EVOLVE_ITEM_MALE
 	jr nz, .skip_species_parameter
+
+.item_male
+	ld a, c
+	and a
+	jr z, .skip_species
+	inc a
+	jr z, .skip_species
+	jr .item
+
+.item_female
+	ld a, c
+	and a
+	jr nz, .skip_species
+
+.item
 	call GetNextEvoAttackByte
 	ld b, a	
 	ld a, [wCurItem]

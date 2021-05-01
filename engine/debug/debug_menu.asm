@@ -750,7 +750,7 @@ Debug_GivePoke:
 	ld l, a
 	cphl16 0
 	jp z, .loop
-	cphl16 NUM_POKEMON
+	cphl16 NUM_POKEMON + 1
 	jp nc, .loop
 	ldh a, [hDebugMenuDataBuffer + 5]
 	and a
@@ -810,7 +810,7 @@ Debug_GivePoke:
 	ld l, a
 	cphl16 0
 	ret z
-	cphl16 NUM_POKEMON
+	cphl16 NUM_POKEMON + 1
 	ret nc
 	push hl
 	hlcoord 1, 3

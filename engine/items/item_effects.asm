@@ -874,6 +874,8 @@ MoonBallMultiplier:
 	ld [wCurItem], a
 	ld d, h
 	ld e, l
+	ld a, WILDMON
+	ld [wMonType], a
 	farcall DetermineEvolutionItemResults
 	ld a, c
 	ld [wCurItem], a
