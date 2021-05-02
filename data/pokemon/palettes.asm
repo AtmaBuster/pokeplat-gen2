@@ -1114,3 +1114,37 @@ ShayminPal:         INCBIN "gfx/pokemon/shaymin/front.gbcpal", middle_colors
 ShayminShinyPal:    INCLUDE "gfx/pokemon/shaymin/shiny.pal"
 ArceusPal:          INCBIN "gfx/pokemon/arceus/front.gbcpal", middle_colors
 ArceusShinyPal:     INCLUDE "gfx/pokemon/arceus/shiny.pal"
+PichuSpikyPal:      INCBIN "gfx/pokemon/pichu_b/front.gbcpal", middle_colors
+PichuSpikyShinyPal: INCLUDE "gfx/pokemon/pichu_b/shiny.pal"
+DeoxysAttackPal:    INCBIN "gfx/pokemon/deoxys_a/front.gbcpal", middle_colors
+DeoxysAttackShinyPal:INCLUDE "gfx/pokemon/deoxys_a/shiny.pal"
+DeoxysDefensePal:   INCBIN "gfx/pokemon/deoxys_d/front.gbcpal", middle_colors
+DeoxysDefenseShinyPal:INCLUDE "gfx/pokemon/deoxys_d/shiny.pal"
+DeoxysSpeedPal:     INCBIN "gfx/pokemon/deoxys_s/front.gbcpal", middle_colors
+DeoxysSpeedShinyPal:INCLUDE "gfx/pokemon/deoxys_s/shiny.pal"
+BurmySandPal:       INCBIN "gfx/pokemon/burmy_s/front.gbcpal", middle_colors
+BurmySandShinyPal:  INCLUDE "gfx/pokemon/burmy_s/shiny.pal"
+BurmyTrashPal:      INCBIN "gfx/pokemon/burmy_t/front.gbcpal", middle_colors
+BurmyTrashShinyPal: INCLUDE "gfx/pokemon/burmy_t/shiny.pal"
+WormadamSandPal:    INCBIN "gfx/pokemon/wormadam_s/front.gbcpal", middle_colors
+WormadamSandShinyPal:INCLUDE "gfx/pokemon/wormadam_s/shiny.pal"
+WormadamTrashPal:   INCBIN "gfx/pokemon/wormadam_t/front.gbcpal", middle_colors
+WormadamTrashShinyPal:INCLUDE "gfx/pokemon/wormadam_t/shiny.pal"
+ShellosEastPal:     INCBIN "gfx/pokemon/shellos_e/front.gbcpal", middle_colors
+ShellosEastShinyPal:INCLUDE "gfx/pokemon/shellos_e/shiny.pal"
+GastrodonEastPal:   INCBIN "gfx/pokemon/gastrodon_e/front.gbcpal", middle_colors
+GastrodonEastShinyPal:INCLUDE "gfx/pokemon/gastrodon_e/shiny.pal"
+RotomFanPal:        INCBIN "gfx/pokemon/rotom_fly/front.gbcpal", middle_colors
+RotomFanShinyPal:   INCLUDE "gfx/pokemon/rotom_fly/shiny.pal"
+RotomHeatPal:       INCBIN "gfx/pokemon/rotom_fre/front.gbcpal", middle_colors
+RotomHeatShinyPal:  INCLUDE "gfx/pokemon/rotom_fre/shiny.pal"
+RotomMowPal:        INCBIN "gfx/pokemon/rotom_grs/front.gbcpal", middle_colors
+RotomMowShinyPal:   INCLUDE "gfx/pokemon/rotom_grs/shiny.pal"
+RotomFridgePal:     INCBIN "gfx/pokemon/rotom_ice/front.gbcpal", middle_colors
+RotomFridgeShinyPal:INCLUDE "gfx/pokemon/rotom_ice/shiny.pal"
+RotomWashPal:       INCBIN "gfx/pokemon/rotom_wtr/front.gbcpal", middle_colors
+RotomWashShinyPal:  INCLUDE "gfx/pokemon/rotom_wtr/shiny.pal"
+GiratinaOriginPal:  INCBIN "gfx/pokemon/giratina_o/front.gbcpal", middle_colors
+GiratinaOriginShinyPal:INCLUDE "gfx/pokemon/giratina_o/shiny.pal"
+ShayminSkyPal:      INCBIN "gfx/pokemon/shaymin_s/front.gbcpal", middle_colors
+ShayminSkyShinyPal: INCLUDE "gfx/pokemon/shaymin_s/shiny.pal"
