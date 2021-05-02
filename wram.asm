@@ -2889,7 +2889,6 @@ wdc60:: db
 
 wStepCount:: db ; dc73
 wPoisonStepCount:: db ; dc74
-	ds 2
 wHappinessStepCount:: db
 	ds 1
 
