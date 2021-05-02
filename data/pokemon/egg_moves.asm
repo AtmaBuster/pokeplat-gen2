@@ -16,9 +16,12 @@ EggMovePointers::
 	indirect_entries MEW, EggMovePointers1
 	indirect_entries CELEBI, EggMovePointers2
 	indirect_entries OHMEGA, EggMovePointers3
-	indirect_entries NUM_POKEMON, EggMovePointers4
+	indirect_entries DEOXYS, EggMovePointers4
+	indirect_entries NUM_POKEMON, EggMovePointers5
 	indirect_table_end
 
 INCLUDE "data/pokemon/egg_moves_kanto.asm"
 INCLUDE "data/pokemon/egg_moves_johto.asm"
 INCLUDE "data/pokemon/egg_moves_nihon.asm"
+INCLUDE "data/pokemon/egg_moves_hoenn.asm"
+INCLUDE "data/pokemon/egg_moves_sinnoh.asm"

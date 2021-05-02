@@ -695,9 +695,6 @@ SECTION "16-bit ID stuff", ROMX
 
 INCLUDE "engine/16/table_functions.asm"
 
-INCLUDE "data/pokemon/egg_moves_hoenn.asm"
-
-
 SECTION "Mon and Trainer Palettes", ROMX
 
 INCLUDE "data/pokemon/palettes.asm"
