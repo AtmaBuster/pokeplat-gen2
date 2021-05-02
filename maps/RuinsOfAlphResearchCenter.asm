@@ -359,7 +359,7 @@ RuinsOfAlphResearchCenterComputerText_GotAllUnown:
 	text "Mystery #MON"
 	line "Name: UNOWN"
 
-	para "A total of 26"
+	para "A total of 28"
 	line "kinds found."
 	done
 

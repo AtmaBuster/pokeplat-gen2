@@ -52,3 +52,7 @@ UnownPicPointers::
 	dba UnownYBackpic
 	dba UnownZFrontpic
 	dba UnownZBackpic
+	dba UnownExclamationFrontpic
+	dba UnownExclamationBackpic
+	dba UnownQuestionFrontpic
+	dba UnownQuestionBackpic
