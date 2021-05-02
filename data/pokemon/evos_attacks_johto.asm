@@ -554,6 +554,7 @@ TogepiEvosAttacks:
 
 TogeticEvosAttacks:
 	;dbbw EVOLVE_ITEM, SHINY_STONE, TOGEKISS
+	dbbw EVOLVE_ITEM, FIRE_STONE, TOGEKISS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, METRONOME
@@ -813,6 +814,7 @@ JumpluffEvosAttacks:
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
+	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, DOUBLE_HIT, AMBIPOM
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, TAIL_WHIP
@@ -867,7 +869,7 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	;dbbw EVOLVE_MOVE, ANCIENTPOWER, YANMEGA
+	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, ANCIENTPOWER, YANMEGA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, FORESIGHT
@@ -960,7 +962,8 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
-	;dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
+	;dbbw EVOLVE_ITEM, DUSK_STONE, HONCHKROW
+	dbbw EVOLVE_ITEM, FIRE_STONE, HONCHKROW
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, ASTONISH
@@ -998,6 +1001,7 @@ SlowkingEvosAttacks:
 
 MisdreavusEvosAttacks:
 	;dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
+	dbbw EVOLVE_ITEM, FIRE_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
@@ -1109,7 +1113,8 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
-	;dbbw EVOLVE_HOLD_TIME, RAZOR_FANG, GLISCOR
+	;dbbbw EVOLVE_LEVEL_WITH_ITEM_NIGHT, 1, RAZOR_FANG, GLISCOR
+	dbbbw EVOLVE_LEVEL_WITH_ITEM_NIGHT, 1, POTION, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 5, SAND_ATTACK
@@ -1378,7 +1383,7 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
-	;dbbw EVOLVE_MOVE, ANCIENTPOWER
+	dbbww EVOLVE_LEVEL_WITH_MOVE, 1, ANCIENTPOWER, MAMOSWINE
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, POWDER_SNOW
@@ -1600,6 +1605,7 @@ DonphanEvosAttacks:
 
 Porygon2EvosAttacks:
 	;dbbw EVOLVE_TRADE, DUBIOUS_DISC, PORYGON_Z
+	dbbw EVOLVE_TRADE, POTION, PORYGON_Z
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, DEFENSE_CURL

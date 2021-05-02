@@ -142,7 +142,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp z, .skip_evolution_species
-	jr .proceed
+	jp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -204,20 +204,30 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .level
+	ld c, b
 	call GetNextEvoAttackByte
 	ld b, a
 	ld a, [wTempMonLevel]
 	cp b
 	jp c, .skip_evolution_species
+	push bc
 	call IsMonHoldingEverstone
+	pop bc
 	jp z, .skip_evolution_species
+
+	call CheckLevelEvolutionCondition
+	jp nc, .skip_evolution_species
 
 .proceed
 	ld a, [wTempMonLevel]
 	ld [wCurPartyLevel], a
+	ld a, [wMonTriedToEvolve]
+	and a
+	jr nz, .level_evolution
 	ld a, $1
 	ld [wMonTriedToEvolve], a
 
+.level_evolution
 	ldh a, [hTemp]
 	call GetFarHalfword
 	call GetPokemonIDFromIndex
@@ -252,6 +262,18 @@ EvolveAfterBattle_MasterLoop:
 	ld hl, Text_CongratulationsYourPokemon
 	call PrintText
 
+	ld a, [wMonTriedToEvolve]
+	cp EVOLVE_LEVEL_WITH_ITEM
+	jr z, .remove_item
+	cp EVOLVE_LEVEL_WITH_ITEM_DAY
+	jr z, .remove_item
+	cp EVOLVE_LEVEL_WITH_ITEM_NIGHT
+	jr nz, .item_done
+.remove_item
+	xor a
+	ld [wTempMonItem], a
+
+.item_done
 	ld a, [wEvolutionNewSpecies]
 	ld [wCurSpecies], a
 	ld [wTempMonSpecies], a
@@ -377,6 +399,179 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	call nz, RestartMapMusic
 	ret
+
+CheckLevelEvolutionCondition:
+	push hl
+	ld a, c
+	cp EVOLVE_LEVEL
+	jp z, .ok
+	sub EVOLVE_LEVEL_AND + 1
+	ld hl, .jumptable
+	jp JumpTable
+
+.jumptable
+	dw .with_move
+	dw .in_location
+	dw .with_item
+	dw .with_item_day
+	dw .with_item_night
+	dw .male
+	dw .female
+	dw .with_party_mon
+	dw .add_mon
+	dw .extra_mon
+	dw .dv_high
+	dw .dv_low
+
+.with_move
+	pop hl
+	call GetNextEvoAttackWord
+	push hl
+	ld h, b
+	ld l, c
+	call GetMoveIDFromIndex
+	ld d, a
+	ld e, NUM_MOVES
+	ld hl, wTempMonMoves
+.move_loop
+	ld a, [hli]
+	cp d
+	jp z, .ok
+	dec e
+	jr nz, .move_loop
+	jp .no
+
+.with_item_night
+	ld a, [wTimeOfDay]
+	cp 2
+	jp nz, .no_skip_byte
+
+.with_item
+	pop hl
+	call GetNextEvoAttackByte
+	push hl
+	ld b, a
+	ld a, [wTempMonItem]
+	cp b
+	jr nz, .no
+	ld a, c
+	ld [wMonTriedToEvolve], a
+	jr .ok
+
+.with_item_day
+	ld a, [wTimeOfDay]
+	cp 2
+	jr z, .no_skip_byte
+	jr .with_item
+
+.male
+	ld a, TEMPMON
+	ld [wMonType], a
+	farcall GetGender
+	jr c, .no
+	jr z, .no
+	jr .ok
+
+.female
+	ld a, TEMPMON
+	ld [wMonType], a
+	farcall GetGender
+	jr c, .no
+	jr nz, .no
+	jr .ok
+
+.with_party_mon
+	pop hl
+	call GetNextEvoAttackWord
+	push hl
+	ld h, b
+	ld l, c
+	call GetPokemonIDFromIndex
+	ld d, a
+	ld hl, wPartyCount
+	ld a, [hli]
+	ld e, a
+.party_mon_loop
+	ld a, [hli]
+	cp d
+	jr z, .ok
+	cp -1
+	jr z, .no
+	dec e
+	jr z, .no
+	jr .party_mon_loop
+
+.add_mon
+	; todo
+	jr .no
+
+.extra_mon
+	; todo
+	jr .no
+
+.dv_high
+	ld hl, wTempMonID
+	ld a, [hli]
+	xor [hl]
+	ld hl, wTempMonDVs
+	xor [hl]
+	inc hl
+	xor [hl]
+	and %00010000
+	jr z, .no
+	jr .ok
+
+.dv_low
+	ld hl, wTempMonID
+	ld a, [hli]
+	xor [hl]
+	ld hl, wTempMonDVs
+	xor [hl]
+	inc hl
+	xor [hl]
+	and %00010000
+	jr nz, .no
+	jr .ok
+
+.no_skip_byte
+	pop hl
+	inc hl
+	and a
+	ret
+
+.no
+	pop hl
+	and a
+	ret
+
+.ok
+	pop hl
+	scf
+	ret
+
+.in_location
+	pop hl
+	call GetNextEvoAttackByte
+	push hl
+	ld c, a
+	ld b, 0
+	ld hl, LocationEvolutionTable
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	ld a, [wCurLandmark]
+	ld c, a
+.location_loop
+	ld a, [hli]
+	cp -1
+	jr z, .no
+	cp c
+	jr z, .ok
+	jr .location_loop
+
+INCLUDE "data/pokemon/location_evolution.asm"
 
 UpdateSpeciesNameIfNotNicknamed:
 	ld a, [wCurSpecies]
@@ -737,6 +932,13 @@ DetermineEvolutionItemResults::
 	inc hl
 	inc hl
 	jr .loop
+
+GetNextEvoAttackWord:
+	call GetNextEvoAttackByte
+	ld c, a
+	call GetNextEvoAttackByte
+	ld b, a
+	ret
 
 GetNextEvoAttackByte:
 	ldh a, [hTemp]

@@ -544,8 +544,8 @@ BastiodonEvosAttacks:
 	db 0 ; no more level-up moves
 
 BurmyEvosAttacks:
-	;(If Female) dbbw EVOLVE_LEVEL, 20, WORMADAM
-	;(If Male) dbbw EVOLVE_LEVEL, 20, MOTHIM
+	dbbw EVOLVE_LEVEL_AND_FEMALE, 20, WORMADAM
+	dbbw EVOLVE_LEVEL_AND_MALE, 20, MOTHIM
 	db 0 ; no more evolutions
 	dbw 1, PROTECT
 	dbw 10, TACKLE
@@ -588,7 +588,7 @@ MothimEvosAttacks:
 	db 0 ; no more level-up moves
 
 CombeeEvosAttacks:
-	;(If Female) dbbw EVOLVE_LEVEL, 21, VESPIQUEN
+	dbbw EVOLVE_LEVEL_AND_FEMALE, 21, VESPIQUEN
 	db 0 ; no more evolutions
 	dbw 1, GUST
 	dbw 1, SWEET_SCENT
@@ -968,7 +968,7 @@ BronzongEvosAttacks:
 	db 0 ; no more level-up moves
 
 BonslyEvosAttacks:
-	;dbbw EVOLVE_MOVE, MIMIC
+	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, MIMIC, SUDOWOODO
 	db 0 ; no more evolutions
 	dbw 1, FAKE_TEARS
 	dbw 1, COPYCAT
@@ -986,7 +986,7 @@ BonslyEvosAttacks:
 	db 0 ; no more level-up moves
 
 MimeJrEvosAttacks:
-	;dbbw EVOLVE_MOVE, MIMIC
+	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, MIMIC, MR__MIME
 	db 0 ; no more evolutions
 	dbw 1, CONFUSION
 	dbw 1, BARRIER
@@ -1009,7 +1009,8 @@ MimeJrEvosAttacks:
 	db 0 ; no more level-up moves
 
 HappinyEvosAttacks:
-	;dbbw EVOLVE_HAPPINESS_HOLD, TR_MORNDAY, OVAL_STONE, CHANSEY
+	;dbbbw EVOLVE_LEVEL_WITH_ITEM_DAY, 1, OVAL_STONE, CHANSEY
+	dbbbw EVOLVE_LEVEL_WITH_ITEM_DAY, 1, POTION, CHANSEY
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, CHARM
@@ -1320,7 +1321,7 @@ LumineonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MantykeEvosAttacks:
-	;dbbw EVOLVE_POKEMON, REMORAID, MANTINE
+	dbbww EVOLVE_LEVEL_PARTY_MON, 1, REMORAID, MANTINE
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, BUBBLE
@@ -2050,7 +2051,8 @@ DeoxysSpeedEvosAttacks:
 	db 0 ; no more level-up moves
 
 BurmySandEvosAttacks:
-	dbbw EVOLVE_LEVEL, 20, WORMADAM_S
+	dbbw EVOLVE_LEVEL_AND_FEMALE, 20, WORMADAM_S
+	dbbw EVOLVE_LEVEL_AND_MALE, 20, MOTHIM
 	db 0 ; no more evolutions
 	dbw 1, PROTECT
 	dbw 10, TACKLE
@@ -2059,7 +2061,8 @@ BurmySandEvosAttacks:
 	db 0 ; no more level-up moves
 
 BurmyTrashEvosAttacks:
-	dbbw EVOLVE_LEVEL, 20, WORMADAM_T
+	dbbw EVOLVE_LEVEL_AND_FEMALE, 20, WORMADAM_T
+	dbbw EVOLVE_LEVEL_AND_MALE, 20, MOTHIM
 	db 0 ; no more evolutions
 	dbw 1, PROTECT
 	dbw 10, TACKLE

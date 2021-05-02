@@ -545,7 +545,7 @@ Debug_TeachMove:
 	call GetMoveName
 	ld de, wStringBuffer2
 	ld hl, wStringBuffer1
-	ld bc, 12
+	ld bc, 13
 	call CopyBytes
 	predef LearnMove
 	ret

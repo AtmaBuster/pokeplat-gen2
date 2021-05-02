@@ -387,8 +387,8 @@ LinooneEvosAttacks:
 	db 0 ; no more level-up moves
 
 WurmpleEvosAttacks:
-	dbbw EVOLVE_LEVEL, 7, SILCOON
-	dbbw EVOLVE_ITEM, MOON_STONE, CASCOON
+	dbbw EVOLVE_LEVEL_RAND_HIGH, 7, SILCOON
+	dbbw EVOLVE_LEVEL_RAND_LOW, 7, CASCOON
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, STRING_SHOT
@@ -607,6 +607,7 @@ RaltsEvosAttacks:
 
 KirliaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, GARDEVOIR
+	;dbbw EVOLVE_ITEM_MALE, DAWN_STONE, GALLADE
 	dbbw EVOLVE_ITEM_MALE, FIRE_STONE, GALLADE
 	db 0 ; no more evolutions
 	dbw 1, GROWL
@@ -769,8 +770,8 @@ SlakingEvosAttacks:
 	db 0 ; no more level-up moves
 
 NincadaEvosAttacks:
-	dbbw EVOLVE_LEVEL, 20, NINJASK
-	;dbbw EVOLVE_LEVEL, 20, SHEDINJA
+	dbbw EVOLVE_LEVEL_ADD_MON, 20, NINJASK
+	dbbw EVOLVE_LEVEL_EXTRA_MON, 20, SHEDINJA
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, HARDEN
@@ -937,7 +938,7 @@ AzurillEvosAttacks:
 	db 0 ; no more level-up moves
 
 NosepassEvosAttacks:
-	;EVOLVE_LOCATION, MAGNETIC_FIELD, PROBOPASS
+	dbbbw EVOLVE_LEVEL_IN_LOCATION, 1, MAGNETIC_FIELD, PROBOPASS
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 7, HARDEN
@@ -1243,7 +1244,8 @@ IllumiseEvosAttacks:
 	db 0 ; no more level-up moves
 
 RoseliaEvosAttacks:
-;dbbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
+	;dbbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
+	dbbw EVOLVE_ITEM, FIRE_STONE, ROSERADE
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 4, GROWTH
@@ -1898,6 +1900,7 @@ ArmaldoEvosAttacks:
 
 FeebasEvosAttacks:
 	;dbbw EVOLVE_TRADE, PRISM_SCALE, MILOTIC
+	dbbw EVOLVE_TRADE, POTION, MILOTIC
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
 	dbw 15, TACKLE
@@ -2015,6 +2018,7 @@ DuskullEvosAttacks:
 
 DusclopsEvosAttacks:
 	;dbbw EVOLVE_TRADE, REAPER_CLOTH, DUSKNOIR
+	dbbw EVOLVE_TRADE, POTION, DUSKNOIR
 	db 0 ; no more evolutions
 	dbw 1, FIRE_PUNCH
 	dbw 1, ICE_PUNCH
@@ -2109,6 +2113,7 @@ WynautEvosAttacks:
 
 SnoruntEvosAttacks:
 	dbbw EVOLVE_LEVEL, 42, GLALIE
+	;dbbw EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
 	dbbw EVOLVE_ITEM_FEMALE, FIRE_STONE, FROSLASS
 	db 0 ; no more evolutions
 	dbw 1, LEER
