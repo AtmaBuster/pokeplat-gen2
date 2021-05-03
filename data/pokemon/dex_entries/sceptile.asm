@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "FOREST@" ; species name
+	dw 507, 1151 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "It agilely leaps"
+	next "about the jungle"
+	next "and uses the sharp"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "leaves on its arms"
+	next "to strike its"
+	next "prey.@"

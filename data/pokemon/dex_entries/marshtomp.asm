@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "MUD FISH@" ; species name
+	dw 204, 617 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "MARSHTOMP's home"
+	next "on muddy ground"
+	next "provides poor"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "footing. Its legs"
+	next "are sturdy as a"
+	next "result.@"

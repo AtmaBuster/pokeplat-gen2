@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "BITE@" ; species name
+	dw 303, 816 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "It chases down its"
+	next "prey in a pack of"
+	next "around ten. They"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "defeat their foes"
+	next "with coordinated"
+	next "teamwork.@"

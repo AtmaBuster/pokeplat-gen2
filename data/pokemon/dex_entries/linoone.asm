@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "RUSHING@" ; species name
+	dw 108, 717 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "When running in a"
+	next "straight line, it"
+	next "can easily top 60"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "miles an hour. It"
+	next "has a tough time"
+	next "with curved roads.@"

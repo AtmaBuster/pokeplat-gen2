@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "BITE@" ; species name
+	dw 108, 05 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "It chases its prey"
+	next "until the victim"
+	next "becomes exhausted."
 
-	page "null"
-	next "null"
-	next "null@"
+	page "However, it turns"
+	next "tail if the prey"
+	next "strikes back.@"

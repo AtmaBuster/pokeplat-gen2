@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "WOOD GECKO@" ; species name
+	dw 211, 09 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "It leaps from tree"
+	next "branch to tree"
+	next "branch quite"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "swiftly. It shows"
+	next "astounding"
+	next "agility.@"

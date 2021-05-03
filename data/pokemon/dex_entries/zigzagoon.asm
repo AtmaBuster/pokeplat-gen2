@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "TINYRACCOON@" ; species name
+	dw 104, 386 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "It gets interested"
+	next "in everything,"
+	next "which is why it"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "zigs and zags. It"
+	next "is good at finding"
+	next "hidden items.@"

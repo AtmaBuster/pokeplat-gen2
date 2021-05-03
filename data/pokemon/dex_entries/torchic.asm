@@ -1,10 +1,11 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "CHICK@" ; species name
+	dw 104, 55 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "It keeps a small"
+	next "flame inside of"
+	next "its body. Hug it!"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "It will be as" 
+	next "warm as a hot-"
+	next "water bottle.@"
+	     

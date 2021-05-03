@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "WOOD GECKO@" ; species name
+	dw 108, 110 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "Small hooks on the"
+	next "bottom of its feet"
+	next "catch on walls and"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "ceilings. That is"
+	next "how it can hang"
+	next "from above.@"

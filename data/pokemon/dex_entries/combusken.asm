@@ -1,10 +1,10 @@
-	db "BLANK@" ; species name
-	dw 420, 6969 ; height, weight
+	db "YOUNG FOWL@" ; species name
+	dw 211, 430 ; height, weight
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "During a battle," 
+	next "the hot flame in" 
+	next "its body"
 
-	page "null"
-	next "null"
-	next "null@"
+	page "increases. Its"   
+	next "kicks have an"       
+	next "outstanding power.@"
