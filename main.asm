@@ -45,6 +45,7 @@ INCLUDE "engine/events/bug_contest/caught_mon.asm"
 INCLUDE "engine/items/item_effects.asm"
 INCLUDE "engine/battle_anims/pokeball_wobble.asm"
 INCLUDE "engine/pokemon/knows_move.asm"
+INCLUDE "engine/math/get_square_root.asm"
 
 
 SECTION "bank4", ROMX
@@ -69,7 +70,6 @@ INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
 INCLUDE "engine/pokemon/correct_party_errors.asm"
-INCLUDE "engine/math/get_square_root.asm"
 
 
 SECTION "bank5", ROMX

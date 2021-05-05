@@ -814,7 +814,7 @@ JumpluffEvosAttacks:
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
-	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, DOUBLE_HIT, AMBIPOM
+	dbbww EVOLVE_LEVEL_WITH_MOVE, 1, DOUBLE_HIT, AMBIPOM
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, TAIL_WHIP

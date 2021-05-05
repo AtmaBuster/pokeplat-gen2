@@ -2009,6 +2009,8 @@ wItemsPocketCursor::    db
 wKeyItemsPocketCursor:: db
 wBallsPocketCursor::    db
 wTMHMPocketCursor::     db
+wBerryPocketCursor::    db
+wMedicinePocketCursor:: db
 
 wPCItemsScrollPosition::        db
 wScriptTableIndex::             db ; was unused byte
@@ -2016,6 +2018,8 @@ wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
 wTMHMPocketScrollPosition::     db
+wBerryPocketScrollPosition::    db
+wMedicinePocketScrollPosition:: db
 
 wSwitchMon::
 wSwitchItem::
@@ -2404,6 +2408,8 @@ wDudeNumItems:: db
 wDudeItems:: ds 2 * 4
 wDudeItemsEnd:: db
 
+wDudeNumBerries::
+wDudeNumMedicine::
 wDudeNumKeyItems:: db ; d292
 wDudeKeyItems:: ds 18
 wDudeKeyItemsEnd:: db
@@ -2559,8 +2565,6 @@ wObjectStructsEnd:: ; d6de
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 40
-
 wMapObjects:: ; d71e
 wPlayerObject:: map_object wPlayer
 wMap1Object::   map_object wMap1
@@ -2647,6 +2651,14 @@ wKeyItemsEnd::
 wNumBalls:: db ; d8d7
 wBalls:: ds MAX_BALLS * 2 + 1 ; d8d8
 wBallsEnd::
+
+wNumBerries:: db
+wBerries:: ds MAX_BERRIES * 2 + 1
+wBerriesEnd::
+
+wNumMedicine:: db
+wMedicine:: ds MAX_MEDICINE * 2 + 1
+wMedicineEnd::
 
 wNumPCItems:: db
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1 ; d8f1
@@ -2758,7 +2770,6 @@ wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
 	ds 49
 
-assert @==$d9f2
 ; fight counts
 wJackFightCount::    db ; d9f2
 wBeverlyFightCount:: db ; unused
