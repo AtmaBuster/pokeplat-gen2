@@ -53,7 +53,7 @@ DragonsDenB1F_ClairScene:
 	opentext
 	writetext ClairText_GiveDragonbreathDragonDen
 	buttonsound
-	giveitem TM_DRAGONBREATH
+	givetmhm TM_DRAGONBREATH
 	iffalse .BagFull
 	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
 	writetext NotifyReceiveDragonbreath

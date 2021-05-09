@@ -99,6 +99,16 @@ else
 endc
 ENDM
 
+tmhmball: MACRO
+;\1: item: from constants/item_constants.asm
+;\2: quantity: default 1
+if _NARG == 1
+	tmhmball \1, 1
+else
+	db \1, \2
+endc
+ENDM
+
 hiddenitem: MACRO
 ;\1: item: from constants/item_constants.asm
 ;\2: flag: an EVENT_* constant

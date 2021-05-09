@@ -267,6 +267,22 @@ UnknownText_0x1c474b::
 	line "is full…"
 	prompt
 
+_ReceivedTMHMText::
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer4
+	text " @"
+	text_ram wStringBuffer1
+	text "!"
+	done
+
+_PutTMHMInPocketText::
+	text "<PLAYER> put @"
+	text_ram wStringBuffer4
+	text ""
+	line "in the TM POCKET."
+	prompt
+
 UnknownText_0x1c475f::
 	text "I see all."
 	line "I know all…"

@@ -55,3 +55,55 @@ FindItemInBallScript::
 	ld a, $1
 	ld [wScriptVar], a
 	ret
+
+FindTMHMInBallScript::
+	callasm .TryReceiveItem
+	iffalse .no_room
+	disappear LAST_TALKED
+	opentext
+	writetext .text_found
+	playsound SFX_ITEM
+	pause 60
+	tmhmnotify
+	closetext
+	end
+
+.no_room
+	opentext
+	writetext .text_found
+	waitbutton
+	writetext .text_bag_full
+	waitbutton
+	closetext
+	end
+
+.text_found
+	; found @ !
+	text_far TextFoundTMHM
+	text_end
+
+.text_bag_full
+	; But   can't carry any more items.
+	text_far UnknownText_0x1c0a2c
+	text_end
+
+.TryReceiveItem:
+	xor a
+	ld [wScriptVar], a
+	ld a, [wItemBallItemID]
+	ld [wNamedObjectIndexBuffer], a
+	call GetTMHMName
+	ld de, wStringBuffer1
+	ld hl, wStringBuffer4
+	call CopyName2
+	predef GetTMHMMove
+	call GetMoveName
+	ld a, [wItemBallItemID]
+	ld [wCurItem], a
+	ld a, [wItemBallQuantity]
+	ld [wItemQuantityChangeBuffer], a
+	call ReceiveTMHM
+	ret nc
+	ld a, $1
+	ld [wScriptVar], a
+	ret

@@ -1093,3 +1093,30 @@ applymovementtable: MACRO
 	db \1 ; object id
 	dw \2 ; data
 ENDM
+
+	enum verbosegivetmhm_command ; $af
+verbosegivetmhm: MACRO
+if _NARG == 1
+	verbosegivetmhm \1, 1
+else
+	db verbosegivetmhm_command
+	db \1 ; item
+	db \2 ; quantity
+endc
+ENDM
+
+	enum givetmhm_command ; $b0
+givetmhm: MACRO
+if _NARG == 1
+	givetmhm \1, 1
+else
+	db givetmhm_command
+	db \1 ; item
+	db \2 ; quantity
+endc
+ENDM
+
+	enum tmhmnotify_command ; $b1
+tmhmnotify: MACRO
+	db tmhmnotify_command
+ENDM

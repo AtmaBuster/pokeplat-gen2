@@ -447,6 +447,9 @@ PlayerDepositItemMenu:
 	text_end
 
 .TryDepositItem:
+	ld a, [wCurPocket]
+	cp TM_HM_POCKET
+	jr z, .CantDepositTMHM
 	ld a, [wSpriteUpdatesEnabled]
 	push af
 	ld a, $0
@@ -482,6 +485,11 @@ PlayerDepositItemMenu:
 	ld [wBuffer2], a
 	pop af
 	ld [wBuffer1], a
+	ret
+
+.CantDepositTMHM:
+	ld hl, .CantDepositText
+	call PrintText
 	ret
 
 .DepositItem:
@@ -541,6 +549,10 @@ PlayerDepositItemMenu:
 
 .NoRoomText:
 	text_far _PlayersPCNoRoomDepositText
+	text_end
+
+.CantDepositText:
+	text_far _PlayersPCCantDepositText
 	text_end
 
 PlayerMailBoxMenu:

@@ -238,6 +238,9 @@ ScriptCommandTable:
 	dw Script_jumptextsign               ; ac
 	dw Script_settableindex              ; ad
 	dw Script_applymovementtable         ; ae
+	dw Script_verbosegivetmhm            ; af
+	dw Script_givetmhm                   ; b0
+	dw Script_tmhmnotify                 ; b1
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2950,3 +2953,72 @@ Script_applymovementtable:
 	ld [wScriptMode], a
 	call StopScript
 	ret
+
+Script_verbosegivetmhm:
+; script command 0xaf
+; parameters: item, quantity
+
+	call Script_givetmhm
+	ld a, [wCurItem]
+	ld [wTempTMHM], a
+	call GetTMHMName
+	ld de, wStringBuffer1
+	ld a, STRING_BUFFER_4
+	call CopyConvertedText
+	predef GetTMHMMove
+	call GetMoveName
+	ld b, BANK(GiveTMHMScript)
+	ld de, GiveTMHMScript
+	jp ScriptCall
+
+GiveTMHMScript:
+	writetext ReceivedTMHMText
+	iffalse .Full
+	waitsfx
+	specialsound
+	waitbutton
+	tmhmnotify
+	end
+
+.Full:
+	buttonsound
+	pocketisfull
+	end
+
+ReceivedTMHMText:
+	text_far _ReceivedTMHMText
+	text_end
+
+Script_givetmhm:
+; script command 0xb0
+; parameters: item, quantity
+
+	call GetScriptByte
+	cp ITEM_FROM_MEM
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wCurItem], a
+	call GetScriptByte
+	ld [wItemQuantityChangeBuffer], a
+	call ReceiveTMHM
+	jr nc, .full
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+.full
+	xor a
+	ld [wScriptVar], a
+	ret
+
+Script_tmhmnotify:
+; script command 0xb1
+
+	ld b, BANK(PutTMHMInPocketText)
+	ld hl, PutTMHMInPocketText
+	call MapTextbox
+	ret
+
+PutTMHMInPocketText:
+	text_far _PutTMHMInPocketText
+	text_end

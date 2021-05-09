@@ -380,6 +380,8 @@ WRAMX 1
 	"Party"
 WRAMX 2
 	"Pic Animations"
+	"Box Names"
+	"TMs and HMs"
 	align 8
 	"16-bit WRAM tables"
 WRAMX 3

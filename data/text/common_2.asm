@@ -523,6 +523,15 @@ UnknownText_0x1c0a05::
 	line "CUT!"
 	done
 
+TextFoundTMHM::
+	text "<PLAYER> found"
+	line "@"
+	text_ram wStringBuffer4
+	text " @"
+	text_ram wStringBuffer1
+	text "!"
+	done
+
 UnknownText_0x1c0a1c::
 	text "<PLAYER> found"
 	line "@"
@@ -1083,6 +1092,11 @@ _PlayersPCDepositItemsText::
 	line "@"
 	text_ram wStringBuffer2
 	text "(S)."
+	prompt
+
+_PlayersPCCantDepositText::
+	text "Can't deposit that"
+	line "item."
 	prompt
 
 _PlayersPCNoRoomDepositText::

@@ -200,6 +200,7 @@
 	const ITEM_C3      ; c0
 	const ITEM_FA      ; c1
 
+	const_def 1
 add_tm: MACRO
 if !DEF(TM01)
 TM01 EQU const_value
@@ -291,6 +292,7 @@ ENDM
 NUM_TM_HM_TUTOR EQU __enum__ + -1
 
 USE_SCRIPT_VAR EQU $00
+TM_FROM_MEM    EQU $fe
 ITEM_FROM_MEM  EQU $ff
 
 ; leftovers from red

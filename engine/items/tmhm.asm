@@ -14,7 +14,9 @@ TMHMPocket:
 	ld c, a
 	ld b, 0
 	add hl, bc
-	ld a, [hl]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
+;	ld a, [hl]
 	ld [wItemQuantityBuffer], a
 	call .ConvertItemToTMHMNumber
 	scf
@@ -280,7 +282,9 @@ TMHM_CheckHoveringOverCancel:
 	ld a, c
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, .okay
-	ld a, [hli]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
+	inc hl
 	and a
 	jr z, .loop
 	dec b
@@ -323,7 +327,9 @@ TMHM_ScrollPocket:
 	ld a, c
 	cp NUM_TMS + NUM_HMS + 1
 	jp nc, TMHM_JoypadLoop
-	ld a, [hli]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
+	inc hl
 	and a
 	jr z, .loop
 	dec b
@@ -349,7 +355,9 @@ TMHM_DisplayPocketItems:
 	ld a, c
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, .NotTMHM
-	ld a, [hli]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
+	inc hl
 	and a
 	jr z, .loop2
 	ld b, a
@@ -462,6 +470,10 @@ TMHM_GetCurrentPocketPosition:
 	ld b, a
 	inc b
 	ld c, 0
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
 .loop
 	inc c
 	ld a, [hli]
@@ -471,6 +483,8 @@ TMHM_GetCurrentPocketPosition:
 	jr nz, .loop
 	dec hl
 	dec c
+	pop af
+	ldh [rSVBK], a
 	ret
 
 Tutorial_TMHMPocket:
@@ -488,38 +502,40 @@ TMHM_PlaySFX_ReadText2:
 	pop de
 	ret
 
-Unreferenced_Function2cadf:
-	call ConvertCurItemIntoCurTMHM
-	call .CheckHaveRoomForTMHM
-	ld hl, .NoRoomText
-	jr nc, .print
-	ld hl, .ReceivedText
-.print
-	jp PrintText
-
-.NoRoomText:
-	; You have no room for any more @ S.
-	text_far UnknownText_0x1c03fa
-	text_end
-
-.ReceivedText:
-	; You received @ !
-	text_far UnknownText_0x1c0421
-	text_end
-
-.CheckHaveRoomForTMHM:
-	ld a, [wTempTMHM]
-	dec a
-	ld hl, wTMsHMs
-	ld b, 0
-	ld c, a
-	add hl, bc
-	ld a, [hl]
-	inc a
-	cp NUM_TMS * 2
-	ret nc
-	ld [hl], a
-	ret
+;Unreferenced_Function2cadf:
+;	call ConvertCurItemIntoCurTMHM
+;	call .CheckHaveRoomForTMHM
+;	ld hl, .NoRoomText
+;	jr nc, .print
+;	ld hl, .ReceivedText
+;.print
+;	jp PrintText
+;
+;.NoRoomText:
+;	; You have no room for any more @ S.
+;	text_far UnknownText_0x1c03fa
+;	text_end
+;
+;.ReceivedText:
+;	; You received @ !
+;	text_far UnknownText_0x1c0421
+;	text_end
+;
+;.CheckHaveRoomForTMHM:
+;	ld a, [wTempTMHM]
+;	dec a
+;	ld hl, wTMsHMs
+;	ld b, 0
+;	ld c, a
+;	add hl, bc
+;	ld a, BANK(wTMsHMs)
+;	call GetFarWRAMByte
+;;	ld a, [hl]
+;	inc a
+;	cp veM_TMS * 2
+;	ret nc
+;	ld [hl], a
+;	ret
 
 ConsumeTM:
 	call ConvertCurItemIntoCurTMHM
@@ -529,11 +545,16 @@ ConsumeTM:
 	ld b, 0
 	ld c, a
 	add hl, bc
-	ld a, [hl]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
+;	ld a, [hl]
 	and a
 	ret z
 	dec a
-	ld [hl], a
+	ld c, a
+	ld a, BANK(wTMsHMs)
+	call SetFarWRAMByte
+;	ld [hl], a
 	ret nz
 	ld a, [wTMHMPocketScrollPosition]
 	and a
@@ -543,6 +564,10 @@ ConsumeTM:
 	ret
 
 CountTMsHMs:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
 	ld b, 0
 	ld c, NUM_TMS + NUM_HMS
 	ld hl, wTMsHMs
@@ -554,6 +579,8 @@ CountTMsHMs:
 .skip
 	dec c
 	jr nz, .loop
+	pop af
+	ldh [rSVBK], a
 	ld a, b
 	ld [wTempTMHM], a
 	ret

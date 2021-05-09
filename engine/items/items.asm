@@ -449,16 +449,23 @@ CheckKeyItems:
 	scf
 	ret
 
-ReceiveTMHM:
+_ReceiveTMHM::
+	ld a, [wCurItem]
+	ld c, a
 	dec c
 	ld b, 0
 	ld hl, wTMsHMs
 	add hl, bc
 	ld a, [wItemQuantityChangeBuffer]
-	add [hl]
+	ld c, a
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
+	add c
 	cp 100
 	jr nc, .toomany
-	ld [hl], a
+	ld c, a
+	ld a, BANK(wTMsHMs)
+	call SetFarWRAMByte
 	scf
 	ret
 
@@ -466,17 +473,22 @@ ReceiveTMHM:
 	and a
 	ret
 
-TossTMHM:
+_TossTMHM::
+	ld a, [wCurItem]
+	ld c, a
 	dec c
 	ld b, 0
 	ld hl, wTMsHMs
 	add hl, bc
 	ld a, [wItemQuantityChangeBuffer]
 	ld b, a
-	ld a, [hl]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
 	sub b
 	jr c, .nope
-	ld [hl], a
+	ld c, a
+	ld a, BANK(wTMsHMs)
+	call SetFarWRAMByte
 	ld [wItemQuantityBuffer], a
 	jr nz, .yup
 	ld a, [wTMHMPocketScrollPosition]
@@ -495,10 +507,11 @@ TossTMHM:
 
 CheckTMHM:
 	dec c
-	ld b, $0
+	ld b, 0
 	ld hl, wTMsHMs
 	add hl, bc
-	ld a, [hl]
+	ld a, BANK(wTMsHMs)
+	call GetFarWRAMByte
 	and a
 	ret z
 	scf

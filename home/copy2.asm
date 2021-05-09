@@ -129,3 +129,15 @@ GetFarWRAMWord::
 	pop af
 	ldh [rSVBK], a
 	ret
+
+SetFarWRAMByte::
+; sets a:hl to c
+	ldh [hBuffer], a
+	ldh a, [rSVBK]
+	push af
+	ldh a, [hBuffer]
+	ldh [rSVBK], a
+	ld [hl], c
+	pop af
+	ldh [rSVBK], a
+	ret

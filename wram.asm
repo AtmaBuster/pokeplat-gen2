@@ -1748,6 +1748,7 @@ wMartItem7BCD:: ds 3
 wMartItem8BCD:: ds 3
 wMartItem9BCD:: ds 3
 wMartItem10BCD:: ds 3
+wMartSellingTM:: db
 
 NEXTU ; d002
 ; town map data
@@ -2637,9 +2638,6 @@ wBadges::
 wJohtoBadges:: flag_array NUM_JOHTO_BADGES ; d857
 wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 
-wTMsHMs:: ds NUM_TMS + NUM_HMS ; d859
-wTMsHMsEnd::
-
 wNumItems:: db ; d892
 wItems:: ds MAX_ITEMS * 2 + 1 ; d893
 wItemsEnd::
@@ -2800,8 +2798,6 @@ wKenjiFightCount::   db ; unused
 wParryFightCount::   db
 wErinFightCount::    db
 ; da0e
-
-	ds 100
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c
@@ -3053,6 +3049,10 @@ SECTION "16-bit WRAM tables", WRAMX
 SECTION "Box Names", WRAMX
 ; 8 chars + $50
 wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES ; db75
+
+SECTION "TMs and HMs", WRAMX
+wTMsHMs:: ds NUM_TMS + NUM_HMS
+wTMsHMsEnd::
 
 
 SECTION "Battle Tower RAM", WRAMX

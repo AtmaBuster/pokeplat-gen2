@@ -574,8 +574,8 @@ TryObjectEvent:
 	dbw OBJECTTYPE_SCRIPT, .script
 	dbw OBJECTTYPE_ITEMBALL, .itemball
 	dbw OBJECTTYPE_TRAINER, .trainer
-	; the remaining four are dummy events
-	dbw OBJECTTYPE_3, .three
+	dbw OBJECTTYPE_TMHMBALL, .tmhmball
+	; the remaining three are dummy events
 	dbw OBJECTTYPE_4, .four
 	dbw OBJECTTYPE_5, .five
 	dbw OBJECTTYPE_6, .six
@@ -602,6 +602,20 @@ TryObjectEvent:
 	ld bc, wItemBallDataEnd - wItemBallData
 	call FarCopyBytes
 	ld a, PLAYEREVENT_ITEMBALL
+	scf
+	ret
+
+.tmhmball
+	ld hl, MAPOBJECT_SCRIPT_POINTER
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetMapScriptsBank
+	ld de, wItemBallData
+	ld bc, wItemBallDataEnd - wItemBallData
+	call FarCopyBytes
+	ld a, PLAYEREVENT_TMHMBALL
 	scf
 	ret
 
@@ -1003,6 +1017,7 @@ PlayerEventScriptPointers:
 	dba Script_OverworldWhiteout ; PLAYEREVENT_WHITEOUT
 	dba HatchEggScript           ; PLAYEREVENT_HATCH
 	dba ChangeDirectionScript    ; PLAYEREVENT_JOYCHANGEFACING
+	dba FindTMHMInBallScript     ; PLAYEREVENT_TMHMBALL
 	dba Invalid_0x96c2d          ; (NUM_PLAYER_EVENTS)
 
 Invalid_0x96c2d:

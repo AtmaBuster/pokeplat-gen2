@@ -3,16 +3,16 @@
 	const PACKSTATE_INITGFX            ;  0
 	const PACKSTATE_INITITEMSPOCKET    ;  1
 	const PACKSTATE_ITEMSPOCKETMENU    ;  2
-	const PACKSTATE_INITBALLSPOCKET    ;  3
-	const PACKSTATE_BALLSPOCKETMENU    ;  4
-	const PACKSTATE_INITKEYITEMSPOCKET ;  5
-	const PACKSTATE_KEYITEMSPOCKETMENU ;  6
-	const PACKSTATE_INITTMHMPOCKET     ;  7
-	const PACKSTATE_TMHMPOCKETMENU     ;  8
-	const PACKSTATE_INITBERRYPOCKET    ;  9
-	const PACKSTATE_BERRYPOCKETMENU    ; 10
-	const PACKSTATE_INITMEDICINEPOCKET ; 11
-	const PACKSTATE_MEDICINEPOCKETMENU ; 12
+	const PACKSTATE_INITMEDICINEPOCKET ;  3
+	const PACKSTATE_MEDICINEPOCKETMENU ;  4
+	const PACKSTATE_INITBALLSPOCKET    ;  5
+	const PACKSTATE_BALLSPOCKETMENU    ;  6
+	const PACKSTATE_INITBERRYPOCKET    ;  7
+	const PACKSTATE_BERRYPOCKETMENU    ;  8
+	const PACKSTATE_INITKEYITEMSPOCKET ;  9
+	const PACKSTATE_KEYITEMSPOCKETMENU ; 10
+	const PACKSTATE_INITTMHMPOCKET     ; 11
+	const PACKSTATE_TMHMPOCKETMENU     ; 12
 	const PACKSTATE_QUITNOSCRIPT       ; 13
 	const PACKSTATE_QUITRUNSCRIPT      ; 14
 
@@ -47,16 +47,16 @@ Pack:
 	dw .InitGFX            ;  0
 	dw .InitItemsPocket    ;  1
 	dw .ItemsPocketMenu    ;  2
-	dw .InitBallsPocket    ;  3
-	dw .BallsPocketMenu    ;  4
-	dw .InitKeyItemsPocket ;  5
-	dw .KeyItemsPocketMenu ;  6
-	dw .InitTMHMPocket     ;  7
-	dw .TMHMPocketMenu     ;  8
-	dw .InitBerryPocket    ;  9
-	dw .BerryPocketMenu    ; 10
-	dw .InitMedicinePocket ; 11
-	dw .MedicinePocketMenu ; 12
+	dw .InitMedicinePocket ;  3
+	dw .MedicinePocketMenu ;  4
+	dw .InitBallsPocket    ;  5
+	dw .BallsPocketMenu    ;  6
+	dw .InitBerryPocket    ;  7
+	dw .BerryPocketMenu    ;  8
+	dw .InitKeyItemsPocket ;  9
+	dw .KeyItemsPocketMenu ; 10
+	dw .InitTMHMPocket     ; 11
+	dw .TMHMPocketMenu     ; 12
 	dw Pack_QuitNoScript   ; 13
 	dw Pack_QuitRunScript  ; 14
 
@@ -717,16 +717,16 @@ BattlePack:
 	dw .InitGFX            ;  0
 	dw .InitItemsPocket    ;  1
 	dw .ItemsPocketMenu    ;  2
-	dw .InitBallsPocket    ;  3
-	dw .BallsPocketMenu    ;  4
-	dw .InitKeyItemsPocket ;  5
-	dw .KeyItemsPocketMenu ;  6
-	dw .InitTMHMPocket     ;  7
-	dw .TMHMPocketMenu     ;  8
-	dw .InitBerryPocket    ;  9
-	dw .BerryPocketMenu    ; 10
-	dw .InitMedicinePocket ; 11
-	dw .MedicinePocketMenu ; 12
+	dw .InitMedicinePocket ;  3
+	dw .MedicinePocketMenu ;  4
+	dw .InitBallsPocket    ;  5
+	dw .BallsPocketMenu    ;  6
+	dw .InitBerryPocket    ;  7
+	dw .BerryPocketMenu    ;  8
+	dw .InitKeyItemsPocket ;  9
+	dw .KeyItemsPocketMenu ; 10
+	dw .InitTMHMPocket     ; 11
+	dw .TMHMPocketMenu     ; 12
 	dw Pack_QuitNoScript   ; 13
 	dw Pack_QuitRunScript  ; 14
 

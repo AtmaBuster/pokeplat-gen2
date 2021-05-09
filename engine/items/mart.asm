@@ -22,8 +22,17 @@ OpenMartDialog::
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw TMShop
+
+TMShop:
+	ld a, 1
+	ld [wMartSellingTM], a
+	jr ShopDialog
 
 MartDialog:
+	xor a
+	ld [wMartSellingTM], a
+ShopDialog:
 	ld a, MARTTYPE_STANDARD
 	ld [wMartType], a
 	xor a ; STANDARDMART_HOWMAYIHELPYOU
@@ -457,8 +466,16 @@ BuyMenuLoop:
 	ld a, 3 ; useless load
 	call CompareMoney
 	jr c, .insufficient_funds
+	ld a, [wMartSellingTM]
+	and a
+	jr z, .regular_item
+	call ReceiveTMHM
+	jr .join
+
+.regular_item
 	ld hl, wNumItems
 	call ReceiveItem
+.join
 	jr nc, .insufficient_bag_space
 	ld a, [wMartItemID]
 	ld e, a

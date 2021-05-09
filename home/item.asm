@@ -31,6 +31,25 @@ TossItem::
 	pop hl
 	ret
 
+TossTMHM::
+	push hl
+	push de
+	push bc
+	ldh a, [hROMBank]
+	push af
+	ld a, BANK(_TossTMHM)
+	rst Bankswitch
+
+	call _TossTMHM
+
+	pop bc
+	ld a, b
+	rst Bankswitch
+	pop bc
+	pop de
+	pop hl
+	ret
+
 ReceiveItem::
 	push bc
 	ldh a, [hROMBank]
@@ -41,6 +60,25 @@ ReceiveItem::
 	push de
 
 	call _ReceiveItem
+
+	pop de
+	pop hl
+	pop bc
+	ld a, b
+	rst Bankswitch
+	pop bc
+	ret
+
+ReceiveTMHM::
+	push bc
+	ldh a, [hROMBank]
+	push af
+	ld a, BANK(_ReceiveTMHM)
+	rst Bankswitch
+	push hl
+	push de
+
+	call _ReceiveTMHM
 
 	pop de
 	pop hl

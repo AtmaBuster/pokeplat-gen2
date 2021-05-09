@@ -450,6 +450,16 @@ SavePlayerData:
 	ld de, sCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
+	ld hl, wTMsHMs
+	ld de, sTMsHMs
+	ld bc, wTMsHMsEnd - wTMsHMs
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
 	jp CloseSRAM
 
 SavePokemonData:
@@ -571,6 +581,16 @@ SaveBackupPlayerData:
 	ld de, sBackupCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
+	ld hl, wTMsHMs
+	ld de, sBackupTMsHMs
+	ld bc, wTMsHMsEnd - wTMsHMs
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
 	call CloseSRAM
 	ret
 
@@ -781,6 +801,16 @@ LoadPlayerData:
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
+	ld hl, sTMsHMs
+	ld de, wTMsHMs
+	ld bc, wTMsHMsEnd - wTMsHMs
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
 	call CloseSRAM
 	ld a, BANK(sBattleTowerChallengeState)
 	call GetSRAMBank
@@ -899,6 +929,16 @@ LoadBackupPlayerData:
 	ld de, wCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
+	ld hl, sBackupTMsHMs
+	ld de, wTMsHMs
+	ld bc, wTMsHMsEnd - wTMsHMs
+	call CopyBytes
+	pop af
+	ldh [rSVBK], a
 	call CloseSRAM
 	ret
 

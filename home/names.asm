@@ -158,16 +158,16 @@ GetItemName::
 	push bc
 	ld a, [wNamedObjectIndexBuffer]
 
-	cp TM01
-	jr nc, .TM
+;	cp TM01
+;	jr nc, .TM
 
 	ld [wCurSpecies], a
 	ld a, ITEM_NAME
 	ld [wNamedObjectTypeBuffer], a
 	call GetName
-	jr .Copied
-.TM:
-	call GetTMHMName
+;	jr .Copied
+;.TM:
+;	call GetTMHMName
 .Copied:
 	ld de, wStringBuffer1
 	pop bc

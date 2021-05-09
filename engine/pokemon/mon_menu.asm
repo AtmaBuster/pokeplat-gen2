@@ -16,15 +16,23 @@ HasNoItems:
 	ret nz
 	ld hl, wTMsHMs
 	ld b, NUM_TMS + NUM_HMS
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTMsHMs)
+	ldh [rSVBK], a
 .loop
 	ld a, [hli]
 	and a
 	jr nz, .done
 	dec b
 	jr nz, .loop
+	pop af
+	ldh [rSVBK], a
 	scf
 	ret
 .done
+	pop af
+	ldh [rSVBK], a
 	and a
 	ret
 
