@@ -32,6 +32,11 @@ DoPlayerMovement::
 	ret
 
 .TranslateIntoMovement:
+IF DEF(_DEBUG)
+	ld a, [wCurInput]
+	and B_BUTTON
+	jr nz, .debug_move
+ENDC
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
 	jr z, .Normal
@@ -43,6 +48,20 @@ DoPlayerMovement::
 	jr z, .Normal
 	cp PLAYER_SKATE
 	jr z, .Ice
+
+IF DEF(_DEBUG)
+.debug_move
+	call .GetAction
+	ld a, [wWalkingTile]
+	cp -1
+	ld a, STEP_BACK_LEDGE
+	jr z, .debug_hop_back
+	ld a, STEP_BIKE
+.debug_hop_back
+	call .DoStep
+	scf
+	ret
+ENDC
 
 .Normal:
 	call .CheckForced

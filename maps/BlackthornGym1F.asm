@@ -68,7 +68,6 @@ BlackthornGymClairScript:
 	buttonsound
 	givetmhm TM_DRAGONBREATH
 	iffalse .BagFull
-	getitemname STRING_BUFFER_3, TM_DRAGONBREATH
 	writetext BlackthornGymText_ReceivedTM24
 	playsound SFX_ITEM
 	waitsfx

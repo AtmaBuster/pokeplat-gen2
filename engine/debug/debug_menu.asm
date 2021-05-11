@@ -94,7 +94,7 @@ DebugMenu::
 	db "Fill Dex@"
 	db "Teach Move@"
 	db "Give #@"
-	db "NULL@"
+	db "Max ¥@"
 
 .MenuItems
 	db 8
@@ -109,7 +109,7 @@ DebugMenu::
 	dw Debug_FillDex
 	dw Debug_TeachMove
 	dw Debug_GivePoke
-	dw NULL
+	dw Debug_MaxMoney
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -844,4 +844,19 @@ Debug_GivePoke:
 	ld de, wStringBuffer1
 	hlcoord 1, 6
 	call PlaceString
+	ret
+
+Debug_MaxMoney:
+	ld hl, wMoney
+	ld a, HIGH(MAX_MONEY >> 8)
+	ld [hli], a
+	ld a, LOW(MAX_MONEY >> 8)
+	ld [hli], a
+	ld a, LOW(MAX_MONEY)
+	ld [hl], a
+	ld hl, wCoins
+	ld a, HIGH(MAX_COINS)
+	ld [hli], a
+	ld a, LOW(MAX_COINS)
+	ld [hl], a
 	ret

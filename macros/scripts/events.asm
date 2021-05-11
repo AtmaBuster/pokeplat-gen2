@@ -1120,3 +1120,10 @@ ENDM
 tmhmnotify: MACRO
 	db tmhmnotify_command
 ENDM
+
+	enum gettmhmname_command ; $b2
+gettmhmname: MACRO
+	db gettmhmname_command
+	db \2 ; item
+	db \1 ; string_buffer
+ENDM

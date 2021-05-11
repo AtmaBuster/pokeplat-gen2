@@ -241,6 +241,7 @@ ScriptCommandTable:
 	dw Script_verbosegivetmhm            ; af
 	dw Script_givetmhm                   ; b0
 	dw Script_tmhmnotify                 ; b1
+	dw Script_gettmhmname                ; b2
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3022,3 +3023,17 @@ Script_tmhmnotify:
 PutTMHMInPocketText:
 	text_far _PutTMHMInPocketText
 	text_end
+
+Script_gettmhmname:
+; script command 0xb2
+; parameters: string_buffer, item_id (0 aka USE_SCRIPT_VAR to use wScriptVar)
+
+	call GetScriptByte
+	and a ; USE_SCRIPT_VAR
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wNamedObjectIndexBuffer], a
+	call GetTMHMName
+	ld de, wStringBuffer1
+	jp GetStringBuffer
