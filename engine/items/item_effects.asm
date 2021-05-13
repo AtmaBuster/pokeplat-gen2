@@ -192,6 +192,29 @@ ItemEffects:
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
+	dw PokeBallEffect
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -318,17 +341,12 @@ PokeBallEffect:
 	jr nz, .statuscheck
 	ld a, 1
 .statuscheck
-; This routine is buggy. It was intended that SLP and FRZ provide a higher
-; catch rate than BRN/PSN/PAR, which in turn provide a higher catch rate than
-; no status effect at all. But instead, it makes BRN/PSN/PAR provide no
-; benefit.
-; Uncomment the line below to fix this.
 	ld b, a
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
 	ld c, 10
 	jr nz, .addstatus
-	; ld a, [wEnemyMonStatus]
+	ld a, [wEnemyMonStatus]
 	and a
 	ld c, 5
 	jr nz, .addstatus
@@ -525,7 +543,7 @@ PokeBallEffect:
 
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
-	jr z, .SendToPC
+	jp z, .SendToPC
 
 	xor a ; PARTYMON
 	ld [wMonType], a
@@ -536,9 +554,14 @@ PokeBallEffect:
 	farcall SetCaughtData
 
 	ld a, [wCurItem]
+	cp HEAL_BALL
+	jr z, .DoHealBallEffect
 	cp FRIEND_BALL
+	jr z, .DoFriendBallEffect
+	cp LUXURY_BALL
 	jr nz, .SkipPartyMonFriendBall
 
+.DoFriendBallEffect:
 	ld a, [wPartyCount]
 	dec a
 	ld hl, wPartyMon1Happiness
@@ -547,6 +570,13 @@ PokeBallEffect:
 
 	ld a, FRIEND_BALL_HAPPINESS
 	ld [hl], a
+	jr .SkipPartyMonFriendBall
+
+.DoHealBallEffect:
+	ld a, [wPartyCount]
+	dec a
+	ld [wCurPartyMon], a
+	farcall HealPartyMon
 
 .SkipPartyMonFriendBall:
 	ld hl, Text_AskNicknameNewlyCaughtMon
@@ -710,7 +740,196 @@ BallMultiplierFunctionTable:
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw PARK_BALL,   ParkBallMultiplier
+	dbw NET_BALL,    NetBallMultiplier
+	dbw DIVE_BALL,   DiveBallMultiplier
+	dbw NEST_BALL,   NestBallMultiplier
+	dbw REPEAT_BALL, RepeatBallMultiplier
+	dbw TIMER_BALL,  TimerBallMultiplier
+	dbw DUSK_BALL,   DuskBallMultiplier
+	dbw QUICK_BALL,  QuickBallMultiplier
 	db -1 ; end
+
+DiveBallMultiplier:
+	ld a, [wBattleType]
+	cp BATTLETYPE_FISH
+	jr z, .ok
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .ok
+	cp PLAYER_SURF_PIKA
+	ret nz
+.ok
+	ld a, b
+	add b
+	jr c, .overflow
+	add b
+	jr c, .overflow
+	ld b, a
+	ret
+
+.overflow
+	ld b, $ff
+	ret
+
+DuskBallMultiplier:
+	ld a, [wEnvironment]
+	cp CAVE
+	jr z, .ok
+	ld a, [wTimeOfDay]
+	cp NITE
+	ret nz
+.ok
+	ld a, b
+	add b
+	jr c, .overflow
+	add b
+	jr c, .overflow
+	ld b, a
+	ret
+
+.overflow
+	ld b, $ff
+	ret
+
+NetBallMultiplier:
+	ld hl, wEnemyMonType
+	ld [hli], a
+	cp BUG
+	jr z, .ok
+	cp WATER
+	jr z, .ok
+	ld [hl], a
+	cp BUG
+	jr z, .ok
+	cp WATER
+	ret nz
+.ok
+	ld a, b
+	add b
+	jr c, .overflow
+	add b
+	jr c, .overflow
+	ld b, a
+	ret
+
+.overflow
+	ld b, $ff
+	ret
+
+NestBallMultiplier:
+	ld a, [wEnemyMonLevel]
+	cp 31
+	ret nc
+	ld c, 3
+	cp 26
+	jr nc, .done
+	inc c
+	cp 21
+	jr nc, .done
+	inc c
+	cp 16
+	jr nc, .done
+	inc c
+	cp 11
+	jr nc, .done
+	inc c
+	cp 6
+	jr nc, .done
+	inc c
+.done
+	dec c
+	srl b
+	jr nc, .no_round
+	inc b
+.no_round
+	ld a, b
+.loop
+	add b
+	jr c, .overflow
+	dec c
+	jr nz, .loop
+	ld b, a
+	ret
+
+.overflow
+	ld b, $ff
+	ret
+
+RepeatBallMultiplier:
+	ld a, [wTempEnemyMonSpecies]
+	push bc
+	call CheckCaughtMon
+	pop bc
+	ret z
+	ld a, b
+	add b
+	jr c, .overflow
+	add b
+	jr c, .overflow
+	ld b, a
+	ret
+
+.overflow
+	ld b, $ff
+	ret
+
+QuickBallMultiplier:
+; multiply catch rate by 4 if first turn of battle
+	ld a, [wBattleTurns]
+	and a
+	ret nz
+	sla b
+	jr c, .overflow
+	sla b
+	ret nc
+.overflow
+	ld b, $ff
+	ret
+
+TimerBallMultiplier:
+; multiply catch rate by 4x if 30 turns taken
+; else multiply by 3.5x if 25 turns taken
+; else multiply by 3.0x if 20 turns taken
+; else multiply by 2.5x if 15 turns taken
+; else multiply by 2.0x if 10 turns taken
+; else multiply by 1.5x if 5 turns taken
+	ld a, [wBattleTurns]
+	ld c, 8
+	cp 30
+	jr nc, .done
+	dec c
+	cp 25
+	jr nc, .done
+	dec c
+	cp 20
+	jr nc, .done
+	dec c
+	cp 15
+	jr nc, .done
+	dec c
+	cp 10
+	jr nc, .done
+	dec c
+	cp 5
+	ret c
+.done
+	dec c
+	srl b
+	jr nc, .no_round
+	inc b
+.no_round
+	ld a, b
+.loop
+	add b
+	jr c, .overflow
+	dec c
+	jr nz, .loop
+	ld b, a
+	ret
+
+.overflow
+	ld b, $ff
+	ret
 
 UltraBallMultiplier:
 ; multiply catch rate by 2
@@ -895,9 +1114,7 @@ MoonBallMultiplier:
 	ret
 
 LoveBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 8 if mons are of same species, different sex
-; Reality: multiply catch rate by 8 if mons are of same species, same sex
+; multiply catch rate by 8 if mons are of same species, different sex
 
 	; does species match?
 	ld a, [wTempEnemyMonSpecies]
@@ -940,7 +1157,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret nz ; for the intended effect, this should be "ret z"
+	ret z ; for the intended effect, this should be "ret z"
 
 	sla b
 	jr c, .max

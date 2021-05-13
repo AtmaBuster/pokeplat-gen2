@@ -609,7 +609,7 @@ wEnemyEvaLevel:: db ; c6da
 
 wEnemyTurnsTaken:: db ; c6dc
 wPlayerTurnsTaken:: db ; c6dd
-	ds 1
+wBattleTurns:: db
 
 wPlayerSubstituteHP:: db ; c6df
 wEnemySubstituteHP:: db ; c6e0

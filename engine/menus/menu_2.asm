@@ -1,3 +1,20 @@
+PlaceMartItemName:
+	push de
+	ld a, [wMartSellingTM]
+	and a
+	ld a, [wMenuSelection]
+	ld [wNamedObjectIndexBuffer], a
+	jr z, .regular_mart
+	call GetTMHMName
+	pop hl
+	ld de, wStringBuffer1
+	jp PlaceString
+
+.regular_mart
+	call GetItemName
+	pop hl
+	jp PlaceString
+
 PlaceMenuItemName:
 	push de
 	ld a, [wMenuSelection]

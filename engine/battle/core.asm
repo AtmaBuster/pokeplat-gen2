@@ -223,6 +223,8 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
+	ld hl, wBattleTurns
+	inc [hl]
 	jp .loop
 
 .quit

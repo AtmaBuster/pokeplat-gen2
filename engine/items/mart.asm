@@ -256,7 +256,17 @@ GetMartItemPrice:
 ; Return the price of item a in BCD at hl and in tiles at wStringBuffer1.
 	push hl
 	ld [wCurItem], a
+
+	ld a, [wMartSellingTM]
+	and a
+	jr z, .regular_mart
+	farcall GetTMHMPrice
+	jr .continue
+
+.regular_mart
 	farcall GetItemPrice
+.continue
+
 	pop hl
 
 GetMartPrice:
@@ -523,8 +533,22 @@ StandardMartAskPurchaseQuantity:
 	call ExitMenu
 	ret
 
+MartItemName:
+	ld a, [wCurItem]
+	ld [wNamedObjectIndexBuffer], a
+	ld a, [wMartSellingTM]
+	and a
+	jr z, .regular_mart
+	call GetTMHMName
+	ld de, wStringBuffer1
+	jp CopyName1
+
+.regular_mart
+	call GetItemName
+	jp CopyName1
+
 MartConfirmPurchase:
-	predef PartyMonItemName
+	call MartItemName
 	ld a, MARTTEXT_COSTS_THIS_MUCH
 	call LoadBuyMenuText
 	call YesNoBox
@@ -619,9 +643,9 @@ MenuHeader_Buy:
 	db 4, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dbw 0, wCurMart
-	dba PlaceMenuItemName
+	dba PlaceMartItemName
 	dba .PrintBCDPrices
-	dba UpdateItemDescription
+	dba UpdateItemDescriptionMart
 
 .PrintBCDPrices:
 	ld a, [wScrollingMenuCursorPosition]
@@ -747,6 +771,10 @@ Text_Pharmacist_ComeAgain:
 	text_end
 
 SellMenu:
+	ld a, [wMartSellingTM]
+	push af
+	xor a
+	ld [wMartSellingTM], a
 	call DisableSpriteUpdates
 	farcall DepositSellInitPackBuffers
 .loop
@@ -758,6 +786,8 @@ SellMenu:
 	jr .loop
 
 .quit
+	pop af
+	ld [wMartSellingTM], a
 	call ReturnToMapWithSpeechTextbox
 	and a
 	ret
@@ -774,6 +804,9 @@ SellMenu:
 	text_end
 
 .TryToSellItem:
+	ld a, [wCurPocket]
+	cp TM_HM_POCKET
+	jr z, .cant_sell_tm
 	farcall CheckItemMenu
 	ld a, [wItemAttributeParamBuffer]
 	ld hl, .dw
@@ -790,6 +823,12 @@ SellMenu:
 	dw .try_sell
 
 .cant_buy
+	ret
+
+.cant_sell_tm
+	ld hl, TextMart_CantBuyFromYou
+	call PrintText
+	and a
 	ret
 
 .try_sell
@@ -822,7 +861,7 @@ SellMenu:
 	ld a, [wMartItemID]
 	ld hl, wNumItems
 	call TossItem
-	predef PartyMonItemName
+	call MartItemName
 	hlcoord 1, 14
 	lb bc, 3, 18
 	call ClearBox

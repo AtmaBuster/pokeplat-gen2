@@ -193,15 +193,15 @@ ItemDescriptions:
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
+	dw NetBallDesc
+	dw DiveBallDesc
+	dw NestBallDesc
+	dw RepeatBallDesc
+	dw TimerBallDesc
+	dw LuxuryBallDesc
+	dw DuskBallDesc
+	dw HealBallDesc
+	dw QuickBallDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
@@ -912,3 +912,43 @@ MusicMailDesc:
 MewMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
+
+NetBallDesc:
+	db   "A BALL for WATER"
+	next "and BUG #MON.@"
+
+DiveBallDesc:
+	db   "A BALL for aquatic"
+	next "#MON.@"
+
+NestBallDesc:
+	db   "A BALL for weak,"
+	next "low-level #MON.@"
+
+RepeatBallDesc:
+	db   "A BALL for already"
+	next "caught #MON.@"
+
+TimerBallDesc:
+	db   "A BALL that works"
+	next "better over time.@"
+
+LuxuryBallDesc:
+	db   "A BALL that helps"
+	next "foster friendship.@"
+
+DuskBallDesc:
+	db   "A BALL that works"
+	next "best in the dark.@"
+
+HealBallDesc:
+	db   "A BALL that heals"
+	next "caught #MON.@"
+
+QuickBallDesc:
+	db   "A BALL that works"
+	next "best on turn one.@"
+
+PlaceholderDesc:
+	db "PLACEHOLDER"
+	next "PLACEHOLDER@"

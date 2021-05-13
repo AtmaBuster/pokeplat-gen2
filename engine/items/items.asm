@@ -619,3 +619,22 @@ GetItemPrice:
 	pop bc
 	pop hl
 	ret
+
+GetTMHMPrice:
+; Return the price of the TM/HM numbered wCurItem in de.
+	push hl
+	push bc
+	ld a, [wCurItem]
+	dec a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	ld bc, TMHMPrices
+	add hl, bc
+	ld a, BANK(TMHMPrices)
+	call GetFarHalfword
+	ld d, h
+	ld e, l
+	pop bc
+	pop hl
+	ret

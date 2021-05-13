@@ -5,7 +5,15 @@ SelectQuantityToToss:
 	ret
 
 SelectQuantityToBuy:
+	ld a, [wMartSellingTM]
+	and a
+	jr z, .regular_mart
+	farcall GetTMHMPrice
+	jr .continue
+
+.regular_mart
 	farcall GetItemPrice
+.continue
 RooftopSale_SelectQuantityToBuy:
 	ld a, d
 	ld [wBuffer1], a
@@ -17,7 +25,15 @@ RooftopSale_SelectQuantityToBuy:
 	ret
 
 SelectQuantityToSell:
+	ld a, [wCurPocket]
+	cp TM_HM_POCKET
+	jr z, .selling_tmhm
 	farcall GetItemPrice
+	jr .continue
+
+.selling_tmhm
+	farcall GetTMHMPrice
+.continue
 	ld a, d
 	ld [wBuffer1], a
 	ld a, e

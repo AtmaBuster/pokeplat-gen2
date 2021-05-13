@@ -199,6 +199,15 @@
 	const ITEM_DC      ; bf
 	const ITEM_C3      ; c0
 	const ITEM_FA      ; c1
+	const NET_BALL
+	const DIVE_BALL
+	const NEST_BALL
+	const REPEAT_BALL
+	const TIMER_BALL
+	const LUXURY_BALL
+	const DUSK_BALL
+	const HEAL_BALL
+	const QUICK_BALL
 
 	const_def 1
 add_tm: MACRO
