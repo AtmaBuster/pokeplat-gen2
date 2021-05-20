@@ -199,15 +199,43 @@
 	const ITEM_DC      ; bf
 	const ITEM_C3      ; c0
 	const ITEM_FA      ; c1
-	const NET_BALL
-	const DIVE_BALL
-	const NEST_BALL
-	const REPEAT_BALL
-	const TIMER_BALL
-	const LUXURY_BALL
-	const DUSK_BALL
-	const HEAL_BALL
-	const QUICK_BALL
+	const NET_BALL     ; c2
+	const DIVE_BALL    ; c3
+	const NEST_BALL    ; c4
+	const REPEAT_BALL  ; c5
+	const TIMER_BALL   ; c6
+	const LUXURY_BALL  ; c7
+	const DUSK_BALL    ; c8
+	const HEAL_BALL    ; c9
+	const QUICK_BALL   ; ca
+	const SHINY_STONE  ; cb
+	const DUSK_STONE   ; cc
+	const DAWN_STONE   ; cd
+	const OVAL_STONE   ; ce
+	const PROTECTOR    ; cf
+	const ELECTRIZER   ; d0
+	const MAGMARIZER   ; d1
+	const DUBIOUS_DISC ; d2
+	const REAPER_CLOTH ; d3
+	const RAZOR_CLAW   ; d4
+	const RAZOR_FANG   ; d5
+	const ODD_KEYSTONE ; d6
+	const DRACO_PLATE  ; d7
+	const DREAD_PLATE  ; d8
+	const EARTH_PLATE  ; d9
+	const FIST_PLATE   ; da
+	const FLAME_PLATE  ; db
+	const ICICLE_PLATE ; dc
+	const INSECT_PLATE ; dd
+	const IRON_PLATE   ; de
+	const MEADOW_PLATE ; df
+	const MIND_PLATE   ; e0
+	const SKY_PLATE    ; e1
+	const SPLASH_PLATE ; e2
+	const SPOOKY_PLATE ; e3
+	const STONE_PLATE  ; e4
+	const TOXIC_PLATE  ; e5
+	const ZAP_PLATE    ; e6
 
 	const_def 1
 add_tm: MACRO

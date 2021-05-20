@@ -215,6 +215,9 @@ ItemEffects:
 	dw PokeBallEffect
 	dw PokeBallEffect
 	dw PokeBallEffect
+	dw EvoStoneEffect
+	dw EvoStoneEffect
+	dw EvoStoneEffect
 
 PokeBallEffect:
 	ld a, [wBattleMode]

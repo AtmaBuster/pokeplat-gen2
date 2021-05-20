@@ -1009,8 +1009,7 @@ MimeJrEvosAttacks:
 	db 0 ; no more level-up moves
 
 HappinyEvosAttacks:
-	;dbbbw EVOLVE_LEVEL_WITH_ITEM_DAY, 1, OVAL_STONE, CHANSEY
-	dbbbw EVOLVE_LEVEL_WITH_ITEM_DAY, 1, POTION, CHANSEY
+	dbbbw EVOLVE_LEVEL_WITH_ITEM_DAY, 1, OVAL_STONE, CHANSEY
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, CHARM
