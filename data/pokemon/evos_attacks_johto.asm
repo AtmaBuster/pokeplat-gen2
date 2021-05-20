@@ -553,8 +553,7 @@ TogepiEvosAttacks:
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
-	;dbbw EVOLVE_ITEM, SHINY_STONE, TOGEKISS
-	dbbw EVOLVE_ITEM, FIRE_STONE, TOGEKISS
+	dbbw EVOLVE_ITEM, SHINY_STONE, TOGEKISS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, METRONOME
@@ -962,8 +961,7 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
-	;dbbw EVOLVE_ITEM, DUSK_STONE, HONCHKROW
-	dbbw EVOLVE_ITEM, FIRE_STONE, HONCHKROW
+	dbbw EVOLVE_ITEM, DUSK_STONE, HONCHKROW
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, ASTONISH
@@ -1000,8 +998,7 @@ SlowkingEvosAttacks:
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
-	;dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
-	dbbw EVOLVE_ITEM, FIRE_STONE, MISMAGIUS
+	dbbw EVOLVE_ITEM, DUSK_STONE, MISMAGIUS
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
@@ -1604,8 +1601,7 @@ DonphanEvosAttacks:
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
-	;dbbw EVOLVE_TRADE, DUBIOUS_DISC, PORYGON_Z
-	dbbw EVOLVE_TRADE, POTION, PORYGON_Z
+	dbbw EVOLVE_TRADE, DUBIOUS_DISC, PORYGON_Z
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, DEFENSE_CURL

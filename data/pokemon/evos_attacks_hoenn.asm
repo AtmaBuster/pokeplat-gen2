@@ -607,8 +607,7 @@ RaltsEvosAttacks:
 
 KirliaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, GARDEVOIR
-	;dbbw EVOLVE_ITEM_MALE, DAWN_STONE, GALLADE
-	dbbw EVOLVE_ITEM_MALE, FIRE_STONE, GALLADE
+	dbbw EVOLVE_ITEM_MALE, DAWN_STONE, GALLADE
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, CONFUSION
@@ -1244,8 +1243,7 @@ IllumiseEvosAttacks:
 	db 0 ; no more level-up moves
 
 RoseliaEvosAttacks:
-	;dbbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
-	dbbw EVOLVE_ITEM, FIRE_STONE, ROSERADE
+	dbbw EVOLVE_ITEM, SHINY_STONE, ROSERADE
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 4, GROWTH
@@ -2017,8 +2015,7 @@ DuskullEvosAttacks:
 	db 0 ; no more level-up moves
 
 DusclopsEvosAttacks:
-	;dbbw EVOLVE_TRADE, REAPER_CLOTH, DUSKNOIR
-	dbbw EVOLVE_TRADE, POTION, DUSKNOIR
+	dbbw EVOLVE_TRADE, REAPER_CLOTH, DUSKNOIR
 	db 0 ; no more evolutions
 	dbw 1, FIRE_PUNCH
 	dbw 1, ICE_PUNCH
@@ -2113,8 +2110,7 @@ WynautEvosAttacks:
 
 SnoruntEvosAttacks:
 	dbbw EVOLVE_LEVEL, 42, GLALIE
-	;dbbw EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
-	dbbw EVOLVE_ITEM_FEMALE, FIRE_STONE, FROSLASS
+	dbbw EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
 	db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, POWDER_SNOW

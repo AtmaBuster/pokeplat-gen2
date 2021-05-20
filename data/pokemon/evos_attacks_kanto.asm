@@ -2134,8 +2134,7 @@ RhyhornEvosAttacks:
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
-	;dbbw EVOLVE_TRADE, PROTECTOR, RHYPERIOR
-	dbbw EVOLVE_TRADE, POTION, RHYPERIOR
+	dbbw EVOLVE_TRADE, PROTECTOR, RHYPERIOR
 	db 0 ; no more evolutions
 	dbw 1, STOMP
 	dbw 1, HORN_ATTACK
@@ -2384,8 +2383,7 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
-	;dbbw EVOLVE_TRADE, ELECTIRIZER, ELECTIVIRE
-	dbbw EVOLVE_TRADE, POTION, ELECTIVIRE
+	dbbw EVOLVE_TRADE, ELECTRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, THUNDERSHOCK
@@ -2403,8 +2401,7 @@ ElectabuzzEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
-	;dbbw EVOLVE_TRADE, MAGMARIZER, MAGMORTAR
-	dbbw EVOLVE_TRADE, POTION, MAGMORTAR
+	dbbw EVOLVE_TRADE, MAGMARIZER, MAGMORTAR
 	db 0 ; no more evolutions
 	dbw 1, LEER
 	dbw 1, EMBER

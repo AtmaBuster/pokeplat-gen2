@@ -365,6 +365,7 @@ PlacePartyMonEvoStoneCompatibility:
 	ld hl, wPartyMon1Species
 	call AddNTimes
 	ld a, [hl]
+	ld [wCurPartySpecies], a
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
