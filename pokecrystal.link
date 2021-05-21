@@ -361,6 +361,8 @@ ROMX $97
 	"Pics 31"
 ROMX $98
 	"Pics 32"
+ROMX $99
+	"Sprites 3"
 WRAM0
 	"Stack"
 	"Audio RAM"

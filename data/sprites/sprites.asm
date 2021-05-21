@@ -108,3 +108,5 @@ OverworldSprites:
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BlankSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SPECIAL
+	overworld_sprite BlankSpriteGFX, 4, STANDING_SPRITE, PAL_OW_SPECIAL

@@ -2684,7 +2684,9 @@ wMooMooBerries:: db ; d962
 wUndergroundSwitchPositions:: db ; d963
 wFarfetchdPosition:: db ; d964
 
-	ds 13
+wTilesetSpriteAnimId:: db
+
+	ds 12
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972

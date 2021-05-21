@@ -297,6 +297,14 @@ SpriteMovementData::
 	db 0 ; flags2
 	db SWIMMING ; palette flags
 
+; SPRITEMOVEDATA_TESTANIM
+	db SPRITEMOVEFN_TESTANIM ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_TESTANIM ; action
+	db WONT_DELETE | FIXED_FACING | SLIDING | MOVE_ANYWHERE ; flags1
+	db LOW_PRIORITY ; flags2
+	db STRENGTH_BOULDER | BIG_OBJECT ; palette flags
+
 ; 25
 	db SPRITEMOVEFN_00 ; movement function
 	db DOWN ; facing

@@ -75,9 +75,24 @@ TilesetForestAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+;TilesetJohtoAnim:
+;	dw vTiles2 tile $14, AnimateWaterTile
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  AnimateWaterPalette
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  AnimateFlowerTile
+;	dw WhirlpoolFrames1, AnimateWhirlpoolTile
+;	dw WhirlpoolFrames2, AnimateWhirlpoolTile
+;	dw WhirlpoolFrames3, AnimateWhirlpoolTile
+;	dw WhirlpoolFrames4, AnimateWhirlpoolTile
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  StandingTileFrame8
+;	dw NULL,  DoneTileAnimation
+
 TilesetJohtoAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
+	dw vTiles0 tile $00,  Animate2x2Sprite
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
@@ -742,7 +757,7 @@ AnimateTowerPillarTile:
 	ld sp, hl
 	ld l, e
 	ld h, d
-	jr WriteTile
+	jp WriteTile
 
 .frames
 	db $00, $10, $20, $30, $40, $30, $20, $10
@@ -751,6 +766,52 @@ StandingTileFrame:
 	ld hl, wTileAnimationTimer
 	inc [hl]
 	ret
+
+Animate2x2Sprite:
+	ldh a, [rLY]
+	cp 146 ; not enough time to transfer if rLY > 91
+	ret nc
+	ld a, [wTilesetSpriteAnimId]
+	and a
+	ret z
+	dec a
+	add a
+	ld hl, Special2x2SpriteAnims
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wTileAnimationTimer]
+	and %11
+	ld bc, 16 tiles
+	call AddNTimes
+
+	ld a, h
+	ldh [hHLBuffer], a
+	ld a, l
+	ldh [hHLBuffer + 1], a
+
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ldh a, [hHLBuffer]
+	ld h, a
+	ldh a, [hHLBuffer + 1]
+	ld l, a
+	ld sp, hl
+
+	ld h, d
+	ld l, e
+
+	jp WriteTile16
+
+Special2x2SpriteAnims:
+	dw .test_anim
+
+.test_anim: INCBIN "gfx/owspriteanim/windmill.2bpp"
 
 AnimateWhirlpoolTile:
 ; Update whirlpool tile using struct at de.
@@ -987,3 +1048,28 @@ WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
 WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
 WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
 WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
+
+WriteTile16:
+; Write 16 8x8 tiles ($100 bytes total) from sp to hl.
+
+; Warning: sp is saved in bc so we can abuse pop.
+; sp is restored to address bc. Save sp in bc before calling.
+
+	ld a, 8
+.loop
+rept 16
+	pop de
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	inc hl
+endr
+	dec a
+	jp nz, .loop
+
+; restore sp
+	ld h, b
+	ld l, c
+	ld sp, hl
+	ret
+

@@ -1280,6 +1280,8 @@ LoadMapPals:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
+	call LoadSpecialMapObjectPal
+
 	ld a, [wEnvironment]
 	cp TOWN
 	jr z, .outside
@@ -1348,3 +1350,34 @@ INCLUDE "gfx/beta_poker/beta_poker.pal"
 
 SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
+
+LoadSpecialMapObjectPal:
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	ld d, a
+	ld hl, SpecialObjectPalMaps
+	ld bc, 4 palettes + 1
+.loop
+	ld a, [hl]
+	cp -1
+	ret z
+	cp d
+	jr z, .hit
+	add hl, bc
+	jr .loop
+
+.hit
+	inc hl
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 1 palettes
+	call AddNTimes
+	ld de, wOBPals1 palette PAL_OW_SPECIAL
+	ld bc, 1 palettes
+	ld a, BANK(wOBPals1)
+	jp FarCopyWRAM
+
+INCLUDE "data/maps/special_object_pal_maps.asm"

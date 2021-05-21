@@ -115,7 +115,26 @@ DontScrollText:
 ActivateMapAnims:
 	ld a, $1
 	ldh [hMapAnims], a
+
+	ld a, [wCurLandmark]
+	ld b, a
+	ld hl, OverworldSpriteAnimations
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .none
+	cp b
+	ld a, [hli]
+	jr nz, .loop
+	jr .set
+
+.none
+	xor a
+.set
+	ld [wTilesetSpriteAnimId], a
 	ret
+
+INCLUDE "data/maps/sprite_animations.asm"
 
 SuspendMapAnims:
 	xor a

@@ -17,6 +17,8 @@ ObjectActionPairPointers:
 	dw SetFacingBoulderDust,           SetFacingStanding
 	dw SetFacingGrassShake,            SetFacingStanding
 	dw SetFacingSkyfall,               SetFacingCurrent
+	dw SetFacingTestAnim,              SetFacingTestAnim
+
 
 SetFacingStanding:
 	ld hl, OBJECT_FACING_STEP
@@ -288,4 +290,10 @@ SetFacingGrassShake:
 
 .ok
 	ld [hl], a
+	ret
+
+SetFacingTestAnim:
+	ld hl, OBJECT_FACING_STEP
+	add hl, bc
+	ld [hl], FACING_TESTANIM
 	ret
