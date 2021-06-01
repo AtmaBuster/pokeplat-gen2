@@ -249,7 +249,7 @@ MoveEffectsPointers:
 	dw Splash                        ; TRICK_ROOM
 	dw Splash                        ; CAPTIVATE
 	dw Splash                        ; STEALTH_ROCK
-	dw Splash                        ; WEIGHT_DAMAGE
+	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw Splash                        ; JUDGMENT
 	dw Splash                        ; BUG_BITE
 	dw Splash                        ; LUNAR_DANCE

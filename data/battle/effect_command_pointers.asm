@@ -160,6 +160,7 @@ BattleCommandPointers:
 	battlecmd facade                  ; 7b
 	battlecmd starthail               ; 7c
 	battlecmd breakscreens            ; 7d
+	battlecmd weightdamage            ; 7e
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

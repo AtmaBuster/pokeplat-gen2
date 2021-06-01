@@ -6702,6 +6702,63 @@ BattleCommand_defrost:
 	ld hl, WasDefrostedText
 	jp StdBattleTextbox
 
+BattleCommand_weightdamage:
+	push bc
+	push de
+; get weight from dex entry
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyMonSpecies
+	jr z, .got_species
+	ld hl, wBattleMonSpecies
+.got_species
+	ld b, [hl]
+	farcall GetDexEntryPointer
+	ld a, b
+	push af
+	ld hl, wStringBuffer1
+	call FarString ; ignore output, gets to height/weight
+	pop af
+	ld h, d
+	ld l, e
+	inc hl ; skip terminator
+	inc hl ; skip height
+	inc hl ;  "    "
+	call GetFarHalfword
+	ld b, h
+	ld c, l
+; get base damage
+	ld hl, .weight_damage_table
+.damage_loop
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+
+	cp b
+	jr c, .next
+	jr nz, .got_it
+	ld a, e
+	cp c
+	jr nc, .got_it
+.next
+	inc hl
+	jr .damage_loop
+
+.got_it
+	pop de
+	ld d, [hl]
+	pop bc
+	ret
+
+.weight_damage_table
+	dwb  219,  20
+	dwb  551,  40
+	dwb 1102,  60
+	dwb 2204,  80
+	dwb 4409, 100
+	dwb   -1, 120
+
 INCLUDE "engine/battle/move_effects/water_spout.asm"
 
 INCLUDE "engine/battle/move_effects/curse.asm"
