@@ -703,6 +703,8 @@ INCLUDE "data/pokemon/palettes.asm"
 INCLUDE "data/trainers/palettes.asm"
 
 
+INCLUDE "engine/pokemon/change_form.asm"
+
 
 ; own section
 INCLUDE "data/trainers/parties.asm"

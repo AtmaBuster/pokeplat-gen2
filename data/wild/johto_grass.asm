@@ -1192,6 +1192,11 @@ JohtoGrassWildMons:
 
 	map_id ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+IF DEF(_DEBUG)
+REPT 21
+	dbw 10, GASTRODON_E
+ENDR
+ELSE
 	; morn
 	dbw 2, PIDGEY
 	dbw 2, SENTRET
@@ -1216,6 +1221,7 @@ JohtoGrassWildMons:
 	dbw 2, RATTATA
 	dbw 3, HOOTHOOT
 	dbw 3, HOOTHOOT
+ENDC
 
 	map_id ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

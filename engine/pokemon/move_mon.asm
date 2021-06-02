@@ -1466,6 +1466,13 @@ CalcMonStatC:
 	ld a, [hl]
 	ld e, a
 	pop hl
+	cp 1
+	jr nz, .skip_shedinja_check
+	ld a, c
+	cp STAT_HP
+	jp z, .shedinja_hp
+
+.skip_shedinja_check
 	push hl
 	ld a, c
 	cp STAT_SDEF ; last stat
@@ -1639,6 +1646,13 @@ CalcMonStatC:
 	pop de
 	pop hl
 	ret
+
+.shedinja_hp
+	xor a
+	ldh [hMultiplicand + 1], a
+	inc a
+	ldh [hMultiplicand + 2], a
+	jr .stat_value_okay
 
 GivePoke::
 	push de

@@ -6713,20 +6713,9 @@ BattleCommand_weightdamage:
 	ld hl, wBattleMonSpecies
 .got_species
 	ld b, [hl]
-	farcall GetDexEntryPointer
-	ld a, b
-	push af
-	ld hl, wStringBuffer1
-	call FarString ; ignore output, gets to height/weight
-	pop af
-	ld h, d
-	ld l, e
-	inc hl ; skip terminator
-	inc hl ; skip height
-	inc hl ;  "    "
-	call GetFarHalfword
-	ld b, h
-	ld c, l
+	farcall GetMonWeight
+	ld b, d
+	ld c, e
 ; get base damage
 	ld hl, .weight_damage_table
 .damage_loop

@@ -542,3 +542,20 @@ PokedexDataPointerTable:
 	dba DarkraiPokedexEntry
 	dba ShayminPokedexEntry
 	dba ArceusPokedexEntry
+	dba PichuPokedexEntry
+	dba DeoxysPokedexEntry
+	dba DeoxysPokedexEntry
+	dba DeoxysPokedexEntry
+	dba BurmyPokedexEntry
+	dba BurmyPokedexEntry
+	dba WormadamPokedexEntry
+	dba WormadamPokedexEntry
+	dba ShellosPokedexEntry
+	dba GastrodonPokedexEntry
+	dba RotomPokedexEntry
+	dba RotomPokedexEntry
+	dba RotomPokedexEntry
+	dba RotomPokedexEntry
+	dba RotomPokedexEntry
+	dba GiratinaPokedexEntry
+	dba ShayminPokedexEntry

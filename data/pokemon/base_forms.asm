@@ -1,4 +1,4 @@
-AltFormBaseIndex:
+AltFormBaseIndex::
 	dw PICHU     ; PICHU_B
 	dw DEOXYS    ; DEOXYS_A
 	dw DEOXYS    ; DEOXYS_D
