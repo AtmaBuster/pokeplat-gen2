@@ -493,6 +493,7 @@ DisplayHOFMon:
 	ld [hl], "<DOT>"
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
+	call GetBaseFormNumber
 	ld a, l
 	ld l, h
 	ld h, a

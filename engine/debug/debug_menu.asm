@@ -25,10 +25,11 @@ DebugMenu::
 	call PlaySFX
 
 	farcall ReanchorBGMap_NoOAMUpdate
-	ld hl, .MenuHeader
-	call LoadMenuHeader
 	ld a, [wBattleMenuCursorBuffer]
 	ld [wMenuCursorBuffer], a
+	lb bc, SCREEN_HEIGHT - 2, 11
+	hlcoord 0, 0
+	call Textbox
 	call SafeUpdateSprites
 	call _OpenAndCloseMenu_HDMATransferTileMapAndAttrMap
 	farcall LoadFonts_NoOAMUpdate
@@ -54,37 +55,41 @@ DebugMenu::
 .GetInput:
 	xor a
 	ldh [hBGMapMode], a
-	call SetUpMenu
-	ld a, $ff
-	ld [wMenuSelection], a
-.loop
-	call GetScrollingMenuJoypad
-	ld a, [wMenuJoypad]
-	cp B_BUTTON
-	jr z, .b
-	cp A_BUTTON
-	jr z, .a
-	jr .loop
-.a
-	call PlayClickSFX
+	ld hl, .MenuHeader
+	call LoadMenuHeader
+	call ScrollingMenu
+	and B_BUTTON
+	jr nz, .b
 	and a
 	ret
+
 .b
 	scf
 	ret
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 12, SCREEN_HEIGHT - 1
+	menu_coords 1, 1, 11, SCREEN_HEIGHT - 2
 	dw .MenuData
 	db 1 ; default selection
 
 .MenuData:
-	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_ENABLE_START ; flags
-	db 0 ; rows, columns
-	dw .MenuItems
-	dw PlaceMenuStrings
-	dw .Strings
+	db 0, 8, 0
+	db SCROLLINGMENU_ITEMS_NORMAL
+	dba .MenuItems
+	dba .PlaceMenuStrings
+	dba NULL
+
+.PlaceMenuStrings:
+	push de
+	ld a, [wMenuSelection]
+	ld hl, .Strings
+	call GetNthString
+	ld d, h
+	ld e, l
+	pop hl
+	call PlaceString
+	ret
 
 .Strings:
 	db "Sound Test@"
@@ -95,10 +100,11 @@ DebugMenu::
 	db "Teach Move@"
 	db "Give #@"
 	db "Max ¥@"
+	db "Warp Any@"
 
 .MenuItems
-	db 8
-	db 0, 1, 2, 3, 4, 5, 6, 7
+	db 9
+	db 0, 1, 2, 3, 4, 5, 6, 7, 8
 	db -1
 
 .Jumptable
@@ -110,6 +116,7 @@ DebugMenu::
 	dw Debug_TeachMove
 	dw Debug_GivePoke
 	dw Debug_MaxMoney
+	dw Debug_WarpAny
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -859,4 +866,144 @@ Debug_MaxMoney:
 	ld [hli], a
 	ld a, LOW(MAX_COINS)
 	ld [hl], a
+	ret
+
+Debug_WarpAny:
+	ld a, 1
+	ldh [hDebugMenuDataBuffer], a
+	ldh [hDebugMenuDataBuffer + 1], a
+	ldh [hDebugMenuDataBuffer + 2], a
+	hlcoord 0, 0
+	lb bc, 3, SCREEN_WIDTH - 2
+	call Textbox
+	call WaitBGMap2
+	ld a, 2
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	ld a, 1
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	xor a
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+
+.loop
+	call JoyTextDelay
+	ldh a, [hJoyDown]
+	and $e
+	ld b, a
+	ldh a, [hJoyLast]
+	or b
+	bit A_BUTTON_F, a
+	jr nz, .warp
+	bit B_BUTTON_F, a
+	ret nz
+	bit D_DOWN_F, a
+	jr nz, .down
+	bit D_UP_F, a
+	jr nz, .up
+	ld b, 1
+	bit START_F, a
+	jr nz, .start
+	bit SELECT_F, a
+	jr z, .select
+	ld b, 10
+	jr .select
+.start
+	ld b, 100
+.select
+	bit D_LEFT_F, a
+	jr nz, .left
+	bit D_RIGHT_F, a
+	jr nz, .right
+	jr .loop
+
+.up
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	jr nz, .do_up
+	ld a, 3
+.do_up
+	dec a
+	jr .curchange
+
+.down
+	ldh a, [hDebugMenuCursorPos]
+	cp 2
+	jr nz, .do_down
+	ld a, -1
+.do_down
+	inc a
+.curchange
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	jr .loop
+
+.left
+	call .getdat
+.leftloop
+	dec a
+	dec b
+	jr nz, .leftloop
+	call .putdat
+	call .update_display
+	jr .loop
+
+.right
+	call .getdat
+.rightloop
+	inc a
+	dec b
+	jr nz, .rightloop
+	call .putdat
+	call .update_display
+	jr .loop
+
+.getdat
+	ldh a, [hDebugMenuCursorPos]
+	add LOW(hDebugMenuDataBuffer)
+	ld c, a
+	ldh a, [c]
+	ret
+
+.putdat
+	ldh [c], a
+	ret
+
+.warp
+	ld hl, hDebugMenuDataBuffer
+	ld de, wNextWarp
+	ld bc, 3
+	call CopyBytes
+	ld a, BANK(dig_incave.UsedDigOrEscapeRopeScript)
+	ld hl, dig_incave.UsedDigOrEscapeRopeScript + 1
+	call FarQueueScript
+	ld a, HMENURETURN_SCRIPT
+	ldh [hMenuReturn], a
+	ret
+
+.update_display
+	ld a, " "
+	hlcoord 1, 1
+	ld [hl], a
+	hlcoord 1, 2
+	ld [hl], a
+	hlcoord 1, 3
+	ld [hl], a
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	ld c, a
+	ld b, 0
+	ld hl, hDebugMenuDataBuffer
+	add hl, bc
+	ld d, h
+	ld e, l
+	hlcoord 1, 1
+	ld bc, SCREEN_WIDTH
+	call AddNTimes
+	ld a, "▶"
+	ld [hli], a
+	inc hl
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
 	ret

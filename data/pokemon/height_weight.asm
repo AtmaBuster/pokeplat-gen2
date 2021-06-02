@@ -250,55 +250,6 @@ MonHeights::
 	dw 52  ; LUGIA
 	dw 38  ; HO_OH
 	dw 6   ; CELEBI
-	dw 7   ; FLAMBEAR
-	dw 11  ; VOLBEAR
-	dw 18  ; DYNABEAR
-	dw 7   ; CRUIZE
-	dw 10  ; AQUALLO
-	dw 22  ; AQUARIUS
-	dw 7   ; KOTORA
-	dw 16  ; RAITORA
-	dw 8   ; BOMSHEAL
-	dw 10  ; CORASUN
-	dw 0   ; CORAMOLA
-	dw 0   ; MAMBOKING
-	dw 0   ; BITEEL
-	dw 8   ; GROTESS
-	dw 5   ; RINRING
-	dw 8   ; BELLRUN
-	dw 9   ; BLOTTLE
-	dw 23  ; PENDRAKEN
-	dw 5   ; KURSTRAW
-	dw 9   ; PANGSHI
-	dw 7   ; WOLFAN
-	dw 16  ; WARWOLF
-	dw 5   ; CHEEP
-	dw 12  ; JABETTA
-	dw 0   ; SNOBIT
-	dw 0   ; BLIZBIT
-	dw 0   ; GLACIHARE
-	dw 0   ; STEMINEEL
-	dw 0   ; ARSKEED
-	dw 0   ; DRAKARVE
-	dw 7   ; PETICORN
-	dw 5   ; GUPGOLD
-	dw 5   ; TRITALES
-	dw 3   ; GRIMBY
-	dw 2   ; PARAMITE
-	dw 3   ; NYANYA
-	dw 6   ; PUDDIPUP
-	dw 7   ; CHIX
-	dw 0   ; KATU
-	dw 7   ; TANGTRIP
-	dw 16  ; GELANIA
-	dw 13  ; BELMITT
-	dw 13  ; TURBAN
-	dw 16  ; PRAXE
-	dw 9   ; NUMBPUFF
-	dw 6   ; METTO
-	dw 13  ; MADAME
-	dw 21  ; GUARDIA
-	dw 21  ; OHMEGA
 	dw 5   ; TREECKO
 	dw 9   ; GROVYLE
 	dw 17  ; SCEPTILE
@@ -541,6 +492,55 @@ MonHeights::
 	dw 15  ; DARKRAI
 	dw 2   ; SHAYMIN
 	dw 32  ; ARCEUS
+	dw 7   ; FLAMBEAR
+	dw 11  ; VOLBEAR
+	dw 18  ; DYNABEAR
+	dw 7   ; CRUIZE
+	dw 10  ; AQUALLO
+	dw 22  ; AQUARIUS
+	dw 7   ; KOTORA
+	dw 16  ; RAITORA
+	dw 8   ; BOMSHEAL
+	dw 10  ; CORASUN
+	dw 0   ; CORAMOLA
+	dw 0   ; MAMBOKING
+	dw 0   ; BITEEL
+	dw 8   ; GROTESS
+	dw 5   ; RINRING
+	dw 8   ; BELLRUN
+	dw 9   ; BLOTTLE
+	dw 23  ; PENDRAKEN
+	dw 5   ; KURSTRAW
+	dw 9   ; PANGSHI
+	dw 7   ; WOLFAN
+	dw 16  ; WARWOLF
+	dw 5   ; CHEEP
+	dw 12  ; JABETTA
+	dw 0   ; SNOBIT
+	dw 0   ; BLIZBIT
+	dw 0   ; GLACIHARE
+	dw 0   ; STEMINEEL
+	dw 0   ; ARSKEED
+	dw 0   ; DRAKARVE
+	dw 7   ; PETICORN
+	dw 5   ; GUPGOLD
+	dw 5   ; TRITALES
+	dw 3   ; GRIMBY
+	dw 2   ; PARAMITE
+	dw 3   ; NYANYA
+	dw 6   ; PUDDIPUP
+	dw 7   ; CHIX
+	dw 0   ; KATU
+	dw 7   ; TANGTRIP
+	dw 16  ; GELANIA
+	dw 13  ; BELMITT
+	dw 13  ; TURBAN
+	dw 16  ; PRAXE
+	dw 9   ; NUMBPUFF
+	dw 6   ; METTO
+	dw 13  ; MADAME
+	dw 21  ; GUARDIA
+	dw 21  ; OHMEGA
 	dw 3   ; PICHU_B
 	dw 17  ; DEOXYS_A
 	dw 17  ; DEOXYS_D
@@ -811,55 +811,6 @@ MonWeights::
 	dw 2160 ; LUGIA
 	dw 1990 ; HO_OH
 	dw 50   ; CELEBI
-	dw 100  ; FLAMBEAR
-	dw 326  ; VOLBEAR
-	dw 989  ; DYNABEAR
-	dw 141  ; CRUIZE
-	dw 413  ; AQUALLO
-	dw 984  ; AQUARIUS
-	dw 213  ; KOTORA
-	dw 690  ; RAITORA
-	dw 105  ; BOMSHEAL
-	dw 123  ; CORASUN
-	dw 0    ; CORAMOLA
-	dw 0    ; MAMBOKING
-	dw 0    ; BITEEL
-	dw 326  ; GROTESS
-	dw 100  ; RINRING
-	dw 186  ; BELLRUN
-	dw 75   ; BLOTTLE
-	dw 840  ; PENDRAKEN
-	dw 9    ; KURSTRAW
-	dw 109  ; PANGSHI
-	dw 340  ; WOLFAN
-	dw 1012 ; WARWOLF
-	dw 80   ; CHEEP
-	dw 513  ; JABETTA
-	dw 0    ; SNOBIT
-	dw 0    ; BLIZBIT
-	dw 0    ; GLACIHARE
-	dw 0    ; STEMINEEL
-	dw 0    ; ARSKEED
-	dw 0    ; DRAKARVE
-	dw 309  ; PETICORN
-	dw 209  ; GUPGOLD
-	dw 77   ; TRITALES
-	dw 182  ; GRIMBY
-	dw 99   ; PARAMITE
-	dw 36   ; NYANYA
-	dw 136  ; PUDDIPUP
-	dw 204  ; CHIX
-	dw 0    ; KATU
-	dw 199  ; TANGTRIP
-	dw 554  ; GELANIA
-	dw 123  ; BELMITT
-	dw 626  ; TURBAN
-	dw 698  ; PRAXE
-	dw 82   ; NUMBPUFF
-	dw 271  ; METTO
-	dw 322  ; MADAME
-	dw 970  ; GUARDIA
-	dw 3950 ; OHMEGA
 	dw 50   ; TREECKO
 	dw 216  ; GROVYLE
 	dw 522  ; SCEPTILE
@@ -1102,6 +1053,55 @@ MonWeights::
 	dw 505  ; DARKRAI
 	dw 21   ; SHAYMIN
 	dw 3200 ; ARCEUS
+	dw 100  ; FLAMBEAR
+	dw 326  ; VOLBEAR
+	dw 989  ; DYNABEAR
+	dw 141  ; CRUIZE
+	dw 413  ; AQUALLO
+	dw 984  ; AQUARIUS
+	dw 213  ; KOTORA
+	dw 690  ; RAITORA
+	dw 105  ; BOMSHEAL
+	dw 123  ; CORASUN
+	dw 0    ; CORAMOLA
+	dw 0    ; MAMBOKING
+	dw 0    ; BITEEL
+	dw 326  ; GROTESS
+	dw 100  ; RINRING
+	dw 186  ; BELLRUN
+	dw 75   ; BLOTTLE
+	dw 840  ; PENDRAKEN
+	dw 9    ; KURSTRAW
+	dw 109  ; PANGSHI
+	dw 340  ; WOLFAN
+	dw 1012 ; WARWOLF
+	dw 80   ; CHEEP
+	dw 513  ; JABETTA
+	dw 0    ; SNOBIT
+	dw 0    ; BLIZBIT
+	dw 0    ; GLACIHARE
+	dw 0    ; STEMINEEL
+	dw 0    ; ARSKEED
+	dw 0    ; DRAKARVE
+	dw 309  ; PETICORN
+	dw 209  ; GUPGOLD
+	dw 77   ; TRITALES
+	dw 182  ; GRIMBY
+	dw 99   ; PARAMITE
+	dw 36   ; NYANYA
+	dw 136  ; PUDDIPUP
+	dw 204  ; CHIX
+	dw 0    ; KATU
+	dw 199  ; TANGTRIP
+	dw 554  ; GELANIA
+	dw 123  ; BELMITT
+	dw 626  ; TURBAN
+	dw 698  ; PRAXE
+	dw 82   ; NUMBPUFF
+	dw 271  ; METTO
+	dw 322  ; MADAME
+	dw 970  ; GUARDIA
+	dw 3950 ; OHMEGA
 	dw 20   ; PICHU_B
 	dw 608  ; DEOXYS_A
 	dw 608  ; DEOXYS_D

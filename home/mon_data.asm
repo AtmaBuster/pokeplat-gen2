@@ -66,3 +66,20 @@ GetNick::
 	pop bc
 	pop hl
 	ret
+
+GetBaseFormNumber::
+	ld a, h
+	cp HIGH(ALT_FORMS)
+	ret c
+	ld a, l
+	cp LOW(ALT_FORMS)
+	ret c
+	ld de, AltFormBaseIndex - ALT_FORMS * 2
+	add hl, hl
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ret
+
+INCLUDE "data/pokemon/base_forms.asm"

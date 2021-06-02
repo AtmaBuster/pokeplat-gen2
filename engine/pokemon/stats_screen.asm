@@ -377,6 +377,8 @@ StatsScreen_InitUpperHalf:
 	ld a, [wBaseSpecies]
 	ld [wCurSpecies], a
 	call GetPokemonIndexFromID
+; if mon is alt form, use base form index
+	call GetBaseFormNumber
 	ld a, h
 	ld h, l
 	ld l, a

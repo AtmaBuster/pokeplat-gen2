@@ -463,9 +463,6 @@ INCBIN "gfx/footprints/abomasnow.1bpp"
 INCBIN "gfx/footprints/weavile.1bpp" ; Fuck Ganix
 INCBIN "gfx/footprints/magnezone.1bpp"
 INCBIN "gfx/footprints/lickilicky.1bpp"
-
-SECTION "Footprints 2", ROMX
-Footprints2:
 INCBIN "gfx/footprints/rhyperior.1bpp"
 INCBIN "gfx/footprints/tangrowth.1bpp"
 INCBIN "gfx/footprints/electivire.1bpp"
@@ -515,6 +512,9 @@ INCBIN "gfx/footprints/bellrun.1bpp"
 INCBIN "gfx/footprints/blottle.1bpp"
 INCBIN "gfx/footprints/pendraken.1bpp"
 INCBIN "gfx/footprints/kurstraw.1bpp"
+
+SECTION "Footprints 2", ROMX
+Footprints2:
 INCBIN "gfx/footprints/pangshi.1bpp"
 INCBIN "gfx/footprints/wolfan.1bpp"
 INCBIN "gfx/footprints/warwolf.1bpp"
