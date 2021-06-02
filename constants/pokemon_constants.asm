@@ -271,56 +271,6 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; 0f9
 	const HO_OH      ; 0fa
 	const CELEBI     ; 0fb
-NIHON_POKEMON EQU const_value
-	const FLAMBEAR   ; 0fc
-	const VOLBEAR    ; 0fd
-	const DYNABEAR   ; 0fe
-	const CRUIZE     ; 0ff
-	const AQUALLO    ; 100
-	const AQUARIUS   ; 101
-	const KOTORA     ; 102
-	const RAITORA    ; 103
-	const BOMSHEAL   ; 104
-	const CORASUN    ; 105
-	const CORAMOLA   ; 106
-	const MAMBOKING  ; 107
-	const BITEEL     ; 108
-	const GROTESS    ; 109
-	const RINRING    ; 10a
-	const BELLRUN    ; 10b
-	const BLOTTLE    ; 10c
-	const PENDRAKEN  ; 10d
-	const KURSTRAW   ; 10e
-	const PANGSHI    ; 10f
-	const WOLFAN     ; 110
-	const WARWOLF    ; 111
-	const CHEEP      ; 112
-	const JABETTA    ; 113
-	const SNOBIT     ; 114
-	const BLIZBIT    ; 115
-	const GLACIHARE  ; 116
-	const STEMINEEL  ; 117
-	const ARSKEED    ; 118
-	const DRAKARVE   ; 119
-	const PETICORN   ; 11a
-	const GUPGOLD    ; 11b
-	const TRITALES   ; 11c
-	const GRIMBY     ; 11d
-	const PARAMITE   ; 11e
-	const NYANYA     ; 11f
-	const PUDDIPUP   ; 120
-	const CHIX       ; 121
-	const KATU       ; 122
-	const TANGTRIP   ; 123
-	const GELANIA    ; 124
-	const BELMITT    ; 125
-	const TURBAN     ; 126
-	const PRAXE      ; 127
-	const NUMBPUFF   ; 128
-	const METTO      ; 129
-	const MADAME     ; 12a
-	const GUARDIA    ; 12b
-	const OHMEGA     ; 12c
 HOENN_POKEMON EQU const_value
 	const TREECKO    ; 12d
 	const GROVYLE    ; 12e
@@ -565,6 +515,56 @@ SINNOH_POKEMON EQU const_value
 	const DARKRAI    ; 21c
 	const SHAYMIN    ; 21d
 	const ARCEUS     ; 21e
+NIHON_POKEMON EQU const_value
+	const FLAMBEAR   ; 0fc
+	const VOLBEAR    ; 0fd
+	const DYNABEAR   ; 0fe
+	const CRUIZE     ; 0ff
+	const AQUALLO    ; 100
+	const AQUARIUS   ; 101
+	const KOTORA     ; 102
+	const RAITORA    ; 103
+	const BOMSHEAL   ; 104
+	const CORASUN    ; 105
+	const CORAMOLA   ; 106
+	const MAMBOKING  ; 107
+	const BITEEL     ; 108
+	const GROTESS    ; 109
+	const RINRING    ; 10a
+	const BELLRUN    ; 10b
+	const BLOTTLE    ; 10c
+	const PENDRAKEN  ; 10d
+	const KURSTRAW   ; 10e
+	const PANGSHI    ; 10f
+	const WOLFAN     ; 110
+	const WARWOLF    ; 111
+	const CHEEP      ; 112
+	const JABETTA    ; 113
+	const SNOBIT     ; 114
+	const BLIZBIT    ; 115
+	const GLACIHARE  ; 116
+	const STEMINEEL  ; 117
+	const ARSKEED    ; 118
+	const DRAKARVE   ; 119
+	const PETICORN   ; 11a
+	const GUPGOLD    ; 11b
+	const TRITALES   ; 11c
+	const GRIMBY     ; 11d
+	const PARAMITE   ; 11e
+	const NYANYA     ; 11f
+	const PUDDIPUP   ; 120
+	const CHIX       ; 121
+	const KATU       ; 122
+	const TANGTRIP   ; 123
+	const GELANIA    ; 124
+	const BELMITT    ; 125
+	const TURBAN     ; 126
+	const PRAXE      ; 127
+	const NUMBPUFF   ; 128
+	const METTO      ; 129
+	const MADAME     ; 12a
+	const GUARDIA    ; 12b
+	const OHMEGA     ; 12c
 ALT_FORMS EQU const_value
 	const PICHU_B     ; 21f
 	const DEOXYS_A    ; 220

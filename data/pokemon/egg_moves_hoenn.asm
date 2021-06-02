@@ -1,141 +1,141 @@
-SECTION "Egg Moves 4", ROMX
+SECTION "Egg Moves 3", ROMX
 
-EggMovePointers4::
+EggMovePointers3::
 	dw TreeckoEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw TorchicEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw MudkipEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw PoochyenaEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw ZigzagoonEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw LotadEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw SeedotEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw TaillowEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw WingullEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw RaltsEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw SurskitEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw ShroomishEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw SlakothEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw NincadaEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw WhismurEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw MakuhitaEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw AzurillEggMoves
 	dw NosepassEggMoves
 	dw SkittyEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw SableyeEggMoves
 	dw MawileEggMoves
 	dw AronEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw MedititeEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw ElectrikeEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw PlusleEggMoves
 	dw MinunEggMoves
 	dw VolbeatEggMoves
 	dw IllumiseEggMoves
 	dw RoseliaEggMoves
 	dw GulpinEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw CarvanhaEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw WailmerEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw NumelEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw TorkoalEggMoves
 	dw SpoinkEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw SpindaEggMoves
 	dw TrapinchEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw CacneaEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw SwabluEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw ZangooseEggMoves
 	dw SeviperEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw BarboachEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw CorphishEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw BaltoyEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw LileepEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw AnorithEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw FeebasEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw CastformEggMoves
 	dw KecleonEggMoves
 	dw ShuppetEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw DuskullEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw TropiusEggMoves
 	dw ChimechoEggMoves
 	dw AbsolEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw SnoruntEggMoves
-	dw NoEggMoves4
+	dw NoEggMoves3
 	dw SphealEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw ClamperlEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
 	dw RelicanthEggMoves
 	dw LuvdiscEggMoves
 	dw BagonEggMoves
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
-	dw NoEggMoves4
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
+	dw NoEggMoves3
 	
 TreeckoEggMoves:
 	dw CRUNCH
@@ -783,5 +783,5 @@ BagonEggMoves:
 	dw TWISTER
 	dw -1 ; end
 
-NoEggMoves4:
+NoEggMoves3:
 	dw -1 ; end

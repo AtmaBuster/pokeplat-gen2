@@ -1,36 +1,36 @@
-SECTION "Egg Moves 3", ROMX
+SECTION "Egg Moves 5", ROMX
 
-EggMovePointers3::
+EggMovePointers5::
 	dw FlambearEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
+	dw NoEggMoves5
+	dw NoEggMoves5
 	dw CruizeEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
+	dw NoEggMoves5
+	dw NoEggMoves5
 	dw KotoraEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw BomshealEggMoves
 	dw CorasunEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
+	dw NoEggMoves5
+	dw NoEggMoves5
 	dw BiteelEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw RinringEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw BlottleEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw KurstrawEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw WolfanEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw CheepEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw SnobitEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
-	dw NoEggMoves3
+	dw NoEggMoves5
+	dw NoEggMoves5
+	dw NoEggMoves5
 	dw ArskeedEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw PeticornEggMoves
 	dw GupgoldEggMoves
 	dw TritalesEggMoves
@@ -39,17 +39,17 @@ EggMovePointers3::
 	dw NyanyaEggMoves
 	dw PuddipupEggMoves
 	dw ChixEggMoves
-	dw NoEggMoves3
+	dw NoEggMoves5
 	dw TangtripEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
+	dw NoEggMoves5
+	dw NoEggMoves5
 	dw TurbanEggMoves
-	dw NoEggMoves3
-	dw NoEggMoves3
-	dw NoEggMoves3
-	dw NoEggMoves3
-	dw NoEggMoves3
-	dw NoEggMoves3
+	dw NoEggMoves5
+	dw NoEggMoves5
+	dw NoEggMoves5
+	dw NoEggMoves5
+	dw NoEggMoves5
+	dw NoEggMoves5
 	
 FlambearEggMoves:
 	dw FURY_SWIPES
@@ -207,5 +207,5 @@ TurbanEggMoves:
 	db SWIFT
 	db -1 ; end
 
-NoEggMoves3:
+NoEggMoves5:
 	dw -1 ; end

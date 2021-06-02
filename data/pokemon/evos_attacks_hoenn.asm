@@ -1,6 +1,6 @@
-SECTION "Evolutions and Attacks 4", ROMX
+SECTION "Evolutions and Attacks 3", ROMX
 
-EvosAttacksPointers4::
+EvosAttacksPointers3::
 	dw TreeckoEvosAttacks
 	dw GrovyleEvosAttacks
 	dw SceptileEvosAttacks

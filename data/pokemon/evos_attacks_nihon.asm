@@ -1,6 +1,6 @@
-SECTION "Evolutions and Attacks 3", ROMX
+SECTION "Evolutions and Attacks 5", ROMX
 
-EvosAttacksPointers3::
+EvosAttacksPointers5::
 	dw FlambearEvosAttacks
 	dw VolbearEvosAttacks
 	dw DynabearEvosAttacks
