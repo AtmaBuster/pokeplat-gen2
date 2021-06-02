@@ -1,5 +1,4 @@
 	db "NINJA@" ; species name
-	dw 207, 265 ; height, weight
 
 	db   "Its cry leaves a"
 	next "lasting headache"

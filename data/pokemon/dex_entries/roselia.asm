@@ -1,5 +1,4 @@
 	db "THORN@" ; species name
-	dw 100, 44 ; height, weight
 
 	db   "ROSELIA that drink"
 	next "nutritionally rich"

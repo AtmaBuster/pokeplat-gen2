@@ -1,5 +1,4 @@
 	db "JOLLY@" ; species name
-	dw 311, 717 ; height, weight
 
 	db   "It is nocturnal"
 	next "and becomes active"

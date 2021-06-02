@@ -1,5 +1,4 @@
 	db "SEA BASIN@" ; species name
-	dw 1409, 7760 ; height, weight
 
 	db   "A mythical #MON"
 	next "said to have"

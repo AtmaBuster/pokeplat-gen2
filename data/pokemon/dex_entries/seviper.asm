@@ -1,5 +1,4 @@
 	db "FANG SNAKE@" ; species name
-	dw 810, 1157 ; height, weight
 
 	db   "In battle, it uses"
 	next "its bladed tail to"

@@ -1,5 +1,4 @@
 	db "BOUNCE@" ; species name
-	dw 204, 675 ; height, weight
 
 	db   "It bounces around"
 	next "on its tail to"

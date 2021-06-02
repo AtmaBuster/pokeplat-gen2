@@ -1,5 +1,4 @@
 	db "RUSHING@" ; species name
-	dw 108, 717 ; height, weight
 
 	db   "When running in a"
 	next "straight line, it"

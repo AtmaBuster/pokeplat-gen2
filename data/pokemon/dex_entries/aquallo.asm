@@ -1,5 +1,4 @@
 	db "SMOOTH SEAL@" ; species name
-	dw 304, 910 ; height, weight
 
 	db   "Its skin is a good"
 	next "insulator. Able to"

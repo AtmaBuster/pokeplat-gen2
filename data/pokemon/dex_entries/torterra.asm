@@ -1,5 +1,4 @@
 	db "CONTINENT@" ; species name
-	dw 703, 6834 ; height, weight
 
 	db   "Groups of this"
 	next "#MON migrating"

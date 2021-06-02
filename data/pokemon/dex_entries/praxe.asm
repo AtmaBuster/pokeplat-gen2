@@ -1,5 +1,4 @@
 	db "BIG HORN@" ; species name
-	dw 503, 1540 ; height, weight
 
 	db   "The pincers on its"
 	next "head allow it a"

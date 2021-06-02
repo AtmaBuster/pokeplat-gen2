@@ -1,5 +1,4 @@
 	db "BOQUET@" ; species name
-	dw 211, 320 ; height, weight
 
 	db   "Its sweet aroma"
 	next "attracts prey."

@@ -1,5 +1,4 @@
 	db "TIGER CAT@" ; species name
-	dw 303, 966 ; height, weight
 
 	db   "It would claim"
 	next "another #MON's"

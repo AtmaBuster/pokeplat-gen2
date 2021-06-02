@@ -1,5 +1,4 @@
 	db "TENDER@" ; species name
-	dw 2004, 3571 ; height, weight
 
 	db   "It's said that"
 	next "looking at MILOTIC"

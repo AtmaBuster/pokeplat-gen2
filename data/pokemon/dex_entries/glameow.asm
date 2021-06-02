@@ -1,5 +1,4 @@
 	db "CATTY@" ; species name
-	dw 108, 86 ; height, weight
 
 	db   "When it is happy,"
 	next "GLAMEOW will"

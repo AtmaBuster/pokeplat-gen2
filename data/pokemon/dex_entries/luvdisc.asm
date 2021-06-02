@@ -1,5 +1,4 @@
 	db "RENDEZVOUS@" ; species name
-	dw 200, 192 ; height, weight
 
 	db   "Its heart-shaped"
 	next "body makes it"

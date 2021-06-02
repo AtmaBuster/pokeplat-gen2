@@ -1,5 +1,4 @@
 	db "SPOTBILL@" ; species name
-	dw 401, 710 ; height, weight
 
 	db   "Very territorial."
 	next "Will defend its"

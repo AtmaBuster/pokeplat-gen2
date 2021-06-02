@@ -1,5 +1,4 @@
 	db "EMPEROR@" ; species name
-	dw 507, 1863 ; height, weight
 
 	db   "It will avoid "
 	next "unnecessary"

@@ -1,5 +1,4 @@
 	db "FIRE FOAL@" ; species name
-	dw 205, 310 ; height, weight
 
 	db   "Although it is"
 	next "not able to run"

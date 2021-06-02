@@ -1,5 +1,4 @@
 	db "FORBIDDEN@" ; species name
-	dw 303, 2381 ; height, weight
 
 	db   "It was formed by"
 	next "uniting 108"

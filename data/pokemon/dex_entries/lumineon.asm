@@ -1,5 +1,4 @@
 	db "NEON@" ; species name
-	dw 311, 529 ; height, weight
 
 	db   "LUMINEON swimming"
 	next "in the darkness of"

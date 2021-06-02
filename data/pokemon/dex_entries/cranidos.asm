@@ -1,5 +1,4 @@
 	db "HEAD BUTT@" ; species name
-	dw 211, 694 ; height, weight
 
 	db   "A lifelong jungle"
 	next "dweller from 100"

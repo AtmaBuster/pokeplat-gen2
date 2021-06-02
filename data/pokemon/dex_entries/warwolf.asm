@@ -1,5 +1,4 @@
 	db "TRIBE@" ; species name
-	dw 504, 2230 ; height, weight
 
 	db   "They hunt in a"
 	next "tribe, hiding in"

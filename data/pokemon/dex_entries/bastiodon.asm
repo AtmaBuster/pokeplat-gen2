@@ -1,5 +1,4 @@
 	db "SHIELD@" ; species name
-	dw 403, 3296 ; height, weight
 
 	db   "When attacked,"
 	next "they form a wall."

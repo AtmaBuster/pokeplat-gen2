@@ -1,5 +1,4 @@
 	db "WICKED@" ; species name
-	dw 403, 1314 ; height, weight
 
 	db   "It lives quietly"
 	next "in deep forests."

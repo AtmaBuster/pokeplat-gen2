@@ -1,5 +1,4 @@
 	db "MOTH@" ; species name
-	dw 211, 514 ; height, weight
 
 	db   "While it loves"
 	next "floral honey, it"

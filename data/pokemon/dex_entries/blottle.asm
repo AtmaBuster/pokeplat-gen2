@@ -1,5 +1,4 @@
 	db "SHELLSQUID@"; species name
-	dw 211, 165 ; height, weight
 
 	db   "Sometimes it can"
 	next "accidentally lose"

@@ -1,5 +1,4 @@
 	db "LOUDCAT@" ; species name
-	dw 207, 410 ; height, weight
 
 	db   "Each clan has its"
 	next "own distinctive"

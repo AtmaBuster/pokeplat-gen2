@@ -1,5 +1,4 @@
 	db "BIG EATER@" ; species name
-	dw 200, 2315 ; height, weight
 
 	db   "It conceals food"
 	next "under the long fur"

@@ -1,5 +1,4 @@
 	db "BEEHIVE@" ; species name
-	dw 311, 849 ; height, weight
 
 	db   "It will release"
 	next "various pheromones"

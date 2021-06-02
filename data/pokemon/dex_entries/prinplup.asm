@@ -1,5 +1,4 @@
 	db "PENGUIN@" ; species name
-	dw 207, 507 ; height, weight
 
 	db   "It lives a"
 	next "solitary life. Its"

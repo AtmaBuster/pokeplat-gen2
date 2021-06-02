@@ -1,5 +1,4 @@
 	db "POLKA DOT@" ; species name
-	dw 008, 44 ; height, weight
 
 	db   "Its tail bounces"
 	next "like a rubber"

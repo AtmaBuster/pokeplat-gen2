@@ -1,5 +1,4 @@
 	db "PUPPY@" ; species name
-	dw 111, 300 ; height, weight
 
 	db   "A popular family"
 	next "pet, known for"

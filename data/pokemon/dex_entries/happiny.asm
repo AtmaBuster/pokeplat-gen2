@@ -1,5 +1,4 @@
 	db "PLAYHOUSE@" ; species name
-	dw 200, 538 ; height, weight
 
 	db   "It will carefully"
 	next "carry a round"

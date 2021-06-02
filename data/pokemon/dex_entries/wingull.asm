@@ -1,5 +1,4 @@
 	db "SEAGULL@" ; species name
-	dw 200, 209 ; height, weight
 
 	db   "It soars on"
 	next "updrafts without"

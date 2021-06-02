@@ -1,5 +1,4 @@
 	db "MUD FISH@" ; species name
-	dw 411, 1806 ; height, weight
 
 	db   "MARSHTOMP's arms"
 	next "are as hard as"

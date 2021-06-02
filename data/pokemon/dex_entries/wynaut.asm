@@ -1,5 +1,4 @@
 	db "BRIGHT@" ; species name
-	dw 200, 309 ; height, weight
 
 	db   "It tends to move"
 	next "in packs. WYNAUT"

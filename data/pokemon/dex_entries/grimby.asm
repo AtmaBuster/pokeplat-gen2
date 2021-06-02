@@ -1,5 +1,4 @@
 	db "SLUDGE@" ; species name
-	dw 101, 400 ; height, weight
 
 	db   "Despite their cute"
 	next "appearance solo,"

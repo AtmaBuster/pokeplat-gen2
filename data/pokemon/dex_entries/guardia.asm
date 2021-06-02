@@ -1,5 +1,4 @@
 	db "PROTECTOR@" ; species name
-	dw 611, 2138 ; height, weight
 
     db   "It protects its"
 	next "child with its"

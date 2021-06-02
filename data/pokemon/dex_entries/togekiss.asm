@@ -1,5 +1,4 @@
 	db "JUBILEE@" ; species name
-	dw 411, 838 ; height, weight
 
 	db   "As everyone knows,"
 	next "it visits peaceful"

@@ -1,5 +1,4 @@
 	db "MUD FISH@" ; species name
-	dw 104, 168 ; height, weight
 
 	db   "Its power can"
 	next "crush boulders."

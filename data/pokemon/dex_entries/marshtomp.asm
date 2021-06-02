@@ -1,5 +1,4 @@
 	db "MUD FISH@" ; species name
-	dw 204, 617 ; height, weight
 
 	db   "MARSHTOMP's home"
 	next "on muddy ground"

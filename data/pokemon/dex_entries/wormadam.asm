@@ -1,5 +1,4 @@
 	db "BAGWORM@" ; species name
-	dw 108, 143 ; height, weight
 
 	db   "When evolving, its"
 	next "body will take in"

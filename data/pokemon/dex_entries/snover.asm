@@ -1,5 +1,4 @@
 	db "FROST TREE@" ; species name
-	dw 303, 1113 ; height, weight
 
 	db   "During colder"
 	next "seasons, it moves"

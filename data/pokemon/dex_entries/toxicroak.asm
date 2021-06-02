@@ -1,5 +1,4 @@
 	db "TOXIC MOUTH@" ; species name
-	dw 403, 979 ; height, weight
 
 	db   "It has a poison"
 	next "sac at its throat."

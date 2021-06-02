@@ -1,5 +1,4 @@
 	db "BRUTAL@" ; species name
-	dw 511, 1958 ; height, weight
 
 	db   "It can swim at"
 	next "speeds of 75 mph"

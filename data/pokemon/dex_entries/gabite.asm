@@ -1,5 +1,4 @@
 	db "CAVE@" ; species name
-	dw 407, 1235 ; height, weight
 
 	db   "As it digs to"
 	next "expand its nest,"

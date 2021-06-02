@@ -1,5 +1,4 @@
 	db "PLATE@" ; species name
-	dw 411, 1054 ; height, weight
 
 	db   "Its enormous,"
 	next "retractable claws"

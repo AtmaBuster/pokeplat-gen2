@@ -1,5 +1,4 @@
 	db "JAW FISH@" ; species name
-	dw 207, 720 ; height, weight
 
 	db   "Rips the seabed up"
 	next "with its stretched"

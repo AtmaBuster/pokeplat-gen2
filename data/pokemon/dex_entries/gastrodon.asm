@@ -1,5 +1,4 @@
 	db "SEA SLUG@" ; species name
-	dw 420, 69 ; height, weight
 
 	db   "Long ago, its"
 	next "entire back was"

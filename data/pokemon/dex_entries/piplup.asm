@@ -1,5 +1,4 @@
 	db "PENGUIN@" ; species name
-	dw 104, 115 ; height, weight
 
 	db   "It dislikes being"
 	next "taken care of. It"

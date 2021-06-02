@@ -1,5 +1,4 @@
 	db "GRIPPER@" ; species name
-	dw 703, 2350 ; height, weight
 
 	db   "This feared"
 	next "#MON is said to"

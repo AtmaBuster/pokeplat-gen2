@@ -1,5 +1,4 @@
 	db "VINE@" ; species name
-	dw 205, 440 ; height, weight
 
 	db   "The unruly vines"
 	next "hanging from its"

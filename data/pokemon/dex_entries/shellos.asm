@@ -1,5 +1,4 @@
 	db "SEA SLUG@" ; species name
-	dw 100, 139 ; height, weight
 
 	db   "Beware of pushing"
 	next "strongly on its"

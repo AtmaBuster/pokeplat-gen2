@@ -1,5 +1,4 @@
 	db "MUSHROOM@" ; species name
-	dw 009, 100 ; height, weight
 
 	db   "They are born"
 	next "planted inside of"

@@ -1,5 +1,4 @@
 	db "STOMACH@" ; species name
-	dw 104, 227 ; height, weight
 
 	db   "It has a small"
 	next "heart and brain."

@@ -1,5 +1,4 @@
 	db "PRIM@" ; species name
-	dw 307, 719 ; height, weight
 
 	db   "It dislikes dirty"
 	next "places. It often"

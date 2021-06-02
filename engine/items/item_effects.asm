@@ -959,106 +959,53 @@ HeavyBallMultiplier:
 ; else add 20 to catch rate if weight < 307.2 kg
 ; else add 30 to catch rate if weight < 409.6 kg
 ; else add 40 to catch rate (never happens)
+	push bc
 	ld a, [wEnemyMonSpecies]
 	call GetPokemonIndexFromID
 	dec hl
-	ld d, h
-	ld e, l
 	add hl, hl
-	add hl, de
-	ld de, PokedexDataPointerTable
-	add hl, de
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarByte
-	push af
-	inc hl
-	ld a, BANK(PokedexDataPointerTable)
+	ld bc, MonWeights
+	add hl, bc
+	ld a, BANK(MonWeights)
 	call GetFarHalfword
-	pop de
-
-.SkipText:
-	ld a, d
-	call GetFarByte
-	inc hl
-	cp "@"
-	jr nz, .SkipText
-
-	ld a, d
-	push bc
-	inc hl
-	inc hl
-	call GetFarHalfword
-
-	srl h
-	rr l
-	ld b, h
-	ld c, l
-
-rept 4
-	srl b
-	rr c
-endr
-	call .subbc
-
-	srl b
-	rr c
-	call .subbc
-
 	ld a, h
-	pop bc
-	jr .compare
-
-.subbc
-	; subtract bc from hl
-	push bc
-	ld a, b
-	cpl
-	ld b, a
-	ld a, c
-	cpl
-	ld c, a
-	inc bc
+	srl a
+	srl a
+	and a
+	jr z, .light
+	dec a
+	cp 4
+	jr c, .ok
+	ld a, 3
+.ok
+	ld l, a
+	ld h, 0
+	ld bc, .weight_mod_table
 	add hl, bc
 	pop bc
-	ret
-
-.compare
-	ld c, a
-	cp HIGH(1024) ; 102.4 kg
-	jr c, .lightmon
-
-	ld hl, .WeightsTable
-.lookup
-	ld a, c
-	cp [hl]
-	jr c, .heavymon
-	inc hl
-	inc hl
-	jr .lookup
-
-.heavymon
-	inc hl
 	ld a, b
 	add [hl]
 	ld b, a
 	ret nc
-	ld b, $ff
+	ld b, -1
 	ret
 
-.lightmon
+.light
+	pop bc
 	ld a, b
 	sub 20
 	ld b, a
-	ret nc
-	ld b, $1
+	jr c, .min
+	ret nz
+.min
+	ld b, 1
 	ret
 
-.WeightsTable:
-; weight factor, boost
-	db HIGH(2048),   0
-	db HIGH(3072),  20
-	db HIGH(4096),  30
-	db HIGH(65280), 40
+.weight_mod_table
+	db 0
+	db 20
+	db 30
+	db 40
 
 LureBallMultiplier:
 ; multiply catch rate by 3 if this is a fishing rod battle

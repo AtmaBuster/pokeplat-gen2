@@ -1,5 +1,4 @@
 	db "FIRE BEAR@" ; species name
-	dw 305, 720 ; height, weight
 
 	db   "When threatened"
 	next "severely, rather"

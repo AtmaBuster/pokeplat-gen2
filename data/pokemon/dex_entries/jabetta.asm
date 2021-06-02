@@ -1,5 +1,4 @@
 	db "FLYINGFISH@" ; species name
-	dw 311, 1131 ; height, weight
 
 	db   "It often settles"
 	next "territorial feuds"

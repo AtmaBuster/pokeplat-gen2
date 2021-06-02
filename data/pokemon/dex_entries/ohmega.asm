@@ -1,5 +1,4 @@
 	db "TECHNO@" ; species name
-	dw 611, 8708 ; height, weight
 
 	db   "An artificial"
 	next "robotic #MON"

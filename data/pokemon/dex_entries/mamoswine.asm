@@ -1,5 +1,4 @@
 	db "TWIN TUSK@" ; species name
-	dw 802, 6415 ; height, weight
 
 	db   "A frozen one was"
 	next "dug from ice"

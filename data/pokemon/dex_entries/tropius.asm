@@ -1,5 +1,4 @@
 	db "FRUIT@" ; species name
-	dw 607, 2205 ; height, weight
 
 	db   "The bunch of fruit"
 	next "around its neck"

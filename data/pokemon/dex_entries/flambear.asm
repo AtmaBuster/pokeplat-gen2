@@ -1,5 +1,4 @@
 	db "FIRE BEAR@" ; species name
-	dw 201, 220 ; height, weight
 
 	db   "The fire that"
 	next "spouts from its"

@@ -1,5 +1,4 @@
 	db "DECEIVER@" ; species name
-	dw 200, 254 ; height, weight
 
 	db   "It chomps with its"
 	next "gaping mouth. Its"

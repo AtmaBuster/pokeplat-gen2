@@ -1,5 +1,4 @@
 	db "SCARECROW@" ; species name
-	dw 403, 1706 ; height, weight
 
 	db   "Packs of them"
 	next "follow travelers"

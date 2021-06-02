@@ -1,5 +1,4 @@
 	db "BIVALVE@" ; species name
-	dw 104, 1157 ; height, weight
 
 	db   "When this #MON"
 	next "evolves, it makes"

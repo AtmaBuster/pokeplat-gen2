@@ -1,5 +1,4 @@
 	db "EMANATION@" ; species name
-	dw 204, 445 ; height, weight
 
 	db   "They communicate"
 	next "with one another"

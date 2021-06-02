@@ -1,5 +1,4 @@
 	db "FLOAT WHALE@" ; species name
-	dw 4707, 8774 ; height, weight
 
 	db   "It is the largest"
 	next "of all identified"

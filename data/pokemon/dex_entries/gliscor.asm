@@ -1,5 +1,4 @@
 	db "SCORPION@" ; species name
-	dw 607, 937 ; height, weight
 
 	db   "It flies without"
 	next "making a sound. It"

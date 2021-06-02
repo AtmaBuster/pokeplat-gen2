@@ -1,5 +1,4 @@
 	db "COLOR SWAP@" ; species name
-	dw 303, 485 ; height, weight
 
 	db   "It changes its"
 	next "shading to match"

@@ -1,5 +1,4 @@
 	db "CAREFREE@" ; species name
-	dw 411, 1213 ; height, weight
 
 	db   "If this #MON"
 	next "hears festive"

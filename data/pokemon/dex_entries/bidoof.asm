@@ -1,5 +1,4 @@
 	db "PLUMP MOUSE@" ; species name
-	dw 108, 441 ; height, weight
 
 	db   "It lives in groups"
 	next "by the water. It"

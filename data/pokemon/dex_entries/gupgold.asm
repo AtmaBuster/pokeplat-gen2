@@ -1,5 +1,4 @@
 	db "GOLDFISH@" ; species name
-	dw 108, 210 ; height, weight
 
 	db   "Even at a young"
 	next "age, this #MON"

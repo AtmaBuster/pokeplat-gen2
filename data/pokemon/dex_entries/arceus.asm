@@ -1,5 +1,4 @@
 	db "ALPHA@" ; species name
-	dw 1006, 7055 ; height, weight
 
 	db   "It is said to have"
 	next "emerged from an"

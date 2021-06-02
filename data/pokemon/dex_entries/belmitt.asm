@@ -1,5 +1,4 @@
 	db "FLYCATCHER@" ; species name
-	dw 403, 270 ; height, weight
 
 	db   "Fights by pitching"
 	next "toxic clumps that"

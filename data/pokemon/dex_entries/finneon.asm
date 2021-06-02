@@ -1,5 +1,4 @@
 	db "WING FISH@" ; species name
-	dw 104, 154 ; height, weight
 
 	db   "While fluttering"
 	next "its two tail fins,"

@@ -1,5 +1,4 @@
 	db "EYEBALL@" ; species name
-	dw 207, 08 ; height, weight
 
 	db   "It flaps its four"
 	next "wings to hover and"

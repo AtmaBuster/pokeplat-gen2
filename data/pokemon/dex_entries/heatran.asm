@@ -1,5 +1,4 @@
 	db "LAVA DOME@" ; species name
-	dw 506, 9840 ; height, weight
 
 	db   "Boiling magma-like"
 	next "blood circulates"

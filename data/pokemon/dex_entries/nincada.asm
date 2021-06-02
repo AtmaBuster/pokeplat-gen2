@@ -1,5 +1,4 @@
 	db "TRAINEE@" ; species name
-	dw 108, 121 ; height, weight
 
 	db   "It can sometimes"
 	next "live underground"

@@ -1,5 +1,4 @@
 	db "ROGUE@" ; species name
-	dw 307, 723 ; height, weight
 
 	db   "A brutish #MON"
 	next "that loves to"

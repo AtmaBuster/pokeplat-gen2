@@ -1,5 +1,4 @@
 	db "SEA LILY@" ; species name
-	dw 303, 525 ; height, weight
 
 	db   "It disguises its"
 	next "tentacles as"

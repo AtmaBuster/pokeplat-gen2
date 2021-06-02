@@ -1,5 +1,4 @@
 	db "FLAME@" ; species name
-	dw 311, 1213 ; height, weight
 
 	db   "It tosses its"
 	next "enemies around"

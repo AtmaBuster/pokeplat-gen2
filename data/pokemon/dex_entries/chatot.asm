@@ -1,5 +1,4 @@
 	db "MUSIC NOTE@" ; species name
-	dw 108, 42 ; height, weight
 
 	db   "It mimics the"
 	next "cries of other"

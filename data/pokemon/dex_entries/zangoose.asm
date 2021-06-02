@@ -1,5 +1,4 @@
 	db "CAT FERRET@" ; species name
-	dw 403, 888 ; height, weight
 
 	db   "Its fur will stand"
 	next "on end if it"
