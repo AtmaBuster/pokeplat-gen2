@@ -176,3 +176,77 @@ FormDataShayminS:
 	dw SHAYMIN_S
 	dw SHAYMIN
 	dw -1
+
+ChangeBurmyCloak::
+; get Burmy ID's into registers
+	ld hl, BURMY
+	call GetPokemonIDFromIndex
+	ld d, a
+	ld hl, BURMY_S
+	call GetPokemonIDFromIndex
+	ld c, a
+	ld hl, BURMY_T
+	call GetPokemonIDFromIndex
+	ld b, a
+	ld e, -1
+	ld hl, wPartySpecies
+.loop
+	inc e
+	ld a, e
+	cp 6
+	ret nc
+	ld a, [hli]
+	cp -1
+	ret z
+	cp b
+	jr z, .hit
+	cp c
+	jr z, .hit
+	cp d
+	jr nz, .loop
+.hit
+	push bc
+	push de
+	push hl
+; did this Burmy battle?
+	ld c, e
+	ld d, 0
+	ld b, CHECK_FLAG
+	ld hl, wGainedEXPFlags
+	farcall SmallFarFlagAction
+	jr z, .miss
+; change Burmy form
+	ld hl, wPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, e
+	call AddNTimes
+	push hl
+	ld a, [wMapTileset]
+	ld c, a
+	ld b, 0
+	ld hl, BurmyCloakTilesets
+	add hl, bc
+	ld a, [hl]
+	ld hl, sp+4
+	inc a
+.form_get_loop
+	inc hl
+	dec a
+	jr nz, .form_get_loop
+	ld a, [hl]
+	pop hl
+	ld [hl], a
+	pop hl
+	dec hl
+	ld [hli], a
+	pop de
+	pop bc
+	jr .loop
+
+.miss
+	pop hl
+	pop de
+	pop bc
+	jr .loop
+
+INCLUDE "data/tilesets/burmy_cloak_tilesets.asm"

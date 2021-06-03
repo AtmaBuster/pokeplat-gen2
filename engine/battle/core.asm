@@ -4,6 +4,7 @@ DoBattle:
 	xor a
 	ld [wBattleParticipantsNotFainted], a
 	ld [wBattleParticipantsIncludingFainted], a
+	ld [wGainedEXPFlags], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
 	inc a
@@ -6926,6 +6927,10 @@ GiveExperiencePoints:
 	bit 0, a
 	ret nz
 
+	ld hl, wGainedEXPFlags
+	ld a, [wBattleParticipantsNotFainted]
+	or [hl]
+	ld [hl], a
 	call .EvenlyDivideExpAmongParticipants
 	xor a
 	ld [wCurPartyMon], a
@@ -8232,6 +8237,7 @@ ExitBattle:
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
 	farcall GivePokerusAndConvertBerries
+	farcall ChangeBurmyCloak
 	ret
 
 CleanUpBattleRAM:

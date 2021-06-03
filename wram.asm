@@ -2253,7 +2253,7 @@ ENDU ; d1f7
 wOtherTrainerType:: db ; d1f7
 wTrainerGroupBank:: db ; d1f8
 
-	ds 1
+wGainedEXPFlags:: flag_array PARTY_LENGTH
 
 wLinkBattleRNs:: ds 10 ; d1fa
 
