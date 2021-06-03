@@ -205,6 +205,15 @@ ItemDescriptions:
 	dw EvoStoneDesc
 	dw EvoStoneDesc
 	dw EvoStoneDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw OddKeystoneDesc
 	dw DragonFangDesc
 	dw BlackGlassesDesc
 	dw SoftSandDesc
@@ -221,16 +230,7 @@ ItemDescriptions:
 	dw HardStoneDesc
 	dw PoisonBarbDesc
 	dw MagnetDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
+	dw GracideaDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
@@ -929,6 +929,11 @@ QuickBallDesc:
 	db   "A BALL that works"
 	next "best on turn one.@"
 
+OddKeystoneDesc:
 PlaceholderDesc:
 	db "PLACEHOLDER"
 	next "PLACEHOLDER@"
+
+GracideaDesc:
+	db   "A flower used to"
+	next "show gratitude.@"

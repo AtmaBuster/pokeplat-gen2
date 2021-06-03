@@ -236,6 +236,7 @@
 	const STONE_PLATE  ; e4
 	const TOXIC_PLATE  ; e5
 	const ZAP_PLATE    ; e6
+	const GRACIDEA     ; e7
 
 	const_def 1
 add_tm: MACRO

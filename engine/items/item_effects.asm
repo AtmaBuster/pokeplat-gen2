@@ -218,6 +218,32 @@ ItemEffects:
 	dw EvoStoneEffect
 	dw EvoStoneEffect
 	dw EvoStoneEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw NoEffect
+	dw GracideaEffect
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -3109,4 +3135,8 @@ GetMthMoveOfCurrentMon:
 	ld c, a
 	ld b, 0
 	add hl, bc
+	ret
+
+GracideaEffect:
+	farcall GracideaFunction
 	ret

@@ -4,9 +4,9 @@ ChangePartyMonForm::
 	ld a, [wPartyCount]
 	and a
 	jp z, .no_mons
-	ld b, PARTYMENUACTION_GIVE_MON
+	ld b, PARTYMENUACTION_CHOOSE_POKEMON
 	farcall SelectTradeOrDayCareMon
-	jr c, .decline
+	jp c, .decline
 
 	ld a, [wScriptVar]
 	dec a ; 1-index to 0-index
@@ -85,6 +85,17 @@ ChangePartyMonForm::
 	add hl, bc
 	ld b, TRUE
 	predef CalcMonStats
+; buffer the mon's nickname into wStringBuffer2
+	ld a, [wPartyMenuCursor]
+	dec a
+	ld hl, wPartyMonNicknames
+	ld bc, MON_NAME_LENGTH
+	call AddNTimes
+	ld de, wStringBuffer2
+	call CopyBytes
+; return success code
+	ld a, FORMCHANGE_SUCCESSFUL
+	ld [wScriptVar], a
 	ret
 
 .no_mons
@@ -114,7 +125,6 @@ FormChangeMons:
 	dw FormDataRotomGrs
 	dw FormDataRotomIce
 	dw FormDataRotomWtr
-	dw FormDataShaymin
 	dw FormDataShayminS
 
 FormDataDeoxys:
@@ -165,11 +175,6 @@ FormDataRotomIce:
 FormDataRotomWtr:
 	dw ROTOM_WTR
 	dw ROTOM, ROTOM_FLY, ROTOM_FRE, ROTOM_GRS, ROTOM_ICE
-	dw -1
-
-FormDataShaymin:
-	dw SHAYMIN
-	dw SHAYMIN_S
 	dw -1
 
 FormDataShayminS:
