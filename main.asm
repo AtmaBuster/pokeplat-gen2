@@ -265,6 +265,7 @@ INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
+INCLUDE "engine/pokemon/change_form.asm"
 
 
 SECTION "Battle Stat Changes", ROMX
@@ -701,9 +702,6 @@ SECTION "Mon and Trainer Palettes", ROMX
 INCLUDE "data/pokemon/palettes.asm"
 
 INCLUDE "data/trainers/palettes.asm"
-
-
-INCLUDE "engine/pokemon/change_form.asm"
 
 
 ; own section

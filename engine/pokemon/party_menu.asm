@@ -726,6 +726,8 @@ PartyMenuStrings:
 	dw ChooseAMonString ; Probably used to be ChooseAFemalePKMNString
 	dw ChooseAMonString ; Probably used to be ChooseAMalePKMNString
 	dw ToWhichPKMNString
+	dw NULL
+	dw ChooseAMonString
 
 ChooseAMonString:
 	db "Choose a #MON.@"
@@ -844,4 +846,16 @@ PrintPartyMenuActionText:
 	call PrintText
 	pop af
 	ld [wOptions], a
+	ret
+
+SelectFormChangeMon:
+	ld a, PARTYMENUACTION_CHANGE_FORM
+	ld [wPartyMenuActionText], a
+	call DisableSpriteUpdates
+	call ClearBGPalettes
+	call InitPartyMenuLayout
+	call WaitBGMap
+	call SetPalettes
+	call DelayFrame
+	call PartyMenuSelect
 	ret

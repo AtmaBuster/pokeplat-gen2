@@ -1,13 +1,66 @@
-SECTION "Form Change", ROMX
+ChangePartyMonSpecies:
+	call GetPokemonIDFromIndex
+ChangePartyMonSpeciesID:
+	push bc
+	push hl
 
-ChangePartyMonForm::
+	ld [wCurSpecies], a
+	push af
+	call GetBaseData
+	ld a, [wPartyMenuCursor]
+	ld c, a
+	ld b, 0
+	ld hl, wPartySpecies
+	add hl, bc
+	pop af
+	ld [hl], a
+	push af
+	ld a, [wPartyMenuCursor]
+	ld hl, wPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	pop af
+	ld [hl], a
+	ld bc, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	ld [wCurPartyLevel], a
+	ld bc, MON_MAXHP - MON_LEVEL
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld bc, MON_STAT_EXP - 1 - MON_MAXHP
+	add hl, bc
+	ld b, TRUE
+	predef CalcMonStats
+
+	pop hl
+	pop bc
+	ret
+
+ChangePartyMonFormMenu::
 	ld a, [wPartyCount]
 	and a
 	jp z, .no_mons
-	ld b, PARTYMENUACTION_CHOOSE_POKEMON
-	farcall SelectTradeOrDayCareMon
-	jp c, .decline
+	call SelectFormChangeMon
+	jp nc, .try_form_change
+	call ReturnToMapWithSpeechTextbox
+	ld a, FORMCHANGE_DECLINED
+	ld [wScriptVar], a
+	ret
 
+.try_form_change
+	call ChangePartyMonForm
+	call ReturnToMapWithSpeechTextbox
+	ret
+
+.no_mons
+	call ReturnToMapWithSpeechTextbox
+	ld a, FORMCHANGE_NOMONS
+	ld [wScriptVar], a
+	ret
+
+ChangePartyMonForm::
 	ld a, [wScriptVar]
 	dec a ; 1-index to 0-index
 	ld l, a
@@ -50,44 +103,16 @@ ChangePartyMonForm::
 	cp e
 	jr nz, .loop
 ; valid mon
+	ld hl, wPartyMenuCursor
+	dec [hl]
 	pop de
 	ld h, d
 	ld l, e
-	call GetPokemonIDFromIndex
-	ld [wCurSpecies], a
-	push af
-	call GetBaseData
-	ld a, [wPartyMenuCursor]
-	dec a
-	ld c, a
-	ld b, 0
-	ld hl, wPartySpecies
-	add hl, bc
-	pop af
-	ld [hl], a
-	push af
-	ld a, [wPartyMenuCursor]
-	dec a
-	ld hl, wPartyMon1Species
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	pop af
-	ld [hl], a
-	ld bc, MON_LEVEL
-	add hl, bc
-	ld a, [hl]
-	ld [wCurPartyLevel], a
-	ld bc, MON_MAXHP - MON_LEVEL
-	add hl, bc
-	ld d, h
-	ld e, l
-	ld bc, MON_STAT_EXP - 1 - MON_MAXHP
-	add hl, bc
-	ld b, TRUE
-	predef CalcMonStats
+
+	call ChangePartyMonSpecies
+
 ; buffer the mon's nickname into wStringBuffer2
 	ld a, [wPartyMenuCursor]
-	dec a
 	ld hl, wPartyMonNicknames
 	ld bc, MON_NAME_LENGTH
 	call AddNTimes
@@ -95,16 +120,6 @@ ChangePartyMonForm::
 	call CopyBytes
 ; return success code
 	ld a, FORMCHANGE_SUCCESSFUL
-	ld [wScriptVar], a
-	ret
-
-.no_mons
-	ld a, FORMCHANGE_NOMONS
-	ld [wScriptVar], a
-	ret
-
-.decline
-	ld a, FORMCHANGE_DECLINED
 	ld [wScriptVar], a
 	ret
 
@@ -221,29 +236,23 @@ ChangeBurmyCloak::
 	farcall SmallFarFlagAction
 	jr z, .miss
 ; change Burmy form
-	ld hl, wPartyMon1Species
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld a, e
-	call AddNTimes
-	push hl
 	ld a, [wMapTileset]
 	ld c, a
 	ld b, 0
 	ld hl, BurmyCloakTilesets
 	add hl, bc
 	ld a, [hl]
-	ld hl, sp+4
+	ld hl, sp+2
 	inc a
 .form_get_loop
 	inc hl
 	dec a
 	jr nz, .form_get_loop
+	ld a, e
+	ld [wPartyMenuCursor], a
 	ld a, [hl]
+	call ChangePartyMonSpeciesID
 	pop hl
-	ld [hl], a
-	pop hl
-	dec hl
-	ld [hli], a
 	pop de
 	pop bc
 	jr .loop

@@ -3138,5 +3138,28 @@ GetMthMoveOfCurrentMon:
 	ret
 
 GracideaEffect:
-	farcall GracideaFunction
+	ld b, PARTYMENUACTION_CHANGE_FORM
+	call UseItem_SelectMon
+
+	jp c, .DecidedNotToUse
+
+	ld a, FORMCHANGE_SHAYMIN_S
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
+	ld a, [wScriptVar]
+	cp FORMCHANGE_INVALIDMON
+	jr z, .NoEffect
+	ld hl, ChangedFormText
+	jp PrintText
+
+.NoEffect:
+	call WontHaveAnyEffectMessage
+
+.DecidedNotToUse:
+	xor a
+	ld [wItemEffectSucceeded], a
 	ret
+
+ChangedFormText:
+	text_far _ChangedFormText
+	text_end
