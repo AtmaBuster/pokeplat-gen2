@@ -1148,3 +1148,11 @@ GiratinaOriginPal:  INCBIN "gfx/pokemon/giratina_o/front.gbcpal", middle_colors
 GiratinaOriginShinyPal:INCLUDE "gfx/pokemon/giratina_o/shiny.pal"
 ShayminSkyPal:      INCBIN "gfx/pokemon/shaymin_s/front.gbcpal", middle_colors
 ShayminSkyShinyPal: INCLUDE "gfx/pokemon/shaymin_s/shiny.pal"
+CastformRnPal:      INCBIN "gfx/pokemon/castform/front_rain.gbcpal", middle_colors
+CastformRnShinyPal: INCLUDE "gfx/pokemon/castform/shiny_rain.pal"
+CastformSnPal:      INCBIN "gfx/pokemon/castform/front_sun.gbcpal", middle_colors
+CastformSnShinyPal: INCLUDE "gfx/pokemon/castform/shiny_sun.pal"
+CastformSwPal:      INCBIN "gfx/pokemon/castform/front_snow.gbcpal", middle_colors
+CastformSwShinyPal: INCLUDE "gfx/pokemon/castform/shiny_snow.pal"
+CherrimSPal:        INCBIN "gfx/pokemon/cherrim/front_sun.gbcpal", middle_colors
+CherrimSShinyPal:   INCLUDE "gfx/pokemon/cherrim/shiny_sun.pal"

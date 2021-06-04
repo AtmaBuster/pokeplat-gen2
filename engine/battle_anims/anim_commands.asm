@@ -356,8 +356,8 @@ BattleAnimCommands::
 	dw BattleAnimCmd_E7
 	dw BattleAnimCmd_UpdateActorPic
 	dw BattleAnimCmd_Minimize
-	dw BattleAnimCmd_EA ; dummy
-	dw BattleAnimCmd_EB ; dummy
+	dw BattleAnimCmd_ReloadSprite
+	dw BattleAnimCmd_ReloadPal
 	dw BattleAnimCmd_EC ; dummy
 	dw BattleAnimCmd_ED ; dummy
 	dw BattleAnimCmd_IfParamAnd
@@ -379,7 +379,6 @@ BattleAnimCommands::
 	dw BattleAnimCmd_Call
 	dw BattleAnimCmd_Ret
 
-BattleAnimCmd_EA:
 BattleAnimCmd_EB:
 BattleAnimCmd_EC:
 BattleAnimCmd_ED:
@@ -1470,4 +1469,66 @@ BattleAnim_UpdateOAM_All:
 	jr .loop2
 
 .done
+	ret
+
+BattleAnimCmd_ReloadSprite:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wCurPartySpecies)
+	ldh [rSVBK], a
+	ld a, [wCurPartySpecies] ; CurPartySpecies
+	push af
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+	ld hl, wBattleMonDVs ; BattleMonDVs
+	predef GetUnownLetter
+	ld de, vTiles0 tile $00
+	predef GetMonBackpic
+	jr .done
+
+.enemy
+	ld hl, wEnemyMonDVs ; EnemyMonDVs
+	predef GetUnownLetter
+	ld de, vTiles0 tile $00
+	predef GetMonFrontpic
+
+.done
+	pop af
+	ld [wCurPartySpecies], a ; CurPartySpecies
+	pop af
+	ldh [rSVBK], a
+	ret
+
+BattleAnimCmd_ReloadPal:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wCurPartySpecies)
+	ldh [rSVBK], a
+	ld a, [wCurPartySpecies] ; CurPartySpecies
+	push af
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+	farcall GetBattlemonBackpicPalettePointer
+	ld de, wBGPals1
+	call LoadPalette_Mon
+	call BattleAnimAssignPals
+	jr .done
+
+.enemy
+	farcall GetEnemyFrontpicPalettePointer
+	ld de, wBGPals2
+	call LoadPalette_Mon
+	call BattleAnimAssignPals
+
+.done
+	pop af
+	ld [wCurPartySpecies], a ; CurPartySpecies
+	pop af
+	ldh [rSVBK], a
 	ret

@@ -172,14 +172,14 @@ anim_minimize: MACRO
 	db anim_minimize_command
 ENDM
 
-	enum anim_0xea_command ; $ea
-anim_0xea: MACRO
-	db anim_0xea_command
+	enum anim_reloadsprite_command ; $ea
+anim_reloadsprite: MACRO
+	db anim_reloadsprite_command
 ENDM
 
-	enum anim_0xeb_command ; $eb
-anim_0xeb: MACRO
-	db anim_0xeb_command
+	enum anim_reloadpal_command ; $eb
+anim_reloadpal: MACRO
+	db anim_reloadpal_command
 ENDM
 
 	enum anim_0xec_command ; $ec

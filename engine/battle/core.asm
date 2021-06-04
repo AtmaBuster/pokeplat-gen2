@@ -1755,6 +1755,7 @@ HandleWeather:
 	call .PrintWeatherMessage
 	xor a
 	ld [wBattleWeather], a
+	farcall UpdateWeatherForms
 	ret
 
 .do_sandstorm_damage

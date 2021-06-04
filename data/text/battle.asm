@@ -1170,3 +1170,14 @@ ReflectWoreOffText:
 	text "<TARGET>'s"
 	line "REFLECT faded!"
 	prompt
+
+RevertedFormText:
+	text "<TARGET>"
+	line "reverted to its"
+	cont "original forme!"
+	prompt
+
+ChangedFormBattleText:
+	text "<USER>"
+	line "changed form!"
+	prompt

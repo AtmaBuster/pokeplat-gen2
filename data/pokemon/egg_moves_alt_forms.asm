@@ -18,6 +18,10 @@ EggMovePointers6::
 	dw NoEggMoves6
 	dw NoEggMoves6
 	dw NoEggMoves6
+	dw NoEggMoves6
+	dw NoEggMoves6
+	dw NoEggMoves6
+	dw NoEggMoves6
 
 NoEggMoves6:
 	dw -1 ; end

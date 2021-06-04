@@ -18,6 +18,7 @@
 ; - BitmasksPointers (see gfx/pokemon/bitmask_pointers.asm)
 ; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
 ; - Footprints (see gfx/footprints.asm)
+; - MonHeights and MonWeights (see data/pokemon/height_weight.asm)
 	const_def 1
 	const BULBASAUR  ; 001
 	const IVYSAUR    ; 002
@@ -583,6 +584,10 @@ ALT_FORMS EQU const_value
 	const ROTOM_WTR   ; 22d
 	const GIRATINA_O  ; 22e
 	const SHAYMIN_S   ; 22f
+	const CASTFORM_RN ; 230
+	const CASTFORM_SN ; 231
+	const CASTFORM_SW ; 232
+	const CHERRIM_S   ; 233
 
 NUM_POKEMON EQU const_value + -1
 

@@ -482,7 +482,8 @@ NUM_ATTACKS EQU const_value + -1
 	endc
 
 ; Battle animations use the same constants as the moves
-	const ANIM_SWEET_SCENT_2     ; 1d9
+	const ANIM_SWEET_SCENT_2     ; 1d4
+	const ANIM_REFRESH_SPRITE    ; 1d5
 ; Animations with negative IDs will play even when animations are disabled
 const_value = -$16 ;fix if more negative values are added
 	const ANIM_THROW_POKE_BALL   ; -16 (ffea)

@@ -3143,7 +3143,25 @@ GracideaEffect:
 
 	jp c, .DecidedNotToUse
 
+; fail if target is frozen
+	ld a, [wPartyMenuCursor]
+	ld hl, wPartyMon1Status
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	bit FRZ, [hl]
+	jr nz, .NoEffect
+
 	ld a, FORMCHANGE_SHAYMIN_S
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
+	ld a, [wScriptVar]
+	cp FORMCHANGE_INVALIDMON
+	jr z, .TryRevert
+	ld hl, ChangedFormText
+	jp PrintText
+
+.TryRevert:
+	ld a, FORMCHANGE_SHAYMIN_N
 	ld [wScriptVar], a
 	farcall ChangePartyMonForm
 	ld a, [wScriptVar]

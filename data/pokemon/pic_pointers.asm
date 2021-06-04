@@ -1131,3 +1131,11 @@ PokemonPicPointers::
 	dba GiratinaOriginBackpic
 	dba ShayminSkyFrontpic
 	dba ShayminSkyBackpic
+	dba CastformRnFrontpic
+	dba CastformRnBackpic
+	dba CastformSnFrontpic
+	dba CastformSnBackpic
+	dba CastformSwFrontpic
+	dba CastformSwBackpic
+	dba CherrimSFrontpic
+	dba CherrimSBackpic

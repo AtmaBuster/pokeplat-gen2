@@ -574,3 +574,7 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; ROTOM_WTR
 	mon_cry CRY_RATTATA,     $000,  $001 ; GIRATINA_O
 	mon_cry CRY_RATTATA,     $000,  $001 ; SHAYMIN_S
+	mon_cry CRY_RATTATA,     $000,  $001 ; CASTFORM_RN
+	mon_cry CRY_RATTATA,     $000,  $001 ; CASTFORM_SN
+	mon_cry CRY_RATTATA,     $000,  $001 ; CASTFORM_SW
+	mon_cry CRY_RATTATA,     $000,  $001 ; CHERRIM_S

@@ -559,3 +559,7 @@ PokedexDataPointerTable:
 	dba RotomPokedexEntry
 	dba GiratinaPokedexEntry
 	dba ShayminPokedexEntry
+	dba CastformPokedexEntry
+	dba CastformPokedexEntry
+	dba CastformPokedexEntry
+	dba CherrimPokedexEntry

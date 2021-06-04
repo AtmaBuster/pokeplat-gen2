@@ -562,3 +562,7 @@ PokemonNames::
 	db "ROTOM@@@@@"
 	db "GIRATINA@@"
 	db "SHAYMIN@@@"
+	db "CASTFORM@@"
+	db "CASTFORM@@"
+	db "CASTFORM@@"
+	db "CHERRIM@@@"

@@ -18,6 +18,10 @@ EvosAttacksPointers6::
 	dw RotomWashEvosAttacks
 	dw GiratinaOriginEvosAttacks
 	dw ShayminSkyEvosAttacks
+	dw CastformRnEvosAttacks
+	dw CastformSnEvosAttacks
+	dw CastformSwEvosAttacks
+	dw CherrimSEvosAttacks
 
 PichuSpikyEvosAttacks:
 	db 0 ; no more evolutions
@@ -284,4 +288,12 @@ ShayminSkyEvosAttacks:
 	dbw 82, SWEET_KISS
 	dbw 91, LEAF_STORM
 	dbw 100, SEED_FLARE
+	db 0 ; no more level-up moves
+
+CastformRnEvosAttacks:
+CastformSnEvosAttacks:
+CastformSwEvosAttacks:
+CherrimSEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POUND
 	db 0 ; no more level-up moves

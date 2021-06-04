@@ -492,6 +492,7 @@ BattleAnimations::
 	dw BattleAnim_OminousWind
 	dw BattleAnim_ShadowForce
 	dw BattleAnim_SweetScent2
+	dw BattleAnim_RefreshSprite
 
 BattleAnim_0:
 BattleAnim_FakeOut:
@@ -5278,4 +5279,18 @@ BattleAnim_ShowMon_1:
 	anim_wait 4
 	anim_incobj 1
 	anim_wait 1
+	anim_ret
+
+BattleAnim_RefreshSprite:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_reloadsprite
+	anim_sound 0, 0, SFX_PSYBEAM
+	anim_bgeffect ANIM_BG_WAVE_DEFORM_USER, $0, $1, $0
+	anim_wait 48
+	anim_updateactorpic
+	anim_reloadpal
+	anim_incbgeffect ANIM_BG_WAVE_DEFORM_USER
+	anim_wait 48
+	anim_call BattleAnim_ShowMon_0
 	anim_ret

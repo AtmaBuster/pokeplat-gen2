@@ -1194,7 +1194,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 IF DEF(_DEBUG)
 REPT 21
-	dbw 10, GASTRODON_E
+	dbw 15, SHAYMIN_S
 ENDR
 ELSE
 	; morn

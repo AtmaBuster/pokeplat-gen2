@@ -306,7 +306,8 @@ NUM_UNOWN_PUZZLES EQU const_value
 	const FORMCHANGE_ROTOM_GRS ; 8
 	const FORMCHANGE_ROTOM_ICE ; 9
 	const FORMCHANGE_ROTOM_WTR ; 10
-	const FORMCHANGE_SHAYMIN_S ; 11
+	const FORMCHANGE_SHAYMIN_N ; 11
+	const FORMCHANGE_SHAYMIN_S ; 12
 
 ; ChangePartyMonForm return values
 	const_def 1

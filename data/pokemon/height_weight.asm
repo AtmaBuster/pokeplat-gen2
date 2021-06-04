@@ -558,6 +558,10 @@ MonHeights::
 	dw 3   ; ROTOM_WTR
 	dw 69  ; GIRATINA_O
 	dw 4   ; SHAYMIN_S
+	dw 3   ; CASTFORM_RN
+	dw 3   ; CASTFORM_SN
+	dw 3   ; CASTFORM_SW
+	dw 5   ; CHERRIM_S
 
 MonWeights::
 	dw 69   ; BULBASAUR
@@ -1119,3 +1123,7 @@ MonWeights::
 	dw 3    ; ROTOM_WTR
 	dw 650  ; GIRATINA_O
 	dw 52   ; SHAYMIN_S
+	dw 8    ; CASTFORM_RN
+	dw 8    ; CASTFORM_SN
+	dw 8    ; CASTFORM_SW
+	dw 93   ; CHERRIM_S

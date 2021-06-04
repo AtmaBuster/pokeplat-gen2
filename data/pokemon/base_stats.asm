@@ -606,4 +606,8 @@ INCLUDE "data/pokemon/base_stats/rotom_fly.asm"
 INCLUDE "data/pokemon/base_stats/rotom_grs.asm"
 INCLUDE "data/pokemon/base_stats/giratina_o.asm"
 INCLUDE "data/pokemon/base_stats/shaymin_s.asm"
+INCLUDE "data/pokemon/base_stats/castform_rn.asm"
+INCLUDE "data/pokemon/base_stats/castform_sn.asm"
+INCLUDE "data/pokemon/base_stats/castform_sw.asm"
+INCLUDE "data/pokemon/base_stats/cherrim_s.asm"
 POPS
