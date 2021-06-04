@@ -431,7 +431,7 @@ Route29_DEBUG_DeoxysS:
 
 Route29_DEBUG_Deoxys:
 	opentext
-	special ChangePartyMonForm
+	special ChangePartyMonFormMenu
 	closetext
 	end
 

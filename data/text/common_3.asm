@@ -1529,3 +1529,9 @@ UnknownText_0x1c60d1::
 	para "Come back again in"
 	line "a while."
 	prompt
+
+_ChangedFormText::
+	text_ram wStringBuffer2
+	text ""
+	line "changed form!"
+	prompt
