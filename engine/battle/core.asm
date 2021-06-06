@@ -4083,6 +4083,7 @@ SendOutPlayerMon:
 	xor a
 	ldh [hBGMapMode], a
 	call GetBattleMonBackpic
+	farcall UpdateArceusForm
 	xor a
 	ldh [hGraphicStartTile], a
 	ld [wBattleMenuCursorBuffer], a
@@ -4122,6 +4123,7 @@ SendOutPlayerMon:
 	call PlayStereoCry
 
 .statused
+	farcall UpdateWeatherForms
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a

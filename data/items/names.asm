@@ -230,7 +230,7 @@ ItemNames::
 	db "TOXIC PLATE@"
 	db "ZAP PLATE@"
 	db "GRACIDEA@"
-	db "???@"
+	db "GRISEOUS ORB@"
 	db "???@"
 	db "???@"
 	db "???@"

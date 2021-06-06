@@ -7446,6 +7446,8 @@ UpdateWeatherForms:
 ; fallthrough
 
 .update
+	call .sanity_check
+	ret nc
 	call GetPokemonIDFromIndex
 	ld [wCurPartySpecies], a
 	push af
@@ -7497,3 +7499,83 @@ UpdateWeatherForms:
 .no_sub
 	ld hl, ChangedFormBattleText
 	jp StdBattleTextbox
+
+.sanity_check
+; don't change form if you won't actually change
+	push de
+	push hl
+	ld d, h
+	ld e, l
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .sc_got_species
+	ld hl, wEnemyMonSpecies
+.sc_got_species
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp d
+	jr nz, .diff
+	ld a, l
+	cp e
+	jr nz, .diff
+	pop hl
+	pop de
+	and a
+	ret
+
+.diff
+	pop hl
+	pop de
+	scf
+	ret
+
+UpdateArceusForm:
+	call BattleCommand_switchturn
+	call .Update
+	call BattleCommand_switchturn
+; update player form
+
+; fallthrough
+.Update:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wBattleMonType
+	jr z, .got_species
+	ld hl, wEnemyMonSpecies
+	ld de, wEnemyMonType
+.got_species
+	ld a, [hli]
+	push hl
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .miss
+	ld a, l
+	cp LOW(ARCEUS)
+	jr nz, .miss
+	pop hl
+	ld a, [hl]
+	push de
+	ld hl, PlateItems
+	ld de, 2
+	call IsInArray
+	pop de
+	ret nc
+; is Arceus, is holding a Plate
+	inc hl
+	ld a, [hl] ; target type
+	ld [de], a
+	inc de
+	ld [de], a
+; set palette
+	; TODO
+	ret
+
+.miss
+	pop hl
+	ret
+
+INCLUDE "data/items/plate_items.asm"

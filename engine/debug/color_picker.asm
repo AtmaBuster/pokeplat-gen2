@@ -7,6 +7,7 @@ DebugMenu_PokePics:
 	ldh [hDebugMenuDataBuffer + 1], a
 	xor a
 	ld [wMenuCursorY], a
+	ldh [hDebugMenuCursorPos], a
 	ldh [hDebugMenuDataBuffer], a
 	ldh [hDebugMenuDataBuffer + 2], a
 	hlcoord 0, 0
@@ -48,6 +49,8 @@ DebugMenu_PokePics:
 	jr nz, .a_held
 	ldh a, [hJoyPressed]
 .a_held
+	bit START_F, a
+	jr nz, .toggle_edit_mode
 	bit B_BUTTON_F, a
 	ret nz
 	bit D_LEFT_F, a
@@ -60,6 +63,13 @@ DebugMenu_PokePics:
 	jr nz, .up
 	bit SELECT_F, a
 	jr nz, .swap_pals
+	jr .input
+
+.toggle_edit_mode
+	ldh a, [hDebugMenuCursorPos]
+	xor 1
+	ldh [hDebugMenuCursorPos], a
+	call .update_edit_display
 	jr .input
 
 .up
@@ -83,8 +93,8 @@ DebugMenu_PokePics:
 	jp .update_pal_cursor
 
 .left
-	ldh a, [hJoyDown]
-	bit START_F, a
+	ldh a, [hDebugMenuCursorPos]
+	and a
 	jp nz, .left_pal
 	ldh a, [hDebugMenuDataBuffer]
 	ld h, a
@@ -98,8 +108,8 @@ DebugMenu_PokePics:
 	jr .cont
 
 .right
-	ldh a, [hJoyDown]
-	bit START_F, a
+	ldh a, [hDebugMenuCursorPos]
+	and a
 	jp nz, .right_pal
 	ldh a, [hDebugMenuDataBuffer]
 	ld h, a
@@ -372,6 +382,38 @@ DebugMenu_PokePics:
 	add hl, bc
 	dec d
 	jr nz, .loop
+	ret
+
+.update_edit_display
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	jr z, .clear_edit
+	hlcoord 17, 5
+	ld bc, SCREEN_WIDTH
+	ld a, "E"
+	ld [hl], a
+	add hl, bc
+	ld a, "D"
+	ld [hl], a
+	add hl, bc
+	ld a, "I"
+	ld [hl], a
+	add hl, bc
+	ld a, "T"
+	ld [hl], a
+	ret
+
+.clear_edit
+	hlcoord 17, 5
+	ld bc, SCREEN_WIDTH
+	ld a, " "
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
 	ret
 
 DebugMenu_TrainerPics:

@@ -7,7 +7,7 @@ ChangePartyMonSpeciesID:
 	ld [wCurSpecies], a
 	push af
 	call GetBaseData
-	ld a, [wPartyMenuCursor]
+	ld a, [wCurPartyMon]
 	ld c, a
 	ld b, 0
 	ld hl, wPartySpecies
@@ -15,7 +15,7 @@ ChangePartyMonSpeciesID:
 	pop af
 	ld [hl], a
 	push af
-	ld a, [wPartyMenuCursor]
+	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
@@ -50,6 +50,9 @@ ChangePartyMonFormMenu::
 	ret
 
 .try_form_change
+	ld a, [wPartyMenuCursor]
+	dec a
+	ld [wCurPartyMon], a
 	call ChangePartyMonForm
 	call ReturnToMapWithSpeechTextbox
 	ret
@@ -103,8 +106,9 @@ ChangePartyMonForm::
 	cp e
 	jr nz, .loop
 ; valid mon
-	ld hl, wPartyMenuCursor
-	dec [hl]
+	ld a, [wPartyMenuCursor]
+	dec a
+	ld [wCurPartyMon], a
 	pop de
 	ld h, d
 	ld l, e
@@ -112,7 +116,7 @@ ChangePartyMonForm::
 	call ChangePartyMonSpecies
 
 ; buffer the mon's nickname into wStringBuffer2
-	ld a, [wPartyMenuCursor]
+	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	ld bc, MON_NAME_LENGTH
 	call AddNTimes
@@ -183,7 +187,7 @@ ChangeBurmyCloak::
 	dec a
 	jr nz, .form_get_loop
 	ld a, e
-	ld [wPartyMenuCursor], a
+	ld [wCurPartyMon], a
 	ld a, [hl]
 	call ChangePartyMonSpeciesID
 	pop hl

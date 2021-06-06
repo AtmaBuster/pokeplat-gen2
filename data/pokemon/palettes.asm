@@ -1156,3 +1156,9 @@ CastformSwPal:      INCBIN "gfx/pokemon/castform/front_snow.gbcpal", middle_colo
 CastformSwShinyPal: INCLUDE "gfx/pokemon/castform/shiny_snow.pal"
 CherrimSPal:        INCBIN "gfx/pokemon/cherrim/front_sun.gbcpal", middle_colors
 CherrimSShinyPal:   INCLUDE "gfx/pokemon/cherrim/shiny_sun.pal"
+
+ArceusPalettes:
+; normal
+INCBIN "gfx/pokemon/arceus/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/arceus/shiny.pal"
+INCLUDE "gfx/pokemon/arceus/forms.pal"

@@ -1,4 +1,7 @@
 Unreferenced_CorrectPartyErrors:
+; dummy
+
+IF 0
 	ld hl, wPartyCount
 	ld a, [hl]
 	and a
@@ -229,3 +232,4 @@ Unreferenced_CorrectPartyErrors:
 .done
 	pop de
 	ret
+ENDC

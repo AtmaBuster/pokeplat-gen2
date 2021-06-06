@@ -11,6 +11,8 @@ FormChangeMons:
 	dw FormDataRotomWtr
 	dw FormDataShaymin
 	dw FormDataShayminS
+	dw FormDataGiratina
+	dw FormDataGiratinaO
 
 FormDataDeoxys:
 	dw DEOXYS
@@ -70,4 +72,14 @@ FormDataShaymin:
 FormDataShayminS:
 	dw SHAYMIN_S
 	dw SHAYMIN
+	dw -1
+
+FormDataGiratina:
+	dw GIRATINA
+	dw GIRATINA_O
+	dw -1
+
+FormDataGiratinaO:
+	dw GIRATINA_O
+	dw GIRATINA
 	dw -1

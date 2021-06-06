@@ -401,7 +401,7 @@ wBattleMon:: battle_struct wBattleMon ; c62c
 	ds 2
 
 wWildMon:: db ; c64e
-	ds 1
+wArceusPalNum:: db
 wEnemyTrainerItem1:: db ; c650
 wEnemyTrainerItem2:: db ; c651
 wEnemyTrainerBaseReward:: db ; c652

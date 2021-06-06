@@ -231,7 +231,7 @@ ItemDescriptions:
 	dw PoisonBarbDesc
 	dw MagnetDesc
 	dw GracideaDesc
-	dw QuestionMarkDesc
+	dw GriseousOrbDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
@@ -937,3 +937,7 @@ PlaceholderDesc:
 GracideaDesc:
 	db   "A flower used to"
 	next "show gratitude.@"
+
+GriseousOrbDesc:
+	db   "Raises power for"
+	next "GIRATINA. (HOLD)@"
