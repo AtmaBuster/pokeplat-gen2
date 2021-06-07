@@ -620,6 +620,7 @@ DayCare_InitBreeding:
 	ld a, EGG_LEVEL
 	ld [wCurPartyLevel], a
 	call Daycare_CheckAlternateOffspring
+	call Daycare_CheckIncenseOffspring
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	ld [wEggMonSpecies], a
@@ -777,4 +778,53 @@ Daycare_CheckAlternateOffspring:
 
 .alternate_offspring_table
 	dw NIDORAN_F, NIDORAN_M
+	dw VOLBEAT, ILLUMISE
 	dw -1
+
+Daycare_CheckIncenseOffspring:
+	; returns [wCurPartySpecies] in a, unless that species may give birth to an alternate species via incense
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, .incense_array
+	ld de, 5
+	call IsInMonArray
+	jr nc, .miss
+	inc hl
+	inc hl
+	ld a, [hli]
+	ld b, a
+	ld a, [wBreedMon1Item]
+	cp b
+	jr z, .ok
+	ld a, [wBreedMon2Item]
+	cp b
+	jr nz, .miss
+.ok
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetPokemonIDFromIndex
+	ret
+
+.miss
+	ld a, [wCurPartySpecies]
+	ret
+
+incense_data: MACRO
+	dw \1
+	db \2
+	dw \3
+ENDM
+.incense_array
+	incense_data MARILL,    SEA_INCENSE,  AZURILL
+	incense_data WOBBUFFET, LAX_INCENSE,  WYNAUT
+	incense_data MR__MIME,  ODD_INCENSE,  MIME_JR
+	incense_data SUDOWOODO, ROCK_INCENSE, BONSLY
+	incense_data SNORLAX,   FULL_INCENSE, MUNCHLAX
+	incense_data MANTINE,   WAVE_INCENSE, MANTYKE
+	incense_data ROSELIA,   ROSE_INCENSE, BUDEW
+	incense_data CHANSEY,   LUCK_INCENSE, HAPPINY
+	incense_data CHIMECHO,  PURE_INCENSE, CHINGLING
+	db -1

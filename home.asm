@@ -99,6 +99,41 @@ IsInFarArray::
 	rst Bankswitch
 	ret
 
+IsInMonArray::
+; Find value a for every de bytes in array hl.
+; Return address of entry in hl and carry if found.
+.loop
+	push hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	cp -1
+	jr nz, .check_mon
+	ld a, h
+	cp -1
+	jr z, .NotInArray
+.check_mon
+	ld a, h
+	cp b
+	jr nz, .next
+	ld a, l
+	cp c
+	jr z, .InArray
+.next
+	pop hl
+	add hl, de
+	jr .loop
+
+.NotInArray:
+	pop hl
+	and a
+	ret
+
+.InArray:
+	pop hl
+	scf
+	ret
+
 IsInArray::
 ; Find value a for every de bytes in array hl.
 ; Return index in b and carry if found.
