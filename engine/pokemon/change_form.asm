@@ -1,4 +1,4 @@
-ChangePartyMonSpecies:
+_ChangePartyMonSpecies::
 	call GetPokemonIDFromIndex
 ChangePartyMonSpeciesID:
 	push bc
@@ -113,7 +113,7 @@ ChangePartyMonForm::
 	ld h, d
 	ld l, e
 
-	call ChangePartyMonSpecies
+	call _ChangePartyMonSpecies
 
 ; buffer the mon's nickname into wStringBuffer2
 	ld a, [wCurPartyMon]

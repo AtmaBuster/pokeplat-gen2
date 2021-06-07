@@ -2228,6 +2228,9 @@ wEvolutionOldSpecies:: db ; d1ea
 wEvolutionNewSpecies:: db ; d1eb
 wEvolutionPicOffset:: db ; d1ec
 wEvolutionCanceled:: db ; d1ed
+wEvolutionDataBankBackup:: db
+wEvolutionDataAddrBackup:: dw
+wEvolutionMethodBackup:: db
 
 NEXTU ; d1ea
 ; mobile

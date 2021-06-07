@@ -83,3 +83,13 @@ GetBaseFormNumber::
 	ret
 
 INCLUDE "data/pokemon/base_forms.asm"
+
+ChangePartyMonSpecies::
+	ldh a, [hROMBank]
+	push af
+	ld a, BANK(_ChangePartyMonSpecies)
+	rst Bankswitch
+	call _ChangePartyMonSpecies
+	pop af
+	rst Bankswitch
+	ret
