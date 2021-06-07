@@ -1,3 +1,5 @@
+SECTION "Effect Commands", ROMX
+
 DoPlayerTurn:
 	call SetPlayerTurn
 
@@ -83,17 +85,15 @@ DoMove:
 	ld hl, BattleCommandPointers
 	add hl, bc
 	add hl, bc
+	add hl, bc
 	pop bc
 
 	ld a, BANK(BattleCommandPointers)
-	call GetFarHalfword
+	call GetFarBankAddress
 
-	call .DoMoveEffectCommand
+	rst FarCall
 
 	jr .ReadMoveEffectCommand
-
-.DoMoveEffectCommand:
-	jp hl
 
 ReadMoveScriptByte:
 	ld a, [wBattleScriptBufferAddress]
@@ -1305,9 +1305,7 @@ BattleCommand_stab:
 	ld e, [hl]
 
 .go
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	and TYPE_MASK
+	call GetCurrentMoveType
 	ld [wCurType], a
 
 	push hl
@@ -1353,9 +1351,7 @@ BattleCommand_stab:
 	set 7, [hl]
 
 .SkipStab:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
 	ld b, a
 	ld hl, TypeMatchups
 
@@ -1477,9 +1473,7 @@ CheckTypeMatchup:
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -3166,9 +3160,7 @@ BattleCommand_damagecalc:
 
 ; Type
 	ld b, a
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
 	cp b
 	jr nz, .DoneItem
 
@@ -6365,9 +6357,7 @@ CheckMoveTypeMatchesTarget:
 	ld hl, wBattleMonType1
 .ok
 
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
 	cp NORMAL
 	jr z, .normal
 
@@ -7531,10 +7521,79 @@ UpdateWeatherForms:
 	scf
 	ret
 
+GetCurrentMoveType2:
+	push hl
+	call GetCurrentMoveType
+	pop hl
+	ret
+
+GetCurrentMoveType:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_WEATHER_BALL
+	jr z, .weather_ball_type
+	cp EFFECT_JUDGMENT
+	jr z, .judgment_type
+
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	ret
+
+.weather_ball_type
+	push bc
+	ld a, [wBattleWeather]
+	cp WEATHER_NONE
+	ld b, NORMAL
+	jr .got_weather_type
+	cp WEATHER_SUN
+	ld b, FIRE
+	jr .got_weather_type
+	cp WEATHER_RAIN
+	ld b, WATER
+	jr .got_weather_type
+	cp WEATHER_HAIL
+	ld b, ICE
+	jr .got_weather_type
+; sandstorm
+	ld b, ROCK
+
+.got_weather_type
+	ld a, b
+	pop bc
+	ret
+
+.judgment_type
+	push bc
+	push de
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_item
+	ld hl, wEnemyMonItem
+.got_item
+	ld a, [hl]
+	ld b, BANK(PlateItems)
+	ld hl, PlateItems
+	ld de, 2
+	call IsInFarArray
+	pop de
+	pop bc
+	jr nc, .no_plate
+	inc hl
+	ld a, BANK(PlateItems)
+	call GetFarByte
+	ret
+
+.no_plate
+	xor a
+
+SECTION "Effect Commands 2", ROMX
+
 UpdateArceusForm:
-	call BattleCommand_switchturn
+	farcall BattleCommand_switchturn
 	call .Update
-	call BattleCommand_switchturn
+	farcall BattleCommand_switchturn
 ; update player form
 
 ; fallthrough
@@ -7577,6 +7636,3 @@ UpdateArceusForm:
 	ret
 
 INCLUDE "data/items/plate_items.asm"
-
-BattleCommand_weathertype:
-	ret

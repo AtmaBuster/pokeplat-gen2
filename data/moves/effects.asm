@@ -2317,24 +2317,3 @@ WeightDamage:
 	buildopponentrage
 	heldflinch
 	endmove
-
-WeatherBall:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	weightdamage
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	heldflinch
-	endmove

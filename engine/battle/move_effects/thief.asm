@@ -52,9 +52,10 @@ BattleCommand_thief:
 	call .enemyitem
 	ld a, [hld]
 	push hl
+	ld b, BANK(PlateItems)
 	ld hl, PlateItems
 	ld de, 2
-	call IsInArray
+	call IsInFarArray
 	pop hl
 	jr nc, .player_can_steal
 	ld a, [hl]
@@ -140,6 +141,7 @@ BattleCommand_thief:
 	call .playeritem
 	ld a, [hld]
 	push hl
+	ld b, BANK(PlateItems)
 	ld hl, PlateItems
 	ld de, 2
 	call IsInArray

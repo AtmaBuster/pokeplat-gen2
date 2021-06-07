@@ -1,11 +1,11 @@
 battlecmd: MACRO
-	dw BattleCommand_\1
+	dba BattleCommand_\1
 \1 EQUS "db \1_command"
 	enum \1_command
 ENDM
 
 battlecmd2: MACRO
-	dw BattleCommand_\1
+	dba BattleCommand_\1
 \1 EQUS "db \1_command,"
 	enum \1_command
 ENDM

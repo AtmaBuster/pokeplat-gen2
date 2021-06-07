@@ -198,7 +198,7 @@ MoveEffectsPointers:
 	dw Splash                        ; UNUSED_C2
 	dw Splash                        ; MUD_SPORT
 	dw PoisonFang                    ; POISON_FANG
-	dw WeatherBall                   ; WEATHER_BALL
+	dw NormalHit                     ; WEATHER_BALL
 	dw HPScaleHit                    ; HP_SCALING_HIT
 	dw Splash                        ; UNUSED_C7
 	dw Bounce                        ; BOUNCE
@@ -250,7 +250,7 @@ MoveEffectsPointers:
 	dw Splash                        ; CAPTIVATE
 	dw Splash                        ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE
-	dw Splash                        ; JUDGMENT
+	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; BUG_BITE
 	dw Splash                        ; LUNAR_DANCE
 	dw Splash                        ; AVALANCHE

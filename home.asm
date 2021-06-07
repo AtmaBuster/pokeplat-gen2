@@ -77,6 +77,28 @@ INCLUDE "home/copy2.asm"
 INCLUDE "home/copy_tilemap.asm"
 INCLUDE "home/copy_name.asm"
 
+IsInFarArray::
+; Find value a for every de bytes in array b:hl.
+; Return index in b and carry if found.
+	ldh [hBuffer], a
+	ldh a, [hROMBank]
+	push af
+	ld a, b
+	rst Bankswitch
+	ldh a, [hBuffer]
+	call IsInArray
+; preserve flags
+	push hl
+	push af
+	ld hl, sp+5 ; <- WHY DOES THIS FUCK WITH FLAGS REEEEE
+	pop af
+	ld a, [hl]
+	pop hl
+	inc sp
+	inc sp
+	rst Bankswitch
+	ret
+
 IsInArray::
 ; Find value a for every de bytes in array hl.
 ; Return index in b and carry if found.
