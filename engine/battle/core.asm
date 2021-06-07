@@ -3614,6 +3614,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
+	farcall UpdateArceusForm
 	predef CopyMonToTempMon
 	call GetEnemyMonFrontpic
 

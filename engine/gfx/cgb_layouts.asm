@@ -85,7 +85,7 @@ _CGB_BattleColors:
 	push hl
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER
-	ld a, [wBattleMonType]
+	ld a, [wEnemyMonType]
 	ld [wArceusPalNum], a
 	call GetEnemyFrontpicPalettePointer
 	push hl
@@ -265,6 +265,8 @@ StatsScreenPals:
 INCLUDE "gfx/stats/stats.pal"
 
 _CGB_Pokedex:
+	xor a
+	ld [wArceusPalNum], a
 	ld de, wBGPals1
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
@@ -277,8 +279,6 @@ _CGB_Pokedex:
 	jr .got_palette
 
 .is_pokemon
-	xor a
-	ld [wArceusPalNum], a
 	call GetMonPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black ; mon palette
@@ -375,9 +375,9 @@ _CGB_PokedexUnownMode:
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
-	ld a, [wCurPartySpecies]
 	xor a
 	ld [wArceusPalNum], a
+	ld a, [wCurPartySpecies]
 	call GetMonPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
@@ -955,9 +955,9 @@ _CGB_PlayerOrMonFrontpicPals:
 
 _CGB1e:
 	ld de, wBGPals1
-	ld a, [wCurPartySpecies]
 	xor a
 	ld [wArceusPalNum], a
+	ld a, [wCurPartySpecies]
 	call GetMonPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
@@ -981,11 +981,11 @@ _CGB_TradeTube:
 	ret
 
 _CGB_TrainerOrMonFrontpicPals:
+	xor a
+	ld [wArceusPalNum], a
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
-	xor a
-	ld [wArceusPalNum], a
 	call GetFrontpicPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black

@@ -7570,8 +7570,6 @@ UpdateArceusForm:
 	ld [de], a
 	inc de
 	ld [de], a
-; set palette
-	; TODO
 	ret
 
 .miss
@@ -7579,3 +7577,6 @@ UpdateArceusForm:
 	ret
 
 INCLUDE "data/items/plate_items.asm"
+
+BattleCommand_weathertype:
+	ret

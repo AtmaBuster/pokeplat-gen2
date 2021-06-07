@@ -232,27 +232,27 @@ ItemDescriptions:
 	dw MagnetDesc
 	dw GracideaDesc
 	dw GriseousOrbDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
+	dw AdamantOrbDesc
+	dw LustrousOrbDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
 	dw QuestionMarkDesc
 	dw QuestionMarkDesc
 
@@ -941,3 +941,15 @@ GracideaDesc:
 GriseousOrbDesc:
 	db   "Raises power for"
 	next "GIRATINA. (HOLD)@"
+
+AdamantOrbDesc:
+	db   "Raises power for"
+	next "DIALGA. (HOLD)@"
+
+LustrousOrbDesc:
+	db   "Raises power for"
+	next "PALIKA. (HOLD)@"
+
+FossilDesc:
+	db   "A fossil of a pre-"
+	next "historic #MON.@"

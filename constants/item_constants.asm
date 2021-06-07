@@ -238,6 +238,27 @@
 	const ZAP_PLATE    ; e6
 	const GRACIDEA     ; e7
 	const GRISEOUS_ORB ; e8
+	const ADAMANT_ORB  ; e9
+	const LUSTROUS_ORB ; ea
+	const DOME_FOSSIL  ; eb
+	const HELIX_FOSSIL ; ec
+	const OLD_AMBER    ; ed
+	const ROOT_FOSSIL  ; ee
+	const CLAW_FOSSIL  ; ef
+	const SKULL_FOSSIL ; f0
+	const ARMOR_FOSSIL ; f1
+	const DEEPSEATOOTH ; f2
+	const DEEPSEASCALE ; f3
+	const SEA_INCENSE  ; f4
+	const LAX_INCENSE  ; f5
+	const ODD_INCENSE  ; f6
+	const ROCK_INCENSE ; f7
+	const FULL_INCENSE ; f8
+	const WAVE_INCENSE ; f9
+	const ROSE_INCENSE ; fa
+	const LUCK_INCENSE ; fb
+	const PURE_INCENSE ; fc
+	const HONEY        ; fd
 
 	const_def 1
 add_tm: MACRO

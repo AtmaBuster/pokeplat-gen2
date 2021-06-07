@@ -192,58 +192,80 @@ ItemEffects:
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw EvoStoneEffect
-	dw EvoStoneEffect
-	dw EvoStoneEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw GracideaEffect
+	dw NoEffect            ; BRICK_PIECE
+	dw NoEffect            ; SURF_MAIL
+	dw NoEffect            ; LITEBLUEMAIL
+	dw NoEffect            ; PORTRAITMAIL
+	dw NoEffect            ; LOVELY_MAIL
+	dw NoEffect            ; EON_MAIL
+	dw NoEffect            ; MORPH_MAIL
+	dw NoEffect            ; BLUESKY_MAIL
+	dw NoEffect            ; MUSIC_MAIL
+	dw NoEffect            ; MIRAGE_MAIL
+	dw NoEffect            ; ITEM_BE
+	dw NoEffect            ; ITEM_DC
+	dw NoEffect            ; ITEM_C3
+	dw NoEffect            ; ITEM_FA
+	dw PokeBallEffect      ; NET_BALL
+	dw PokeBallEffect      ; DIVE_BALL
+	dw PokeBallEffect      ; NEST_BALL
+	dw PokeBallEffect      ; REPEAT_BALL
+	dw PokeBallEffect      ; TIMER_BALL
+	dw PokeBallEffect      ; LUXURY_BALL
+	dw PokeBallEffect      ; DUSK_BALL
+	dw PokeBallEffect      ; HEAL_BALL
+	dw PokeBallEffect      ; QUICK_BALL
+	dw EvoStoneEffect      ; SHINY_STONE
+	dw EvoStoneEffect      ; DUSK_STONE
+	dw EvoStoneEffect      ; DAWN_STONE
+	dw NoEffect            ; OVAL_STONE
+	dw NoEffect            ; PROTECTOR
+	dw NoEffect            ; ELECTRIZER
+	dw NoEffect            ; MAGMARIZER
+	dw NoEffect            ; DUBIOUS_DISC
+	dw NoEffect            ; REAPER_CLOTH
+	dw NoEffect            ; RAZOR_CLAW
+	dw NoEffect            ; RAZOR_FANG
+	dw NoEffect            ; ODD_KEYSTONE
+	dw NoEffect            ; DRACO_PLATE
+	dw NoEffect            ; DREAD_PLATE
+	dw NoEffect            ; EARTH_PLATE
+	dw NoEffect            ; FIST_PLATE
+	dw NoEffect            ; FLAME_PLATE
+	dw NoEffect            ; ICICLE_PLATE
+	dw NoEffect            ; INSECT_PLATE
+	dw NoEffect            ; IRON_PLATE
+	dw NoEffect            ; MEADOW_PLATE
+	dw NoEffect            ; MIND_PLATE
+	dw NoEffect            ; SKY_PLATE
+	dw NoEffect            ; SPLASH_PLATE
+	dw NoEffect            ; SPOOKY_PLATE
+	dw NoEffect            ; STONE_PLATE
+	dw NoEffect            ; TOXIC_PLATE
+	dw NoEffect            ; ZAP_PLATE
+	dw GracideaEffect      ; GRACIDEA
+	dw NoEffect            ; GRISEOUS_ORB
+	dw NoEffect            ; ADAMANT_ORB
+	dw NoEffect            ; LUSTROUS_ORB
+	dw NoEffect            ; DOME_FOSSIL
+	dw NoEffect            ; HELIX_FOSSIL
+	dw NoEffect            ; OLD_AMBER
+	dw NoEffect            ; ROOT_FOSSIL
+	dw NoEffect            ; CLAW_FOSSIL
+	dw NoEffect            ; SKULL_FOSSIL
+	dw NoEffect            ; ARMOR_FOSSIL
+	dw NoEffect            ; DEEPSEATOOTH
+	dw NoEffect            ; DEEPSEASCALE
+	dw NoEffect            ; SEA_INCENSE
+	dw NoEffect            ; LAX_INCENSE
+	dw NoEffect            ; ODD_INCENSE
+	dw NoEffect            ; ROCK_INCENSE
+	dw NoEffect            ; FULL_INCENSE
+	dw NoEffect            ; WAVE_INCENSE
+	dw NoEffect            ; ROSE_INCENSE
+	dw NoEffect            ; LUCK_INCENSE
+	dw NoEffect            ; PURE_INCENSE
+	dw HoneyEffect         ; HONEY
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -3181,3 +3203,13 @@ GracideaEffect:
 ChangedFormText:
 	text_far _ChangedFormText
 	text_end
+
+HoneyEffect:
+	xor a
+	ld [wItemEffectSucceeded], a
+	farcall HoneyFunction
+
+	ld a, [wItemEffectSucceeded]
+	cp 1
+	call z, UseDisposableItem
+	ret
