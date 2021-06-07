@@ -114,6 +114,47 @@ BattleCommand_thief:
 	farcall ItemIsMail
 	ret c
 
+; Can't steal Griseous Orb from Giratina
+	call .playeritem
+	ld a, [hld]
+	cp GRISEOUS_ORB
+	jr nz, .enemy_arceus_check
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(GIRATINA)
+	jr nz, .enemy_check_giratina_o
+	ld a, l
+	cp LOW(GIRATINA)
+	ret z
+.enemy_check_giratina_o
+	ld a, h
+	cp HIGH(GIRATINA_O)
+	ret z
+	ld a, l
+	cp LOW(GIRATINA_O)
+	ret z
+
+.enemy_arceus_check
+; Can't steal Plate from Arceus
+	call .playeritem
+	ld a, [hld]
+	push hl
+	ld hl, PlateItems
+	ld de, 2
+	call IsInArray
+	pop hl
+	jr nc, .enemy_can_steal
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .enemy_can_steal
+	ld a, l
+	cp LOW(ARCEUS)
+	ret z
+
+.enemy_can_steal
 	ld a, [wEffectFailed]
 	and a
 	ret nz
