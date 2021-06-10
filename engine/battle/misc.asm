@@ -222,3 +222,100 @@ DoBadgeTypeBoosts:
 	ret
 
 INCLUDE "data/types/badge_type_boosts.asm"
+
+DoOrbTypeDamageBoosts:
+; a = BANK(@)
+; bc = Defender Type
+; de = Attacker Type
+; hl = @
+; wCurType = move type
+	ld hl, wBattleMonSpecies
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyMonSpecies
+.go
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	ld a, c
+	and a
+	ret z
+	ld hl, OrbBoosts
+	ld de, 5
+.loop
+	ld a, [hl]
+	cp -1
+	ret z
+	cp c
+	jr z, .hit_item
+	add hl, de
+	jr .loop
+
+.hit_item
+	ld a, b
+	push hl
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	pop hl
+	inc hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	cp c
+	ret nz
+	ld a, d
+	cp b
+	ret nz
+; hit item & mon
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wCurType]
+	cp h
+	jr z, .hit_type
+	cp l
+	ret nz
+.hit_type
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+
+	ld a, 12 ; 1.2 * 10
+	ldh [hMultiplier], a
+
+	call Multiply
+
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+	ldh a, [hQuotient + 1]
+	and a
+	ld bc, -1
+	jr nz, .Update
+
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	ld c, a
+	or b
+	jr nz, .Update
+
+	ld bc, 1
+
+.Update:
+	ld a, b
+	ld [wCurDamage], a
+	ld a, c
+	ld [wCurDamage + 1], a
+	ret
+
+INCLUDE "data/items/orb_boosts.asm"

@@ -2203,8 +2203,8 @@ WalreinEvosAttacks:
 	db 0 ; no more level-up moves
 
 ClamperlEvosAttacks:
-	;dbbw EVOLVE_TRADE, DEEPSEATOOTH, HUNTAIL
-	;dbbw EVOLVE_TRADE, DEEPSEASCALE, GOREBYSS
+	dbbw EVOLVE_TRADE, DEEPSEATOOTH, HUNTAIL
+	dbbw EVOLVE_TRADE, DEEPSEASCALE, GOREBYSS
 	db 0 ; no more evolutions
 	dbw 1, WATER_GUN
 	dbw 1, CLAMP

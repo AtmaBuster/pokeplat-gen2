@@ -1,4 +1,16 @@
-SECTION "Effect Commands", ROMX
+SECTION "Effect Commands", ROMX[$4000]
+
+CompareMove:
+	; checks if the move ID in a matches the move in bc
+	push hl
+	call GetMoveIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret
 
 DoPlayerTurn:
 	call SetPlayerTurn
@@ -1274,189 +1286,6 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
-BattleCommand_stab:
-; STAB = Same Type Attack Bonus
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld bc, STRUGGLE
-	call CompareMove
-	ret z
-
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .go ; Who Attacks and who Defends
-
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-
-.go
-	call GetCurrentMoveType
-	ld [wCurType], a
-
-	push hl
-	push de
-	push bc
-	farcall DoWeatherModifiers
-	pop bc
-	pop de
-	pop hl
-
-	push de
-	push bc
-	farcall DoBadgeTypeBoosts
-	pop bc
-	pop de
-
-	ld a, [wCurType]
-	cp b
-	jr z, .stab
-	cp c
-	jr z, .stab
-
-	jr .SkipStab
-
-.stab
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-
-	ld b, h
-	ld c, l
-	srl b
-	rr c
-	add hl, bc
-
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-
-	ld hl, wTypeModifier
-	set 7, [hl]
-
-.SkipStab:
-	call GetCurrentMoveType2
-	ld b, a
-	ld hl, TypeMatchups
-
-.TypesLoop:
-	ld a, [hli]
-
-	cp -1
-	jr z, .end
-
-	; foresight
-	cp -2
-	jr nz, .SkipForesightCheck
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_IDENTIFIED, a
-	jr nz, .end
-
-	jr .TypesLoop
-
-.SkipForesightCheck:
-	cp b
-	jr nz, .SkipType
-	ld a, [hl]
-	cp d
-	jr z, .GotMatchup
-	cp e
-	jr z, .GotMatchup
-	jr .SkipType
-
-.GotMatchup:
-	push hl
-	push bc
-	inc hl
-	ld a, [wTypeModifier]
-	and %10000000
-	ld b, a
-; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	ld a, [hl]
-	and a
-	jr nz, .NotImmune
-	inc a
-	ld [wAttackMissed], a
-	xor a
-.NotImmune:
-	ldh [hMultiplier], a
-	add b
-	ld [wTypeModifier], a
-
-	xor a
-	ldh [hMultiplicand + 0], a
-
-	ld hl, wCurDamage
-	ld a, [hli]
-	ldh [hMultiplicand + 1], a
-	ld a, [hld]
-	ldh [hMultiplicand + 2], a
-
-	call Multiply
-
-	ldh a, [hProduct + 1]
-	ld b, a
-	ldh a, [hProduct + 2]
-	or b
-	ld b, a
-	ldh a, [hProduct + 3]
-	or b
-	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
-
-; Take the product and divide it by 10.
-	ld a, 10
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
-	ldh a, [hQuotient + 2]
-	ld b, a
-	ldh a, [hQuotient + 3]
-	or b
-	jr nz, .ok
-
-	ld a, 1
-	ldh [hMultiplicand + 2], a
-
-.ok
-	ldh a, [hMultiplicand + 1]
-	ld [hli], a
-	ldh a, [hMultiplicand + 2]
-	ld [hl], a
-	pop bc
-	pop hl
-
-.SkipType:
-	inc hl
-	inc hl
-	jr .TypesLoop
-
-.end
-	call BattleCheckTypeMatchup
-	ld a, [wTypeMatchup]
-	ld b, a
-	ld a, [wTypeModifier]
-	and %10000000
-	or b
-	ld [wTypeModifier], a
-	ret
-
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
@@ -1473,7 +1302,7 @@ CheckTypeMatchup:
 	push hl
 	push de
 	push bc
-	call GetCurrentMoveType2
+	farcall GetCurrentMoveType2
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -2710,7 +2539,7 @@ PlayerAttackDamage:
 
 .lightball
 ; Note: Returns player special attack at hl in hl.
-	call LightBallBoost
+	call SpecialSpeciesItemBoost
 	jr .done
 
 .thickclub
@@ -2862,7 +2691,7 @@ ThickClubBoost:
 	pop bc
 	ret
 
-LightBallBoost:
+SpecialSpeciesItemBoost:
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Pikachu and it's
@@ -2872,6 +2701,12 @@ LightBallBoost:
 	ld bc, PIKACHU
 	ld d, LIGHT_BALL
 	call SpeciesItemBoost
+	ld bc, CLAMPERL
+	ld d, DEEPSEATOOTH
+	call DoubleStatIfSpeciesHoldingItem
+	ld bc, CLAMPERL
+	ld d, DEEPSEASCALE
+	call HalveStatIfSpeciesHoldingItem
 	pop de
 	pop bc
 	ret
@@ -2921,6 +2756,41 @@ DoubleStatIfSpeciesHoldingItem:
 ; Double the stat
 	sla l
 	rl h
+	ret
+
+HalveStatIfSpeciesHoldingItem:
+; If the defending monster is species bc and
+; it's holding item d, halve the stat in hl.
+	push hl
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .CompareSpecies
+	ld a, [wTempEnemyMonSpecies]
+.CompareSpecies:
+
+	call GetPokemonIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret nz
+
+	push hl
+	call GetOpponentItem
+	ld a, [hl]
+	pop hl
+	cp d
+	ret nz
+
+; Halve the stat
+	rrc h
+	rr l
 	ret
 
 EnemyAttackDamage:
@@ -2990,7 +2860,7 @@ EnemyAttackDamage:
 	ld hl, wEnemySpAtk
 
 .lightball
-	call LightBallBoost
+	call SpecialSpeciesItemBoost
 	jr .done
 
 .thickclub
@@ -3160,7 +3030,7 @@ BattleCommand_damagecalc:
 
 ; Type
 	ld b, a
-	call GetCurrentMoveType2
+	farcall GetCurrentMoveType2
 	cp b
 	jr nz, .DoneItem
 
@@ -6357,7 +6227,7 @@ CheckMoveTypeMatchesTarget:
 	ld hl, wBattleMonType1
 .ok
 
-	call GetCurrentMoveType2
+	farcall GetCurrentMoveType2
 	cp NORMAL
 	jr z, .normal
 
@@ -7333,18 +7203,6 @@ _CheckBattleScene:
 	pop hl
 	ret
 
-CompareMove:
-	; checks if the move ID in a matches the move in bc
-	push hl
-	call GetMoveIndexFromID
-	ld a, h
-	cp b
-	ld a, l
-	pop hl
-	ret nz
-	cp c
-	ret
-
 CheckMoveInList:
 	; checks if the move ID in a belongs to a list of moves in hl
 	push bc
@@ -7521,6 +7379,255 @@ UpdateWeatherForms:
 	scf
 	ret
 
+SECTION "Effect Commands 2", ROMX[$4000]
+
+CompareMove_Copy: ; copy of CompareMove
+	push hl
+	call GetMoveIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret
+
+UpdateArceusForm:
+	farcall BattleCommand_switchturn
+	call .Update
+	farcall BattleCommand_switchturn
+; update player form
+
+; fallthrough
+.Update:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wBattleMonType
+	jr z, .got_species
+	ld hl, wEnemyMonSpecies
+	ld de, wEnemyMonType
+.got_species
+	ld a, [hli]
+	push hl
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .miss
+	ld a, l
+	cp LOW(ARCEUS)
+	jr nz, .miss
+	pop hl
+	ld a, [hl]
+	push de
+	ld hl, PlateItems
+	ld de, 2
+	call IsInArray
+	pop de
+	ret nc
+; is Arceus, is holding a Plate
+	inc hl
+	ld a, [hl] ; target type
+	ld [de], a
+	inc de
+	ld [de], a
+	ret
+
+.miss
+	pop hl
+	ret
+
+INCLUDE "data/items/plate_items.asm"
+
+BattleCommand_stab:
+; STAB = Same Type Attack Bonus
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld bc, STRUGGLE
+	call CompareMove
+	ret z
+
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go ; Who Attacks and who Defends
+
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+
+.go
+	call GetCurrentMoveType
+	ld [wCurType], a
+
+	push hl
+	push de
+	push bc
+	farcall DoWeatherModifiers
+	pop bc
+	pop de
+	pop hl
+
+	push de
+	push bc
+	farcall DoBadgeTypeBoosts
+	pop bc
+	pop de
+
+	push de
+	push bc
+	farcall DoOrbTypeDamageBoosts
+	pop bc
+	pop de
+
+	ld a, [wCurType]
+	cp b
+	jr z, .stab
+	cp c
+	jr z, .stab
+
+	jr .SkipStab
+
+.stab
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+
+	ld b, h
+	ld c, l
+	srl b
+	rr c
+	add hl, bc
+
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+
+	ld hl, wTypeModifier
+	set 7, [hl]
+
+.SkipStab:
+	call GetCurrentMoveType2
+	ld b, a
+	ld hl, TypeMatchups
+
+.TypesLoop:
+	ld a, [hli]
+
+	cp -1
+	jr z, .end
+
+	; foresight
+	cp -2
+	jr nz, .SkipForesightCheck
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .end
+
+	jr .TypesLoop
+
+.SkipForesightCheck:
+	cp b
+	jr nz, .SkipType
+	ld a, [hl]
+	cp d
+	jr z, .GotMatchup
+	cp e
+	jr z, .GotMatchup
+	jr .SkipType
+
+.GotMatchup:
+	push hl
+	push bc
+	inc hl
+	ld a, [wTypeModifier]
+	and %10000000
+	ld b, a
+; If the target is immune to the move, treat it as a miss and calculate the damage as 0
+	ld a, [hl]
+	and a
+	jr nz, .NotImmune
+	inc a
+	ld [wAttackMissed], a
+	xor a
+.NotImmune:
+	ldh [hMultiplier], a
+	add b
+	ld [wTypeModifier], a
+
+	xor a
+	ldh [hMultiplicand + 0], a
+
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hld]
+	ldh [hMultiplicand + 2], a
+
+	call Multiply
+
+	ldh a, [hProduct + 1]
+	ld b, a
+	ldh a, [hProduct + 2]
+	or b
+	ld b, a
+	ldh a, [hProduct + 3]
+	or b
+	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
+
+; Take the product and divide it by 10.
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	or b
+	jr nz, .ok
+
+	ld a, 1
+	ldh [hMultiplicand + 2], a
+
+.ok
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+	pop bc
+	pop hl
+
+.SkipType:
+	inc hl
+	inc hl
+	jr .TypesLoop
+
+.end
+	farcall BattleCheckTypeMatchup
+	ld a, [wTypeMatchup]
+	ld b, a
+	ld a, [wTypeModifier]
+	and %10000000
+	or b
+	ld [wTypeModifier], a
+	ret
+
 GetCurrentMoveType2:
 	push hl
 	call GetCurrentMoveType
@@ -7588,51 +7695,3 @@ GetCurrentMoveType:
 .no_plate
 	xor a
 
-SECTION "Effect Commands 2", ROMX
-
-UpdateArceusForm:
-	farcall BattleCommand_switchturn
-	call .Update
-	farcall BattleCommand_switchturn
-; update player form
-
-; fallthrough
-.Update:
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	ld de, wBattleMonType
-	jr z, .got_species
-	ld hl, wEnemyMonSpecies
-	ld de, wEnemyMonType
-.got_species
-	ld a, [hli]
-	push hl
-	call GetPokemonIndexFromID
-	ld a, h
-	cp HIGH(ARCEUS)
-	jr nz, .miss
-	ld a, l
-	cp LOW(ARCEUS)
-	jr nz, .miss
-	pop hl
-	ld a, [hl]
-	push de
-	ld hl, PlateItems
-	ld de, 2
-	call IsInArray
-	pop de
-	ret nc
-; is Arceus, is holding a Plate
-	inc hl
-	ld a, [hl] ; target type
-	ld [de], a
-	inc de
-	ld [de], a
-	ret
-
-.miss
-	pop hl
-	ret
-
-INCLUDE "data/items/plate_items.asm"
