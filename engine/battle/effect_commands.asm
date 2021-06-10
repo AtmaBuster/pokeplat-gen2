@@ -7336,6 +7336,7 @@ UpdateWeatherForms:
 .mimic_anims
 	call BattleCommand_movedelay
 	call BattleCommand_raisesubnoanim
+	farcall BattleAnimCmd_ReloadPal
 .after_anim
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr

@@ -253,7 +253,7 @@ ItemDescriptions:
 	dw PlaceholderDesc
 	dw PlaceholderDesc
 	dw PlaceholderDesc
-	dw QuestionMarkDesc
+	dw PlaceholderDesc
 	dw QuestionMarkDesc
 
 MasterBallDesc:

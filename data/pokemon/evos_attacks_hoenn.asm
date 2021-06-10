@@ -1897,8 +1897,7 @@ ArmaldoEvosAttacks:
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
-	;dbbw EVOLVE_TRADE, PRISM_SCALE, MILOTIC
-	dbbw EVOLVE_TRADE, POTION, MILOTIC
+	dbbw EVOLVE_TRADE, PRISM_SCALE, MILOTIC
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
 	dbw 15, TACKLE

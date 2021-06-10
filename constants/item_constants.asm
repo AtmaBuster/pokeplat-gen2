@@ -259,6 +259,7 @@
 	const LUCK_INCENSE ; fb
 	const PURE_INCENSE ; fc
 	const HONEY        ; fd
+	const PRISM_SCALE  ; fe
 
 	const_def 1
 add_tm: MACRO
@@ -354,8 +355,3 @@ NUM_TM_HM_TUTOR EQU __enum__ + -1
 USE_SCRIPT_VAR EQU $00
 TM_FROM_MEM    EQU $fe
 ITEM_FROM_MEM  EQU $ff
-
-; leftovers from red
-SAFARI_BALL    EQU $08 ; MOON_STONE
-MOON_STONE_RED EQU $0a ; BURN_HEAL
-FULL_HEAL_RED  EQU $34 ; X_SPEED

@@ -252,6 +252,6 @@ ItemNames::
 	db "LUCK INCENSE@"
 	db "PURE INCENSE@"
 	db "HONEY@"
-	db "???@"
+	db "PRISM SCALE@"
 	db "???@"
 	db "?@"
