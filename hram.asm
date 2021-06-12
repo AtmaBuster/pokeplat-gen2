@@ -143,8 +143,17 @@ hTileAnimFrame:: db ; ffdf
 hLastTalked:: db ; ffe0
 
 hRandom::
+IF DEF(_NEWRNG)
+hRandomAdd::
+hRandomX:: db
+hRandomSub::
+hRandomY:: db
+hRandomZ:: db
+hRandomA:: db
+ELSE
 hRandomAdd:: db ; ffe1
 hRandomSub:: db ; ffe2
+ENDC
 
 hSecondsBackup:: db ; ffe3
 

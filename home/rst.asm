@@ -15,8 +15,10 @@ SECTION "rst10", ROM0 ; rst Bankswitch
 SECTION "rst18", ROM0 ; rst FarCall2
 	jp FarCall_stack
 
-SECTION "rst20", ROM0
-	rst $38
+SECTION "rst20", ROM0 ; rst FarJump
+	inc sp
+	inc sp
+	jr $0010
 
 SECTION "rst28", ROM0 ; rst JumpTable
 	push de

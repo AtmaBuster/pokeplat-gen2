@@ -63,6 +63,9 @@ VBlank0::
 	inc [hl]
 
 	; advance random variables
+IF DEF(_NEWRNG)
+	call Random
+ELSE
 	ldh a, [rDIV]
 	ld b, a
 	ldh a, [hRandomAdd]
@@ -74,6 +77,7 @@ VBlank0::
 	ldh a, [hRandomSub]
 	sbc b
 	ldh [hRandomSub], a
+ENDC
 
 	ldh a, [hROMBank]
 	ldh [hROMBankBackup], a

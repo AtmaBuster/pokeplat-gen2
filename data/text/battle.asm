@@ -1059,9 +1059,10 @@ ShedLeechSeedText:
 	line "shed LEECH SEED!"
 	prompt
 
-BlewSpikesText:
+ClearedHazardsText:
 	text "<USER>"
-	line "blew away SPIKES!"
+	line "cleared away"
+	cont "hazards!"
 	prompt
 
 DownpourText:

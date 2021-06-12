@@ -8,14 +8,16 @@ BattleCommand_spikes:
 	ld hl, wPlayerScreens
 .asm_3768e
 
-; Fails if spikes are already down!
+; Fails if 3 layers of spikes are already down
 
-	bit SCREENS_SPIKES, [hl]
-	jr nz, .failed
+	ld a, [hl]
+	and MASK_SPIKES
+	cp SPIKES_3
+	ret z
 
 ; Nothing else stops it from working.
 
-	set SCREENS_SPIKES, [hl]
+	inc [hl]
 
 	call AnimateCurrentMove
 

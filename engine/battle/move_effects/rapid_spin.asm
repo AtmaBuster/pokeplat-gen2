@@ -18,15 +18,18 @@ BattleCommand_clearhazards:
 	ld hl, wEnemyScreens
 	ld de, wEnemyWrapCount
 .got_screens_wrap
-	bit SCREENS_SPIKES, [hl]
-	jr z, .no_spikes
-	res SCREENS_SPIKES, [hl]
-	ld hl, BlewSpikesText
+	ld a, [hl]
+	and MASK_ENTRY_HAZARDS
+	and a
+	jr z, .no_hazards
+	ld a, [hl]
+	and $ff - MASK_ENTRY_HAZARDS
+	ld [hl], a
+	ld hl, ClearedHazardsText
 	push de
 	call StdBattleTextbox
 	pop de
-.no_spikes
-
+.no_hazards
 	ld a, [de]
 	and a
 	ret z

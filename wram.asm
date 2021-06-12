@@ -493,14 +493,14 @@ wPlayerSubStatus5:: ; c66c
 
 wPlayerSubStatus6::
 ; bit
-; 7
-; 6
-; 5
-; 4
-; 3
-; 2
-; 1
-; 0
+; 7 uproar
+; 6 stockpile.1
+; 5 stockpile.0
+; 4 taunt
+; 3 gastro acid
+; 2 aqua ring
+; 1 mud sport
+; 0 water sport
 	db
 
 wEnemySubStatus1:: ; c66d
@@ -671,12 +671,11 @@ wEnemyScreens:: ; c700
 wPlayerSafeguardCount:: db ; c701
 wPlayerLightScreenCount:: db ; c702
 wPlayerReflectCount:: db ; c703
-	ds 1
 
 wEnemySafeguardCount:: db ; c705
 wEnemyLightScreenCount:: db ; c706
 wEnemyReflectCount:: db ; c707
-	ds 2
+wTypeMatchupBuffer:: ds 3
 
 wBattleWeather:: ; c70a
 ; 00 normal

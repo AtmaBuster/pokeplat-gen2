@@ -1286,6 +1286,14 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
+CheckAnyTypeMatchup:
+	ld hl, wTypeMatchupBuffer
+	push hl
+	push de
+	push bc
+	ld a, [wTypeMatchupBuffer + 2]
+	jr CheckTypeMatchup_join
+
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
@@ -1302,7 +1310,8 @@ CheckTypeMatchup:
 	push hl
 	push de
 	push bc
-	farcall GetCurrentMoveType2
+	call GetCurrentMoveType2
+CheckTypeMatchup_join:
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -3030,7 +3039,7 @@ BattleCommand_damagecalc:
 
 ; Type
 	ld b, a
-	farcall GetCurrentMoveType2
+	call GetCurrentMoveType2
 	cp b
 	jr nz, .DoneItem
 
@@ -5314,7 +5323,7 @@ BattleCommand_forceswitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
+	ld hl, DoEntryHazards
 	jp CallBattleCore
 
 .switch_fail
@@ -5411,7 +5420,7 @@ BattleCommand_forceswitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
+	ld hl, DoEntryHazards
 	jp CallBattleCore
 
 .fail
@@ -6227,7 +6236,7 @@ CheckMoveTypeMatchesTarget:
 	ld hl, wBattleMonType1
 .ok
 
-	farcall GetCurrentMoveType2
+	call GetCurrentMoveType2
 	cp NORMAL
 	jr z, .normal
 
@@ -6939,7 +6948,7 @@ Battle_StartWeather:
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
 	call StdBattleTextbox
-	jp UpdateWeatherForms
+	farjump UpdateWeatherForms
 
 .failed
 	call AnimateFailedMove
@@ -7218,228 +7227,6 @@ CheckMoveInList:
 	pop bc
 	ret
 
-UpdateWeatherForms:
-; update enemy form
-	call BattleCommand_switchturn
-	call .Update
-	call BattleCommand_switchturn
-; update player form
-
-; fallthrough
-.Update:
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	jr z, .got_species
-	ld hl, wEnemyMonSpecies
-.got_species
-	ld a, [hl]
-	call GetPokemonIndexFromID
-	call GetBaseFormNumber
-	ld a, h
-	cp HIGH(CASTFORM)
-	jr nz, .check_cherrim
-	ld a, l
-	cp LOW(CASTFORM)
-	jr nz, .check_cherrim
-; is Castform
-	ld a, [wBattleWeather]
-	and a
-	jr z, .castform_revert
-	cp WEATHER_SANDSTORM
-	jr z, .castform_revert
-	cp WEATHER_RAIN
-	jr z, .castform_rain
-	cp WEATHER_SUN
-	jr z, .castform_sun
-; hail
-	ld hl, CASTFORM_SW
-	lb bc, ICE, ICE ; type 1 / type 2
-	jr .update
-
-.castform_rain
-	ld hl, CASTFORM_RN
-	lb bc, WATER, WATER ; type 1 / type 2
-	jr .update
-
-.castform_sun
-	ld hl, CASTFORM_SN
-	lb bc, FIRE, FIRE ; type 1 / type 2
-	jr .update
-
-.castform_revert
-	ld hl, CASTFORM
-	lb bc, NORMAL, NORMAL ; type 1 / type 2
-	jr .update
-
-.check_cherrim
-	ld a, h
-	cp HIGH(CHERRIM)
-	ret nz
-	ld a, l
-	cp LOW(CHERRIM)
-	ret nz
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .cherrim_sunny
-; revert
-	ld hl, CHERRIM
-	lb bc, GRASS, GRASS ; type 1 / type 2
-	jr .update
-
-.cherrim_sunny
-	ld hl, CHERRIM_S
-	lb bc, GRASS, GRASS ; type 1 / type 2
-
-; fallthrough
-
-.update
-	call .sanity_check
-	ret nc
-	call GetPokemonIDFromIndex
-	ld [wCurPartySpecies], a
-	push af
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	ld de, wBattleMonType
-	jr z, .set_species
-	ld hl, wEnemyMonSpecies
-	ld de, wEnemyMonType
-.set_species
-	pop af
-	ld [hl], a
-	push af
-	ld a, b
-	ld [de], a
-	inc de
-	ld a, c
-	ld [de], a
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wTempBattleMonSpecies
-	jr z, .got_tempmon
-	ld hl, wTempEnemyMonSpecies
-.got_tempmon
-	pop af
-	ld [hl], a
-; play animation
-	call _CheckBattleScene
-	jr c, .mimic_anims
-	xor a
-	ld [wNumHits], a
-	ld hl, ANIM_REFRESH_SPRITE
-	call GetMoveIDFromIndex
-	call LoadAnim
-	jr .after_anim
-
-.mimic_anims
-	call BattleCommand_movedelay
-	call BattleCommand_raisesubnoanim
-	farcall BattleAnimCmd_ReloadPal
-.after_anim
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVarAddr
-	bit SUBSTATUS_SUBSTITUTE, [hl]
-	jr z, .no_sub
-	ld hl, SUBSTITUTE
-	call GetMoveIDFromIndex
-	call LoadAnim
-.no_sub
-	ld hl, ChangedFormBattleText
-	jp StdBattleTextbox
-
-.sanity_check
-; don't change form if you won't actually change
-	push de
-	push hl
-	ld d, h
-	ld e, l
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	jr z, .sc_got_species
-	ld hl, wEnemyMonSpecies
-.sc_got_species
-	ld a, [hl]
-	call GetPokemonIndexFromID
-	ld a, h
-	cp d
-	jr nz, .diff
-	ld a, l
-	cp e
-	jr nz, .diff
-	pop hl
-	pop de
-	and a
-	ret
-
-.diff
-	pop hl
-	pop de
-	scf
-	ret
-
-SECTION "Effect Commands 2", ROMX[$4000]
-
-CompareMove_Copy: ; copy of CompareMove
-	push hl
-	call GetMoveIndexFromID
-	ld a, h
-	cp b
-	ld a, l
-	pop hl
-	ret nz
-	cp c
-	ret
-
-UpdateArceusForm:
-	farcall BattleCommand_switchturn
-	call .Update
-	farcall BattleCommand_switchturn
-; update player form
-
-; fallthrough
-.Update:
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wBattleMonSpecies
-	ld de, wBattleMonType
-	jr z, .got_species
-	ld hl, wEnemyMonSpecies
-	ld de, wEnemyMonType
-.got_species
-	ld a, [hli]
-	push hl
-	call GetPokemonIndexFromID
-	ld a, h
-	cp HIGH(ARCEUS)
-	jr nz, .miss
-	ld a, l
-	cp LOW(ARCEUS)
-	jr nz, .miss
-	pop hl
-	ld a, [hl]
-	push de
-	ld hl, PlateItems
-	ld de, 2
-	call IsInArray
-	pop de
-	ret nc
-; is Arceus, is holding a Plate
-	inc hl
-	ld a, [hl] ; target type
-	ld [de], a
-	inc de
-	ld [de], a
-	ret
-
-.miss
-	pop hl
-	ret
-
-INCLUDE "data/items/plate_items.asm"
-
 BattleCommand_stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -7696,3 +7483,213 @@ GetCurrentMoveType:
 .no_plate
 	xor a
 
+SECTION "Effect Commands 2", ROMX[$4000]
+
+UpdateArceusForm:
+	farcall BattleCommand_switchturn
+	call .Update
+	farcall BattleCommand_switchturn
+; update player form
+
+; fallthrough
+.Update:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wBattleMonType
+	jr z, .got_species
+	ld hl, wEnemyMonSpecies
+	ld de, wEnemyMonType
+.got_species
+	ld a, [hli]
+	push hl
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .miss
+	ld a, l
+	cp LOW(ARCEUS)
+	jr nz, .miss
+	pop hl
+	ld a, [hl]
+	push de
+	ld hl, PlateItems
+	ld de, 2
+	call IsInArray
+	pop de
+	ret nc
+; is Arceus, is holding a Plate
+	inc hl
+	ld a, [hl] ; target type
+	ld [de], a
+	inc de
+	ld [de], a
+	ret
+
+.miss
+	pop hl
+	ret
+
+INCLUDE "data/items/plate_items.asm"
+
+UpdateWeatherForms:
+; update enemy form
+	call BattleCommand_switchturn
+	call .Update
+	call BattleCommand_switchturn
+; update player form
+
+; fallthrough
+.Update:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .got_species
+	ld hl, wEnemyMonSpecies
+.got_species
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	call GetBaseFormNumber
+	ld a, h
+	cp HIGH(CASTFORM)
+	jr nz, .check_cherrim
+	ld a, l
+	cp LOW(CASTFORM)
+	jr nz, .check_cherrim
+; is Castform
+	ld a, [wBattleWeather]
+	and a
+	jr z, .castform_revert
+	cp WEATHER_SANDSTORM
+	jr z, .castform_revert
+	cp WEATHER_RAIN
+	jr z, .castform_rain
+	cp WEATHER_SUN
+	jr z, .castform_sun
+; hail
+	ld hl, CASTFORM_SW
+	lb bc, ICE, ICE ; type 1 / type 2
+	jr .update
+
+.castform_rain
+	ld hl, CASTFORM_RN
+	lb bc, WATER, WATER ; type 1 / type 2
+	jr .update
+
+.castform_sun
+	ld hl, CASTFORM_SN
+	lb bc, FIRE, FIRE ; type 1 / type 2
+	jr .update
+
+.castform_revert
+	ld hl, CASTFORM
+	lb bc, NORMAL, NORMAL ; type 1 / type 2
+	jr .update
+
+.check_cherrim
+	ld a, h
+	cp HIGH(CHERRIM)
+	ret nz
+	ld a, l
+	cp LOW(CHERRIM)
+	ret nz
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .cherrim_sunny
+; revert
+	ld hl, CHERRIM
+	lb bc, GRASS, GRASS ; type 1 / type 2
+	jr .update
+
+.cherrim_sunny
+	ld hl, CHERRIM_S
+	lb bc, GRASS, GRASS ; type 1 / type 2
+
+; fallthrough
+
+.update
+	call .sanity_check
+	ret nc
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wBattleMonType
+	jr z, .set_species
+	ld hl, wEnemyMonSpecies
+	ld de, wEnemyMonType
+.set_species
+	pop af
+	ld [hl], a
+	push af
+	ld a, b
+	ld [de], a
+	inc de
+	ld a, c
+	ld [de], a
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wTempBattleMonSpecies
+	jr z, .got_tempmon
+	ld hl, wTempEnemyMonSpecies
+.got_tempmon
+	pop af
+	ld [hl], a
+; play animation
+	farcall _CheckBattleScene
+	jr c, .mimic_anims
+	xor a
+	ld [wNumHits], a
+	ld hl, ANIM_REFRESH_SPRITE
+	call GetMoveIDFromIndex
+	farcall LoadAnim
+	jr .after_anim
+
+.mimic_anims
+	farcall BattleCommand_movedelay
+	farcall BattleCommand_raisesubnoanim
+	farcall BattleAnimCmd_ReloadPal
+.after_anim
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_SUBSTITUTE, [hl]
+	jr z, .no_sub
+	ld hl, SUBSTITUTE
+	call GetMoveIDFromIndex
+	farcall LoadAnim
+.no_sub
+	ld hl, ChangedFormBattleText
+	jp StdBattleTextbox
+
+.sanity_check
+; don't change form if you won't actually change
+	push de
+	push hl
+	ld d, h
+	ld e, l
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .sc_got_species
+	ld hl, wEnemyMonSpecies
+.sc_got_species
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp d
+	jr nz, .diff
+	ld a, l
+	cp e
+	jr nz, .diff
+	pop hl
+	pop de
+	and a
+	ret
+
+.diff
+	pop hl
+	pop de
+	scf
+	ret
