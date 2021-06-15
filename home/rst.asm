@@ -8,6 +8,7 @@ SECTION "rst8", ROM0 ; rst FarCall
 	jp FarCall_hl
 
 SECTION "rst10", ROM0 ; rst Bankswitch
+rst_bankswitch:
 	ldh [hROMBank], a
 	ld [MBC3RomBank], a
 	ret
@@ -18,7 +19,7 @@ SECTION "rst18", ROM0 ; rst FarCall2
 SECTION "rst20", ROM0 ; rst FarJump
 	inc sp
 	inc sp
-	jr $0010
+	jr rst_bankswitch
 
 SECTION "rst28", ROM0 ; rst JumpTable
 	push de
