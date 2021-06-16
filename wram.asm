@@ -753,6 +753,9 @@ wSomeoneIsRampaging:: db ; c73b
 
 wPlayerJustGotFrozen:: db ; c73c
 wEnemyJustGotFrozen:: db ; c73d
+
+wPlayerPseudoAbilityFlags:: db
+wEnemyPseudoAbilityFlags:: db
 wBattleEnd::
 
 NEXTU ; c608

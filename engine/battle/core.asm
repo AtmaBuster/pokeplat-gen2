@@ -4191,8 +4191,8 @@ BreakAttraction:
 
 DoEntryHazards:
 	call SpikesDamage
-;	call ToxicSpikes
 	call StealthRockDamage
+	call ToxicSpikesEffect
 	ret
 
 SpikesDamage:
@@ -4209,16 +4209,17 @@ SpikesDamage:
 
 	ld a, [hl]
 	and MASK_SPIKES
-	and a ; cp SPIKES_0
 	ret z
 
 	; Flying-types aren't affected by Spikes.
 	ld a, [de]
 	cp FLYING
+	call z, .gravity_check
 	ret z
 	inc de
 	ld a, [de]
 	cp FLYING
+	call z, .gravity_check
 	ret z
 
 	push bc
@@ -4250,6 +4251,11 @@ SpikesDamage:
 .hl
 	jp hl
 
+.gravity_check
+	ld a, [wGravityCount]
+	and a
+	ret
+
 StealthRockDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -4280,7 +4286,7 @@ StealthRockDamage:
 	ld a, [wTypeMatchup]
 	push af
 
-	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
+	ld hl, BattleText_UserHurtByStealthRock ; "hurt by rocks!"
 	call StdBattleTextbox
 
 	call GetMaxHP
@@ -4309,6 +4315,105 @@ StealthRockDamage:
 .halve_bc
 	srl b
 	rr c
+	ret
+
+ToxicSpikesEffect:
+	ld hl, wPlayerScreens
+	ld de, wBattleMonType
+	ld bc, wPlayerToxicCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyScreens
+	ld de, wEnemyMonType
+	ld bc, wEnemyToxicCount
+.ok
+	ld a, [hl]
+	and MASK_TOXIC_SPIKES
+	ret z
+
+; don't reapply poison
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	bit PSN, a
+	ret nz
+
+; flying/steel types do not get poisoned
+; poison types absorb
+	call .gettype
+	cp FLYING
+	ret z
+	inc de
+	call .gettype
+	cp FLYING
+	ret z
+	cp POISON
+	jr z, .absorb_spikes
+	dec de
+	call .gettype
+	cp POISON
+	jr z, .absorb_spikes
+	cp STEEL
+	ret z
+	inc de
+	call .gettype
+	cp STEEL
+	ret z
+
+; set poison
+	ld a, [hl]
+	and MASK_TOXIC_SPIKES
+	cp TOXIC_SPIKES_2
+	jr nz, .regular_poison
+
+; bad poison
+	xor a
+	ld [bc], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	set SUBSTATUS_TOXIC, [hl]
+	call .apply_poison
+
+	ld hl, BadlyPoisonedText
+	call StdBattleTextbox
+	jr .finish_set_poison
+
+.regular_poison
+	call .apply_poison
+	ld hl, WasPoisonedText
+	call StdBattleTextbox
+.finish_set_poison
+	call BattleCommand_switchturn
+	call UseHeldStatusHealingItem
+	call BattleCommand_switchturn
+	ret
+
+.apply_poison
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	set PSN, [hl]
+	call UpdateUserInParty
+	ret
+
+.absorb_spikes
+	ld a, [hl]
+	and $ff - MASK_TOXIC_SPIKES
+	ld [hl], a
+	ld hl, AbsorbedToxicSpikesText
+	jp StdBattleTextbox
+
+.gettype
+	ld a, [de]
+	cp FLYING
+	ret nz
+	ld a, [wGravityCount]
+	and a
+	jr nz, .gravity
+	ld a, FLYING
+	ret
+
+.gravity
+	xor a
 	ret
 
 PursuitSwitch:

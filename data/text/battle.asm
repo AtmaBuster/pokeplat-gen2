@@ -300,6 +300,11 @@ BattleText_UserHurtBySpikes:
 	line "hurt by SPIKES!"
 	prompt
 
+BattleText_UserHurtByStealthRock:
+	text "<USER>'s"
+	line "hurt by rocks!"
+	prompt
+
 RecoveredUsingText:
 	text "<TARGET>"
 	line "recovered using a"
@@ -718,6 +723,12 @@ AlreadyPoisonedText:
 	line "already poisoned!"
 	prompt
 
+AbsorbedToxicSpikesText:
+	text "The poison spikes"
+	line "disappeared around"
+	cont "<USER>!"
+	prompt
+
 SuckedHealthText:
 	text "Sucked health from"
 	line "<TARGET>!"
@@ -1002,6 +1013,18 @@ ProtectingItselfText:
 SpikesText:
 	text "SPIKES scattered"
 	line "all around"
+	cont "<TARGET>!"
+	prompt
+
+StealthRockText:
+	text "Pointed stones are"
+	line "floating around"
+	cont "<TARGET>!"
+	prompt
+
+ToxicSpikesText:
+	text "Poison spikes were"
+	line "scattered around"
 	cont "<TARGET>!"
 	prompt
 

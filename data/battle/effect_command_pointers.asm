@@ -161,6 +161,8 @@ BattleCommandPointers:
 	battlecmd starthail               ; 7c
 	battlecmd breakscreens            ; 7d
 	battlecmd weightdamage            ; 7e
+	battlecmd stealthrock             ; 7f
+	battlecmd toxicspikes             ; 80
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

@@ -1359,6 +1359,20 @@ Spikes:
 	spikes
 	endmove
 
+ToxicSpikes:
+	checkobedience
+	usedmovetext
+	doturn
+	toxicspikes
+	endmove
+
+StealthRock:
+	checkobedience
+	usedmovetext
+	doturn
+	stealthrock
+	endmove
+
 Foresight:
 	checkobedience
 	usedmovetext

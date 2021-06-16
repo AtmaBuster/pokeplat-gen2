@@ -240,7 +240,7 @@ MoveEffectsPointers:
 	dw Splash                        ; LAST_RESORT
 	dw Splash                        ; WORRY_SEED
 	dw Splash                        ; SUCKER_PUNCH
-	dw Splash                        ; TOXIC_SPIKES
+	dw ToxicSpikes                   ; TOXIC_SPIKES
 	dw Splash                        ; HEART_SWAP
 	dw Splash                        ; AQUA_RING
 	dw Splash                        ; MAGNET_RISE
@@ -248,7 +248,7 @@ MoveEffectsPointers:
 	dw Splash                        ; DEFOG
 	dw Splash                        ; TRICK_ROOM
 	dw Splash                        ; CAPTIVATE
-	dw Splash                        ; STEALTH_ROCK
+	dw StealthRock                   ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; BUG_BITE
