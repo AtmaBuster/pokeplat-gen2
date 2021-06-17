@@ -174,7 +174,7 @@
 	const EFFECT_CHARGE            ; ab
 	const EFFECT_TAUNT             ; ac
 	const EFFECT_TRICK             ; ad
-	const EFFECT_ROLE_PLAY         ; ae
+	const EFFECT_UNUSED_AE         ; ae
 	const EFFECT_WISH              ; af
 	const EFFECT_ASSIST            ; b0
 	const EFFECT_INGRAIN           ; b1
@@ -187,7 +187,7 @@
 	const EFFECT_KNOCK_OFF         ; b8
 	const EFFECT_ENDEAVOR          ; b9
 	const EFFECT_UNUSED_BA         ; ba
-	const EFFECT_SKILL_SWAP        ; bb
+	const EFFECT_UNUSED_BB         ; bb
 	const EFFECT_IMPRISON          ; bc
 	const EFFECT_REFRESH           ; bd
 	const EFFECT_GRUDGE            ; be
@@ -229,7 +229,7 @@
 	const EFFECT_HEAL_BLOCK        ; e2
 	const EFFECT_WRING_OUT         ; e3
 	const EFFECT_POWER_TRICK       ; e4
-	const EFFECT_GASTRO_ACID       ; e5
+	const EFFECT_UNUSED_E5         ; e5
 	const EFFECT_LUCKY_CHANT       ; e6
 	const EFFECT_ME_FIRST          ; e7
 	const EFFECT_COPYCAT           ; e8
@@ -237,7 +237,7 @@
 	const EFFECT_GUARD_SWAP        ; ea
 	const EFFECT_PUNISHMENT        ; eb
 	const EFFECT_LAST_RESORT       ; ec
-	const EFFECT_WORRY_SEED        ; ed
+	const EFFECT_UNUSED_ED         ; ed
 	const EFFECT_SUCKER_PUNCH      ; ee
 	const EFFECT_TOXIC_SPIKES      ; ef
 	const EFFECT_HEART_SWAP        ; f0

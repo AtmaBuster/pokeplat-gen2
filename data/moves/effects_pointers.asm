@@ -167,7 +167,7 @@ MoveEffectsPointers:
 	dw Splash                        ; TORMENT
 	dw Flatter                       ; FLATTER
 	dw WillOWisp                     ; WILL_O_WISP
-	dw Splash                        ; MEMENTO
+	dw Memento                       ; MEMENTO
 	dw Facade                        ; FACADE
 	dw Splash                        ; FOCUS_PUNCH
 	dw Splash                        ; SMELLINGSALT
@@ -175,7 +175,7 @@ MoveEffectsPointers:
 	dw Splash                        ; CHARGE
 	dw Splash                        ; TAUNT
 	dw Splash                        ; TRICK
-	dw Splash                        ; ROLE_PLAY
+	dw Splash                        ; UNUSED_AE
 	dw Splash                        ; WISH
 	dw Splash                        ; ASSIST
 	dw Splash                        ; INGRAIN
@@ -188,7 +188,7 @@ MoveEffectsPointers:
 	dw Splash                        ; KNOCK_OFF
 	dw Splash                        ; ENDEAVOR
 	dw Splash                        ; UNUSED_BA
-	dw Splash                        ; SKILL_SWAP
+	dw Splash                        ; UNUSED_BB
 	dw Splash                        ; IMPRISON
 	dw Splash                        ; REFRESH
 	dw Splash                        ; GRUDGE
@@ -230,7 +230,7 @@ MoveEffectsPointers:
 	dw Splash                        ; HEAL_BLOCK
 	dw Splash                        ; WRING_OUT
 	dw Splash                        ; POWER_TRICK
-	dw Splash                        ; GASTRO_ACID
+	dw Splash                        ; UNUSED_E5
 	dw Splash                        ; LUCKY_CHANT
 	dw Splash                        ; ME_FIRST
 	dw Splash                        ; COPYCAT
@@ -238,7 +238,7 @@ MoveEffectsPointers:
 	dw Splash                        ; GUARD_SWAP
 	dw Splash                        ; PUNISHMENT
 	dw Splash                        ; LAST_RESORT
-	dw Splash                        ; WORRY_SEED
+	dw Splash                        ; UNUSED_ED
 	dw Splash                        ; SUCKER_PUNCH
 	dw ToxicSpikes                   ; TOXIC_SPIKES
 	dw Splash                        ; HEART_SWAP

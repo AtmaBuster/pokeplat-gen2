@@ -165,6 +165,7 @@ BattleCommandPointers:
 	battlecmd toxicspikes             ; 80
 	battlecmd camouflage ; 81
 	battlecmd naturepower ; 82
+	battlecmd kouser ; 83
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

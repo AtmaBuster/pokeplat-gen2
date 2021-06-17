@@ -291,7 +291,7 @@ Moves2:
 	move EFFECT_TAUNT,               0, DARK,     100, 20,   0, STATUS   ;TAUNT
 	move EFFECT_SPLASH,              0, NORMAL,   100, 20,   0, STATUS   ;HELPING_HAND ; dummy
 	move EFFECT_TRICK,               0, PSYCHIC,  100, 10,   0, STATUS   ;TRICK
-	move EFFECT_ROLE_PLAY,           0, PSYCHIC,  100, 10,   0, STATUS   ;ROLE_PLAY
+	move EFFECT_SPLASH   ,           0, PSYCHIC,  100, 10,   0, STATUS   ;ROLE_PLAY ; dummy
 	move EFFECT_WISH,                0, NORMAL,   100, 10,   0, STATUS   ;WISH
 	move EFFECT_ASSIST,              0, NORMAL,   100, 20,   0, STATUS   ;ASSIST
 	move EFFECT_INGRAIN,             0, GRASS,    100, 20,   0, STATUS   ;INGRAIN
@@ -304,7 +304,7 @@ Moves2:
 	move EFFECT_KNOCK_OFF,          20, DARK,     100, 20,   0, PHYSICAL ;KNOCK_OFF
 	move EFFECT_ENDEAVOR,            0, FIGHTING, 100, 5,    0, PHYSICAL ;ENDEAVOR
 	move EFFECT_HP_SCALING_HIT,    150, FIRE,     100, 5,    0, SPECIAL  ;ERUPTION
-	move EFFECT_SKILL_SWAP,          0, PSYCHIC,  100, 10,   0, STATUS   ;SKILL_SWAP
+	move EFFECT_SPLASH,              0, PSYCHIC,  100, 10,   0, STATUS   ;SKILL_SWAP ; dummy
 	move EFFECT_IMPRISON,            0, PSYCHIC,  100, 10,   0, STATUS   ;IMPRISON
 	move EFFECT_REFRESH,             0, NORMAL,   100, 20,   0, STATUS   ;REFRESH
 	move EFFECT_GRUDGE,              0, GHOST,    100, 5,    0, STATUS   ;GRUDGE
@@ -399,7 +399,7 @@ Moves2:
 	move EFFECT_HEAL_BLOCK,          0, PSYCHIC,  100, 15,   0, STATUS   ;HEAL_BLOCK
 	move EFFECT_WRING_OUT,           0, NORMAL,   100, 5,    0, SPECIAL  ;WRING_OUT
 	move EFFECT_POWER_TRICK,         0, PSYCHIC,  100, 10,   0, STATUS   ;POWER_TRICK
-	move EFFECT_GASTRO_ACID,         0, POISON,   100, 10,   0, STATUS   ;GASTRO_ACID
+	move EFFECT_SPLASH,              0, POISON,   100, 10,   0, STATUS   ;GASTRO_ACID ; dummy
 	move EFFECT_LUCKY_CHANT,         0, NORMAL,   100, 30,   0, STATUS   ;LUCKY_CHANT
 	move EFFECT_ME_FIRST,            0, NORMAL,   100, 20,   0, STATUS   ;ME_FIRST
 	move EFFECT_COPYCAT,             0, NORMAL,   100, 20,   0, STATUS   ;COPYCAT
@@ -407,7 +407,7 @@ Moves2:
 	move EFFECT_GUARD_SWAP,          0, PSYCHIC,  100, 10,   0, STATUS   ;GUARD_SWAP
 	move EFFECT_PUNISHMENT,         60, DARK,     100, 5,    0, PHYSICAL ;PUNISHMENT
 	move EFFECT_LAST_RESORT,       130, NORMAL,   100, 5,    0, PHYSICAL ;LAST_RESORT
-	move EFFECT_WORRY_SEED,          0, GRASS,    100, 10,   0, STATUS   ;WORRY_SEED
+	move EFFECT_SPLASH,              0, GRASS,    100, 10,   0, STATUS   ;WORRY_SEED ; dummy
 	move EFFECT_SUCKER_PUNCH,       80, DARK,     100, 5,    0, PHYSICAL ;SUCKER_PUNCH
 	move EFFECT_TOXIC_SPIKES,        0, POISON,   100, 20,   0, STATUS   ;TOXIC_SPIKES
 	move EFFECT_HEART_SWAP,          0, PSYCHIC,  100, 10,   0, STATUS   ;HEART_SWAP

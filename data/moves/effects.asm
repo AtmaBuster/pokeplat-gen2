@@ -2345,3 +2345,13 @@ Camouflage:
 	doturn
 	camouflage
 	endmove
+
+Memento:
+	checkobedience
+	usedmovetext
+	doturn
+	moveanim
+	loweroppstat $10 | ATTACK
+	loweroppstat $10 | SP_ATTACK
+	kouser
+	endmove
