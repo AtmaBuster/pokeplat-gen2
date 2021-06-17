@@ -1,4 +1,4 @@
-SECTION "Effect Commands", ROMX[$4000]
+SECTION "Effect Commands", ROMX
 
 CompareMove:
 	; checks if the move ID in a matches the move in bc
@@ -7483,7 +7483,7 @@ GetCurrentMoveType:
 .no_plate
 	xor a
 
-SECTION "Effect Commands 2", ROMX[$4000]
+SECTION "Effect Commands 2", ROMX
 
 UpdateArceusForm:
 	farcall BattleCommand_switchturn
@@ -7693,3 +7693,78 @@ UpdateWeatherForms:
 	pop de
 	scf
 	ret
+
+BattleCommand_camouflage:
+	ld hl, wBattleMonType
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonType
+.ok
+	push hl
+	call GetEnvironmentType
+	pop hl
+	ld [hli], a
+	ld [hl], a
+	ld [wNamedObjectIndexBuffer], a
+	farcall GetTypeName
+	ld hl, CamouflageText
+	jp StdBattleTextbox
+
+BattleCommand_naturepower:
+	ld c, 45
+	call DelayFrames
+	call GetEnvironmentType
+	ld hl, NaturePowerMoves
+	ld de, 3
+	call IsInArray
+	ret nc
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetMoveIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	push af
+	call GetMoveName
+	ld hl, NaturePowerText
+	call StdBattleTextbox
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+	farcall UpdateMoveData
+	farjump ResetTurn
+
+GetEnvironmentType:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .water
+	cp PLAYER_SURF_PIKA
+	jr z, .water
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr nz, .tileset
+	ld a, [wEnvironment]
+	cp TOWN
+	jr z, .grass
+	cp ROUTE
+	jr z, .grass
+.tileset
+	ld a, [wMapTileset]
+	ld l, a
+	ld h, 0
+	ld bc, NaturePowerTilesets
+	add hl, bc
+	ld a, [hl]
+	ret
+
+.grass
+	ld a, GRASS
+	ret
+
+.water
+	ld a, WATER
+	ret
+
+INCLUDE "data/moves/nature_power_tilesets.asm"

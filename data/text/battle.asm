@@ -1205,3 +1205,19 @@ ChangedFormBattleText:
 	text "<USER>"
 	line "changed form!"
 	prompt
+
+NaturePowerText:
+	text "NATURE POWER"
+	line "turned into"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+CamouflageText:
+	text "<USER>"
+	line "transformed into"
+	cont "@"
+	text_ram wStringBuffer1
+	text " type!"
+	prompt

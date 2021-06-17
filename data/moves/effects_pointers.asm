@@ -171,7 +171,7 @@ MoveEffectsPointers:
 	dw Facade                        ; FACADE
 	dw Splash                        ; FOCUS_PUNCH
 	dw Splash                        ; SMELLINGSALT
-	dw Splash                        ; NATURE_POWER
+	dw NaturePower                   ; NATURE_POWER
 	dw Splash                        ; CHARGE
 	dw Splash                        ; TAUNT
 	dw Splash                        ; TRICK
@@ -194,7 +194,7 @@ MoveEffectsPointers:
 	dw Splash                        ; GRUDGE
 	dw Splash                        ; SNATCH
 	dw Splash                        ; SECRET_POWER
-	dw Splash                        ; CAMOUFLAGE
+	dw Camouflage                    ; CAMOUFLAGE
 	dw Splash                        ; UNUSED_C2
 	dw Splash                        ; MUD_SPORT
 	dw PoisonFang                    ; POISON_FANG

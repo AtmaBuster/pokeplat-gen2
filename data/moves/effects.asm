@@ -2331,3 +2331,17 @@ WeightDamage:
 	buildopponentrage
 	heldflinch
 	endmove
+
+NaturePower:
+	checkobedience
+	usedmovetext
+	doturn
+	naturepower
+	endmove
+
+Camouflage:
+	checkobedience
+	usedmovetext
+	doturn
+	camouflage
+	endmove
