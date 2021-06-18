@@ -2354,4 +2354,82 @@ Memento:
 	loweroppstat $10 | ATTACK
 	loweroppstat $10 | SP_ATTACK
 	kouser
+
+Endeavor:
+	checkobedience
+	usedmovetext
+	doturn
+	endeavor
+	checkhit
+	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+HammerArm:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	forcelowerstat SPEED
+	endmove
+
+CloseCombat:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	forcelowerstat DEFENSE
+	forcelowerstat SP_DEFENSE
+	endmove
+
+CrushGrip:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	switchturn
+	lifepower
+	switchturn
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
 	endmove

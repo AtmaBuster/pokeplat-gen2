@@ -42,6 +42,9 @@ BattleCommand_lifepower:
 	ld b, 4
 	call Divide
 	ldh a, [hQuotient + 3]
-	ld d, a
 	pop bc
+	ld d, a
+	and a
+	ret nz
+	inc d
 	ret

@@ -132,7 +132,7 @@ MoveEffectsPointers:
 	dw Pursuit                       ; PURSUIT
 	dw RapidSpin                     ; RAPID_SPIN
 	dw Splash                        ; POT_SMASH
-	dw Splash                        ; CRUSH_GRIP
+	dw CrushGrip                     ; CRUSH_GRIP
 	dw MorningSun                    ; MORNING_SUN
 	dw Synthesis                     ; SYNTHESIS
 	dw Moonlight                     ; MOONLIGHT
@@ -186,7 +186,7 @@ MoveEffectsPointers:
 	dw BrickBreak                    ; BRICK_BREAK
 	dw Splash                        ; YAWN
 	dw Splash                        ; KNOCK_OFF
-	dw Splash                        ; ENDEAVOR
+	dw Endeavor                      ; ENDEAVOR
 	dw Splash                        ; UNUSED_BA
 	dw Splash                        ; UNUSED_BB
 	dw Splash                        ; IMPRISON
@@ -209,7 +209,7 @@ MoveEffectsPointers:
 	dw Splash                        ; GRAVITY
 	dw Splash                        ; MIRACLE_EYE
 	dw Splash                        ; WAKE_UP_SLAP
-	dw Splash                        ; HAMMER_ARM
+	dw HammerArm                     ; HAMMER_ARM
 	dw Splash                        ; GYRO_BALL
 	dw Splash                        ; HEALING_WISH
 	dw Splash                        ; BRINE
@@ -220,7 +220,7 @@ MoveEffectsPointers:
 	dw Splash                        ; ACUPRESSURE
 	dw Splash                        ; METAL_BURST
 	dw Splash                        ; U_TURN
-	dw Splash                        ; CLOSE_COMBAT
+	dw CloseCombat                   ; CLOSE_COMBAT
 	dw Splash                        ; PAYBACK
 	dw Splash                        ; ASSURANCE
 	dw Splash                        ; EMBARGO
