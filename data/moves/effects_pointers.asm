@@ -174,7 +174,7 @@ MoveEffectsPointers:
 	dw NaturePower                   ; NATURE_POWER
 	dw Splash                        ; CHARGE
 	dw Splash                        ; TAUNT
-	dw Splash                        ; TRICK
+	dw Trick                         ; TRICK
 	dw Splash                        ; UNUSED_AE
 	dw Splash                        ; WISH
 	dw Splash                        ; ASSIST
@@ -212,7 +212,7 @@ MoveEffectsPointers:
 	dw HammerArm                     ; HAMMER_ARM
 	dw Splash                        ; GYRO_BALL
 	dw Splash                        ; HEALING_WISH
-	dw Splash                        ; BRINE
+	dw Brine                         ; BRINE
 	dw Splash                        ; NATURAL_GIFT
 	dw Splash                        ; FEINT
 	dw Splash                        ; PLUCK
@@ -253,4 +253,3 @@ MoveEffectsPointers:
 	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; BUG_BITE
 	dw Splash                        ; LUNAR_DANCE
-	dw Splash                        ; AVALANCHE

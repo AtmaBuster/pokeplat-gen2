@@ -19,55 +19,11 @@ BattleCommand_thief:
 	and a
 	ret z
 
-; Can't steal mail.
-
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	farcall ItemIsMail
+	ld d, h
+	ld e, l
+	call CheckStealableItem
 	ret c
 
-; Can't steal Griseous Orb from Giratina
-	call .enemyitem
-	ld a, [hld]
-	cp GRISEOUS_ORB
-	jr nz, .player_arceus_check
-	ld a, [hl]
-	call GetPokemonIndexFromID
-	ld a, h
-	cp HIGH(GIRATINA)
-	jr nz, .player_check_giratina_o
-	ld a, l
-	cp LOW(GIRATINA)
-	ret z
-.player_check_giratina_o
-	ld a, h
-	cp HIGH(GIRATINA_O)
-	ret z
-	ld a, l
-	cp LOW(GIRATINA_O)
-	ret z
-
-.player_arceus_check
-; Can't steal Plate from Arceus
-	call .enemyitem
-	ld a, [hld]
-	push hl
-	ld b, BANK(PlateItems)
-	ld hl, PlateItems
-	ld de, 2
-	call IsInFarArray
-	pop hl
-	jr nc, .player_can_steal
-	ld a, [hl]
-	call GetPokemonIndexFromID
-	ld a, h
-	cp HIGH(ARCEUS)
-	jr nz, .player_can_steal
-	ld a, l
-	cp LOW(ARCEUS)
-	ret z
-
-.player_can_steal
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -108,55 +64,11 @@ BattleCommand_thief:
 	and a
 	ret z
 
-; Can't steal mail!
-
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	farcall ItemIsMail
+	ld d, h
+	ld e, l
+	call CheckStealableItem
 	ret c
 
-; Can't steal Griseous Orb from Giratina
-	call .playeritem
-	ld a, [hld]
-	cp GRISEOUS_ORB
-	jr nz, .enemy_arceus_check
-	ld a, [hl]
-	call GetPokemonIndexFromID
-	ld a, h
-	cp HIGH(GIRATINA)
-	jr nz, .enemy_check_giratina_o
-	ld a, l
-	cp LOW(GIRATINA)
-	ret z
-.enemy_check_giratina_o
-	ld a, h
-	cp HIGH(GIRATINA_O)
-	ret z
-	ld a, l
-	cp LOW(GIRATINA_O)
-	ret z
-
-.enemy_arceus_check
-; Can't steal Plate from Arceus
-	call .playeritem
-	ld a, [hld]
-	push hl
-	ld b, BANK(PlateItems)
-	ld hl, PlateItems
-	ld de, 2
-	call IsInArray
-	pop hl
-	jr nc, .enemy_can_steal
-	ld a, [hl]
-	call GetPokemonIndexFromID
-	ld a, h
-	cp HIGH(ARCEUS)
-	jr nz, .enemy_can_steal
-	ld a, l
-	cp LOW(ARCEUS)
-	ret z
-
-.enemy_can_steal
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -193,4 +105,64 @@ BattleCommand_thief:
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonItem
+	ret
+
+CheckStealableItem:
+	ld a, [de]
+; Can't steal mail.
+
+	ld [wNamedObjectIndexBuffer], a
+	push de
+	ld d, a
+	farcall ItemIsMail
+	pop de
+	ret c
+
+; Can't steal Griseous Orb from Giratina
+	ld a, [de]
+	cp GRISEOUS_ORB
+	jr nz, .arceus_check
+	dec de
+	ld a, [de]
+	inc de
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(GIRATINA)
+	jr nz, .check_giratina_o
+	ld a, l
+	cp LOW(GIRATINA)
+	jr z, .cant
+.check_giratina_o
+	ld a, h
+	cp HIGH(GIRATINA_O)
+	jr z, .cant
+	ld a, l
+	cp LOW(GIRATINA_O)
+	jr z, .cant
+
+.arceus_check
+; Can't steal Plate from Arceus
+	ld a, [de]
+	push de
+	ld b, BANK(PlateItems)
+	ld hl, PlateItems
+	ld de, 2
+	call IsInFarArray
+	pop de
+	ret nc
+	dec de
+	ld a, [de]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .ok
+	ld a, l
+	cp LOW(ARCEUS)
+	jr z, .cant
+.ok
+	and a
+	ret
+
+.cant
+	scf
 	ret

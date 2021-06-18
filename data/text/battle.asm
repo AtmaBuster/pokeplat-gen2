@@ -1221,3 +1221,23 @@ CamouflageText:
 	text_ram wStringBuffer1
 	text " type!"
 	prompt
+
+TrickText:
+	text "<USER>"
+	line "switched items"
+	cont "with its foe!"
+	prompt
+
+UserGotItemText:
+	text "<USER>"
+	line "got @"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+TargetGotItemText:
+	text "<TARGET>"
+	line "got @"
+	text_ram wStringBuffer1
+	text "!"
+	prompt

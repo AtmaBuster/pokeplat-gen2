@@ -2125,6 +2125,8 @@ GetFailureResultText:
 	ld hl, ButItFailedText
 	ld de, ItFailedText
 	jr z, .got_text
+	cp EFFECT_TRICK
+	jr z, .got_text
 	ld hl, AttackMissedText
 	ld de, AttackMissed2Text
 	ld a, [wCriticalHit]
@@ -7808,3 +7810,116 @@ BattleCommand_endeavor:
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
+
+BattleCommand_brine:
+	push bc
+	ld hl, wEnemyMonMaxHP + 1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wBattleMonMaxHP + 1
+.go
+	ld a, [hld]
+	ld c, a
+	ld a, [hld]
+	ld b, a
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	dec hl
+	ld a, h
+	cp b
+	jr c, .ok
+	ld a, l
+	cp c
+	jr nc, .no
+.ok
+	pop bc
+	ld a, d
+	add a
+	ld d, a
+	ret
+
+.no
+	pop bc
+	ret
+
+BattleCommand_trick:
+	ld a, 1
+	ld [wAttackMissed], a
+	ld de, wBattleMonItem
+	farcall CheckStealableItem
+	ret c
+	ld de, wEnemyMonItem
+	farcall CheckStealableItem
+	ret c
+	ld a, [wBattleMonItem]
+	and a
+	jr nz, .ok
+	ld a, [wEnemyMonItem]
+	and a
+	ret z
+.ok
+	xor a
+	ld [wAttackMissed], a
+	ld hl, wBattleMonItem
+	ld de, wEnemyMonItem
+	ld b, [hl]
+	ld a, [de]
+	ld [hl], a
+	ld a, b
+	ld [de], a
+	ld a, MON_ITEM
+	call BattlePartyAttr
+	push hl
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .wild_battle
+	ld a, MON_ITEM
+	call OTPartyAttr
+	pop de
+	ld b, [hl]
+	ld a, [de]
+	ld [hl], a
+	ld a, b
+	ld [de], a
+	jr .text
+
+.wild_battle
+	pop de
+	ld hl, wBattleMonItem
+	ld a, [hl]
+	ld [de], a
+
+.text
+	ld hl, TrickText
+	call StdBattleTextbox
+	ld hl, wBattleMonItem
+	ld de, wEnemyMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .gotturn
+	ld hl, wEnemyMonItem
+	ld de, wBattleMonItem
+.gotturn
+	ld a, [hl]
+	and a
+	jr z, .skip_user_item
+
+	ld [wNamedObjectIndexBuffer], a
+	push de
+	call GetItemName
+	ld hl, UserGotItemText
+	call StdBattleTextbox
+	pop de
+
+.skip_user_item
+	ld a, [de]
+	and a
+	ret z
+
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld hl, TargetGotItemText
+	jp StdBattleTextbox

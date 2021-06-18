@@ -252,7 +252,6 @@
 	const EFFECT_JUDGMENT          ; f9
 	const EFFECT_BUG_BITE          ; fa
 	const EFFECT_LUNAR_DANCE       ; fb
-	const EFFECT_AVALANCHE         ; fc
 
 EFFECT_SPEED_UP         EQU $0c
 EFFECT_SP_DEF_UP        EQU $0e

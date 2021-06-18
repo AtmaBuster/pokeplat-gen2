@@ -8,7 +8,6 @@ MoveEffectPriorities:
 	db EFFECT_FAKE_OUT,     7
 	db EFFECT_VITAL_THROW,  5
 	db EFFECT_FOCUS_PUNCH,  4
-	db EFFECT_AVALANCHE,    3
 	db EFFECT_REVENGE,      3
 	db EFFECT_COUNTER,      2
 	db EFFECT_MIRROR_COAT,  2

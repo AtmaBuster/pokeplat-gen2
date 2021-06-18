@@ -167,6 +167,8 @@ BattleCommandPointers:
 	battlecmd naturepower             ; 82
 	battlecmd kouser                  ; 83
 	battlecmd endeavor                ; 84
+	battlecmd brine ; 85
+	battlecmd trick ; 86
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

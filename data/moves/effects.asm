@@ -2433,3 +2433,32 @@ CrushGrip:
 	buildopponentrage
 	heldflinch
 	endmove
+
+Brine:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	brine
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Trick:
+	checkobedience
+	usedmovetext
+	doturn
+	trick
+	failuretext
+	endmove
