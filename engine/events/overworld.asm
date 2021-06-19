@@ -1846,3 +1846,69 @@ CantCutScript:
 UnknownText_0xd1d0:
 	text_far UnknownText_0x1c0a05
 	text_end
+
+HoneyFunction:
+	call FieldMoveJumptableReset
+.loop
+	ld hl, .HoneyTable
+	call FieldMoveJumptable
+	jr nc, .loop
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.HoneyTable:
+	dw .CheckCanUseHoney
+	dw .UseHoney
+	dw .FailHoney
+
+.CheckCanUseHoney:
+	farcall CanUseSweetScent
+	ld a, $1
+	ret c
+	ld a, $2
+	ret
+
+.UseHoney:
+	ld hl, .HoneyScript
+	call QueueScript
+	ld a, $81
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.FailHoney:
+	ld a, $80
+	ret
+
+.HoneyScript
+	reloadmappart
+	special UpdateTimePals
+	callasm GetPartyNick
+	writetext UsedHoneyText
+	waitbutton
+	callasm SweetScentEncounter
+	iffalse HoneyNothing
+	checkflag ENGINE_BUG_CONTEST_TIMER
+	iftrue .BugCatchingContest
+	randomwildmon
+	startbattle
+	reloadmapafterbattle
+	end
+
+.BugCatchingContest:
+	farsjump BugCatchingContestBattleScript
+
+HoneyNothing:
+	writetext HoneyNothingText
+	waitbutton
+	closetext
+	end
+
+UsedHoneyText:
+	; used HONEY!
+	text_far UnknownText_0x1c0b03
+	text_end
+
+HoneyNothingText:
+	text_far UnknownText_0x1c0b1a
+	text_end

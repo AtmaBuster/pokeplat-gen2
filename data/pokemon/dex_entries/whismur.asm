@@ -1,5 +1,4 @@
 	db "WHISPER@" ; species name
-	dw 200, 359 ; height, weight
 
 	db   "If it senses"
 	next "danger, it scares"

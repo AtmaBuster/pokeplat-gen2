@@ -1,5 +1,4 @@
 	db "OLD SHRIMP@" ; species name
-	dw 204, 276 ; height, weight
 
 	db   "An ancestral"
 	next "#MON that lived"

@@ -1,5 +1,4 @@
 	db "DEEP SEA@" ; species name
-	dw 507, 595 ; height, weight
 
 	db   "It lives deep in"
 	next "the pitch-dark"

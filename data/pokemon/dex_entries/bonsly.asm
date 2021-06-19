@@ -1,5 +1,4 @@
 	db "BONSAI@" ; species name
-	dw 108, 331 ; height, weight
 
 	db   "In order to adjust"
 	next "the fluid level of"

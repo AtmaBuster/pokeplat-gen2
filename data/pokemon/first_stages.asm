@@ -7,7 +7,7 @@ FirstEvoStages::
 	dw CHARMANDER
 	dw CHARMANDER
 	dw SQUIRTLE
-	dw SQUIRTLE   ;08
+	dw SQUIRTLE
 	dw SQUIRTLE
 	dw CATERPIE
 	dw CATERPIE
@@ -15,7 +15,7 @@ FirstEvoStages::
 	dw WEEDLE
 	dw WEEDLE
 	dw WEEDLE
-	dw PIDGEY     ;10
+	dw PIDGEY
 	dw PIDGEY
 	dw PIDGEY
 	dw RATTATA
@@ -23,7 +23,7 @@ FirstEvoStages::
 	dw SPEAROW
 	dw SPEAROW
 	dw EKANS
-	dw EKANS      ;18
+	dw EKANS
 	dw PICHU
 	dw PICHU
 	dw SANDSHREW
@@ -31,7 +31,7 @@ FirstEvoStages::
 	dw NIDORAN_F
 	dw NIDORAN_F
 	dw NIDORAN_F
-	dw NIDORAN_M  ;20
+	dw NIDORAN_M
 	dw NIDORAN_M
 	dw NIDORAN_M
 	dw CLEFFA
@@ -39,7 +39,7 @@ FirstEvoStages::
 	dw VULPIX
 	dw VULPIX
 	dw IGGLYBUFF
-	dw IGGLYBUFF  ;28
+	dw IGGLYBUFF
 	dw ZUBAT
 	dw ZUBAT
 	dw ODDISH
@@ -47,7 +47,7 @@ FirstEvoStages::
 	dw ODDISH
 	dw PARAS
 	dw PARAS
-	dw VENONAT    ;30
+	dw VENONAT
 	dw VENONAT
 	dw DIGLETT
 	dw DIGLETT
@@ -55,7 +55,7 @@ FirstEvoStages::
 	dw MEOWTH
 	dw PSYDUCK
 	dw PSYDUCK
-	dw MANKEY     ;38
+	dw MANKEY
 	dw MANKEY
 	dw GROWLITHE
 	dw GROWLITHE
@@ -63,7 +63,7 @@ FirstEvoStages::
 	dw POLIWAG
 	dw POLIWAG
 	dw ABRA
-	dw ABRA       ;40
+	dw ABRA
 	dw ABRA
 	dw MACHOP
 	dw MACHOP
@@ -71,7 +71,7 @@ FirstEvoStages::
 	dw BELLSPROUT
 	dw BELLSPROUT
 	dw BELLSPROUT
-	dw TENTACOOL  ;48
+	dw TENTACOOL
 	dw TENTACOOL
 	dw GEODUDE
 	dw GEODUDE
@@ -79,7 +79,7 @@ FirstEvoStages::
 	dw PONYTA
 	dw PONYTA
 	dw SLOWPOKE
-	dw SLOWPOKE   ;50
+	dw SLOWPOKE
 	dw MAGNEMITE
 	dw MAGNEMITE
 	dw FARFETCH_D
@@ -87,7 +87,7 @@ FirstEvoStages::
 	dw DODUO
 	dw SEEL
 	dw SEEL
-	dw GRIMER     ;58
+	dw GRIMER
 	dw GRIMER
 	dw SHELLDER
 	dw SHELLDER
@@ -95,7 +95,7 @@ FirstEvoStages::
 	dw GASTLY
 	dw GASTLY
 	dw ONIX
-	dw DROWZEE    ;60
+	dw DROWZEE
 	dw DROWZEE
 	dw KRABBY
 	dw KRABBY
@@ -103,7 +103,7 @@ FirstEvoStages::
 	dw VOLTORB
 	dw EXEGGCUTE
 	dw EXEGGCUTE
-	dw CUBONE     ;68
+	dw CUBONE
 	dw CUBONE
 	dw TYROGUE
 	dw TYROGUE
@@ -111,7 +111,7 @@ FirstEvoStages::
 	dw KOFFING
 	dw KOFFING
 	dw RHYHORN
-	dw RHYHORN    ;70
+	dw RHYHORN
 	dw CHANSEY
 	dw TANGELA
 	dw KANGASKHAN
@@ -119,7 +119,7 @@ FirstEvoStages::
 	dw HORSEA
 	dw GOLDEEN
 	dw GOLDEEN
-	dw STARYU     ;78
+	dw STARYU
 	dw STARYU
 	dw MR__MIME
 	dw SCYTHER
@@ -127,7 +127,7 @@ FirstEvoStages::
 	dw ELEKID
 	dw MAGBY
 	dw PINSIR
-	dw TAUROS     ;80
+	dw TAUROS
 	dw MAGIKARP
 	dw MAGIKARP
 	dw LAPRAS
@@ -135,7 +135,7 @@ FirstEvoStages::
 	dw EEVEE
 	dw EEVEE
 	dw EEVEE
-	dw EEVEE      ;88
+	dw EEVEE
 	dw PORYGON
 	dw OMANYTE
 	dw OMANYTE
@@ -143,7 +143,7 @@ FirstEvoStages::
 	dw KABUTO
 	dw AERODACTYL
 	dw SNORLAX
-	dw ARTICUNO   ;90
+	dw ARTICUNO
 	dw ZAPDOS
 	dw MOLTRES
 	dw DRATINI
@@ -151,7 +151,7 @@ FirstEvoStages::
 	dw DRATINI
 	dw MEWTWO
 	dw MEW
-	dw CHIKORITA  ;98
+	dw CHIKORITA
 	dw CHIKORITA
 	dw CHIKORITA
 	dw CYNDAQUIL
@@ -159,7 +159,7 @@ FirstEvoStages::
 	dw CYNDAQUIL
 	dw TOTODILE
 	dw TOTODILE
-	dw TOTODILE   ;a0
+	dw TOTODILE
 	dw SENTRET
 	dw SENTRET
 	dw HOOTHOOT
@@ -167,7 +167,7 @@ FirstEvoStages::
 	dw LEDYBA
 	dw LEDYBA
 	dw SPINARAK
-	dw SPINARAK   ;a8
+	dw SPINARAK
 	dw ZUBAT
 	dw CHINCHOU
 	dw CHINCHOU
@@ -175,7 +175,7 @@ FirstEvoStages::
 	dw CLEFFA
 	dw IGGLYBUFF
 	dw TOGEPI
-	dw TOGEPI     ;b0
+	dw TOGEPI
 	dw NATU
 	dw NATU
 	dw MAREEP
@@ -183,7 +183,7 @@ FirstEvoStages::
 	dw MAREEP
 	dw ODDISH
 	dw MARILL
-	dw MARILL     ;b8
+	dw MARILL
 	dw SUDOWOODO
 	dw POLIWAG
 	dw HOPPIP
@@ -191,7 +191,7 @@ FirstEvoStages::
 	dw HOPPIP
 	dw AIPOM
 	dw SUNKERN
-	dw SUNKERN    ;c0
+	dw SUNKERN
 	dw YANMA
 	dw WOOPER
 	dw WOOPER
@@ -199,7 +199,7 @@ FirstEvoStages::
 	dw EEVEE
 	dw MURKROW
 	dw SLOWPOKE
-	dw MISDREAVUS ;c8
+	dw MISDREAVUS
 	dw UNOWN
 	dw WOBBUFFET
 	dw GIRAFARIG
@@ -207,7 +207,7 @@ FirstEvoStages::
 	dw PINECO
 	dw DUNSPARCE
 	dw GLIGAR
-	dw ONIX       ;d0
+	dw ONIX
 	dw SNUBBULL
 	dw SNUBBULL
 	dw QWILFISH
@@ -215,7 +215,7 @@ FirstEvoStages::
 	dw SHUCKLE
 	dw HERACROSS
 	dw SNEASEL
-	dw TEDDIURSA  ;d8
+	dw TEDDIURSA
 	dw TEDDIURSA
 	dw SLUGMA
 	dw SLUGMA
@@ -223,7 +223,7 @@ FirstEvoStages::
 	dw SWINUB
 	dw CORSOLA
 	dw REMORAID
-	dw REMORAID   ;e0
+	dw REMORAID
 	dw DELIBIRD
 	dw MANTINE
 	dw SKARMORY
@@ -231,7 +231,7 @@ FirstEvoStages::
 	dw HOUNDOUR
 	dw HORSEA
 	dw PHANPY
-	dw PHANPY     ;e8
+	dw PHANPY
 	dw PORYGON
 	dw STANTLER
 	dw SMEARGLE
@@ -239,7 +239,7 @@ FirstEvoStages::
 	dw TYROGUE
 	dw SMOOCHUM
 	dw ELEKID
-	dw MAGBY      ;f0
+	dw MAGBY
 	dw MILTANK
 	dw CHANSEY
 	dw RAIKOU
@@ -247,7 +247,315 @@ FirstEvoStages::
 	dw SUICUNE
 	dw LARVITAR
 	dw LARVITAR
-	dw LARVITAR   ;f8
+	dw LARVITAR
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw TREECKO
+	dw TREECKO
+	dw TREECKO
+	dw TORCHIC
+	dw TORCHIC
+	dw TORCHIC
+	dw MUDKIP
+	dw MUDKIP
+	dw MUDKIP
+	dw POOCHYENA
+	dw POOCHYENA
+	dw ZIGZAGOON
+	dw ZIGZAGOON
+	dw WURMPLE
+	dw WURMPLE
+	dw WURMPLE
+	dw WURMPLE
+	dw WURMPLE
+	dw LOTAD
+	dw LOTAD
+	dw LOTAD
+	dw SEEDOT
+	dw SEEDOT
+	dw SEEDOT
+	dw TAILLOW
+	dw TAILLOW
+	dw WINGULL
+	dw WINGULL
+	dw RALTS
+	dw RALTS
+	dw RALTS
+	dw SURSKIT
+	dw SURSKIT
+	dw SHROOMISH
+	dw SHROOMISH
+	dw SLAKOTH
+	dw SLAKOTH
+	dw SLAKOTH
+	dw NINCADA
+	dw NINCADA
+	dw NINCADA
+	dw WHISMUR
+	dw WHISMUR
+	dw WHISMUR
+	dw MAKUHITA
+	dw MAKUHITA
+	dw AZURILL
+	dw NOSEPASS
+	dw SKITTY
+	dw SKITTY
+	dw SABLEYE
+	dw MAWILE
+	dw ARON
+	dw ARON
+	dw ARON
+	dw MEDITITE
+	dw MEDITITE
+	dw ELECTRIKE
+	dw ELECTRIKE
+	dw PLUSLE
+	dw MINUN
+	dw VOLBEAT
+	dw ILLUMISE
+	dw ROSELIA
+	dw GULPIN
+	dw GULPIN
+	dw CARVANHA
+	dw CARVANHA
+	dw WAILMER
+	dw WAILMER
+	dw NUMEL
+	dw NUMEL
+	dw TORKOAL
+	dw SPOINK
+	dw SPOINK
+	dw SPINDA
+	dw TRAPINCH
+	dw TRAPINCH
+	dw TRAPINCH
+	dw CACNEA
+	dw CACNEA
+	dw SWABLU
+	dw SWABLU
+	dw ZANGOOSE
+	dw SEVIPER
+	dw LUNATONE
+	dw SOLROCK
+	dw BARBOACH
+	dw BARBOACH
+	dw CORPHISH
+	dw CORPHISH
+	dw BALTOY
+	dw BALTOY
+	dw LILEEP
+	dw LILEEP
+	dw ANORITH
+	dw ANORITH
+	dw FEEBAS
+	dw FEEBAS
+	dw CASTFORM
+	dw KECLEON
+	dw SHUPPET
+	dw SHUPPET
+	dw DUSKULL
+	dw DUSKULL
+	dw TROPIUS
+	dw CHIMECHO
+	dw ABSOL
+	dw WYNAUT
+	dw SNORUNT
+	dw SNORUNT
+	dw SPHEAL
+	dw SPHEAL
+	dw SPHEAL
+	dw CLAMPERL
+	dw CLAMPERL
+	dw CLAMPERL
+	dw RELICANTH
+	dw LUVDISC
+	dw BAGON
+	dw BAGON
+	dw BAGON
+	dw BELDUM
+	dw BELDUM
+	dw BELDUM
+	dw REGIROCK
+	dw REGICE
+	dw REGISTEEL
+	dw LATIAS
+	dw LATIOS
+	dw KYOGRE
+	dw GROUDON
+	dw RAYQUAZA
+	dw JIRACHI
+	dw DEOXYS
+	dw TURTWIG
+	dw TURTWIG
+	dw TURTWIG
+	dw CHIMCHAR
+	dw CHIMCHAR
+	dw CHIMCHAR
+	dw PIPLUP
+	dw PIPLUP
+	dw PIPLUP
+	dw STARLY
+	dw STARLY
+	dw STARLY
+	dw BIDOOF
+	dw BIDOOF
+	dw KRICKETOT
+	dw KRICKETOT
+	dw SHINX
+	dw SHINX
+	dw SHINX
+	dw BUDEW
+	dw ROSELIA
+	dw CRANIDOS
+	dw CRANIDOS
+	dw SHIELDON
+	dw SHIELDON
+	dw BURMY
+	dw BURMY
+	dw BURMY
+	dw COMBEE
+	dw COMBEE
+	dw PACHIRISU
+	dw BUIZEL
+	dw BUIZEL
+	dw CHERUBI
+	dw CHERUBI
+	dw SHELLOS
+	dw SHELLOS
+	dw AIPOM
+	dw DRIFLOON
+	dw DRIFLOON
+	dw BUNEARY
+	dw BUNEARY
+	dw MISDREAVUS
+	dw MURKROW
+	dw GLAMEOW
+	dw GLAMEOW
+	dw CHINGLING
+	dw STUNKY
+	dw STUNKY
+	dw BRONZOR
+	dw BRONZOR
+	dw BONSLY
+	dw MIME_JR
+	dw HAPPINY
+	dw CHATOT
+	dw SPIRITOMB
+	dw GIBLE
+	dw GIBLE
+	dw GIBLE
+	dw MUNCHLAX
+	dw RIOLU
+	dw RIOLU
+	dw HIPPOPOTAS
+	dw HIPPOPOTAS
+	dw SKORUPI
+	dw SKORUPI
+	dw CROAGUNK
+	dw CROAGUNK
+	dw CARNIVINE
+	dw FINNEON
+	dw FINNEON
+	dw MANTYKE
+	dw SNOVER
+	dw SNOVER
+	dw SNOVER
+	dw SNEASEL
+	dw MAGNEMITE
+	dw LICKITUNG
+	dw RHYHORN
+	dw TANGELA
+	dw ELEKID
+	dw MAGBY
+	dw TOGEPI
+	dw YANMA
+	dw EEVEE
+	dw EEVEE
+	dw GLIGAR
+	dw SWINUB
+	dw PORYGON
+	dw RALTS
+	dw DUSKULL
+	dw SNORUNT
+	dw ROTOM
+	dw UXIE
+	dw MESPRIT
+	dw AZELF
+	dw DIALGA
+	dw PALKIA
+	dw HEATRAN
+	dw REGIGIGAS
+	dw GIRATINA
+	dw CRESSELIA
+	dw PHIONE
+	dw PHIONE
+	dw DARKRAI
+	dw SHAYMIN
+	dw ARCEUS
+	dw FLAMBEAR
+	dw FLAMBEAR
+	dw FLAMBEAR
+	dw CRUIZE
+	dw CRUIZE
+	dw CRUIZE
+	dw KOTORA
+	dw KOTORA
+	dw BOMSHEAL
+	dw CORASUN
+	dw CORASUN
+	dw CORASUN
+	dw BITEEL
+	dw BITEEL
+	dw RINRING
+	dw RINRING
+	dw BLOTTLE
+	dw BLOTTLE
+	dw KURSTRAW
+	dw KURSTRAW
+	dw WOLFAN
+	dw WOLFAN
+	dw CHEEP
+	dw CHEEP
+	dw SNOBIT
+	dw SNOBIT
+	dw SNOBIT
+	dw SNOBIT
+	dw ARSKEED
+	dw ARSKEED
+	dw PETICORN
+	dw GUPGOLD
+	dw TRITALES
+	dw GRIMBY
+	dw PARAMITE
+	dw NYANYA
+	dw PUDDIPUP
+	dw CHIX
+	dw KATU
+	dw TANGTRIP
+	dw GELANIA
+	dw BELMITT
+	dw TURBAN
+	dw PINSIR
+	dw NUMBPUFF
+	dw DITTO
+	dw FARFETCH_D
+	dw CUBONE
+	dw OHMEGA
+	dw PICHU_B
+	dw DEOXYS
+	dw DEOXYS
+	dw DEOXYS
+	dw BURMY
+	dw BURMY
+	dw BURMY
+	dw BURMY
+	dw SHELLOS_E
+	dw GASTRODON_E
+	dw ROTOM
+	dw ROTOM
+	dw ROTOM
+	dw ROTOM
+	dw ROTOM
+	dw GIRATINA
+	dw SHAYMIN

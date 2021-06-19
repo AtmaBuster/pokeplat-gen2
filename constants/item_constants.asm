@@ -236,6 +236,30 @@
 	const STONE_PLATE  ; e4
 	const TOXIC_PLATE  ; e5
 	const ZAP_PLATE    ; e6
+	const GRACIDEA     ; e7
+	const GRISEOUS_ORB ; e8
+	const ADAMANT_ORB  ; e9
+	const LUSTROUS_ORB ; ea
+	const DOME_FOSSIL  ; eb
+	const HELIX_FOSSIL ; ec
+	const OLD_AMBER    ; ed
+	const ROOT_FOSSIL  ; ee
+	const CLAW_FOSSIL  ; ef
+	const SKULL_FOSSIL ; f0
+	const ARMOR_FOSSIL ; f1
+	const DEEPSEATOOTH ; f2
+	const DEEPSEASCALE ; f3
+	const SEA_INCENSE  ; f4
+	const LAX_INCENSE  ; f5
+	const ODD_INCENSE  ; f6
+	const ROCK_INCENSE ; f7
+	const FULL_INCENSE ; f8
+	const WAVE_INCENSE ; f9
+	const ROSE_INCENSE ; fa
+	const LUCK_INCENSE ; fb
+	const PURE_INCENSE ; fc
+	const HONEY        ; fd
+	const PRISM_SCALE  ; fe
 
 	const_def 1
 add_tm: MACRO
@@ -331,8 +355,3 @@ NUM_TM_HM_TUTOR EQU __enum__ + -1
 USE_SCRIPT_VAR EQU $00
 TM_FROM_MEM    EQU $fe
 ITEM_FROM_MEM  EQU $ff
-
-; leftovers from red
-SAFARI_BALL    EQU $08 ; MOON_STONE
-MOON_STONE_RED EQU $0a ; BURN_HEAL
-FULL_HEAL_RED  EQU $34 ; X_SPEED

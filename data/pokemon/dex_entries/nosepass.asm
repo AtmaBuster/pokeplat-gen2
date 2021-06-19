@@ -1,5 +1,4 @@
 	db "COMPASS@" ; species name
-	dw 303, 2138 ; height, weight
 
 	db   "If two of these"
 	next "meet, they cannot"

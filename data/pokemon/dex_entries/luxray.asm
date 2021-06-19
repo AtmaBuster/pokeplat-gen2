@@ -1,5 +1,4 @@
 	db "GLEAM EYES@" ; species name
-	dw 407, 926 ; height, weight
 
 	db   "LUXRAY's ability"
 	next "to see through"

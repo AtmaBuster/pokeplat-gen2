@@ -1,5 +1,4 @@
 	db "MYSTIC@" ; species name
-	dw 607, 1808 ; height, weight
 
 	db   "It is nicknamed"
 	next "The Desert Spirit"

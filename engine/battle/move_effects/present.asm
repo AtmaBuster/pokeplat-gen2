@@ -8,7 +8,7 @@ BattleCommand_present:
 	push de
 .colosseum_skippush
 
-	call BattleCommand_stab
+	farcall BattleCommand_stab
 
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM

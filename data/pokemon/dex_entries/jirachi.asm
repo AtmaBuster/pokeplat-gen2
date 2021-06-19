@@ -1,5 +1,4 @@
 	db "WISH@" ; species name
-	dw 100, 24 ; height, weight
 
 	db   "Generations have"
 	next "believed that any"

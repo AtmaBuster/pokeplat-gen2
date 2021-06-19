@@ -1,5 +1,4 @@
 	db "???@" ; species name
-	dw 1, 1 ; height, weight
 
 	db   "Very little is"
 	next "known about this"

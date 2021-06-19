@@ -1,5 +1,4 @@
 	db "ACORN@" ; species name
-	dw 108, 88 ; height, weight
 
 	db   "It attaches itself"
 	next "to a tree branch"

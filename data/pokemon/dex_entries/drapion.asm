@@ -1,5 +1,4 @@
 	db "SCORPION@" ; species name
-	dw 403, 1356 ; height, weight
 
 	db   "It attacks people"
 	next "and #MON that"

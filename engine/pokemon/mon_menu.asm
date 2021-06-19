@@ -332,6 +332,16 @@ TryGiveItemToPartymon:
 
 	ld hl, TookAndMadeHoldText
 	call MenuTextboxBackup
+	call GetPartyItemLocation
+	ld a, [wCurItem]
+	call CheckGiratinaOHoldGriseousOrb
+	jr nc, .not_giratina
+
+	ld a, FORMCHANGE_GIRATINA_N
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
+
+.not_giratina
 	ld a, [wNamedObjectIndexBuffer]
 	ld [wCurItem], a
 	call GivePartyItem
@@ -352,11 +362,47 @@ GivePartyItem:
 	ld a, [wCurItem]
 	ld [hl], a
 	ld d, a
-	farcall ItemIsMail
-	jr nc, .done
-	call ComposeMailMessage
+	call CheckGiratinaHoldGriseousOrb
+	jr nc, .mail_check
 
-.done
+; change Giratina forme
+	ld a, FORMCHANGE_GIRATINA_O
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
+	ret
+
+.mail_check
+	farcall ItemIsMail
+	ret nc
+	call ComposeMailMessage
+	ret
+
+CheckGiratinaOHoldGriseousOrb:
+	ld de, GIRATINA_O
+	jr CheckMonHoldGriseousOrb
+
+CheckGiratinaHoldGriseousOrb:
+	ld de, GIRATINA
+
+CheckMonHoldGriseousOrb:
+; returns carry if item being given is Griseous Orb
+; AND the mon getting it is Giratina / Giratina_O
+	cp GRISEOUS_ORB
+	jr nz, .miss
+	dec hl
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp d
+	jr nz, .miss
+	ld a, l
+	cp e
+	jr nz, .miss
+	scf
+	ret
+
+.miss
+	and a
 	ret
 
 TakePartyItem:
@@ -390,6 +436,14 @@ TakePartyItem:
 	call MenuTextboxBackup
 
 .asm_12c9a
+	call GetPartyItemLocation
+	ld a, [wCurItem]
+	call CheckGiratinaOHoldGriseousOrb
+	ret nc
+; took Griseous Orb from Giratina
+	ld a, FORMCHANGE_GIRATINA_N
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
 	ret
 
 GiveTakeItemMenuData:

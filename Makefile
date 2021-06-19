@@ -97,10 +97,28 @@ gfx/pokemon/%/front.animated.2bpp: gfx/pokemon/%/front.2bpp gfx/pokemon/%/front.
 	tools/pokemon_animation_graphics -o $@ $^
 	tools/trim_animation.sh $@ $(word 2,$^)
 
+gfx/pokemon/cherrim/front_sun.animated.2bpp: gfx/pokemon/cherrim/front_sun.2bpp gfx/pokemon/cherrim/front_sun.dimensions
+	tools/pokemon_animation_graphics -o $@ $^
+	tools/trim_animation.sh $@ $(word 2,$^)
+
+gfx/pokemon/castform/front_rain.animated.2bpp: gfx/pokemon/castform/front_rain.2bpp gfx/pokemon/castform/front_rain.dimensions
+	tools/pokemon_animation_graphics -o $@ $^
+	tools/trim_animation.sh $@ $(word 2,$^)
+
+gfx/pokemon/castform/front_snow.animated.2bpp: gfx/pokemon/castform/front_snow.2bpp gfx/pokemon/castform/front_snow.dimensions
+	tools/pokemon_animation_graphics -o $@ $^
+	tools/trim_animation.sh $@ $(word 2,$^)
+
+gfx/pokemon/castform/front_sun.animated.2bpp: gfx/pokemon/castform/front_sun.2bpp gfx/pokemon/castform/front_sun.dimensions
+	tools/pokemon_animation_graphics -o $@ $^
+	tools/trim_animation.sh $@ $(word 2,$^)
+
 
 ### Misc file-specific graphics rules
 
 gfx/pokemon/%/back.2bpp: rgbgfx += -h
+gfx/pokemon/castform/back_%.2bpp: rgbgfx += -h
+gfx/pokemon/cherrim/back_sun.2bpp: rgbgfx += -h
 
 gfx/trainers/%.2bpp: rgbgfx += -h
 

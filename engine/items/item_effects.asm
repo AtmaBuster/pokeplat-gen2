@@ -192,32 +192,80 @@ ItemEffects:
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw NoEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw PokeBallEffect
-	dw EvoStoneEffect
-	dw EvoStoneEffect
-	dw EvoStoneEffect
+	dw NoEffect            ; BRICK_PIECE
+	dw NoEffect            ; SURF_MAIL
+	dw NoEffect            ; LITEBLUEMAIL
+	dw NoEffect            ; PORTRAITMAIL
+	dw NoEffect            ; LOVELY_MAIL
+	dw NoEffect            ; EON_MAIL
+	dw NoEffect            ; MORPH_MAIL
+	dw NoEffect            ; BLUESKY_MAIL
+	dw NoEffect            ; MUSIC_MAIL
+	dw NoEffect            ; MIRAGE_MAIL
+	dw NoEffect            ; ITEM_BE
+	dw NoEffect            ; ITEM_DC
+	dw NoEffect            ; ITEM_C3
+	dw NoEffect            ; ITEM_FA
+	dw PokeBallEffect      ; NET_BALL
+	dw PokeBallEffect      ; DIVE_BALL
+	dw PokeBallEffect      ; NEST_BALL
+	dw PokeBallEffect      ; REPEAT_BALL
+	dw PokeBallEffect      ; TIMER_BALL
+	dw PokeBallEffect      ; LUXURY_BALL
+	dw PokeBallEffect      ; DUSK_BALL
+	dw PokeBallEffect      ; HEAL_BALL
+	dw PokeBallEffect      ; QUICK_BALL
+	dw EvoStoneEffect      ; SHINY_STONE
+	dw EvoStoneEffect      ; DUSK_STONE
+	dw EvoStoneEffect      ; DAWN_STONE
+	dw NoEffect            ; OVAL_STONE
+	dw NoEffect            ; PROTECTOR
+	dw NoEffect            ; ELECTRIZER
+	dw NoEffect            ; MAGMARIZER
+	dw NoEffect            ; DUBIOUS_DISC
+	dw NoEffect            ; REAPER_CLOTH
+	dw NoEffect            ; RAZOR_CLAW
+	dw NoEffect            ; RAZOR_FANG
+	dw NoEffect            ; ODD_KEYSTONE
+	dw NoEffect            ; DRACO_PLATE
+	dw NoEffect            ; DREAD_PLATE
+	dw NoEffect            ; EARTH_PLATE
+	dw NoEffect            ; FIST_PLATE
+	dw NoEffect            ; FLAME_PLATE
+	dw NoEffect            ; ICICLE_PLATE
+	dw NoEffect            ; INSECT_PLATE
+	dw NoEffect            ; IRON_PLATE
+	dw NoEffect            ; MEADOW_PLATE
+	dw NoEffect            ; MIND_PLATE
+	dw NoEffect            ; SKY_PLATE
+	dw NoEffect            ; SPLASH_PLATE
+	dw NoEffect            ; SPOOKY_PLATE
+	dw NoEffect            ; STONE_PLATE
+	dw NoEffect            ; TOXIC_PLATE
+	dw NoEffect            ; ZAP_PLATE
+	dw GracideaEffect      ; GRACIDEA
+	dw NoEffect            ; GRISEOUS_ORB
+	dw NoEffect            ; ADAMANT_ORB
+	dw NoEffect            ; LUSTROUS_ORB
+	dw NoEffect            ; DOME_FOSSIL
+	dw NoEffect            ; HELIX_FOSSIL
+	dw NoEffect            ; OLD_AMBER
+	dw NoEffect            ; ROOT_FOSSIL
+	dw NoEffect            ; CLAW_FOSSIL
+	dw NoEffect            ; SKULL_FOSSIL
+	dw NoEffect            ; ARMOR_FOSSIL
+	dw NoEffect            ; DEEPSEATOOTH
+	dw NoEffect            ; DEEPSEASCALE
+	dw NoEffect            ; SEA_INCENSE
+	dw NoEffect            ; LAX_INCENSE
+	dw NoEffect            ; ODD_INCENSE
+	dw NoEffect            ; ROCK_INCENSE
+	dw NoEffect            ; FULL_INCENSE
+	dw NoEffect            ; WAVE_INCENSE
+	dw NoEffect            ; ROSE_INCENSE
+	dw NoEffect            ; LUCK_INCENSE
+	dw NoEffect            ; PURE_INCENSE
+	dw HoneyEffect         ; HONEY
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -735,7 +783,6 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
-	dbw SAFARI_BALL, SafariBallMultiplier ; Safari Ball, leftover from RBY
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
@@ -941,7 +988,6 @@ UltraBallMultiplier:
 	ld b, $ff
 	ret
 
-SafariBallMultiplier:
 GreatBallMultiplier:
 ParkBallMultiplier:
 ; multiply catch rate by 1.5
@@ -959,106 +1005,53 @@ HeavyBallMultiplier:
 ; else add 20 to catch rate if weight < 307.2 kg
 ; else add 30 to catch rate if weight < 409.6 kg
 ; else add 40 to catch rate (never happens)
+	push bc
 	ld a, [wEnemyMonSpecies]
 	call GetPokemonIndexFromID
 	dec hl
-	ld d, h
-	ld e, l
 	add hl, hl
-	add hl, de
-	ld de, PokedexDataPointerTable
-	add hl, de
-	ld a, BANK(PokedexDataPointerTable)
-	call GetFarByte
-	push af
-	inc hl
-	ld a, BANK(PokedexDataPointerTable)
+	ld bc, MonWeights
+	add hl, bc
+	ld a, BANK(MonWeights)
 	call GetFarHalfword
-	pop de
-
-.SkipText:
-	ld a, d
-	call GetFarByte
-	inc hl
-	cp "@"
-	jr nz, .SkipText
-
-	ld a, d
-	push bc
-	inc hl
-	inc hl
-	call GetFarHalfword
-
-	srl h
-	rr l
-	ld b, h
-	ld c, l
-
-rept 4
-	srl b
-	rr c
-endr
-	call .subbc
-
-	srl b
-	rr c
-	call .subbc
-
 	ld a, h
-	pop bc
-	jr .compare
-
-.subbc
-	; subtract bc from hl
-	push bc
-	ld a, b
-	cpl
-	ld b, a
-	ld a, c
-	cpl
-	ld c, a
-	inc bc
+	srl a
+	srl a
+	and a
+	jr z, .light
+	dec a
+	cp 4
+	jr c, .ok
+	ld a, 3
+.ok
+	ld l, a
+	ld h, 0
+	ld bc, .weight_mod_table
 	add hl, bc
 	pop bc
-	ret
-
-.compare
-	ld c, a
-	cp HIGH(1024) ; 102.4 kg
-	jr c, .lightmon
-
-	ld hl, .WeightsTable
-.lookup
-	ld a, c
-	cp [hl]
-	jr c, .heavymon
-	inc hl
-	inc hl
-	jr .lookup
-
-.heavymon
-	inc hl
 	ld a, b
 	add [hl]
 	ld b, a
 	ret nc
-	ld b, $ff
+	ld b, -1
 	ret
 
-.lightmon
+.light
+	pop bc
 	ld a, b
 	sub 20
 	ld b, a
-	ret nc
-	ld b, $1
+	jr c, .min
+	ret nz
+.min
+	ld b, 1
 	ret
 
-.WeightsTable:
-; weight factor, boost
-	db HIGH(2048),   0
-	db HIGH(3072),  20
-	db HIGH(4096),  30
-	db HIGH(65280), 40
+.weight_mod_table
+	db 0
+	db 20
+	db 30
+	db 40
 
 LureBallMultiplier:
 ; multiply catch rate by 3 if this is a fishing rod battle
@@ -3162,4 +3155,59 @@ GetMthMoveOfCurrentMon:
 	ld c, a
 	ld b, 0
 	add hl, bc
+	ret
+
+GracideaEffect:
+	ld b, PARTYMENUACTION_CHANGE_FORM
+	call UseItem_SelectMon
+
+	jp c, .DecidedNotToUse
+
+; fail if target is frozen
+	ld a, [wPartyMenuCursor]
+	ld hl, wPartyMon1Status
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	bit FRZ, [hl]
+	jr nz, .NoEffect
+
+	ld a, FORMCHANGE_SHAYMIN_S
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
+	ld a, [wScriptVar]
+	cp FORMCHANGE_INVALIDMON
+	jr z, .TryRevert
+	ld hl, ChangedFormText
+	jp PrintText
+
+.TryRevert:
+	ld a, FORMCHANGE_SHAYMIN_N
+	ld [wScriptVar], a
+	farcall ChangePartyMonForm
+	ld a, [wScriptVar]
+	cp FORMCHANGE_INVALIDMON
+	jr z, .NoEffect
+	ld hl, ChangedFormText
+	jp PrintText
+
+.NoEffect:
+	call WontHaveAnyEffectMessage
+
+.DecidedNotToUse:
+	xor a
+	ld [wItemEffectSucceeded], a
+	ret
+
+ChangedFormText:
+	text_far _ChangedFormText
+	text_end
+
+HoneyEffect:
+	xor a
+	ld [wItemEffectSucceeded], a
+	farcall HoneyFunction
+
+	ld a, [wItemEffectSucceeded]
+	cp 1
+	call z, UseDisposableItem
 	ret

@@ -1,5 +1,4 @@
 	db "SCORPION@" ; species name
-	dw 207, 265 ; height, weight
 
 	db   "It burrows under"
 	next "the sand to lie in"

@@ -1,5 +1,4 @@
 	db "BAGWORM@" ; species name
-	dw 008, 75 ; height, weight
 
 	db   "It covers itself"
 	next "with a cloak to"

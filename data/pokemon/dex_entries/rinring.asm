@@ -1,5 +1,4 @@
 	db "LOUDCAT@" ; species name
-	dw 109, 220 ; height, weight
 
 	db   "Is very playful"
 	next "and is constantly"

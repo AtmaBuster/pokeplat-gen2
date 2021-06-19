@@ -1,5 +1,4 @@
 	db "CHIMP@" ; species name
-	dw 108, 137 ; height, weight
 
 	db   "It is very agile."
 	next "Before going to"

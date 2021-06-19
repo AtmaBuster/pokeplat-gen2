@@ -1,5 +1,4 @@
 	db "BEAVER@" ; species name
-	dw 303, 694 ; height, weight
 
 	db   "It buisily makes"
 	next "its nest with"

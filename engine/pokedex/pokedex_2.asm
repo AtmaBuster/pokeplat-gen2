@@ -115,19 +115,21 @@ DisplayDexEntry:
 	pop hl
 	pop bc
 	ret z
-; Get the height of the Pokemon.
+
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
-	inc hl
+; Get the height of the Pokemon.
+	ld a, [wTempSpecies]
+	push bc
+	ld b, a
+	call GetMonHeight
+	ld b, d
+	ld d, e
+	ld e, b
+	pop bc
 	ld a, b
 	push af
-	push hl
-	call GetFarHalfword
-	ld d, l
-	ld e, h
-	pop hl
-	inc hl
-	inc hl
+
 	ld a, d
 	or e
 	jr z, .skip_height
@@ -147,14 +149,17 @@ DisplayDexEntry:
 	pop hl
 
 .skip_height
-	pop af
-	push af
-	inc hl
+	ld a, [wTempSpecies]
 	push hl
-	dec hl
-	call GetFarHalfword
-	ld d, l
-	ld e, h
+	push bc
+	ld b, a
+	call GetMonWeight
+	ld b, d
+	ld d, e
+	ld e, b
+	pop bc
+	ld a, b
+
 	ld a, e
 	or d
 	jr z, .skip_weight
@@ -227,6 +232,122 @@ UnreferencedPOKeString:
 ; unused
 	db "#@"
 
+GetMonHeight:
+; get, convert (to inches), and return mon b height in de (ft in d, in. in e)
+	push hl
+	ld a, b
+	call GetPokemonIndexFromID
+	dec hl
+	add hl, hl
+	ld bc, MonHeights
+	add hl, bc
+	ld a, BANK(MonHeights)
+	call GetFarHalfword
+	ld d, h
+	ld e, l
+	pop hl
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, d
+	ldh [hMultiplicand + 1], a
+	ld a, e
+	ldh [hMultiplicand + 2], a
+; x *= 1000
+	ld a, 100
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
+	ldh [hMultiplier], a
+	call Multiply
+; x += 127
+	push hl
+	ld hl, hMultiplicand + 2
+	ld a, [hl]
+	add 127
+	ld [hld], a
+	ld a, [hl]
+	adc 0
+	ld [hl], a
+	pop hl
+; x /= 254
+	ld a, 254
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+; get ft/in
+	ld a, 12
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 3]
+	push hl
+	ld bc, 100
+	ld hl, 0
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+	ldh a, [hQuotient + 4]
+	add e
+	ld e, a
+	ld a, d
+	adc 0
+	ld d, a
+	ret
+
+GetMonWeight:
+; get, convert (to lbs), and return mon b height in de
+	push hl
+	ld a, b
+	call GetPokemonIndexFromID
+	dec hl
+	add hl, hl
+	ld bc, MonWeights
+	add hl, bc
+	ld a, BANK(MonWeights)
+	call GetFarHalfword
+	ld d, h
+	ld e, l
+	pop hl
+; setup math
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, d
+	ldh [hMultiplicand + 1], a
+	ld a, e
+	ldh [hMultiplicand + 2], a
+; x *= 2500
+	ld a, 100
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 25
+	ldh [hMultiplier], a
+	call Multiply
+; x += 567
+	push hl
+	ld hl, hMultiplicand + 2
+	ld a, [hl]
+	add 55
+	ld [hld], a
+	ld a, [hl]
+	adc 2
+	ld [hl], a
+	pop hl
+; x /= 1134
+	ld a, 189
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ld a, 6
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld d, a
+	ldh a, [hQuotient + 3]
+	ld e, a
+	ret
+
 GetDexEntryPointer:
 ; return dex entry pointer b:de
 	push hl
@@ -281,3 +402,5 @@ endr
 	ret
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
+
+INCLUDE "data/pokemon/height_weight.asm"

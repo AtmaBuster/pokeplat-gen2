@@ -1,5 +1,4 @@
 	db "MEDITATE@" ; species name
-	dw 200, 247 ; height, weight
 
 	db   "It meditates to"
 	next "heighten its inner"

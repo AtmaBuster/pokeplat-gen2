@@ -1,5 +1,4 @@
 	db "SNOW HAT@" ; species name
-	dw 204, 370 ; height, weight
 
 	db   "It's said that if"
 	next "they appear at"

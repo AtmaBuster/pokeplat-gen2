@@ -1,5 +1,4 @@
 	db "ERUPTION@" ; species name
-	dw 603, 4850 ; height, weight
 
 	db   "It lives in a"
 	next "volcano's crater."

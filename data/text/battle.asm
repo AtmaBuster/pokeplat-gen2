@@ -300,6 +300,11 @@ BattleText_UserHurtBySpikes:
 	line "hurt by SPIKES!"
 	prompt
 
+BattleText_UserHurtByStealthRock:
+	text "<USER>'s"
+	line "hurt by rocks!"
+	prompt
+
 RecoveredUsingText:
 	text "<TARGET>"
 	line "recovered using a"
@@ -718,6 +723,12 @@ AlreadyPoisonedText:
 	line "already poisoned!"
 	prompt
 
+AbsorbedToxicSpikesText:
+	text "The poison spikes"
+	line "disappeared around"
+	cont "<USER>!"
+	prompt
+
 SuckedHealthText:
 	text "Sucked health from"
 	line "<TARGET>!"
@@ -1005,6 +1016,18 @@ SpikesText:
 	cont "<TARGET>!"
 	prompt
 
+StealthRockText:
+	text "Pointed stones are"
+	line "floating around"
+	cont "<TARGET>!"
+	prompt
+
+ToxicSpikesText:
+	text "Poison spikes were"
+	line "scattered around"
+	cont "<TARGET>!"
+	prompt
+
 IdentifiedText:
 	text "<USER>"
 	line "identified"
@@ -1059,9 +1082,10 @@ ShedLeechSeedText:
 	line "shed LEECH SEED!"
 	prompt
 
-BlewSpikesText:
+ClearedHazardsText:
 	text "<USER>"
-	line "blew away SPIKES!"
+	line "cleared away"
+	cont "hazards!"
 	prompt
 
 DownpourText:
@@ -1169,4 +1193,51 @@ LightScreenWoreOffText:
 ReflectWoreOffText:
 	text "<TARGET>'s"
 	line "REFLECT faded!"
+	prompt
+
+RevertedFormText:
+	text "<TARGET>"
+	line "reverted to its"
+	cont "original forme!"
+	prompt
+
+ChangedFormBattleText:
+	text "<USER>"
+	line "changed form!"
+	prompt
+
+NaturePowerText:
+	text "NATURE POWER"
+	line "turned into"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+CamouflageText:
+	text "<USER>"
+	line "transformed into"
+	cont "@"
+	text_ram wStringBuffer1
+	text " type!"
+	prompt
+
+TrickText:
+	text "<USER>"
+	line "switched items"
+	cont "with its foe!"
+	prompt
+
+UserGotItemText:
+	text "<USER>"
+	line "got @"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+TargetGotItemText:
+	text "<TARGET>"
+	line "got @"
+	text_ram wStringBuffer1
+	text "!"
 	prompt

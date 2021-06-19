@@ -1,5 +1,4 @@
 	db "PLASMA@" ; species name
-	dw 100, 07 ; height, weight
 
 	db   "Its electric-like"
 	next "body can enter"

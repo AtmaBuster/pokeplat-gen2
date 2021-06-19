@@ -1,5 +1,4 @@
 	db "RABBIT@" ; species name
-	dw 311, 734 ; height, weight
 
 	db   "Its ears appear to"
 	next "be delicate. If"

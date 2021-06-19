@@ -91,6 +91,28 @@ GetFarHalfword::
 	rst Bankswitch
 	ret
 
+GetFarBankAddress::
+; retrieve a bank and address from a:hl, return in a:hl.
+	; bankswitch to new bank
+	ldh [hBuffer], a
+	ldh a, [hROMBank]
+	push af
+	ldh a, [hBuffer]
+	rst Bankswitch
+
+	; get data
+	ld a, [hli]
+	ldh [hBuffer], a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	; bankswitch to previous bank and return
+	pop af
+	rst Bankswitch
+	ldh a, [hBuffer]
+	ret
+
 FarCopyWRAM::
 	ldh [hBuffer], a
 	ldh a, [rSVBK]

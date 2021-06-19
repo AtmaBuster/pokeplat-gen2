@@ -1,5 +1,4 @@
 	db "EMOTION@" ; species name
-	dw 207, 445 ; height, weight
 
 	db   "It has a psychic"
 	next "power that enables"

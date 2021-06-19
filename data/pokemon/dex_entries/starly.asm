@@ -1,5 +1,4 @@
 	db "STARLING@" ; species name
-	dw 100, 44 ; height, weight
 
 	db   "They flock around"
 	next "in mountains and"

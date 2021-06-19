@@ -1,5 +1,4 @@
 	db "ARM THRUST@" ; species name
-	dw 707, 5595 ; height, weight
 
 	db   "This #MON loves"
 	next "challenging others"

@@ -1,5 +1,4 @@
 	db "FRESH SNOW@" ; species name
-	dw 207, 571 ; height, weight
 
 	db   "It causes small"
 	next "ice crystals to"

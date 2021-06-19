@@ -1,5 +1,4 @@
 	db "SAVAGE@" ; species name
-	dw 207, 459 ; height, weight
 
 	db   "They form packs to"
 	next "attack boats and"

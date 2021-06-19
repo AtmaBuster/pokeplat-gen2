@@ -1,5 +1,4 @@
 	db "COLOSSAL@" ; species name
-	dw 1202, 9259 ; height, weight
 
 	db   "It is said to have"
 	next "made #MON that"

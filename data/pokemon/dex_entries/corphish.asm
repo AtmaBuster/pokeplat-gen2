@@ -1,5 +1,4 @@
 	db "RUFFIAN@" ; species name
-	dw 200, 254 ; height, weight
 
 	db   "It was originally"
 	next "a #MON from far"

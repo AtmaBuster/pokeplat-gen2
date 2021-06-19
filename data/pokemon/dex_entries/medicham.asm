@@ -1,5 +1,4 @@
 	db "MEDITATE@" ; species name
-	dw 403, 694 ; height, weight
 
 	db   "Through yoga"
 	next "training, it has"

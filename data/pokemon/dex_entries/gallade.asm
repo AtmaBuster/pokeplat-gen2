@@ -1,5 +1,4 @@
 	db "BLADE@" ; species name
-	dw 503, 1146 ; height, weight
 
 	db   "Because it can"
 	next "sense what its foe"

@@ -1,11 +1,11 @@
 battlecmd: MACRO
-	dw BattleCommand_\1
+	dba BattleCommand_\1
 \1 EQUS "db \1_command"
 	enum \1_command
 ENDM
 
 battlecmd2: MACRO
-	dw BattleCommand_\1
+	dba BattleCommand_\1
 \1 EQUS "db \1_command,"
 	enum \1_command
 ENDM
@@ -160,6 +160,15 @@ BattleCommandPointers:
 	battlecmd facade                  ; 7b
 	battlecmd starthail               ; 7c
 	battlecmd breakscreens            ; 7d
+	battlecmd weightdamage            ; 7e
+	battlecmd stealthrock             ; 7f
+	battlecmd toxicspikes             ; 80
+	battlecmd camouflage              ; 81
+	battlecmd naturepower             ; 82
+	battlecmd kouser                  ; 83
+	battlecmd endeavor                ; 84
+	battlecmd brine ; 85
+	battlecmd trick ; 86
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

@@ -1,5 +1,4 @@
 	db "FEELING@" ; species name
-	dw 104, 146 ; height, weight
 
 	db   "The horns on its"
 	next "head provide a"

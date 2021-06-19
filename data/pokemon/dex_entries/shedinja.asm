@@ -1,5 +1,4 @@
 	db "SHED@" ; species name
-	dw 207, 26 ; height, weight
 
 	db   "A strange #MON-"
 	next "it flies without"

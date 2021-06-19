@@ -1,5 +1,4 @@
 	db "SEA DRIFTER@" ; species name
-	dw 104, 68 ; height, weight
 
 	db   "It drifts in warm"
 	next "seas. It always"

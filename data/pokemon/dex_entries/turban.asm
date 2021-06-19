@@ -1,5 +1,4 @@
 	db "CONICAL@" ; species name
-	dw 401, 1380 ; height, weight
 
 	db   "Despite appearing"
 	next "to have no limbs,"

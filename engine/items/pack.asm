@@ -599,6 +599,7 @@ RegisterItem:
 	ld a, [wCurPocket]
 	rrca
 	rrca
+	rrca
 	and REGISTERED_POCKET
 	ld b, a
 	ld a, [wCurItemQuantity]

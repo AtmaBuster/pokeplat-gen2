@@ -1,5 +1,4 @@
 	db "TALISMAN@" ; species name
-	dw 211, 240 ; height, weight
 
 	db   "Despite its cute"
 	next "face and jolly"

@@ -19,11 +19,9 @@ BattleCommand_thief:
 	and a
 	ret z
 
-; Can't steal mail.
-
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	farcall ItemIsMail
+	ld d, h
+	ld e, l
+	call CheckStealableItem
 	ret c
 
 	ld a, [wEffectFailed]
@@ -66,11 +64,9 @@ BattleCommand_thief:
 	and a
 	ret z
 
-; Can't steal mail!
-
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	farcall ItemIsMail
+	ld d, h
+	ld e, l
+	call CheckStealableItem
 	ret c
 
 	ld a, [wEffectFailed]
@@ -109,4 +105,64 @@ BattleCommand_thief:
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonItem
+	ret
+
+CheckStealableItem:
+	ld a, [de]
+; Can't steal mail.
+
+	ld [wNamedObjectIndexBuffer], a
+	push de
+	ld d, a
+	farcall ItemIsMail
+	pop de
+	ret c
+
+; Can't steal Griseous Orb from Giratina
+	ld a, [de]
+	cp GRISEOUS_ORB
+	jr nz, .arceus_check
+	dec de
+	ld a, [de]
+	inc de
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(GIRATINA)
+	jr nz, .check_giratina_o
+	ld a, l
+	cp LOW(GIRATINA)
+	jr z, .cant
+.check_giratina_o
+	ld a, h
+	cp HIGH(GIRATINA_O)
+	jr z, .cant
+	ld a, l
+	cp LOW(GIRATINA_O)
+	jr z, .cant
+
+.arceus_check
+; Can't steal Plate from Arceus
+	ld a, [de]
+	push de
+	ld b, BANK(PlateItems)
+	ld hl, PlateItems
+	ld de, 2
+	call IsInFarArray
+	pop de
+	ret nc
+	dec de
+	ld a, [de]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .ok
+	ld a, l
+	cp LOW(ARCEUS)
+	jr z, .cant
+.ok
+	and a
+	ret
+
+.cant
+	scf
 	ret

@@ -1,5 +1,4 @@
 	db "DEEP FLAME@" ; species name
-	dw 511, 2180 ; height, weight
 
 	db   "The fibres of its"
 	next "mane are infused"

@@ -1,5 +1,4 @@
 	db "BLAST@" ; species name
-	dw 503, 1499 ; height, weight
 
 	db   "It will blast"
 	next "fireballs of over"

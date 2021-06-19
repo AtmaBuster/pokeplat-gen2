@@ -132,7 +132,7 @@ MoveEffectsPointers:
 	dw Pursuit                       ; PURSUIT
 	dw RapidSpin                     ; RAPID_SPIN
 	dw Splash                        ; POT_SMASH
-	dw Splash                        ; CRUSH_GRIP
+	dw CrushGrip                     ; CRUSH_GRIP
 	dw MorningSun                    ; MORNING_SUN
 	dw Synthesis                     ; SYNTHESIS
 	dw Moonlight                     ; MOONLIGHT
@@ -167,15 +167,15 @@ MoveEffectsPointers:
 	dw Splash                        ; TORMENT
 	dw Flatter                       ; FLATTER
 	dw WillOWisp                     ; WILL_O_WISP
-	dw Splash                        ; MEMENTO
+	dw Memento                       ; MEMENTO
 	dw Facade                        ; FACADE
 	dw Splash                        ; FOCUS_PUNCH
 	dw Splash                        ; SMELLINGSALT
-	dw Splash                        ; NATURE_POWER
+	dw NaturePower                   ; NATURE_POWER
 	dw Splash                        ; CHARGE
 	dw Splash                        ; TAUNT
-	dw Splash                        ; TRICK
-	dw Splash                        ; ROLE_PLAY
+	dw Trick                         ; TRICK
+	dw Splash                        ; UNUSED_AE
 	dw Splash                        ; WISH
 	dw Splash                        ; ASSIST
 	dw Splash                        ; INGRAIN
@@ -186,19 +186,19 @@ MoveEffectsPointers:
 	dw BrickBreak                    ; BRICK_BREAK
 	dw Splash                        ; YAWN
 	dw Splash                        ; KNOCK_OFF
-	dw Splash                        ; ENDEAVOR
+	dw Endeavor                      ; ENDEAVOR
 	dw Splash                        ; UNUSED_BA
-	dw Splash                        ; SKILL_SWAP
+	dw Splash                        ; UNUSED_BB
 	dw Splash                        ; IMPRISON
 	dw Splash                        ; REFRESH
 	dw Splash                        ; GRUDGE
 	dw Splash                        ; SNATCH
 	dw Splash                        ; SECRET_POWER
-	dw Splash                        ; CAMOUFLAGE
+	dw Camouflage                    ; CAMOUFLAGE
 	dw Splash                        ; UNUSED_C2
 	dw Splash                        ; MUD_SPORT
 	dw PoisonFang                    ; POISON_FANG
-	dw Splash                        ; WEATHER_BALL
+	dw NormalHit                     ; WEATHER_BALL
 	dw HPScaleHit                    ; HP_SCALING_HIT
 	dw Splash                        ; UNUSED_C7
 	dw Bounce                        ; BOUNCE
@@ -209,10 +209,10 @@ MoveEffectsPointers:
 	dw Splash                        ; GRAVITY
 	dw Splash                        ; MIRACLE_EYE
 	dw Splash                        ; WAKE_UP_SLAP
-	dw Splash                        ; HAMMER_ARM
+	dw HammerArm                     ; HAMMER_ARM
 	dw Splash                        ; GYRO_BALL
 	dw Splash                        ; HEALING_WISH
-	dw Splash                        ; BRINE
+	dw Brine                         ; BRINE
 	dw Splash                        ; NATURAL_GIFT
 	dw Splash                        ; FEINT
 	dw Splash                        ; PLUCK
@@ -220,7 +220,7 @@ MoveEffectsPointers:
 	dw Splash                        ; ACUPRESSURE
 	dw Splash                        ; METAL_BURST
 	dw Splash                        ; U_TURN
-	dw Splash                        ; CLOSE_COMBAT
+	dw CloseCombat                   ; CLOSE_COMBAT
 	dw Splash                        ; PAYBACK
 	dw Splash                        ; ASSURANCE
 	dw Splash                        ; EMBARGO
@@ -230,7 +230,7 @@ MoveEffectsPointers:
 	dw Splash                        ; HEAL_BLOCK
 	dw Splash                        ; WRING_OUT
 	dw Splash                        ; POWER_TRICK
-	dw Splash                        ; GASTRO_ACID
+	dw Splash                        ; UNUSED_E5
 	dw Splash                        ; LUCKY_CHANT
 	dw Splash                        ; ME_FIRST
 	dw Splash                        ; COPYCAT
@@ -238,9 +238,9 @@ MoveEffectsPointers:
 	dw Splash                        ; GUARD_SWAP
 	dw Splash                        ; PUNISHMENT
 	dw Splash                        ; LAST_RESORT
-	dw Splash                        ; WORRY_SEED
+	dw Splash                        ; UNUSED_ED
 	dw Splash                        ; SUCKER_PUNCH
-	dw Splash                        ; TOXIC_SPIKES
+	dw ToxicSpikes                   ; TOXIC_SPIKES
 	dw Splash                        ; HEART_SWAP
 	dw Splash                        ; AQUA_RING
 	dw Splash                        ; MAGNET_RISE
@@ -248,9 +248,8 @@ MoveEffectsPointers:
 	dw Splash                        ; DEFOG
 	dw Splash                        ; TRICK_ROOM
 	dw Splash                        ; CAPTIVATE
-	dw Splash                        ; STEALTH_ROCK
-	dw Splash                        ; WEIGHT_DAMAGE
-	dw Splash                        ; JUDGMENT
+	dw StealthRock                   ; STEALTH_ROCK
+	dw WeightDamage                  ; WEIGHT_DAMAGE
+	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; BUG_BITE
 	dw Splash                        ; LUNAR_DANCE
-	dw Splash                        ; AVALANCHE

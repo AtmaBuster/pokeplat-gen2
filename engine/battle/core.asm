@@ -4,6 +4,7 @@ DoBattle:
 	xor a
 	ld [wBattleParticipantsNotFainted], a
 	ld [wBattleParticipantsIncludingFainted], a
+	ld [wGainedEXPFlags], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
 	inc a
@@ -93,7 +94,7 @@ DoBattle:
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
-	call SpikesDamage
+	call DoEntryHazards
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -107,7 +108,7 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call SpikesDamage
+	call DoEntryHazards
 
 .not_linked_2
 	jp BattleTurn
@@ -450,7 +451,7 @@ DetermineMoveOrder:
 .switch
 	callfar AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage
+	call DoEntryHazards
 	jp .enemy_first
 
 .use_move
@@ -1754,6 +1755,7 @@ HandleWeather:
 	call .PrintWeatherMessage
 	xor a
 	ld [wBattleWeather], a
+	farcall UpdateWeatherForms
 	ret
 
 .do_sandstorm_damage
@@ -1903,6 +1905,30 @@ GetEighthMaxHP:
 	jr nz, .end
 	inc c
 .end
+	ret
+
+GetSixthMaxHP:
+; output: bc
+	call GetMaxHP
+
+; no clever way, just divide
+	xor a
+	ldh [hDividend], a
+	ldh [hDividend + 1], a
+	ld a, b
+	ldh [hDividend + 2], a
+	ld a, c
+	ldh [hDividend + 3], a
+	ld a, 6
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ld b, 0
+	ldh a, [hDividend + 3]
+	ld c, a
+	and a
+	ret nz
+	inc c
 	ret
 
 GetQuarterMaxHP:
@@ -2391,7 +2417,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call SpikesDamage
+	call DoEntryHazards
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2824,7 +2850,7 @@ ForcePlayerMonChoice:
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
-	call SpikesDamage
+	call DoEntryHazards
 	ld a, $1
 	and a
 	ld c, a
@@ -2845,7 +2871,7 @@ PlayerPartyMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
-	jp SpikesDamage
+	jp DoEntryHazards
 
 CheckMobileBattleError:
 	ld a, [wLinkMode]
@@ -3612,6 +3638,7 @@ Function_SetEnemyMonAndSendOutAnimation:
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
+	farcall UpdateArceusForm
 	predef CopyMonToTempMon
 	call GetEnemyMonFrontpic
 
@@ -4081,6 +4108,7 @@ SendOutPlayerMon:
 	xor a
 	ldh [hBGMapMode], a
 	call GetBattleMonBackpic
+	farcall UpdateArceusForm
 	xor a
 	ldh [hGraphicStartTile], a
 	ld [wBattleMenuCursorBuffer], a
@@ -4120,6 +4148,7 @@ SendOutPlayerMon:
 	call PlayStereoCry
 
 .statused
+	farcall UpdateWeatherForms
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
@@ -4160,6 +4189,12 @@ BreakAttraction:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ret
 
+DoEntryHazards:
+	call SpikesDamage
+	call StealthRockDamage
+	call ToxicSpikesEffect
+	ret
+
 SpikesDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -4172,24 +4207,40 @@ SpikesDamage:
 	ld bc, UpdateEnemyHUD
 .ok
 
-	bit SCREENS_SPIKES, [hl]
+	ld a, [hl]
+	and MASK_SPIKES
 	ret z
 
 	; Flying-types aren't affected by Spikes.
 	ld a, [de]
 	cp FLYING
+	call z, .gravity_check
 	ret z
 	inc de
 	ld a, [de]
 	cp FLYING
+	call z, .gravity_check
 	ret z
 
 	push bc
 
+	ld a, [hl]
+	and MASK_SPIKES
+	push af
+
 	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
 	call StdBattleTextbox
 
-	call GetEighthMaxHP
+	pop af
+	ld hl, GetEighthMaxHP
+	cp SPIKES_1
+	jr z, .got_damage
+	ld hl, GetSixthMaxHP
+	cp SPIKES_2
+	jr z, .got_damage
+	ld hl, GetQuarterMaxHP
+.got_damage
+	call .hl
 	call SubtractHPFromTarget
 
 	pop hl
@@ -4199,6 +4250,171 @@ SpikesDamage:
 
 .hl
 	jp hl
+
+.gravity_check
+	ld a, [wGravityCount]
+	and a
+	ret
+
+StealthRockDamage:
+	ld hl, wPlayerScreens
+	ld de, wBattleMonType
+	ld bc, UpdatePlayerHUD
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyScreens
+	ld de, wEnemyMonType
+	ld bc, UpdateEnemyHUD
+.ok
+
+	bit SCREENS_STEALTH_ROCK, [hl]
+	ret z
+
+	push bc
+
+	; Get type matchup for rocks.
+	ld a, [de]
+	ld [wTypeMatchupBuffer], a
+	inc de
+	ld a, [de]
+	ld [wTypeMatchupBuffer + 1], a
+	ld a, ROCK
+	ld [wTypeMatchupBuffer + 2], a
+	farcall CheckAnyTypeMatchup
+
+	ld a, [wTypeMatchup]
+	push af
+
+	ld hl, BattleText_UserHurtByStealthRock ; "hurt by rocks!"
+	call StdBattleTextbox
+
+	call GetMaxHP
+	pop af
+; never 0, nothing is immune to rock-type
+	cp -1
+	call c, .halve_bc
+	cp 40
+	call c, .halve_bc
+	cp 20
+	call c, .halve_bc
+	cp 10
+	call c, .halve_bc
+	cp 5
+	call c, .halve_bc
+	call SubtractHPFromTarget
+
+	pop hl
+	call .hl
+
+	jp WaitBGMap
+
+.hl
+	jp hl
+
+.halve_bc
+	srl b
+	rr c
+	ret
+
+ToxicSpikesEffect:
+	ld hl, wPlayerScreens
+	ld de, wBattleMonType
+	ld bc, wPlayerToxicCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyScreens
+	ld de, wEnemyMonType
+	ld bc, wEnemyToxicCount
+.ok
+	ld a, [hl]
+	and MASK_TOXIC_SPIKES
+	ret z
+
+; don't reapply poison
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	bit PSN, a
+	ret nz
+
+; flying/steel types do not get poisoned
+; poison types absorb
+	call .gettype
+	cp FLYING
+	ret z
+	inc de
+	call .gettype
+	cp FLYING
+	ret z
+	cp POISON
+	jr z, .absorb_spikes
+	dec de
+	call .gettype
+	cp POISON
+	jr z, .absorb_spikes
+	cp STEEL
+	ret z
+	inc de
+	call .gettype
+	cp STEEL
+	ret z
+
+; set poison
+	ld a, [hl]
+	and MASK_TOXIC_SPIKES
+	cp TOXIC_SPIKES_2
+	jr nz, .regular_poison
+
+; bad poison
+	xor a
+	ld [bc], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	set SUBSTATUS_TOXIC, [hl]
+	call .apply_poison
+
+	ld hl, BadlyPoisonedText
+	call StdBattleTextbox
+	jr .finish_set_poison
+
+.regular_poison
+	call .apply_poison
+	ld hl, WasPoisonedText
+	call StdBattleTextbox
+.finish_set_poison
+	call BattleCommand_switchturn
+	call UseHeldStatusHealingItem
+	call BattleCommand_switchturn
+	ret
+
+.apply_poison
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	set PSN, [hl]
+	call UpdateUserInParty
+	ret
+
+.absorb_spikes
+	ld a, [hl]
+	and $ff - MASK_TOXIC_SPIKES
+	ld [hl], a
+	ld hl, AbsorbedToxicSpikesText
+	jp StdBattleTextbox
+
+.gettype
+	ld a, [de]
+	cp FLYING
+	ret nz
+	ld a, [wGravityCount]
+	and a
+	jr nz, .gravity
+	ld a, FLYING
+	ret
+
+.gravity
+	xor a
+	ret
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE
@@ -5219,7 +5435,7 @@ PlayerSwitch:
 EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
-	jp SpikesDamage
+	jp DoEntryHazards
 
 BattleMonEntrance:
 	call WithdrawMonText
@@ -5252,7 +5468,7 @@ BattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
-	call SpikesDamage
+	call DoEntryHazards
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5276,7 +5492,7 @@ PassedBattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
-	jp SpikesDamage
+	jp DoEntryHazards
 
 BattleMenu_Run:
 	call Call_LoadTempTileMapToTileMap
@@ -6926,6 +7142,10 @@ GiveExperiencePoints:
 	bit 0, a
 	ret nz
 
+	ld hl, wGainedEXPFlags
+	ld a, [wBattleParticipantsNotFainted]
+	or [hl]
+	ld [hl], a
 	call .EvenlyDivideExpAmongParticipants
 	xor a
 	ld [wCurPartyMon], a
@@ -8232,6 +8452,7 @@ ExitBattle:
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
 	farcall GivePokerusAndConvertBerries
+	farcall ChangeBurmyCloak
 	ret
 
 CleanUpBattleRAM:

@@ -205,6 +205,15 @@ ItemDescriptions:
 	dw EvoStoneDesc
 	dw EvoStoneDesc
 	dw EvoStoneDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw OddKeystoneDesc
 	dw DragonFangDesc
 	dw BlackGlassesDesc
 	dw SoftSandDesc
@@ -221,39 +230,30 @@ ItemDescriptions:
 	dw HardStoneDesc
 	dw PoisonBarbDesc
 	dw MagnetDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
-	dw QuestionMarkDesc
+	dw GracideaDesc
+	dw GriseousOrbDesc
+	dw AdamantOrbDesc
+	dw LustrousOrbDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw FossilDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
+	dw PlaceholderDesc
 	dw QuestionMarkDesc
 
 MasterBallDesc:
@@ -929,6 +929,27 @@ QuickBallDesc:
 	db   "A BALL that works"
 	next "best on turn one.@"
 
+OddKeystoneDesc:
 PlaceholderDesc:
 	db "PLACEHOLDER"
 	next "PLACEHOLDER@"
+
+GracideaDesc:
+	db   "A flower used to"
+	next "show gratitude.@"
+
+GriseousOrbDesc:
+	db   "Raises power for"
+	next "GIRATINA. (HOLD)@"
+
+AdamantOrbDesc:
+	db   "Raises power for"
+	next "DIALGA. (HOLD)@"
+
+LustrousOrbDesc:
+	db   "Raises power for"
+	next "PALIKA. (HOLD)@"
+
+FossilDesc:
+	db   "A fossil of a pre-"
+	next "historic #MON.@"

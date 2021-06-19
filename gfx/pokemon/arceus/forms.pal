@@ -1,0 +1,102 @@
+; fighting - normal
+	RGB 24, 24, 24
+	RGB 24, 08, 00
+; fighting - shiny
+	RGB 31, 28, 11
+	RGB 24, 08, 00
+; flying - normal
+	RGB 24, 24, 24
+	RGB 15, 17, 31
+; flying - shiny
+	RGB 31, 28, 11
+	RGB 15, 17, 31
+; poison - normal
+	RGB 24, 24, 24
+	RGB 21, 05, 19
+; poison - shiny
+	RGB 31, 28, 11
+	RGB 21, 05, 19
+; ground - normal
+	RGB 24, 24, 24
+	RGB 26, 11, 00
+; ground - shiny
+	RGB 31, 28, 11
+	RGB 16, 11, 00
+; rock - normal
+	RGB 24, 24, 24
+	RGB 21, 17, 11
+; rock - shiny
+	RGB 31, 28, 11
+	RGB 21, 17, 11
+; bird - normal
+	RGB 24, 24, 24
+	RGB 05, 17, 14
+; bird - shiny
+	RGB 31, 28, 11
+	RGB 05, 17, 14
+; bug - normal
+	RGB 24, 24, 24
+	RGB 09, 18, 00
+; bug - shiny
+	RGB 31, 28, 11
+	RGB 09, 18, 00
+; ghost - normal
+	RGB 24, 24, 24
+	RGB 15, 00, 30
+; ghost - shiny
+	RGB 31, 28, 11
+	RGB 15, 00, 30
+; steel - normal
+	RGB 24, 24, 24
+	RGB 15, 15, 15
+; steel - shiny
+	RGB 31, 28, 11
+	RGB 15, 15, 15
+; fire - normal
+	RGB 24, 24, 24
+	RGB 31, 06, 00
+; fire - shiny
+	RGB 31, 28, 11
+	RGB 31, 06, 00
+; water - normal
+	RGB 24, 24, 24
+	RGB 00, 14, 29
+; water - shiny
+	RGB 31, 28, 11
+	RGB 00, 14, 29
+; grass - normal
+	RGB 24, 24, 24
+	RGB 08, 24, 00
+; grass - shiny
+	RGB 31, 28, 11
+	RGB 08, 24, 00
+; electric - normal
+	RGB 24, 24, 24
+	RGB 31, 25, 00
+; electric - shiny
+	RGB 31, 28, 11
+	RGB 31, 25, 00
+; psychic - normal
+	RGB 24, 24, 24
+	RGB 31, 07, 15
+; psychic - shiny
+	RGB 31, 28, 11
+	RGB 31, 07, 15
+; ice - normal
+	RGB 24, 24, 24
+	RGB 14, 24, 31
+; ice - shiny
+	RGB 31, 28, 11
+	RGB 14, 24, 31
+; dragon - normal
+	RGB 24, 24, 24
+	RGB 20, 00, 25
+; dragon - shiny
+	RGB 31, 28, 11
+	RGB 20, 00, 25
+; dark - normal
+	RGB 24, 24, 24
+	RGB 07, 07, 07
+; dark - shiny
+	RGB 31, 28, 11
+	RGB 07, 07, 07

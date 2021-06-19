@@ -79,10 +79,14 @@ _CGB_BattleGrayscale:
 
 _CGB_BattleColors:
 	ld de, wBGPals1
+	ld a, [wBattleMonType]
+	ld [wArceusPalNum], a
 	call GetBattlemonBackpicPalettePointer
 	push hl
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER
+	ld a, [wEnemyMonType]
+	ld [wArceusPalNum], a
 	call GetEnemyFrontpicPalettePointer
 	push hl
 	call LoadPalette_Mon
@@ -207,6 +211,8 @@ _CGB_StatsScreenHPPals:
 	ld bc, HPBarPals
 	add hl, bc
 	call LoadPalette_White_Col1_Col2_Black ; hp palette
+	xor a
+	ld [wArceusPalNum], a
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
 	call GetPlayerOrMonPalettePointer
@@ -259,6 +265,8 @@ StatsScreenPals:
 INCLUDE "gfx/stats/stats.pal"
 
 _CGB_Pokedex:
+	xor a
+	ld [wArceusPalNum], a
 	ld de, wBGPals1
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
@@ -312,6 +320,10 @@ _CGB_BillsPC:
 
 .GetMonPalette:
 	ld bc, wTempMonDVs
+	push af
+	xor a
+	ld [wArceusPalNum], a
+	pop af
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
@@ -335,6 +347,10 @@ _CGB_BillsPC:
 
 .unused
 	ld bc, wTempMonDVs
+	push af
+	xor a
+	ld [wArceusPalNum], a
+	pop af
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
@@ -359,6 +375,8 @@ _CGB_PokedexUnownMode:
 	ld a, PREDEFPAL_POKEDEX
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
+	xor a
+	ld [wArceusPalNum], a
 	ld a, [wCurPartySpecies]
 	call GetMonPalettePointer
 	call LoadPalette_Mon
@@ -569,6 +587,8 @@ _CGB_Evolution:
 	call AddNTimes
 	ld c, l
 	ld b, h
+	xor a
+	ld [wArceusPalNum], a
 	ld a, [wPlayerHPPal]
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_Mon
@@ -637,6 +657,7 @@ _CGB_UnownPuzzle:
 _CGB_TrainerCard:
 	ld de, wBGPals1
 	xor a ; CHRIS
+	ld [wArceusPalNum], a
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
@@ -919,6 +940,8 @@ _CGB_GamefreakLogo:
 INCLUDE "gfx/splash/logo.pal"
 
 _CGB_PlayerOrMonFrontpicPals:
+	xor a
+	ld [wArceusPalNum], a
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
@@ -932,6 +955,8 @@ _CGB_PlayerOrMonFrontpicPals:
 
 _CGB1e:
 	ld de, wBGPals1
+	xor a
+	ld [wArceusPalNum], a
 	ld a, [wCurPartySpecies]
 	call GetMonPalettePointer
 	call LoadPalette_Mon
@@ -956,6 +981,8 @@ _CGB_TradeTube:
 	ret
 
 _CGB_TrainerOrMonFrontpicPals:
+	xor a
+	ld [wArceusPalNum], a
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
@@ -1029,6 +1056,8 @@ DebugMenuPokePicApplyPal::
 
 DebugMenuTrainerPicColors::
 	ld a, [wMenuCursorY]
+	xor a
+	ld [wArceusPalNum], a
 	call GetTrainerPalettePointer
 	ld de, wBGPals1 palette 1
 	call LoadPalette_Mon

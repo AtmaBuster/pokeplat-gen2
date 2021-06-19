@@ -1,5 +1,4 @@
 	db "BALLOON@" ; species name
-	dw 104, 26 ; height, weight
 
 	db   "It is rumored that"
 	next "any child who"

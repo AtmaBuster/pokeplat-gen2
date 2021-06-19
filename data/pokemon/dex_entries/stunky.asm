@@ -1,5 +1,4 @@
 	db "SKUNK@" ; species name
-	dw 104, 423 ; height, weight
 
 	db   "The foul fluid"
 	next "from its rear is"

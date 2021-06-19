@@ -1,130 +1,113 @@
-SECTION "Egg Moves 5", ROMX
+SECTION "Egg Moves 4", ROMX
 
-EggMovePointers5::
+EggMovePointers4::
 	dw TurtwigEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw ChimcharEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw PiplupEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw StarlyEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw BidoofEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw ShinxEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw BudewEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw CranidosEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw ShieldonEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw PachirisuEggMoves
 	dw BuizelEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw CherubiEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw ShellosEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw DrifloonEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw BunearyEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw GlameowEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw ChinglingEggMoves
 	dw StunkyEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw BronzorEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw BonslyEggMoves
 	dw MimeJrEggMoves
 	dw HappinyEggMoves
 	dw ChatotEggMoves
 	dw SpiritombEggMoves
 	dw GibleEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
+	dw NoEggMoves4
+	dw NoEggMoves4
 	dw MunchlaxEggMoves
 	dw RioluEggMoves
 	dw HippopotasEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw SkorupiEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw CroagunkEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw CarnivineEggMoves
 	dw FinneonEggMoves
-	dw NoEggMoves5
+	dw NoEggMoves4
 	dw MantykeEggMoves
 	dw SnoverEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw ShellosEastEggMoves
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	dw NoEggMoves5
-	
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+	dw NoEggMoves4
+
 TurtwigEggMoves:
 	dw AMNESIA
 	dw BODY_SLAM
@@ -498,19 +481,5 @@ SnoverEggMoves:
 	dw SKULL_BASH
 	dw STOMP
 	
-ShellosEastEggMoves:
-	dw AMNESIA
-	dw COUNTER
-	dw CURSE
-	dw FISSURE
-	dw MEMENTO
-	dw MIRROR_COAT
-	dw SLUDGE
-	dw SPIT_UP
-	dw STOCKPILE
-	dw SWALLOW
-	dw TRUMP_CARD
-	dw YAWN
-	
-NoEggMoves5:
+NoEggMoves4:
 	dw -1 ; end

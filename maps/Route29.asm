@@ -413,6 +413,28 @@ Route29Sign2Text:
 	line "NEW BARK TOWN"
 	done
 
+Route29_DEBUG_DeoxysN:
+	setval FORMCHANGE_DEOXYS_N
+	sjump Route29_DEBUG_Deoxys
+
+Route29_DEBUG_DeoxysA:
+	setval FORMCHANGE_DEOXYS_A
+	sjump Route29_DEBUG_Deoxys
+
+Route29_DEBUG_DeoxysD:
+	setval FORMCHANGE_DEOXYS_D
+	sjump Route29_DEBUG_Deoxys
+
+Route29_DEBUG_DeoxysS:
+	setval FORMCHANGE_DEOXYS_S
+	sjump Route29_DEBUG_Deoxys
+
+Route29_DEBUG_Deoxys:
+	opentext
+	special ChangePartyMonFormMenu
+	closetext
+	end
+
 Route29_MapEvents:
 	db 0, 0 ; filler
 
@@ -427,7 +449,7 @@ Route29_MapEvents:
 	bg_event 51,  7, BGEVENT_READ, Route29Sign1
 	bg_event  3,  5, BGEVENT_READ, Route29Sign2
 
-	db 8 ; object events
+	db 12 ; object events
 	object_event 50, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
 	object_event 27, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
 	object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1
@@ -436,3 +458,7 @@ Route29_MapEvents:
 	object_event 13,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29CooltrainerMScript, -1
 	object_event 29, 12, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TuscanyScript, EVENT_ROUTE_29_TUSCANY_OF_TUESDAY
 	object_event 48,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route29Potion, EVENT_ROUTE_29_POTION
+	object_event 18, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29_DEBUG_DeoxysN, -1
+	object_event 19, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29_DEBUG_DeoxysA, -1
+	object_event 20, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29_DEBUG_DeoxysD, -1
+	object_event 21, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29_DEBUG_DeoxysS, -1

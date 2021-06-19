@@ -1,5 +1,4 @@
 	db "KITE@" ; species name
-	dw 303, 1433 ; height, weight
 
 	db   "People on ships"
 	next "are able to see"

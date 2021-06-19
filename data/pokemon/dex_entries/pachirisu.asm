@@ -1,5 +1,4 @@
 	db "ELESQUIRREL@" ; species name
-	dw 104, 86 ; height, weight
 
 	db   "It's one of many"
 	next "#MON with"

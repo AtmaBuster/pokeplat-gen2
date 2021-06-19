@@ -1,5 +1,4 @@
 	db "MARIONETTE@" ; species name
-	dw 307, 276 ; height, weight
 
 	db   "This #MON"
 	next "developed from an"

@@ -1,5 +1,4 @@
 	db "CLAY DOLL@" ; species name
-	dw 411, 2390 ; height, weight
 
 	db   "It has been said"
 	next "that CLAYDOL"

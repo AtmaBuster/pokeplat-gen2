@@ -1,5 +1,4 @@
 	db "BARNACLE@" ; species name
-	dw 411, 1332 ; height, weight
 
 	db   "It lived in warm"
 	next "seas. Its heavy"

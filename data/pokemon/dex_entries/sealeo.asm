@@ -1,5 +1,4 @@
 	db "BALL ROLL@" ; species name
-	dw 307, 1931 ; height, weight
 
 	db   "It touches new"
 	next "things to its nose"

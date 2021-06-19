@@ -1,3 +1,33 @@
+IF DEF(_NEWRNG)
+Random::
+	push bc
+
+	ldh a, [hRandomX]
+	ld b, a
+	rrca
+	xor b
+	ld c, a
+	ldh a, [hRandomY]
+	ldh [hRandomX], a
+	ldh a, [hRandomZ]
+	ldh [hRandomY], a
+	ldh a, [hRandomA]
+	ldh [hRandomZ], a
+	ld b, a
+	rrca
+	rrca
+	rrca
+	xor b
+	xor c
+	and a
+	rl c
+	xor c
+	ldh [hRandomA], a
+
+	pop bc
+	ret
+
+ELSE
 Random::
 ; A simple hardware-based random number generator (RNG).
 
@@ -27,6 +57,7 @@ Random::
 
 	pop bc
 	ret
+ENDC
 
 BattleRandom::
 ; _BattleRandom lives in another bank.

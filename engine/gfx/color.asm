@@ -786,6 +786,27 @@ Unreferenced_Function97cc:
 
 _GetMonPalettePointer:
 	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .not_arceus
+	ld a, l
+	cp LOW(ARCEUS)
+	jr nz, .not_arceus
+	ld a, [wArceusPalNum]
+	cp UNUSED_TYPES
+	jr c, .ok
+	sub UNUSED_TYPES
+.ok
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld bc, ArceusPalettes
+	add hl, bc
+	ret
+
+.not_arceus
 	add hl, hl
 	add hl, hl
 	add hl, hl

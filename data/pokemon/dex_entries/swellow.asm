@@ -1,5 +1,4 @@
 	db "SWALLOW@" ; species name
-	dw 204, 437 ; height, weight
 
 	db   "It dives at a"
 	next "steep angle as"

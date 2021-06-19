@@ -1,5 +1,4 @@
 	db "PLAYFUL@" ; species name
-	dw 211, 485 ; height, weight
 
 	db   "A bigger fire on"
 	next "its tail and a"

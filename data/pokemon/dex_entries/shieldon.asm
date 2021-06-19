@@ -1,5 +1,4 @@
 	db "SHIELD@" ; species name
-	dw 108, 1257 ; height, weight
 
 	db   "It is armored"
 	next "outstandingly. As"

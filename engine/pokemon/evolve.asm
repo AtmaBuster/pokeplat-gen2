@@ -219,6 +219,14 @@ EvolveAfterBattle_MasterLoop:
 	jp nc, .skip_evolution_species
 
 .proceed
+	ldh a, [hTemp]
+	ld [wEvolutionDataBankBackup], a
+	ld a, h
+	ld [wEvolutionDataAddrBackup], a
+	ld a, l
+	ld [wEvolutionDataAddrBackup + 1], a
+	ld a, c
+	ld [wEvolutionMethodBackup], a
 	ld a, [wTempMonLevel]
 	ld [wCurPartyLevel], a
 	ld a, [wMonTriedToEvolve]
@@ -261,6 +269,10 @@ EvolveAfterBattle_MasterLoop:
 
 	ld hl, Text_CongratulationsYourPokemon
 	call PrintText
+
+	ld a, [wEvolutionMethodBackup]
+	cp EVOLVE_LEVEL_ADD_MON
+	call z, .try_evo_add_mon
 
 	ld a, [wMonTriedToEvolve]
 	cp EVOLVE_LEVEL_WITH_ITEM
@@ -400,6 +412,97 @@ EvolveAfterBattle_MasterLoop:
 	call nz, RestartMapMusic
 	ret
 
+.try_evo_add_mon
+	ld a, [wEvolutionDataBankBackup]
+	ld b, a
+	ld a, [wEvolutionDataAddrBackup]
+	ld h, a
+	ld a, [wEvolutionDataAddrBackup + 1]
+	ld l, a
+	inc hl
+	inc hl
+; next evo should be EVOLVE_LEVEL_EXTRA_MON
+	ld a, b
+	call GetFarByte
+	cp EVOLVE_LEVEL_EXTRA_MON
+	ret nz
+	inc hl ; ignore level, should match
+; don't add if not enough space in party
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	ret z
+; copy previous mon's data to new slot
+	push bc
+	push hl
+	ld hl, wPartyMons
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	call CopyBytes
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMonOT
+	call SkipNames
+	push hl
+	ld a, [wPartyCount]
+	ld hl, wPartyMonOT
+	call SkipNames
+	ld d, h
+	ld e, l
+	pop hl
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+	pop hl
+	pop bc
+; set species
+	inc hl
+	ld a, b
+	call GetFarHalfword
+	ld a, [wCurPartyMon]
+	push af
+	ld a, [wPartyCount]
+	ld [wCurPartyMon], a
+	call ChangePartyMonSpecies
+	pop af
+	ld [wCurPartyMon], a
+; clear item
+	ld hl, wPartyMon1Item
+	ld a, [wPartyCount]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	xor a
+	ld [hl], a
+; set hp to max
+	ld hl, wPartyMon1MaxHP + 1
+	ld a, [wPartyCount]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hld]
+	ld e, a
+	ld a, [hld]
+	ld d, a
+	ld a, e
+	ld [hld], a
+	ld a, d
+	ld [hl], a
+; set nickname to default
+	ld a, [wCurSpecies]
+	ld [wNamedObjectIndexBuffer], a
+	call GetPokemonName
+	ld a, [wPartyCount]
+	ld hl, wPartyMonNicknames
+	call SkipNames
+	ld bc, MON_NAME_LENGTH
+	ld d, h
+	ld e, l
+	ld hl, wStringBuffer1
+	call CopyBytes
+; increment party count
+	ld hl, wPartyCount
+	inc [hl]
+	ret
+
 CheckLevelEvolutionCondition:
 	push hl
 	ld a, c
@@ -501,14 +604,6 @@ CheckLevelEvolutionCondition:
 	jr z, .no
 	jr .party_mon_loop
 
-.add_mon
-	; todo
-	jr .no
-
-.extra_mon
-	; todo
-	jr .no
-
 .dv_high
 	ld hl, wTempMonID
 	ld a, [hli]
@@ -544,6 +639,8 @@ CheckLevelEvolutionCondition:
 	and a
 	ret
 
+.add_mon
+.extra_mon
 .ok
 	pop hl
 	scf

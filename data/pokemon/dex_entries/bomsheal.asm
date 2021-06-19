@@ -1,5 +1,4 @@
 	db "JUGGLER@" ; species name
-	dw 208, 230 ; height, weight
 
 	db   "The flaming stone"
 	next "it balances is"

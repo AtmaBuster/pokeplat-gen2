@@ -1,5 +1,4 @@
 	db "IRON@" ; species name
-	dw 603, 4519 ; height, weight
 
 	db   "Its body is said"
 	next "to be harder than"

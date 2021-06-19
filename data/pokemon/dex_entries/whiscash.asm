@@ -1,5 +1,4 @@
 	db "WHISKERS@" ; species name
-	dw 211, 520 ; height, weight
 
 	db   "It claims a large"
 	next "swamp to itself."

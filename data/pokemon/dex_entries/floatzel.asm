@@ -1,5 +1,4 @@
 	db "SEA WEASEL@" ; species name
-	dw 307, 739 ; height, weight
 
 	db   "With its flotation"
 	next "sac inflated, it"

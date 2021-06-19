@@ -1,5 +1,4 @@
 	db "RENEGADE@" ; species name
-	dw 1209, 16535 ; height, weight
 
 	db   "It was banished"
 	next "for its violence."

@@ -1,5 +1,4 @@
 	db "CHERRY@" ; species name
-	dw 104, 73 ; height, weight
 
 	db   "It evolves by"
 	next "sucking the energy"

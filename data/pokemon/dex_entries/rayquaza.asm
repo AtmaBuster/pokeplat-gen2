@@ -1,5 +1,4 @@
 	db "SKY HIGH@" ; species name
-	dw 3200, 4553 ; height, weight
 
 	db   "It flies into the"
 	next "ozone layer, way"

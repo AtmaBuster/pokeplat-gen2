@@ -1,5 +1,4 @@
 	db "LUNAR@" ; species name
-	dw 411, 1887 ; height, weight
 
 	db   "Those who sleep"
 	next "holding CRESSELIA's"

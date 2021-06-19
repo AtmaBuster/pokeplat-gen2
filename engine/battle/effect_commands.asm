@@ -1,3 +1,17 @@
+SECTION "Effect Commands", ROMX
+
+CompareMove:
+	; checks if the move ID in a matches the move in bc
+	push hl
+	call GetMoveIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret
+
 DoPlayerTurn:
 	call SetPlayerTurn
 
@@ -83,17 +97,15 @@ DoMove:
 	ld hl, BattleCommandPointers
 	add hl, bc
 	add hl, bc
+	add hl, bc
 	pop bc
 
 	ld a, BANK(BattleCommandPointers)
-	call GetFarHalfword
+	call GetFarBankAddress
 
-	call .DoMoveEffectCommand
+	rst FarCall
 
 	jr .ReadMoveEffectCommand
-
-.DoMoveEffectCommand:
-	jp hl
 
 ReadMoveScriptByte:
 	ld a, [wBattleScriptBufferAddress]
@@ -1274,192 +1286,13 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
-BattleCommand_stab:
-; STAB = Same Type Attack Bonus
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld bc, STRUGGLE
-	call CompareMove
-	ret z
-
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .go ; Who Attacks and who Defends
-
-	ld hl, wEnemyMonType1
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	ld hl, wBattleMonType1
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-
-.go
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	and TYPE_MASK
-	ld [wCurType], a
-
+CheckAnyTypeMatchup:
+	ld hl, wTypeMatchupBuffer
 	push hl
 	push de
 	push bc
-	farcall DoWeatherModifiers
-	pop bc
-	pop de
-	pop hl
-
-	push de
-	push bc
-	farcall DoBadgeTypeBoosts
-	pop bc
-	pop de
-
-	ld a, [wCurType]
-	cp b
-	jr z, .stab
-	cp c
-	jr z, .stab
-
-	jr .SkipStab
-
-.stab
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-
-	ld b, h
-	ld c, l
-	srl b
-	rr c
-	add hl, bc
-
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-
-	ld hl, wTypeModifier
-	set 7, [hl]
-
-.SkipStab:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
-	ld b, a
-	ld hl, TypeMatchups
-
-.TypesLoop:
-	ld a, [hli]
-
-	cp -1
-	jr z, .end
-
-	; foresight
-	cp -2
-	jr nz, .SkipForesightCheck
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_IDENTIFIED, a
-	jr nz, .end
-
-	jr .TypesLoop
-
-.SkipForesightCheck:
-	cp b
-	jr nz, .SkipType
-	ld a, [hl]
-	cp d
-	jr z, .GotMatchup
-	cp e
-	jr z, .GotMatchup
-	jr .SkipType
-
-.GotMatchup:
-	push hl
-	push bc
-	inc hl
-	ld a, [wTypeModifier]
-	and %10000000
-	ld b, a
-; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	ld a, [hl]
-	and a
-	jr nz, .NotImmune
-	inc a
-	ld [wAttackMissed], a
-	xor a
-.NotImmune:
-	ldh [hMultiplier], a
-	add b
-	ld [wTypeModifier], a
-
-	xor a
-	ldh [hMultiplicand + 0], a
-
-	ld hl, wCurDamage
-	ld a, [hli]
-	ldh [hMultiplicand + 1], a
-	ld a, [hld]
-	ldh [hMultiplicand + 2], a
-
-	call Multiply
-
-	ldh a, [hProduct + 1]
-	ld b, a
-	ldh a, [hProduct + 2]
-	or b
-	ld b, a
-	ldh a, [hProduct + 3]
-	or b
-	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
-
-; Take the product and divide it by 10.
-	ld a, 10
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
-	ldh a, [hQuotient + 2]
-	ld b, a
-	ldh a, [hQuotient + 3]
-	or b
-	jr nz, .ok
-
-	ld a, 1
-	ldh [hMultiplicand + 2], a
-
-.ok
-	ldh a, [hMultiplicand + 1]
-	ld [hli], a
-	ldh a, [hMultiplicand + 2]
-	ld [hl], a
-	pop bc
-	pop hl
-
-.SkipType:
-	inc hl
-	inc hl
-	jr .TypesLoop
-
-.end
-	call BattleCheckTypeMatchup
-	ld a, [wTypeMatchup]
-	ld b, a
-	ld a, [wTypeModifier]
-	and %10000000
-	or b
-	ld [wTypeModifier], a
-	ret
+	ld a, [wTypeMatchupBuffer + 2]
+	jr CheckTypeMatchup_join
 
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
@@ -1477,9 +1310,8 @@ CheckTypeMatchup:
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
+CheckTypeMatchup_join:
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -2293,6 +2125,8 @@ GetFailureResultText:
 	ld hl, ButItFailedText
 	ld de, ItFailedText
 	jr z, .got_text
+	cp EFFECT_TRICK
+	jr z, .got_text
 	ld hl, AttackMissedText
 	ld de, AttackMissed2Text
 	ld a, [wCriticalHit]
@@ -2716,7 +2550,7 @@ PlayerAttackDamage:
 
 .lightball
 ; Note: Returns player special attack at hl in hl.
-	call LightBallBoost
+	call SpecialSpeciesItemBoost
 	jr .done
 
 .thickclub
@@ -2868,7 +2702,7 @@ ThickClubBoost:
 	pop bc
 	ret
 
-LightBallBoost:
+SpecialSpeciesItemBoost:
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Pikachu and it's
@@ -2878,6 +2712,12 @@ LightBallBoost:
 	ld bc, PIKACHU
 	ld d, LIGHT_BALL
 	call SpeciesItemBoost
+	ld bc, CLAMPERL
+	ld d, DEEPSEATOOTH
+	call DoubleStatIfSpeciesHoldingItem
+	ld bc, CLAMPERL
+	ld d, DEEPSEASCALE
+	call HalveStatIfSpeciesHoldingItem
 	pop de
 	pop bc
 	ret
@@ -2927,6 +2767,41 @@ DoubleStatIfSpeciesHoldingItem:
 ; Double the stat
 	sla l
 	rl h
+	ret
+
+HalveStatIfSpeciesHoldingItem:
+; If the defending monster is species bc and
+; it's holding item d, halve the stat in hl.
+	push hl
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .CompareSpecies
+	ld a, [wTempEnemyMonSpecies]
+.CompareSpecies:
+
+	call GetPokemonIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret nz
+
+	push hl
+	call GetOpponentItem
+	ld a, [hl]
+	pop hl
+	cp d
+	ret nz
+
+; Halve the stat
+	rrc h
+	rr l
 	ret
 
 EnemyAttackDamage:
@@ -2996,7 +2871,7 @@ EnemyAttackDamage:
 	ld hl, wEnemySpAtk
 
 .lightball
-	call LightBallBoost
+	call SpecialSpeciesItemBoost
 	jr .done
 
 .thickclub
@@ -3166,9 +3041,7 @@ BattleCommand_damagecalc:
 
 ; Type
 	ld b, a
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
 	cp b
 	jr nz, .DoneItem
 
@@ -4200,7 +4073,106 @@ BattleCommand_freezetarget:
 	ld hl, wPlayerJustGotFrozen
 .finish
 	ld [hl], $1
-	ret
+; handle Shaymin Sky Forme revert
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wPartySpecies
+	jr nz, .got_species
+	ld hl, wEnemyMonSpecies
+	ld de, wOTPartySpecies
+.got_species
+	ld a, [hl]
+	push hl
+	call GetPokemonIndexFromID
+	pop bc
+	ld a, h
+	cp HIGH(SHAYMIN_S)
+	ret nz
+	ld a, l
+	cp LOW(SHAYMIN_S)
+	ret nz
+	ld hl, SHAYMIN
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	ld [bc], a ; set Battle/Enemy Mon Species
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurBattleMon]
+	jr nz, .got_cur_mon
+	ld a, [wCurOTMon]
+.got_cur_mon
+	ld h, 0
+	ld l, a
+	add hl, de
+	pop af
+	ld [hl], a ; set Party/OT Species
+	push af
+	ld a, MON_SPECIES
+	call OpponentPartyAttr
+	pop af
+	ld [hl], a ; set wParty/OT Mon Species
+	ld [wCurSpecies], a
+	call GetBaseData ; for CalcMonStats
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .get_battlemon_stat_addrs
+	ld a, [wEnemyMonLevel]
+	ld [wCurPartyLevel], a
+	ld de, wEnemyMonMaxHP
+	push de
+	ld a, MON_MAXHP
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld a, MON_STAT_EXP - 1
+	call OTPartyAttr
+	jr .recalc_stats
+
+.get_battlemon_stat_addrs
+	ld a, [wBattleMonLevel]
+	ld [wCurPartyLevel], a
+	ld de, wBattleMonMaxHP
+	push de
+	ld a, MON_MAXHP
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld a, MON_STAT_EXP - 1
+	call BattlePartyAttr
+.recalc_stats
+	ld b, 1 ; use stat EXP
+	predef CalcMonStats
+	pop de
+	predef CalcMonStats
+; play animation
+	call BattleCommand_switchturn
+	call _CheckBattleScene
+	jr c, .mimic_anims
+	xor a
+	ld [wNumHits], a
+	ld hl, ANIM_REFRESH_SPRITE
+	call GetMoveIDFromIndex
+	call LoadAnim
+	jr .after_anim
+
+.mimic_anims
+	call BattleCommand_movedelay
+	call BattleCommand_raisesubnoanim
+.after_anim
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_SUBSTITUTE, [hl]
+	jr z, .no_sub
+	ld hl, SUBSTITUTE
+	call GetMoveIDFromIndex
+	call LoadAnim
+.no_sub
+	call BattleCommand_switchturn
+; textbox
+	ld hl, RevertedFormText
+	jp StdBattleTextbox
 
 BattleCommand_paralyzetarget:
 ; paralyzetarget
@@ -5353,7 +5325,7 @@ BattleCommand_forceswitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
+	ld hl, DoEntryHazards
 	jp CallBattleCore
 
 .switch_fail
@@ -5450,7 +5422,7 @@ BattleCommand_forceswitch:
 	ld hl, DraggedOutText
 	call StdBattleTextbox
 
-	ld hl, SpikesDamage
+	ld hl, DoEntryHazards
 	jp CallBattleCore
 
 .fail
@@ -6266,9 +6238,7 @@ CheckMoveTypeMatchesTarget:
 	ld hl, wBattleMonType1
 .ok
 
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType2
 	cp NORMAL
 	jr z, .normal
 
@@ -6702,6 +6672,52 @@ BattleCommand_defrost:
 	ld hl, WasDefrostedText
 	jp StdBattleTextbox
 
+BattleCommand_weightdamage:
+	push bc
+	push de
+; get weight from dex entry
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyMonSpecies
+	jr z, .got_species
+	ld hl, wBattleMonSpecies
+.got_species
+	ld b, [hl]
+	farcall GetMonWeight
+	ld b, d
+	ld c, e
+; get base damage
+	ld hl, .weight_damage_table
+.damage_loop
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+
+	cp b
+	jr c, .next
+	jr nz, .got_it
+	ld a, e
+	cp c
+	jr nc, .got_it
+.next
+	inc hl
+	jr .damage_loop
+
+.got_it
+	pop de
+	ld d, [hl]
+	pop bc
+	ret
+
+.weight_damage_table
+	dwb  219,  20
+	dwb  551,  40
+	dwb 1102,  60
+	dwb 2204,  80
+	dwb 4409, 100
+	dwb   -1, 120
+
 INCLUDE "engine/battle/move_effects/water_spout.asm"
 
 INCLUDE "engine/battle/move_effects/curse.asm"
@@ -6933,7 +6949,8 @@ Battle_StartWeather:
 	ld a, 5
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
-	jp StdBattleTextbox
+	call StdBattleTextbox
+	farjump UpdateWeatherForms
 
 .failed
 	call AnimateFailedMove
@@ -7197,18 +7214,6 @@ _CheckBattleScene:
 	pop hl
 	ret
 
-CompareMove:
-	; checks if the move ID in a matches the move in bc
-	push hl
-	call GetMoveIndexFromID
-	ld a, h
-	cp b
-	ld a, l
-	pop hl
-	ret nz
-	cp c
-	ret
-
 CheckMoveInList:
 	; checks if the move ID in a belongs to a list of moves in hl
 	push bc
@@ -7223,3 +7228,698 @@ CheckMoveInList:
 	pop de
 	pop bc
 	ret
+
+BattleCommand_stab:
+; STAB = Same Type Attack Bonus
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld bc, STRUGGLE
+	call CompareMove
+	ret z
+
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go ; Who Attacks and who Defends
+
+	ld hl, wEnemyMonType1
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wBattleMonType1
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+
+.go
+	call GetCurrentMoveType
+	ld [wCurType], a
+
+	push hl
+	push de
+	push bc
+	farcall DoWeatherModifiers
+	pop bc
+	pop de
+	pop hl
+
+	push de
+	push bc
+	farcall DoBadgeTypeBoosts
+	pop bc
+	pop de
+
+	push de
+	push bc
+	farcall DoOrbTypeDamageBoosts
+	pop bc
+	pop de
+
+	ld a, [wCurType]
+	cp b
+	jr z, .stab
+	cp c
+	jr z, .stab
+
+	jr .SkipStab
+
+.stab
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+
+	ld b, h
+	ld c, l
+	srl b
+	rr c
+	add hl, bc
+
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+
+	ld hl, wTypeModifier
+	set 7, [hl]
+
+.SkipStab:
+	call GetCurrentMoveType2
+	ld b, a
+	ld hl, TypeMatchups
+
+.TypesLoop:
+	ld a, [hli]
+
+	cp -1
+	jr z, .end
+
+	; foresight
+	cp -2
+	jr nz, .SkipForesightCheck
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .end
+
+	jr .TypesLoop
+
+.SkipForesightCheck:
+	cp b
+	jr nz, .SkipType
+	ld a, [hl]
+	cp d
+	jr z, .GotMatchup
+	cp e
+	jr z, .GotMatchup
+	jr .SkipType
+
+.GotMatchup:
+	push hl
+	push bc
+	inc hl
+	ld a, [wTypeModifier]
+	and %10000000
+	ld b, a
+; If the target is immune to the move, treat it as a miss and calculate the damage as 0
+	ld a, [hl]
+	and a
+	jr nz, .NotImmune
+	inc a
+	ld [wAttackMissed], a
+	xor a
+.NotImmune:
+	ldh [hMultiplier], a
+	add b
+	ld [wTypeModifier], a
+
+	xor a
+	ldh [hMultiplicand + 0], a
+
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hld]
+	ldh [hMultiplicand + 2], a
+
+	call Multiply
+
+	ldh a, [hProduct + 1]
+	ld b, a
+	ldh a, [hProduct + 2]
+	or b
+	ld b, a
+	ldh a, [hProduct + 3]
+	or b
+	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
+
+; Take the product and divide it by 10.
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	or b
+	jr nz, .ok
+
+	ld a, 1
+	ldh [hMultiplicand + 2], a
+
+.ok
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+	pop bc
+	pop hl
+
+.SkipType:
+	inc hl
+	inc hl
+	jr .TypesLoop
+
+.end
+	farcall BattleCheckTypeMatchup
+	ld a, [wTypeMatchup]
+	ld b, a
+	ld a, [wTypeModifier]
+	and %10000000
+	or b
+	ld [wTypeModifier], a
+	ret
+
+GetCurrentMoveType2:
+	push hl
+	call GetCurrentMoveType
+	pop hl
+	ret
+
+GetCurrentMoveType:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_WEATHER_BALL
+	jr z, .weather_ball_type
+	cp EFFECT_JUDGMENT
+	jr z, .judgment_type
+
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	ret
+
+.weather_ball_type
+	push bc
+	ld a, [wBattleWeather]
+	cp WEATHER_NONE
+	ld b, NORMAL
+	jr .got_weather_type
+	cp WEATHER_SUN
+	ld b, FIRE
+	jr .got_weather_type
+	cp WEATHER_RAIN
+	ld b, WATER
+	jr .got_weather_type
+	cp WEATHER_HAIL
+	ld b, ICE
+	jr .got_weather_type
+; sandstorm
+	ld b, ROCK
+
+.got_weather_type
+	ld a, b
+	pop bc
+	ret
+
+.judgment_type
+	push bc
+	push de
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_item
+	ld hl, wEnemyMonItem
+.got_item
+	ld a, [hl]
+	ld b, BANK(PlateItems)
+	ld hl, PlateItems
+	ld de, 2
+	call IsInFarArray
+	pop de
+	pop bc
+	jr nc, .no_plate
+	inc hl
+	ld a, BANK(PlateItems)
+	call GetFarByte
+	ret
+
+.no_plate
+	xor a
+
+SECTION "Effect Commands 2", ROMX
+
+UpdateArceusForm:
+	farcall BattleCommand_switchturn
+	call .Update
+	farcall BattleCommand_switchturn
+; update player form
+
+; fallthrough
+.Update:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wBattleMonType
+	jr z, .got_species
+	ld hl, wEnemyMonSpecies
+	ld de, wEnemyMonType
+.got_species
+	ld a, [hli]
+	push hl
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(ARCEUS)
+	jr nz, .miss
+	ld a, l
+	cp LOW(ARCEUS)
+	jr nz, .miss
+	pop hl
+	ld a, [hl]
+	push de
+	ld hl, PlateItems
+	ld de, 2
+	call IsInArray
+	pop de
+	ret nc
+; is Arceus, is holding a Plate
+	inc hl
+	ld a, [hl] ; target type
+	ld [de], a
+	inc de
+	ld [de], a
+	ret
+
+.miss
+	pop hl
+	ret
+
+INCLUDE "data/items/plate_items.asm"
+
+UpdateWeatherForms:
+; update enemy form
+	call BattleCommand_switchturn
+	call .Update
+	call BattleCommand_switchturn
+; update player form
+
+; fallthrough
+.Update:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .got_species
+	ld hl, wEnemyMonSpecies
+.got_species
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	call GetBaseFormNumber
+	ld a, h
+	cp HIGH(CASTFORM)
+	jr nz, .check_cherrim
+	ld a, l
+	cp LOW(CASTFORM)
+	jr nz, .check_cherrim
+; is Castform
+	ld a, [wBattleWeather]
+	and a
+	jr z, .castform_revert
+	cp WEATHER_SANDSTORM
+	jr z, .castform_revert
+	cp WEATHER_RAIN
+	jr z, .castform_rain
+	cp WEATHER_SUN
+	jr z, .castform_sun
+; hail
+	ld hl, CASTFORM_SW
+	lb bc, ICE, ICE ; type 1 / type 2
+	jr .update
+
+.castform_rain
+	ld hl, CASTFORM_RN
+	lb bc, WATER, WATER ; type 1 / type 2
+	jr .update
+
+.castform_sun
+	ld hl, CASTFORM_SN
+	lb bc, FIRE, FIRE ; type 1 / type 2
+	jr .update
+
+.castform_revert
+	ld hl, CASTFORM
+	lb bc, NORMAL, NORMAL ; type 1 / type 2
+	jr .update
+
+.check_cherrim
+	ld a, h
+	cp HIGH(CHERRIM)
+	ret nz
+	ld a, l
+	cp LOW(CHERRIM)
+	ret nz
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .cherrim_sunny
+; revert
+	ld hl, CHERRIM
+	lb bc, GRASS, GRASS ; type 1 / type 2
+	jr .update
+
+.cherrim_sunny
+	ld hl, CHERRIM_S
+	lb bc, GRASS, GRASS ; type 1 / type 2
+
+; fallthrough
+
+.update
+	call .sanity_check
+	ret nc
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld de, wBattleMonType
+	jr z, .set_species
+	ld hl, wEnemyMonSpecies
+	ld de, wEnemyMonType
+.set_species
+	pop af
+	ld [hl], a
+	push af
+	ld a, b
+	ld [de], a
+	inc de
+	ld a, c
+	ld [de], a
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wTempBattleMonSpecies
+	jr z, .got_tempmon
+	ld hl, wTempEnemyMonSpecies
+.got_tempmon
+	pop af
+	ld [hl], a
+; play animation
+	farcall _CheckBattleScene
+	jr c, .mimic_anims
+	xor a
+	ld [wNumHits], a
+	ld hl, ANIM_REFRESH_SPRITE
+	call GetMoveIDFromIndex
+	farcall LoadAnim
+	jr .after_anim
+
+.mimic_anims
+	farcall BattleCommand_movedelay
+	farcall BattleCommand_raisesubnoanim
+	farcall BattleAnimCmd_ReloadPal
+.after_anim
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_SUBSTITUTE, [hl]
+	jr z, .no_sub
+	ld hl, SUBSTITUTE
+	call GetMoveIDFromIndex
+	farcall LoadAnim
+.no_sub
+	ld hl, ChangedFormBattleText
+	jp StdBattleTextbox
+
+.sanity_check
+; don't change form if you won't actually change
+	push de
+	push hl
+	ld d, h
+	ld e, l
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	jr z, .sc_got_species
+	ld hl, wEnemyMonSpecies
+.sc_got_species
+	ld a, [hl]
+	call GetPokemonIndexFromID
+	ld a, h
+	cp d
+	jr nz, .diff
+	ld a, l
+	cp e
+	jr nz, .diff
+	pop hl
+	pop de
+	and a
+	ret
+
+.diff
+	pop hl
+	pop de
+	scf
+	ret
+
+BattleCommand_camouflage:
+	ld hl, wBattleMonType
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonType
+.ok
+	push hl
+	call GetEnvironmentType
+	pop hl
+	ld [hli], a
+	ld [hl], a
+	ld [wNamedObjectIndexBuffer], a
+	farcall GetTypeName
+	ld hl, CamouflageText
+	jp StdBattleTextbox
+
+BattleCommand_naturepower:
+	ld c, 45
+	call DelayFrames
+	call GetEnvironmentType
+	ld hl, NaturePowerMoves
+	ld de, 3
+	call IsInArray
+	ret nc
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetMoveIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	push af
+	call GetMoveName
+	ld hl, NaturePowerText
+	call StdBattleTextbox
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+	farcall UpdateMoveData
+	farjump ResetTurn
+
+GetEnvironmentType:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .water
+	cp PLAYER_SURF_PIKA
+	jr z, .water
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr nz, .tileset
+	ld a, [wEnvironment]
+	cp TOWN
+	jr z, .grass
+	cp ROUTE
+	jr z, .grass
+.tileset
+	ld a, [wMapTileset]
+	ld l, a
+	ld h, 0
+	ld bc, NaturePowerTilesets
+	add hl, bc
+	ld a, [hl]
+	ret
+
+.grass
+	ld a, GRASS
+	ret
+
+.water
+	ld a, WATER
+	ret
+
+INCLUDE "data/moves/nature_power_tilesets.asm"
+
+BattleCommand_endeavor:
+	ld hl, wBattleMonHP
+	ld de, wEnemyMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonHP
+	ld de, wBattleMonHP
+.ok
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	ld c, a
+
+	ld a, h
+	cp b
+	jr c, .do_effect
+	ld a, l
+	cp c
+	jr nc, .fail
+.do_effect
+	ld a, b
+	sub h
+	ld h, a
+	ld a, c
+	sbc l
+	ld [wCurDamage + 1], a
+	ld a, h
+	ld [wCurDamage], a
+	ret
+
+.fail
+	ld a, 1
+	ld [wAttackMissed], a
+	ret
+
+BattleCommand_brine:
+	push bc
+	ld hl, wEnemyMonMaxHP + 1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wBattleMonMaxHP + 1
+.go
+	ld a, [hld]
+	ld c, a
+	ld a, [hld]
+	ld b, a
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	dec hl
+	ld a, h
+	cp b
+	jr c, .ok
+	ld a, l
+	cp c
+	jr nc, .no
+.ok
+	pop bc
+	ld a, d
+	add a
+	ld d, a
+	ret
+
+.no
+	pop bc
+	ret
+
+BattleCommand_trick:
+	ld a, 1
+	ld [wAttackMissed], a
+	ld de, wBattleMonItem
+	farcall CheckStealableItem
+	ret c
+	ld de, wEnemyMonItem
+	farcall CheckStealableItem
+	ret c
+	ld a, [wBattleMonItem]
+	and a
+	jr nz, .ok
+	ld a, [wEnemyMonItem]
+	and a
+	ret z
+.ok
+	xor a
+	ld [wAttackMissed], a
+	ld hl, wBattleMonItem
+	ld de, wEnemyMonItem
+	ld b, [hl]
+	ld a, [de]
+	ld [hl], a
+	ld a, b
+	ld [de], a
+	ld a, MON_ITEM
+	call BattlePartyAttr
+	push hl
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .wild_battle
+	ld a, MON_ITEM
+	call OTPartyAttr
+	pop de
+	ld b, [hl]
+	ld a, [de]
+	ld [hl], a
+	ld a, b
+	ld [de], a
+	jr .text
+
+.wild_battle
+	pop de
+	ld hl, wBattleMonItem
+	ld a, [hl]
+	ld [de], a
+
+.text
+	ld hl, TrickText
+	call StdBattleTextbox
+	ld hl, wBattleMonItem
+	ld de, wEnemyMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .gotturn
+	ld hl, wEnemyMonItem
+	ld de, wBattleMonItem
+.gotturn
+	ld a, [hl]
+	and a
+	jr z, .skip_user_item
+
+	ld [wNamedObjectIndexBuffer], a
+	push de
+	call GetItemName
+	ld hl, UserGotItemText
+	call StdBattleTextbox
+	pop de
+
+.skip_user_item
+	ld a, [de]
+	and a
+	ret z
+
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld hl, TargetGotItemText
+	jp StdBattleTextbox

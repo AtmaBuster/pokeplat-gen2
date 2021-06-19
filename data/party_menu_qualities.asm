@@ -30,6 +30,7 @@ PartyMenuQualityPointers:
 	dw .Gender   ; PARTYMENUACTION_GIVE_MON_FEMALE
 	dw .Default  ; PARTYMENUACTION_GIVE_ITEM
 	dw .Mobile   ; PARTYMENUACTION_MOBILE
+	dw .Default  ; PARTYMENUACTION_CHANGE_FORM
 
 .Default:  partymenuqualities NICKNAMES, HP_BAR, HP_DIGITS, LEVEL, STATUS
 .TMHM:     partymenuqualities NICKNAMES, TMHM_COMPAT,       LEVEL, STATUS

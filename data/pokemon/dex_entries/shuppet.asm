@@ -1,5 +1,4 @@
 	db "PUPPET@" ; species name
-	dw 200, 51 ; height, weight
 
 	db   "It uses its horn"
 	next "to feed on envy"

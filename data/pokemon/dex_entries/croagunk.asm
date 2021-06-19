@@ -1,5 +1,4 @@
 	db "TOXIC MOUTH@" ; species name
-	dw 204, 507 ; height, weight
 
 	db   "The poisonous"
 	next "fluid squeezed"

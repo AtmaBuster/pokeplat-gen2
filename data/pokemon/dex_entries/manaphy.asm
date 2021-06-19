@@ -1,5 +1,4 @@
 	db "SEAFARING@" ; species name
-	dw 100, 31 ; height, weight
 
 	db   "It starts life"
 	next "with a wondrous"

@@ -1,5 +1,4 @@
 	db "BUD@" ; species name
-	dw 008, 26 ; height, weight
 
 	db   "When it feels the"
 	next "sun's warm touch,"

@@ -1,5 +1,4 @@
 	db "SLACKER@" ; species name
-	dw 207, 529 ; height, weight
 
 	db   "The way this"
 	next "#MON lolls"

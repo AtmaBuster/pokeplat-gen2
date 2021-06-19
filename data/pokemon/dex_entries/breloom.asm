@@ -1,5 +1,4 @@
 	db "MUSHROOM@" ; species name
-	dw 311, 864 ; height, weight
 
 	db   "It scatters poison"
 	next "spores and throws"

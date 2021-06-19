@@ -1359,6 +1359,20 @@ Spikes:
 	spikes
 	endmove
 
+ToxicSpikes:
+	checkobedience
+	usedmovetext
+	doturn
+	toxicspikes
+	endmove
+
+StealthRock:
+	checkobedience
+	usedmovetext
+	doturn
+	stealthrock
+	endmove
+
 Foresight:
 	checkobedience
 	usedmovetext
@@ -2295,4 +2309,156 @@ FlareBlitz:
 	checkfaint
 	buildopponentrage
 	burntarget
+	endmove
+
+WeightDamage:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	weightdamage
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+NaturePower:
+	checkobedience
+	usedmovetext
+	doturn
+	naturepower
+	endmove
+
+Camouflage:
+	checkobedience
+	usedmovetext
+	doturn
+	camouflage
+	endmove
+
+Memento:
+	checkobedience
+	usedmovetext
+	doturn
+	moveanim
+	loweroppstat $10 | ATTACK
+	loweroppstat $10 | SP_ATTACK
+	kouser
+
+Endeavor:
+	checkobedience
+	usedmovetext
+	doturn
+	endeavor
+	checkhit
+	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+HammerArm:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	forcelowerstat SPEED
+	endmove
+
+CloseCombat:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	forcelowerstat DEFENSE
+	forcelowerstat SP_DEFENSE
+	endmove
+
+CrushGrip:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	switchturn
+	lifepower
+	switchturn
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Brine:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	brine
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Trick:
+	checkobedience
+	usedmovetext
+	doturn
+	trick
+	failuretext
 	endmove

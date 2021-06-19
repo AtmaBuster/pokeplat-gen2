@@ -1,4 +1,4 @@
-AltFormBaseIndex:
+AltFormBaseIndex::
 	dw PICHU     ; PICHU_B
 	dw DEOXYS    ; DEOXYS_A
 	dw DEOXYS    ; DEOXYS_D
@@ -16,3 +16,7 @@ AltFormBaseIndex:
 	dw ROTOM     ; ROTOM_WTR
 	dw GIRATINA  ; GIRATINA_O
 	dw SHAYMIN   ; SHAYMIN_S
+	dw CASTFORM  ; CASTFORM_RN
+	dw CASTFORM  ; CASTFORM_SN
+	dw CASTFORM  ; CASTFORM_SW
+	dw CHERRIM   ; CHERRIM_S

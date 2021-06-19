@@ -1,5 +1,4 @@
 	db "FROST TREE@" ; species name
-	dw 703, 2987 ; height, weight
 
 	db   "It lives a quiet"
 	next "life on mountains"

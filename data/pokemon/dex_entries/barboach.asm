@@ -1,5 +1,4 @@
 	db "WHISKERS@" ; species name
-	dw 104, 42 ; height, weight
 
 	db   "Its slimy body is"
 	next "hard to grasp. In"

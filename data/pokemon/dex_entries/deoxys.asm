@@ -1,5 +1,4 @@
 	db "DNA@" ; species name
-	dw 507, 1340 ; height, weight
 
 	db   "DNA from a space"
 	next "virus mutated and"

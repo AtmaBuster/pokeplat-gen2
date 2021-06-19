@@ -1,5 +1,4 @@
 	db "FOX@" ; species name
-	dw 170, 170 ; height, weight
 
 	db   "It hides in the"
 	next "care of its mother"

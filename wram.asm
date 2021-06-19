@@ -401,7 +401,7 @@ wBattleMon:: battle_struct wBattleMon ; c62c
 	ds 2
 
 wWildMon:: db ; c64e
-	ds 1
+wArceusPalNum:: db
 wEnemyTrainerItem1:: db ; c650
 wEnemyTrainerItem2:: db ; c651
 wEnemyTrainerBaseReward:: db ; c652
@@ -493,14 +493,14 @@ wPlayerSubStatus5:: ; c66c
 
 wPlayerSubStatus6::
 ; bit
-; 7
-; 6
-; 5
-; 4
-; 3
-; 2
-; 1
-; 0
+; 7 uproar
+; 6 stockpile.1
+; 5 stockpile.0
+; 4 taunt
+; 3 gastro acid
+; 2 aqua ring
+; 1 mud sport
+; 0 water sport
 	db
 
 wEnemySubStatus1:: ; c66d
@@ -671,12 +671,11 @@ wEnemyScreens:: ; c700
 wPlayerSafeguardCount:: db ; c701
 wPlayerLightScreenCount:: db ; c702
 wPlayerReflectCount:: db ; c703
-	ds 1
 
 wEnemySafeguardCount:: db ; c705
 wEnemyLightScreenCount:: db ; c706
 wEnemyReflectCount:: db ; c707
-	ds 2
+wTypeMatchupBuffer:: ds 3
 
 wBattleWeather:: ; c70a
 ; 00 normal
@@ -754,6 +753,9 @@ wSomeoneIsRampaging:: db ; c73b
 
 wPlayerJustGotFrozen:: db ; c73c
 wEnemyJustGotFrozen:: db ; c73d
+
+wPlayerPseudoAbilityFlags:: db
+wEnemyPseudoAbilityFlags:: db
 wBattleEnd::
 
 NEXTU ; c608
@@ -2228,6 +2230,9 @@ wEvolutionOldSpecies:: db ; d1ea
 wEvolutionNewSpecies:: db ; d1eb
 wEvolutionPicOffset:: db ; d1ec
 wEvolutionCanceled:: db ; d1ed
+wEvolutionDataBankBackup:: db
+wEvolutionDataAddrBackup:: dw
+wEvolutionMethodBackup:: db
 
 NEXTU ; d1ea
 ; mobile
@@ -2253,7 +2258,7 @@ ENDU ; d1f7
 wOtherTrainerType:: db ; d1f7
 wTrainerGroupBank:: db ; d1f8
 
-	ds 1
+wGainedEXPFlags:: flag_array PARTY_LENGTH
 
 wLinkBattleRNs:: ds 10 ; d1fa
 

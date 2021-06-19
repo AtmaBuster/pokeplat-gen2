@@ -1,6 +1,6 @@
-SECTION "Evolutions and Attacks 4", ROMX
+SECTION "Evolutions and Attacks 3", ROMX
 
-EvosAttacksPointers4::
+EvosAttacksPointers3::
 	dw TreeckoEvosAttacks
 	dw GrovyleEvosAttacks
 	dw SceptileEvosAttacks
@@ -1897,8 +1897,7 @@ ArmaldoEvosAttacks:
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
-	;dbbw EVOLVE_TRADE, PRISM_SCALE, MILOTIC
-	dbbw EVOLVE_TRADE, POTION, MILOTIC
+	dbbw EVOLVE_TRADE, PRISM_SCALE, MILOTIC
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
 	dbw 15, TACKLE
@@ -2203,8 +2202,8 @@ WalreinEvosAttacks:
 	db 0 ; no more level-up moves
 
 ClamperlEvosAttacks:
-	;dbbw EVOLVE_TRADE, DEEPSEATOOTH, HUNTAIL
-	;dbbw EVOLVE_TRADE, DEEPSEASCALE, GOREBYSS
+	dbbw EVOLVE_TRADE, DEEPSEATOOTH, HUNTAIL
+	dbbw EVOLVE_TRADE, DEEPSEASCALE, GOREBYSS
 	db 0 ; no more evolutions
 	dbw 1, WATER_GUN
 	dbw 1, CLAMP

@@ -1,5 +1,4 @@
 	db "FACE@" ; species name
-	dw 411, 5655 ; height, weight
 
 	db   "It can instantly"
 	next "freeze moisture in"

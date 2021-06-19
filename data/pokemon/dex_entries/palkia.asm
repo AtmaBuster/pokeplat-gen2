@@ -1,5 +1,4 @@
 	db "SPATIAL@" ; species name
-	dw 1309, 7408 ; height, weight
 
 	db   "Its total control"
 	next "of space enables"

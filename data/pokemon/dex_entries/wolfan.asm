@@ -1,5 +1,4 @@
 	db "HUNTER@" ; species name
-	dw 203, 750 ; height, weight
 
 	db   "The fur that"
 	next "surrounds its body"
