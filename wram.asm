@@ -2117,7 +2117,7 @@ wSpriteFlags:: db ; d13e
 
 wHandlePlayerStep:: db ; d13f
 
-	ds 1
+wSpinning:: db
 
 wPartyMenuActionText:: db ; d141
 
