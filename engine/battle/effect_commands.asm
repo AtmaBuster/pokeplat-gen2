@@ -1030,6 +1030,21 @@ BattleCommand_doturn:
 	and a
 	jp nz, EndMoveEffect
 
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and CATEGORY_MASK
+	cp STATUS
+	jr nz, .not_status_move
+
+	inc de
+	inc de
+	inc de
+	ld a, [de]
+	dec de
+	bit SUBSTATUS_TAUNT, a
+	jp nz, .taunt_fail
+
+.not_status_move
 	; SubStatus5
 	inc de
 	inc de
@@ -1129,6 +1144,12 @@ BattleCommand_doturn:
 	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
 	db -1
+
+.taunt_fail
+	ld hl, ButItFailedText
+	ld de, ItFailedText
+	call StdBattleTextbox
+	jp EndMoveEffect
 
 CheckMimicUsed:
 	ldh a, [hBattleTurn]
@@ -1475,10 +1496,10 @@ BattleCommand_checkhit:
 	; Perfect-accuracy moves
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_ALWAYS_HIT
-	ret z
-	cp EFFECT_VITAL_THROW
-	ret z
+	ld hl, AlwaysHitEffects
+	ld de, 1
+	call IsInArray
+	ret c
 
 	call .StatModifiers
 
@@ -1746,6 +1767,8 @@ BattleCommand_checkhit:
 	ret
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
+
+INCLUDE "data/moves/always_hit.asm"
 
 BattleCommand_effectchance:
 ; effectchance
@@ -7923,3 +7946,36 @@ BattleCommand_trick:
 	call GetItemName
 	ld hl, TargetGotItemText
 	jp StdBattleTextbox
+
+BattleCommand_taunt:
+	ret
+
+BattleCommand_trumpcard:
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurMoveNum]
+	ld hl, wBattleMonPP
+	jr z, .ok
+	ld a, [wCurEnemyMoveNum]
+	ld hl, wEnemyMonPP
+.ok
+	ld c, a
+	ld b, 0
+	add hl, bc
+	pop bc
+	ld a, [hl]
+	cp 4
+	ld d, 40
+	ret nc
+	cp 3
+	ld d, 50
+	ret nc
+	cp 2
+	ld d, 60
+	ret nc
+	cp 1
+	ld d, 80
+	ret nc
+	ld d, 200
+	ret

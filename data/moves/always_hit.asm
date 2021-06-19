@@ -1,0 +1,5 @@
+AlwaysHitEffects:
+	db EFFECT_ALWAYS_HIT
+	db EFFECT_VITAL_THROW
+	db EFFECT_TRUMP_CARD
+	db -1

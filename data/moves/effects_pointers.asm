@@ -173,7 +173,7 @@ MoveEffectsPointers:
 	dw Splash                        ; SMELLINGSALT
 	dw NaturePower                   ; NATURE_POWER
 	dw Splash                        ; CHARGE
-	dw Splash                        ; TAUNT
+	dw Taunt                         ; TAUNT
 	dw Trick                         ; TRICK
 	dw Splash                        ; UNUSED_AE
 	dw Splash                        ; WISH
@@ -226,7 +226,7 @@ MoveEffectsPointers:
 	dw Splash                        ; EMBARGO
 	dw Splash                        ; FLING
 	dw Splash                        ; PSYCHO_SHIFT
-	dw Splash                        ; TRUMP_CARD
+	dw TrumpCard                     ; TRUMP_CARD
 	dw Splash                        ; HEAL_BLOCK
 	dw Splash                        ; WRING_OUT
 	dw Splash                        ; POWER_TRICK

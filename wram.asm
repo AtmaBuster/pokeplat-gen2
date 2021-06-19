@@ -536,6 +536,8 @@ wPlayerHealBlockCount:: db
 wPlayerLuckyChantCount:: db
 wPlayerMagnetRiseCount:: db
 wPlayerLastResortFlags:: db
+wPlayerTauntCount:: db
+wPlayerUproarCount:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -551,6 +553,8 @@ wEnemyHealBlockCount:: db
 wEnemyLuckyChantCount:: db
 wEnemyMagnetRiseCount:: db
 wEnemyLastResortFlags:: db
+wEnemyTauntCount:: db
+wEnemyUproarCount:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

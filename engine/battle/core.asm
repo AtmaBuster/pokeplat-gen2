@@ -295,7 +295,7 @@ HandleBetweenTurnEffects:
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
-	jp HandleEncore
+	jp HandleTemporaryEffects
 
 CheckFaint_PlayerThenEnemy:
 	call HasPlayerFainted
@@ -693,23 +693,23 @@ ParsePlayerAction:
 	xor a
 	ret
 
-HandleEncore:
+HandleTemporaryEffects:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
-	call .do_player
-	jr .do_enemy
+	jr z, HandleTemporaryEffects_2
+	call HandleTemporaryEffects_Player
+	jr HandleTemporaryEffects_Enemy
 
-.player_1
-	call .do_enemy
-.do_player
+HandleTemporaryEffects_2:
+	call HandleTemporaryEffects_Enemy
+HandleTemporaryEffects_Player:
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	ret z
 	ld a, [wPlayerEncoreCount]
 	dec a
 	ld [wPlayerEncoreCount], a
-	jr z, .end_player_encore
+	jr z, .end_encore
 	ld hl, wBattleMonPP
 	ld a, [wCurMoveNum]
 	ld c, a
@@ -719,21 +719,21 @@ HandleEncore:
 	and PP_MASK
 	ret nz
 
-.end_player_encore
+.end_encore
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_ENCORED, [hl]
 	call SetEnemyTurn
 	ld hl, BattleText_TargetsEncoreEnded
 	jp StdBattleTextbox
 
-.do_enemy
+HandleTemporaryEffects_Enemy:
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	ret z
 	ld a, [wEnemyEncoreCount]
 	dec a
 	ld [wEnemyEncoreCount], a
-	jr z, .end_enemy_encore
+	jr z, .end_encore
 	ld hl, wEnemyMonPP
 	ld a, [wCurEnemyMoveNum]
 	ld c, a
@@ -743,7 +743,7 @@ HandleEncore:
 	and PP_MASK
 	ret nz
 
-.end_enemy_encore
+.end_encore
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_ENCORED, [hl]
 	call SetPlayerTurn

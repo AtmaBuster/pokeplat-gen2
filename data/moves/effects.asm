@@ -2462,3 +2462,32 @@ Trick:
 	trick
 	failuretext
 	endmove
+
+Taunt:
+	checkobedience
+	usedmovetext
+	doturn
+	taunt
+	failuretext
+	endmove
+
+TrumpCard:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	trumpcard
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
