@@ -111,7 +111,7 @@ MoveEffectsPointers:
 	dw Nightmare                     ; NIGHTMARE
 	dw FlameWheel                    ; FLAME_WHEEL
 	dw Curse                         ; CURSE
-	dw Splash                        ; STRUGGLE
+	dw Splash                        ; UNUSED_6E
 	dw Protect                       ; PROTECT
 	dw Spikes                        ; SPIKES
 	dw Foresight                     ; FORESIGHT
@@ -170,7 +170,7 @@ MoveEffectsPointers:
 	dw Memento                       ; MEMENTO
 	dw Facade                        ; FACADE
 	dw Splash                        ; FOCUS_PUNCH
-	dw Splash                        ; SMELLINGSALT
+	dw SmellingSalt                  ; SMELLINGSALT
 	dw NaturePower                   ; NATURE_POWER
 	dw Splash                        ; CHARGE
 	dw Taunt                         ; TAUNT
@@ -190,7 +190,7 @@ MoveEffectsPointers:
 	dw Splash                        ; UNUSED_BA
 	dw Splash                        ; UNUSED_BB
 	dw Splash                        ; IMPRISON
-	dw Splash                        ; REFRESH
+	dw Refresh                       ; REFRESH
 	dw Splash                        ; GRUDGE
 	dw Splash                        ; SNATCH
 	dw Splash                        ; SECRET_POWER
@@ -208,7 +208,7 @@ MoveEffectsPointers:
 	dw Splash                        ; ROOST
 	dw Splash                        ; GRAVITY
 	dw Splash                        ; MIRACLE_EYE
-	dw Splash                        ; WAKE_UP_SLAP
+	dw WakeUpSlap                    ; WAKE_UP_SLAP
 	dw HammerArm                     ; HAMMER_ARM
 	dw Splash                        ; GYRO_BALL
 	dw Splash                        ; HEALING_WISH

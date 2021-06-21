@@ -110,7 +110,7 @@
 	const EFFECT_NIGHTMARE         ; 6b
 	const EFFECT_FLAME_WHEEL       ; 6c
 	const EFFECT_CURSE             ; 6d
-	const EFFECT_STRUGGLE          ; 6e
+	const EFFECT_UNUSED_6E         ; 6e
 	const EFFECT_PROTECT           ; 6f
 	const EFFECT_SPIKES            ; 70
 	const EFFECT_FORESIGHT         ; 71

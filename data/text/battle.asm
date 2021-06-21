@@ -911,7 +911,7 @@ NothingHappenedText:
 	line "happened."
 	prompt
 
-ButItFailedText:
+ButItFailedText::
 	text "But it failed!"
 	prompt
 
@@ -1251,4 +1251,10 @@ FellForTauntText:
 BattleText_TauntWoreOff:
 	text "<USER>'s"
 	line "TAUNT wore off!"
+	prompt
+
+StatusHealText:
+	text "<USER>'s"
+	line "status returned"
+	cont "to normal!"
 	prompt

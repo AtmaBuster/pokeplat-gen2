@@ -171,6 +171,9 @@ BattleCommandPointers:
 	battlecmd trick                   ; 86
 	battlecmd taunt                   ; 87
 	battlecmd trumpcard               ; 88
+	battlecmd refresh                 ; 89
+	battlecmd wakeupslap              ; 8a
+	battlecmd smellingsalt            ; 8b
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

@@ -2491,3 +2491,52 @@ TrumpCard:
 	buildopponentrage
 	heldflinch
 	endmove
+
+Refresh:
+	checkobedience
+	usedmovetext
+	doturn
+	refresh
+	endmove
+
+WakeUpSlap:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	wakeupslap
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+SmellingSalt:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	smellingsalt
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove

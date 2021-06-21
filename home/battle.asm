@@ -165,6 +165,9 @@ BattleTextbox::
 	pop hl
 	jp PrintTextboxText
 
+PrintButItFailed::
+	ld hl, ButItFailedText
+
 StdBattleTextbox::
 ; Open a textbox and print battle text at 20:hl.
 

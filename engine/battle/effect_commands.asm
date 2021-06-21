@@ -1146,8 +1146,7 @@ BattleCommand_doturn:
 	db -1
 
 .taunt_fail
-	ld hl, ButItFailedText
-	call StdBattleTextbox
+	call PrintButItFailed
 	jp EndMoveEffect
 
 CheckMimicUsed:
@@ -5644,9 +5643,7 @@ BattleCommand_fakeout:
 	ld a, [hl]
 	cp 1
 	ret z
-	ld hl, ButItFailedText
-	ld de, ItFailedText
-	call StdBattleTextbox
+	call PrintButItFailed
 	jp EndMoveEffect
 
 BattleCommand_flinchtarget:
@@ -6553,10 +6550,9 @@ TryPrintButItFailed:
 
 	; fallthrough
 
-PrintButItFailed:
+_PrintButItFailed:
 ; 'but it failed!'
-	ld hl, ButItFailedText
-	jp StdBattleTextbox
+	jp PrintButItFailed
 
 FailMove:
 	call AnimateFailedMove
@@ -7950,7 +7946,7 @@ BattleCommand_taunt:
 	ld a, BATTLE_VARS_SUBSTATUS6_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_TAUNT, [hl]
-	jr nz, .fail
+	jp nz, PrintButItFailed
 	set SUBSTATUS_TAUNT, [hl]
 	ld hl, wEnemyTauntCount
 	ldh a, [hBattleTurn]
@@ -7963,10 +7959,6 @@ BattleCommand_taunt:
 	add 3 ; [3..6]
 	ld [hl], a
 	ld hl, FellForTauntText
-	jp StdBattleTextbox
-
-.fail
-	ld hl, ButItFailedText
 	jp StdBattleTextbox
 
 BattleCommand_trumpcard:
@@ -7998,3 +7990,50 @@ BattleCommand_trumpcard:
 	ret nc
 	ld d, 200
 	ret
+
+BattleCommand_refresh:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	and (1 << PSN) | (1 << BRN) | (1 << PAR)
+	jp z, PrintButItFailed
+	xor a
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	res SUBSTATUS_TOXIC, [hl]
+	ld hl, StatusHealText
+	jp StdBattleTextbox
+
+BattleCommand_wakeupslap:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld a, [hl]
+	and SLP
+	ret z
+	xor a
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_NIGHTMARE, [hl]
+	ld a, d
+	add a
+	ld d, a
+	call BattleCommand_switchturn
+	ld hl, StatusHealText
+	call StdBattleTextbox
+	jp BattleCommand_switchturn
+
+BattleCommand_smellingsalt:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	bit PAR, [hl]
+	ret z
+	ld a, d
+	add a
+	ld d, a
+	res PAR, [hl]
+	call BattleCommand_switchturn
+	ld hl, StatusHealText
+	call StdBattleTextbox
+	jp BattleCommand_switchturn
