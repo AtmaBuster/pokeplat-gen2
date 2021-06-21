@@ -705,7 +705,7 @@ HandleTemporaryEffects_2:
 HandleTemporaryEffects_Player:
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
-	ret z
+	jr z, .check_taunt
 	ld a, [wPlayerEncoreCount]
 	dec a
 	ld [wPlayerEncoreCount], a
@@ -717,19 +717,31 @@ HandleTemporaryEffects_Player:
 	add hl, bc
 	ld a, [hl]
 	and PP_MASK
-	ret nz
+	jr nz, .check_taunt
 
 .end_encore
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_ENCORED, [hl]
 	call SetEnemyTurn
 	ld hl, BattleText_TargetsEncoreEnded
-	jp StdBattleTextbox
+	call StdBattleTextbox
+.check_taunt
+	ld hl, wPlayerTauntCount
+	and a
+	jr z, .not_taunt
+	dec [hl]
+	jr nz, .not_taunt
+	ld hl, wPlayerSubStatus6
+	res SUBSTATUS_TAUNT, [hl]
+	ld hl, BattleText_TauntWoreOff
+	call StdBattleTextbox
+.not_taunt
+	ret
 
 HandleTemporaryEffects_Enemy:
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
-	ret z
+	jr z, .check_taunt
 	ld a, [wEnemyEncoreCount]
 	dec a
 	ld [wEnemyEncoreCount], a
@@ -741,14 +753,26 @@ HandleTemporaryEffects_Enemy:
 	add hl, bc
 	ld a, [hl]
 	and PP_MASK
-	ret nz
+	jr nz, .check_taunt
 
 .end_encore
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_ENCORED, [hl]
 	call SetPlayerTurn
 	ld hl, BattleText_TargetsEncoreEnded
-	jp StdBattleTextbox
+	call StdBattleTextbox
+.check_taunt
+	ld hl, wEnemyTauntCount
+	and a
+	jr z, .not_taunt
+	dec [hl]
+	jr nz, .not_taunt
+	ld hl, wEnemySubStatus6
+	res SUBSTATUS_TAUNT, [hl]
+	ld hl, BattleText_TauntWoreOff
+	call StdBattleTextbox
+.not_taunt
+	ret
 
 TryEnemyFlee:
 	ld a, [wBattleMode]
@@ -3679,7 +3703,7 @@ NewEnemyMonStatus:
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
 	ld hl, wEnemySubStatus1
-rept 4
+rept 5
 	ld [hli], a
 endr
 	ld [hl], a
@@ -4160,7 +4184,7 @@ NewBattleMonStatus:
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
 	ld hl, wPlayerSubStatus1
-rept 4
+rept 5
 	ld [hli], a
 endr
 	ld [hl], a
@@ -6049,10 +6073,18 @@ ParseEnemyAction:
 	ld a, [wEnemyDisabledMove]
 	cp [hl]
 	jr z, .disabled
+	ld a, [hl]
+	call IsStatusMove
+	jr nc, .not_status
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_TAUNT, a
+	jr nz, .taunt
+.not_status
 	ld a, [de]
 	and PP_MASK
 	jr nz, .enough_pp
 
+.taunt
 .disabled
 	inc hl
 	inc de
@@ -6081,6 +6113,14 @@ ParseEnemyAction:
 	ld a, [hl]
 	and a
 	jr z, .loop2
+	call IsStatusMove
+	jr nc, .not_status2
+	push hl
+	ld hl, wEnemySubStatus6
+	bit SUBSTATUS_TAUNT, [hl]
+	pop hl
+	jr nz, .loop2
+.not_status2
 	ld hl, wEnemyMonPP
 	add hl, bc
 	ld b, a

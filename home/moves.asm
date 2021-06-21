@@ -34,3 +34,18 @@ GetMoveData::
 	call GetMoveAddress
 	ld bc, MOVE_LENGTH - 1
 	jp FarCopyBytes
+
+IsStatusMove::
+; returns carry if move a is a status move
+; preserves all registers
+	ldh [hBuffer2], a
+	push hl
+	ld l, a
+	ld a, MOVE_TYPE
+	call GetMoveAttribute
+	pop hl
+	and CATEGORY_MASK
+	cp STATUS
+	ldh a, [hBuffer2]
+	ccf
+	ret

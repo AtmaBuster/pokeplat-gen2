@@ -1147,7 +1147,6 @@ BattleCommand_doturn:
 
 .taunt_fail
 	ld hl, ButItFailedText
-	ld de, ItFailedText
 	call StdBattleTextbox
 	jp EndMoveEffect
 
@@ -7948,7 +7947,27 @@ BattleCommand_trick:
 	jp StdBattleTextbox
 
 BattleCommand_taunt:
-	ret
+	ld a, BATTLE_VARS_SUBSTATUS6_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_TAUNT, [hl]
+	jr nz, .fail
+	set SUBSTATUS_TAUNT, [hl]
+	ld hl, wEnemyTauntCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wPlayerTauntCount
+.go
+	call BattleRandom
+	and %11 ; [0..3]
+	add 3 ; [3..6]
+	ld [hl], a
+	ld hl, FellForTauntText
+	jp StdBattleTextbox
+
+.fail
+	ld hl, ButItFailedText
+	jp StdBattleTextbox
 
 BattleCommand_trumpcard:
 	push bc

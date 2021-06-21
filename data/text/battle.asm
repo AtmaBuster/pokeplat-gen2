@@ -1241,3 +1241,14 @@ TargetGotItemText:
 	text_ram wStringBuffer1
 	text "!"
 	prompt
+
+FellForTauntText:
+	text "<TARGET>"
+	line "fell for the"
+	cont "TAUNT!"
+	prompt
+
+BattleText_TauntWoreOff:
+	text "<USER>'s"
+	line "TAUNT wore off!"
+	prompt

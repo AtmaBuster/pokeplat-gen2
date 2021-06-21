@@ -173,6 +173,7 @@ hClockResetTrigger:: db ; ffeb
 hSamplePlaying:: db ; ffec
 hSampleVolume:: db ; ffed
 hTimerInterrupt:: db ; ffee
+hBuffer2::
 hMusicStore:: db ; ffef
 
 if DEF(_DEBUG)
