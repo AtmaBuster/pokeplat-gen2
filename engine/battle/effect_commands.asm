@@ -996,6 +996,9 @@ BattleCommand_doturn:
 	call CheckUserIsCharging
 	ret nz
 
+	call CheckUserImprisonedMove
+	jp c, .imprison
+
 	ld hl, wBattleMonPP
 	ld de, wPlayerSubStatus3
 	ld bc, wPlayerTurnsTaken
@@ -1145,6 +1148,7 @@ BattleCommand_doturn:
 	db EFFECT_RAMPAGE
 	db -1
 
+.imprison
 .taunt_fail
 	call PrintButItFailed
 	jp EndMoveEffect
@@ -1178,6 +1182,44 @@ CheckMimicUsed:
 
 .mimic
 	and a
+	ret
+
+CheckUserImprisonedMove:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyMonMoves
+	ld a, [wEnemySubStatus2]
+	jr z, .go
+	ld hl, wBattleMonMoves
+	ld a, [wPlayerSubStatus2]
+.go
+	bit SUBSTATUS_IMPRISON, a
+	jr z, .nope
+
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld bc, STRUGGLE
+	call CompareMove
+	jr z, .nope
+
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	ld c, 4
+
+.loop
+	ld a, [hli]
+	cp b
+	jr z, .yep
+	dec c
+	jr nz, .loop
+
+.nope
+	and a
+	ret
+
+.yep
+	scf
 	ret
 
 BattleCommand_critical:
@@ -8037,3 +8079,46 @@ BattleCommand_smellingsalt:
 	ld hl, StatusHealText
 	call StdBattleTextbox
 	jp BattleCommand_switchturn
+
+BattleCommand_imprison:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_IMPRISON, [hl]
+	jp nz, PrintButItFailed
+	ld hl, wBattleMonMoves
+	ld c, 4
+.loop_x
+	ld b, 4
+	ld de, wEnemyMonMoves
+.loop_y
+	ld a, [de]
+	and a
+	jr z, .next
+	inc de
+	cp [hl]
+	jr z, .hit
+	dec b
+	jr nz, .loop_y
+.next
+	ld a, [hli]
+	and a
+	jp z, PrintButItFailed
+	dec c
+	jr nz, .loop_x
+	jp PrintButItFailed
+
+.hit
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_IMPRISON, [hl]
+	ld hl, ImprisonText
+	jp StdBattleTextbox
+
+BattleCommand_torment:
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_TORMENT, [hl]
+	jp nz, PrintButItFailed
+	set SUBSTATUS_TORMENT, [hl]
+	ld hl, TormentText
+	jp StdBattleTextbox

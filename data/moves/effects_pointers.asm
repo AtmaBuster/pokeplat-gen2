@@ -164,7 +164,7 @@ MoveEffectsPointers:
 	dw Splash                        ; SPIT_UP
 	dw Splash                        ; SWALLOW
 	dw Hail                          ; HAIL
-	dw Splash                        ; TORMENT
+	dw Torment                       ; TORMENT
 	dw Flatter                       ; FLATTER
 	dw WillOWisp                     ; WILL_O_WISP
 	dw Memento                       ; MEMENTO
@@ -189,7 +189,7 @@ MoveEffectsPointers:
 	dw Endeavor                      ; ENDEAVOR
 	dw Splash                        ; UNUSED_BA
 	dw Splash                        ; UNUSED_BB
-	dw Splash                        ; IMPRISON
+	dw Imprison                      ; IMPRISON
 	dw Refresh                       ; REFRESH
 	dw Splash                        ; GRUDGE
 	dw Splash                        ; SNATCH

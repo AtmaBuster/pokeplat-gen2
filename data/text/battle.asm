@@ -348,6 +348,11 @@ BattleText_TheMoveIsDisabled:
 	line "DISABLED!"
 	prompt
 
+BattleText_TheMoveCantBeSelected:
+	text "The move can't be"
+	line "selected!"
+	prompt
+
 BattleText_MonHasNoMovesLeft:
 	text_ram wBattleMonNick
 	text_start
@@ -1257,4 +1262,16 @@ StatusHealText:
 	text "<USER>'s"
 	line "status returned"
 	cont "to normal!"
+	prompt
+
+TormentText:
+	text "<TARGET>"
+	line "was subjected to"
+	cont "TORMENT!"
+	prompt
+
+ImprisonText:
+	text "<USER>"
+	line "sealed the move(s)"
+	cont "of its opponent!"
 	prompt

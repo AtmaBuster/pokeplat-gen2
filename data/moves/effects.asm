@@ -2540,3 +2540,17 @@ SmellingSalt:
 	buildopponentrage
 	heldflinch
 	endmove
+
+Imprison:
+	checkobedience
+	usedmovetext
+	doturn
+	imprison
+	endmove
+
+Torment:
+	checkobedience
+	usedmovetext
+	doturn
+	torment
+	endmove

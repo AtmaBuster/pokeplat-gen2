@@ -727,6 +727,7 @@ HandleTemporaryEffects_Player:
 	call StdBattleTextbox
 .check_taunt
 	ld hl, wPlayerTauntCount
+	ld a, [hl]
 	and a
 	jr z, .not_taunt
 	dec [hl]
@@ -5720,6 +5721,54 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
+	ld a, [wPlayerTauntCount]
+	and a
+	jr z, .not_taunted
+	ld a, [wMenuCursorY]
+	ld hl, wBattleMonMoves
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	call IsStatusMove
+	jr c, .taunted
+.not_taunted
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TORMENT, a
+	jr z, .not_torment
+	ld a, [wMenuCursorY]
+	ld hl, wEnemyMonMoves
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld b, a
+	ld a, [wLastPlayerCounterMove]
+	cp b
+	jr z, .tormented
+.not_torment
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_IMPRISON, a
+	jr z, .not_imprison
+	ld a, [wMenuCursorY]
+	ld hl, wBattleMonMoves
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld b, a
+	ld c, 4
+	ld hl, wEnemyMonMoves
+.imprison_loop
+	ld a, [hli]
+	and a
+	jr z, .not_imprison
+	cp b
+	jr z, .imprison
+	dec c
+	jr nz, .imprison_loop
+
+.not_imprison
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -5734,6 +5783,12 @@ MoveSelectionScreen:
 	ld [wCurPlayerMove], a
 	xor a
 	ret
+
+.imprison
+.taunted
+.tormented
+	ld hl, BattleText_TheMoveCantBeSelected
+	jr .place_textbox_start_over
 
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled
@@ -5963,41 +6018,81 @@ CheckPlayerHasUsableMoves:
 	ld hl, STRUGGLE
 	call GetMoveIDFromIndex
 	ld [wCurPlayerMove], a
+
+	ld hl, wBattleMonMoves
+	ld c, 0
+.loop
+	ld a, c
+	cp NUM_MOVES
+	jr z, .force_struggle
+	ld a, [hl]
+	and a
+	jr z, .force_struggle
 	ld a, [wPlayerDisableCount]
 	and a
-	ld hl, wBattleMonPP
-	jr nz, .disabled
-
-	ld a, [hli]
-	or [hl]
-	inc hl
-	or [hl]
-	inc hl
-	or [hl]
-	and PP_MASK
-	ret nz
-	jr .force_struggle
-
-.disabled
+	jr z, .not_disabled
 	swap a
 	and $f
-	ld b, a
-	ld d, NUM_MOVES + 1
-	xor a
-.loop
-	dec d
-	jr z, .done
-	ld c, [hl]
-	inc hl
-	dec b
-	jr z, .loop
-	or c
-	jr .loop
+	cp c
+	jr z, .next
+.not_disabled
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_TAUNT, a
+	jr z, .not_taunt
+	ld a, [hl]
+	call IsStatusMove
+	jr c, .next
 
-.done
-	; Bug: this will result in a move with PP Up confusing the game.
-	and a ; should be "and PP_MASK"
+.not_taunt
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TORMENT, a
+	jr z, .not_torment
+	ld b, [hl]
+	ld a, [wLastPlayerCounterMove]
+	cp b
+	jr z, .next
+
+.not_torment
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_IMPRISON, a
+	jr z, .not_imprison
+	ld b, [hl]
+	push hl
+	push bc
+	ld c, 4
+	ld hl, wEnemyMonMoves
+.imprison_loop
+	ld a, [hli]
+	and a
+	jr z, .imprison_done
+	cp b
+	jr z, .imprison_get
+	dec c
+	jr nz, .imprison_loop
+.imprison_done
+	pop bc
+	pop hl
+	jr .not_imprison
+
+.imprison_get
+	pop bc
+	pop hl
+	jr .next
+
+.not_imprison
+	push hl
+	ld hl, wBattleMonPP
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	and PP_MASK
 	ret nz
+
+.next
+	inc c
+	inc hl
+	jr .loop
 
 .force_struggle
 	ld hl, BattleText_MonHasNoMovesLeft
@@ -6060,7 +6155,7 @@ ParseEnemyAction:
 
 .skip_turn
 	ld a, $ff
-	jr .finish
+	jp .finish
 
 .continue
 	ld hl, wEnemyMonMoves
@@ -6080,10 +6175,46 @@ ParseEnemyAction:
 	bit SUBSTATUS_TAUNT, a
 	jr nz, .taunt
 .not_status
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TORMENT, a
+	jr z, .not_torment
+	ld a, [wLastEnemyCounterMove]
+	cp [hl]
+	jr z, .torment
+.not_torment
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_IMPRISON, a
+	jr z, .not_imprison
+	push hl
+	push bc
+	ld b, [hl]
+	ld c, 4
+	ld hl, wBattleMonMoves
+.imprison_loop
+	ld a, [hli]
+	and a
+	jr z, .imprison_done
+	cp b
+	jr z, .imprison_get
+	dec c
+	jr nz, .imprison_loop
+.imprison_done
+	pop bc
+	pop hl
+	jr .not_imprison
+
+.imprison_get
+	pop bc
+	pop hl
+	jr .imprison
+
+.not_imprison
 	ld a, [de]
 	and PP_MASK
 	jr nz, .enough_pp
 
+.torment
+.imprison
 .taunt
 .disabled
 	inc hl

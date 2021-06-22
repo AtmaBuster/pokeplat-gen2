@@ -174,6 +174,8 @@ BattleCommandPointers:
 	battlecmd refresh                 ; 89
 	battlecmd wakeupslap              ; 8a
 	battlecmd smellingsalt            ; 8b
+	battlecmd imprison                ; 8c
+	battlecmd torment                 ; 8d
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat
