@@ -2482,6 +2482,17 @@ EndMoveEffect:
 	ld [hl], a
 	ret
 
+CheckCharge:
+	and TYPE_MASK
+	cp ELECTRIC
+	ret nz
+	ld a, d
+	add a
+	ld d, a
+	ret nc
+	ld d, 255
+	ret
+
 DittoMetalPowder:
 	ld a, MON_SPECIES
 	call BattlePartyAttr
@@ -2626,6 +2637,13 @@ PlayerAttackDamage:
 	ld a, [wBattleMonLevel]
 	ld e, a
 	call DittoMetalPowder
+
+	ld a, [wPlayerChargeFlag]
+	and a
+	ld a, [wPlayerMoveStructType]
+	call nz, CheckCharge
+
+	farcall CheckSports
 
 	ld a, 1
 	and a
@@ -2946,6 +2964,13 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+
+	ld a, [wEnemyChargeFlag]
+	and a
+	ld a, [wEnemyMoveStructType]
+	call nz, CheckCharge
+
+	farcall CheckSports
 
 	ld a, 1
 	and a
@@ -8122,3 +8147,64 @@ BattleCommand_torment:
 	set SUBSTATUS_TORMENT, [hl]
 	ld hl, TormentText
 	jp StdBattleTextbox
+
+BattleCommand_movecharge:
+	ld hl, wPlayerChargeFlag
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyChargeFlag
+.go
+	ld a, 2
+	ld [hl], a
+	ret
+
+BattleCommand_watersport:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	jp nz, PrintButItFailed
+	set SUBSTATUS_WATER_SPORT, [hl]
+	ld hl, WaterSportText
+	jp StdBattleTextbox
+
+BattleCommand_mudsport:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	bit SUBSTATUS_MUD_SPORT, [hl]
+	jp nz, PrintButItFailed
+	set SUBSTATUS_MUD_SPORT, [hl]
+	ld hl, WaterSportText
+	jp StdBattleTextbox
+
+CheckSports:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerMoveStructType]
+	jr z, .go
+	ld a, [wEnemyMoveStructType]
+.go
+	and TYPE_MASK
+	cp FIRE
+	jr z, .water_sport
+	cp ELECTRIC
+	ret nz
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_MUD_SPORT, a
+	jr nz, .hit
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_MUD_SPORT, a
+	jr nz, .hit
+	ret
+
+.water_sport
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_WATER_SPORT, a
+	jr nz, .hit
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_WATER_SPORT, a
+	ret z
+.hit
+	rrc d
+	ret
+

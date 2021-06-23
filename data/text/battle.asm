@@ -1275,3 +1275,13 @@ ImprisonText:
 	line "sealed the move(s)"
 	cont "of its opponent!"
 	prompt
+
+WaterSportText:
+	text "Electricity's power"
+	line "was weakened!"
+	prompt
+
+MudSportText:
+	text "Fire's power was"
+	line "weakened!"
+	prompt

@@ -176,6 +176,9 @@ BattleCommandPointers:
 	battlecmd smellingsalt            ; 8b
 	battlecmd imprison                ; 8c
 	battlecmd torment                 ; 8d
+	battlecmd movecharge              ; 8e
+	battlecmd watersport              ; 8f
+	battlecmd mudsport                ; 90
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

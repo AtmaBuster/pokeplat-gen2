@@ -703,6 +703,12 @@ HandleTemporaryEffects:
 HandleTemporaryEffects_2:
 	call HandleTemporaryEffects_Enemy
 HandleTemporaryEffects_Player:
+	ld hl, wPlayerChargeFlag
+	ld a, [hl]
+	and a
+	jr z, .not_charge
+	dec [hl]
+.not_charge
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .check_taunt
@@ -740,6 +746,12 @@ HandleTemporaryEffects_Player:
 	ret
 
 HandleTemporaryEffects_Enemy:
+	ld hl, wEnemyChargeFlag
+	ld a, [hl]
+	and a
+	jr z, .not_charge
+	dec [hl]
+.not_charge
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .check_taunt

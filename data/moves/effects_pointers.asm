@@ -172,7 +172,7 @@ MoveEffectsPointers:
 	dw Splash                        ; FOCUS_PUNCH
 	dw SmellingSalt                  ; SMELLINGSALT
 	dw NaturePower                   ; NATURE_POWER
-	dw Splash                        ; CHARGE
+	dw Charge                        ; CHARGE
 	dw Taunt                         ; TAUNT
 	dw Trick                         ; TRICK
 	dw Splash                        ; UNUSED_AE
@@ -196,14 +196,14 @@ MoveEffectsPointers:
 	dw Splash                        ; SECRET_POWER
 	dw Camouflage                    ; CAMOUFLAGE
 	dw Splash                        ; UNUSED_C2
-	dw Splash                        ; MUD_SPORT
+	dw MudSport                      ; MUD_SPORT
 	dw PoisonFang                    ; POISON_FANG
 	dw NormalHit                     ; WEATHER_BALL
 	dw HPScaleHit                    ; HP_SCALING_HIT
 	dw Splash                        ; UNUSED_C7
 	dw Bounce                        ; BOUNCE
 	dw VoltTackle                    ; VOLT_TACKLE
-	dw Splash                        ; WATER_SPORT
+	dw WaterSport                    ; WATER_SPORT
 	dw Splash                        ; DOOM_DESIRE
 	dw Splash                        ; ROOST
 	dw Splash                        ; GRAVITY

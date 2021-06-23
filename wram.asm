@@ -538,6 +538,7 @@ wPlayerMagnetRiseCount:: db
 wPlayerLastResortFlags:: db
 wPlayerTauntCount:: db
 wPlayerUproarCount:: db
+wPlayerChargeFlag:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -555,6 +556,7 @@ wEnemyMagnetRiseCount:: db
 wEnemyLastResortFlags:: db
 wEnemyTauntCount:: db
 wEnemyUproarCount:: db
+wEnemyChargeFlag:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

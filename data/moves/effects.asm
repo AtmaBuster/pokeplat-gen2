@@ -2554,3 +2554,25 @@ Torment:
 	doturn
 	torment
 	endmove
+
+Charge:
+	checkobedience
+	usedmovetext
+	doturn
+	movecharge
+	forceraisestat SP_DEFENSE
+	endmove
+
+WaterSport:
+	checkobedience
+	usedmovetext
+	doturn
+	watersport
+	endmove
+
+MudSport:
+	checkobedience
+	usedmovetext
+	doturn
+	mudsport
+	endmove
