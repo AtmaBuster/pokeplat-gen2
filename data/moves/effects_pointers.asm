@@ -178,7 +178,7 @@ MoveEffectsPointers:
 	dw Splash                        ; UNUSED_AE
 	dw Splash                        ; WISH
 	dw Splash                        ; ASSIST
-	dw Splash                        ; INGRAIN
+	dw Ingrain                       ; INGRAIN
 	dw Superpower                    ; SUPERPOWER
 	dw Splash                        ; MAGIC_COAT
 	dw Splash                        ; RECYCLE

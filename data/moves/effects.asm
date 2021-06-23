@@ -2576,3 +2576,10 @@ MudSport:
 	doturn
 	mudsport
 	endmove
+
+Ingrain:
+	checkobedience
+	usedmovetext
+	doturn
+	ingrain
+	endmove

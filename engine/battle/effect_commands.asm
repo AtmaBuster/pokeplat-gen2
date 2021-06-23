@@ -5370,6 +5370,9 @@ BattleCommand_forceswitch:
 .trainer
 	call FindAliveEnemyMons
 	jr c, .switch_fail
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_INGRAIN, a
+	jr nz, .switch_fail
 	ld a, [wEnemyGoesFirst]
 	and a
 	jr z, .switch_fail
@@ -5463,6 +5466,10 @@ BattleCommand_forceswitch:
 .vs_trainer
 	call CheckPlayerHasMonToSwitchTo
 	jr c, .fail
+
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_INGRAIN, a
+	jr nz, .fail
 
 	ld a, [wEnemyGoesFirst]
 	cp $1
@@ -8208,3 +8215,11 @@ CheckSports:
 	rrc d
 	ret
 
+BattleCommand_ingrain:
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_INGRAIN, [hl]
+	jp nz, PrintButItFailed
+	set SUBSTATUS_INGRAIN, [hl]
+	ld hl, IngrainText
+	jp StdBattleTextbox

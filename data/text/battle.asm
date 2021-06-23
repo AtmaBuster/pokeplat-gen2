@@ -1285,3 +1285,14 @@ MudSportText:
 	text "Fire's power was"
 	line "weakened!"
 	prompt
+
+IngrainText:
+	text "<USER>"
+	line "planted its roots!"
+	prompt
+
+AbsorbedNutrientsText:
+	text "<TARGET>"
+	line "absorbed nutrients"
+	cont "with its roots!"
+	prompt

@@ -287,6 +287,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
+	call HandleIngrain
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -796,6 +797,10 @@ TryEnemyFlee:
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .Stay
 
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_INGRAIN, a
+	jr nz, .Stay
+
 	ld a, [wEnemyWrapCount]
 	and a
 	jr nz, .Stay
@@ -1300,6 +1305,51 @@ SwitchTurnCore:
 	xor 1
 	ldh [hBattleTurn], a
 	ret
+
+HandleIngrain:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.DoEnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+.do_it
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVar
+	bit SUBSTATUS_INGRAIN, a
+	ret z
+
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetSixteenthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	ld hl, AbsorbedNutrientsText
+	jp StdBattleTextbox
 
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
@@ -3818,6 +3868,10 @@ TryToRunAwayFromBattle:
 	bit SUBSTATUS_CANT_RUN, a
 	jp nz, .cant_escape
 
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_INGRAIN, a
+	jp nz, .cant_escape
+
 	ld a, [wPlayerWrapCount]
 	and a
 	jp nz, .cant_escape
@@ -5397,6 +5451,9 @@ TryPlayerSwitch:
 	jr nz, .trapped
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
+	jr nz, .trapped
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_INGRAIN, a
 	jr z, .try_switch
 
 .trapped
