@@ -8226,3 +8226,11 @@ INCLUDE "engine/battle/move_effects/assist.asm"
 
 INCLUDE "engine/battle/move_effects/water_spout.asm"
 
+BattleCommand_aquaring:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	bit SUBSTATUS_AQUA_RING, [hl]
+	jp nz, PrintButItFailed
+	set SUBSTATUS_AQUA_RING, [hl]
+	ld hl, AquaRingText
+	jp StdBattleTextbox

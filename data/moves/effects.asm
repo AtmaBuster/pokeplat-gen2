@@ -2590,3 +2590,10 @@ Assist:
 	doturn
 	assist
 	endmove
+
+AquaRing:
+	checkobedience
+	usedmovetext
+	doturn
+	aquaring
+	endmove

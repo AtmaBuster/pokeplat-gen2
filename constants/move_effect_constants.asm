@@ -227,7 +227,7 @@
 	const EFFECT_PSYCHO_SHIFT      ; e0
 	const EFFECT_TRUMP_CARD        ; e1
 	const EFFECT_HEAL_BLOCK        ; e2
-	const EFFECT_WRING_OUT         ; e3
+	const EFFECT_UNUSED_E3         ; e3
 	const EFFECT_POWER_TRICK       ; e4
 	const EFFECT_UNUSED_E5         ; e5
 	const EFFECT_LUCKY_CHANT       ; e6

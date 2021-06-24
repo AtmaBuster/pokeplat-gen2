@@ -1296,3 +1296,15 @@ AbsorbedNutrientsText:
 	line "absorbed nutrients"
 	cont "with its roots!"
 	prompt
+
+AquaRingText:
+	text "<USER>"
+	line "surrounded itself"
+	cont "with a water veil!"
+	prompt
+
+RestoredHPText:
+	text "<TARGET>"
+	line "restored HP from"
+	cont "the veil of water!"
+	prompt

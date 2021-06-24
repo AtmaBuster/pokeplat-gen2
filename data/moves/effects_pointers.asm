@@ -228,7 +228,7 @@ MoveEffectsPointers:
 	dw Splash                        ; PSYCHO_SHIFT
 	dw TrumpCard                     ; TRUMP_CARD
 	dw Splash                        ; HEAL_BLOCK
-	dw Splash                        ; WRING_OUT
+	dw Splash                        ; UNUSED_E3
 	dw Splash                        ; POWER_TRICK
 	dw Splash                        ; UNUSED_E5
 	dw Splash                        ; LUCKY_CHANT
@@ -242,7 +242,7 @@ MoveEffectsPointers:
 	dw Splash                        ; SUCKER_PUNCH
 	dw ToxicSpikes                   ; TOXIC_SPIKES
 	dw Splash                        ; HEART_SWAP
-	dw Splash                        ; AQUA_RING
+	dw AquaRing                      ; AQUA_RING
 	dw Splash                        ; MAGNET_RISE
 	dw FlareBlitz                    ; FLARE_BLITZ
 	dw Splash                        ; DEFOG

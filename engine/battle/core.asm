@@ -288,6 +288,7 @@ HandleBetweenTurnEffects:
 .NoMoreFaintingConditions:
 	call HandleLeftovers
 	call HandleIngrain
+	call HandleAquaRing
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -1349,6 +1350,51 @@ HandleIngrain:
 	call SwitchTurnCore
 	call RestoreHP
 	ld hl, AbsorbedNutrientsText
+	jp StdBattleTextbox
+
+HandleAquaRing:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.DoEnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+.do_it
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVar
+	bit SUBSTATUS_AQUA_RING, a
+	ret z
+
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetSixteenthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	ld hl, RestoredHPText
 	jp StdBattleTextbox
 
 HandleLeftovers:
