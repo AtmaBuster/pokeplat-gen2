@@ -6810,8 +6810,6 @@ BattleCommand_weightdamage:
 	dwb 4409, 100
 	dwb   -1, 120
 
-INCLUDE "engine/battle/move_effects/water_spout.asm"
-
 INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
@@ -8223,3 +8221,8 @@ BattleCommand_ingrain:
 	set SUBSTATUS_INGRAIN, [hl]
 	ld hl, IngrainText
 	jp StdBattleTextbox
+
+INCLUDE "engine/battle/move_effects/assist.asm"
+
+INCLUDE "engine/battle/move_effects/water_spout.asm"
+

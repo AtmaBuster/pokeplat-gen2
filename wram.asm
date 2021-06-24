@@ -762,6 +762,8 @@ wEnemyJustGotFrozen:: db ; c73d
 
 wPlayerPseudoAbilityFlags:: db
 wEnemyPseudoAbilityFlags:: db
+
+wAssistMoveList:: ds NUM_MOVES * (PARTY_LENGTH - 1)
 wBattleEnd::
 
 NEXTU ; c608

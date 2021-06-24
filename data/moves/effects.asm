@@ -2583,3 +2583,10 @@ Ingrain:
 	doturn
 	ingrain
 	endmove
+
+Assist:
+	checkobedience
+	usedmovetext
+	doturn
+	assist
+	endmove
