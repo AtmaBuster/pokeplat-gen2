@@ -289,6 +289,7 @@ HandleBetweenTurnEffects:
 	call HandleLeftovers
 	call HandleIngrain
 	call HandleAquaRing
+	call HandleUproar
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -573,6 +574,9 @@ CheckPlayerLockedIn:
 	ld a, [hl]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
 	jp nz, .quit
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	jp nz, .quit
 
 	ld hl, wPlayerSubStatus1
 	bit SUBSTATUS_ROLLOUT, [hl]
@@ -705,6 +709,16 @@ HandleTemporaryEffects:
 HandleTemporaryEffects_2:
 	call HandleTemporaryEffects_Enemy
 HandleTemporaryEffects_Player:
+	ld hl, wPlayerSubStatus6
+	bit SUBSTATUS_UPROAR, [hl]
+	jr z, .skip_uproar
+	ld a, [wPlayerRolloutCount]
+	and a
+	jr nz, .skip_uproar
+	res SUBSTATUS_UPROAR, [hl]
+	ld hl, UproarCalmedDownText
+	call StdBattleTextbox
+.skip_uproar
 	ld hl, wPlayerChargeFlag
 	ld a, [hl]
 	and a
@@ -748,6 +762,16 @@ HandleTemporaryEffects_Player:
 	ret
 
 HandleTemporaryEffects_Enemy:
+	ld hl, wEnemySubStatus6
+	bit SUBSTATUS_UPROAR, [hl]
+	jr z, .skip_uproar
+	ld a, [wEnemyRolloutCount]
+	and a
+	jr nz, .skip_uproar
+	res SUBSTATUS_UPROAR, [hl]
+	ld hl, UproarCalmedDownText
+	call StdBattleTextbox
+.skip_uproar
 	ld hl, wEnemyChargeFlag
 	ld a, [hl]
 	and a
@@ -1446,6 +1470,32 @@ HandleLeftovers:
 	ld hl, BattleText_TargetRecoveredWithItem
 	jp StdBattleTextbox
 
+HandleUproar:
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	jr nz, .ok
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	ret z
+.ok
+	call .wake_mon
+	call BattleCommand_switchturn
+	call .wake_mon
+	jp BattleCommand_switchturn
+
+.wake_mon
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	and SLP
+	ret z
+	xor a
+	ld [hl], a
+	ld hl, UproarWokeUpText
+	call StdBattleTextbox
+	call UpdateBattleHuds
+	jp UpdateUserInParty
+
 HandleMysteryberry:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -2117,24 +2167,24 @@ GetMaxHP:
 	ld c, a
 	ret
 
-Unreferenced_GetHalfHP:
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wBuffer2], a
-	ld a, [hl]
-	ld [wBuffer1], a
-	ret
+;Unreferenced_GetHalfHP:
+;	ld hl, wBattleMonHP
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .ok
+;	ld hl, wEnemyMonHP
+;.ok
+;	ld a, [hli]
+;	ld b, a
+;	ld a, [hli]
+;	ld c, a
+;	srl b
+;	rr c
+;	ld a, [hli]
+;	ld [wBuffer2], a
+;	ld a, [hl]
+;	ld [wBuffer1], a
+;	ret
 
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
@@ -6245,6 +6295,9 @@ ParseEnemyAction:
 	ld a, [wEnemySubStatus3]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	jp nz, .skip_load
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	jp nz, .skip_load
 
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
@@ -6436,6 +6489,9 @@ CheckEnemyLockedIn:
 	ld hl, wEnemySubStatus3
 	ld a, [hl]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
+	ret nz
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_UPROAR, a
 	ret nz
 
 	ld hl, wEnemySubStatus1
@@ -6937,16 +6993,16 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-Unreferenced_SwapBattlerLevels:
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
+;Unreferenced_SwapBattlerLevels:
+;	push bc
+;	ld a, [wBattleMonLevel]
+;	ld b, a
+;	ld a, [wEnemyMonLevel]
+;	ld [wBattleMonLevel], a
+;	ld a, b
+;	ld [wEnemyMonLevel], a
+;	pop bc
+;	ret
 
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
@@ -7299,19 +7355,19 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-Unreferenced_LoadHPExpBarGFX:
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
+;Unreferenced_LoadHPExpBarGFX:
+;	ld de, EnemyHPBarBorderGFX
+;	ld hl, vTiles2 tile $6c
+;	lb bc, BANK(EnemyHPBarBorderGFX), 4
+;	call Get1bpp
+;	ld de, HPExpBarBorderGFX
+;	ld hl, vTiles2 tile $73
+;	lb bc, BANK(HPExpBarBorderGFX), 6
+;	call Get1bpp
+;	ld de, ExpBarGFX
+;	ld hl, vTiles2 tile $55
+;	lb bc, BANK(ExpBarGFX), 8
+;	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -8214,45 +8270,45 @@ TextJump_GoodComeBack:
 	text_far Text_GoodComeBack
 	text_end
 
-Unreferenced_TextJump_ComeBack:
-; this function doesn't seem to be used
-	ld hl, TextJump_ComeBack
-	ret
+;Unreferenced_TextJump_ComeBack:
+;; this function doesn't seem to be used
+;	ld hl, TextJump_ComeBack
+;	ret
 
 TextJump_ComeBack:
 	text_far Text_ComeBack
 	text_end
 
-Unreferenced_HandleSafariAngerEatingStatus:
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl ; wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call Call_LoadTempTileMapToTileMap
-	pop hl
-	jp StdBattleTextbox
+;Unreferenced_HandleSafariAngerEatingStatus:
+;	ld hl, wSafariMonEating
+;	ld a, [hl]
+;	and a
+;	jr z, .angry
+;	dec [hl]
+;	ld hl, BattleText_WildMonIsEating
+;	jr .finish
+;
+;.angry
+;	dec hl ; wSafariMonAngerCount
+;	ld a, [hl]
+;	and a
+;	ret z
+;	dec [hl]
+;	ld hl, BattleText_WildMonIsAngry
+;	jr nz, .finish
+;	push hl
+;	ld a, [wEnemyMonSpecies]
+;	ld [wCurSpecies], a
+;	call GetBaseData
+;	ld a, [wBaseCatchRate]
+;	ld [wEnemyMonCatchRate], a
+;	pop hl
+;
+;.finish
+;	push hl
+;	call Call_LoadTempTileMapToTileMap
+;	pop hl
+;	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl

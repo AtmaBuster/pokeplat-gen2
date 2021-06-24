@@ -2597,3 +2597,26 @@ AquaRing:
 	doturn
 	aquaring
 	endmove
+
+Uproar:
+	checkuproar
+	checkobedience
+	doturn
+	usedmovetext
+	checkhit
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	clearmissdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	uproar
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove

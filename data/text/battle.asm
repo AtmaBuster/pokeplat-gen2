@@ -1308,3 +1308,25 @@ RestoredHPText:
 	line "restored HP from"
 	cont "the veil of water!"
 	prompt
+
+CausedAnUproarText:
+	text "<USER>"
+	line "caused an uproar!"
+	prompt
+
+MakingAnUproarText:
+	text "<USER>"
+	line "is making an"
+	cont "uproar!"
+	prompt
+
+UproarCalmedDownText:
+	text "<TARGET>"
+	line "calmed down."
+	prompt
+
+UproarWokeUpText:
+	text "<USER>"
+	line "woke up from the"
+	cont "uproar!"
+	prompt

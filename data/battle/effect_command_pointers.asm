@@ -181,7 +181,9 @@ BattleCommandPointers:
 	battlecmd mudsport                ; 90
 	battlecmd ingrain                 ; 91
 	battlecmd assist                  ; 92
-	battlecmd aquaring ; 93
+	battlecmd aquaring                ; 93
+	battlecmd checkuproar             ; 94
+	battlecmd uproar                  ; 95
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

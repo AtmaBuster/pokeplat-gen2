@@ -366,6 +366,10 @@ CantMove:
 	and $ff ^ (1 << SUBSTATUS_BIDE | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_CHARGED)
 	ld [hl], a
 
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	res SUBSTATUS_UPROAR, [hl]
+
 	call ResetFuryCutterCount
 
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1027,6 +1031,12 @@ BattleCommand_doturn:
 	ld a, [de]
 	and 1 << SUBSTATUS_IN_LOOP | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	ret nz
+	inc de
+	inc de
+	inc de
+	ld a, [de]
+	bit SUBSTATUS_UPROAR, a
+	ret nz
 
 	call .consume_pp
 	ld a, b
@@ -1039,9 +1049,6 @@ BattleCommand_doturn:
 	cp STATUS
 	jr nz, .not_status_move
 
-	inc de
-	inc de
-	inc de
 	ld a, [de]
 	dec de
 	bit SUBSTATUS_TAUNT, a
@@ -1894,6 +1901,8 @@ BattleCommand_lowersub:
 	cp EFFECT_ROLLOUT
 	jr z, .rollout_rampage
 	cp EFFECT_RAMPAGE
+	jr z, .rollout_rampage
+	cp EFFECT_UPROAR
 	jr z, .rollout_rampage
 
 	ld a, 1
@@ -3690,6 +3699,12 @@ BattleCommand_sleeptarget:
 	jr .fail
 
 .not_protected_by_item
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	jr nz, .fail
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	jr nz, .fail
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -8074,6 +8089,7 @@ BattleCommand_refresh:
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	res SUBSTATUS_TOXIC, [hl]
+	call UpdateUserInParty
 	ld hl, StatusHealText
 	jp StdBattleTextbox
 
@@ -8088,6 +8104,11 @@ BattleCommand_wakeupslap:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_NIGHTMARE, [hl]
+	push bc
+	push de
+	call UpdateOpponentInParty
+	pop de
+	pop bc
 	ld a, d
 	add a
 	ld d, a
@@ -8105,6 +8126,11 @@ BattleCommand_smellingsalt:
 	add a
 	ld d, a
 	res PAR, [hl]
+	push bc
+	push de
+	call UpdateOpponentInParty
+	pop de
+	pop bc
 	call BattleCommand_switchturn
 	ld hl, StatusHealText
 	call StdBattleTextbox
@@ -8233,4 +8259,43 @@ BattleCommand_aquaring:
 	jp nz, PrintButItFailed
 	set SUBSTATUS_AQUA_RING, [hl]
 	ld hl, AquaRingText
+	jp StdBattleTextbox
+
+BattleCommand_checkuproar:
+	ld de, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld de, wEnemyRolloutCount
+.player
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	ret z
+	ld a, [de]
+	dec a
+	ld [de], a
+	ld b, doturn_command
+	farjump SkipToBattleCommand
+
+BattleCommand_uproar:
+	ld de, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wEnemyRolloutCount
+.ok
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	ret nz
+	set SUBSTATUS_UPROAR, [hl]
+; Rampage for 1 - 4 more turns
+	call BattleRandom
+	and %00000011
+	inc a
+	ld [de], a
+	ld a, 1
+	ld [wSomeoneIsRampaging], a
+	ld hl, CausedAnUproarText
 	jp StdBattleTextbox

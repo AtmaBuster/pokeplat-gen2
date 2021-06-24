@@ -159,7 +159,7 @@ MoveEffectsPointers:
 	dw Fly                           ; FLY
 	dw DefenseCurl                   ; DEFENSE_CURL
 	dw NormalHit                     ; VITAL_THROW
-	dw Splash                        ; UPROAR
+	dw Uproar                        ; UPROAR
 	dw Splash                        ; STOCKPILE
 	dw Splash                        ; SPIT_UP
 	dw Splash                        ; SWALLOW
