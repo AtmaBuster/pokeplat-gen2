@@ -246,6 +246,12 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	enum SUBSTATUS_MUD_SPORT
 	enum SUBSTATUS_WATER_SPORT
 
+MASK_STOCKPILE EQU %01100000
+STOCKPILE_0 EQU %00 << 5
+STOCKPILE_1 EQU %01 << 5
+STOCKPILE_2 EQU %10 << 5
+STOCKPILE_3 EQU %11 << 5
+
 ; wPlayerScreens or wEnemyScreens bit flags
 	enum_start 7, -1
 	enum SCREENS_TOXIC_SPIKES_2

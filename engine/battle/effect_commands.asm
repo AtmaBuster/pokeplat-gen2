@@ -1157,6 +1157,7 @@ BattleCommand_doturn:
 
 .imprison
 .taunt_fail
+	call AnimateFailedMove
 	call PrintButItFailed
 	jp EndMoveEffect
 
@@ -5732,6 +5733,7 @@ BattleCommand_fakeout:
 	ld a, [hl]
 	cp 1
 	ret z
+	call AnimateFailedMove
 	call PrintButItFailed
 	jp EndMoveEffect
 
@@ -6641,6 +6643,10 @@ TryPrintButItFailed:
 
 _PrintButItFailed:
 ; 'but it failed!'
+	jp PrintButItFailed
+
+AnimateAndPrintFailedMove:
+	call AnimateFailedMove
 	jp PrintButItFailed
 
 FailMove:
@@ -7592,6 +7598,10 @@ GetCurrentMoveType:
 
 SECTION "Effect Commands 2", ROMX
 
+AnimateAndPrintFailedMove2:
+	farcall AnimateAndPrintFailedMove
+	ret
+
 UpdateArceusForm:
 	farcall BattleCommand_switchturn
 	call .Update
@@ -8033,7 +8043,7 @@ BattleCommand_taunt:
 	ld a, BATTLE_VARS_SUBSTATUS6_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_TAUNT, [hl]
-	jp nz, PrintButItFailed
+	jr nz, .fail
 	set SUBSTATUS_TAUNT, [hl]
 	ld hl, wEnemyTauntCount
 	ldh a, [hBattleTurn]
@@ -8047,6 +8057,10 @@ BattleCommand_taunt:
 	ld [hl], a
 	ld hl, FellForTauntText
 	jp StdBattleTextbox
+
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed
 
 BattleCommand_trumpcard:
 	push bc
@@ -8083,7 +8097,7 @@ BattleCommand_refresh:
 	call GetBattleVarAddr
 	ld a, [hl]
 	and (1 << PSN) | (1 << BRN) | (1 << PAR)
-	jp z, PrintButItFailed
+	jr z, .fail
 	xor a
 	ld [hl], a
 	ld a, BATTLE_VARS_SUBSTATUS5
@@ -8092,6 +8106,10 @@ BattleCommand_refresh:
 	call UpdateUserInParty
 	ld hl, StatusHealText
 	jp StdBattleTextbox
+
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed
 
 BattleCommand_wakeupslap:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -8140,7 +8158,7 @@ BattleCommand_imprison:
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	bit SUBSTATUS_IMPRISON, [hl]
-	jp nz, PrintButItFailed
+	jp nz, AnimateAndPrintFailedMove2
 	ld hl, wBattleMonMoves
 	ld c, 4
 .loop_x
@@ -8158,10 +8176,10 @@ BattleCommand_imprison:
 .next
 	ld a, [hli]
 	and a
-	jp z, PrintButItFailed
+	jp z, AnimateAndPrintFailedMove2
 	dec c
 	jr nz, .loop_x
-	jp PrintButItFailed
+	jp AnimateAndPrintFailedMove2
 
 .hit
 	ld a, BATTLE_VARS_SUBSTATUS2
@@ -8174,7 +8192,7 @@ BattleCommand_torment:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_TORMENT, [hl]
-	jp nz, PrintButItFailed
+	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_TORMENT, [hl]
 	ld hl, TormentText
 	jp StdBattleTextbox
@@ -8194,7 +8212,7 @@ BattleCommand_watersport:
 	ld a, BATTLE_VARS_SUBSTATUS6
 	call GetBattleVarAddr
 	bit SUBSTATUS_WATER_SPORT, [hl]
-	jp nz, PrintButItFailed
+	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_WATER_SPORT, [hl]
 	ld hl, WaterSportText
 	jp StdBattleTextbox
@@ -8203,7 +8221,7 @@ BattleCommand_mudsport:
 	ld a, BATTLE_VARS_SUBSTATUS6
 	call GetBattleVarAddr
 	bit SUBSTATUS_MUD_SPORT, [hl]
-	jp nz, PrintButItFailed
+	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_MUD_SPORT, [hl]
 	ld hl, WaterSportText
 	jp StdBattleTextbox
@@ -8243,7 +8261,7 @@ BattleCommand_ingrain:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	bit SUBSTATUS_INGRAIN, [hl]
-	jp nz, PrintButItFailed
+	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_INGRAIN, [hl]
 	ld hl, IngrainText
 	jp StdBattleTextbox
@@ -8256,7 +8274,7 @@ BattleCommand_aquaring:
 	ld a, BATTLE_VARS_SUBSTATUS6
 	call GetBattleVarAddr
 	bit SUBSTATUS_AQUA_RING, [hl]
-	jp nz, PrintButItFailed
+	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_AQUA_RING, [hl]
 	ld hl, AquaRingText
 	jp StdBattleTextbox
@@ -8298,4 +8316,135 @@ BattleCommand_uproar:
 	ld a, 1
 	ld [wSomeoneIsRampaging], a
 	ld hl, CausedAnUproarText
+	jp StdBattleTextbox
+
+BattleCommand_stockpile:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	ld a, [hl]
+	and MASK_STOCKPILE
+	cp STOCKPILE_3
+	jr z, .fail
+	ld a, [hl]
+	add STOCKPILE_1
+	ld [hl], a
+	swap a
+	rrca
+	ld [wStringBuffer1], a
+	ld hl, StockpileText
+	jp StdBattleTextbox
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+BattleCommand_spitup:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	ld a, [hl]
+	and MASK_STOCKPILE
+	jr z, .fail
+	cp STOCKPILE_1
+	ld d, 100
+	ret z
+	cp STOCKPILE_2
+	ld d, 200
+	ret z
+	ld d, 255
+	ret
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+BattleCommand_swallow:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	ld a, [hl]
+	and MASK_STOCKPILE
+	jr z, .fail
+
+	push af
+	ld de, wBattleMonHP
+	ld hl, wBattleMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld de, wEnemyMonHP
+	ld hl, wEnemyMonMaxHP
+.got_hp
+	push hl
+	push de
+	push bc
+	ld c, 2
+	call CompareBytes
+	pop bc
+	pop de
+	pop hl
+	jp z, .hp_full
+
+	pop af
+	cp STOCKPILE_1
+	jr z, .quarter
+	cp STOCKPILE_2
+	jr z, .half
+
+	ld hl, GetMaxHP
+	call CallBattleCore
+	jr .restore
+
+.quarter
+	ld hl, GetQuarterMaxHP
+	call CallBattleCore
+	jr .restore
+
+.half
+	ld hl, GetHalfMaxHP
+	call CallBattleCore
+.restore
+	call AnimateCurrentMove
+	call BattleCommand_switchturn
+	ld hl, RestoreHP
+	call CallBattleCore
+	call BattleCommand_switchturn
+	call UpdateUserInParty
+	call RefreshBattleHuds
+	ld hl, RegainedHealthText
+	jp StdBattleTextbox
+
+.hp_full
+	call AnimateFailedMove
+	ld hl, HPIsFullText
+	call StdBattleTextbox
+	farjump EndMoveEffect
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+BattleCommand_removestockpile:
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	ld a, [hl]
+	and MASK_STOCKPILE
+	ret z
+
+	swap a
+	rrca
+.loop
+	push af
+	ld b, DEFENSE
+	ld a, STAT_LOWER | STAT_SILENT | STAT_SKIPTEXT
+	farcall2 FarChangeStat
+	ld b, SP_DEFENSE
+	ld a, STAT_LOWER | STAT_SILENT | STAT_SKIPTEXT
+	farcall2 FarChangeStat
+	pop af
+	dec a
+	jr nz, .loop
+	ld a, BATTLE_VARS_SUBSTATUS6
+	call GetBattleVarAddr
+	res SUBSTATUS_STOCKPILE_1, [hl]
+	res SUBSTATUS_STOCKPILE_2, [hl]
+	ld hl, StockpileWoreOffText
 	jp StdBattleTextbox

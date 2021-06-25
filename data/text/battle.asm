@@ -1330,3 +1330,15 @@ UproarWokeUpText:
 	line "woke up from the"
 	cont "uproar!"
 	prompt
+
+StockpileText:
+	text "<USER>"
+	line "STOCKPILED @"
+	text_decimal wStringBuffer1, 1, 1
+	text "!"
+	prompt
+
+StockpileWoreOffText:
+	text "STOCKPILE's effect"
+	line "wore off."
+	prompt

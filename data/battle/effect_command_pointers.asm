@@ -184,6 +184,10 @@ BattleCommandPointers:
 	battlecmd aquaring                ; 93
 	battlecmd checkuproar             ; 94
 	battlecmd uproar                  ; 95
+	battlecmd stockpile               ; 96
+	battlecmd spitup                  ; 97
+	battlecmd swallow                 ; 98
+	battlecmd removestockpile         ; 99
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

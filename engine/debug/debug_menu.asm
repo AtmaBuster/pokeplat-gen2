@@ -101,10 +101,11 @@ DebugMenu::
 	db "Give #@"
 	db "Max ¥@"
 	db "Warp Any@"
+	db "PC@"
 
 .MenuItems
-	db 9
-	db 0, 1, 2, 3, 4, 5, 6, 7, 8
+	db 10
+	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 	db -1
 
 .Jumptable
@@ -117,6 +118,7 @@ DebugMenu::
 	dw Debug_GivePoke
 	dw Debug_MaxMoney
 	dw Debug_WarpAny
+	dw Debug_PC
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -1006,4 +1008,8 @@ Debug_WarpAny:
 	inc hl
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
+	ret
+
+Debug_PC:
+	farcall PokemonCenterPC
 	ret

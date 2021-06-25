@@ -160,9 +160,9 @@ MoveEffectsPointers:
 	dw DefenseCurl                   ; DEFENSE_CURL
 	dw NormalHit                     ; VITAL_THROW
 	dw Uproar                        ; UPROAR
-	dw Splash                        ; STOCKPILE
-	dw Splash                        ; SPIT_UP
-	dw Splash                        ; SWALLOW
+	dw Stockpile                     ; STOCKPILE
+	dw SpitUp                        ; SPIT_UP
+	dw Swallow                       ; SWALLOW
 	dw Hail                          ; HAIL
 	dw Torment                       ; TORMENT
 	dw Flatter                       ; FLATTER

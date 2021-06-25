@@ -2620,3 +2620,42 @@ Uproar:
 	buildopponentrage
 	heldflinch
 	endmove
+
+Stockpile:
+	checkobedience
+	usedmovetext
+	doturn
+	stockpile
+	forceraisestat DEFENSE
+	forceraisestat SP_DEFENSE
+	endmove
+
+SpitUp:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	spitup
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	removestockpile
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Swallow:
+	checkobedience
+	usedmovetext
+	doturn
+	swallow
+	removestockpile
+	endmove
