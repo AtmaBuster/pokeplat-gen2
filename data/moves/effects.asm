@@ -2659,3 +2659,17 @@ Swallow:
 	swallow
 	removestockpile
 	endmove
+
+Acupressure:
+	checkobedience
+	usedmovetext
+	doturn
+	acupressure
+	endmove
+
+Recycle:
+	checkobedience
+	usedmovetext
+	doturn
+	recycle
+	endmove

@@ -1342,3 +1342,11 @@ StockpileWoreOffText:
 	text "STOCKPILE's effect"
 	line "wore off."
 	prompt
+
+RecycleText:
+	text "<USER>"
+	line "found one"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt

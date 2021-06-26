@@ -188,6 +188,8 @@ BattleCommandPointers:
 	battlecmd spitup                  ; 97
 	battlecmd swallow                 ; 98
 	battlecmd removestockpile         ; 99
+	battlecmd acupressure             ; 9a
+	battlecmd recycle                 ; 9b
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

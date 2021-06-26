@@ -8448,3 +8448,104 @@ BattleCommand_removestockpile:
 	res SUBSTATUS_STOCKPILE_2, [hl]
 	ld hl, StockpileWoreOffText
 	jp StdBattleTextbox
+
+BattleCommand_acupressure:
+	ld hl, wPlayerStatLevels
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyStatLevels
+.go
+; make sure there's a stat that can be raised
+	ld bc, 0
+.check_loop
+	push hl
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	cp MAX_STAT_LEVEL
+	jr nz, .ok
+	inc c
+	ld a, c
+	cp 7
+	jp z, AnimateAndPrintFailedMove2
+	jr .check_loop
+
+.ok
+; choose a stat to raise
+.raise_loop
+	call BattleRandom
+	maskbits 7
+	cp 7
+	jr nc, .raise_loop
+	ld c, a
+	push hl
+	add hl, bc
+	ld a, [hl]
+	pop hl
+	cp MAX_STAT_LEVEL
+	jr z, .raise_loop
+
+; found a stat, raise it by 2 levels
+	ld a, c
+	or $10
+	ld b, a
+	xor a
+	farcall2 FarChangeStat
+	ret
+
+BattleCommand_recycle:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerRecycleMemory
+	ld bc, wPartyMon1Item
+	ld de, wBattleMonItem
+	ld a, [wCurBattleMon]
+	jr z, .go
+	ld hl, wEnemyRecycleMemory
+	ld bc, wOTPartyMon1Item
+	ld de, wEnemyMonItem
+	ld a, [wCurOTMon]
+.go
+	push af
+	push bc
+	ld c, a
+	ld b, 0
+	add hl, bc
+	pop bc
+	ld a, [hl]
+	and a
+	jr z, .fail
+	ld a, [de]
+	and a
+	jr nz, .fail
+	ld a, [hl]
+	ld [de], a
+	xor a
+	ld [hl], a
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .continue
+	ld a, [wBattleMode]
+	dec a
+	jr z, .done_wild
+.continue
+	pop af
+	ld h, b
+	ld l, c
+	call GetPartyLocation
+	ld a, [de]
+	ld [hl], a
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld hl, RecycleText
+	jp StdBattleTextbox
+
+.fail
+	pop af
+	jp AnimateAndPrintFailedMove2
+
+.done_wild
+	pop af
+	ret

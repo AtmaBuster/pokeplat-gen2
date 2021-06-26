@@ -184,19 +184,19 @@ GetPocketCapacity:
 .not_pc
 	ld c, MAX_BERRIES
 	ld a, e
-	cp LOW(wBerries)
+	cp LOW(wNumBerries)
 	jr nz, .not_berries
 	ld a, d
-	cp HIGH(wBerries)
+	cp HIGH(wNumBerries)
 	ret z
 
 .not_berries
 	ld c, MAX_MEDICINE
 	ld a, e
-	cp LOW(wMedicine)
+	cp LOW(wNumMedicine)
 	jr nz, .not_medicine
 	ld a, d
-	cp HIGH(wMedicine)
+	cp HIGH(wNumMedicine)
 	ret z
 
 .not_medicine

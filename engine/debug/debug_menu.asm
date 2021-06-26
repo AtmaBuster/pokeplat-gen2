@@ -102,10 +102,11 @@ DebugMenu::
 	db "Max ¥@"
 	db "Warp Any@"
 	db "PC@"
+	db "Fill Bag@"
 
 .MenuItems
-	db 10
-	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+	db 11
+	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 	db -1
 
 .Jumptable
@@ -119,6 +120,7 @@ DebugMenu::
 	dw Debug_MaxMoney
 	dw Debug_WarpAny
 	dw Debug_PC
+	dw Debug_FillBag
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -1012,4 +1014,64 @@ Debug_WarpAny:
 
 Debug_PC:
 	farcall PokemonCenterPC
+	ret
+
+Debug_FillBag:
+	ld hl, wNumItems
+	ld bc, wMedicineEnd - wNumItems
+	xor a
+	call ByteFill
+
+	ld a, -1
+	ld hl, wItems
+	ld [hl], a
+	ld hl, wKeyItems
+	ld [hl], a
+	ld hl, wBalls
+	ld [hl], a
+	ld hl, wBerries
+	ld [hl], a
+	ld hl, wMedicine
+	ld [hl], a
+
+	ld a, 1
+.loop
+	push af
+	ld [wCurItem], a
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld a, [wStringBuffer1]
+	cp "?"
+	jr z, .next
+	farcall CheckItemPocket
+	ld a, [wItemAttributeParamBuffer]
+	cp KEY_ITEM
+	jr z, .give_key_item
+	
+	ld a, 99
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wNumItems
+	call ReceiveItem
+
+	call nc, .full_break
+
+	jr .next
+
+.give_key_item
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wNumItems
+	call ReceiveItem
+
+	call nc, .full_break
+
+.next
+	pop af
+	inc a
+	cp -1
+	jr nz, .loop
+	ret
+
+.full_break
+; set breakpoint to check if full
 	ret

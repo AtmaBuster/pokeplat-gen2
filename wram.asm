@@ -764,6 +764,10 @@ wPlayerPseudoAbilityFlags:: db
 wEnemyPseudoAbilityFlags:: db
 
 wAssistMoveList:: ds NUM_MOVES * (PARTY_LENGTH - 1)
+
+wPlayerRecycleMemory:: ds PARTY_LENGTH
+wEnemyRecycleMemory:: ds PARTY_LENGTH
+
 wBattleEnd::
 
 NEXTU ; c608
@@ -2697,8 +2701,6 @@ wMooMooBerries:: db ; d962
 wUndergroundSwitchPositions:: db ; d963
 wFarfetchdPosition:: db ; d964
 
-	ds 13
-
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
 wTradeCenterSceneID::                             db ; d973
@@ -2779,7 +2781,6 @@ wFastShipB1FSceneID::                             db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
-	ds 49
 
 ; fight counts
 wJackFightCount::    db ; d9f2
@@ -2814,8 +2815,6 @@ wErinFightCount::    db
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c
-
-	ds 6
 
 wCurBox:: db ; db72
 
@@ -2852,8 +2851,6 @@ wCurMapSceneScriptsPointer:: dw ; dc08
 wCurMapCallbackCount:: db ; dc0a
 wCurMapCallbacksPointer:: dw ; dc0b
 
-	ds 2
-
 ; Sprite id of each decoration
 wDecoBed::           db ; dc0f
 wDecoCarpet::        db ; dc10
@@ -2873,23 +2870,16 @@ wDailyResetTimer:: dw ; dc1c
 wDailyFlags1:: db
 wDailyFlags2:: db
 wSwarmFlags:: db
-	ds 2
 wTimerEventStartDay:: db
-	ds 3
 
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES ; dc27
 
-	ds 2
-
 wLuckyNumberDayBuffer:: dw ; dc2d
-	ds 2
 wSpecialPhoneCallID:: db ; dc31
-	ds 3
 wBugContestStartTime:: ds 4 ; day, hour, min, sec ; dc35
 wUnusedTwoDayTimerOn:: db ; dc39
 wUnusedTwoDayTimer:: db
 wUnusedTwoDayTimerStartDate:: db
-	ds 4
 wMobileOrCable_LastSelection:: db
 wdc41:: ds 1
 wdc42:: ds 8

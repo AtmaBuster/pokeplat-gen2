@@ -181,7 +181,7 @@ MoveEffectsPointers:
 	dw Ingrain                       ; INGRAIN
 	dw Superpower                    ; SUPERPOWER
 	dw Splash                        ; MAGIC_COAT
-	dw Splash                        ; RECYCLE
+	dw Recycle                       ; RECYCLE
 	dw Splash                        ; REVENGE
 	dw BrickBreak                    ; BRICK_BREAK
 	dw Splash                        ; YAWN
@@ -217,7 +217,7 @@ MoveEffectsPointers:
 	dw Splash                        ; FEINT
 	dw Splash                        ; PLUCK
 	dw Splash                        ; TAILWIND
-	dw Splash                        ; ACUPRESSURE
+	dw Acupressure                   ; ACUPRESSURE
 	dw Splash                        ; METAL_BURST
 	dw Splash                        ; U_TURN
 	dw CloseCombat                   ; CLOSE_COMBAT
