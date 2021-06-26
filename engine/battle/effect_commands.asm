@@ -8549,3 +8549,28 @@ BattleCommand_recycle:
 .done_wild
 	pop af
 	ret
+
+BattleCommand_knockoff:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPartyMon1Item
+	ld de, wBattleMonItem
+	ld a, [wCurBattleMon]
+	jr nz, .go
+	ld hl, wOTPartyMon1Item
+	ld de, wEnemyMonItem
+	ld a, [wCurOTMon]
+.go
+	ld b, a
+	ld a, [de]
+	and a
+	ret z
+	ld [wNamedObjectIndexBuffer], a
+	ld a, b
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+	ld [de], a
+	call GetItemName
+	ld hl, KnockOffText
+	jp StdBattleTextbox

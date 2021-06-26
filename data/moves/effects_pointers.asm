@@ -185,7 +185,7 @@ MoveEffectsPointers:
 	dw Splash                        ; REVENGE
 	dw BrickBreak                    ; BRICK_BREAK
 	dw Splash                        ; YAWN
-	dw Splash                        ; KNOCK_OFF
+	dw KnockOff                      ; KNOCK_OFF
 	dw Endeavor                      ; ENDEAVOR
 	dw Splash                        ; UNUSED_BA
 	dw Splash                        ; UNUSED_BB
