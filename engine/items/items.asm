@@ -75,7 +75,7 @@ _TossItem::
 	jp RemoveItemFromPocket
 
 .Berry:
-	ld hl, wNumBalls
+	ld hl, wNumBerries
 	jp RemoveItemFromPocket
 
 .Medicine:

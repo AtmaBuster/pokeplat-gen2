@@ -380,19 +380,37 @@ HandleBerserkGene:
 	cp BERSERK_GENE
 	ret nz
 
+	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
 	push hl
 	call GetItemName
 	ld a, STAT_SKIPTEXT | STAT_SILENT
 	ld b, $10 | ATTACK
-	farcall _ForceRaiseStat
+	farcall2 _ForceRaiseStat
 	ld a, [wFailedMessage]
 	and a
 	pop hl
 	ret nz
 
-	xor a
-	ld [hl], a ; consume item
+	ld hl, wPlayerConfuseCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_count
+	ld hl, wEnemyConfuseCount
+.got_count
+	ld a, 255
+	ld [hl], a
+
+	ld hl, BattleText_UsersStringBuffer1Activated
+	call StdBattleTextbox
+
+	ld a, STAT_SKIPTEXT | STAT_SILENT
+	ld b, $10 | ATTACK
+	farcall2 PrintStatChange
+
+	call BattleCommand_switchturn
+	farcall ConsumeHeldItem
+	call BattleCommand_switchturn
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
@@ -8536,9 +8554,9 @@ StartBattle:
 	scf
 	ret
 
-Unreferenced_DoBattle:
-	call DoBattle
-	ret
+;Unreferenced_DoBattle:
+;	call DoBattle
+;	ret
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
@@ -8722,53 +8740,53 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-Unreferenced_Function3f662:
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	ld l, a
-	ld a, MOVE_PP
-	call GetMoveAttribute
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
-	ret
+;Unreferenced_Function3f662:
+;	ld hl, wEnemyMonMoves
+;	ld de, wListMoves_MoveIndicesBuffer
+;	ld b, NUM_MOVES
+;.loop
+;	ld a, [de]
+;	inc de
+;	ld [hli], a
+;	and a
+;	jr z, .clearpp
+;
+;	push bc
+;	push hl
+;
+;	push hl
+;	ld l, a
+;	ld a, MOVE_PP
+;	call GetMoveAttribute
+;	pop hl
+;
+;	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
+;	add hl, bc
+;	ld [hl], a
+;
+;	pop hl
+;	pop bc
+;
+;	dec b
+;	jr nz, .loop
+;	ret
+;
+;.clear
+;	xor a
+;	ld [hli], a
+;
+;.clearpp
+;	push bc
+;	push hl
+;	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
+;	add hl, bc
+;	xor a
+;	ld [hl], a
+;	pop hl
+;	pop bc
+;	dec b
+;	jr nz, .clear
+;	ret
 
 ExitBattle:
 	call .HandleEndOfBattle
