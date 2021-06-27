@@ -7595,11 +7595,29 @@ GetCurrentMoveType:
 
 .no_plate
 	xor a
+	ret
 
 SECTION "Effect Commands 2", ROMX
 
+CallBattleCore2:
+	ld a, BANK("Battle Core")
+	rst FarCall
+	ret
+
+AnimateCurrentMove2:
+	push af
+	push hl
+	farcall AnimateCurrentMove
+	pop hl
+	pop af
+	ret
+
 AnimateAndPrintFailedMove2:
 	farcall AnimateAndPrintFailedMove
+	ret
+
+FailMove2:
+	farcall FailMove
 	ret
 
 UpdateArceusForm:
@@ -7818,6 +7836,7 @@ BattleCommand_camouflage:
 	jr z, .ok
 	ld hl, wEnemyMonType
 .ok
+	call AnimateCurrentMove2
 	push hl
 	call GetEnvironmentType
 	pop hl
@@ -7976,6 +7995,7 @@ BattleCommand_trick:
 	and a
 	ret z
 .ok
+	call AnimateCurrentMove2
 	xor a
 	ld [wAttackMissed], a
 	ld hl, wBattleMonItem
@@ -8040,6 +8060,9 @@ BattleCommand_trick:
 	jp StdBattleTextbox
 
 BattleCommand_taunt:
+	ld a, [wAttackMissed]
+	and a
+	jp nz, FailMove2
 	ld a, BATTLE_VARS_SUBSTATUS6_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_TAUNT, [hl]
@@ -8051,6 +8074,7 @@ BattleCommand_taunt:
 	jr z, .go
 	ld hl, wPlayerTauntCount
 .go
+	call AnimateCurrentMove2
 	call BattleRandom
 	and %11 ; [0..3]
 	add 3 ; [3..6]
@@ -8098,6 +8122,7 @@ BattleCommand_refresh:
 	ld a, [hl]
 	and (1 << PSN) | (1 << BRN) | (1 << PAR)
 	jr z, .fail
+	call AnimateCurrentMove2
 	xor a
 	ld [hl], a
 	ld a, BATTLE_VARS_SUBSTATUS5
@@ -8182,6 +8207,7 @@ BattleCommand_imprison:
 	jp AnimateAndPrintFailedMove2
 
 .hit
+	call AnimateCurrentMove2
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	set SUBSTATUS_IMPRISON, [hl]
@@ -8189,11 +8215,15 @@ BattleCommand_imprison:
 	jp StdBattleTextbox
 
 BattleCommand_torment:
+	ld a, [wAttackMissed]
+	and a
+	jp nz, FailMove2
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_TORMENT, [hl]
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_TORMENT, [hl]
+	call AnimateCurrentMove2
 	ld hl, TormentText
 	jp StdBattleTextbox
 
@@ -8206,7 +8236,7 @@ BattleCommand_movecharge:
 .go
 	ld a, 2
 	ld [hl], a
-	ret
+	farjump AnimateCurrentMove
 
 BattleCommand_watersport:
 	ld a, BATTLE_VARS_SUBSTATUS6
@@ -8214,6 +8244,7 @@ BattleCommand_watersport:
 	bit SUBSTATUS_WATER_SPORT, [hl]
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_WATER_SPORT, [hl]
+	call AnimateCurrentMove2
 	ld hl, WaterSportText
 	jp StdBattleTextbox
 
@@ -8223,6 +8254,7 @@ BattleCommand_mudsport:
 	bit SUBSTATUS_MUD_SPORT, [hl]
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_MUD_SPORT, [hl]
+	call AnimateCurrentMove2
 	ld hl, WaterSportText
 	jp StdBattleTextbox
 
@@ -8263,6 +8295,7 @@ BattleCommand_ingrain:
 	bit SUBSTATUS_INGRAIN, [hl]
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_INGRAIN, [hl]
+	call AnimateCurrentMove2
 	ld hl, IngrainText
 	jp StdBattleTextbox
 
@@ -8276,6 +8309,7 @@ BattleCommand_aquaring:
 	bit SUBSTATUS_AQUA_RING, [hl]
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_AQUA_RING, [hl]
+	call AnimateCurrentMove2
 	ld hl, AquaRingText
 	jp StdBattleTextbox
 
@@ -8325,6 +8359,7 @@ BattleCommand_stockpile:
 	and MASK_STOCKPILE
 	cp STOCKPILE_3
 	jr z, .fail
+	call AnimateCurrentMove2
 	ld a, [hl]
 	add STOCKPILE_1
 	ld [hl], a
@@ -8390,22 +8425,22 @@ BattleCommand_swallow:
 	jr z, .half
 
 	ld hl, GetMaxHP
-	call CallBattleCore
+	call CallBattleCore2
 	jr .restore
 
 .quarter
 	ld hl, GetQuarterMaxHP
-	call CallBattleCore
+	call CallBattleCore2
 	jr .restore
 
 .half
 	ld hl, GetHalfMaxHP
-	call CallBattleCore
+	call CallBattleCore2
 .restore
-	call AnimateCurrentMove
+	call AnimateCurrentMove2
 	call BattleCommand_switchturn
 	ld hl, RestoreHP
-	call CallBattleCore
+	call CallBattleCore2
 	call BattleCommand_switchturn
 	call UpdateUserInParty
 	call RefreshBattleHuds
@@ -8487,6 +8522,7 @@ BattleCommand_acupressure:
 	jr z, .raise_loop
 
 ; found a stat, raise it by 2 levels
+	call AnimateCurrentMove2
 	ld a, c
 	or $10
 	ld b, a
@@ -8532,6 +8568,7 @@ BattleCommand_recycle:
 	jr z, .done_wild
 .continue
 	pop af
+	call AnimateCurrentMove2
 	ld h, b
 	ld l, c
 	call GetPartyLocation
@@ -8574,3 +8611,17 @@ BattleCommand_knockoff:
 	call GetItemName
 	ld hl, KnockOffText
 	jp StdBattleTextbox
+
+BattleCommand_captivate:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	farcall CheckOppositeGender
+	jr c, .failed
+	farcall CheckHiddenOpponent
+	jr nz, .failed
+	farjump AnimateCurrentMove
+
+.failed
+	farcall FailMove
+	farjump EndMoveEffect

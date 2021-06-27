@@ -190,7 +190,8 @@ BattleCommandPointers:
 	battlecmd removestockpile         ; 99
 	battlecmd acupressure             ; 9a
 	battlecmd recycle                 ; 9b
-	battlecmd knockoff ; 9c
+	battlecmd knockoff                ; 9c
+	battlecmd captivate               ; 9d
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

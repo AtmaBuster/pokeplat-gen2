@@ -110,6 +110,7 @@ _Assist_Join:
 	jr c, .select_move_loop
 	ld a, [hl]
 	push af
+	call AnimateCurrentMove2
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
 	pop af

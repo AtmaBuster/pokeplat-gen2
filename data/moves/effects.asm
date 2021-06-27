@@ -2354,6 +2354,7 @@ Memento:
 	loweroppstat $10 | ATTACK
 	loweroppstat $10 | SP_ATTACK
 	kouser
+	endmove
 
 Endeavor:
 	checkobedience
@@ -2467,8 +2468,8 @@ Taunt:
 	checkobedience
 	usedmovetext
 	doturn
+	checkhit
 	taunt
-	failuretext
 	endmove
 
 TrumpCard:
@@ -2552,6 +2553,7 @@ Torment:
 	checkobedience
 	usedmovetext
 	doturn
+	checkhit
 	torment
 	endmove
 
@@ -2693,4 +2695,13 @@ KnockOff:
 	knockoff
 	buildopponentrage
 	heldflinch
+	endmove
+
+Captivate:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	captivate
+	loweroppstat $10 | SP_ATTACK
 	endmove

@@ -247,7 +247,7 @@ MoveEffectsPointers:
 	dw FlareBlitz                    ; FLARE_BLITZ
 	dw Splash                        ; DEFOG
 	dw Splash                        ; TRICK_ROOM
-	dw Splash                        ; CAPTIVATE
+	dw Captivate                     ; CAPTIVATE
 	dw StealthRock                   ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT

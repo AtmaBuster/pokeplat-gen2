@@ -274,7 +274,7 @@ Moves2:
 	move EFFECT_FAKE_OUT,           40, NORMAL,   100, 10,   0, PHYSICAL ;FAKE_OUT
 	move EFFECT_UPROAR,             50, NORMAL,   100, 10,   0, SPECIAL  ;UPROAR
 	move EFFECT_STOCKPILE,           0, NORMAL,   100, 20,   0, STATUS   ;STOCKPILE
-	move EFFECT_SPIT_UP,             0, NORMAL,   100, 10,   0, SPECIAL  ;SPIT_UP
+	move EFFECT_SPIT_UP,             1, NORMAL,   100, 10,   0, SPECIAL  ;SPIT_UP
 	move EFFECT_SWALLOW,             0, NORMAL,   100, 10,   0, STATUS   ;SWALLOW
 	move EFFECT_BURN_HIT,          100, FIRE,      90, 10,  10, SPECIAL  ;HEAT_WAVE
 	move EFFECT_HAIL,                0, ICE,      100, 10,   0, STATUS   ;HAIL
