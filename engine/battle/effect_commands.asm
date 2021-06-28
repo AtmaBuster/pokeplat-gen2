@@ -1063,6 +1063,8 @@ BattleCommand_doturn:
 	bit SUBSTATUS_TRANSFORMED, a
 	ret nz
 
+	farcall SetLastResortFlag
+
 	ldh a, [hBattleTurn]
 	and a
 
@@ -7603,6 +7605,18 @@ GetCurrentMoveType:
 
 SECTION "Effect Commands 2", ROMX
 
+CompareMove2:
+	; checks if the move ID in a matches the move in bc
+	push hl
+	call GetMoveIndexFromID
+	ld a, h
+	cp b
+	ld a, l
+	pop hl
+	ret nz
+	cp c
+	ret
+
 CallBattleCore2:
 	ld a, BANK("Battle Core")
 	rst FarCall
@@ -8724,3 +8738,89 @@ BattleCommand_tailwind:
 
 .player
 	farjump CalcPlayerStats
+
+SetLastResortFlag:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurMoveNum]
+	ld hl, wPlayerLastResortFlags
+	jr z, .okay
+	ld a, [wCurEnemyMoveNum]
+	ld hl, wEnemyLastResortFlags
+
+.okay
+	ld b, a
+	ld a, 1
+	inc b
+.loop
+	dec b
+	jr z, .done
+	add a
+	jr .loop
+
+.done
+	or [hl]
+	ld [hl], a
+	ret
+
+BattleCommand_lastresort:
+	ld a, 1
+	ld [wAttackMissed], a
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerLastResortFlags]
+	ld hl, wBattleMonMoves
+	jr z, .go
+	ld a, [wEnemyLastResortFlags]
+	ld hl, wEnemyMonMoves
+.go
+	ld d, a
+; make sure mon knows last resort
+	push hl
+	xor a
+	ccf
+	push af
+	ld e, NUM_MOVES
+.check_loop
+	ld a, [hli]
+	and a
+	jr z, .done
+	ld bc, LAST_RESORT
+	call CompareMove2
+	jr z, .check_hit
+	pop af
+	adc a
+	ld b, a
+	and d
+	ld a, b
+	push af
+	jr z, .fail2
+.check_loop_2
+	dec e
+	jr nz, .check_loop
+
+.done
+	pop af
+	pop hl
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .fail
+
+; make sure the user knows more than one move
+	inc hl
+	ld a, [hl]
+	and a
+	jr z, .fail
+	ret
+
+.fail2
+	pop af
+	pop hl
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+.check_hit
+	xor a
+	ld [wAttackMissed], a
+	jr .check_loop_2

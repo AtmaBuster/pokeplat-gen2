@@ -2733,3 +2733,24 @@ Tailwind:
 	doturn
 	tailwind
 	endmove
+
+LastResort:
+	checkobedience
+	usedmovetext
+	doturn
+	lastresort
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove

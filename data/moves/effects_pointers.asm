@@ -237,7 +237,7 @@ MoveEffectsPointers:
 	dw Splash                        ; POWER_SWAP
 	dw Splash                        ; GUARD_SWAP
 	dw Splash                        ; PUNISHMENT
-	dw Splash                        ; LAST_RESORT
+	dw LastResort                    ; LAST_RESORT
 	dw Splash                        ; UNUSED_ED
 	dw Splash                        ; SUCKER_PUNCH
 	dw ToxicSpikes                   ; TOXIC_SPIKES

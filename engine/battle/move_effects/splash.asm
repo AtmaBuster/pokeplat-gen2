@@ -1,4 +1,3 @@
 BattleCommand_splash:
 	call AnimateCurrentMove
-	farcall StubbedTrainerRankings_Splash
 	jp PrintNothingHappened

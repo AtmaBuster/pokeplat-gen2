@@ -3903,6 +3903,7 @@ endr
 	ld [wPlayerWrapCount], a
 	ld [wEnemyWrapCount], a
 	ld [wEnemyTurnsTaken], a
+	ld [wEnemyLastResortFlags], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
@@ -4195,7 +4196,7 @@ InitBattleMon:
 	farcall SetSlowStartOnPlayer
 	call ApplyStatusEffectOnPlayerStats
 	farcall ApplySlowStartEffectOnPlayerStats
-	call BadgeStatBoosts
+	farcall BadgeStatBoosts
 	ret
 
 BattleCheckPlayerShininess:
@@ -4398,6 +4399,7 @@ endr
 	ld [wEnemyWrapCount], a
 	ld [wPlayerWrapCount], a
 	ld [wPlayerTurnsTaken], a
+	ld [wPlayerLastResortFlags], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
@@ -6068,6 +6070,7 @@ MoveSelectionScreen:
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	jr nz, .transformed
+	farcall BattleMenuMoveSwapLastResortFlags
 	ld hl, wPartyMon1Moves
 	ld a, [wCurBattleMon]
 	call GetPartyLocation
@@ -7247,95 +7250,6 @@ ApplyStatLevelMultiplier:
 
 INCLUDE "data/battle/stat_multipliers_2.asm"
 
-BadgeStatBoosts:
-; Raise the stats of the battle mon in wBattleMon
-; depending on which badges have been obtained.
-
-; Every other badge boosts a stat, starting from the first.
-
-; 	ZephyrBadge:  Attack
-; 	PlainBadge:   Speed
-; 	MineralBadge: Defense
-; 	GlacierBadge: Special Attack
-; 	RisingBadge:  Special Defense
-
-; The boosted stats are in order, except PlainBadge and MineralBadge's boosts are swapped.
-
-	ld a, [wLinkMode]
-	and a
-	ret nz
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	ret nz
-
-	ld a, [wJohtoBadges]
-
-; Swap badges 3 (PlainBadge) and 5 (MineralBadge).
-	ld d, a
-	and (1 << PLAINBADGE)
-	add a
-	add a
-	ld b, a
-	ld a, d
-	and (1 << MINERALBADGE)
-	rrca
-	rrca
-	ld c, a
-	ld a, d
-	and ((1 << ZEPHYRBADGE) | (1 << HIVEBADGE) | (1 << FOGBADGE) | (1 << STORMBADGE) | (1 << GLACIERBADGE) | (1 << RISINGBADGE))
-	or b
-	or c
-	ld b, a
-
-	ld hl, wBattleMonAttack
-	ld c, 4
-.CheckBadge:
-	ld a, b
-	srl b
-	call c, BoostStat
-	inc hl
-	inc hl
-; Check every other badge.
-	srl b
-	dec c
-	jr nz, .CheckBadge
-; And the last one (RisingBadge) too.
-	srl a
-	call c, BoostStat
-	ret
-
-BoostStat:
-; Raise stat at hl by 1/8.
-
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	srl d
-	rr e
-	srl d
-	rr e
-	srl d
-	rr e
-	ld a, [hl]
-	add e
-	ld [hld], a
-	ld a, [hl]
-	adc d
-	ld [hli], a
-
-; Cap at 999.
-	ld a, [hld]
-	sub LOW(MAX_STAT_VALUE)
-	ld a, [hl]
-	sbc HIGH(MAX_STAT_VALUE)
-	ret c
-	ld a, HIGH(MAX_STAT_VALUE)
-	ld [hli], a
-	ld a, LOW(MAX_STAT_VALUE)
-	ld [hld], a
-	ret
-
 _LoadBattleFontsHPBar:
 	callfar LoadBattleFontsHPBar
 	ret
@@ -7765,7 +7679,7 @@ GiveExperiencePoints:
 	farcall SetSlowStartOnPlayer
 	call ApplyStatusEffectOnPlayerStats
 	farcall ApplySlowStartEffectOnPlayerStats
-	call BadgeStatBoosts
+	farcall BadgeStatBoosts
 	call UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
@@ -9826,3 +9740,147 @@ DecrementTailwind:
 	ret nz
 	ld hl, TailwindPeteredOutText
 	jp StdBattleTextbox
+
+BadgeStatBoosts:
+; Raise the stats of the battle mon in wBattleMon
+; depending on which badges have been obtained.
+
+; Every other badge boosts a stat, starting from the first.
+
+; 	ZephyrBadge:  Attack
+; 	PlainBadge:   Speed
+; 	MineralBadge: Defense
+; 	GlacierBadge: Special Attack
+; 	RisingBadge:  Special Defense
+
+; The boosted stats are in order, except PlainBadge and MineralBadge's boosts are swapped.
+
+	ld a, [wLinkMode]
+	and a
+	ret nz
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	ret nz
+
+	ld a, [wJohtoBadges]
+
+; Swap badges 3 (PlainBadge) and 5 (MineralBadge).
+	ld d, a
+	and (1 << PLAINBADGE)
+	add a
+	add a
+	ld b, a
+	ld a, d
+	and (1 << MINERALBADGE)
+	rrca
+	rrca
+	ld c, a
+	ld a, d
+	and ((1 << ZEPHYRBADGE) | (1 << HIVEBADGE) | (1 << FOGBADGE) | (1 << STORMBADGE) | (1 << GLACIERBADGE) | (1 << RISINGBADGE))
+	or b
+	or c
+	ld b, a
+
+	ld hl, wBattleMonAttack
+	ld c, 4
+.CheckBadge:
+	ld a, b
+	srl b
+	call c, BoostStat
+	inc hl
+	inc hl
+; Check every other badge.
+	srl b
+	dec c
+	jr nz, .CheckBadge
+; And the last one (RisingBadge) too.
+	srl a
+	call c, BoostStat
+	ret
+
+BoostStat:
+; Raise stat at hl by 1/8.
+
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	srl d
+	rr e
+	srl d
+	rr e
+	srl d
+	rr e
+	ld a, [hl]
+	add e
+	ld [hld], a
+	ld a, [hl]
+	adc d
+	ld [hli], a
+
+; Cap at 999.
+	ld a, [hld]
+	sub LOW(MAX_STAT_VALUE)
+	ld a, [hl]
+	sbc HIGH(MAX_STAT_VALUE)
+	ret c
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [hli], a
+	ld a, LOW(MAX_STAT_VALUE)
+	ld [hld], a
+	ret
+
+BattleMenuMoveSwapLastResortFlags:
+	ld a, [wMoveSwapBuffer]
+	dec a
+	call .get_bit
+	ld b, a
+	ld a, [wMenuCursorY]
+	dec a
+	call .get_bit
+	ld c, a
+	ld hl, wPlayerLastResortFlags
+	ld a, [hl]
+	and b
+	ld d, a
+	ld a, [hl]
+	and c
+	ld e, a
+	call .compare_bits
+	ret z
+	ld a, b
+	or c
+	xor [hl]
+	ld [hl], a
+	ret
+
+.get_bit
+	ld e, a
+	inc e
+	ld a, 1
+.get_bit_loop
+	dec e
+	ret z
+	add a
+	jr .get_bit_loop
+
+.compare_bits
+	ld a, d
+	or e
+	ret z
+	ld a, d
+	and a
+	jr z, .false
+	ld a, e
+	and a
+	jr z, .false
+	xor a
+	ret
+
+.false
+	ld a, 1
+	and a
+	ret
+
+;	ld a, [wMoveSwapBuffer]
+;	ld a, [wMenuCursorY]
