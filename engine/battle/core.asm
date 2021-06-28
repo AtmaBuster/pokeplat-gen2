@@ -91,6 +91,7 @@ DoBattle:
 	call NewBattleMonStatus
 	call BreakAttraction
 	call SendOutPlayerMon
+	farcall DoPlayerSlowStartText
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
@@ -298,6 +299,8 @@ HandleBetweenTurnEffects:
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
+	farcall HandleSlowStart
+	farcall DecrementTailwind
 	jp HandleTemporaryEffects
 
 CheckFaint_PlayerThenEnemy:
@@ -3048,6 +3051,7 @@ ForcePlayerMonChoice:
 	call NewBattleMonStatus
 	call BreakAttraction
 	call SendOutPlayerMon
+	farcall DoPlayerSlowStartText
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
@@ -3069,6 +3073,7 @@ PlayerPartyMonEntrance:
 	call NewBattleMonStatus
 	call BreakAttraction
 	call SendOutPlayerMon
+	farcall DoPlayerSlowStartText
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
@@ -3398,6 +3403,7 @@ ForceEnemySwitch:
 	call NewEnemyMonStatus
 	call ResetEnemyStatLevels
 	call Function_SetEnemyMonAndSendOutAnimation
+	farcall DoEnemySlowStartText
 	call BreakAttraction
 	call ResetBattleParticipants
 	ret
@@ -3418,6 +3424,7 @@ EnemySwitch:
 	call ClearEnemyMonBox
 	call Function_BattleTextEnemySentOut
 	call Function_SetEnemyMonAndSendOutAnimation
+	farcall DoEnemySlowStartText
 	pop af
 	ret c
 	; If we're here, then we're switching too
@@ -3442,7 +3449,9 @@ EnemySwitch_SetMode:
 	ld [wEnemyIsSwitching], a
 	call ClearEnemyMonBox
 	call Function_BattleTextEnemySentOut
-	jp Function_SetEnemyMonAndSendOutAnimation
+	call Function_SetEnemyMonAndSendOutAnimation
+	farcall DoEnemySlowStartText
+	ret
 
 CheckWhetherSwitchmonIsPredetermined:
 ; returns carry if: ???
@@ -3713,6 +3722,7 @@ LoadEnemyMonToSwitchTo:
 	ld [wTempEnemyMonSpecies], a
 	ld [wCurPartySpecies], a
 	call LoadEnemyMon
+	farcall SetAndApplySlowStartOnEnemy
 
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
@@ -4182,7 +4192,9 @@ InitBattleMon:
 	ld de, wPlayerStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
+	farcall SetSlowStartOnPlayer
 	call ApplyStatusEffectOnPlayerStats
+	farcall ApplySlowStartEffectOnPlayerStats
 	call BadgeStatBoosts
 	ret
 
@@ -4262,7 +4274,9 @@ InitEnemyMon:
 	ld de, wEnemyStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
+	farcall SetSlowStartOnEnemy
 	call ApplyStatusEffectOnEnemyStats
+	farcall ApplySlowStartEffectOnEnemyStats
 	ld hl, wBaseType1
 	ld de, wEnemyMonType1
 	ld a, [hli]
@@ -4295,6 +4309,7 @@ SwitchPlayerMon:
 	call NewBattleMonStatus
 	call BreakAttraction
 	call SendOutPlayerMon
+	farcall DoPlayerSlowStartText
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	ld hl, wEnemyMonHP
@@ -5673,6 +5688,7 @@ BattleMonEntrance:
 	call NewBattleMonStatus
 	call BreakAttraction
 	call SendOutPlayerMon
+	farcall DoPlayerSlowStartText
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
@@ -5697,6 +5713,7 @@ PassedBattleMonEntrance:
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
 	call SendOutPlayerMon
+	farcall DoPlayerSlowStartText
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
@@ -7097,75 +7114,30 @@ ApplyStatusEffectOnStats:
 ApplyPrzEffectOnSpeed:
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .enemy
-	ld a, [wBattleMonStatus]
-	and 1 << PAR
-	ret z
 	ld hl, wBattleMonSpeed + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
-	rr b
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .player_ok
-	ld b, $1 ; min speed
-
-.player_ok
-	ld [hl], b
-	ret
-
-.enemy
+	ld a, [wBattleMonStatus]
+	jr nz, .go
+	ld hl, wEnemyMonSpeed + 1
 	ld a, [wEnemyMonStatus]
+.go
 	and 1 << PAR
 	ret z
-	ld hl, wEnemyMonSpeed + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
-	rr b
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .enemy_ok
-	ld b, $1 ; min speed
-
-.enemy_ok
-	ld [hl], b
-	ret
+	call StatusHalveStat
+	jp StatusHalveStat
 
 ApplyBrnEffectOnAttack:
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .enemy
-	ld a, [wBattleMonStatus]
-	and 1 << BRN
-	ret z
 	ld hl, wBattleMonAttack + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hl]
-	srl a
-	rr b
-	ld [hli], a
-	or b
-	jr nz, .player_ok
-	ld b, $1 ; min attack
-
-.player_ok
-	ld [hl], b
-	ret
-
-.enemy
+	ld a, [wBattleMonStatus]
+	jr nz, .go
+	ld hl, wEnemyMonAttack + 1
 	ld a, [wEnemyMonStatus]
+.go
 	and 1 << BRN
 	ret z
-	ld hl, wEnemyMonAttack + 1
+
+StatusHalveStat:
 	ld a, [hld]
 	ld b, a
 	ld a, [hl]
@@ -7173,10 +7145,9 @@ ApplyBrnEffectOnAttack:
 	rr b
 	ld [hli], a
 	or b
-	jr nz, .enemy_ok
-	ld b, $1 ; min attack
-
-.enemy_ok
+	jr nz, .ok
+	ld b, 1
+.ok
 	ld [hl], b
 	ret
 
@@ -7791,9 +7762,11 @@ GiveExperiencePoints:
 	xor a ; FALSE
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
-	callfar ApplyStatusEffectOnPlayerStats
-	callfar BadgeStatBoosts
-	callfar UpdatePlayerHUD
+	farcall SetSlowStartOnPlayer
+	call ApplyStatusEffectOnPlayerStats
+	farcall ApplySlowStartEffectOnPlayerStats
+	call BadgeStatBoosts
+	call UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTileMapToTempTileMap
 	ld a, $1
@@ -8698,6 +8671,7 @@ InitEnemyWildmon:
 	ld [wBattleMode], a
 	farcall StubbedTrainerRankings_WildBattles
 	call LoadEnemyMon
+	farcall SetAndApplySlowStartOnEnemy
 	ld hl, wEnemyMonMoves
 	ld de, wWildMonMoves
 	ld bc, NUM_MOVES
@@ -9656,10 +9630,199 @@ BattleStartMessage:
 	pop hl
 	call StdBattleTextbox
 
-	call IsMobileBattle2
+	ld a, [wBattleMode]
+	dec a
 	ret nz
 
-	ld c, $2 ; start
-	farcall Mobile_PrintOpponentBattleMessage
-
+	farcall DoEnemySlowStartText2
 	ret
+
+SECTION "Battle Core 2", ROMX
+
+SetSlowStartOnPlayer:
+	ld a, 1
+	jr SetSlowStart
+
+SetSlowStartOnEnemy:
+	xor a
+
+SetSlowStart:
+	ldh [hBattleTurn], a
+	and a
+	ld de, wPlayerPseudoAbilityFlags
+	ld a, [wBattleMonSpecies]
+	jr nz, .go
+	ld de, wEnemyPseudoAbilityFlags
+	ld a, [wEnemyMonSpecies]
+.go
+	call CheckRegigigas
+	jr nz, .not_regigigas
+; set slow start counter
+	ld a, [de]
+	and $ff - MASK_SLOW_START
+	or 5
+	ld [de], a
+	ret
+
+.not_regigigas
+	ld a, [de]
+	and $ff - MASK_SLOW_START
+	ld [de], a
+	ret
+
+ApplySlowStartEffectOnPlayerStats:
+	ld a, 1
+	jr ApplySlowStartEffect
+
+ApplySlowStartEffectOnEnemyStats:
+	xor a
+
+ApplySlowStartEffect:
+	ld [hBattleTurn], a
+	and a
+	ld bc, wPlayerPseudoAbilityFlags
+	ld de, wBattleMonAttack
+	ld a, [wBattleMonSpecies]
+	jr nz, .go
+	ld bc, wEnemyPseudoAbilityFlags
+	ld de, wEnemyMonAttack
+	ld a, [wEnemyMonSpecies]
+.go
+; also applies tailwind effect
+	call ApplyTailwindEffect
+	call CheckRegigigas
+	ret nz
+; check slow start counter
+	ld a, [bc]
+	and MASK_SLOW_START
+	ret z
+; halve attack and speed
+	ld h, d
+	ld l, e
+	inc hl
+	call .halve_stat
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+
+.halve_stat
+	ld a, [hld]
+	ld b, a
+	ld a, [hl]
+	srl a
+	rr b
+	ld [hli], a
+	or b
+	jr nz, .ok
+	ld b, 1
+.ok
+	ld [hl], b
+	ret
+
+ApplyTailwindEffect:
+	push de
+	push hl
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wBattleMonSpeed
+	ld a, [wPlayerTailwindCount]
+	jr nz, .go
+	ld de, wEnemyMonSpeed
+	ld a, [wEnemyTailwindCount]
+.go
+	and a
+	jr z, .done
+
+	ld a, [de]
+	ld h, a
+	inc de
+	ld a, [de]
+	ld l, a
+	add hl, hl
+	ld a, l
+	ld [de], a
+	dec de
+	ld a, h
+	ld [de], a
+
+.done
+	pop hl
+	pop de
+	ret
+
+CheckRegigigas:
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(REGIGIGAS)
+	ret nz
+	ld a, l
+	cp LOW(REGIGIGAS)
+	ret
+
+DoPlayerSlowStartText:
+	ld a, [wPlayerPseudoAbilityFlags]
+	jr DoSlowStartText
+
+DoEnemySlowStartText:
+	ld a, [wEnemyPseudoAbilityFlags]
+DoSlowStartText:
+	and MASK_SLOW_START
+	ret z
+	ld hl, SlowStartActivateText
+	jp StdBattleTextbox
+
+DoEnemySlowStartText2:
+	ld a, [wEnemyPseudoAbilityFlags]
+	and MASK_SLOW_START
+	ret z
+	ld hl, SlowStartActivateText2
+	jp StdBattleTextbox
+
+HandleSlowStart:
+; player
+	call SetPlayerTurn
+	ld a, [wBattleMonSpecies]
+	ld hl, wPlayerPseudoAbilityFlags
+	ld de, CalcPlayerStats
+	call .apply
+; enemy
+	call SetEnemyTurn
+	ld a, [wEnemyMonSpecies]
+	ld hl, wEnemyPseudoAbilityFlags
+	ld de, CalcEnemyStats
+.apply
+	push hl
+	call CheckRegigigas
+	pop hl
+	ret nz
+	ld a, [hl]
+	and MASK_SLOW_START
+	ret z
+	dec [hl]
+	ret nz
+	ld h, d
+	ld l, e
+	ld a, BANK(CalcPlayerStats) ; = BANK(CalcEnemyStats)
+	rst FarCall
+	ld hl, SlowStartFinishText
+	jp StdBattleTextbox
+
+SetAndApplySlowStartOnEnemy:
+	call SetSlowStartOnEnemy
+	jp ApplySlowStartEffectOnEnemyStats
+
+DecrementTailwind:
+	ld hl, wPlayerTailwindCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyTailwindCount
+.go
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, TailwindPeteredOutText
+	jp StdBattleTextbox

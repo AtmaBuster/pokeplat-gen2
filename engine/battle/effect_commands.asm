@@ -5169,6 +5169,8 @@ CalcPlayerStats:
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
+	farcall ApplySlowStartEffectOnPlayerStats
+
 	jp BattleCommand_switchturn
 
 CalcEnemyStats:
@@ -5186,6 +5188,8 @@ CalcEnemyStats:
 
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
+
+	farcall ApplySlowStartEffectOnEnemyStats
 
 	jp BattleCommand_switchturn
 
@@ -8130,7 +8134,12 @@ BattleCommand_refresh:
 	res SUBSTATUS_TOXIC, [hl]
 	call UpdateUserInParty
 	ld hl, StatusHealText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+
+	ldh a, [hBattleTurn]
+	and a
+	jp z, CalcPlayerStats
+	jp CalcEnemyStats
 
 .fail
 	call AnimateFailedMove
@@ -8625,3 +8634,93 @@ BattleCommand_captivate:
 .failed
 	farcall FailMove
 	farjump EndMoveEffect
+
+BattleCommand_gyroball:
+	push bc
+	push de
+	ld hl, wBattleMonSpeed
+	ld de, wEnemyMonSpeed
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyMonSpeed
+	ld de, wBattleMonSpeed
+.go
+	ld a, [de]
+	ld b, a
+	inc de
+	ld a, [de]
+	ld e, a
+	ld d, b
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, d
+	ldh [hMultiplicand + 1], a
+	ld a, e
+	ldh [hMultiplicand + 2], a
+	ld a, 25
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, [hli]
+	ld b, [hl]
+	and a
+	jr z, .lt256
+	ld c, 2
+	cp 1
+	jr z, .lt512
+	ld c, 4
+	rrca
+	rr b
+.lt512
+	rrca
+	rr b
+	; a should be 0
+	ld a, c
+	ldh [hDivisor], a
+	push bc
+	ld b, 4
+	call Divide
+	pop bc
+.lt256
+	ld a, b
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 3]
+	pop de
+	pop bc
+	ld d, a
+	cp -1
+	jr z, .max
+	inc d
+	ldh a, [hQuotient + 2]
+	and a
+	jr nz, .max
+	ld a, d
+	cp 151
+	ret c
+
+.max
+	ld d, 150
+	ret
+
+BattleCommand_tailwind:
+	ld hl, wPlayerTailwindCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyTailwindCount
+.go
+	ld a, [hl]
+	and a
+	jp nz, AnimateAndPrintFailedMove2
+	ld [hl], 3
+	ld hl, TailwindText
+	call StdBattleTextbox
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	farjump CalcEnemyStats
+
+.player
+	farjump CalcPlayerStats

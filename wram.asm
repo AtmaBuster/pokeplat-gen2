@@ -761,6 +761,15 @@ wPlayerJustGotFrozen:: db ; c73c
 wEnemyJustGotFrozen:: db ; c73d
 
 wPlayerPseudoAbilityFlags:: db
+; bit
+; 7 truant
+; 6
+; 5
+; 4
+; 3
+; 2 slow start counter
+; 1 "
+; 0 "
 wEnemyPseudoAbilityFlags:: db
 
 wAssistMoveList:: ds NUM_MOVES * (PARTY_LENGTH - 1)

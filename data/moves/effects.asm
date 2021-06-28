@@ -2705,3 +2705,31 @@ Captivate:
 	captivate
 	loweroppstat $10 | SP_ATTACK
 	endmove
+
+GyroBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	gyroball
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Tailwind:
+	checkobedience
+	usedmovetext
+	doturn
+	tailwind
+	endmove

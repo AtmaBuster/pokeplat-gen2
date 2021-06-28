@@ -1358,3 +1358,32 @@ KnockOffText:
 	text " was"
 	cont "knocked off!"
 	prompt
+
+SlowStartActivateText:
+	text "<USER>"
+	line "can't get it going!"
+	prompt
+
+SlowStartFinishText:
+	text "<USER>"
+	line "finally got its"
+	cont "act together!"
+	prompt
+
+SlowStartActivateText2:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text_start
+	line "can't get it going!"
+	prompt
+
+TailwindPeteredOutText:
+	text "<USER>'s"
+	line "TAILWIND petered"
+	cont "out!"
+	prompt
+
+TailwindText:
+	text "<USER>"
+	line "blew a TAILWIND!"
+	prompt

@@ -210,13 +210,13 @@ MoveEffectsPointers:
 	dw Splash                        ; MIRACLE_EYE
 	dw WakeUpSlap                    ; WAKE_UP_SLAP
 	dw HammerArm                     ; HAMMER_ARM
-	dw Splash                        ; GYRO_BALL
+	dw GyroBall                      ; GYRO_BALL
 	dw Splash                        ; HEALING_WISH
 	dw Brine                         ; BRINE
 	dw Splash                        ; NATURAL_GIFT
 	dw Splash                        ; FEINT
 	dw Splash                        ; PLUCK
-	dw Splash                        ; TAILWIND
+	dw Tailwind                      ; TAILWIND
 	dw Acupressure                   ; ACUPRESSURE
 	dw Splash                        ; METAL_BURST
 	dw Splash                        ; U_TURN

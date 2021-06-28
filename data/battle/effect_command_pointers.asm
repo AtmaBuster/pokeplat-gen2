@@ -192,6 +192,8 @@ BattleCommandPointers:
 	battlecmd recycle                 ; 9b
 	battlecmd knockoff                ; 9c
 	battlecmd captivate               ; 9d
+	battlecmd gyroball                ; 9e
+	battlecmd tailwind                ; 9f
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat
