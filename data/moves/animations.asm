@@ -493,6 +493,7 @@ BattleAnimations::
 	dw BattleAnim_ShadowForce
 	dw BattleAnim_SweetScent2
 	dw BattleAnim_RefreshSprite
+	dw BattleAnim_TightenFocus
 
 BattleAnim_0:
 BattleAnim_MirrorMove:
@@ -5296,6 +5297,7 @@ BattleAnim_DarkVoid:
 BattleAnim_SeedFlare:
 BattleAnim_OminousWind:
 BattleAnim_ShadowForce:
+BattleAnim_TightenFocus:
 ; copy of pound
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_POUND

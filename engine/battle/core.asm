@@ -204,6 +204,7 @@ BattleTurn:
 	jr c, .quit
 
 	call DetermineMoveOrder
+	call ShowFocusPunchMessage
 	jr c, .false
 	call Battle_EnemyFirst
 	jr .proceed
@@ -721,6 +722,9 @@ ParsePlayerAction:
 	ret
 
 HandleTemporaryEffects:
+	xor a
+	ld [wPlayerTookDamage], a
+	ld [wEnemyTookDamage], a
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, HandleTemporaryEffects_2
@@ -909,24 +913,9 @@ CompareMovePriority:
 	ret
 
 GetMovePriority:
-; Return the priority (0-3) of move a.
+; Return the priority (0-10) of move a.
 
 	ld b, a
-;
-;	; Vital Throw goes last.
-;	call GetMoveIndexFromID
-;	ld a, h
-;	if HIGH(VITAL_THROW)
-;		cp HIGH(VITAL_THROW)
-;	else
-;		and a
-;	endc
-;	jr nz, .not_vital_throw
-;	ld a, l
-;	sub LOW(VITAL_THROW)
-;	ret z
-;
-;.not_vital_throw
 	call GetMoveEffect
 	ld hl, MoveEffectPriorities
 .loop
@@ -9551,6 +9540,24 @@ BattleStartMessage:
 	farcall DoEnemySlowStartText2
 	ret
 
+ShowFocusPunchMessage:
+	push af
+	push bc
+	push de
+	push hl
+	jr c, .alt
+	farcall ShowFocusPunchMessage1
+	jr .join
+
+.alt
+	farcall ShowFocusPunchMessage2
+.join
+	pop hl
+	pop de
+	pop bc
+	pop af
+	ret
+
 SECTION "Battle Core 2", ROMX
 
 SetSlowStartOnPlayer:
@@ -9882,5 +9889,31 @@ BattleMenuMoveSwapLastResortFlags:
 	and a
 	ret
 
-;	ld a, [wMoveSwapBuffer]
-;	ld a, [wMenuCursorY]
+ShowFocusPunchMessage1:
+	call FocusPunchMessage_Player
+	jp FocusPunchMessage_Enemy
+
+ShowFocusPunchMessage2:
+	call FocusPunchMessage_Enemy
+
+FocusPunchMessage_Player:
+	call SetPlayerTurn
+	ld a, [wCurPlayerMove]
+	jr FocusPunchMessage
+
+FocusPunchMessage_Enemy:
+	call SetEnemyTurn
+	ld a, [wCurEnemyMove]
+FocusPunchMessage:
+	ld l, a
+	ld a, MOVE_EFFECT
+	call GetMoveAttribute
+	ld b, a
+	cp EFFECT_FOCUS_PUNCH
+	ret nz
+	xor a
+	ld [wNumHits], a
+	ld de, ANIM_TIGHTEN_FOCUS
+	farcall Call_PlayBattleAnim_OnlyIfVisible
+	ld hl, TightenFocusText
+	jp StdBattleTextbox

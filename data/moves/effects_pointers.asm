@@ -169,7 +169,7 @@ MoveEffectsPointers:
 	dw WillOWisp                     ; WILL_O_WISP
 	dw Memento                       ; MEMENTO
 	dw Facade                        ; FACADE
-	dw Splash                        ; FOCUS_PUNCH
+	dw FocusPunch                    ; FOCUS_PUNCH
 	dw SmellingSalt                  ; SMELLINGSALT
 	dw NaturePower                   ; NATURE_POWER
 	dw Charge                        ; CHARGE
@@ -182,7 +182,7 @@ MoveEffectsPointers:
 	dw Superpower                    ; SUPERPOWER
 	dw Splash                        ; MAGIC_COAT
 	dw Recycle                       ; RECYCLE
-	dw Splash                        ; REVENGE
+	dw Revenge                       ; REVENGE
 	dw BrickBreak                    ; BRICK_BREAK
 	dw Splash                        ; YAWN
 	dw KnockOff                      ; KNOCK_OFF

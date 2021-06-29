@@ -1387,3 +1387,15 @@ TailwindText:
 	text "<USER>"
 	line "blew a TAILWIND!"
 	prompt
+
+TightenFocusText:
+	text "<USER>"
+	line "is tightening its"
+	cont "focus!"
+	prompt
+
+LostFocusText:
+	text "<USER>"
+	line "lost its focus and"
+	cont "couldn't move!"
+	prompt

@@ -195,6 +195,8 @@ BattleCommandPointers:
 	battlecmd gyroball                ; 9e
 	battlecmd tailwind                ; 9f
 	battlecmd lastresort              ; a0
+	battlecmd focuspunch              ; a1
+	battlecmd revenge                 ; a2
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

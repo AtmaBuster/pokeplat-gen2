@@ -777,6 +777,9 @@ wAssistMoveList:: ds NUM_MOVES * (PARTY_LENGTH - 1)
 wPlayerRecycleMemory:: ds PARTY_LENGTH
 wEnemyRecycleMemory:: ds PARTY_LENGTH
 
+wPlayerTookDamage:: db
+wEnemyTookDamage:: db
+
 wBattleEnd::
 
 NEXTU ; c608

@@ -2099,6 +2099,8 @@ BattleCommand_failuretext:
 BattleCommand_applydamage:
 ; applydamage
 
+	farcall TookDamageFlag
+
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
@@ -2829,25 +2831,7 @@ SpeciesItemBoost:
 DoubleStatIfSpeciesHoldingItem:
 ; If the attacking monster is species bc and
 ; it's holding item d, double the stat in hl.
-
-	push hl
-	ld a, MON_SPECIES
-	call BattlePartyAttr
-
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr z, .CompareSpecies
-	ld a, [wTempEnemyMonSpecies]
-.CompareSpecies:
-
-	call GetPokemonIndexFromID
-	ld a, h
-	cp b
-	ld a, l
-	pop hl
-	ret nz
-	cp c
+	call StatChangeItemCheck
 	ret nz
 
 	push hl
@@ -2865,6 +2849,21 @@ DoubleStatIfSpeciesHoldingItem:
 HalveStatIfSpeciesHoldingItem:
 ; If the defending monster is species bc and
 ; it's holding item d, halve the stat in hl.
+	call StatChangeItemCheck
+	ret nz
+	push hl
+	call GetOpponentItem
+	ld a, [hl]
+	pop hl
+	cp d
+	ret nz
+
+; Halve the stat
+	rrc h
+	rr l
+	ret
+
+StatChangeItemCheck:
 	push hl
 	ld a, MON_SPECIES
 	call BattlePartyAttr
@@ -2883,18 +2882,6 @@ HalveStatIfSpeciesHoldingItem:
 	pop hl
 	ret nz
 	cp c
-	ret nz
-
-	push hl
-	call GetOpponentItem
-	ld a, [hl]
-	pop hl
-	cp d
-	ret nz
-
-; Halve the stat
-	rrc h
-	rr l
 	ret
 
 EnemyAttackDamage:
@@ -8824,3 +8811,46 @@ BattleCommand_lastresort:
 	xor a
 	ld [wAttackMissed], a
 	jr .check_loop_2
+
+TookDamageFlag:
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerTookDamage
+	jr nz, .got_turn_damage_flag
+	ld hl, wEnemyTookDamage
+.got_turn_damage_flag
+	ld a, 1
+	ld [hl], a
+	ret
+
+BattleCommand_focuspunch:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTookDamage]
+	jr z, .go
+	ld a, [wEnemyTookDamage]
+.go
+	and a
+	ret z
+	farcall AnimateFailedMove
+	ld hl, LostFocusText
+	call StdBattleTextbox
+	farjump EndMoveEffect
+
+BattleCommand_revenge:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTookDamage]
+	jr z, .go
+	ld a, [wEnemyTookDamage]
+.go
+	and a
+	ret nz
+	ld a, d
+	add a
+	ld d, a
+	ret
