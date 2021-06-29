@@ -197,6 +197,10 @@ BattleCommandPointers:
 	battlecmd lastresort              ; a0
 	battlecmd focuspunch              ; a1
 	battlecmd revenge                 ; a2
+	battlecmd powerswap               ; a3
+	battlecmd guardswap               ; a4
+	battlecmd heartswap               ; a5
+	battlecmd doubleunderwaterdamage  ; a6
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

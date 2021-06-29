@@ -12,6 +12,19 @@ CompareMove:
 	cp c
 	ret
 
+GetOppUnderwaterAddr:
+	call BattleCommand_switchturn
+	call GetUserUnderwaterAddr
+	jp BattleCommand_switchturn
+
+GetUserUnderwaterAddr:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerUnderwater
+	ret z
+	ld hl, wEnemyUnderwater
+	ret
+
 DoPlayerTurn:
 	call SetPlayerTurn
 
@@ -382,6 +395,9 @@ CantMove:
 
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	call GetUserUnderwaterAddr
+	xor a
+	ld [hl], a
 	jp AppearUserRaiseSub
 
 .fly_dig_moves
@@ -556,7 +572,15 @@ CheckEnemyTurn:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr nz, .no_flicker
+	call GetOppUnderwaterAddr
+	ld a, [hl]
+	and a
+	jr nz, .no_flicker
+
 	call z, PlayFXAnimID
+
+.no_flicker
 
 	ld c, TRUE
 	call DoEnemyDamage
@@ -659,7 +683,13 @@ HitConfusion:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr nz, .no_flicker
+	call GetOppUnderwaterAddr
+	ld a, [hl]
+	and a
+	jr z, .no_flicker
 	call z, PlayFXAnimID
+.no_flicker
 
 	ld hl, UpdatePlayerHUD
 	call CallBattleCore
@@ -1679,8 +1709,15 @@ BattleCommand_checkhit:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr nz, .hit_hidden_move
+	call GetOppUnderwaterAddr
+	ld a, [hl]
+	and a
 	ret z
+	ld hl, .DiveMoves
+	jr .check_move_in_list
 
+.hit_hidden_move
 	bit SUBSTATUS_FLYING, a
 	ld hl, .FlyMoves
 	jr nz, .check_move_in_list
@@ -1706,6 +1743,11 @@ BattleCommand_checkhit:
 	dw EARTHQUAKE
 	dw FISSURE
 	dw MAGNITUDE
+	dw -1
+
+.DiveMoves:
+	dw SURF
+	dw WHIRLPOOL
 	dw -1
 
 .ThunderRain:
@@ -2088,6 +2130,9 @@ BattleCommand_failuretext:
 	call GetBattleVarAddr
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	call GetUserUnderwaterAddr
+	xor a
+	ld [hl], a
 	call AppearUserRaiseSub
 	jp EndMoveEffect
 
@@ -3468,6 +3513,10 @@ FarPlayBattleAnimation:
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret nz
+	call GetUserUnderwaterAddr
+	ld [hl], a
+	and a
+	ret nz
 
 	; fallthrough
 
@@ -3637,7 +3686,14 @@ DoSubstituteDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	call z, AppearUserLowerSub
+	jr nz, .no_appear
+	call GetUserUnderwaterAddr
+	ld a, [hl]
+	and a
+	jr nz, .no_appear
+
+	call AppearUserLowerSub
+.no_appear
 	call BattleCommand_switchturn
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
@@ -5849,6 +5905,9 @@ BattleCommand_checkcharge:
 	res SUBSTATUS_CHARGED, [hl]
 	res SUBSTATUS_UNDERGROUND, [hl]
 	res SUBSTATUS_FLYING, [hl]
+	call GetUserUnderwaterAddr
+	xor a
+	ld [hl], a
 	ld b, charge_command
 	jp SkipToBattleCommand
 
@@ -5899,15 +5958,29 @@ BattleCommand_charge:
 	call CompareMove
 	ld a, 1 << SUBSTATUS_UNDERGROUND
 	jr z, .got_move_type
+	ld bc, DIVE
+	ld a, h
+	call CompareMove
+	ld a, -1
+	jr z, .got_move_type
 	call BattleCommand_raisesub
 	xor a
 
 .got_move_type
-	; a will contain the substatus 3 bit to set (1 << bit), or 0 if none (not flying/digging underground)
+	; a will contain the substatus 3 bit to set (1 << bit), or 0 if none (not flying/digging underground), or $ff is underwater (special case)
+	cp -1
+	jr z, .underwater
 	and a
 	ld l, a
 	push hl
 	call nz, DisappearUser
+	jr .continue
+
+.underwater
+	ld l, 0
+	push hl
+	farcall SetUnderwater
+.continue
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	pop bc
@@ -5967,6 +6040,7 @@ BattleCommand_charge:
 	dw FLY,        .Fly
 	dw DIG,        .Dig
 	dw BOUNCE,     .Bounce
+	dw DIVE,       .Dive
 	dw -1
 
 .RazorWind:
@@ -6002,6 +6076,10 @@ BattleCommand_charge:
 .Bounce:
 ; 'sprang up!'
 	text_far _SprangUpText
+	text_end
+
+.Dive:
+	text_far _HidUnderwaterText
 	text_end
 
 BattleCommand_traptarget:
@@ -6385,6 +6463,13 @@ BattleCommand_doubleflyingdamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	bit SUBSTATUS_FLYING, a
+	ret z
+	jr DoubleDamage
+
+BattleCommand_doubleunderwaterdamage:
+	call GetOppUnderwaterAddr
+	ld a, [hl]
+	and a
 	ret z
 	jr DoubleDamage
 
@@ -6778,52 +6863,6 @@ BattleCommand_defrost:
 	ld hl, WasDefrostedText
 	jp StdBattleTextbox
 
-BattleCommand_weightdamage:
-	push bc
-	push de
-; get weight from dex entry
-	ldh a, [hBattleTurn]
-	and a
-	ld hl, wEnemyMonSpecies
-	jr z, .got_species
-	ld hl, wBattleMonSpecies
-.got_species
-	ld b, [hl]
-	farcall GetMonWeight
-	ld b, d
-	ld c, e
-; get base damage
-	ld hl, .weight_damage_table
-.damage_loop
-	ld a, [hli]
-	ld e, a
-	ld a, [hli]
-	ld d, a
-
-	cp b
-	jr c, .next
-	jr nz, .got_it
-	ld a, e
-	cp c
-	jr nc, .got_it
-.next
-	inc hl
-	jr .damage_loop
-
-.got_it
-	pop de
-	ld d, [hl]
-	pop bc
-	ret
-
-.weight_damage_table
-	dwb  219,  20
-	dwb  551,  40
-	dwb 1102,  60
-	dwb 2204,  80
-	dwb 4409, 100
-	dwb   -1, 120
-
 INCLUDE "engine/battle/move_effects/curse.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
@@ -6887,31 +6926,6 @@ INCLUDE "engine/battle/move_effects/baton_pass.asm"
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
-
-BattleCommand_facade:
-; facade
-	ld hl, wBattleMonStatus
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonStatus
-.ok
-	bit PSN, [hl]
-	jr nz, .double
-	bit PAR, [hl]
-	jr nz, .double
-	bit BRN, [hl]
-	ret z
-.double
-	ld a, d
-	add a
-	jr c, .max
-	ld d, a
-	ret
-
-.max
-	ld b, $ff
-	ret
 
 BattleCommand_healmorn:
 ; healmorn
@@ -7094,13 +7108,19 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
-INCLUDE "engine/battle/move_effects/brick_break.asm"
-
 CheckHiddenOpponent:
 ; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_checkhit does these checks properly.
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerUnderwater]
+	jr nz, .go
+	ld a, [wEnemyUnderwater]
+.go
+	and a
 	ret
 
 GetUserItem:
@@ -8854,3 +8874,145 @@ BattleCommand_revenge:
 	add a
 	ld d, a
 	ret
+
+BattleCommand_powerswap:
+	ld a, ATTACK
+	call SwapStatStage
+	ld a, SP_ATTACK
+	call SwapStatStage
+	call CalcBothMonStats
+	call AnimateCurrentMove2
+	ld hl, SwitchedStatChangesText
+	jp StdBattleTextbox
+
+BattleCommand_guardswap:
+	ld a, DEFENSE
+	call SwapStatStage
+	ld a, SP_DEFENSE
+	call SwapStatStage
+	call CalcBothMonStats
+	call AnimateCurrentMove2
+	ld hl, SwitchedStatChangesText
+	jp StdBattleTextbox
+
+BattleCommand_heartswap:
+	xor a
+.loop
+	push af
+	call SwapStatStage
+	pop af
+	inc a
+	cp EVASION + 1
+	jr nz, .loop
+	call AnimateCurrentMove2
+	ld hl, SwitchedStatChangesText
+	jp StdBattleTextbox
+
+SwapStatStage:
+	ld c, a
+	ld b, 0
+	ld hl, wPlayerStatLevels
+	add hl, bc
+	ld d, [hl]
+	push hl
+	ld hl, wEnemyStatLevels
+	add hl, bc
+	ld a, [hl]
+	ld [hl], d
+	pop hl
+	ld [hl], a
+	ret
+
+CalcBothMonStats:
+	ldh a, [hBattleTurn]
+	push af
+	farcall CalcPlayerStats
+	farcall CalcEnemyStats
+	pop af
+	ldh [hBattleTurn], a
+	ret
+
+SetUnderwater:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerUnderwater
+	jr z, .got_underwater
+	ld hl, wEnemyUnderwater
+.got_underwater
+	ld a, 1
+	ld [hl], a
+	farcall _DisappearUser
+	ret
+
+BattleCommand_weightdamage:
+	push bc
+	push de
+; get weight from dex entry
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyMonSpecies
+	jr z, .got_species
+	ld hl, wBattleMonSpecies
+.got_species
+	ld b, [hl]
+	farcall GetMonWeight
+	ld b, d
+	ld c, e
+; get base damage
+	ld hl, .weight_damage_table
+.damage_loop
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+
+	cp b
+	jr c, .next
+	jr nz, .got_it
+	ld a, e
+	cp c
+	jr nc, .got_it
+.next
+	inc hl
+	jr .damage_loop
+
+.got_it
+	pop de
+	ld d, [hl]
+	pop bc
+	ret
+
+.weight_damage_table
+	dwb  219,  20
+	dwb  551,  40
+	dwb 1102,  60
+	dwb 2204,  80
+	dwb 4409, 100
+	dwb   -1, 120
+
+BattleCommand_facade:
+; facade
+	ld hl, wBattleMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonStatus
+.ok
+	bit PSN, [hl]
+	jr nz, .double
+	bit PAR, [hl]
+	jr nz, .double
+	bit BRN, [hl]
+	ret z
+.double
+	ld a, d
+	add a
+	jr c, .max
+	ld d, a
+	ret
+
+.max
+	ld b, $ff
+	ret
+
+INCLUDE "engine/battle/move_effects/brick_break.asm"

@@ -65,7 +65,7 @@ MoveEffectsPointers:
 	dw SpecialDefenseDown2Hit        ; SP_DEF_DOWN_2_HIT
 	dw SpecialDefenseDown2           ; SP_DEF_DOWN_2
 	dw Splash                        ; SP_ATK_UP_HIT
-	dw Splash                        ; UNUSED_40
+	dw Whirlpool                     ; WHIRLPOOL
 	dw Reflect                       ; REFLECT
 	dw DoPoison                      ; POISON
 	dw DoParalyze                    ; PARALYZE
@@ -97,7 +97,7 @@ MoveEffectsPointers:
 	dw Conversion2                   ; CONVERSION2
 	dw LockOn                        ; LOCK_ON
 	dw Sketch                        ; SKETCH
-	dw Splash                        ; UNUSED_60
+	dw Surf                          ; UNUSED_60
 	dw SleepTalk                     ; SLEEP_TALK
 	dw DestinyBond                   ; DESTINY_BOND
 	dw Reversal                      ; REVERSAL
@@ -234,14 +234,14 @@ MoveEffectsPointers:
 	dw Splash                        ; LUCKY_CHANT
 	dw Splash                        ; ME_FIRST
 	dw Splash                        ; COPYCAT
-	dw Splash                        ; POWER_SWAP
-	dw Splash                        ; GUARD_SWAP
+	dw PowerSwap                     ; POWER_SWAP
+	dw GuardSwap                     ; GUARD_SWAP
 	dw Splash                        ; PUNISHMENT
 	dw LastResort                    ; LAST_RESORT
 	dw Splash                        ; UNUSED_ED
 	dw Splash                        ; SUCKER_PUNCH
 	dw ToxicSpikes                   ; TOXIC_SPIKES
-	dw Splash                        ; HEART_SWAP
+	dw HeartSwap                     ; HEART_SWAP
 	dw AquaRing                      ; AQUA_RING
 	dw Splash                        ; MAGNET_RISE
 	dw FlareBlitz                    ; FLARE_BLITZ

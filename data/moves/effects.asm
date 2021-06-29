@@ -1066,6 +1066,28 @@ Fly:
 	heldflinch
 	endmove
 
+Whirlpool:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	doubleunderwaterdamage
+	clearmissdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	traptarget
+	endmove
+
 TrapTarget:
 	checkobedience
 	usedmovetext
@@ -2795,4 +2817,46 @@ Revenge:
 	checkfaint
 	buildopponentrage
 	heldflinch
+	endmove
+
+PowerSwap:
+	checkobedience
+	usedmovetext
+	doturn
+	powerswap
+	endmove
+
+GuardSwap:
+	checkobedience
+	usedmovetext
+	doturn
+	guardswap
+	endmove
+
+HeartSwap:
+	checkobedience
+	usedmovetext
+	doturn
+	heartswap
+	endmove
+
+Surf:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	doubleunderwaterdamage
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
 	endmove

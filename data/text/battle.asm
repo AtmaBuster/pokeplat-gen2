@@ -1399,3 +1399,10 @@ LostFocusText:
 	line "lost its focus and"
 	cont "couldn't move!"
 	prompt
+
+SwitchedStatChangesText:
+	text "<USER>"
+	line "switched stat"
+	cont "changes with the"
+	cont "target!"
+	prompt

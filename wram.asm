@@ -539,6 +539,7 @@ wPlayerLastResortFlags:: db
 wPlayerTauntCount:: db
 wPlayerUproarCount:: db
 wPlayerChargeFlag:: db
+wPlayerUnderwater:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -557,6 +558,7 @@ wEnemyLastResortFlags:: db
 wEnemyTauntCount:: db
 wEnemyUproarCount:: db
 wEnemyChargeFlag:: db
+wEnemyUnderwater:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

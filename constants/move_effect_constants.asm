@@ -64,7 +64,7 @@
 	const EFFECT_SP_DEF_DOWN_2_HIT ; 3d
 	const EFFECT_SP_DEF_DOWN_2     ; 3e
 	const EFFECT_SP_ATK_UP_HIT     ; 3f
-	const EFFECT_UNUSED_40         ; 40
+	const EFFECT_WHIRLPOOL         ; 40
 	const EFFECT_REFLECT           ; 41
 	const EFFECT_POISON            ; 42
 	const EFFECT_PARALYZE          ; 43
@@ -96,7 +96,7 @@
 	const EFFECT_CONVERSION2       ; 5d
 	const EFFECT_LOCK_ON           ; 5e
 	const EFFECT_SKETCH            ; 5f
-	const EFFECT_UNUSED_60         ; 60
+	const EFFECT_SURF              ; 60
 	const EFFECT_SLEEP_TALK        ; 61
 	const EFFECT_DESTINY_BOND      ; 62
 	const EFFECT_REVERSAL          ; 63

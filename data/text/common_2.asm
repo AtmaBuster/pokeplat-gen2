@@ -713,6 +713,11 @@ _SprangUpText::
 	line "sprang up!"
 	prompt
 
+_HidUnderwaterText::
+	text_start
+	line "hid underwater!"
+	prompt
+
 _ActorNameText::
 	text "<USER>@"
 	text_end

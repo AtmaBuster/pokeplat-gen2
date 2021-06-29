@@ -2229,6 +2229,7 @@ BattleAnim_Splash:
 	anim_ret
 
 BattleAnim_Dig:
+BattleAnim_Dive:
 	anim_2gfx ANIM_GFX_SAND, ANIM_GFX_HIT
 	anim_if_param_equal $0, .hit
 	anim_if_param_equal $2, .fail
@@ -5121,7 +5122,6 @@ BattleAnim_Refresh:
 BattleAnim_Grudge:
 BattleAnim_Snatch:
 BattleAnim_SecretPower:
-BattleAnim_Dive:
 BattleAnim_ArmThrust:
 BattleAnim_Camouflage:
 BattleAnim_TailGlow:
