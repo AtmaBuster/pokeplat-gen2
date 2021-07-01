@@ -1406,3 +1406,32 @@ SwitchedStatChangesText:
 	cont "changes with the"
 	cont "target!"
 	prompt
+
+GravityReturnedText:
+	text "Gravity returned"
+	line "to normal!"
+	prompt
+
+GravityText:
+	text "Gravity"
+	line "intensified!"
+	prompt
+
+MagnetRiseText:
+	text "<USER>"
+	line "levitated on"
+	cont "electromagnetism!"
+	prompt
+
+MagnetRiseWoreOffText:
+	text "<USER>'s"
+	line "electromagnetism"
+	cont "wore off!"
+	prompt
+
+CouldntStayAirborneText:
+	text "<TARGET>"
+	line "couldn't stay in"
+	cont "the air because of"
+	cont "GRAVITY!"
+	prompt

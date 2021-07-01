@@ -19,7 +19,7 @@ BattleCommand_spikes:
 
 	inc [hl]
 
-	call AnimateCurrentMove
+	call AnimateCurrentMove2
 
 	ld hl, SpikesText
 	jp StdBattleTextbox
@@ -45,7 +45,7 @@ BattleCommand_stealthrock:
 
 	set SCREENS_STEALTH_ROCK, [hl]
 
-	call AnimateCurrentMove
+	call AnimateCurrentMove2
 
 	ld hl, StealthRockText
 	jp StdBattleTextbox
@@ -76,7 +76,7 @@ BattleCommand_toxicspikes:
 	add TOXIC_SPIKES_1
 	ld [hl], a
 
-	call AnimateCurrentMove
+	call AnimateCurrentMove2
 
 	ld hl, ToxicSpikesText
 	jp StdBattleTextbox

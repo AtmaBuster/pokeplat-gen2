@@ -2873,3 +2873,25 @@ MetalBurst:
 	buildopponentrage
 	heldflinch
 	endmove
+
+MiracleEye:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	miracleeye
+	endmove
+
+MagnetRise:
+	checkobedience
+	usedmovetext
+	doturn
+	magnetrise
+	endmove
+
+Gravity:
+	checkobedience
+	usedmovetext
+	doturn
+	gravity
+	endmove

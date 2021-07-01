@@ -1420,6 +1420,8 @@ CheckTypeMatchup_join:
 	ld a, 10 ; 1.0
 	ld [wTypeMatchup], a
 	ld hl, TypeMatchups
+	farcall TypeMatchupSpecialCases2
+	jr c, .End
 .TypesLoop:
 	ld a, [hli]
 	cp -1
@@ -1611,6 +1613,8 @@ BattleCommand_checkhit:
 	ld a, b
 	cp -1
 	jr z, .Hit
+
+	farcall GetGravityAccuracyMultiplier
 
 	call BattleRandom
 	cp b
@@ -6564,6 +6568,18 @@ BattleCommand_heal:
 	pop hl
 	jp z, .hp_full
 	ld a, b
+	ld bc, ROOST
+	call CompareMove
+	jr nz, .not_roost
+	ldh a, [hBattleTurn]
+	and a
+	ld bc, wPlayerRoost
+	jr z, .roost_turn
+	ld bc, wEnemyRoost
+.roost_turn
+	ld a, 1
+	ld [bc], a
+.not_roost
 	ld bc, REST
 	call CompareMove
 	jr nz, .not_rest
@@ -6868,8 +6884,6 @@ INCLUDE "engine/battle/move_effects/curse.asm"
 INCLUDE "engine/battle/move_effects/protect.asm"
 
 INCLUDE "engine/battle/move_effects/endure.asm"
-
-INCLUDE "engine/battle/move_effects/spikes.asm"
 
 INCLUDE "engine/battle/move_effects/foresight.asm"
 
@@ -7439,6 +7453,8 @@ BattleCommand_stab:
 	call GetCurrentMoveType2
 	ld b, a
 	ld hl, TypeMatchups
+	farcall2 TypeMatchupSpecialCases
+	jr c, .force_end
 
 .TypesLoop:
 	ld a, [hli]
@@ -7531,6 +7547,10 @@ BattleCommand_stab:
 	inc hl
 	inc hl
 	jr .TypesLoop
+
+.force_end
+	ld a, 1
+	ld [wAttackMissed], a
 
 .end
 	farcall BattleCheckTypeMatchup
@@ -8326,6 +8346,14 @@ BattleCommand_ingrain:
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_INGRAIN, [hl]
 	call AnimateCurrentMove2
+	ld hl, wPlayerMagnetRiseCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyMagnetRiseCount
+.go
+	xor a
+	ld [hl], a
 	ld hl, IngrainText
 	jp StdBattleTextbox
 
@@ -9084,4 +9112,212 @@ BattleCommand_metalburst:
 
 	xor a
 	ld [wAttackMissed], a
+	ret
+
+INCLUDE "engine/battle/move_effects/spikes.asm"
+
+TypeMatchupSpecialCases2:
+	ld a, b
+	ld b, d
+	ld d, a
+	ld e, c
+	call TypeMatchupSpecialCases
+	ld [wTypeMatchup], a
+	ld a, b
+	ld b, d
+	ld d, a
+	ld c, e
+	ret
+
+TypeMatchupSpecialCases:
+	call .magnet_rise
+	ret c
+	call .gravity_roost
+	ret c
+	call .miracle_eye
+	ret c
+	ld a, 10
+	ret
+
+.magnet_rise
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerMagnetRiseCount]
+	jr nz, .m_r_go
+	ld a, [wEnemyMagnetRiseCount]
+.m_r_go
+	and a
+	ret z
+	ld a, GROUND
+	cp b
+	jr z, .yes
+	and a
+	ret
+
+.gravity_roost
+	ld a, GROUND
+	cp b
+	jr nz, .no
+	ld a, [wGravityCount]
+	and a
+	jr nz, .no
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerRoost]
+	jr nz, .g_r_go
+	ld a, [wEnemyRoost]
+.g_r_go
+	and a
+	ret nz
+.check_g_r
+	ld a, FLYING
+	cp d
+	jr z, .yes
+	cp e
+	jr z, .yes
+	and a
+	ret
+
+.miracle_eye
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_MIRACLE_EYE, a
+	ret z
+	ld a, PSYCHIC
+	cp b
+	jr nz, .no
+	ld a, DARK
+	cp d
+	jr z, .yes
+	cp e
+	jr z, .yes
+	and a
+	ret
+
+.no
+	and a
+	ret
+
+.yes
+	xor a
+	scf
+	ret
+
+BattleCommand_miracleeye:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	call CheckHiddenOpponent
+	jr nz, .failed
+
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_MIRACLE_EYE, [hl]
+	jr nz, .failed
+
+	set SUBSTATUS_MIRACLE_EYE, [hl]
+	call AnimateCurrentMove2
+	ld hl, IdentifiedText
+	jp StdBattleTextbox
+
+.failed
+	jp FailMove
+
+BattleCommand_magnetrise:
+	ld a, [wGravityCount]
+	and a
+	jr nz, .fail
+
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerMagnetRiseCount
+	jr z, .go
+	ld hl, wEnemyMagnetRiseCount
+.go
+	ld a, [hl]
+	and a
+	jr nz, .fail
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVar
+	bit SUBSTATUS_INGRAIN, a
+	jr nz, .fail
+
+	ld a, 5
+	ld [hl], a
+
+	call AnimateCurrentMove2
+
+	ld hl, MagnetRiseText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2
+
+BattleCommand_gravity:
+	ld a, [wGravityCount]
+	and a
+	jr nz, .fail
+
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerMagnetRiseCount
+	jr z, .go
+	ld hl, wEnemyMagnetRiseCount
+.go
+	xor a
+	ld [hl], a
+
+	ld a, 5
+	ld [wGravityCount], a
+
+	call AnimateCurrentMove2
+
+	ld hl, GravityText
+	call StdBattleTextbox
+
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_FLYING, [hl]
+	ret z
+
+	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_CHARGED, [hl]
+	ld hl, CouldntStayAirborneText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2
+
+GetGravityAccuracyMultiplier:
+	ld a, [wGravityCount]
+	and a
+	ret z
+	ld h, 0
+	ld l, b
+	ld c, b
+	ld b, 0
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	xor a
+	ldh [hDividend + 0], a
+	ldh [hDividend + 1], a
+	ld a, h
+	ldh [hDividend + 2], a
+	ld a, l
+	ldh [hDividend + 3], a
+	ld a, 3
+	ldh [hDivisor], a
+	ld a, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	and a
+	jr nz, .overflow
+	ldh a, [hQuotient + 3]
+	ld b, a
+	ret
+
+.overflow
+	ld b, -1
 	ret

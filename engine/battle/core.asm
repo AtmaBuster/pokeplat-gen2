@@ -302,6 +302,7 @@ HandleBetweenTurnEffects:
 	call LoadTileMapToTempTileMap
 	farcall HandleSlowStart
 	farcall DecrementTailwind
+	farcall DecrementGravity
 	jp HandleTemporaryEffects
 
 CheckFaint_PlayerThenEnemy:
@@ -725,6 +726,8 @@ HandleTemporaryEffects:
 	xor a
 	ld [wPlayerTookDamage], a
 	ld [wEnemyTookDamage], a
+	ld [wPlayerRoost], a
+	ld [wEnemyRoost], a
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, HandleTemporaryEffects_2
@@ -744,6 +747,13 @@ HandleTemporaryEffects_Player:
 	ld hl, UproarCalmedDownText
 	call StdBattleTextbox
 .skip_uproar
+	ld hl, wPlayerMagnetRiseCount
+	ld a, [hl]
+	and a
+	jr z, .skip_magnet_rise
+	ld hl, MagnetRiseWoreOffText
+	call StdBattleTextbox
+.skip_magnet_rise
 	ld hl, wPlayerChargeFlag
 	ld a, [hl]
 	and a
@@ -797,6 +807,13 @@ HandleTemporaryEffects_Enemy:
 	ld hl, UproarCalmedDownText
 	call StdBattleTextbox
 .skip_uproar
+	ld hl, wEnemyMagnetRiseCount
+	ld a, [hl]
+	and a
+	jr z, .skip_magnet_rise
+	ld hl, MagnetRiseWoreOffText
+	call StdBattleTextbox
+.skip_magnet_rise
 	ld hl, wEnemyChargeFlag
 	ld a, [hl]
 	and a
@@ -4423,15 +4440,24 @@ SpikesDamage:
 	ret z
 
 	; Flying-types aren't affected by Spikes.
+	; Steel-types under Magnet Rise aren't affected.
 	ld a, [de]
 	cp FLYING
 	call z, .gravity_check
 	ret z
+	ld a, [de]
+	cp STEEL
+	call z, .magnet_rise_check
+	ret nz
 	inc de
 	ld a, [de]
 	cp FLYING
 	call z, .gravity_check
 	ret z
+	ld a, [de]
+	cp STEEL
+	call z, .magnet_rise_check
+	ret nz
 
 	push bc
 
@@ -4464,6 +4490,16 @@ SpikesDamage:
 
 .gravity_check
 	ld a, [wGravityCount]
+	and a
+	ret
+
+.magnet_rise_check
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerMagnetRiseCount]
+	jr z, .magnet_rise_go
+	ld a, [wEnemyMagnetRiseCount]
+.magnet_rise_go
 	and a
 	ret
 
@@ -5905,13 +5941,13 @@ MoveSelectionScreen:
 	add hl, bc
 	ld a, [hl]
 	and PP_MASK
-	jr z, .no_pp_left
+	jp z, .no_pp_left
 	ld a, [wPlayerDisableCount]
 	swap a
 	and $f
 	dec a
 	cp c
-	jr z, .move_disabled
+	jp z, .move_disabled
 	ld a, [wPlayerTauntCount]
 	and a
 	jr z, .not_taunted
@@ -5924,6 +5960,22 @@ MoveSelectionScreen:
 	call IsStatusMove
 	jr c, .taunted
 .not_taunted
+	ld a, [wPlayerHealBlockCount]
+	and a
+	jr z, .not_heal_block
+	ld a, [hl]
+	call IsHealingMove
+	jr z, .heal_blocked
+
+.not_heal_block
+	ld a, [wGravityCount]
+	and a
+	jr z, .not_gravity
+	ld a, [hl]
+	call IsGravityMove
+	jr z, .gravity_blocked
+
+.not_gravity
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TORMENT, a
 	jr z, .not_torment
@@ -5975,6 +6027,8 @@ MoveSelectionScreen:
 	xor a
 	ret
 
+.heal_blocked
+.gravity_blocked
 .imprison
 .taunted
 .tormented
@@ -6236,6 +6290,22 @@ CheckPlayerHasUsableMoves:
 	jr c, .next
 
 .not_taunt
+	ld a, [wPlayerHealBlockCount]
+	and a
+	jr z, .not_heal_block
+	ld a, [hl]
+	call IsHealingMove
+	jr z, .next
+
+.not_heal_block
+	ld a, [wGravityCount]
+	and a
+	jr z, .not_gravity
+	ld a, [hl]
+	call IsGravityMove
+	jr z, .next
+
+.not_gravity
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TORMENT, a
 	jr z, .not_torment
@@ -6370,6 +6440,22 @@ ParseEnemyAction:
 	bit SUBSTATUS_TAUNT, a
 	jr nz, .taunt
 .not_status
+	ld a, [wEnemyHealBlockCount]
+	and a
+	jr z, .not_heal_block
+	ld a, [hl]
+	call IsHealingMove
+	jr z, .heal_block
+
+.not_heal_block
+	ld a, [wGravityCount]
+	and a
+	jr z, .not_gravity
+	ld a, [hl]
+	call IsGravityMove
+	jr z, .gravity
+
+.not_gravity
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TORMENT, a
 	jr z, .not_torment
@@ -6408,6 +6494,8 @@ ParseEnemyAction:
 	and PP_MASK
 	jr nz, .enough_pp
 
+.heal_block
+.gravity
 .torment
 .imprison
 .taunt
@@ -8454,7 +8542,7 @@ BattleIntro:
 	ld hl, rLCDC
 	res rLCDC_WINDOW_TILEMAP, [hl] ; select 9800-9BFF
 	call InitBattleDisplay
-	call BattleStartMessage
+	farcall BattleStartMessage
 	ld hl, rLCDC
 	set rLCDC_WINDOW_TILEMAP, [hl] ; select 9C00-9FFF
 	xor a
@@ -9469,77 +9557,6 @@ CopyBackpic:
 	jr nz, .outer_loop
 	ret
 
-BattleStartMessage:
-	ld a, [wBattleMode]
-	dec a
-	jr z, .wild
-
-	ld de, SFX_SHINE
-	call PlaySFX
-	call WaitSFX
-
-	ld c, 20
-	call DelayFrames
-
-	farcall Battle_GetTrainerName
-
-	ld hl, WantsToBattleText
-	jr .PlaceBattleStartText
-
-.wild
-	call BattleCheckEnemyShininess
-	jr nc, .not_shiny
-
-	xor a
-	ld [wNumHits], a
-	ld a, 1
-	ldh [hBattleTurn], a
-	ld a, 1
-	ld [wBattleAnimParam], a
-	ld de, ANIM_SEND_OUT_MON
-	call Call_PlayBattleAnim
-
-.not_shiny
-	farcall CheckSleepingTreeMon
-	jr c, .skip_cry
-
-	ld a, $f
-	ld [wCryTracks], a
-	ld a, [wTempEnemyMonSpecies]
-	call PlayStereoCry
-
-.skip_cry
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
-	jr nz, .NotFishing
-
-	farcall StubbedTrainerRankings_HookedEncounters
-
-	ld hl, HookedPokemonAttackedText
-	jr .PlaceBattleStartText
-
-.NotFishing:
-	ld hl, PokemonFellFromTreeText
-	cp BATTLETYPE_TREE
-	jr z, .PlaceBattleStartText
-	ld hl, WildCelebiAppearedText
-	cp BATTLETYPE_CELEBI
-	jr z, .PlaceBattleStartText
-	ld hl, WildPokemonAppearedText
-
-.PlaceBattleStartText:
-	push hl
-	farcall BattleStart_TrainerHuds
-	pop hl
-	call StdBattleTextbox
-
-	ld a, [wBattleMode]
-	dec a
-	ret nz
-
-	farcall DoEnemySlowStartText2
-	ret
-
 ShowFocusPunchMessage:
 	push af
 	push bc
@@ -9917,3 +9934,84 @@ FocusPunchMessage:
 	farcall Call_PlayBattleAnim_OnlyIfVisible
 	ld hl, TightenFocusText
 	jp StdBattleTextbox
+
+DecrementGravity:
+	ld hl, wGravityCount
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, GravityReturnedText
+	jp StdBattleTextbox
+
+BattleStartMessage:
+	ld a, [wBattleMode]
+	dec a
+	jr z, .wild
+
+	ld de, SFX_SHINE
+	call PlaySFX
+	call WaitSFX
+
+	ld c, 20
+	call DelayFrames
+
+	farcall Battle_GetTrainerName
+
+	ld hl, WantsToBattleText
+	jr .PlaceBattleStartText
+
+.wild
+	farcall BattleCheckEnemyShininess
+	jr nc, .not_shiny
+
+	xor a
+	ld [wNumHits], a
+	ld a, 1
+	ldh [hBattleTurn], a
+	ld a, 1
+	ld [wBattleAnimParam], a
+	ld de, ANIM_SEND_OUT_MON
+	farcall Call_PlayBattleAnim
+
+.not_shiny
+	farcall CheckSleepingTreeMon
+	jr c, .skip_cry
+
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wTempEnemyMonSpecies]
+	call PlayStereoCry
+
+.skip_cry
+	ld a, [wBattleType]
+	cp BATTLETYPE_FISH
+	jr nz, .NotFishing
+
+	farcall StubbedTrainerRankings_HookedEncounters
+
+	ld hl, HookedPokemonAttackedText
+	jr .PlaceBattleStartText
+
+.NotFishing:
+	ld hl, PokemonFellFromTreeText
+	cp BATTLETYPE_TREE
+	jr z, .PlaceBattleStartText
+	ld hl, WildCelebiAppearedText
+	cp BATTLETYPE_CELEBI
+	jr z, .PlaceBattleStartText
+	ld hl, WildPokemonAppearedText
+
+.PlaceBattleStartText:
+	push hl
+	farcall BattleStart_TrainerHuds
+	pop hl
+	call StdBattleTextbox
+
+	ld a, [wBattleMode]
+	dec a
+	ret nz
+
+	call DoEnemySlowStartText2
+	ret

@@ -540,6 +540,7 @@ wPlayerTauntCount:: db
 wPlayerUproarCount:: db
 wPlayerChargeFlag:: db
 wPlayerUnderwater:: db
+wPlayerRoost:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -559,6 +560,7 @@ wEnemyTauntCount:: db
 wEnemyUproarCount:: db
 wEnemyChargeFlag:: db
 wEnemyUnderwater:: db
+wEnemyRoost:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

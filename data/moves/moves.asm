@@ -291,7 +291,7 @@ Moves2:
 	move EFFECT_TAUNT,               0, DARK,     100, 20,   0, STATUS   ;TAUNT
 	move EFFECT_SPLASH,              0, NORMAL,   100, 20,   0, STATUS   ;HELPING_HAND ; dummy
 	move EFFECT_TRICK,               0, PSYCHIC,  100, 10,   0, STATUS   ;TRICK
-	move EFFECT_SPLASH   ,           0, PSYCHIC,  100, 10,   0, STATUS   ;ROLE_PLAY ; dummy
+	move EFFECT_SPLASH,              0, PSYCHIC,  100, 10,   0, STATUS   ;ROLE_PLAY ; dummy
 	move EFFECT_WISH,                0, NORMAL,   100, 10,   0, STATUS   ;WISH
 	move EFFECT_ASSIST,              0, NORMAL,   100, 20,   0, STATUS   ;ASSIST
 	move EFFECT_INGRAIN,             0, GRASS,    100, 20,   0, STATUS   ;INGRAIN
@@ -374,7 +374,7 @@ Moves2:
 	move EFFECT_CONFUSE_HIT,        60, WATER,    100, 20,  20, SPECIAL  ;WATER_PULSE
 	move EFFECT_DOOM_DESIRE,       140, STEEL,    100, 5,    0, SPECIAL  ;DOOM_DESIRE ; buffed
 	move EFFECT_SP_ATK_DOWN_2_HIT, 140, PSYCHIC,   90, 5,    0, SPECIAL  ;PSYCHO_BOOST
-	move EFFECT_ROOST,               0, FLYING,   100, 10,   0, STATUS   ;ROOST
+	move EFFECT_HEAL,                0, FLYING,   100, 10,   0, STATUS   ;ROOST
 	move EFFECT_GRAVITY,             0, PSYCHIC,  100, 5,    0, STATUS   ;GRAVITY
 	move EFFECT_MIRACLE_EYE,         0, PSYCHIC,  100, 40,   0, STATUS   ;MIRACLE_EYE
 	move EFFECT_WAKE_UP_SLAP,       60, FIGHTING, 100, 10,   0, PHYSICAL ;WAKE_UP_SLAP

@@ -205,9 +205,9 @@ MoveEffectsPointers:
 	dw VoltTackle                    ; VOLT_TACKLE
 	dw WaterSport                    ; WATER_SPORT
 	dw Splash                        ; DOOM_DESIRE
-	dw Splash                        ; ROOST
-	dw Splash                        ; GRAVITY
-	dw Splash                        ; MIRACLE_EYE
+	dw Splash                        ; UNUSED_CC
+	dw Gravity                       ; GRAVITY
+	dw MiracleEye                    ; MIRACLE_EYE
 	dw WakeUpSlap                    ; WAKE_UP_SLAP
 	dw HammerArm                     ; HAMMER_ARM
 	dw GyroBall                      ; GYRO_BALL
@@ -243,7 +243,7 @@ MoveEffectsPointers:
 	dw ToxicSpikes                   ; TOXIC_SPIKES
 	dw HeartSwap                     ; HEART_SWAP
 	dw AquaRing                      ; AQUA_RING
-	dw Splash                        ; MAGNET_RISE
+	dw MagnetRise                    ; MAGNET_RISE
 	dw FlareBlitz                    ; FLARE_BLITZ
 	dw Splash                        ; DEFOG
 	dw Splash                        ; TRICK_ROOM

@@ -92,6 +92,14 @@ FarCall_stack::
 
 FarCallReturn_stack:
 	ldh [hBuffer], a
+	push af
+	push hl
+	ld hl, sp+2
+	ld a, [hli]
+	inc hl
+	ld [hl], a
+	pop hl
+	pop af
 	pop af
 	rst Bankswitch
 	ldh a, [hBuffer]
