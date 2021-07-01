@@ -9016,3 +9016,72 @@ BattleCommand_facade:
 	ret
 
 INCLUDE "engine/battle/move_effects/brick_break.asm"
+
+BattleCommand_metalburst:
+
+	ld a, 1
+	ld [wAttackMissed], a
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	and a
+	ret z
+
+	ld b, a
+	callfar GetMoveEffect
+	ld a, b
+	cp EFFECT_COUNTER
+	ret z
+	cp EFFECT_MIRROR_COAT
+	ret z
+	cp EFFECT_METAL_BURST
+	ret z
+
+	call BattleCommand_resettypematchup
+	ld a, [wTypeMatchup]
+	and a
+	ret z
+
+	call CheckOpponentWentFirst
+	ret z
+
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	ld de, wStringBuffer1
+	call GetMoveData
+
+	ld a, [wStringBuffer1 + MOVE_POWER]
+	and a
+	ret z
+
+	; BUG: Move should fail with all non-damaging battle actions
+	ld hl, wCurDamage
+	ld a, [hli]
+	or [hl]
+	ret z
+
+	ld a, [hld]
+	ld c, a
+	ld a, [hl]
+	ld b, a
+	ld hl, 0
+	add hl, bc
+	rrc b
+	rr c
+	ld a, h
+	add hl, bc
+	add b
+	push af
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	pop af
+	jr nc, .capped
+	ld a, $ff
+	ld [wCurDamage], a
+	ld [wCurDamage + 1], a
+.capped
+
+	xor a
+	ld [wAttackMissed], a
+	ret

@@ -201,6 +201,7 @@ BattleCommandPointers:
 	battlecmd guardswap               ; a4
 	battlecmd heartswap               ; a5
 	battlecmd doubleunderwaterdamage  ; a6
+	battlecmd metalburst              ; a7
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

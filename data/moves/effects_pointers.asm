@@ -218,7 +218,7 @@ MoveEffectsPointers:
 	dw Splash                        ; PLUCK
 	dw Tailwind                      ; TAILWIND
 	dw Acupressure                   ; ACUPRESSURE
-	dw Splash                        ; METAL_BURST
+	dw MetalBurst                    ; METAL_BURST
 	dw Splash                        ; U_TURN
 	dw CloseCombat                   ; CLOSE_COMBAT
 	dw Splash                        ; PAYBACK

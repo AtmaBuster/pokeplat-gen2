@@ -2860,3 +2860,16 @@ Surf:
 	checkfaint
 	buildopponentrage
 	endmove
+
+MetalBurst:
+	checkobedience
+	usedmovetext
+	doturn
+	metalburst
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
