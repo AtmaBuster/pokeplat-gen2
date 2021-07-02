@@ -303,6 +303,7 @@ HandleBetweenTurnEffects:
 	farcall HandleSlowStart
 	farcall DecrementTailwind
 	farcall DecrementGravity
+	farcall DecrementTrickRoom
 	jp HandleTemporaryEffects
 
 CheckFaint_PlayerThenEnemy:
@@ -537,8 +538,14 @@ DetermineMoveOrder:
 	jr .speed_check
 
 .speed_check
+	ld a, [wTrickRoomCount]
+	and a
 	ld de, wBattleMonSpeed
 	ld hl, wEnemyMonSpeed
+	jr z, .got_speeds
+	ld hl, wBattleMonSpeed
+	ld de, wEnemyMonSpeed
+.got_speeds
 	ld c, 2
 	call CompareBytes
 	jr z, .speed_tie
@@ -9943,6 +9950,16 @@ DecrementGravity:
 	dec [hl]
 	ret nz
 	ld hl, GravityReturnedText
+	jp StdBattleTextbox
+
+DecrementTrickRoom:
+	ld hl, wTrickRoomCount
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, TrickRoomEndedText
 	jp StdBattleTextbox
 
 BattleStartMessage:

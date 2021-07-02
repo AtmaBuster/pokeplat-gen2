@@ -1435,3 +1435,21 @@ CouldntStayAirborneText:
 	cont "the air because of"
 	cont "GRAVITY!"
 	prompt
+
+UserTwistedDimensionText:
+	text "<USER>"
+	line "twisted the"
+	cont "dimension!"
+	prompt
+
+UserRestoredDimensionText:
+	text "<USER>"
+	line "restored the"
+	cont "twisted dimension!"
+	prompt
+
+TrickRoomEndedText:
+	text "The twisted"
+	line "dimension returned"
+	cont "to normal!"
+	prompt

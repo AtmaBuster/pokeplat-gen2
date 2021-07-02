@@ -1557,9 +1557,13 @@ BattleCommand_checkhit:
 	call .DreamEater
 	jp z, .Miss
 
+	call .Feint
+	jr z, .skip_protect
+
 	call .Protect
 	jp nz, .Miss
 
+.skip_protect
 	call .DrainSub
 	jp z, .Miss
 
@@ -1648,6 +1652,22 @@ BattleCommand_checkhit:
 	call GetBattleVar
 	and SLP
 	ret
+
+.Feint:
+; Return z if using Feint and opponent is protected.
+; Fail move if using Feint and opponent isn't protected.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FEINT
+	ret nz
+	call .Protect
+	jr z, .Feint_Fail
+	xor a
+	ret
+
+.Feint_Fail
+	call AnimateAndPrintFailedMove
+	jp EndMoveEffect
 
 .Protect:
 ; Return nz if the opponent is protected.
@@ -9321,3 +9341,19 @@ GetGravityAccuracyMultiplier:
 .overflow
 	ld b, -1
 	ret
+
+BattleCommand_trickroom:
+	ld hl, wTrickRoomCount
+	ld a, [hl]
+	and a
+	jr z, .set_trick_room
+	xor a
+	ld [hl], a
+	ld hl, UserRestoredDimensionText
+	jp StdBattleTextbox
+
+.set_trick_room
+	ld a, 5
+	ld [hl], a
+	ld hl, UserTwistedDimensionText
+	jp StdBattleTextbox

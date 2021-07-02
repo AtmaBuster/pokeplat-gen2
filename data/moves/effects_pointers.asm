@@ -214,7 +214,7 @@ MoveEffectsPointers:
 	dw Splash                        ; HEALING_WISH
 	dw Brine                         ; BRINE
 	dw Splash                        ; NATURAL_GIFT
-	dw Splash                        ; FEINT
+	dw NormalHit                     ; FEINT
 	dw Splash                        ; PLUCK
 	dw Tailwind                      ; TAILWIND
 	dw Acupressure                   ; ACUPRESSURE
@@ -246,7 +246,7 @@ MoveEffectsPointers:
 	dw MagnetRise                    ; MAGNET_RISE
 	dw FlareBlitz                    ; FLARE_BLITZ
 	dw Splash                        ; DEFOG
-	dw Splash                        ; TRICK_ROOM
+	dw TrickRoom                     ; TRICK_ROOM
 	dw Captivate                     ; CAPTIVATE
 	dw StealthRock                   ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE

@@ -202,9 +202,10 @@ BattleCommandPointers:
 	battlecmd heartswap               ; a5
 	battlecmd doubleunderwaterdamage  ; a6
 	battlecmd metalburst              ; a7
-	battlecmd magnetrise ; a8
-	battlecmd gravity ; a9
-	battlecmd miracleeye ; aa
+	battlecmd magnetrise              ; a8
+	battlecmd gravity                 ; a9
+	battlecmd miracleeye              ; aa
+	battlecmd trickroom               ; ab
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

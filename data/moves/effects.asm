@@ -2895,3 +2895,10 @@ Gravity:
 	doturn
 	gravity
 	endmove
+
+TrickRoom:
+	checkobedience
+	usedmovetext
+	doturn
+	trickroom
+	endmove
