@@ -9357,3 +9357,23 @@ BattleCommand_trickroom:
 	ld [hl], a
 	ld hl, UserTwistedDimensionText
 	jp StdBattleTextbox
+
+BattleCommand_healblock:
+	ld hl, wPlayerHealBlockCount
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .go
+	ld hl, wEnemyHealBlockCount
+.go
+	ld a, [hl]
+	and a
+	jr nz, .fail
+
+	ld a, 5
+	ld [hl], a
+
+	ld hl, HealBlockText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2

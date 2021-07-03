@@ -266,7 +266,7 @@ HandleBetweenTurnEffects:
 	call HandleWrap
 	call CheckFaint_PlayerThenEnemy
 	ret c
-	call HandlePerishSong
+	farcall HandlePerishSong
 	call CheckFaint_PlayerThenEnemy
 	ret c
 	jr .NoMoreFaintingConditions
@@ -283,7 +283,7 @@ HandleBetweenTurnEffects:
 	call HandleWrap
 	call CheckFaint_EnemyThenPlayer
 	ret c
-	call HandlePerishSong
+	farcall HandlePerishSong
 	call CheckFaint_EnemyThenPlayer
 	ret c
 
@@ -739,7 +739,7 @@ HandleTemporaryEffects:
 	cp USING_EXTERNAL_CLOCK
 	jr z, HandleTemporaryEffects_2
 	call HandleTemporaryEffects_Player
-	jr HandleTemporaryEffects_Enemy
+	jp HandleTemporaryEffects_Enemy
 
 HandleTemporaryEffects_2:
 	call HandleTemporaryEffects_Enemy
@@ -754,10 +754,21 @@ HandleTemporaryEffects_Player:
 	ld hl, UproarCalmedDownText
 	call StdBattleTextbox
 .skip_uproar
+	ld hl, wPlayerHealBlockCount
+	ld a, [hl]
+	and a
+	jr z, .skip_heal_block
+	dec [hl]
+	jr nz, .skip_heal_block
+	ld hl, HealBlockWoreOffText
+	call StdBattleTextbox
+.skip_heal_block
 	ld hl, wPlayerMagnetRiseCount
 	ld a, [hl]
 	and a
 	jr z, .skip_magnet_rise
+	dec [hl]
+	jr nz, .skip_magnet_rise
 	ld hl, MagnetRiseWoreOffText
 	call StdBattleTextbox
 .skip_magnet_rise
@@ -814,10 +825,21 @@ HandleTemporaryEffects_Enemy:
 	ld hl, UproarCalmedDownText
 	call StdBattleTextbox
 .skip_uproar
+	ld hl, wEnemyHealBlockCount
+	ld a, [hl]
+	and a
+	jr z, .skip_heal_block
+	dec [hl]
+	jr nz, .skip_heal_block
+	ld hl, HealBlockWoreOffText
+	call StdBattleTextbox
+.skip_heal_block
 	ld hl, wEnemyMagnetRiseCount
 	ld a, [hl]
 	and a
 	jr z, .skip_magnet_rise
+	dec [hl]
+	jr nz, .skip_magnet_rise
 	ld hl, MagnetRiseWoreOffText
 	call StdBattleTextbox
 .skip_magnet_rise
@@ -1220,74 +1242,6 @@ ResidualDamage:
 	ld c, 20
 	call DelayFrames
 	xor a
-	ret
-
-HandlePerishSong:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .EnemyFirst
-	call SetPlayerTurn
-	call .do_it
-	call SetEnemyTurn
-	jp .do_it
-
-.EnemyFirst:
-	call SetEnemyTurn
-	call .do_it
-	call SetPlayerTurn
-
-.do_it
-	ld hl, wPlayerPerishCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_count
-	ld hl, wEnemyPerishCount
-
-.got_count
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVar
-	bit SUBSTATUS_PERISH, a
-	ret z
-	dec [hl]
-	ld a, [hl]
-	ld [wDeciramBuffer], a
-	push af
-	ld hl, PerishCountText
-	call StdBattleTextbox
-	pop af
-	ret nz
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	res SUBSTATUS_PERISH, [hl]
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .kill_enemy
-	ld hl, wBattleMonHP
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ld hl, wPartyMon1HP
-	ld a, [wCurBattleMon]
-	call GetPartyLocation
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ret
-
-.kill_enemy
-	ld hl, wEnemyMonHP
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ld a, [wBattleMode]
-	dec a
-	ret z
-	ld hl, wOTPartyMon1HP
-	ld a, [wCurOTMon]
-	call GetPartyLocation
-	xor a
-	ld [hli], a
-	ld [hl], a
 	ret
 
 HandleWrap:
@@ -10031,4 +9985,72 @@ BattleStartMessage:
 	ret nz
 
 	call DoEnemySlowStartText2
+	ret
+
+HandlePerishSong:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .EnemyFirst
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.EnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+
+.do_it
+	ld hl, wPlayerPerishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_count
+	ld hl, wEnemyPerishCount
+
+.got_count
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVar
+	bit SUBSTATUS_PERISH, a
+	ret z
+	dec [hl]
+	ld a, [hl]
+	ld [wDeciramBuffer], a
+	push af
+	ld hl, PerishCountText
+	call StdBattleTextbox
+	pop af
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS1
+	call GetBattleVarAddr
+	res SUBSTATUS_PERISH, [hl]
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .kill_enemy
+	ld hl, wBattleMonHP
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ld hl, wPartyMon1HP
+	ld a, [wCurBattleMon]
+	call GetPartyLocation
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ret
+
+.kill_enemy
+	ld hl, wEnemyMonHP
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ld a, [wBattleMode]
+	dec a
+	ret z
+	ld hl, wOTPartyMon1HP
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+	xor a
+	ld [hli], a
+	ld [hl], a
 	ret

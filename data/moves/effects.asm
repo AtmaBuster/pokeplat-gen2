@@ -2902,3 +2902,10 @@ TrickRoom:
 	doturn
 	trickroom
 	endmove
+
+HealBlock:
+	checkobedience
+	usedmovetext
+	doturn
+	healblock
+	endmove

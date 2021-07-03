@@ -1453,3 +1453,15 @@ TrickRoomEndedText:
 	line "dimension returned"
 	cont "to normal!"
 	prompt
+
+HealBlockText:
+	text "<TARGET>"
+	line "was prevented from"
+	cont "healing!"
+	prompt
+
+HealBlockWoreOffText:
+	text "<TARGET>'s"
+	line "HEAL BLOCK wore"
+	cont "off!"
+	prompt

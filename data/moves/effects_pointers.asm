@@ -227,7 +227,7 @@ MoveEffectsPointers:
 	dw Splash                        ; FLING
 	dw Splash                        ; PSYCHO_SHIFT
 	dw TrumpCard                     ; TRUMP_CARD
-	dw Splash                        ; HEAL_BLOCK
+	dw HealBlock                     ; HEAL_BLOCK
 	dw Splash                        ; UNUSED_E3
 	dw Splash                        ; POWER_TRICK
 	dw Splash                        ; UNUSED_E5
@@ -252,4 +252,4 @@ MoveEffectsPointers:
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; BUG_BITE
-	dw Splash                        ; LUNAR_DANCE
+	dw Splash                        ; LUNAR_DANChealblock
