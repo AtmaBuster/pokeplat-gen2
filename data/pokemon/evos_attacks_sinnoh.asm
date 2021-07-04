@@ -951,7 +951,7 @@ BronzongEvosAttacks:
 	db 0 ; no more level-up moves
 
 BonslyEvosAttacks:
-	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, MIMIC, SUDOWOODO
+	dbbww EVOLVE_LEVEL_WITH_MOVE, 1, MIMIC, SUDOWOODO
 	db 0 ; no more evolutions
 	dbw 1, FAKE_TEARS
 	dbw 1, COPYCAT
@@ -969,7 +969,7 @@ BonslyEvosAttacks:
 	db 0 ; no more level-up moves
 
 MimeJrEvosAttacks:
-	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, MIMIC, MR__MIME
+	dbbww EVOLVE_LEVEL_WITH_MOVE, 1, MIMIC, MR__MIME
 	db 0 ; no more evolutions
 	dbw 1, CONFUSION
 	dbw 1, BARRIER

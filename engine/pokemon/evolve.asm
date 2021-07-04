@@ -954,10 +954,27 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
+	cp EVOLVE_LEVEL_WITH_MOVE
+	jr z, .inc5
+	cp EVOLVE_LEVEL_PARTY_MON
+	jr z, .inc5
+	cp EVOLVE_LEVEL_IN_LOCATION
+	jr z, .inc4
+	cp EVOLVE_LEVEL_WITH_ITEM
+	jr z, .inc4
+	cp EVOLVE_LEVEL_WITH_ITEM_DAY
+	jr z, .inc4
+	cp EVOLVE_LEVEL_WITH_ITEM_NIGHT
+	jr z, .inc4
 	cp EVOLVE_STAT
-	jr nz, .no_extra_skip
+	jr z, .inc4
+	jr .inc3
+
+.inc5
 	inc hl
-.no_extra_skip
+.inc4
+	inc hl
+.inc3
 	inc hl
 	inc hl
 	inc hl

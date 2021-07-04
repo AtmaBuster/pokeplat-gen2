@@ -2173,7 +2173,7 @@ ChanseyEvosAttacks:
 
 TangelaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 40, GELANIA
-	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, ANCIENTPOWER, TANGROWTH
+	dbbww EVOLVE_LEVEL_WITH_MOVE, 1, ANCIENTPOWER, TANGROWTH
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 1, INGRAIN
