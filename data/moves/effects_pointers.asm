@@ -221,7 +221,7 @@ MoveEffectsPointers:
 	dw MetalBurst                    ; METAL_BURST
 	dw Splash                        ; U_TURN
 	dw CloseCombat                   ; CLOSE_COMBAT
-	dw Splash                        ; PAYBACK
+	dw Payback                       ; PAYBACK
 	dw Splash                        ; ASSURANCE
 	dw Splash                        ; EMBARGO
 	dw Splash                        ; FLING

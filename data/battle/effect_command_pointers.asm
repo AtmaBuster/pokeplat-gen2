@@ -207,6 +207,7 @@ BattleCommandPointers:
 	battlecmd miracleeye              ; aa
 	battlecmd trickroom               ; ab
 	battlecmd healblock               ; ac
+	battlecmd payback                 ; ad
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

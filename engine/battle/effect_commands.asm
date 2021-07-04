@@ -9084,12 +9084,12 @@ BattleCommand_metalburst:
 	cp EFFECT_METAL_BURST
 	ret z
 
-	call BattleCommand_resettypematchup
+	farcall BattleCommand_resettypematchup
 	ld a, [wTypeMatchup]
 	and a
 	ret z
 
-	call CheckOpponentWentFirst
+	farcall CheckOpponentWentFirst
 	ret z
 
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
@@ -9377,3 +9377,11 @@ BattleCommand_healblock:
 
 .fail
 	jp AnimateAndPrintFailedMove2
+
+BattleCommand_payback:
+	farcall CheckOpponentWentFirst
+	ret z
+	ld a, d
+	add a
+	ld d, a
+	ret

@@ -2909,3 +2909,24 @@ HealBlock:
 	doturn
 	healblock
 	endmove
+
+Payback:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	payback
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
