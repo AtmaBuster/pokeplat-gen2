@@ -2325,44 +2325,8 @@ DireHitEffect:
 	jp UseItemText
 
 XItemEffect:
-	ld a, [wCurItem]
-	ld hl, XItemStats
-
-.loop
-	cp [hl]
-	jr z, .got_it
-	inc hl
-	inc hl
-	jr .loop
-
-.got_it
-	inc hl
-	ld b, [hl]
-	xor a
-	ldh [hBattleTurn], a
-	ld [wAttackMissed], a
-	ld [wEffectFailed], a
-	ld a, STAT_SKIPTEXT | STAT_SILENT
-	farcall _ForceRaiseStat
-	ld a, [wFailedMessage]
-	and a
-	jp nz, WontHaveAnyEffect_NotUsedMessage
-
-	push bc
-	call UseItemText
-	pop bc
-
-	farcall GetStatRaiseMessage
-	or 1
-	farcall DoPrintStatChange
-
-	ld a, [wCurBattleMon]
-	ld [wCurPartyMon], a
-	ld c, HAPPINESS_USEDXITEM
-	farcall ChangeHappiness
+	farcall _XItemEffect
 	ret
-
-INCLUDE "data/items/x_stats.asm"
 
 PokeFluteEffect:
 	ld a, [wBattleMode]
