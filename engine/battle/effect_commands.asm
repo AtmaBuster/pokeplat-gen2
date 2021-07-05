@@ -5991,17 +5991,30 @@ BattleCommand_charge:
 	call CompareMove
 	ld a, -1
 	jr z, .got_move_type
+	ld bc, SHADOW_FORCE
+	ld a, h
+	call CompareMove
+	ld a, -2
+	jr z, .got_move_type
 	call BattleCommand_raisesub
 	xor a
 
 .got_move_type
-	; a will contain the substatus 3 bit to set (1 << bit), or 0 if none (not flying/digging underground), or $ff is underwater (special case)
+	; a will contain the substatus 3 bit to set (1 << bit), or 0 if none (not flying/digging underground), or $ff is underwater (special case), or $fe is using shadow force (special case 2)
 	cp -1
 	jr z, .underwater
+	cp -2
+	jr z, .shadow_force
 	and a
 	ld l, a
 	push hl
 	call nz, DisappearUser
+	jr .continue
+
+.shadow_force
+	ld l, 0
+	push hl
+	farcall SetShadowForce
 	jr .continue
 
 .underwater
@@ -6110,67 +6123,9 @@ BattleCommand_charge:
 	text_far _HidUnderwaterText
 	text_end
 
-BattleCommand_traptarget:
-; traptarget
-
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-	ld hl, wEnemyWrapCount
-	ld de, wEnemyTrappingMove
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_trap
-	ld hl, wPlayerWrapCount
-	ld de, wPlayerTrappingMove
-
-.got_trap
-	ld a, [hl]
-	and a
-	ret nz
-	ld a, BATTLE_VARS_SUBSTATUS4_OPP
-	call GetBattleVar
-	bit SUBSTATUS_SUBSTITUTE, a
-	ret nz
-	call BattleRandom
-	; trapped for 2-5 turns
-	and %11
-	inc a
-	inc a
-	inc a
-	ld [hl], a
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld [de], a
-	call GetMoveIndexFromID
-	ld b, h
-	ld c, l
-	ld hl, .Traps
-
-.find_trap_text
-	ld a, [hli]
-	cp c
-	ld a, [hli]
-	jr nz, .next_trap_text
-	cp b
-	jr z, .found_trap_text
-.next_trap_text
-	inc hl
-	inc hl
-	jr .find_trap_text
-
-.found_trap_text
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp StdBattleTextbox
-
-.Traps:
-	dw BIND,      UsedBindText      ; 'used BIND on'
-	dw WRAP,      WrappedByText     ; 'was WRAPPED by'
-	dw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dw CLAMP,     ClampedByText     ; 'was CLAMPED by'
-	dw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
+.ShadowForce:
+	text_far _ShadowForceText
+	text_end
 
 INCLUDE "engine/battle/move_effects/mist.asm"
 
@@ -6323,6 +6278,8 @@ BattleCommand_finishconfusingtarget:
 	jr z, .got_effect
 	cp EFFECT_SWAGGER
 	jr z, .got_effect
+	cp EFFECT_FLATTER
+	jr z, .got_effect
 	call AnimateCurrentMove
 
 .got_effect
@@ -6350,6 +6307,8 @@ BattleCommand_confuse_checksnore_swagger_confusehit:
 	cp EFFECT_SNORE
 	ret z
 	cp EFFECT_SWAGGER
+	ret z
+	cp EFFECT_FLATTER
 	ret z
 	jp PrintDidntAffect2
 
@@ -6497,8 +6456,8 @@ BattleCommand_doubleflyingdamage:
 BattleCommand_doubleunderwaterdamage:
 	call GetOppUnderwaterAddr
 	ld a, [hl]
-	and a
-	ret z
+	cp 1
+	ret nz
 	jr DoubleDamage
 
 BattleCommand_doubleundergrounddamage:
@@ -8234,18 +8193,19 @@ BattleCommand_wakeupslap:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_NIGHTMARE, [hl]
-	push bc
-	push de
-	call UpdateOpponentInParty
-	pop de
-	pop bc
 	ld a, d
 	add a
 	ld d, a
+	push bc
+	push de
+	call UpdateOpponentInParty
 	call BattleCommand_switchturn
 	ld hl, StatusHealText
 	call StdBattleTextbox
-	jp BattleCommand_switchturn
+	call BattleCommand_switchturn
+	pop de
+	pop bc
+	ret
 
 BattleCommand_smellingsalt:
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -8259,12 +8219,13 @@ BattleCommand_smellingsalt:
 	push bc
 	push de
 	call UpdateOpponentInParty
-	pop de
-	pop bc
 	call BattleCommand_switchturn
 	ld hl, StatusHealText
 	call StdBattleTextbox
-	jp BattleCommand_switchturn
+	call BattleCommand_switchturn
+	pop de
+	pop bc
+	ret
 
 BattleCommand_imprison:
 	ld a, BATTLE_VARS_SUBSTATUS2
@@ -9003,6 +8964,18 @@ CalcBothMonStats:
 	ldh [hBattleTurn], a
 	ret
 
+SetShadowForce:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerUnderwater
+	jr z, .got_underwater
+	ld hl, wEnemyUnderwater
+.got_underwater
+	ld a, 2
+	ld [hl], a
+	farcall _DisappearUser
+	ret
+
 SetUnderwater:
 	ldh a, [hBattleTurn]
 	and a
@@ -9502,3 +9475,67 @@ BattleCommand_burn:
 
 .failed
 	farjump PrintDidntAffect2
+
+BattleCommand_traptarget:
+; traptarget
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	ld hl, wEnemyWrapCount
+	ld de, wEnemyTrappingMove
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_trap
+	ld hl, wPlayerWrapCount
+	ld de, wPlayerTrappingMove
+
+.got_trap
+	ld a, [hl]
+	and a
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+	call BattleRandom
+	; trapped for 2-5 turns
+	and %11
+	inc a
+	inc a
+	inc a
+	ld [hl], a
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld [de], a
+	call GetMoveIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, .Traps
+
+.find_trap_text
+	ld a, [hli]
+	cp c
+	ld a, [hli]
+	jr nz, .next_trap_text
+	cp b
+	jr z, .found_trap_text
+.next_trap_text
+	inc hl
+	inc hl
+	jr .find_trap_text
+
+.found_trap_text
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp StdBattleTextbox
+
+.Traps:
+	dw BIND,        UsedBindText       ; 'used BIND on'
+	dw WRAP,        WrappedByText      ; 'was WRAPPED by'
+	dw FIRE_SPIN,   FireSpinTrapText   ; 'was trapped!'
+	dw CLAMP,       ClampedByText      ; 'was CLAMPED by'
+	dw WHIRLPOOL,   WhirlpoolTrapText  ; 'was trapped!'
+	dw SAND_TOMB,   SandTombTrapText   ; 'was trapped by SAND TOMB!'
+	dw MAGMA_STORM, MagmaStormTrapText ; 'became trapped by...'

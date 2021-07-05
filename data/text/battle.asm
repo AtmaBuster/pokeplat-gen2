@@ -1470,3 +1470,15 @@ AlreadyBurnedText:
 	text "<TARGET>'s"
 	line "already burned!"
 	prompt
+
+SandTombTrapText:
+	text "<TARGET>"
+	line "was trapped by"
+	cont "SAND TOMB!"
+	prompt
+
+MagmaStormTrapText:
+	text "<TARGET>"
+	line "became trapped by"
+	cont "swirling magma!"
+	prompt

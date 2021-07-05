@@ -718,6 +718,11 @@ _HidUnderwaterText::
 	line "hid underwater!"
 	prompt
 
+_ShadowForceText::
+	text_start
+	line "vanished!"
+	prompt
+
 _ActorNameText::
 	text "<USER>@"
 	text_end
