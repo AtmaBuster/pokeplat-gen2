@@ -208,6 +208,7 @@ BattleCommandPointers:
 	battlecmd trickroom               ; ab
 	battlecmd healblock               ; ac
 	battlecmd payback                 ; ad
+	battlecmd burn                    ; ae
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

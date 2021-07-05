@@ -1465,3 +1465,8 @@ HealBlockWoreOffText:
 	line "HEAL BLOCK wore"
 	cont "off!"
 	prompt
+
+AlreadyBurnedText:
+	text "<TARGET>'s"
+	line "already burned!"
+	prompt

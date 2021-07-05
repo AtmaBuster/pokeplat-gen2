@@ -1451,8 +1451,8 @@ Flatter:
 	usedmovetext
 	doturn
 	checkhit
-	raiseoppstat $10 | SP_ATTACK
-	confusetarget
+	raiseoppstat SP_ATTACK
+	confuse
 	endmove
 
 Swagger:
@@ -1461,7 +1461,7 @@ Swagger:
 	doturn
 	checkhit
 	raiseoppstat $10 | ATTACK
-	confusetarget
+	confuse
 	endmove
 
 FuryCutter:
@@ -1985,7 +1985,7 @@ WillOWisp:
 	doturn
 	checkhit
 	checksafeguard
-	burntarget
+	burn
 	endmove
 
 Superpower:

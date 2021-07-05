@@ -3538,7 +3538,7 @@ FarPlayBattleAnimation:
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
 	ret nz
 	call GetUserUnderwaterAddr
-	ld [hl], a
+	ld a, [hl]
 	and a
 	ret nz
 
@@ -4004,6 +4004,10 @@ BattleCommand_poison:
 	ret
 
 CheckIfTargetIsPoisonType:
+	ld b, POISON
+
+CheckIfTargetIsType:
+; checks if target is type b
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -4012,10 +4016,10 @@ CheckIfTargetIsPoisonType:
 .ok
 	ld a, [de]
 	inc de
-	cp POISON
+	cp b
 	ret z
 	ld a, [de]
-	cp POISON
+	cp b
 	ret
 
 PoisonOpponent:
@@ -8936,7 +8940,7 @@ BattleCommand_revenge:
 	ld a, [wEnemyTookDamage]
 .go
 	and a
-	ret nz
+	ret z
 	ld a, d
 	add a
 	ld d, a
@@ -9404,3 +9408,97 @@ BattleCommand_payback:
 	add a
 	ld d, a
 	ret
+
+CheckIfTargetIsFireType:
+	ld b, FIRE
+	farcall CheckIfTargetIsType
+	ret
+
+BattleCommand_burn:
+; burn
+
+	ld hl, DoesntAffectText
+	ld a, [wTypeModifier]
+	and $7f
+	jp z, .failed
+
+	call CheckIfTargetIsFireType
+	jp z, .failed
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit BRN, a
+	jp nz, .burned
+	ld a, [wTypeModifier]
+	and $7f
+	jp z, .didnt_affect
+	farcall GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_BURN
+	jr nz, .no_item_protection
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	farcall AnimateFailedMove
+	ld hl, ProtectedByText
+	jp StdBattleTextbox
+
+.no_item_protection
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .dont_sample_failure
+
+	ld a, [wLinkMode]
+	and a
+	jr nz, .dont_sample_failure
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	jr nz, .dont_sample_failure
+
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	jr nz, .dont_sample_failure
+
+	call BattleRandom
+	cp 25 percent + 1 ; 25% chance AI fails
+	jr c, .failed
+
+.dont_sample_failure
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	farcall CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove2
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore2
+	call UpdateBattleHuds
+	ld hl, WasBurnedText
+	call StdBattleTextbox
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore2
+
+.burned
+	farcall AnimateFailedMove
+	ld hl, AlreadyBurnedText
+	jp StdBattleTextbox
+
+.didnt_affect
+	farcall AnimateFailedMove
+	farjump PrintDoesntAffect
+
+.failed
+	farjump PrintDidntAffect2
