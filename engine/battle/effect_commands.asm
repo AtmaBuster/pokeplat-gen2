@@ -1419,9 +1419,9 @@ CheckTypeMatchup_join:
 	ld c, [hl]
 	ld a, 10 ; 1.0
 	ld [wTypeMatchup], a
-	ld hl, TypeMatchups
 	farcall TypeMatchupSpecialCases2
 	jr c, .End
+	ld hl, TypeMatchups
 .TypesLoop:
 	ld a, [hli]
 	cp -1
@@ -8045,20 +8045,33 @@ BattleCommand_brine:
 	ret
 
 BattleCommand_trick:
+; fail if wild opponent uses it
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_turn
+
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr nz, .player_turn
+
+.fail
+	jp AnimateAndPrintFailedMove2
+
+.player_turn
 	ld a, 1
 	ld [wAttackMissed], a
 	ld de, wBattleMonItem
 	farcall CheckStealableItem
-	ret c
+	jr c, .fail
 	ld de, wEnemyMonItem
 	farcall CheckStealableItem
-	ret c
+	jr c, .fail
 	ld a, [wBattleMonItem]
 	and a
 	jr nz, .ok
 	ld a, [wEnemyMonItem]
 	and a
-	ret z
+	jr z, .fail
 .ok
 	call AnimateCurrentMove2
 	xor a
@@ -8668,18 +8681,24 @@ BattleCommand_recycle:
 BattleCommand_knockoff:
 	ldh a, [hBattleTurn]
 	and a
-	ld hl, wPartyMon1Item
-	ld de, wBattleMonItem
-	ld a, [wCurBattleMon]
-	jr nz, .go
 	ld hl, wOTPartyMon1Item
 	ld de, wEnemyMonItem
 	ld a, [wCurOTMon]
+	jr z, .go
+; fail if wild mon uses it
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	ret z
+	ld hl, wPartyMon1Item
+	ld de, wBattleMonItem
+	ld a, [wCurBattleMon]
 .go
 	ld b, a
 	ld a, [de]
 	and a
 	ret z
+	farcall CheckStealableItem
+	ret c
 	ld [wNamedObjectIndexBuffer], a
 	ld a, b
 	call GetPartyLocation

@@ -2483,7 +2483,6 @@ Trick:
 	usedmovetext
 	doturn
 	trick
-	failuretext
 	endmove
 
 Taunt:
