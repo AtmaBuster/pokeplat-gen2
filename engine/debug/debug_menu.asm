@@ -103,10 +103,11 @@ DebugMenu::
 	db "Warp Any@"
 	db "PC@"
 	db "Fill Bag@"
+	db "Fill TM/HM@"
 
 .MenuItems
-	db 11
-	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+	db 12
+	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 	db -1
 
 .Jumptable
@@ -121,6 +122,7 @@ DebugMenu::
 	dw Debug_WarpAny
 	dw Debug_PC
 	dw Debug_FillBag
+	dw Debug_FillTMHM
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -568,9 +570,9 @@ Debug_TeachMove:
 	ldh a, [hDebugMenuDataBuffer]
 	and a
 	jr nz, .go_left2
-	ld a, HIGH(NUM_ATTACKS - 1)
+	ld a, HIGH(NUM_ATTACKS)
 	ldh [hDebugMenuDataBuffer], a
-	ld a, LOW(NUM_ATTACKS - 1)
+	ld a, LOW(NUM_ATTACKS)
 	ldh [hDebugMenuDataBuffer + 1], a
 	ret
 
@@ -585,10 +587,10 @@ Debug_TeachMove:
 
 .right
 	ldh a, [hDebugMenuDataBuffer + 1]
-	cp LOW(NUM_ATTACKS - 1)
+	cp LOW(NUM_ATTACKS)
 	jr nz, .go_right
 	ldh a, [hDebugMenuDataBuffer]
-	cp HIGH(NUM_ATTACKS - 1)
+	cp HIGH(NUM_ATTACKS)
 	jr nz, .go_right
 	xor a
 	ldh [hDebugMenuDataBuffer], a
@@ -1074,4 +1076,16 @@ Debug_FillBag:
 
 .full_break
 ; set breakpoint to check if full
+	ret
+
+Debug_FillTMHM:
+	ld hl, wTMsHMs
+	ld e, NUM_TMS + NUM_HMS
+	pushwrambank wTMsHMs
+	ld a, 99
+.loop
+	ld [hli], a
+	dec e
+	jr nz, .loop
+	popwrambank
 	ret
