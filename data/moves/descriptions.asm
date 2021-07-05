@@ -1,7 +1,8 @@
 MoveDescriptions::
 ; entries correspond to move ids (see constants/move_constants.asm)
 	indirect_table 2, 1
-	indirect_entries NUM_ATTACKS, MoveDescriptions1
+	indirect_entries BEAT_UP, MoveDescriptions1
+	indirect_entries NUM_ATTACKS, MoveDescriptions2
 	indirect_table_end
 
 MoveDescriptions1:
@@ -1263,3 +1264,444 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+PUSHS
+SECTION "Move Descriptions 2", ROMX
+
+MoveDescriptions2:
+	dw FakeOutDescription
+	dw UproarDescription
+	dw StockpileDescription
+	dw SpitUpDescription
+	dw SwallowDescription
+	dw HeatWaveDescription
+	dw HailDescription
+	dw TormentDescription
+	dw FlatterDescription
+	dw WillOWispDescription
+	dw MementoDescription
+	dw FacadeDescription
+	dw FocusPunchDescription
+	dw SmellingsaltDescription
+	dw FollowMeDescription
+	dw NaturePowerDescription
+	dw ChargeDescription
+	dw TauntDescription
+	dw HelpingHandDescription
+	dw TrickDescription
+	dw RolePlayDescription
+	dw WishDescription
+	dw AssistDescription
+	dw IngrainDescription
+	dw SuperpowerDescription
+	dw MagicCoatDescription
+	dw RecycleDescription
+	dw RevengeDescription
+	dw BrickBreakDescription
+	dw YawnDescription
+	dw KnockOffDescription
+	dw EndeavorDescription
+	dw EruptionDescription
+	dw SkillSwapDescription
+	dw ImprisonDescription
+	dw RefreshDescription
+	dw GrudgeDescription
+	dw SnatchDescription
+	dw SecretPowerDescription
+	dw DiveDescription
+	dw ArmThrustDescription
+	dw CamouflageDescription
+	dw TailGlowDescription
+	dw LusterPurgeDescription
+	dw MistBallDescription
+	dw FeatherdanceDescription
+	dw TeeterDanceDescription
+	dw BlazeKickDescription
+	dw MudSportDescription
+	dw IceBallDescription
+	dw NeedleArmDescription
+	dw SlackOffDescription
+	dw HyperVoiceDescription
+	dw PoisonFangDescription
+	dw CrushClawDescription
+	dw BlastBurnDescription
+	dw HydroCannonDescription
+	dw MeteorMashDescription
+	dw AstonishDescription
+	dw WeatherBallDescription
+	dw AromatherapyDescription
+	dw FakeTearsDescription
+	dw AirCutterDescription
+	dw OverheatDescription
+	dw OdorSleuthDescription
+	dw RockTombDescription
+	dw SilverWindDescription
+	dw MetalSoundDescription
+	dw GrasswhistleDescription
+	dw TickleDescription
+	dw CosmicPowerDescription
+	dw WaterSpoutDescription
+	dw SignalBeamDescription
+	dw ShadowPunchDescription
+	dw ExtrasensoryDescription
+	dw SkyUppercutDescription
+	dw SandTombDescription
+	dw SheerColdDescription
+	dw MuddyWaterDescription
+	dw BulletSeedDescription
+	dw AerialAceDescription
+	dw IcicleSpearDescription
+	dw IronDefenseDescription
+	dw BlockDescription
+	dw HowlDescription
+	dw DragonClawDescription
+	dw FrenzyPlantDescription
+	dw BulkUpDescription
+	dw BounceDescription
+	dw MudShotDescription
+	dw PoisonTailDescription
+	dw CovetDescription
+	dw VoltTackleDescription
+	dw MagicalLeafDescription
+	dw WaterSportDescription
+	dw CalmMindDescription
+	dw LeafBladeDescription
+	dw DragonDanceDescription
+	dw RockBlastDescription
+	dw ShockWaveDescription
+	dw WaterPulseDescription
+	dw DoomDesireDescription
+	dw PsychoBoostDescription
+	dw RoostDescription
+	dw GravityDescription
+	dw MiracleEyeDescription
+	dw WakeUpSlapDescription
+	dw HammerArmDescription
+	dw GyroBallDescription
+	dw HealingWishDescription
+	dw BrineDescription
+	dw NaturalGiftDescription
+	dw FeintDescription
+	dw PluckDescription
+	dw TailwindDescription
+	dw AcupressureDescription
+	dw MetalBurstDescription
+	dw UTurnDescription
+	dw CloseCombatDescription
+	dw PaybackDescription
+	dw AssuranceDescription
+	dw EmbargoDescription
+	dw FlingDescription
+	dw PsychoShiftDescription
+	dw TrumpCardDescription
+	dw HealBlockDescription
+	dw WringOutDescription
+	dw PowerTrickDescription
+	dw GastroAcidDescription
+	dw LuckyChantDescription
+	dw MeFirstDescription
+	dw CopycatDescription
+	dw PowerSwapDescription
+	dw GuardSwapDescription
+	dw PunishmentDescription
+	dw LastResortDescription
+	dw WorrySeedDescription
+	dw SuckerPunchDescription
+	dw ToxicSpikesDescription
+	dw HeartSwapDescription
+	dw AquaRingDescription
+	dw MagnetRiseDescription
+	dw FlareBlitzDescription
+	dw ForcePalmDescription
+	dw AuraSphereDescription
+	dw RockPolishDescription
+	dw PoisonJabDescription
+	dw DarkPulseDescription
+	dw NightSlashDescription
+	dw AquaTailDescription
+	dw SeedBombDescription
+	dw AirSlashDescription
+	dw XScissorDescription
+	dw BugBuzzDescription
+	dw DragonPulseDescription
+	dw DragonRushDescription
+	dw PowerGemDescription
+	dw DrainPunchDescription
+	dw VacuumWaveDescription
+	dw FocusBlastDescription
+	dw EnergyBallDescription
+	dw BraveBirdDescription
+	dw EarthPowerDescription
+	dw SwitcherooDescription
+	dw GigaImpactDescription
+	dw NastyPlotDescription
+	dw BulletPunchDescription
+	dw AvalancheDescription
+	dw IceShardDescription
+	dw ShadowClawDescription
+	dw ThunderFangDescription
+	dw IceFangDescription
+	dw FireFangDescription
+	dw ShadowSneakDescription
+	dw MudBombDescription
+	dw PsychoCutDescription
+	dw ZenHeadbuttDescription
+	dw MirrorShotDescription
+	dw FlashCannonDescription
+	dw RockClimbDescription
+	dw DefogDescription
+	dw TrickRoomDescription
+	dw DracoMeteorDescription
+	dw DischargeDescription
+	dw LavaPlumeDescription
+	dw LeafStormDescription
+	dw PowerWhipDescription
+	dw RockWreckerDescription
+	dw CrossPoisonDescription
+	dw GunkShotDescription
+	dw IronHeadDescription
+	dw MagnetBombDescription
+	dw StoneEdgeDescription
+	dw CaptivateDescription
+	dw StealthRockDescription
+	dw GrassKnotDescription
+	dw ChatterDescription
+	dw JudgmentDescription
+	dw BugBiteDescription
+	dw ChargeBeamDescription
+	dw WoodHammerDescription
+	dw AquaJetDescription
+	dw AttackOrderDescription
+	dw DefendOrderDescription
+	dw HealOrderDescription
+	dw HeadSmashDescription
+	dw DoubleHitDescription
+	dw RoarOfTimeDescription
+	dw SpacialRendDescription
+	dw LunarDanceDescription
+	dw CrushGripDescription
+	dw MagmaStormDescription
+	dw DarkVoidDescription
+	dw SeedFlareDescription
+	dw OminousWindDescription
+	dw ShadowForceDescription
+
+FakeOutDescription:
+UproarDescription:
+StockpileDescription:
+SpitUpDescription:
+SwallowDescription:
+HeatWaveDescription:
+HailDescription:
+TormentDescription:
+FlatterDescription:
+WillOWispDescription:
+MementoDescription:
+FacadeDescription:
+FocusPunchDescription:
+SmellingsaltDescription:
+FollowMeDescription:
+NaturePowerDescription:
+ChargeDescription:
+TauntDescription:
+HelpingHandDescription:
+TrickDescription:
+RolePlayDescription:
+WishDescription:
+AssistDescription:
+IngrainDescription:
+SuperpowerDescription:
+MagicCoatDescription:
+RecycleDescription:
+RevengeDescription:
+BrickBreakDescription:
+YawnDescription:
+KnockOffDescription:
+EndeavorDescription:
+EruptionDescription:
+SkillSwapDescription:
+ImprisonDescription:
+RefreshDescription:
+GrudgeDescription:
+SnatchDescription:
+SecretPowerDescription:
+DiveDescription:
+ArmThrustDescription:
+CamouflageDescription:
+TailGlowDescription:
+LusterPurgeDescription:
+MistBallDescription:
+FeatherdanceDescription:
+TeeterDanceDescription:
+BlazeKickDescription:
+MudSportDescription:
+IceBallDescription:
+NeedleArmDescription:
+SlackOffDescription:
+HyperVoiceDescription:
+PoisonFangDescription:
+CrushClawDescription:
+BlastBurnDescription:
+HydroCannonDescription:
+MeteorMashDescription:
+AstonishDescription:
+WeatherBallDescription:
+AromatherapyDescription:
+FakeTearsDescription:
+AirCutterDescription:
+OverheatDescription:
+OdorSleuthDescription:
+RockTombDescription:
+SilverWindDescription:
+MetalSoundDescription:
+GrasswhistleDescription:
+TickleDescription:
+CosmicPowerDescription:
+WaterSpoutDescription:
+SignalBeamDescription:
+ShadowPunchDescription:
+ExtrasensoryDescription:
+SkyUppercutDescription:
+SandTombDescription:
+SheerColdDescription:
+MuddyWaterDescription:
+BulletSeedDescription:
+AerialAceDescription:
+IcicleSpearDescription:
+IronDefenseDescription:
+BlockDescription:
+HowlDescription:
+DragonClawDescription:
+FrenzyPlantDescription:
+BulkUpDescription:
+BounceDescription:
+MudShotDescription:
+PoisonTailDescription:
+CovetDescription:
+VoltTackleDescription:
+MagicalLeafDescription:
+WaterSportDescription:
+CalmMindDescription:
+LeafBladeDescription:
+DragonDanceDescription:
+RockBlastDescription:
+ShockWaveDescription:
+WaterPulseDescription:
+DoomDesireDescription:
+PsychoBoostDescription:
+RoostDescription:
+GravityDescription:
+MiracleEyeDescription:
+WakeUpSlapDescription:
+HammerArmDescription:
+GyroBallDescription:
+HealingWishDescription:
+BrineDescription:
+NaturalGiftDescription:
+FeintDescription:
+PluckDescription:
+TailwindDescription:
+AcupressureDescription:
+MetalBurstDescription:
+UTurnDescription:
+CloseCombatDescription:
+PaybackDescription:
+AssuranceDescription:
+EmbargoDescription:
+FlingDescription:
+PsychoShiftDescription:
+TrumpCardDescription:
+HealBlockDescription:
+WringOutDescription:
+PowerTrickDescription:
+GastroAcidDescription:
+LuckyChantDescription:
+MeFirstDescription:
+CopycatDescription:
+PowerSwapDescription:
+GuardSwapDescription:
+PunishmentDescription:
+LastResortDescription:
+WorrySeedDescription:
+SuckerPunchDescription:
+ToxicSpikesDescription:
+HeartSwapDescription:
+AquaRingDescription:
+MagnetRiseDescription:
+FlareBlitzDescription:
+ForcePalmDescription:
+AuraSphereDescription:
+RockPolishDescription:
+PoisonJabDescription:
+DarkPulseDescription:
+NightSlashDescription:
+AquaTailDescription:
+SeedBombDescription:
+AirSlashDescription:
+XScissorDescription:
+BugBuzzDescription:
+DragonPulseDescription:
+DragonRushDescription:
+PowerGemDescription:
+DrainPunchDescription:
+VacuumWaveDescription:
+FocusBlastDescription:
+EnergyBallDescription:
+BraveBirdDescription:
+EarthPowerDescription:
+SwitcherooDescription:
+GigaImpactDescription:
+NastyPlotDescription:
+BulletPunchDescription:
+AvalancheDescription:
+IceShardDescription:
+ShadowClawDescription:
+ThunderFangDescription:
+IceFangDescription:
+FireFangDescription:
+ShadowSneakDescription:
+MudBombDescription:
+PsychoCutDescription:
+ZenHeadbuttDescription:
+MirrorShotDescription:
+FlashCannonDescription:
+RockClimbDescription:
+DefogDescription:
+TrickRoomDescription:
+DracoMeteorDescription:
+DischargeDescription:
+LavaPlumeDescription:
+LeafStormDescription:
+PowerWhipDescription:
+RockWreckerDescription:
+CrossPoisonDescription:
+GunkShotDescription:
+IronHeadDescription:
+MagnetBombDescription:
+StoneEdgeDescription:
+CaptivateDescription:
+StealthRockDescription:
+GrassKnotDescription:
+ChatterDescription:
+JudgmentDescription:
+BugBiteDescription:
+ChargeBeamDescription:
+WoodHammerDescription:
+AquaJetDescription:
+AttackOrderDescription:
+DefendOrderDescription:
+HealOrderDescription:
+HeadSmashDescription:
+DoubleHitDescription:
+RoarOfTimeDescription:
+SpacialRendDescription:
+LunarDanceDescription:
+CrushGripDescription:
+MagmaStormDescription:
+DarkVoidDescription:
+SeedFlareDescription:
+OminousWindDescription:
+ShadowForceDescription:
+	db "?@"
+
+POPS
