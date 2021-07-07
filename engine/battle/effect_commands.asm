@@ -3883,15 +3883,33 @@ BattleCommand_poisontarget:
 	call SafeCheckSafeguard
 	ret nz
 
+	call CheckToxic
+	jr z, .toxic
+
+	call .apply_poison
+
+	ld hl, WasPoisonedText
+	call StdBattleTextbox
+	jr .finished
+
+.toxic
+	set SUBSTATUS_TOXIC, [hl]
+	xor a
+	ld [de], a
+	call .apply_poison
+
+	ld hl, BadlyPoisonedText
+	call StdBattleTextbox
+
+.finished
+	farcall UseHeldStatusHealingItem
+	ret
+
+.apply_poison
 	call PoisonOpponent
 	ld de, ANIM_PSN
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
-
-	ld hl, WasPoisonedText
-	call StdBattleTextbox
-
-	farcall UseHeldStatusHealingItem
 	ret
 
 BattleCommand_poison:
@@ -3955,7 +3973,7 @@ BattleCommand_poison:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
-	call .check_toxic
+	call CheckToxic
 	jr z, .toxic
 
 	call .apply_poison
@@ -3987,7 +4005,7 @@ BattleCommand_poison:
 	call PoisonOpponent
 	jp RefreshBattleHuds
 
-.check_toxic
+CheckToxic:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	ldh a, [hBattleTurn]
@@ -8284,7 +8302,9 @@ BattleCommand_movecharge:
 .go
 	ld a, 2
 	ld [hl], a
-	farjump AnimateCurrentMove
+	call AnimateCurrentMove2
+	ld hl, ChargeText
+	jp StdBattleTextbox
 
 BattleCommand_watersport:
 	ld a, BATTLE_VARS_SUBSTATUS6
@@ -8682,6 +8702,7 @@ BattleCommand_captivate:
 	jr c, .failed
 	farcall CheckHiddenOpponent
 	jr nz, .failed
+	call CheckAlreadyFailed
 	farjump AnimateCurrentMove
 
 .failed
@@ -9539,3 +9560,9 @@ BattleCommand_traptarget:
 	dw WHIRLPOOL,   WhirlpoolTrapText  ; 'was trapped!'
 	dw SAND_TOMB,   SandTombTrapText   ; 'was trapped by SAND TOMB!'
 	dw MAGMA_STORM, MagmaStormTrapText ; 'became trapped by...'
+
+BattleCommand_crushgrip:
+	call BattleCommand_switchturn
+	ld d, 120
+	call BattleCommand_lifepower
+	jp BattleCommand_switchturn

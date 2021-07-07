@@ -122,6 +122,8 @@ FarChangeStat:
 	bit STAT_SILENT_F, b
 	push bc
 	jr nz, .anim_done
+	call CheckAlreadyFailed
+	jr nz, .anim_done
 	xor a
 	ld [wNumHits], a
 	ld a, BATTLE_VARS_MOVE_ANIM

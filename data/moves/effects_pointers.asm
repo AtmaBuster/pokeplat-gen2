@@ -64,7 +64,7 @@ MoveEffectsPointers:
 	dw SpeedDown2                    ; SPEED_DOWN_2
 	dw SpecialDefenseDown2Hit        ; SP_DEF_DOWN_2_HIT
 	dw SpecialDefenseDown2           ; SP_DEF_DOWN_2
-	dw Splash                        ; SP_ATK_UP_HIT
+	dw SpecialAttackUpHit            ; SP_ATK_UP_HIT
 	dw Whirlpool                     ; WHIRLPOOL
 	dw Reflect                       ; REFLECT
 	dw DoPoison                      ; POISON

@@ -209,6 +209,7 @@ BattleCommandPointers:
 	battlecmd healblock               ; ac
 	battlecmd payback                 ; ad
 	battlecmd burn                    ; ae
+	battlecmd crushgrip               ; af
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

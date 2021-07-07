@@ -2440,9 +2440,7 @@ CrushGrip:
 	doturn
 	critical
 	damagestats
-	switchturn
-	lifepower
-	switchturn
+	crushgrip
 	damagecalc
 	stab
 	damagevariation
@@ -2928,4 +2926,25 @@ Payback:
 	checkfaint
 	buildopponentrage
 	heldflinch
+	endmove
+
+SpecialAttackUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	raisestathit SP_ATTACK
+	checkfaint
+	buildopponentrage
 	endmove

@@ -1482,3 +1482,8 @@ MagmaStormTrapText:
 	line "became trapped by"
 	cont "swirling magma!"
 	prompt
+
+ChargeText:
+	text "<USER>"
+	line "is charging power!"
+	prompt
