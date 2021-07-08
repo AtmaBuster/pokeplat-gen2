@@ -784,6 +784,8 @@ wEnemyRecycleMemory:: ds PARTY_LENGTH
 wPlayerTookDamage:: db
 wEnemyTookDamage:: db
 
+wWonderGuardMiss:: db
+
 wBattleEnd::
 
 NEXTU ; c608

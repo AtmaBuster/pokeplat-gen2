@@ -155,6 +155,7 @@ BattleCommand_checkturn:
 	ld [wAlreadyDisobeyed], a
 	ld [wAlreadyFailed], a
 	ld [wSomeoneIsRampaging], a
+	ld [wWonderGuardMiss], a
 
 	ld a, EFFECTIVE
 	ld [wTypeModifier], a
@@ -2163,6 +2164,9 @@ BattleCommand_failuretext:
 .fly_dig_moves
 	dw FLY
 	dw DIG
+	dw DIVE
+	dw BOUNCE
+	dw SHADOW_FORCE
 	dw -1
 
 BattleCommand_applydamage:
@@ -2260,6 +2264,11 @@ BattleCommand_applydamage:
 	ret
 
 GetFailureResultText:
+	ld a, [wWonderGuardMiss]
+	and a
+	ld hl, WonderGuardMissText
+	ld de, WonderGuardMissText
+	jr nz, .got_text
 	ld hl, DoesntAffectText
 	ld de, DoesntAffectText
 	ld a, [wTypeModifier]
@@ -7451,6 +7460,9 @@ BattleCommand_stab:
 	set 7, [hl]
 
 .SkipStab:
+	farcall WonderGuardCheck
+	jp nc, .wonder_guard
+
 	call GetCurrentMoveType2
 	ld b, a
 	ld hl, TypeMatchups
@@ -7548,6 +7560,10 @@ BattleCommand_stab:
 	inc hl
 	inc hl
 	jr .TypesLoop
+
+.wonder_guard
+	ld a, 1
+	ld [wWonderGuardMiss], a
 
 .force_end
 	ld a, 1
@@ -9566,3 +9582,56 @@ BattleCommand_crushgrip:
 	ld d, 120
 	call BattleCommand_lifepower
 	jp BattleCommand_switchturn
+
+WonderGuardCheck:
+	push bc
+	push de
+	call .check
+	pop de
+	pop bc
+	ret
+
+.check
+; special case, if using Fire Fang, it works!
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld bc, FIRE_FANG
+	call CompareMove2
+	jr z, .ok
+; otherwise, get relevant information
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wBattleMonType
+	ld a, [wBattleMonSpecies]
+	jr nz, .go
+	ld de, wEnemyMonType
+	ld a, [wEnemyMonSpecies]
+.go
+	call GetPokemonIndexFromID
+	ld a, h
+	cp HIGH(SHEDINJA)
+	jr nz, .ok
+	ld a, l
+	cp LOW(SHEDINJA)
+	jr nz, .ok
+
+	ld a, [de]
+	ld [wTypeMatchupBuffer], a
+	inc de
+	ld a, [de]
+	ld [wTypeMatchupBuffer + 1], a
+
+	farcall2 GetCurrentMoveType2
+	ld [wTypeMatchupBuffer + 2], a
+
+	farcall CheckAnyTypeMatchup
+	ld a, [wTypeMatchup]
+	cp 11
+	jr nc, .ok
+
+	and a
+	ret
+
+.ok
+	scf
+	ret

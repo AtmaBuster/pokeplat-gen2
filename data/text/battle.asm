@@ -1487,3 +1487,9 @@ ChargeText:
 	text "<USER>"
 	line "is charging power!"
 	prompt
+
+WonderGuardMissText:
+	text "<TARGET>"
+	line "was protected by"
+	cont "WONDER GUARD!"
+	prompt

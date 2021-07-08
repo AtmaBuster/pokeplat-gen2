@@ -8078,7 +8078,17 @@ SendOutMonText:
 	ld hl, JumpText_GoMon
 	jr z, .skip_to_textbox
 
-	; compute enemy helth remaining as a percentage
+	ld hl, wEnemyMonMaxHP
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	dec hl
+	ld a, h
+	or l
+	ld hl, JumpText_GoMon
+	jr z, .skip_to_textbox
+
+	; compute enemy health remaining as a percentage
 	xor a
 	ldh [hMultiplicand + 0], a
 	ld hl, wEnemyMonHP
@@ -8155,6 +8165,15 @@ WithdrawMonText:
 	text_asm
 ; Print text to withdraw mon
 ; depending on HP the message is different
+	ld hl, wEnemyMonMaxHP
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	dec hl
+	ld a, h
+	or l
+	ld hl, TextJump_ComeBack
+	ret z
 	push de
 	push bc
 	ld hl, wEnemyMonHP + 1
