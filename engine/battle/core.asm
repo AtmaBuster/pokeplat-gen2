@@ -300,10 +300,7 @@ HandleBetweenTurnEffects:
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
-	farcall HandleSlowStart
-	farcall DecrementTailwind
-	farcall DecrementGravity
-	farcall DecrementTrickRoom
+	farcall FarTemporaryEffects
 	jp HandleTemporaryEffects
 
 CheckFaint_PlayerThenEnemy:
@@ -744,6 +741,7 @@ HandleTemporaryEffects:
 HandleTemporaryEffects_2:
 	call HandleTemporaryEffects_Enemy
 HandleTemporaryEffects_Player:
+	farcall HandleYawnPlayer
 	ld hl, wPlayerSubStatus6
 	bit SUBSTATUS_UPROAR, [hl]
 	jr z, .skip_uproar
@@ -815,6 +813,7 @@ HandleTemporaryEffects_Player:
 	ret
 
 HandleTemporaryEffects_Enemy:
+	farcall HandleYawnEnemy
 	ld hl, wEnemySubStatus6
 	bit SUBSTATUS_UPROAR, [hl]
 	jr z, .skip_uproar
@@ -3871,6 +3870,7 @@ endr
 	ld [wEnemyWrapCount], a
 	ld [wEnemyTurnsTaken], a
 	ld [wEnemyLastResortFlags], a
+	ld [wEnemyYawnTimer], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
@@ -4367,6 +4367,7 @@ endr
 	ld [wPlayerWrapCount], a
 	ld [wPlayerTurnsTaken], a
 	ld [wPlayerLastResortFlags], a
+	ld [wPlayerYawnTimer], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
@@ -9697,6 +9698,13 @@ DoEnemySlowStartText2:
 	ld hl, SlowStartActivateText2
 	jp StdBattleTextbox
 
+FarTemporaryEffects:
+	call HandleSlowStart
+	call DecrementTailwind
+	call DecrementGravity
+	call DecrementTrickRoom
+	ret
+
 HandleSlowStart:
 ; player
 	call SetPlayerTurn
@@ -10072,4 +10080,40 @@ HandlePerishSong:
 	xor a
 	ld [hli], a
 	ld [hl], a
+	ret
+
+HandleYawnPlayer:
+	call SetEnemyTurn
+	jr HandleYawn
+
+HandleYawnEnemy:
+	call SetPlayerTurn
+HandleYawn:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerYawnTimer
+	jr nz, .go
+	ld hl, wEnemyYawnTimer
+.go
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+; fail if either mon is uproaring
+	ld a, [wPlayerUproarCount]
+	and a
+	ret nz
+	ld a, [wEnemyUproarCount]
+	and a
+	ret nz
+; fail if target mon has a status already
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	ret nz
+; put to sleep
+	ld d, h
+	ld e, l
+	farcall SetSleep
 	ret

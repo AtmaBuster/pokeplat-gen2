@@ -1493,3 +1493,10 @@ WonderGuardMissText:
 	line "was protected by"
 	cont "WONDER GUARD!"
 	prompt
+
+MadeDrowsyText:
+	text "<USER>"
+	line "made"
+	cont "<TARGET>"
+	cont "drowsy!"
+	prompt

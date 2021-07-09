@@ -2948,3 +2948,10 @@ SpecialAttackUpHit:
 	checkfaint
 	buildopponentrage
 	endmove
+
+Yawn:
+	checkobedience
+	usedmovetext
+	doturn
+	yawn
+	endmove

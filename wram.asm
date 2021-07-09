@@ -453,8 +453,8 @@ wPlayerSubStatus2:: ; c669
 ; 5 miracle eye
 ; 4 grudge
 ; 3 imprison
-; 2 yawn2
-; 1 yawn
+; 2
+; 1
 ; 0 curled
 	db
 wPlayerSubStatus3:: ; c66a
@@ -541,6 +541,7 @@ wPlayerUproarCount:: db
 wPlayerChargeFlag:: db
 wPlayerUnderwater:: db
 wPlayerRoost:: db
+wPlayerYawnTimer:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -561,6 +562,7 @@ wEnemyUproarCount:: db
 wEnemyChargeFlag:: db
 wEnemyUnderwater:: db
 wEnemyRoost:: db
+wEnemyYawnTimer:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

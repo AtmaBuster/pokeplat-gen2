@@ -210,6 +210,7 @@ BattleCommandPointers:
 	battlecmd payback                 ; ad
 	battlecmd burn                    ; ae
 	battlecmd crushgrip               ; af
+	battlecmd yawn                    ; b0
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

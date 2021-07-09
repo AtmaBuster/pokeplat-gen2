@@ -3809,30 +3809,7 @@ BattleCommand_sleeptarget:
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	ld b, $7
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr z, .random_loop
-	ld b, $3
-
-.random_loop
-	call BattleRandom
-	and b
-	jr z, .random_loop
-	cp 7
-	jr z, .random_loop
-	inc a
-	ld [de], a
-	call UpdateOpponentInParty
-	call RefreshBattleHuds
-
-	ld hl, FellAsleepText
-	call StdBattleTextbox
-
-	farcall UseHeldStatusHealingItem
-
-	jp z, OpponentCantMove
-	ret
+	call SetSleep
 
 .fail
 	push hl
@@ -3866,6 +3843,33 @@ BattleCommand_sleeptarget:
 
 .dont_fail
 	xor a
+	ret
+
+SetSleep:
+; sets de to a valid sleep count
+	ld b, $7
+	ld a, [wInBattleTowerBattle]
+	and a
+	jr z, .random_loop
+	ld b, $3
+
+.random_loop
+	call BattleRandom
+	and b
+	jr z, .random_loop
+	cp 7
+	jr z, .random_loop
+	inc a
+	ld [de], a
+	call UpdateOpponentInParty
+	call RefreshBattleHuds
+
+	ld hl, FellAsleepText
+	call StdBattleTextbox
+
+	farcall UseHeldStatusHealingItem
+
+	jp z, OpponentCantMove
 	ret
 
 BattleCommand_poisontarget:
@@ -8452,6 +8456,7 @@ BattleCommand_stockpile:
 	cp STOCKPILE_3
 	jr z, .fail
 	call AnimateCurrentMove2
+	call CheckAlreadyFailed
 	ld a, [hl]
 	add STOCKPILE_1
 	ld [hl], a
@@ -9635,3 +9640,43 @@ WonderGuardCheck:
 .ok
 	scf
 	ret
+
+BattleCommand_yawn:
+; fail if opponent has status already
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	jr nz, .fail
+; fail if opponent has sub
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .fail
+; fail if opponent is uproaring
+	ld a, BATTLE_VARS_SUBSTATUS6_OPP
+	call GetBattleVar
+	bit SUBSTATUS_UPROAR, a
+	jr nz, .fail
+; fail if already yawned or opponent has safeguard
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerScreens
+	ld de, wPlayerYawnTimer
+	jr nz, .go
+	ld hl, wEnemyScreens
+	ld de, wEnemyYawnTimer
+.go
+	ld a, [de]
+	and a
+	jr nz, .fail
+	bit SCREENS_SAFEGUARD, [hl]
+	jr nz, .fail
+; set yawn
+	ld a, 2
+	ld [de], a
+	call AnimateCurrentMove2
+	ld hl, MadeDrowsyText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2
