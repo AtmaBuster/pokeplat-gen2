@@ -2485,6 +2485,16 @@ BattleCommand_checkfaint:
 	jr .finish
 
 .no_dbond
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_GRUDGE, a
+	jr z, .no_grudge
+
+	farcall DoGrudgeEffect
+
+	jr .finish
+
+.no_grudge
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
@@ -7102,28 +7112,6 @@ Battle_StartWeather:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
-BattleCommand_doubleminimizedamage:
-; doubleminimizedamage
-
-	ld hl, wEnemyMinimized
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wPlayerMinimized
-.ok
-	ld a, [hl]
-	and a
-	ret z
-	ld hl, wCurDamage + 1
-	sla [hl]
-	dec hl
-	rl [hl]
-	ret nc
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-	ret
-
 BattleCommand_skipsuncharge:
 ; mimicsuncharge
 	ld a, [wBattleWeather]
@@ -8619,7 +8607,6 @@ BattleCommand_acupressure:
 	jr z, .raise_loop
 
 ; found a stat, raise it by 2 levels
-	call AnimateCurrentMove2
 	ld a, c
 	or $10
 	ld b, a
@@ -9680,3 +9667,97 @@ BattleCommand_yawn:
 
 .fail
 	jp AnimateAndPrintFailedMove2
+
+DoGrudgeEffect:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurPlayerMove]
+	jr z, .ok1
+	ld a, [wCurEnemyMove]
+.ok1
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	call .drain_mon_pp
+	ld hl, LostPPDueToGrudgeText
+	call StdBattleTextbox
+	ret
+
+.drain_mon_pp
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonPP
+	jr z, .go
+	ld hl, wEnemyMonPP
+.go
+	call .drain_pp
+
+	ldh a, [hBattleTurn]
+	and a
+
+	ld hl, wPartyMon1PP
+	ld a, [wCurBattleMon]
+	jr z, .player
+
+	ld a, [wBattleMode]
+	dec a
+	jr z, .wild
+
+	ld hl, wOTPartyMon1PP
+	ld a, [wCurOTMon]
+.player
+	call GetPartyLocation
+	push hl
+	farcall CheckMimicUsed
+	pop hl
+	ret c
+	jr .drain_pp
+
+.wild
+	ld hl, wWildMonPP
+
+.drain_pp
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurMoveNum]
+	jr z, .ok
+	ld a, [wCurEnemyMoveNum]
+.ok
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and PP_UP_MASK
+	ld [hl], a
+	ret
+
+BattleCommand_doubleminimizedamage:
+; doubleminimizedamage
+
+	ld hl, wEnemyMinimized
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wPlayerMinimized
+.ok
+	ld a, [hl]
+	and a
+	ret z
+	ld hl, wCurDamage + 1
+	sla [hl]
+	dec hl
+	rl [hl]
+	ret nc
+	ld a, $ff
+	ld [hli], a
+	ld [hl], a
+	ret
+
+BattleCommand_grudge:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_GRUDGE, [hl]
+	call AnimateCurrentMove2
+	ld hl, BearAGrudgeText
+	jp StdBattleTextbox
+
+INCLUDE "engine/battle/move_effects/u_turn.asm"

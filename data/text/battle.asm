@@ -1500,3 +1500,18 @@ MadeDrowsyText:
 	cont "<TARGET>"
 	cont "drowsy!"
 	prompt
+
+BearAGrudgeText:
+	text "<USER>"
+	line "wants the foe to"
+	cont "bear a grudge!"
+	prompt
+
+LostPPDueToGrudgeText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " lost"
+	cont "all its PP due to"
+	cont "the grudge!"
+	prompt

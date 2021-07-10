@@ -2955,3 +2955,31 @@ Yawn:
 	doturn
 	yawn
 	endmove
+
+Grudge:
+	checkobedience
+	usedmovetext
+	doturn
+	grudge
+	endmove
+
+UTurn:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	uturn
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove

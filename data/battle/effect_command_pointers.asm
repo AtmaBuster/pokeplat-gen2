@@ -211,6 +211,8 @@ BattleCommandPointers:
 	battlecmd burn                    ; ae
 	battlecmd crushgrip               ; af
 	battlecmd yawn                    ; b0
+	battlecmd grudge                  ; b1
+	battlecmd uturn                   ; b2
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

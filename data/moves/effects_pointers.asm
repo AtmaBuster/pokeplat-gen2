@@ -191,7 +191,7 @@ MoveEffectsPointers:
 	dw Splash                        ; UNUSED_BB
 	dw Imprison                      ; IMPRISON
 	dw Refresh                       ; REFRESH
-	dw Splash                        ; GRUDGE
+	dw Grudge                        ; GRUDGE
 	dw Splash                        ; SNATCH
 	dw Splash                        ; SECRET_POWER
 	dw Camouflage                    ; CAMOUFLAGE
@@ -219,7 +219,7 @@ MoveEffectsPointers:
 	dw Tailwind                      ; TAILWIND
 	dw Acupressure                   ; ACUPRESSURE
 	dw MetalBurst                    ; METAL_BURST
-	dw Splash                        ; U_TURN
+	dw UTurn                         ; U_TURN
 	dw CloseCombat                   ; CLOSE_COMBAT
 	dw Payback                       ; PAYBACK
 	dw Splash                        ; ASSURANCE
