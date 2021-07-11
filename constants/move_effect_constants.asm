@@ -203,7 +203,7 @@
 	const EFFECT_BOUNCE            ; c8
 	const EFFECT_VOLT_TACKLE       ; c9
 	const EFFECT_WATER_SPORT       ; ca
-	const EFFECT_DOOM_DESIRE       ; cb
+	const EFFECT_UNUSED_CB         ; cb
 	const EFFECT_UNUSED_CC         ; cc
 	const EFFECT_GRAVITY           ; cd
 	const EFFECT_MIRACLE_EYE       ; ce

@@ -204,7 +204,7 @@ MoveEffectsPointers:
 	dw Bounce                        ; BOUNCE
 	dw VoltTackle                    ; VOLT_TACKLE
 	dw WaterSport                    ; WATER_SPORT
-	dw Splash                        ; DOOM_DESIRE
+	dw Splash                        ; UNUSED_CB
 	dw Splash                        ; UNUSED_CC
 	dw Gravity                       ; GRAVITY
 	dw MiracleEye                    ; MIRACLE_EYE

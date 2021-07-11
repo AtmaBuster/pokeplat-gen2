@@ -114,8 +114,10 @@ BattleText_UserRecoveredPPUsing:
 
 BattleText_TargetWasHitByFutureSight:
 	text "<TARGET>"
-	line "was hit by FUTURE"
-	cont "SIGHT!"
+	line "was hit by"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
 	prompt
 
 BattleText_SafeguardFaded:
@@ -1514,4 +1516,10 @@ LostPPDueToGrudgeText:
 	text " lost"
 	cont "all its PP due to"
 	cont "the grudge!"
+	prompt
+
+DoomDesireText:
+	text "<USER>"
+	line "chose DOOM DESIRE"
+	cont "as its destiny!"
 	prompt

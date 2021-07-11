@@ -41,20 +41,23 @@ BattleCommand_futuresight:
 	ld [hl], b
 .AlreadyChargingFutureSight:
 	ld hl, wPlayerFutureSightCount
+	ld de, wPlayerFutureSightMode
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .GotFutureSightCount
 	ld hl, wEnemyFutureSightCount
+	ld de, wEnemyFutureSightMode
 .GotFutureSightCount:
 	ld a, [hl]
 	and a
 	jr nz, .failed
 	ld a, 4
 	ld [hl], a
+	ld a, b
+	ld [de], a
 	call BattleCommand_lowersub
 	call BattleCommand_movedelay
-	ld hl, ForesawAttackText
-	call StdBattleTextbox
+	call .ShowAttackMessage
 	call BattleCommand_raisesub
 	ld de, wPlayerFutureSightDamage
 	ldh a, [hBattleTurn]
@@ -79,3 +82,15 @@ BattleCommand_futuresight:
 	call AnimateFailedMove
 	call PrintButItFailed
 	jp EndMoveEffect
+
+.ShowAttackMessage:
+	ld a, b
+	push bc
+	ld bc, FUTURE_SIGHT
+	call CompareMove
+	pop bc
+	ld hl, ForesawAttackText
+	jr z, .got_message
+	ld hl, DoomDesireText
+.got_message
+	jp StdBattleTextbox
