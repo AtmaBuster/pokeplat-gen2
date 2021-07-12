@@ -404,6 +404,9 @@ CantMove:
 .fly_dig_moves
 	dw FLY
 	dw DIG
+	dw DIVE
+	dw BOUNCE
+	dw SHADOW_FORCE
 	dw -1
 
 OpponentCantMove:
@@ -1014,6 +1017,9 @@ IgnoreSleepOnly:
 
 BattleCommand_usedmovetext:
 ; usedmovetext
+	farcall CheckUserTruant
+	ret c
+
 	farcall DisplayUsedMoveText
 	ret
 
@@ -1904,7 +1910,7 @@ BattleCommand_effectchance:
 .got_move_chance
 	ld a, [hl]
 	cp -1
-	ret z
+	jr z, .ok
 
 	call BattleRandom
 	cp [hl]
@@ -1915,6 +1921,10 @@ BattleCommand_effectchance:
 	ld a, 1
 	ld [wEffectFailed], a
 	and a
+	ret
+
+.ok
+	pop hl
 	ret
 
 BattleCommand_lowersub:
@@ -2041,6 +2051,9 @@ BattleCommand_moveanimnosub:
 .fly_dig_moves
 	dw FLY
 	dw DIG
+	dw DIVE
+	dw BOUNCE
+	dw SHADOW_FORCE
 	dw -1
 
 .alternate_anim
@@ -6118,14 +6131,15 @@ BattleCommand_charge:
 	ret
 
 .move_messages
-	dw RAZOR_WIND, .RazorWind
-	dw SOLARBEAM,  .Solarbeam
-	dw SKULL_BASH, .SkullBash
-	dw SKY_ATTACK, .SkyAttack
-	dw FLY,        .Fly
-	dw DIG,        .Dig
-	dw BOUNCE,     .Bounce
-	dw DIVE,       .Dive
+	dw RAZOR_WIND,   .RazorWind
+	dw SOLARBEAM,    .Solarbeam
+	dw SKULL_BASH,   .SkullBash
+	dw SKY_ATTACK,   .SkyAttack
+	dw FLY,          .Fly
+	dw DIG,          .Dig
+	dw BOUNCE,       .Bounce
+	dw DIVE,         .Dive
+	dw SHADOW_FORCE, .ShadowForce
 	dw -1
 
 .RazorWind:
@@ -9858,3 +9872,62 @@ SecretPowerSleep:
 INCLUDE "data/moves/secret_power.asm"
 
 INCLUDE "engine/battle/move_effects/magnitude.asm"
+
+CheckUserTruant:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpecies
+	ld a, [wPlayerPseudoAbilityFlags]
+	jr z, .go
+	ld hl, wEnemyMonSpecies
+	ld a, [wEnemyPseudoAbilityFlags]
+.go
+	bit TRUANT, a
+	jr z, .no
+	ld a, [hl]
+	call GetPokemonIndexFromID
+; is it Slakoth?
+	ld a, h
+	cp HIGH(SLAKOTH)
+	jr nz, .not_slakoth
+	ld a, l
+	cp LOW(SLAKOTH)
+	jr z, .yes
+
+.not_slakoth
+; is it Slaking?
+	ld a, h
+	cp HIGH(SLAKING)
+	jr nz, .no
+	ld a, l
+	cp LOW(SLAKING)
+	jr z, .yes
+
+.no
+	and a
+	ret
+
+.yes
+	farcall EndMoveEffect
+	ld hl, TruantText
+	call StdBattleTextbox
+; if charging+not visible, appear sprite
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	and (1 << SUBSTATUS_FLYING) | (1 << SUBSTATUS_UNDERGROUND)
+	jr z, .appear
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerUnderwater]
+	jr z, .got_underwater
+	ld a, [wEnemyUnderwater]
+.got_underwater
+	and a
+	jr z, .finish
+
+.appear
+	farcall AppearUserRaiseSub
+
+.finish
+	scf
+	ret

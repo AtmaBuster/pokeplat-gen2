@@ -9610,12 +9610,25 @@ ApplyTailwindEffect:
 	ret
 
 CheckRegigigas:
+	push bc
+	ld bc, REGIGIGAS
+	call CompareMon
+	pop bc
+	ret
+
+CompareMon:
+	push hl
+	call .compare
+	pop hl
+	ret
+
+.compare
 	call GetPokemonIndexFromID
 	ld a, h
-	cp HIGH(REGIGIGAS)
+	cp b
 	ret nz
 	ld a, l
-	cp LOW(REGIGIGAS)
+	cp c
 	ret
 
 DoPlayerSlowStartText:
@@ -9639,6 +9652,7 @@ DoEnemySlowStartText2:
 
 FarTemporaryEffects:
 	call HandleSlowStart
+	call HandleTruant
 	call DecrementTailwind
 	call DecrementGravity
 	call DecrementTrickRoom
@@ -10121,3 +10135,28 @@ HandleFutureSight:
 
 	call UpdateBattleMonInParty
 	jp UpdateEnemyMonInParty
+
+HandleTruant:
+; player
+	call SetPlayerTurn
+	ld hl, wPlayerPseudoAbilityFlags
+	ld de, wBattleMonSpecies
+	call .apply
+; enemy
+	call SetEnemyTurn
+	ld hl, wEnemyPseudoAbilityFlags
+	ld de, wEnemyMonSpecies
+.apply
+	ld a, [de]
+	ld bc, SLAKOTH
+	call CompareMon
+	jr z, .ok
+	ld a, [de]
+	ld bc, SLAKING
+	call CompareMon
+	ret nz
+.ok
+	ld a, [hl]
+	xor TRUANT_F
+	ld [hl], a
+	ret

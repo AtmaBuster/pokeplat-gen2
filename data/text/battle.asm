@@ -1523,3 +1523,8 @@ DoomDesireText:
 	line "chose DOOM DESIRE"
 	cont "as its destiny!"
 	prompt
+
+TruantText:
+	text "<USER>"
+	line "is loafing around!"
+	prompt
