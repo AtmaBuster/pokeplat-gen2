@@ -1902,9 +1902,10 @@ BattleCommand_effectchance:
 	jr z, .got_move_chance
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
+	ld a, [hl]
+	cp -1
+	ret z
 
-	; BUG: 1/256 chance to fail even for a 100% effect chance,
-	; since carry is not set if BattleRandom == [hl] == 255
 	call BattleRandom
 	cp [hl]
 	pop hl
@@ -2017,6 +2018,8 @@ BattleCommand_moveanimnosub:
 	jr z, .alternate_anim
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .alternate_anim
+;	cp EFFECT_SECRET_POWER
+;	jr z, .alternate_anim
 	cp EFFECT_TRIPLE_KICK
 	jr z, .triplekick
 	xor a
@@ -6957,8 +6960,6 @@ BattleCommand_checksafeguard:
 	call StdBattleTextbox
 	jp EndMoveEffect
 
-INCLUDE "engine/battle/move_effects/magnitude.asm"
-
 INCLUDE "engine/battle/move_effects/baton_pass.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
@@ -9761,3 +9762,99 @@ BattleCommand_grudge:
 	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/u_turn.asm"
+
+BattleCommand_secretpoweranim:
+	call GetEnvironmentType
+	ld hl, SecretPowerTypeData
+	ld de, 6
+	call IsInArray
+	jr nc, .error
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call GetMoveIDFromIndex
+	push af
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+	farcall BattleCommand_moveanim
+	ret
+
+.error
+	call AnimateAndPrintFailedMove2
+	farcall EndMoveEffect
+	ret
+
+BattleCommand_secretpowereffect:
+	call GetEnvironmentType
+	ld hl, SecretPowerTypeData
+	ld de, 6
+	call IsInArray
+	jr nc, .error
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hli]
+	push af
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop af
+	rst FarCall
+	ret
+
+.error
+	call AnimateAndPrintFailedMove2
+	farcall EndMoveEffect
+	ret
+
+SecretPowerLowerAccuracy:
+	ld b, ACCURACY
+	ld a, STAT_LOWER | STAT_SECONDARY | STAT_TARGET
+	farcall2 FarChangeStat
+	ret
+
+SecretPowerLowerAttack:
+	ld b, ATTACK
+	ld a, STAT_LOWER | STAT_SECONDARY | STAT_TARGET
+	farcall2 FarChangeStat
+	ret
+
+SecretPowerSleep:
+	xor a
+	ld [wNumHits], a
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	ret nz
+;	ld a, [wTypeModifier]
+;	and $7f
+;	ret z
+	farcall GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_SLEEP
+	ret z
+	ld a, [wPlayerSubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	ret nz
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_UPROAR, a
+	ret nz
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+	farcall SafeCheckSafeguard
+	ret nz
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farjump SetSleep
+
+INCLUDE "data/moves/secret_power.asm"
+
+INCLUDE "engine/battle/move_effects/magnitude.asm"

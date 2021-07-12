@@ -2983,3 +2983,25 @@ UTurn:
 	buildopponentrage
 	heldflinch
 	endmove
+
+SecretPower:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	secretpoweranim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	secretpowereffect
+	endmove

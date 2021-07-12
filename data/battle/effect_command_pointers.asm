@@ -213,6 +213,8 @@ BattleCommandPointers:
 	battlecmd yawn                    ; b0
 	battlecmd grudge                  ; b1
 	battlecmd uturn                   ; b2
+	battlecmd secretpoweranim         ; b3
+	battlecmd secretpowereffect       ; b4
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

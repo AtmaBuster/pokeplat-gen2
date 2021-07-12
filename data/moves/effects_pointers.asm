@@ -193,7 +193,7 @@ MoveEffectsPointers:
 	dw Refresh                       ; REFRESH
 	dw Grudge                        ; GRUDGE
 	dw Splash                        ; SNATCH
-	dw Splash                        ; SECRET_POWER
+	dw SecretPower                   ; SECRET_POWER
 	dw Camouflage                    ; CAMOUFLAGE
 	dw Splash                        ; UNUSED_C2
 	dw MudSport                      ; MUD_SPORT
