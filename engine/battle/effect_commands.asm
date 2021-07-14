@@ -9229,7 +9229,16 @@ TypeMatchupSpecialCases:
 .g_r_go
 	and a
 	ret nz
-.check_g_r
+; check Levitate
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .lev_go
+	ld a, [wEnemyMonSpecies]
+.lev_go
+	call IsLevitateMon
+	jr c, .yes
+; check Gravity/Roost typing
 	ld a, FLYING
 	cp d
 	jr z, .yes

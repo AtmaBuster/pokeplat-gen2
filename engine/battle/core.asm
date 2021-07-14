@@ -4341,24 +4341,24 @@ SpikesDamage:
 	ret z
 
 	; Flying-types aren't affected by Spikes.
-	; Steel-types under Magnet Rise aren't affected.
+	; Levitate Mons aren't affected
+	; Mons under Magnet Rise aren't affected.
+	call .magnet_rise_check
+	ret nz
+
+	call .levitate_check
+	call z, .gravity_check
+	ret z
+
 	ld a, [de]
 	cp FLYING
 	call z, .gravity_check
 	ret z
-	ld a, [de]
-	cp STEEL
-	call z, .magnet_rise_check
-	ret nz
 	inc de
 	ld a, [de]
 	cp FLYING
 	call z, .gravity_check
 	ret z
-	ld a, [de]
-	cp STEEL
-	call z, .magnet_rise_check
-	ret nz
 
 	push bc
 
@@ -4392,6 +4392,17 @@ SpikesDamage:
 .gravity_check
 	ld a, [wGravityCount]
 	and a
+	ret
+
+.levitate_check
+	call IsCurrentMonLevitateMon
+	jr c, .is_levitate_mon
+	xor a
+	inc a
+	ret
+
+.is_levitate_mon
+	xor a
 	ret
 
 .magnet_rise_check
@@ -4486,8 +4497,10 @@ ToxicSpikesEffect:
 	bit PSN, a
 	ret nz
 
-; flying/steel types do not get poisoned
+; flying/steel types and levitate mons do not get poisoned
 ; poison types absorb
+	call .levitate_check
+	ret c
 	call .gettype
 	cp FLYING
 	ret z
@@ -4549,6 +4562,13 @@ ToxicSpikesEffect:
 	ld [hl], a
 	ld hl, AbsorbedToxicSpikesText
 	jp StdBattleTextbox
+
+.levitate_check
+	ld a, [wGravityCount]
+	and a
+	ret nz
+	call IsCurrentMonLevitateMon
+	ret
 
 .gettype
 	ld a, [de]

@@ -708,6 +708,8 @@ INCLUDE "data/trainers/palettes.asm"
 ; own section
 INCLUDE "data/trainers/parties.asm"
 
+INCLUDE "data/pokemon/levitate_mons.asm"
+
 SECTION "Debug Menu", ROMX
 if DEF(_DEBUG)
 INCLUDE "engine/debug/debug_menu.asm"

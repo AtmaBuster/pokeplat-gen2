@@ -25,7 +25,7 @@ BattleCommand_spikes:
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	farjump FailMove
 
 BattleCommand_stealthrock:
 ; stealthrock
@@ -51,7 +51,7 @@ BattleCommand_stealthrock:
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	farjump FailMove
 
 BattleCommand_toxicspikes:
 ; toxicspikes
@@ -82,4 +82,4 @@ BattleCommand_toxicspikes:
 	jp StdBattleTextbox
 
 .failed
-	jp FailMove
+	farjump FailMove
