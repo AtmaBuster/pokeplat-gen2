@@ -5,6 +5,7 @@ _IsLevitateMon::
 	ld b, h
 	ld c, l
 	ld hl, LevitateMons
+	ld de, 2
 	call IsInHalfwordArray
 	ret
 

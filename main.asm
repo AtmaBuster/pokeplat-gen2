@@ -709,6 +709,7 @@ INCLUDE "data/trainers/palettes.asm"
 INCLUDE "data/trainers/parties.asm"
 
 INCLUDE "data/pokemon/levitate_mons.asm"
+INCLUDE "data/pokemon/pickup_mons.asm"
 
 SECTION "Debug Menu", ROMX
 if DEF(_DEBUG)
