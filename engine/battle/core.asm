@@ -9676,6 +9676,7 @@ FarTemporaryEffects:
 	call DecrementTailwind
 	call DecrementGravity
 	call DecrementTrickRoom
+	call HandleWish
 	ret
 
 HandleSlowStart:
@@ -10180,3 +10181,66 @@ HandleTruant:
 	xor TRUANT_F
 	ld [hl], a
 	ret
+
+HandleWish:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.enemy_first
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+
+.do_it
+	ld hl, wPlayerWishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .okay
+	ld hl, wEnemyWishCount
+
+.okay
+	ld a, [hl]
+	and a
+	ret z
+	dec a
+	ld [hl], a
+	cp $1
+	ret nz
+
+	ld hl, BattleText_WishCameTrueText
+	call StdBattleTextbox
+
+	ld hl, WISH
+	call GetMoveIDFromIndex
+	ld d, a
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	push af
+	ld a, d
+	ld [hl], a
+
+	callfar UpdateMoveData
+	xor a
+	ld [wAttackMissed], a
+	ld [wAlreadyDisobeyed], a
+	ld a, EFFECTIVE
+	ld [wTypeModifier], a
+	callfar DoMove
+	xor a
+	ld [wCurDamage], a
+	ld [wCurDamage + 1], a
+
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+
+	call LoadTileMapToTempTileMap
+
+	call UpdateBattleMonInParty
+	jp UpdateEnemyMonInParty

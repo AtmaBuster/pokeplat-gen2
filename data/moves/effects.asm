@@ -3005,3 +3005,12 @@ SecretPower:
 	heldflinch
 	secretpowereffect
 	endmove
+
+Wish:
+	checkwish
+	checkobedience
+	usedmovetext
+	doturn
+	wish
+	heal
+	endmove

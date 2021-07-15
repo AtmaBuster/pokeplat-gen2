@@ -215,6 +215,8 @@ BattleCommandPointers:
 	battlecmd uturn                   ; b2
 	battlecmd secretpoweranim         ; b3
 	battlecmd secretpowereffect       ; b4
+	battlecmd checkwish               ; b5
+	battlecmd wish                    ; b6
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

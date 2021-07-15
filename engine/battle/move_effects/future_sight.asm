@@ -77,7 +77,6 @@ BattleCommand_futuresight:
 	jp EndMoveEffect
 
 .failed
-	pop bc
 	call ResetDamage
 	call AnimateFailedMove
 	call PrintButItFailed

@@ -176,7 +176,7 @@ MoveEffectsPointers:
 	dw Taunt                         ; TAUNT
 	dw Trick                         ; TRICK
 	dw Splash                        ; UNUSED_AE
-	dw Splash                        ; WISH
+	dw Wish                          ; WISH
 	dw Assist                        ; ASSIST
 	dw Ingrain                       ; INGRAIN
 	dw Superpower                    ; SUPERPOWER

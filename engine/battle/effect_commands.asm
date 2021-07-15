@@ -9940,3 +9940,55 @@ CheckUserTruant:
 .finish
 	scf
 	ret
+
+BattleCommand_checkwish:
+	ld hl, wPlayerWishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyWishCount
+.ok
+
+	ld a, [hl]
+	and a
+	ret z
+	cp 1
+	ret nz
+
+	ld b, wish_command
+	farjump SkipToBattleCommand
+
+BattleCommand_wish:
+	farcall CheckUserIsCharging
+	jr nz, .AlreadyCharging
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld b, a
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
+	call GetBattleVarAddr
+	ld [hl], b
+	ld a, BATTLE_VARS_LAST_MOVE
+	call GetBattleVarAddr
+	ld [hl], b
+.AlreadyCharging
+	ld hl, wPlayerWishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .GotCount
+	ld hl, wEnemyWishCount
+.GotCount
+	ld a, [hl]
+	and a
+	jr nz, .failed
+	ld a, 3
+	ld [hl], a
+	farcall BattleCommand_lowersub
+	farcall BattleCommand_movedelay
+	ld hl, MadeAWishText
+	call StdBattleTextbox
+	farcall BattleCommand_raisesub
+	farjump EndMoveEffect
+
+.failed
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect

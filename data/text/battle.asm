@@ -1528,3 +1528,13 @@ TruantText:
 	text "<USER>"
 	line "is loafing around!"
 	prompt
+
+MadeAWishText:
+	text "<USER>"
+	line "made a wish!"
+	prompt
+
+BattleText_WishCameTrueText:
+	text "<USER>'s"
+	line "wish came true!"
+	prompt
