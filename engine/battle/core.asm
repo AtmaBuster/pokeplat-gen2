@@ -9677,14 +9677,17 @@ FarTemporaryEffects:
 	call DecrementGravity
 	call DecrementTrickRoom
 	call HandleWish
-	call ClearMagicCoatFlag
+	call ClearMagicCoatSnatch
+	call HandleLuckyChant
 	ret
 
-ClearMagicCoatFlag:
+ClearMagicCoatSnatch:
 	ld hl, wPlayerSubStatus2
 	res SUBSTATUS_MAGIC_COAT, [hl]
+	res SUBSTATUS_SNATCH, [hl]
 	ld hl, wEnemySubStatus2
 	res SUBSTATUS_MAGIC_COAT, [hl]
+	res SUBSTATUS_SNATCH, [hl]
 	ret
 
 HandleSlowStart:
@@ -10252,3 +10255,24 @@ HandleWish:
 
 	call UpdateBattleMonInParty
 	jp UpdateEnemyMonInParty
+
+HandleLuckyChant:
+	call BattleCommand_switchturn
+	call .apply
+	call BattleCommand_switchturn
+
+.apply
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerLuckyChantCount
+	jr z, .go
+	ld hl, wEnemyLuckyChantCount
+.go
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+
+	ld hl, LuckyChantWoreOffText
+	jp StdBattleTextbox

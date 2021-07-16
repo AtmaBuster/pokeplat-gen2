@@ -1277,6 +1277,17 @@ BattleCommand_critical:
 	xor a
 	ld [wCriticalHit], a
 
+; don't crit if opponent has lucky chant
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyLuckyChantCount
+	jr z, .got_lucky_chant
+	ld hl, wPlayerLuckyChantCount
+.got_lucky_chant
+	ld a, [hl]
+	and a
+	ret nz
+
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	and a
@@ -9999,7 +10010,21 @@ BattleCommand_magiccoat:
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	set SUBSTATUS_MAGIC_COAT, [hl]
+	call AnimateCurrentMove2
 	ld hl, MagicCoatText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2
+
+BattleCommand_snatch:
+	farcall CheckOpponentWentFirst
+	jr nz, .fail
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_SNATCH, [hl]
+	call AnimateCurrentMove2
+	ld hl, WaitsForMoveText
 	jp StdBattleTextbox
 
 .fail
@@ -10012,14 +10037,29 @@ BattleCommand_checkmagiccoat:
 	ret z
 	res SUBSTATUS_MAGIC_COAT, [hl]
 
+	ld hl, BouncedBackText
+	push hl
+	jr MagicCoatSnatchDoMove
+
+BattleCommand_checksnatch:
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_SNATCH, [hl]
+	ret z
+	res SUBSTATUS_SNATCH, [hl]
+
+	ld hl, SnatchedMoveText
+	push hl
+
+MagicCoatSnatchDoMove:
 ; get move name
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
 	ld [wNamedObjectIndexBuffer], a
 	call GetMoveName
 
-; display bounce back text
-	ld hl, BouncedBackText
+; display bounce back/snatch text
+	pop hl
 	call StdBattleTextbox
 
 ; backup and replace enemy move
@@ -10050,3 +10090,41 @@ BattleCommand_checkmagiccoat:
 	call BattleCommand_switchturn
 
 	ret
+
+BattleCommand_suckerpunch:
+	farcall CheckOpponentWentFirst
+	jr nz, .fail
+	call BattleCommand_switchturn
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	push af
+	call BattleCommand_switchturn
+	pop af
+	and CATEGORY_MASK
+	cp STATUS
+	jr z, .fail
+	ret
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+BattleCommand_luckychant:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerLuckyChantCount
+	jr z, .go
+	ld hl, wEnemyLuckyChantCount
+.go
+	ld a, [hl]
+	and a
+	jr nz, .fail
+
+	ld a, 5
+	ld [hl], a
+	call AnimateCurrentMove2
+	ld hl, ShieldedFromCritText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2

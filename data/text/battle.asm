@@ -1552,3 +1552,30 @@ BouncedBackText:
 	text " was"
 	cont "bounced back!"
 	prompt
+
+WaitsForMoveText:
+	text "<USER>"
+	line "waits for a target"
+	cont "to make a move!"
+	prompt
+
+SnatchedMoveText:
+	text "<TARGET>"
+	line "snatched"
+	cont "<USER>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+ShieldedFromCritText:
+	text "The LUCKY CHANT is"
+	line "shielding from"
+	cont "critical hits!"
+	prompt
+
+LuckyChantWoreOffText:
+	text "<USER>'s"
+	line "team's LUCKY CHANT"
+	cont "wore off!"
+	prompt

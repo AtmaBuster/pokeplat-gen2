@@ -219,6 +219,10 @@ BattleCommandPointers:
 	battlecmd wish                    ; b6
 	battlecmd checkmagiccoat          ; b7
 	battlecmd magiccoat               ; b8
+	battlecmd checksnatch             ; b9
+	battlecmd snatch                  ; ba
+	battlecmd suckerpunch             ; bb
+	battlecmd luckychant              ; bc
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

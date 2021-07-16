@@ -192,7 +192,7 @@ MoveEffectsPointers:
 	dw Imprison                      ; IMPRISON
 	dw Refresh                       ; REFRESH
 	dw Grudge                        ; GRUDGE
-	dw Splash                        ; SNATCH
+	dw Snatch                        ; SNATCH
 	dw SecretPower                   ; SECRET_POWER
 	dw Camouflage                    ; CAMOUFLAGE
 	dw Splash                        ; UNUSED_C2
@@ -231,7 +231,7 @@ MoveEffectsPointers:
 	dw Splash                        ; UNUSED_E3
 	dw Splash                        ; POWER_TRICK
 	dw Splash                        ; UNUSED_E5
-	dw Splash                        ; LUCKY_CHANT
+	dw LuckyChant                    ; LUCKY_CHANT
 	dw Splash                        ; ME_FIRST
 	dw Splash                        ; COPYCAT
 	dw PowerSwap                     ; POWER_SWAP
@@ -239,7 +239,7 @@ MoveEffectsPointers:
 	dw Splash                        ; PUNISHMENT
 	dw LastResort                    ; LAST_RESORT
 	dw Splash                        ; UNUSED_ED
-	dw Splash                        ; SUCKER_PUNCH
+	dw SuckerPunch                   ; SUCKER_PUNCH
 	dw ToxicSpikes                   ; TOXIC_SPIKES
 	dw HeartSwap                     ; HEART_SWAP
 	dw AquaRing                      ; AQUA_RING

@@ -190,6 +190,7 @@ AttackUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat ATTACK
 	endmove
 
@@ -197,6 +198,7 @@ DefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat DEFENSE
 	endmove
 
@@ -204,6 +206,7 @@ SpeedUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat SPEED
 	endmove
 
@@ -211,6 +214,7 @@ SpecialAttackUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat SP_ATTACK
 	endmove
 
@@ -218,6 +222,7 @@ SpecialDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat SP_DEFENSE
 	endmove
 
@@ -225,6 +230,7 @@ AccuracyUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat ACCURACY
 	endmove
 
@@ -232,6 +238,7 @@ EvasionUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	lowersub
 	forceraisestat EVASION
 	endmove
@@ -240,6 +247,7 @@ AttackUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | ATTACK
 	endmove
 
@@ -247,6 +255,7 @@ DefenseUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | DEFENSE
 	endmove
 
@@ -254,6 +263,7 @@ SpeedUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | SPEED
 	endmove
 
@@ -261,6 +271,7 @@ SpecialAttackUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | SP_ATTACK
 	endmove
 
@@ -268,6 +279,7 @@ SpecialDefenseUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | SP_DEFENSE
 	endmove
 
@@ -275,6 +287,7 @@ AccuracyUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | ACCURACY
 	endmove
 
@@ -282,6 +295,7 @@ EvasionUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat $10 | EVASION
 	endmove
 
@@ -822,6 +836,7 @@ Mist:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	mist
 	endmove
 
@@ -829,6 +844,7 @@ FocusEnergy:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	focusenergy
 	endmove
 
@@ -867,6 +883,7 @@ Heal:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	heal
 	endmove
 
@@ -882,6 +899,7 @@ Reflect:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	screen
 	endmove
 
@@ -956,6 +974,7 @@ Substitute:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	substitute
 	endmove
 
@@ -1029,6 +1048,7 @@ Splash:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	splash
 	endmove
 
@@ -1290,6 +1310,7 @@ HealBell:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healbell
 	endmove
 
@@ -1583,6 +1604,7 @@ Safeguard:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	safeguard
 	endmove
 
@@ -1683,6 +1705,7 @@ MorningSun:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healmorn
 	endmove
 
@@ -1690,6 +1713,7 @@ Synthesis:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healday
 	endmove
 
@@ -1697,6 +1721,7 @@ Moonlight:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healnite
 	endmove
 
@@ -1766,6 +1791,7 @@ BellyDrum:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	bellydrum
 	endmove
 
@@ -1773,6 +1799,7 @@ PsychUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	psychup
 	endmove
 
@@ -1998,6 +2025,7 @@ DefenseCurl:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat DEFENSE
 	curl
 	endmove
@@ -2067,6 +2095,7 @@ DefenseSpecialDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat DEFENSE
 	forceraisestat SP_DEFENSE
 	endmove
@@ -2075,6 +2104,7 @@ AttackDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat ATTACK
 	forceraisestat DEFENSE
 	endmove
@@ -2083,6 +2113,7 @@ SpecialAttackSpecialDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat SP_ATTACK
 	forceraisestat SP_DEFENSE
 	endmove
@@ -2091,6 +2122,7 @@ AttackSpeedUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	forceraisestat ATTACK
 	forceraisestat SPEED
 	endmove
@@ -2390,6 +2422,7 @@ Camouflage:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	camouflage
 	endmove
 
@@ -2541,6 +2574,7 @@ Refresh:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	refresh
 	endmove
 
@@ -2605,6 +2639,7 @@ Charge:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	movecharge
 	forceraisestat SP_DEFENSE
 	endmove
@@ -2627,6 +2662,7 @@ Ingrain:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	ingrain
 	endmove
 
@@ -2641,6 +2677,7 @@ AquaRing:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	aquaring
 	endmove
 
@@ -2671,6 +2708,7 @@ Stockpile:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	stockpile
 	forceraisestat DEFENSE
 	forceraisestat SP_DEFENSE
@@ -2702,6 +2740,7 @@ Swallow:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	swallow
 	removestockpile
 	endmove
@@ -2710,6 +2749,7 @@ Acupressure:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	acupressure
 	endmove
 
@@ -2717,6 +2757,7 @@ Recycle:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	recycle
 	endmove
 
@@ -2746,6 +2787,7 @@ Captivate:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	captivate
 	loweroppstat $10 | SP_ATTACK
 	endmove
@@ -2775,6 +2817,7 @@ Tailwind:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	tailwind
 	endmove
 
@@ -3046,4 +3089,39 @@ MagicCoat:
 	usedmovetext
 	doturn
 	magiccoat
+	endmove
+
+Snatch:
+	checkobedience
+	usedmovetext
+	doturn
+	snatch
+	endmove
+
+SuckerPunch:
+	checkobedience
+	usedmovetext
+	doturn
+	suckerpunch
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+LuckyChant:
+	checkobedience
+	usedmovetext
+	doturn
+	luckychant
 	endmove

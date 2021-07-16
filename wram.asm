@@ -453,7 +453,7 @@ wPlayerSubStatus2:: ; c669
 ; 5 miracle eye
 ; 4 grudge
 ; 3 imprison
-; 2
+; 2 snatch
 ; 1 magic coat
 ; 0 curled
 	db
