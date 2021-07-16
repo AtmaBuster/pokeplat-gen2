@@ -454,7 +454,7 @@ wPlayerSubStatus2:: ; c669
 ; 4 grudge
 ; 3 imprison
 ; 2
-; 1
+; 1 magic coat
 ; 0 curled
 	db
 wPlayerSubStatus3:: ; c66a

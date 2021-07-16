@@ -9677,6 +9677,14 @@ FarTemporaryEffects:
 	call DecrementGravity
 	call DecrementTrickRoom
 	call HandleWish
+	call ClearMagicCoatFlag
+	ret
+
+ClearMagicCoatFlag:
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_MAGIC_COAT, [hl]
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_MAGIC_COAT, [hl]
 	ret
 
 HandleSlowStart:

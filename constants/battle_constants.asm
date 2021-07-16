@@ -199,7 +199,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	enum SUBSTATUS_GRUDGE
 	enum SUBSTATUS_IMPRISON
 	enum SUBSTATUS_2_2
-	enum SUBSTATUS_2_1
+	enum SUBSTATUS_MAGIC_COAT
 	enum SUBSTATUS_CURLED
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags

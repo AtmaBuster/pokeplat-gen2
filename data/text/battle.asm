@@ -1538,3 +1538,17 @@ BattleText_WishCameTrueText:
 	text "<USER>'s"
 	line "wish came true!"
 	prompt
+
+MagicCoatText:
+	text "<USER>"
+	line "shrouded itself in"
+	cont "MAGIC COAT!"
+	prompt
+
+BouncedBackText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "bounced back!"
+	prompt

@@ -28,6 +28,7 @@ DoSleep:
 	doturn
 	checkhit
 	checksafeguard
+	checkmagiccoat
 	sleeptarget
 	endmove
 
@@ -289,6 +290,7 @@ AttackDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat ATTACK
 	endmove
 
@@ -297,6 +299,7 @@ DefenseDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat DEFENSE
 	endmove
 
@@ -305,6 +308,7 @@ SpeedDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat SPEED
 	endmove
 
@@ -313,6 +317,7 @@ SpecialAttackDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat SP_ATTACK
 	endmove
 
@@ -321,6 +326,7 @@ SpecialDefenseDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat SP_DEFENSE
 	endmove
 
@@ -329,6 +335,7 @@ AccuracyDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat ACCURACY
 	endmove
 
@@ -337,6 +344,7 @@ EvasionDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat EVASION
 	endmove
 
@@ -345,6 +353,7 @@ AttackDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | ATTACK
 	endmove
 
@@ -353,6 +362,7 @@ DefenseDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | DEFENSE
 	endmove
 
@@ -361,6 +371,7 @@ SpeedDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | SPEED
 	endmove
 
@@ -369,6 +380,7 @@ SpecialAttackDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | SP_ATTACK
 	endmove
 
@@ -377,6 +389,7 @@ SpecialDefenseDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | SP_DEFENSE
 	endmove
 
@@ -385,6 +398,7 @@ AccuracyDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | ACCURACY
 	endmove
 
@@ -393,6 +407,7 @@ EvasionDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat $10 | EVASION
 	endmove
 
@@ -823,6 +838,7 @@ DoConfuse:
 	doturn
 	checkhit
 	checksafeguard
+	checkmagiccoat
 	confuse
 	endmove
 
@@ -897,6 +913,7 @@ DoPoison:
 	checkhit
 	stab
 	checksafeguard
+	checkmagiccoat
 	poison
 	endmove
 
@@ -907,6 +924,7 @@ DoParalyze:
 	stab
 	checkhit
 	checksafeguard
+	checkmagiccoat
 	paralyze
 	endmove
 
@@ -1003,6 +1021,7 @@ LeechSeed:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	leechseed
 	endmove
 
@@ -1328,6 +1347,7 @@ MeanLook:
 	checkobedience
 	usedmovetext
 	doturn
+	checkmagiccoat
 	arenatrap
 	endmove
 
@@ -1451,6 +1471,7 @@ Flatter:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	raiseoppstat SP_ATTACK
 	confuse
 	endmove
@@ -1460,6 +1481,7 @@ Swagger:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	raiseoppstat $10 | ATTACK
 	confuse
 	endmove
@@ -1490,6 +1512,7 @@ Attract:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	attract
 	endmove
 
@@ -1985,6 +2008,7 @@ WillOWisp:
 	doturn
 	checkhit
 	checksafeguard
+	checkmagiccoat
 	burn
 	endmove
 
@@ -2034,6 +2058,7 @@ AttackDefenseDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	loweroppstat ATTACK
 	loweroppstat DEFENSE
 	endmove
@@ -2953,6 +2978,7 @@ Yawn:
 	checkobedience
 	usedmovetext
 	doturn
+	checkmagiccoat
 	yawn
 	endmove
 
@@ -3013,4 +3039,11 @@ Wish:
 	doturn
 	wish
 	heal
+	endmove
+
+MagicCoat:
+	checkobedience
+	usedmovetext
+	doturn
+	magiccoat
 	endmove

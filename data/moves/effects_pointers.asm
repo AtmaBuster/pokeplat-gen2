@@ -180,7 +180,7 @@ MoveEffectsPointers:
 	dw Assist                        ; ASSIST
 	dw Ingrain                       ; INGRAIN
 	dw Superpower                    ; SUPERPOWER
-	dw Splash                        ; MAGIC_COAT
+	dw MagicCoat                     ; MAGIC_COAT
 	dw Recycle                       ; RECYCLE
 	dw Revenge                       ; REVENGE
 	dw BrickBreak                    ; BRICK_BREAK

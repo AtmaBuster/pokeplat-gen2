@@ -9992,3 +9992,61 @@ BattleCommand_wish:
 .failed
 	call AnimateAndPrintFailedMove2
 	farjump EndMoveEffect
+
+BattleCommand_magiccoat:
+	farcall CheckOpponentWentFirst
+	jr nz, .fail
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_MAGIC_COAT, [hl]
+	ld hl, MagicCoatText
+	jp StdBattleTextbox
+
+.fail
+	jp AnimateAndPrintFailedMove2
+
+BattleCommand_checkmagiccoat:
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_MAGIC_COAT, [hl]
+	ret z
+	res SUBSTATUS_MAGIC_COAT, [hl]
+
+; get move name
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+
+; display bounce back text
+	ld hl, BouncedBackText
+	call StdBattleTextbox
+
+; backup and replace enemy move
+	call BattleCommand_switchturn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld a, [hl]
+	push af
+	push hl
+	call BattleCommand_switchturn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	call BattleCommand_switchturn
+	pop hl
+	ld [hl], b
+	push hl
+
+	farcall UpdateMoveData
+	farcall ResetTurn
+
+; restore old move
+	pop hl
+	pop af
+	ld [hl], a
+	farcall UpdateMoveData
+
+	call BattleCommand_switchturn
+
+	ret

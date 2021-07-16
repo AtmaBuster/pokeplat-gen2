@@ -217,6 +217,8 @@ BattleCommandPointers:
 	battlecmd secretpowereffect       ; b4
 	battlecmd checkwish               ; b5
 	battlecmd wish                    ; b6
+	battlecmd checkmagiccoat          ; b7
+	battlecmd magiccoat               ; b8
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat
