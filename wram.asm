@@ -542,6 +542,7 @@ wPlayerChargeFlag:: db
 wPlayerUnderwater:: db
 wPlayerRoost:: db
 wPlayerYawnTimer:: db
+wPlayerHealingWishFlag:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -563,6 +564,7 @@ wEnemyChargeFlag:: db
 wEnemyUnderwater:: db
 wEnemyRoost:: db
 wEnemyYawnTimer:: db
+wEnemyHealingWishFlag:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684

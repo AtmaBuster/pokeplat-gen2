@@ -1601,3 +1601,13 @@ PluckText:
 	text_ram wStringBuffer1
 	text "!"
 	prompt
+
+HealingWishText:
+	text "The healing wish"
+	line "came true!"
+	prompt
+
+LunarDanceText:
+	text "It became cloaked"
+	line "in moonlight!"
+	prompt

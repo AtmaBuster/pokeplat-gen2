@@ -10561,3 +10561,69 @@ BattleCommand_pluck:
 	dbw PRZCUREBERRY, .przcure
 	dbw PSNCUREBERRY, .psncure
 	db -1
+
+BattleCommand_healingwish:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+; check for valid switch in
+	farcall CheckAnyOtherAlivePartyMons
+	jr z, .fail
+; play anim
+	call AnimateCurrentMove2
+; set flag
+	ld a, 1
+	ld [wPlayerHealingWishFlag], a
+	ret
+
+.enemy
+; fail in wild battles
+	ld a, [wBattleMode]
+	dec a
+	jr z, .fail
+; check for valid switch in
+	farcall CheckAnyOtherAliveEnemyMons
+	jr z, .fail
+; play anim
+	call AnimateCurrentMove2
+; set flag
+	ld a, 1
+	ld [wPlayerHealingWishFlag], a
+	ret
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+BattleCommand_lunardance:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+; check for valid switch in
+	farcall CheckAnyOtherAlivePartyMons
+	jr z, .fail
+; play anim
+	call AnimateCurrentMove2
+; set flag
+	ld a, 2
+	ld [wPlayerHealingWishFlag], a
+	ret
+
+.enemy
+; fail in wild battles
+	ld a, [wBattleMode]
+	dec a
+	jr z, .fail
+; check for valid switch in
+	farcall CheckAnyOtherAliveEnemyMons
+	jr z, .fail
+; play anim
+	call AnimateCurrentMove2
+; set flag
+	ld a, 2
+	ld [wPlayerHealingWishFlag], a
+	ret
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect

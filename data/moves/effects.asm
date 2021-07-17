@@ -2430,7 +2430,6 @@ Memento:
 	checkobedience
 	usedmovetext
 	doturn
-	moveanim
 	loweroppstat $10 | ATTACK
 	loweroppstat $10 | SP_ATTACK
 	kouser
@@ -3160,4 +3159,20 @@ Pluck:
 	checkfaint
 	buildopponentrage
 	heldflinch
+	endmove
+
+HealingWish:
+	checkobedience
+	usedmovetext
+	doturn
+	healingwish
+	kouser
+	endmove
+
+LunarDance:
+	checkobedience
+	usedmovetext
+	doturn
+	lunardance
+	kouser
 	endmove

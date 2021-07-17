@@ -211,7 +211,7 @@ MoveEffectsPointers:
 	dw WakeUpSlap                    ; WAKE_UP_SLAP
 	dw HammerArm                     ; HAMMER_ARM
 	dw GyroBall                      ; GYRO_BALL
-	dw Splash                        ; HEALING_WISH
+	dw HealingWish                   ; HEALING_WISH
 	dw Brine                         ; BRINE
 	dw Splash                        ; NATURAL_GIFT
 	dw NormalHit                     ; FEINT
@@ -252,4 +252,4 @@ MoveEffectsPointers:
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; UNUSED_FA
-	dw Splash                        ; LUNAR_DANCE
+	dw LunarDance                    ; LUNAR_DANCE

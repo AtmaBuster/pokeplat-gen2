@@ -223,9 +223,11 @@ BattleCommandPointers:
 	battlecmd snatch                  ; ba
 	battlecmd suckerpunch             ; bb
 	battlecmd luckychant              ; bc
-	battlecmd defog ; bd
-	battlecmd psychoshift ; be
-	battlecmd pluck ; bf
+	battlecmd defog                   ; bd
+	battlecmd psychoshift             ; be
+	battlecmd pluck                   ; bf
+	battlecmd healingwish             ; c0
+	battlecmd lunardance              ; c1
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

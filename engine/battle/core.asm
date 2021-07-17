@@ -4319,6 +4319,7 @@ BreakAttraction:
 	ret
 
 DoEntryHazards:
+	farcall CheckHealingWish
 	call SpikesDamage
 	call StealthRockDamage
 	call ToxicSpikesEffect
@@ -10346,3 +10347,132 @@ HandleLuckyChant:
 
 	ld hl, LuckyChantWoreOffText
 	jp StdBattleTextbox
+
+CheckHealingWish:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+	ld a, [wPlayerHealingWishFlag]
+	and a
+	ret z
+
+	ld hl, HealingWishText
+	dec a
+	jr z, .got_text_player
+	ld hl, LunarDanceText
+.got_text_player
+	push af
+	xor a
+	ld [wPlayerHealingWishFlag], a
+	call StdBattleTextbox
+
+; heal status
+	xor a
+	ld [wBattleMonStatus], a
+	call UpdateBattleMonInParty
+
+; heal HP
+	ld bc, 999
+	call BattleCommand_switchturn
+	farcall RestoreHP
+	call BattleCommand_switchturn
+
+	pop af
+	and a
+	ret z
+
+; heal PP for Lunar Dance only
+	farcall RestoreAllPP
+	ld a, MON_PP
+	call GetPartyParamLocation
+	ld de, wBattleMonPP
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ret
+
+.enemy
+	ld a, [wEnemyHealingWishFlag]
+	and a
+	ret z
+
+	ld hl, HealingWishText
+	dec a
+	jr z, .got_text_enemy
+	ld hl, LunarDanceText
+.got_text_enemy
+	push af
+	xor a
+	ld [wEnemyHealingWishFlag], a
+	call StdBattleTextbox
+
+; heal status
+	xor a
+	ld [wEnemyMonStatus], a
+	call UpdateEnemyMonInParty
+
+; heal HP
+	ld bc, 999
+	call BattleCommand_switchturn
+	farcall RestoreHP
+	call BattleCommand_switchturn
+
+	pop af
+	and a
+	ret z
+
+; heal PP for Lunar Dance only
+	call .restore_opp_pp
+	ld a, MON_PP
+	call .get_param_location
+	ld de, wEnemyMonPP
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ret
+
+.restore_opp_pp
+; slightly edited copy of RestoreAllPP
+	ld a, MON_PP
+	call .get_param_location
+	push hl
+	ld a, MON_MOVES
+	call .get_param_location
+	pop de
+	ld a, OTPARTYMON
+	ld [wMenuCursorY], a
+	ld [wMonType], a
+	ld c, NUM_MOVES
+.loop
+	ld a, [hli]
+	and a
+	ret z
+	push hl
+	push de
+	push bc
+	call GetMaxPPOfMove
+	pop bc
+	pop de
+	ld a, [de]
+	and PP_UP_MASK
+	ld b, a
+	ld a, [wTempPP]
+	add b
+	ld [de], a
+	inc de
+	ld hl, wMenuCursorY
+	inc [hl]
+	pop hl
+	dec c
+	jr nz, .loop
+	ret
+
+.get_param_location
+	push bc
+	ld hl, wOTPartyMon1HP
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+	pop bc
+	ret
