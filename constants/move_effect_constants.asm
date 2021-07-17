@@ -250,7 +250,7 @@
 	const EFFECT_STEALTH_ROCK      ; f7
 	const EFFECT_WEIGHT_DAMAGE     ; f8
 	const EFFECT_JUDGMENT          ; f9
-	const EFFECT_BUG_BITE          ; fa
+	const EFFECT_UNUSED_FA         ; fa
 	const EFFECT_LUNAR_DANCE       ; fb
 
 EFFECT_SPEED_UP         EQU $0c

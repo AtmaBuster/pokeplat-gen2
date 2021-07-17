@@ -5300,7 +5300,7 @@ CalcPlayerStats:
 	call CalcBattleStats
 
 	ld hl, BadgeStatBoosts
-	call CallBattleCore
+	call CallBattleCoreAlt
 
 	call BattleCommand_switchturn
 
@@ -7316,6 +7316,11 @@ PlayOpponentBattleAnim:
 
 CallBattleCore:
 	ld a, BANK("Battle Core")
+	rst FarCall
+	ret
+
+CallBattleCoreAlt:
+	ld a, BANK("Battle Core 2")
 	rst FarCall
 	ret
 
@@ -10389,3 +10394,170 @@ BattleCommand_psychoshift:
 	pop af
 .fail
 	jp AnimateAndPrintFailedMove2
+
+BattleCommand_pluck:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyMonItem
+	ld de, wEnemyRecycleMemory
+	ld a, [wCurOTMon]
+	jr z, .go
+	ld hl, wBattleMonItem
+	ld de, wPlayerRecycleMemory
+	ld a, [wCurBattleMon]
+.go
+; get recycle memory location now
+	push hl
+	ld h, 0
+	ld l, a
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+; is opponent's item a berry?
+	ld a, [hl]
+	push de
+	push hl
+	ld hl, .berry_list
+	ld de, 3
+	call IsInArray
+	ld b, h
+	ld c, l
+	pop hl
+	pop de
+	ret nc
+; consume berry, put it into recycle memory
+	ld a, [hl]
+	ld [de], a
+	xor a
+	ld [hl], a
+; update item in party
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurBattleMon]
+	ld hl, wPartyMon1Item
+	jr nz, .do_party
+	ld a, [wBattleMode]
+	dec a
+	jr z, .skip_party
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Item
+.do_party
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+.skip_party
+; don't actiavte effect if under embargo
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVar
+	bit SUBSTATUS_EMBARGO, a
+	ret nz
+; activate effect
+	ld a, [bc]
+	inc bc
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld a, [bc]
+	ld l, a
+	inc bc
+	ld a, [bc]
+	ld h, a
+	jp hl
+
+.berry
+	ld bc, 10
+	jr .heal_hp
+
+.gold
+	ld bc, 30
+.heal_hp
+	ldh a, [hBattleTurn]
+	ld hl, wBattleMonHP
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+.got_hp
+	push bc
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld d, a
+	ld a, [hl]
+	ld e, a
+
+	ld a, d
+	cp b
+	jr nz, .do_heal
+	ld a, e
+	cp c
+	pop bc
+	ret z
+
+.do_heal
+	push bc
+	call BattleCommand_switchturn
+	farcall ItemRecoveryAnim
+	pop bc
+	farcall RestoreHP
+	call BattleCommand_switchturn
+	ld hl, PluckText
+	call StdBattleTextbox
+
+	ret
+
+.mystery
+	ret
+
+.miracle
+	ld b, HELD_HEAL_STATUS
+	jr .heal_status
+
+.mint
+	ld b, HELD_HEAL_SLEEP
+	jr .heal_status
+
+.burnt
+	ld b, HELD_HEAL_FREEZE
+	jr .heal_status
+
+.ice
+	ld b, HELD_HEAL_BURN
+	jr .heal_status
+
+.bitter
+	ld b, HELD_HEAL_CONFUSION
+	call BattleCommand_switchturn
+	farcall UseConfusionHealingItemAlt
+	call BattleCommand_switchturn
+	ld hl, PluckText
+	call StdBattleTextbox
+	ret
+
+.przcure
+	ld b, HELD_HEAL_PARALYZE
+	jr .heal_status
+
+.psncure
+	ld b, HELD_HEAL_POISON
+
+.heal_status
+	call BattleCommand_switchturn
+	farcall UseStatusHealingItemEffect
+	call BattleCommand_switchturn
+	ld hl, PluckText
+	call StdBattleTextbox
+	ret
+
+.berry_list
+	dbw BERRY,        .berry
+	dbw GOLD_BERRY,   .gold
+	dbw MYSTERYBERRY, .mystery
+	dbw MIRACLEBERRY, .miracle
+	dbw MINT_BERRY,   .mint
+	dbw BURNT_BERRY,  .burnt
+	dbw ICE_BERRY,    .ice
+	dbw BITTER_BERRY, .bitter
+	dbw PRZCUREBERRY, .przcure
+	dbw PSNCUREBERRY, .psncure
+	db -1

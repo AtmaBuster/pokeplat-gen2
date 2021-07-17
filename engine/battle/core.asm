@@ -4812,6 +4812,58 @@ ItemRecoveryAnim:
 	pop hl
 	ret
 
+UseStatusHealingItemEffect:
+	ld hl, HeldStatusHealingEffects
+.loop
+	ld a, [hli]
+	cp $ff
+	ret z
+	inc hl
+	cp b
+	jr nz, .loop
+	dec hl
+	ld b, [hl]
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and b
+	ret z
+	xor a
+	ld [hl], a
+	push bc
+	call UpdateOpponentInParty
+	pop bc
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	and [hl]
+	res SUBSTATUS_TOXIC, [hl]
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	and [hl]
+	res SUBSTATUS_NIGHTMARE, [hl]
+	ld a, b
+	cp ALL_STATUS
+	jr nz, .skip_confuse
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_CONFUSED, [hl]
+
+.skip_confuse
+	ld hl, CalcEnemyStats
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_pointer
+	ld hl, CalcPlayerStats
+
+.got_pointer
+	call SwitchTurnCore
+	ld a, BANK(CalcPlayerStats) ; aka BANK(CalcEnemyStats)
+	rst FarCall
+	call SwitchTurnCore
+	call ItemRecoveryAnim
+	ld a, $1
+	and a
+	ret
+
 UseHeldStatusHealingItem:
 	callfar GetOpponentItem
 	ld hl, HeldStatusHealingEffects
@@ -4867,6 +4919,24 @@ UseHeldStatusHealingItem:
 	ret
 
 INCLUDE "data/battle/held_heal_status.asm"
+
+UseConfusionHealingItemAlt:
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_CONFUSED, a
+	ret z
+	ld a, b
+	cp HELD_HEAL_CONFUSION
+	jr z, .heal_status
+	cp HELD_HEAL_STATUS
+	ret nz
+
+.heal_status
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_CONFUSED, [hl]
+	call ItemRecoveryAnim
+	ret
 
 UseConfusionHealingItem:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP

@@ -225,6 +225,7 @@ BattleCommandPointers:
 	battlecmd luckychant              ; bc
 	battlecmd defog ; bd
 	battlecmd psychoshift ; be
+	battlecmd pluck ; bf
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

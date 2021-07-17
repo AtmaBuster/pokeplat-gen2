@@ -3140,3 +3140,24 @@ PsychoShift:
 	doturn
 	psychoshift
 	endmove
+
+Pluck:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	pluck
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove

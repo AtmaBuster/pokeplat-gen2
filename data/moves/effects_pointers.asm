@@ -215,7 +215,7 @@ MoveEffectsPointers:
 	dw Brine                         ; BRINE
 	dw Splash                        ; NATURAL_GIFT
 	dw NormalHit                     ; FEINT
-	dw Splash                        ; PLUCK
+	dw Pluck                         ; PLUCK
 	dw Tailwind                      ; TAILWIND
 	dw Acupressure                   ; ACUPRESSURE
 	dw MetalBurst                    ; METAL_BURST
@@ -251,5 +251,5 @@ MoveEffectsPointers:
 	dw StealthRock                   ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT
-	dw Splash                        ; BUG_BITE
+	dw Splash                        ; UNUSED_FA
 	dw Splash                        ; LUNAR_DANCE

@@ -1592,3 +1592,12 @@ AlreadyFrozenText:
 	text "<TARGET>'s"
 	line "already frozen!"
 	prompt
+
+PluckText:
+	text "<USER>"
+	line "stole and ate"
+	cont "<TARGET>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
