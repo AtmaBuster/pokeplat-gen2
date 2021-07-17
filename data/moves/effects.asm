@@ -3125,3 +3125,18 @@ LuckyChant:
 	doturn
 	luckychant
 	endmove
+
+Defog:
+	checkobedience
+	usedmovetext
+	doturn
+	loweroppstat EVASION
+	defog
+	endmove
+
+PsychoShift:
+	checkobedience
+	usedmovetext
+	doturn
+	psychoshift
+	endmove

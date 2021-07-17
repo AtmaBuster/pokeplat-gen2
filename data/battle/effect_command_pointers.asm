@@ -223,6 +223,8 @@ BattleCommandPointers:
 	battlecmd snatch                  ; ba
 	battlecmd suckerpunch             ; bb
 	battlecmd luckychant              ; bc
+	battlecmd defog ; bd
+	battlecmd psychoshift ; be
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

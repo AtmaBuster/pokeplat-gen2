@@ -225,7 +225,7 @@ MoveEffectsPointers:
 	dw Splash                        ; ASSURANCE
 	dw Splash                        ; EMBARGO
 	dw Splash                        ; FLING
-	dw Splash                        ; PSYCHO_SHIFT
+	dw PsychoShift                   ; PSYCHO_SHIFT
 	dw TrumpCard                     ; TRUMP_CARD
 	dw HealBlock                     ; HEAL_BLOCK
 	dw Splash                        ; UNUSED_E3
@@ -245,11 +245,11 @@ MoveEffectsPointers:
 	dw AquaRing                      ; AQUA_RING
 	dw MagnetRise                    ; MAGNET_RISE
 	dw FlareBlitz                    ; FLARE_BLITZ
-	dw Splash                        ; DEFOG
+	dw Defog                         ; DEFOG
 	dw TrickRoom                     ; TRICK_ROOM
 	dw Captivate                     ; CAPTIVATE
 	dw StealthRock                   ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT
 	dw Splash                        ; BUG_BITE
-	dw Splash                        ; LUNAR_DANChealblock
+	dw Splash                        ; LUNAR_DANCE

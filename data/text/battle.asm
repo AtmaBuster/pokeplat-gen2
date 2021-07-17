@@ -1579,3 +1579,16 @@ LuckyChantWoreOffText:
 	line "team's LUCKY CHANT"
 	cont "wore off!"
 	prompt
+
+DefogBlewAwayText:
+	text "<USER>"
+	line "blew away"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+AlreadyFrozenText:
+	text "<TARGET>'s"
+	line "already frozen!"
+	prompt

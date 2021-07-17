@@ -9451,6 +9451,98 @@ CheckIfTargetIsFireType:
 	farcall CheckIfTargetIsType
 	ret
 
+CheckIfTargetIsIceType:
+	ld b, ICE
+	farcall CheckIfTargetIsType
+	ret
+
+BattleCommand_freeze:
+; freeze
+
+	ld hl, DoesntAffectText
+	ld a, [wTypeModifier]
+	and $7f
+	jp z, .failed
+
+	call CheckIfTargetIsIceType
+	jp z, .failed
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit FRZ, a
+	jp nz, .frozen
+	ld a, [wTypeModifier]
+	and $7f
+	jp z, .didnt_affect
+	farcall GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_FREEZE
+	jr nz, .no_item_protection
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	farcall AnimateFailedMove
+	ld hl, ProtectedByText
+	jp StdBattleTextbox
+
+.no_item_protection
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .dont_sample_failure
+
+	ld a, [wLinkMode]
+	and a
+	jr nz, .dont_sample_failure
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	jr nz, .dont_sample_failure
+
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	jr nz, .dont_sample_failure
+
+	call BattleRandom
+	cp 25 percent + 1 ; 25% chance AI fails
+	jr c, .failed
+
+.dont_sample_failure
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	farcall CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove2
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set FRZ, [hl]
+	call UpdateOpponentInParty
+	call UpdateBattleHuds
+	ld hl, WasFrozenText
+	call StdBattleTextbox
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore2
+
+.frozen
+	farcall AnimateFailedMove
+	ld hl, AlreadyFrozenText
+	jp StdBattleTextbox
+
+.didnt_affect
+	farcall AnimateFailedMove
+	farjump PrintDoesntAffect
+
+.failed
+	farjump PrintDidntAffect2
+
 BattleCommand_burn:
 ; burn
 
@@ -10126,5 +10218,174 @@ BattleCommand_luckychant:
 	ld hl, ShieldedFromCritText
 	jp StdBattleTextbox
 
+.fail
+	jp AnimateAndPrintFailedMove2
+
+BattleCommand_defog:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyScreens
+	jr z, .go
+	ld hl, wPlayerScreens
+.go
+
+; reflect
+	bit SCREENS_REFLECT, [hl]
+	jr z, .skip_reflect
+	ld bc, REFLECT
+	call .show_blew_away_text
+.skip_reflect
+
+; light screen
+	bit SCREENS_LIGHT_SCREEN, [hl]
+	jr z, .skip_light_screen
+	ld bc, LIGHT_SCREEN
+	call .show_blew_away_text
+.skip_light_screen
+
+; safeguard
+	bit SCREENS_SAFEGUARD, [hl]
+	jr z, .skip_safeguard
+	ld bc, SAFEGUARD
+	call .show_blew_away_text
+.skip_safeguard
+
+; spikes
+	ld a, [hl]
+	and MASK_SPIKES
+	jr z, .skip_spikes
+	ld bc, SPIKES
+	call .show_blew_away_text
+.skip_spikes
+
+; toxic spikes
+	ld a, [hl]
+	and MASK_TOXIC_SPIKES
+	jr z, .skip_toxic_spikes
+	ld bc, TOXIC_SPIKES
+	call .show_blew_away_text
+.skip_toxic_spikes
+
+; stealth rock
+	bit SCREENS_STEALTH_ROCK, [hl]
+	jr z, .skip_stealth_rock
+	ld bc, STEALTH_ROCK
+	call .show_blew_away_text
+.skip_stealth_rock
+
+	xor a
+	ld [hl], a
+	ret
+
+.show_blew_away_text
+	push hl
+	ld h, b
+	ld l, c
+	call GetMoveIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	call GetMoveName
+	ld hl, DefogBlewAwayText
+	call StdBattleTextbox
+	pop hl
+	ret
+
+BattleCommand_psychoshift:
+; heal user
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	and a
+	jp z, .fail
+	ld b, a
+	xor a
+	ld [hl], a
+; status opponent
+; remember old opponent status, if it didn't change the move failed
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	push af
+	push bc
+	ld a, b
+	cp (1 << PSN)
+	jr z, .poison
+	cp (1 << BRN)
+	jr z, .burn
+	cp (1 << FRZ)
+	jr z, .freeze
+	cp (1 << PAR)
+	jr z, .paralyze
+;sleep
+	farcall BattleCommand_sleeptarget
+	jr .finish
+
+.poison
+; don't poison steel types
+; (poison type check is already taken care of)
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonType
+	jr nz, .got_type
+	ld hl, wEnemyMonType
+.got_type
+	ld a, [hli]
+	cp STEEL
+	jr z, .fail2
+	ld a, [hl]
+	cp STEEL
+	jr z, .fail2
+; check for badly poison
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	bit SUBSTATUS_TOXIC, [hl]
+	jr nz, .toxic
+	farcall BattleCommand_poison
+	jr .finish
+
+.toxic
+; fake using toxic
+	res SUBSTATUS_TOXIC, [hl]
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	push af
+	push hl
+	ld a, EFFECT_TOXIC
+	ld [hl], a
+	farcall BattleCommand_poison
+	pop hl
+	pop af
+	ld [hl], a
+	jr .finish
+
+.burn
+	call BattleCommand_burn
+	jr .finish
+
+.freeze
+	call BattleCommand_freeze
+	jr .finish
+
+.paralyze
+	farcall BattleCommand_paralyze
+
+.finish
+	pop bc
+	pop af
+	ld c, a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	cp c
+	jr nz, .update_party
+; if it failed, restore old status
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld [hl], b
+.update_party
+	call UpdateBattleMonInParty
+	call UpdateEnemyMonInParty
+	ret
+
+.fail2
+	pop bc
+	pop af
 .fail
 	jp AnimateAndPrintFailedMove2
