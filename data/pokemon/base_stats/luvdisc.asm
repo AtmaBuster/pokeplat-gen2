@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 225 ; catch rate
 	db 110 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db STAR_PIECE, STAR_PIECE ; items (Should be Heart Scale, not sure if including)
 	db GENDER_F75 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch

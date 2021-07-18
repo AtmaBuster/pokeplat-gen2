@@ -6,7 +6,7 @@
 	db ICE, ICE ; type
 	db 45 ; catch rate
 	db 145 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db MYSTIC_WATER, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 25 ; step cycles to hatch
