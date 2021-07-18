@@ -213,7 +213,7 @@ MoveEffectsPointers:
 	dw GyroBall                      ; GYRO_BALL
 	dw HealingWish                   ; HEALING_WISH
 	dw Brine                         ; BRINE
-	dw Splash                        ; NATURAL_GIFT
+	dw NaturalGift                   ; NATURAL_GIFT
 	dw NormalHit                     ; FEINT
 	dw Pluck                         ; PLUCK
 	dw Tailwind                      ; TAILWIND
@@ -222,14 +222,14 @@ MoveEffectsPointers:
 	dw UTurn                         ; U_TURN
 	dw CloseCombat                   ; CLOSE_COMBAT
 	dw Payback                       ; PAYBACK
-	dw Splash                        ; ASSURANCE
+	dw Splash                        ; UNUSED_DD
 	dw Splash                        ; EMBARGO
 	dw Splash                        ; FLING
 	dw PsychoShift                   ; PSYCHO_SHIFT
 	dw TrumpCard                     ; TRUMP_CARD
 	dw HealBlock                     ; HEAL_BLOCK
 	dw Splash                        ; UNUSED_E3
-	dw Splash                        ; POWER_TRICK
+	dw PowerTrick                    ; POWER_TRICK
 	dw Splash                        ; UNUSED_E5
 	dw LuckyChant                    ; LUCKY_CHANT
 	dw Splash                        ; ME_FIRST

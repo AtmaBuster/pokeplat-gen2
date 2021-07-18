@@ -228,6 +228,9 @@ BattleCommandPointers:
 	battlecmd pluck                   ; bf
 	battlecmd healingwish             ; c0
 	battlecmd lunardance              ; c1
+	battlecmd naturalgift             ; c2
+	battlecmd naturalgifteatberry     ; c3
+	battlecmd powertrick              ; c4
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

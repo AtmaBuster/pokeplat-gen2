@@ -5260,13 +5260,6 @@ BattleCommand_tristatuschance:
 	dw BattleCommand_freezetarget ; freeze
 	dw BattleCommand_burntarget ; burn
 
-BattleCommand_curl:
-; curl
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
-	set SUBSTATUS_CURLED, [hl]
-	ret
-
 BattleCommand_raisesubnoanim:
 	ld hl, GetBattleMonBackpic
 	ldh a, [hBattleTurn]
@@ -5312,6 +5305,8 @@ CalcPlayerStats:
 
 	farcall ApplySlowStartEffectOnPlayerStats
 
+	farcall ApplyPowerTrick
+
 	jp BattleCommand_switchturn
 
 CalcEnemyStats:
@@ -5331,6 +5326,8 @@ CalcEnemyStats:
 	call CallBattleCore
 
 	farcall ApplySlowStartEffectOnEnemyStats
+
+	farcall ApplyPowerTrick
 
 	jp BattleCommand_switchturn
 
@@ -10627,3 +10624,134 @@ BattleCommand_lunardance:
 .fail
 	call AnimateAndPrintFailedMove2
 	farjump EndMoveEffect
+
+BattleCommand_naturalgift:
+	push bc
+	push de
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonItem]
+	jr z, .go
+	ld a, [wEnemyMonItem]
+.go
+	and a
+	jr z, .fail
+	ld hl, NaturalGiftItemTable
+	ld de, 3
+	call IsInArray
+	jr nc, .fail
+	inc hl
+
+	ld d, [hl]
+	push hl
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	ld a, [hl]
+	and CATEGORY_MASK
+	or d
+	ld [hl], a
+	pop hl
+
+	inc hl
+	pop de
+	ld d, [hl]
+	pop bc
+	ret
+
+.fail
+	call AnimateAndPrintFailedMove2
+	farjump EndMoveEffect
+
+BattleCommand_naturalgifteatberry:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Item
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+	ld [wBattleMonItem], a
+	ret
+
+.enemy
+	xor a
+	ld [wEnemyMonItem], a
+	ld a, [wBattleMode]
+	dec a
+	ret z ; don't update party for wild mon
+
+	ld a, [wCurOTMon]
+	ld hl, wOTPartyMon1Item
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+	ret
+
+INCLUDE "data/moves/natural_gift.asm"
+
+BattleCommand_powertrick:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	ld a, [hl]
+	xor (1 << SUBSTATUS_POWER_TRICK)
+	ld [hl], a
+	call AnimateCurrentMove2
+	ld hl, PowerTrickText
+	call StdBattleTextbox
+	jp CalcBothMonStats
+
+ApplyPowerTrick:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_POWER_TRICK, a
+	ret z
+
+	ld hl, wBattleMonStats
+
+	jr .swap_stats
+
+.enemy
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_POWER_TRICK, a
+	ret z
+
+	ld hl, wEnemyMonStats
+
+.swap_stats
+	push bc
+	push de
+
+; get attack
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+; get defense and put attack
+	ld a, [hli]
+	ld d, a
+	ld a, [hl]
+	ld e, a
+	ld [hl], c
+	dec hl
+	ld [hl], b
+	dec hl
+; put defense
+	ld [hl], e
+	dec hl
+	ld [hl], d
+
+	pop de
+	pop bc
+	ret
+
+BattleCommand_curl:
+; curl
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_CURLED, [hl]
+	ret

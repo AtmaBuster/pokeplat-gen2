@@ -221,7 +221,7 @@
 	const EFFECT_U_TURN            ; da
 	const EFFECT_CLOSE_COMBAT      ; db
 	const EFFECT_PAYBACK           ; dc
-	const EFFECT_ASSURANCE         ; dd
+	const EFFECT_UNUSED_DD         ; dd
 	const EFFECT_EMBARGO           ; de
 	const EFFECT_FLING             ; df
 	const EFFECT_PSYCHO_SHIFT      ; e0

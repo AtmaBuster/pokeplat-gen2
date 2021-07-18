@@ -3176,3 +3176,32 @@ LunarDance:
 	lunardance
 	kouser
 	endmove
+
+NaturalGift:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	naturalgift
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	naturalgifteatberry
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+PowerTrick:
+	checkobedience
+	usedmovetext
+	doturn
+	powertrick
+	endmove

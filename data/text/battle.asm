@@ -1611,3 +1611,9 @@ LunarDanceText:
 	text "It became cloaked"
 	line "in moonlight!"
 	prompt
+
+PowerTrickText:
+	text "<USER>"
+	line "switched ATTACK"
+	cont "and DEFENSE!"
+	prompt
