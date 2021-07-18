@@ -6,7 +6,7 @@
 	db NORMAL, NORMAL ; type
 	db 130 ; catch rate
 	db 110 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db OVAL_STONE, LUCKY_PUNCH ; items
 	db GENDER_F100 ; gender ratio
 	db 100 ; unknown 1
 	db 40 ; step cycles to hatch

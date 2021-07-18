@@ -6,7 +6,7 @@
 	db ROCK, PSYCHIC	; type
 	db 45 ; catch rate
 	db 150 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, MOON_STONE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 25 ; step cycles to hatch
