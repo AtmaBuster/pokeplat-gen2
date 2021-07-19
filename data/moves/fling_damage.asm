@@ -58,7 +58,7 @@ FlingDamage:
 	db 30  ; EXP_SHARE
 	db -1  ; OLD_ROD
 	db -1  ; GOOD_ROD
-	db 0   ; SILVER_LEAF
+	db 20  ; SILVER_LEAF
 	db -1  ; SUPER_ROD
 	db 30  ; PP_UP
 	db 30  ; ETHER
@@ -73,7 +73,7 @@ FlingDamage:
 	db 30  ; MOOMOO_MILK
 	db 80  ; QUICK_CLAW
 	db 10  ; PSNCUREBERRY
-	db 0   ; GOLD_LEAF
+	db 20  ; GOLD_LEAF
 	db 10  ; SOFT_SAND
 	db 50  ; SHARP_BEAK
 	db 10  ; PRZCUREBERRY
@@ -101,8 +101,8 @@ FlingDamage:
 	db -1  ; ITEM_64
 	db -1  ; PNK_APRICORN
 	db 30  ; BLACKGLASSES
-	db 0   ; SLOWPOKETAIL
-	db 0   ; PINK_BOW
+	db 30  ; SLOWPOKETAIL
+	db 10  ; PINK_BOW
 	db 60  ; STICK
 	db 30  ; SMOKE_BALL
 	db 30  ; NEVERMELTICE
@@ -150,7 +150,7 @@ FlingDamage:
 	db -1  ; ITEM_95
 	db 10  ; MYSTERYBERRY
 	db 10  ; DRAGON_SCALE
-	db 0   ; BERSERK_GENE
+	db 24  ; BERSERK_GENE
 	db -1  ; ITEM_99
 	db -1  ; ITEM_9A
 	db -1  ; ITEM_9B
@@ -165,10 +165,10 @@ FlingDamage:
 	db -1  ; FRIEND_BALL
 	db -1  ; MOON_BALL
 	db -1  ; LOVE_BALL
-	db 0   ; NORMAL_BOX
-	db 0   ; GORGEOUS_BOX
+	db 40  ; NORMAL_BOX
+	db 80  ; GORGEOUS_BOX
 	db 30  ; SUN_STONE
-	db 0   ; POLKADOT_BOW
+	db 12  ; POLKADOT_BOW
 	db -1  ; ITEM_AB
 	db 30  ; UP_GRADE
 	db 10  ; BERRY
@@ -178,7 +178,7 @@ FlingDamage:
 	db -1  ; PARK_BALL
 	db -1  ; RAINBOW_WING
 	db -1  ; ITEM_B3
-	db 0   ; BRICK_PIECE
+	db 30  ; BRICK_PIECE
 	db -1  ; SURF_MAIL
 	db -1  ; LITEBLUEMAIL
 	db -1  ; PORTRAITMAIL
@@ -265,4 +265,6 @@ FlingEffects:
 	flingeffectdata LIGHT_BALL, BattleCommand_paralyzetarget
 	flingeffectdata POISON_BARB, FlingPoisonEffect
 	flingeffectdata BERSERK_GENE, BattleCommand_confusetarget
+	flingeffectdata GOLD_LEAF, BattleCommand_burntarget
+	flingeffectdata POLKADOT_BOW, BattleCommand_sleeptarget
 	db -1

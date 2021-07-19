@@ -1294,6 +1294,21 @@ BattleCommand_critical:
 	ld a, [wBattleMonSpecies]
 
 .Item:
+; force crit if using Fling and holding Silver Leaf
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FLING
+	jr nz, .skip_fling
+
+	ld a, [hl]
+	cp SILVER_LEAF
+	jr nz, .skip_fling
+
+	ld a, 1
+	ld [wCriticalHit], a
+	ret
+
+.skip_fling
 	ld c, 0
 	ld b, [hl]
 	call GetPokemonIndexFromID
