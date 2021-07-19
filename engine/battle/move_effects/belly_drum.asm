@@ -1,15 +1,14 @@
 BattleCommand_bellydrum:
 ; bellydrum
-; This command is buggy because it raises the user's attack
-; before checking that it has enough HP to use the move.
-; Swap the order of these two blocks to fix.
 	callfar GetHalfMaxHP
 	callfar CheckUserHasEnoughHP
 	jr nc, .failed
 
+	push bc
 	ld b, $f0 | ATTACK
 	ld a, STAT_SKIPTEXT
 	call _ForceRaiseStat
+	pop bc
 	ld a, [wFailedMessage]
 	and a
 	jr nz, .failed

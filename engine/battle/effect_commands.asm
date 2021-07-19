@@ -3813,7 +3813,7 @@ BattleCommand_sleeptarget:
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	call SetSleep
+	jp SetSleep
 
 .fail
 	push hl
@@ -9235,7 +9235,9 @@ TypeMatchupSpecialCases:
 	jr nz, .lev_go
 	ld a, [wEnemyMonSpecies]
 .lev_go
+	push de
 	call IsLevitateMon
+	pop de
 	jr c, .yes
 ; check Gravity/Roost typing
 	ld a, FLYING
