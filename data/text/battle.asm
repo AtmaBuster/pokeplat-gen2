@@ -1617,3 +1617,8 @@ PowerTrickText:
 	line "switched ATTACK"
 	cont "and DEFENSE!"
 	prompt
+
+EmbargoText:
+	text "<TARGET>"
+	line "can't use items!"
+	prompt

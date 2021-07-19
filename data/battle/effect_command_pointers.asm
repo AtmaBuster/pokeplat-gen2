@@ -229,8 +229,14 @@ BattleCommandPointers:
 	battlecmd healingwish             ; c0
 	battlecmd lunardance              ; c1
 	battlecmd naturalgift             ; c2
-	battlecmd naturalgifteatberry     ; c3
+	battlecmd forceconsumeholditem    ; c3
 	battlecmd powertrick              ; c4
+	battlecmd punishment              ; c5
+	battlecmd copycat                 ; c6
+	battlecmd mefirst                 ; c7
+	battlecmd flingdamage             ; c8
+	battlecmd flingeffect             ; c9
+	battlecmd embargo                 ; ca
 
 	battlecmd2 raisestat
 	battlecmd2 lowerstat

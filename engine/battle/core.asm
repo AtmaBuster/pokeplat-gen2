@@ -9748,17 +9748,21 @@ FarTemporaryEffects:
 	call DecrementGravity
 	call DecrementTrickRoom
 	call HandleWish
-	call ClearMagicCoatSnatch
+	call ClearPerTurnMoveFlags
 	call HandleLuckyChant
 	ret
 
-ClearMagicCoatSnatch:
+ClearPerTurnMoveFlags:
 	ld hl, wPlayerSubStatus2
 	res SUBSTATUS_MAGIC_COAT, [hl]
 	res SUBSTATUS_SNATCH, [hl]
 	ld hl, wEnemySubStatus2
 	res SUBSTATUS_MAGIC_COAT, [hl]
 	res SUBSTATUS_SNATCH, [hl]
+
+	xor a
+	ld [wPlayerMeFirst], a
+	ld [wEnemyMeFirst], a
 	ret
 
 HandleSlowStart:
@@ -10475,4 +10479,125 @@ CheckHealingWish:
 	ld a, [wCurOTMon]
 	call GetPartyLocation
 	pop bc
+	ret
+
+ForceMysteryBerryEffect:
+	ld hl, wPartyMon1PP
+	ld a, [wCurBattleMon]
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	ld hl, wPartyMon1Moves
+	ld a, [wCurBattleMon]
+	call GetPartyLocation
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .wild
+	ld de, wWildMonPP
+	ld hl, wWildMonMoves
+	ld a, [wBattleMode]
+	dec a
+	jr z, .wild
+	ld hl, wOTPartyMon1PP
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	ld hl, wOTPartyMon1Moves
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+
+.wild
+	ld c, $0
+.loop
+	ld a, [hl]
+	and a
+	jr z, .quit
+	ld a, c
+	ld [wMenuCursorY], a
+	push de
+	push hl
+	farcall GetMaxPPOfMove
+	pop hl
+	pop de
+	ld a, [wTempPP]
+	sub 4
+	ld b, a
+	ld a, [de]
+	and PP_MASK
+	sub b
+	jr c, .restore
+.next
+	inc hl
+	inc de
+	inc c
+	ld a, c
+	cp NUM_MOVES
+	jr nz, .loop
+
+.quit
+	and a
+	ret
+
+.restore
+	; lousy hack
+	ld a, [hl]
+	push hl
+	call GetMoveIndexFromID
+	ld a, h
+	if HIGH(SKETCH)
+		cp HIGH(SKETCH)
+	else
+		and a
+	endc
+	ld a, l
+	pop hl
+	ld b, 5
+	jr nz, .not_sketch
+	cp LOW(SKETCH)
+	jr nz, .not_sketch
+	ld b, 1
+.not_sketch
+	ld a, [de]
+	add b
+	ld [de], a
+	push bc
+	push bc
+	ld a, [hl]
+	ld [wTempByteValue], a
+	ld de, wBattleMonMoves - 1
+	ld hl, wBattleMonPP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_pp
+	ld de, wEnemyMonMoves - 1
+	ld hl, wEnemyMonPP
+.player_pp
+	inc de
+	pop bc
+	ld b, 0
+	add hl, bc
+	push hl
+	ld h, d
+	ld l, e
+	add hl, bc
+	pop de
+	pop bc
+
+	ld a, [wTempByteValue]
+	cp [hl]
+	jr nz, .done
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerSubStatus5]
+	jr z, .check_transform
+	ld a, [wEnemySubStatus5]
+.check_transform
+	bit SUBSTATUS_TRANSFORMED, a
+	jr nz, .done
+	ld a, [de]
+	add b
+	ld [de], a
+.done
+	scf
 	ret

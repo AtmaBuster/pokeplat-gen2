@@ -223,8 +223,8 @@ MoveEffectsPointers:
 	dw CloseCombat                   ; CLOSE_COMBAT
 	dw Payback                       ; PAYBACK
 	dw Splash                        ; UNUSED_DD
-	dw Splash                        ; EMBARGO
-	dw Splash                        ; FLING
+	dw Embargo                       ; EMBARGO
+	dw Fling                         ; FLING
 	dw PsychoShift                   ; PSYCHO_SHIFT
 	dw TrumpCard                     ; TRUMP_CARD
 	dw HealBlock                     ; HEAL_BLOCK
@@ -232,11 +232,11 @@ MoveEffectsPointers:
 	dw PowerTrick                    ; POWER_TRICK
 	dw Splash                        ; UNUSED_E5
 	dw LuckyChant                    ; LUCKY_CHANT
-	dw Splash                        ; ME_FIRST
-	dw Splash                        ; COPYCAT
+	dw MeFirst                       ; ME_FIRST
+	dw Copycat                       ; COPYCAT
 	dw PowerSwap                     ; POWER_SWAP
 	dw GuardSwap                     ; GUARD_SWAP
-	dw Splash                        ; PUNISHMENT
+	dw Punishment                    ; PUNISHMENT
 	dw LastResort                    ; LAST_RESORT
 	dw Splash                        ; UNUSED_ED
 	dw SuckerPunch                   ; SUCKER_PUNCH

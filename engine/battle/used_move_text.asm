@@ -38,6 +38,24 @@ UsedMoveText:
 	ld [hl], a
 	ld [de], a
 
+	push de
+	push hl
+	ld d, a
+	call GetMoveIndexFromID
+	ld a, h
+	cp HIGH(COPYCAT)
+	jr nz, .set_copycat_move
+	ld a, l
+	cp LOW(COPYCAT)
+	jr z, .skip_copycat_move
+
+.set_copycat_move
+	ld a, d
+	ld [wLastCopycatMove], a
+.skip_copycat_move
+	pop hl
+	pop de
+
 .ok
 	ld hl, UsedMoveInsteadText
 	ret

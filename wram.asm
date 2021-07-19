@@ -543,6 +543,7 @@ wPlayerUnderwater:: db
 wPlayerRoost:: db
 wPlayerYawnTimer:: db
 wPlayerHealingWishFlag:: db
+wPlayerMeFirst:: db
 
 wEnemyRolloutCount:: db ; c67a
 wEnemyConfuseCount:: db ; c67b
@@ -565,6 +566,7 @@ wEnemyUnderwater:: db
 wEnemyRoost:: db
 wEnemyYawnTimer:: db
 wEnemyHealingWishFlag:: db
+wEnemyMeFirst:: db
 
 wPlayerDamageTaken:: dw ; c682
 wEnemyDamageTaken:: dw ; c684
@@ -658,6 +660,8 @@ wWhichMonFaintedFirst:: db
 ; exists so you can't counter on switch
 wLastPlayerCounterMove:: db ; c6f8
 wLastEnemyCounterMove:: db ; c6f9
+
+wLastCopycatMove:: db
 
 wEnemyMinimized:: db ; c6fa
 

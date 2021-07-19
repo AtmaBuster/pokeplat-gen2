@@ -3193,7 +3193,7 @@ NaturalGift:
 	applydamage
 	criticaltext
 	supereffectivetext
-	naturalgifteatberry
+	forceconsumeholditem
 	checkfaint
 	buildopponentrage
 	heldflinch
@@ -3204,4 +3204,70 @@ PowerTrick:
 	usedmovetext
 	doturn
 	powertrick
+	endmove
+
+Punishment:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	punishment
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Copycat:
+	checkobedience
+	usedmovetext
+	doturn
+	copycat
+	endmove
+
+MeFirst:
+	checkobedience
+	usedmovetext
+	doturn
+	mefirst
+	endmove
+
+Fling:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	flingdamage
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	flingeffect
+	forceconsumeholditem
+	checkfaint
+	buildopponentrage
+	heldflinch
+	endmove
+
+Embargo:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	embargo
 	endmove
