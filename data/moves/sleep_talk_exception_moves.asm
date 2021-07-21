@@ -1,0 +1,20 @@
+SleepTalkExceptionMoves:
+	dw ASSIST
+	dw BIDE
+	dw BOUNCE
+	dw COPYCAT
+	dw DIG
+	dw DIVE
+	dw FLY
+	dw FOCUS_PUNCH
+	dw ME_FIRST
+	dw METRONOME
+	dw MIRROR_MOVE
+	dw MIMIC
+	dw RAZOR_WIND
+	dw SHADOW_FORCE
+	dw SKULL_BASH
+	dw SKY_ATTACK
+	dw SOLARBEAM
+	dw UPROAR
+	dw -1

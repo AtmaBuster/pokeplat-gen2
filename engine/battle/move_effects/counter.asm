@@ -13,6 +13,8 @@ BattleCommand_counter:
 	ld a, b
 	cp EFFECT_COUNTER
 	ret z
+	cp EFFECT_METAL_BURST
+	ret z
 
 	call BattleCommand_resettypematchup
 	ld a, [wTypeMatchup]

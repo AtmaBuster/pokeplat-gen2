@@ -50,6 +50,12 @@ BattleCommand_thief:
 
 .enemy
 
+; Don't let wild mons steal.
+
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	ret z
+
 ; The enemy can't already have an item.
 
 	call .enemyitem

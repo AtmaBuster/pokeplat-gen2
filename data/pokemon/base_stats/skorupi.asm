@@ -6,7 +6,7 @@
 	db POISON, BUG ; type
 	db 120 ; catch rate
 	db 66 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, POISON_BARB ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
@@ -17,5 +17,5 @@
 	dn EGG_BUG, EGG_WATER_3 ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, RAIN_DANCE, ENDURE, FRUSTRATION, IRON_TAIL, RETURN, DIG, SHADOW_BALL, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SLUDGE_BOMB, REST, ATTRACT, THIEF, FURY_CUTTER, CUT, STRENGTH, FLASH
 	; end

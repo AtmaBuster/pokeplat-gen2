@@ -6,7 +6,7 @@
 	db WATER, WATER ; type
 	db 75 ; catch rate
 	db 173 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
@@ -17,5 +17,5 @@
 	dn EGG_GROUND, EGG_WATER_1 ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm DYNAMICPUNCH, HEADBUTT, CURSE, ROAR, TOXIC, ROCK_SMASH, HIDDEN_POWER, SNORE, BLIZZARD, HYPER_BEAM, ICY_WIND, PROTECT, RAIN_DANCE, ENDURE, FRUSTRATION, IRON_TAIL, RETURN, DIG, MUD_SLAP, DOUBLE_TEAM, ICE_PUNCH, SWAGGER, SLEEP_TALK, SWIFT, REST, ATTRACT, FURY_CUTTER, SURF, STRENGTH, WHIRLPOOL, WATERFALL, ICE_BEAM
 	; end

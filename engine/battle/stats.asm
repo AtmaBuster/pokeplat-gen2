@@ -122,7 +122,14 @@ FarChangeStat:
 	bit STAT_SILENT_F, b
 	push bc
 	jr nz, .anim_done
-	; farcall StatUpDownAnim
+	call CheckAlreadyFailed
+	jr nz, .anim_done
+	xor a
+	ld [wNumHits], a
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	farcall2 SetMoveAnimationID
+	farcall PlaySelectedFXAnim
 .anim_done
 	pop bc
 PrintStatChange:
@@ -130,7 +137,7 @@ PrintStatChange:
 DoPrintStatChange:
 	push af
 	and a
-;	call z, PlayStatChangeAnim
+	call z, PlayStatChangeAnim
 	pop af
 
 	bit STAT_TARGET_F, b
@@ -261,3 +268,83 @@ DoChangeStat:
 	ld a, 1
 	ld [wFailedMessage], a
 	ret
+
+PlayStatChangeAnim:
+	push hl
+	farcall CheckBattleScene
+	pop hl
+	ret c
+	bit STAT_TARGET_F, b
+	jr nz, .do_it
+
+	call BattleCommand_switchturn
+	call .do_it
+	jp BattleCommand_switchturn
+
+.do_it
+	bit STAT_LOWER_F, b
+	ret z
+	push bc
+	push de
+	push hl
+	ld de, ANIM_PLAYER_STAT_DOWN
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_anim
+	ld de, ANIM_ENEMY_STAT_DOWN
+.got_anim
+	ld a, [wNumHits]
+	push af
+	xor a
+	ld [wNumHits], a
+	farcall FarPlayBattleAnimation
+	pop af
+	ld [wNumHits], a
+	pop hl
+	pop de
+	pop bc
+	ret
+
+_XItemEffect:
+	ld a, [wCurItem]
+	ld hl, XItemStats
+
+.loop
+	cp [hl]
+	jr z, .got_it
+	inc hl
+	inc hl
+	jr .loop
+
+.got_it
+	inc hl
+	ld b, [hl]
+	xor a
+	ldh [hBattleTurn], a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	ld a, STAT_SKIPTEXT | STAT_SILENT
+	call FarChangeStat
+	ld a, [wFailedMessage]
+	and a
+	jp nz, .fail
+
+	push bc
+	farcall UseItemText
+	pop bc
+
+	call GetStatRaiseMessage
+	or 1
+	call DoPrintStatChange
+
+	ld a, [wCurBattleMon]
+	ld [wCurPartyMon], a
+	ld c, HAPPINESS_USEDXITEM
+	farcall ChangeHappiness
+	ret
+
+.fail
+	farcall WontHaveAnyEffect_NotUsedMessage
+	ret
+
+INCLUDE "data/items/x_stats.asm"

@@ -6,7 +6,7 @@
 	db BUG, FLYING ; type
 	db 120 ; catch rate
 	db 49 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db HONEY, HONEY ; items
 	db GENDER_F12_5 ; gender ratio
 	db 100 ; unknown 1
 	db 15 ; step cycles to hatch

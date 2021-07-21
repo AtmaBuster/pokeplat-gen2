@@ -6,7 +6,7 @@
 	db BUG, GROUND ; type
 	db 45 ; catch rate
 	db 148 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, SILVERPOWDER ; items
 	db GENDER_F100 ; gender ratio
 	db 100 ; unknown 1
 	db 15 ; step cycles to hatch
@@ -17,5 +17,5 @@
 	dn EGG_BUG, EGG_BUG ; egg groups
 
 	; tm/hm learnset
-	tmhm
+	tmhm CURSE, TOXIC, PSYCH_UP, HIDDEN_POWER, SUNNY_DAY, SNORE, HYPER_BEAM, PROTECT, RAIN_DANCE, ENDURE, FRUSTRATION, EARTHQUAKE, RETURN, DIG, PSYCHIC_M, SHADOW_BALL, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SANDSTORM, DREAM_EATER, REST, ATTRACT, THIEF, NIGHTMARE, FLASH
 	; end

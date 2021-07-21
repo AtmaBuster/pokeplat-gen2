@@ -1,0 +1,27 @@
+AssistExceptionMoves:
+	dw ASSIST
+	dw CHATTER
+	dw COPYCAT
+	dw COUNTER
+	dw COVET
+	dw DESTINY_BOND
+	dw DETECT
+	dw ENDURE
+	dw FEINT
+	dw FOCUS_PUNCH
+	dw FOLLOW_ME
+	dw HELPING_HAND
+	dw ME_FIRST
+	dw METRONOME
+	dw MIMIC
+	dw MIRROR_COAT
+	dw MIRROR_MOVE
+	dw PROTECT
+	dw SKETCH
+	dw SLEEP_TALK
+	dw SNATCH
+	dw STRUGGLE
+	dw SWITCHEROO
+	dw THIEF
+	dw TRICK
+	dw -1

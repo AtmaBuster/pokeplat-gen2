@@ -9,6 +9,10 @@ INCLUDE "home/rst.asm"
 
 INCLUDE "home/interrupts.asm"
 
+SECTION "LOWROM", ROM0[$0068]
+
+INCLUDE "home/copy2.asm"
+
 
 SECTION "Header", ROM0
 
@@ -73,7 +77,6 @@ _de_::
 
 INCLUDE "home/double_speed.asm"
 INCLUDE "home/clear_sprites.asm"
-INCLUDE "home/copy2.asm"
 INCLUDE "home/copy_tilemap.asm"
 INCLUDE "home/copy_name.asm"
 

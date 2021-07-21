@@ -14,6 +14,8 @@ BattleCommand_mirrorcoat:
 	ld a, b
 	cp EFFECT_MIRROR_COAT
 	ret z
+	cp EFFECT_METAL_BURST
+	ret z
 
 	call BattleCommand_resettypematchup
 	ld a, [wTypeMatchup]

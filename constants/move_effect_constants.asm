@@ -64,7 +64,7 @@
 	const EFFECT_SP_DEF_DOWN_2_HIT ; 3d
 	const EFFECT_SP_DEF_DOWN_2     ; 3e
 	const EFFECT_SP_ATK_UP_HIT     ; 3f
-	const EFFECT_UNUSED_40         ; 40
+	const EFFECT_WHIRLPOOL         ; 40
 	const EFFECT_REFLECT           ; 41
 	const EFFECT_POISON            ; 42
 	const EFFECT_PARALYZE          ; 43
@@ -96,7 +96,7 @@
 	const EFFECT_CONVERSION2       ; 5d
 	const EFFECT_LOCK_ON           ; 5e
 	const EFFECT_SKETCH            ; 5f
-	const EFFECT_UNUSED_60         ; 60
+	const EFFECT_SURF              ; 60
 	const EFFECT_SLEEP_TALK        ; 61
 	const EFFECT_DESTINY_BOND      ; 62
 	const EFFECT_REVERSAL          ; 63
@@ -110,7 +110,7 @@
 	const EFFECT_NIGHTMARE         ; 6b
 	const EFFECT_FLAME_WHEEL       ; 6c
 	const EFFECT_CURSE             ; 6d
-	const EFFECT_STRUGGLE          ; 6e
+	const EFFECT_UNUSED_6E         ; 6e
 	const EFFECT_PROTECT           ; 6f
 	const EFFECT_SPIKES            ; 70
 	const EFFECT_FORESIGHT         ; 71
@@ -203,8 +203,8 @@
 	const EFFECT_BOUNCE            ; c8
 	const EFFECT_VOLT_TACKLE       ; c9
 	const EFFECT_WATER_SPORT       ; ca
-	const EFFECT_DOOM_DESIRE       ; cb
-	const EFFECT_ROOST             ; cc
+	const EFFECT_UNUSED_CB         ; cb
+	const EFFECT_UNUSED_CC         ; cc
 	const EFFECT_GRAVITY           ; cd
 	const EFFECT_MIRACLE_EYE       ; ce
 	const EFFECT_WAKE_UP_SLAP      ; cf
@@ -221,13 +221,13 @@
 	const EFFECT_U_TURN            ; da
 	const EFFECT_CLOSE_COMBAT      ; db
 	const EFFECT_PAYBACK           ; dc
-	const EFFECT_ASSURANCE         ; dd
+	const EFFECT_UNUSED_DD         ; dd
 	const EFFECT_EMBARGO           ; de
 	const EFFECT_FLING             ; df
 	const EFFECT_PSYCHO_SHIFT      ; e0
 	const EFFECT_TRUMP_CARD        ; e1
 	const EFFECT_HEAL_BLOCK        ; e2
-	const EFFECT_WRING_OUT         ; e3
+	const EFFECT_UNUSED_E3         ; e3
 	const EFFECT_POWER_TRICK       ; e4
 	const EFFECT_UNUSED_E5         ; e5
 	const EFFECT_LUCKY_CHANT       ; e6
@@ -250,7 +250,7 @@
 	const EFFECT_STEALTH_ROCK      ; f7
 	const EFFECT_WEIGHT_DAMAGE     ; f8
 	const EFFECT_JUDGMENT          ; f9
-	const EFFECT_BUG_BITE          ; fa
+	const EFFECT_UNUSED_FA         ; fa
 	const EFFECT_LUNAR_DANCE       ; fb
 
 EFFECT_SPEED_UP         EQU $0c

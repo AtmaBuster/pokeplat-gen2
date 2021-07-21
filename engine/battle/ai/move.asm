@@ -26,7 +26,7 @@ AIChooseMove:
 ; Don't pick disabled moves.
 	ld a, [wEnemyDisabledMove]
 	and a
-	jr z, .CheckPP
+	jr z, .CheckTaunt
 
 	ld hl, wEnemyMonMoves
 	ld c, 0
@@ -41,6 +41,99 @@ AIChooseMove:
 	ld b, 0
 	add hl, bc
 	ld [hl], 80
+
+; Don't pick taunted moves
+.CheckTaunt
+	ld a, [wEnemySubStatus6]
+	bit SUBSTATUS_TAUNT, a
+	jr z, .CheckTorment
+
+	ld hl, wEnemyMonMoves
+	ld c, 0
+.CheckTauntMove:
+	ld a, c
+	cp 4
+	jr z, .CheckTorment
+	ld a, [hli]
+	and a
+	jr z, .CheckTorment
+	inc c
+	call IsStatusMove
+	jr nc, .CheckTauntMove
+
+.ScoreTauntedMove:
+	push hl
+	ld hl, wBuffer1
+	ld b, 0
+	dec c
+	add hl, bc
+	inc c
+	ld [hl], 80
+	pop hl
+	inc c
+	jr .CheckTauntMove
+
+.CheckTorment
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TORMENT, a
+	jr z, .CheckImprison
+
+	ld hl, wEnemyMonMoves
+	ld c, 0
+.CheckTormentMove:
+	ld a, c
+	cp 4
+	jr z, .CheckImprison
+	ld a, [hli]
+	and a
+	jr z, .CheckImprison
+	ld b, a
+	ld a, [wLastEnemyCounterMove]
+	inc c
+	cp b
+	jr nz, .CheckTormentMove
+
+.ScoreTormentMove:
+	push hl
+	ld hl, wBuffer1
+	ld b, 0
+	dec c
+	add hl, bc
+	inc c
+	ld [hl], 80
+	pop hl
+	inc c
+	jr .CheckTormentMove
+
+.CheckImprison
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_IMPRISON, a
+	jr z, .CheckPP
+
+	ld hl, wEnemyMonMoves
+	ld c, 0
+.CheckImprisonMove:
+	ld a, c
+	cp 4
+	jr z, .CheckPP
+	ld a, [hli]
+	and a
+	jr z, .CheckPP
+	inc c
+	call CheckEnemyMoveImprisoned
+	jr nc, .CheckImprisonMove
+
+.ScoreImprisonMove:
+	push hl
+	ld hl, wBuffer1
+	ld b, 0
+	dec c
+	add hl, bc
+	inc c
+	ld [hl], 80
+	pop hl
+	inc c
+	jr .CheckImprisonMove
 
 ; Don't pick moves with 0 PP.
 .CheckPP:
@@ -215,3 +308,26 @@ AIScoringPointers:
 	dw AI_None
 	dw AI_None
 	dw AI_None
+
+CheckEnemyMoveImprisoned:
+	push hl
+	push bc
+	ld b, a
+	ld c, 4
+	ld hl, wBattleMonMoves
+.loop
+	ld a, [hli]
+	cp b
+	jr z, .hit
+	dec c
+	jr nz, .loop
+	pop bc
+	pop hl
+	and a
+	ret
+
+.hit
+	pop bc
+	pop hl
+	scf
+	ret

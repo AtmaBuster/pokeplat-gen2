@@ -114,8 +114,10 @@ BattleText_UserRecoveredPPUsing:
 
 BattleText_TargetWasHitByFutureSight:
 	text "<TARGET>"
-	line "was hit by FUTURE"
-	cont "SIGHT!"
+	line "was hit by"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
 	prompt
 
 BattleText_SafeguardFaded:
@@ -346,6 +348,11 @@ BattleText_TheresNoPPLeftForThisMove:
 BattleText_TheMoveIsDisabled:
 	text "The move is"
 	line "DISABLED!"
+	prompt
+
+BattleText_TheMoveCantBeSelected:
+	text "The move can't be"
+	line "selected!"
 	prompt
 
 BattleText_MonHasNoMovesLeft:
@@ -911,7 +918,7 @@ NothingHappenedText:
 	line "happened."
 	prompt
 
-ButItFailedText:
+ButItFailedText::
 	text "But it failed!"
 	prompt
 
@@ -1240,4 +1247,378 @@ TargetGotItemText:
 	line "got @"
 	text_ram wStringBuffer1
 	text "!"
+	prompt
+
+FellForTauntText:
+	text "<TARGET>"
+	line "fell for the"
+	cont "TAUNT!"
+	prompt
+
+BattleText_TauntWoreOff:
+	text "<USER>'s"
+	line "TAUNT wore off!"
+	prompt
+
+StatusHealText:
+	text "<USER>'s"
+	line "status returned"
+	cont "to normal!"
+	prompt
+
+TormentText:
+	text "<TARGET>"
+	line "was subjected to"
+	cont "TORMENT!"
+	prompt
+
+ImprisonText:
+	text "<USER>"
+	line "sealed the move(s)"
+	cont "of its opponent!"
+	prompt
+
+WaterSportText:
+	text "Electricity's power"
+	line "was weakened!"
+	prompt
+
+MudSportText:
+	text "Fire's power was"
+	line "weakened!"
+	prompt
+
+IngrainText:
+	text "<USER>"
+	line "planted its roots!"
+	prompt
+
+AbsorbedNutrientsText:
+	text "<TARGET>"
+	line "absorbed nutrients"
+	cont "with its roots!"
+	prompt
+
+AquaRingText:
+	text "<USER>"
+	line "surrounded itself"
+	cont "with a water veil!"
+	prompt
+
+RestoredHPText:
+	text "<TARGET>"
+	line "restored HP from"
+	cont "the veil of water!"
+	prompt
+
+CausedAnUproarText:
+	text "<USER>"
+	line "caused an uproar!"
+	prompt
+
+MakingAnUproarText:
+	text "<USER>"
+	line "is making an"
+	cont "uproar!"
+	prompt
+
+UproarCalmedDownText:
+	text "<TARGET>"
+	line "calmed down."
+	prompt
+
+UproarWokeUpText:
+	text "<USER>"
+	line "woke up from the"
+	cont "uproar!"
+	prompt
+
+StockpileText:
+	text "<USER>"
+	line "STOCKPILED @"
+	text_decimal wStringBuffer1, 1, 1
+	text "!"
+	prompt
+
+StockpileWoreOffText:
+	text "STOCKPILE's effect"
+	line "wore off."
+	prompt
+
+RecycleText:
+	text "<USER>"
+	line "found one"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+KnockOffText:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "knocked off!"
+	prompt
+
+SlowStartActivateText:
+	text "<USER>"
+	line "can't get it going!"
+	prompt
+
+SlowStartFinishText:
+	text "<USER>"
+	line "finally got its"
+	cont "act together!"
+	prompt
+
+SlowStartActivateText2:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text_start
+	line "can't get it going!"
+	prompt
+
+TailwindPeteredOutText:
+	text "<USER>'s"
+	line "TAILWIND petered"
+	cont "out!"
+	prompt
+
+TailwindText:
+	text "<USER>"
+	line "blew a TAILWIND!"
+	prompt
+
+TightenFocusText:
+	text "<USER>"
+	line "is tightening its"
+	cont "focus!"
+	prompt
+
+LostFocusText:
+	text "<USER>"
+	line "lost its focus and"
+	cont "couldn't move!"
+	prompt
+
+SwitchedStatChangesText:
+	text "<USER>"
+	line "switched stat"
+	cont "changes with the"
+	cont "target!"
+	prompt
+
+GravityReturnedText:
+	text "Gravity returned"
+	line "to normal!"
+	prompt
+
+GravityText:
+	text "Gravity"
+	line "intensified!"
+	prompt
+
+MagnetRiseText:
+	text "<USER>"
+	line "levitated on"
+	cont "electromagnetism!"
+	prompt
+
+MagnetRiseWoreOffText:
+	text "<USER>'s"
+	line "electromagnetism"
+	cont "wore off!"
+	prompt
+
+CouldntStayAirborneText:
+	text "<TARGET>"
+	line "couldn't stay in"
+	cont "the air because of"
+	cont "GRAVITY!"
+	prompt
+
+UserTwistedDimensionText:
+	text "<USER>"
+	line "twisted the"
+	cont "dimension!"
+	prompt
+
+UserRestoredDimensionText:
+	text "<USER>"
+	line "restored the"
+	cont "twisted dimension!"
+	prompt
+
+TrickRoomEndedText:
+	text "The twisted"
+	line "dimension returned"
+	cont "to normal!"
+	prompt
+
+HealBlockText:
+	text "<TARGET>"
+	line "was prevented from"
+	cont "healing!"
+	prompt
+
+HealBlockWoreOffText:
+	text "<TARGET>'s"
+	line "HEAL BLOCK wore"
+	cont "off!"
+	prompt
+
+AlreadyBurnedText:
+	text "<TARGET>'s"
+	line "already burned!"
+	prompt
+
+SandTombTrapText:
+	text "<TARGET>"
+	line "was trapped by"
+	cont "SAND TOMB!"
+	prompt
+
+MagmaStormTrapText:
+	text "<TARGET>"
+	line "became trapped by"
+	cont "swirling magma!"
+	prompt
+
+ChargeText:
+	text "<USER>"
+	line "is charging power!"
+	prompt
+
+WonderGuardMissText:
+	text "<TARGET>"
+	line "was protected by"
+	cont "WONDER GUARD!"
+	prompt
+
+MadeDrowsyText:
+	text "<USER>"
+	line "made"
+	cont "<TARGET>"
+	cont "drowsy!"
+	prompt
+
+BearAGrudgeText:
+	text "<USER>"
+	line "wants the foe to"
+	cont "bear a grudge!"
+	prompt
+
+LostPPDueToGrudgeText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " lost"
+	cont "all its PP due to"
+	cont "the grudge!"
+	prompt
+
+DoomDesireText:
+	text "<USER>"
+	line "chose DOOM DESIRE"
+	cont "as its destiny!"
+	prompt
+
+TruantText:
+	text "<USER>"
+	line "is loafing around!"
+	prompt
+
+MadeAWishText:
+	text "<USER>"
+	line "made a wish!"
+	prompt
+
+BattleText_WishCameTrueText:
+	text "<USER>'s"
+	line "wish came true!"
+	prompt
+
+MagicCoatText:
+	text "<USER>"
+	line "shrouded itself in"
+	cont "MAGIC COAT!"
+	prompt
+
+BouncedBackText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "bounced back!"
+	prompt
+
+WaitsForMoveText:
+	text "<USER>"
+	line "waits for a target"
+	cont "to make a move!"
+	prompt
+
+SnatchedMoveText:
+	text "<TARGET>"
+	line "snatched"
+	cont "<USER>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+ShieldedFromCritText:
+	text "The LUCKY CHANT is"
+	line "shielding from"
+	cont "critical hits!"
+	prompt
+
+LuckyChantWoreOffText:
+	text "<USER>'s"
+	line "team's LUCKY CHANT"
+	cont "wore off!"
+	prompt
+
+DefogBlewAwayText:
+	text "<USER>"
+	line "blew away"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+AlreadyFrozenText:
+	text "<TARGET>'s"
+	line "already frozen!"
+	prompt
+
+PluckText:
+	text "<USER>"
+	line "stole and ate"
+	cont "<TARGET>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
+HealingWishText:
+	text "The healing wish"
+	line "came true!"
+	prompt
+
+LunarDanceText:
+	text "It became cloaked"
+	line "in moonlight!"
+	prompt
+
+PowerTrickText:
+	text "<USER>"
+	line "switched ATTACK"
+	cont "and DEFENSE!"
+	prompt
+
+EmbargoText:
+	text "<TARGET>"
+	line "can't use items!"
 	prompt

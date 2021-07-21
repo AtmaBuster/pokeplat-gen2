@@ -165,6 +165,9 @@ BattleTextbox::
 	pop hl
 	jp PrintTextboxText
 
+PrintButItFailed::
+	ld hl, ButItFailedText
+
 StdBattleTextbox::
 ; Open a textbox and print battle text at 20:hl.
 
@@ -257,4 +260,31 @@ BattleCommand_switchturn::
 	ldh a, [hBattleTurn]
 	xor 1
 	ldh [hBattleTurn], a
+	ret
+
+IsOpponentLevitateMon::
+	call BattleCommand_switchturn
+	call IsCurrentMonLevitateMon
+	push af
+	call BattleCommand_switchturn
+	pop af
+	ret
+
+IsCurrentMonLevitateMon::
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .go
+	ld a, [wEnemyMonSpecies]
+.go
+
+; fallthrough
+
+IsLevitateMon::
+	push bc
+	push hl
+	ld b, a
+	farcall _IsLevitateMon
+	pop hl
+	pop bc
 	ret

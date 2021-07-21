@@ -1,5 +1,6 @@
 GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
+	call DoPickup
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
 	ld b, a
@@ -165,3 +166,61 @@ ConvertBerriesToBerryJuice:
 	pop hl
 	pop af
 	jr .done
+
+DoPickup:
+; for each mon in the party, if it is a Pickup mon, try to give it an item
+	ld e, 0
+.loop
+	push de
+	call .try
+	pop de
+	inc e
+	ld a, [wPartyCount]
+	cp e
+	jr nz, .loop
+
+.try
+	ld a, e
+	ld hl, wPartyMon1Species
+	call GetPartyLocation
+	ld a, [hli]
+	ld b, a
+	push hl
+	farcall _IsPickupMon
+	pop hl
+	ret nc
+	ld a, [hl]
+	and a
+	ret nz
+	call Random
+	ldh a, [hRandomAdd]
+	cp 10 percent
+	ret nc
+	ldh a, [hRandomSub]
+	ld e, a
+	push hl
+	ld hl, PickupTable
+.get_item_loop
+	ld a, [hli]
+	cp e
+	jr nc, .got_item
+	inc hl
+	jr .get_item_loop
+
+.got_item
+	ld a, [hl]
+	pop hl
+	ld [hl], a
+	ret
+
+PickupTable:
+	db  30 percent, SUPER_POTION
+	db  40 percent, ULTRA_BALL
+	db  50 percent, FULL_RESTORE
+	db  60 percent, FULL_HEAL
+	db  70 percent, NUGGET
+	db  80 percent, REVIVE
+	db  90 percent, RARE_CANDY
+	db  95 percent, PROTEIN
+	db  99 percent, PP_UP
+	db 100 percent, KINGS_ROCK

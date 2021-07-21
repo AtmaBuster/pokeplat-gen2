@@ -6,6 +6,7 @@ MoveEffectPriorities:
 	db EFFECT_FEINT,        8
 	db EFFECT_PRIORITY_HIT, 7
 	db EFFECT_FAKE_OUT,     7
+	db EFFECT_SUCKER_PUNCH, 7
 	db EFFECT_VITAL_THROW,  5
 	db EFFECT_FOCUS_PUNCH,  4
 	db EFFECT_REVENGE,      3

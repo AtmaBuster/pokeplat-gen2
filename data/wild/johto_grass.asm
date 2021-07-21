@@ -1194,7 +1194,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 IF DEF(_DEBUG)
 REPT 21
-	dbw 15, ARCEUS
+	dbw 45, SHEDINJA
 ENDR
 ELSE
 	; morn

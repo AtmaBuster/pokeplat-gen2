@@ -44,8 +44,8 @@ BattleCommand_sleeptalk:
 	ld a, e
 	cp d
 	jr z, .sample_move
-	call .check_two_turn_move
-	jr z, .sample_move
+	call .check_valid_move
+	jr nc, .sample_move
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
 	ld a, e
@@ -100,8 +100,8 @@ BattleCommand_sleeptalk:
 	cp b
 	jr z, .nope
 
-	call .check_two_turn_move
-	jr nz, .no_carry
+	call .check_valid_move
+	jr c, .no_carry
 
 .nope
 	inc hl
@@ -116,28 +116,22 @@ BattleCommand_sleeptalk:
 	and a
 	ret
 
-.check_two_turn_move
+.check_valid_move
 	push hl
 	push de
 	push bc
 
-	ld b, a
-	callfar GetMoveEffect
-	ld a, b
+	call GetMoveIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, SleepTalkExceptionMoves
+	ld de, 2
+	call IsInHalfwordArray
 
 	pop bc
 	pop de
 	pop hl
 
-	cp EFFECT_SKULL_BASH
-	ret z
-	cp EFFECT_RAZOR_WIND
-	ret z
-	cp EFFECT_SKY_ATTACK
-	ret z
-	cp EFFECT_SOLARBEAM
-	ret z
-	cp EFFECT_FLY
-	ret z
-	cp EFFECT_BIDE
 	ret
+
+INCLUDE "data/moves/sleep_talk_exception_moves.asm"

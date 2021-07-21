@@ -64,8 +64,8 @@ MoveEffectsPointers:
 	dw SpeedDown2                    ; SPEED_DOWN_2
 	dw SpecialDefenseDown2Hit        ; SP_DEF_DOWN_2_HIT
 	dw SpecialDefenseDown2           ; SP_DEF_DOWN_2
-	dw Splash                        ; SP_ATK_UP_HIT
-	dw Splash                        ; UNUSED_40
+	dw SpecialAttackUpHit            ; SP_ATK_UP_HIT
+	dw Whirlpool                     ; WHIRLPOOL
 	dw Reflect                       ; REFLECT
 	dw DoPoison                      ; POISON
 	dw DoParalyze                    ; PARALYZE
@@ -97,7 +97,7 @@ MoveEffectsPointers:
 	dw Conversion2                   ; CONVERSION2
 	dw LockOn                        ; LOCK_ON
 	dw Sketch                        ; SKETCH
-	dw Splash                        ; UNUSED_60
+	dw Surf                          ; UNUSED_60
 	dw SleepTalk                     ; SLEEP_TALK
 	dw DestinyBond                   ; DESTINY_BOND
 	dw Reversal                      ; REVERSAL
@@ -111,7 +111,7 @@ MoveEffectsPointers:
 	dw Nightmare                     ; NIGHTMARE
 	dw FlameWheel                    ; FLAME_WHEEL
 	dw Curse                         ; CURSE
-	dw Splash                        ; STRUGGLE
+	dw Splash                        ; UNUSED_6E
 	dw Protect                       ; PROTECT
 	dw Spikes                        ; SPIKES
 	dw Foresight                     ; FORESIGHT
@@ -159,97 +159,97 @@ MoveEffectsPointers:
 	dw Fly                           ; FLY
 	dw DefenseCurl                   ; DEFENSE_CURL
 	dw NormalHit                     ; VITAL_THROW
-	dw Splash                        ; UPROAR
-	dw Splash                        ; STOCKPILE
-	dw Splash                        ; SPIT_UP
-	dw Splash                        ; SWALLOW
+	dw Uproar                        ; UPROAR
+	dw Stockpile                     ; STOCKPILE
+	dw SpitUp                        ; SPIT_UP
+	dw Swallow                       ; SWALLOW
 	dw Hail                          ; HAIL
-	dw Splash                        ; TORMENT
+	dw Torment                       ; TORMENT
 	dw Flatter                       ; FLATTER
 	dw WillOWisp                     ; WILL_O_WISP
 	dw Memento                       ; MEMENTO
 	dw Facade                        ; FACADE
-	dw Splash                        ; FOCUS_PUNCH
-	dw Splash                        ; SMELLINGSALT
+	dw FocusPunch                    ; FOCUS_PUNCH
+	dw SmellingSalt                  ; SMELLINGSALT
 	dw NaturePower                   ; NATURE_POWER
-	dw Splash                        ; CHARGE
-	dw Splash                        ; TAUNT
+	dw Charge                        ; CHARGE
+	dw Taunt                         ; TAUNT
 	dw Trick                         ; TRICK
 	dw Splash                        ; UNUSED_AE
-	dw Splash                        ; WISH
-	dw Splash                        ; ASSIST
-	dw Splash                        ; INGRAIN
+	dw Wish                          ; WISH
+	dw Assist                        ; ASSIST
+	dw Ingrain                       ; INGRAIN
 	dw Superpower                    ; SUPERPOWER
-	dw Splash                        ; MAGIC_COAT
-	dw Splash                        ; RECYCLE
-	dw Splash                        ; REVENGE
+	dw MagicCoat                     ; MAGIC_COAT
+	dw Recycle                       ; RECYCLE
+	dw Revenge                       ; REVENGE
 	dw BrickBreak                    ; BRICK_BREAK
-	dw Splash                        ; YAWN
-	dw Splash                        ; KNOCK_OFF
+	dw Yawn                          ; YAWN
+	dw KnockOff                      ; KNOCK_OFF
 	dw Endeavor                      ; ENDEAVOR
 	dw Splash                        ; UNUSED_BA
 	dw Splash                        ; UNUSED_BB
-	dw Splash                        ; IMPRISON
-	dw Splash                        ; REFRESH
-	dw Splash                        ; GRUDGE
-	dw Splash                        ; SNATCH
-	dw Splash                        ; SECRET_POWER
+	dw Imprison                      ; IMPRISON
+	dw Refresh                       ; REFRESH
+	dw Grudge                        ; GRUDGE
+	dw Snatch                        ; SNATCH
+	dw SecretPower                   ; SECRET_POWER
 	dw Camouflage                    ; CAMOUFLAGE
 	dw Splash                        ; UNUSED_C2
-	dw Splash                        ; MUD_SPORT
+	dw MudSport                      ; MUD_SPORT
 	dw PoisonFang                    ; POISON_FANG
 	dw NormalHit                     ; WEATHER_BALL
 	dw HPScaleHit                    ; HP_SCALING_HIT
 	dw Splash                        ; UNUSED_C7
 	dw Bounce                        ; BOUNCE
 	dw VoltTackle                    ; VOLT_TACKLE
-	dw Splash                        ; WATER_SPORT
-	dw Splash                        ; DOOM_DESIRE
-	dw Splash                        ; ROOST
-	dw Splash                        ; GRAVITY
-	dw Splash                        ; MIRACLE_EYE
-	dw Splash                        ; WAKE_UP_SLAP
+	dw WaterSport                    ; WATER_SPORT
+	dw Splash                        ; UNUSED_CB
+	dw Splash                        ; UNUSED_CC
+	dw Gravity                       ; GRAVITY
+	dw MiracleEye                    ; MIRACLE_EYE
+	dw WakeUpSlap                    ; WAKE_UP_SLAP
 	dw HammerArm                     ; HAMMER_ARM
-	dw Splash                        ; GYRO_BALL
-	dw Splash                        ; HEALING_WISH
+	dw GyroBall                      ; GYRO_BALL
+	dw HealingWish                   ; HEALING_WISH
 	dw Brine                         ; BRINE
-	dw Splash                        ; NATURAL_GIFT
-	dw Splash                        ; FEINT
-	dw Splash                        ; PLUCK
-	dw Splash                        ; TAILWIND
-	dw Splash                        ; ACUPRESSURE
-	dw Splash                        ; METAL_BURST
-	dw Splash                        ; U_TURN
+	dw NaturalGift                   ; NATURAL_GIFT
+	dw NormalHit                     ; FEINT
+	dw Pluck                         ; PLUCK
+	dw Tailwind                      ; TAILWIND
+	dw Acupressure                   ; ACUPRESSURE
+	dw MetalBurst                    ; METAL_BURST
+	dw UTurn                         ; U_TURN
 	dw CloseCombat                   ; CLOSE_COMBAT
-	dw Splash                        ; PAYBACK
-	dw Splash                        ; ASSURANCE
-	dw Splash                        ; EMBARGO
-	dw Splash                        ; FLING
-	dw Splash                        ; PSYCHO_SHIFT
-	dw Splash                        ; TRUMP_CARD
-	dw Splash                        ; HEAL_BLOCK
-	dw Splash                        ; WRING_OUT
-	dw Splash                        ; POWER_TRICK
+	dw Payback                       ; PAYBACK
+	dw Splash                        ; UNUSED_DD
+	dw Embargo                       ; EMBARGO
+	dw Fling                         ; FLING
+	dw PsychoShift                   ; PSYCHO_SHIFT
+	dw TrumpCard                     ; TRUMP_CARD
+	dw HealBlock                     ; HEAL_BLOCK
+	dw Splash                        ; UNUSED_E3
+	dw PowerTrick                    ; POWER_TRICK
 	dw Splash                        ; UNUSED_E5
-	dw Splash                        ; LUCKY_CHANT
-	dw Splash                        ; ME_FIRST
-	dw Splash                        ; COPYCAT
-	dw Splash                        ; POWER_SWAP
-	dw Splash                        ; GUARD_SWAP
-	dw Splash                        ; PUNISHMENT
-	dw Splash                        ; LAST_RESORT
+	dw LuckyChant                    ; LUCKY_CHANT
+	dw MeFirst                       ; ME_FIRST
+	dw Copycat                       ; COPYCAT
+	dw PowerSwap                     ; POWER_SWAP
+	dw GuardSwap                     ; GUARD_SWAP
+	dw Punishment                    ; PUNISHMENT
+	dw LastResort                    ; LAST_RESORT
 	dw Splash                        ; UNUSED_ED
-	dw Splash                        ; SUCKER_PUNCH
+	dw SuckerPunch                   ; SUCKER_PUNCH
 	dw ToxicSpikes                   ; TOXIC_SPIKES
-	dw Splash                        ; HEART_SWAP
-	dw Splash                        ; AQUA_RING
-	dw Splash                        ; MAGNET_RISE
+	dw HeartSwap                     ; HEART_SWAP
+	dw AquaRing                      ; AQUA_RING
+	dw MagnetRise                    ; MAGNET_RISE
 	dw FlareBlitz                    ; FLARE_BLITZ
-	dw Splash                        ; DEFOG
-	dw Splash                        ; TRICK_ROOM
-	dw Splash                        ; CAPTIVATE
+	dw Defog                         ; DEFOG
+	dw TrickRoom                     ; TRICK_ROOM
+	dw Captivate                     ; CAPTIVATE
 	dw StealthRock                   ; STEALTH_ROCK
 	dw WeightDamage                  ; WEIGHT_DAMAGE
 	dw NormalHit                     ; JUDGMENT
-	dw Splash                        ; BUG_BITE
-	dw Splash                        ; LUNAR_DANCE
+	dw Splash                        ; UNUSED_FA
+	dw LunarDance                    ; LUNAR_DANCE

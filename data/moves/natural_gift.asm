@@ -1,0 +1,20 @@
+NaturalGiftItemTable:
+	;  item,         type,     power
+	db PSNCUREBERRY, POISON,   60
+	db PRZCUREBERRY, ELECTRIC, 60
+	db BURNT_BERRY,  ICE,      60
+	db ICE_BERRY,    FIRE,     60
+	db BITTER_BERRY, PSYCHIC,  60
+	db MINT_BERRY,   GHOST,    60
+	db MIRACLEBERRY, DRAGON,   60
+	db MYSTERYBERRY, FIGHTING, 60
+	db BERRY,        GRASS,    60
+	db GOLD_BERRY,   STEEL,    60
+	db RED_APRICORN, ROCK,     60
+	db BLU_APRICORN, WATER,    60
+	db YLW_APRICORN, GROUND,   60
+	db GRN_APRICORN, BUG,      60
+	db WHT_APRICORN, FLYING,   60
+	db BLK_APRICORN, DARK,     60
+	db PNK_APRICORN, NORMAL,   60
+	db -1

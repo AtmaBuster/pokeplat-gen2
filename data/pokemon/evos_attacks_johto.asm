@@ -868,7 +868,7 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
-	dbbbw EVOLVE_LEVEL_WITH_MOVE, 1, ANCIENTPOWER, YANMEGA
+	dbbww EVOLVE_LEVEL_WITH_MOVE, 1, ANCIENTPOWER, YANMEGA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, FORESIGHT
@@ -1110,8 +1110,7 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
-	;dbbbw EVOLVE_LEVEL_WITH_ITEM_NIGHT, 1, RAZOR_FANG, GLISCOR
-	dbbbw EVOLVE_LEVEL_WITH_ITEM_NIGHT, 1, POTION, GLISCOR
+	dbbbw EVOLVE_LEVEL_WITH_ITEM_NIGHT, 1, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 5, SAND_ATTACK
@@ -1269,7 +1268,7 @@ HeracrossEvosAttacks:
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
-	;dbbw EVOLVE_HOLD, RAZOR_CLAW, WEAVILE
+	dbbbw EVOLVE_LEVEL_WITH_ITEM_NIGHT, 1, RAZOR_CLAW, WEAVILE
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
