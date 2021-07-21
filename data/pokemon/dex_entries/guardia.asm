@@ -6,5 +6,5 @@
 	
 	page "its skull is five"
 	next "times harder than"
-	next "stainelss steel.@"
+	next "staineless steel.@"
 
