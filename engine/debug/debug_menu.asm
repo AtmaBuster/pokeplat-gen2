@@ -104,10 +104,11 @@ DebugMenu::
 	db "PC@"
 	db "Fill Bag@"
 	db "Fill TM/HM@"
+	db "Play Cry@"
 
 .MenuItems
-	db 12
-	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+	db 13
+	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 	db -1
 
 .Jumptable
@@ -123,6 +124,7 @@ DebugMenu::
 	dw Debug_PC
 	dw Debug_FillBag
 	dw Debug_FillTMHM
+	dw Debug_PlayCry
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -1088,4 +1090,309 @@ Debug_FillTMHM:
 	dec e
 	jr nz, .loop
 	popwrambank
+	ret
+
+Debug_PlayCry:
+	ld de, MUSIC_NONE
+	call PlayMusic
+	xor a
+	ld hl, hDebugMenuDataBuffer
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hDebugMenuCursorPos], a
+	ld a, LOW(hDebugMenuDataBuffer)
+	ld [hl], a
+	hlcoord 0, 0
+	lb bc, 7, SCREEN_WIDTH - 2
+	call Textbox
+	call WaitBGMap2
+	call .update_numbers
+.loop
+	call JoyTextDelay
+	ldh a, [hJoyLast]
+	cp B_BUTTON
+	ret z
+	cp D_LEFT
+	jr z, .left
+	cp D_RIGHT
+	jr z, .right
+	cp A_BUTTON
+	jr z, .play
+	cp D_UP
+	jr z, .up
+	cp D_DOWN
+	jr z, .down
+	jr .loop
+	ret
+
+.left
+	ldh a, [hDebugMenuDataBuffer + 8]
+	ld c, a
+	ldh a, [c]
+	ld h, a
+	inc c
+	ldh a, [c]
+	ld l, a
+	call .updateleft
+	ld a, l
+	ldh [c], a
+	dec c
+	ld a, h
+	ldh [c], a
+	call .update_numbers
+	jr .loop
+
+.right
+	ldh a, [hDebugMenuDataBuffer + 8]
+	ld c, a
+	ldh a, [c]
+	ld h, a
+	inc c
+	ldh a, [c]
+	ld l, a
+	call .updateright
+	ld a, l
+	ldh [c], a
+	dec c
+	ld a, h
+	ldh [c], a
+	call .update_numbers
+	jr .loop
+
+.up
+	ldh a, [hDebugMenuDataBuffer + 8]
+	cp LOW(hDebugMenuDataBuffer)
+	jr z, .underflow
+	dec a
+	dec a
+	jr .set_cursor
+.underflow
+	ld a, LOW(hDebugMenuDataBuffer + 6)
+	jr .set_cursor
+
+.down
+	ldh a, [hDebugMenuDataBuffer + 8]
+	cp LOW(hDebugMenuDataBuffer + 6)
+	jr z, .overrflow
+	inc a
+	inc a
+	jr .set_cursor
+.overrflow
+	ld a, LOW(hDebugMenuDataBuffer)
+
+.set_cursor
+	ldh [hDebugMenuDataBuffer + 8], a
+	call .update_numbers
+	jr .loop
+
+.play
+	ld a, [hJoyDown]
+	and SELECT
+	jr nz, .copyvanilla
+	ld hl, hDebugMenuDataBuffer + 2
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	inc hl
+	ld a, [hli]
+	ld [wCryPitch + 1], a
+	ld a, [hli]
+	ld [wCryPitch], a
+	ld a, [hli]
+	ld [wCryLength + 1], a
+	ld a, [hl]
+	ld [wCryLength], a
+	farcall _PlayCry
+	jp .loop
+
+.copyvanilla
+	ld hl, hDebugMenuDataBuffer
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	dec de
+	ld a, d
+	and a
+	ld hl, PokemonCries
+	ld a, BANK(PokemonCries)
+	add hl, de
+	add hl, de
+	add hl, de
+	add hl, de
+	add hl, de
+	add hl, de
+	ld de, hDebugMenuDataBuffer + 2
+	ld bc, 6
+	call FarCopyBytes
+	ld c, LOW(hDebugMenuDataBuffer + 2)
+REPT 3
+	ldh a, [c]
+	inc c
+	ld d, a
+	ldh a, [c]
+	ld e, a
+	ld a, d
+	ldh [c], a
+	dec c
+	ld a, e
+	ldh [c], a
+	inc c
+	inc c
+ENDR
+	call .update_numbers
+	jp .loop
+
+.update_numbers
+	hlcoord 8, 1
+	ld bc, 11
+	ld a, " "
+	call ByteFill
+	hlcoord 1, 1
+	ld bc, SCREEN_WIDTH * 2
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	add hl, bc
+	ld [hl], a
+	ldh a, [hDebugMenuDataBuffer + 8]
+	sub LOW(hDebugMenuDataBuffer)
+	hlcoord 1, 1
+	ld bc, SCREEN_WIDTH
+	call AddNTimes
+	ld a, "▶"
+	ld [hl], a
+	hlcoord 2, 3
+	ld de, .basecry
+	call PlaceString
+	hlcoord 2, 5
+	ld de, .pitch
+	call PlaceString
+	hlcoord 2, 7
+	ld de, .length
+	call PlaceString
+	hlcoord 8, 3
+	ld de, hDebugMenuDataBuffer + 2
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	hlcoord 8, 5
+	ld de, hDebugMenuDataBuffer + 4
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	hlcoord 8, 7
+	ld de, hDebugMenuDataBuffer + 6
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	hlcoord 15, 3
+	ld de, hDebugMenuDataBuffer + 2
+	ld b, 2
+	call PrintHexNum
+	hlcoord 15, 5
+	ld de, hDebugMenuDataBuffer + 4
+	ld b, 2
+	call PrintHexNum
+	hlcoord 15, 7
+	ld de, hDebugMenuDataBuffer + 6
+	ld b, 2
+	call PrintHexNum
+	hlcoord 2, 1
+	ld de, hDebugMenuDataBuffer
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
+	call PrintNum
+	ldh a, [hDebugMenuDataBuffer]
+	cp HIGH(NUM_POKEMON)
+	jr c, .show_name
+	ldh a, [hDebugMenuDataBuffer + 1]
+	cp LOW(NUM_POKEMON) + 1
+	ret nc
+.show_name
+	ldh a, [hDebugMenuDataBuffer]
+	ld h, a
+	ldh a, [hDebugMenuDataBuffer + 1]
+	ld l, a
+	call GetPokemonIDFromIndex
+	ld [wNamedObjectIndexBuffer], a
+	call GetPokemonName
+	ld de, wStringBuffer1
+	hlcoord 8, 1
+	call PlaceString
+	ret
+
+.basecry
+	db "Base@"
+.pitch
+	db "Pitch@"
+.length
+	db "Length@"
+
+.updateleft
+	call .getupdateamt
+.leftloop
+	dec hl
+	dec de
+	ld a, d
+	or e
+	jr nz, .leftloop
+	ret
+
+.updateright
+	call .getupdateamt
+.rightloop
+	inc hl
+	dec de
+	ld a, d
+	or e
+	jr nz, .rightloop
+	ret
+
+.getupdateamt
+	ldh a, [hJoyDown]
+	and START | SELECT
+	and a
+	jr z, .neither
+	cp START
+	jr z, .start
+	cp SELECT
+	jr z, .select
+; both
+	ld de, 1000
+	ret
+.select
+	ld de, 10
+	ret
+.start
+	ld de, 100
+	ret
+.neither
+	ld de, 1
+	ret
+
+PrintHexNum:
+	ld a, [de]
+	inc de
+	call .print_byte
+	dec b
+	jr nz, PrintHexNum
+	ret
+
+.print_byte
+	push af
+	swap a
+	call .print_digit
+	pop af
+.print_digit
+	and $f
+	cp $a
+	jr c, .ok
+	add "A"
+.ok
+	add "0"
+	ld [hli], a
 	ret

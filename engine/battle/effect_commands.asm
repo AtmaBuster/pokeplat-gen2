@@ -1079,14 +1079,12 @@ BattleCommand_doturn:
 	jr nz, .not_status_move
 
 	ld a, [de]
-	dec de
 	bit SUBSTATUS_TAUNT, a
 	jp nz, .taunt_fail
 
 .not_status_move
 	; SubStatus5
-	inc de
-	inc de
+	dec de
 
 	ld a, [de]
 	bit SUBSTATUS_TRANSFORMED, a
@@ -4182,7 +4180,7 @@ BattleCommand_burntarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	farcall CheckIfTargetIsFireType ; Don't burn a Fire-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -4251,7 +4249,7 @@ BattleCommand_freezetarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	farcall CheckIfTargetIsIceType ; Don't freeze an Ice-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -11074,7 +11072,7 @@ FlingBerryEffects:
 	farcall RestoreHP
 ;	call BattleCommand_switchturn
 ;	ld hl, PluckText
-	call StdBattleTextbox
+;	call StdBattleTextbox
 
 	ret
 
