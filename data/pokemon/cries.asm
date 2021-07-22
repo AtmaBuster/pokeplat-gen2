@@ -537,7 +537,7 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; GLACIHARE - todo
 	mon_cry CRY_RATTATA,     $000,  $001 ; STEMINEEL - todo
 	mon_cry CRY_MUK,         $046,  $14b ; ARSKEED
-	mon_cry CRY_RATTATA,     $000,  $001 ; DRAKARVE  - todo
+	mon_cry CRY_VULPIX,      $74c,  $140 ; DRAKARVE
 	mon_cry CRY_MARILL,      $0c0,  $090 ; PETICORN
 	mon_cry CRY_SPEAROW,     $0a0,  $050 ; GUPGOLD
 	mon_cry CRY_LAPRAS,      $0B0,  $0D0 ; TRITALES
