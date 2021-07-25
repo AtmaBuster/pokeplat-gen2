@@ -1095,7 +1095,7 @@ MonWeights::
 	dw 36   ; NYANYA
 	dw 136  ; PUDDIPUP
 	dw 204  ; CHIX
-	dw 45    ; KATU
+	dw 45   ; KATU
 	dw 199  ; TANGTRIP
 	dw 554  ; GELANIA
 	dw 123  ; BELMITT
