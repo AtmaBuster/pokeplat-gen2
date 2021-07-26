@@ -11199,7 +11199,7 @@ BattleCommand_effectchance:
 
 	xor a
 	ld [wEffectFailed], a
-	call CheckSubstituteOpp
+	farcall CheckSubstituteOpp
 	jr nz, .failed
 
 	push hl
