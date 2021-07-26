@@ -955,6 +955,7 @@ wMiningHitsLeft:: db
 
 wMiningRockLayerBuffer:: ds 5
 wMiningGameAnimTimer:: db
+wMiningFoundNewObjectTile::
 wMiningGameFailsafeCounter:: db
 
 wMiningGameEnd::

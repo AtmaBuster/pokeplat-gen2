@@ -1,9 +1,16 @@
 SECTION "Mining Game", ROMX
 
+ForcePlaySFX:
+	push de
+	call SFXChannelsOff
+	pop de
+	call PlaySFX
+	ret
+
 MINING_GAME_MIN_CRACK EQU 10
 MINING_GAME_MAX_HITS EQU 57 + MINING_GAME_MIN_CRACK
 
-MINING_GAME_NUM_ITEMS EQU 4
+MINING_GAME_NUM_ITEMS EQU 9
 
 NUM_UNIQUE_ROCK_LAYERS EQU 32
 NUM_ROCK_LAYERS EQU NUM_UNIQUE_ROCK_LAYERS * 2
@@ -160,19 +167,23 @@ MiningAction_StartPlay:
 	ld hl, MiningText_Empty
 	call PrintText
 
+	xor a
+	ld [wMiningFoundNewObjectTile], a
+
 	call MiningAction_Next
 	ret
 
 MiningAction_Play:
 	call JoyTextDelay
+	ldh a, [hJoyLast]
+	and D_PAD
+	jr nz, MiningGame_HandleJoypad
 	ldh a, [hJoypadPressed]
-	bit SELECT_F, a
+	bit B_BUTTON_F, a
 	jr nz, .swap_tools
 	bit A_BUTTON_F, a
 	jr nz, MiningGame_UseTool
-	and D_PAD
-	ret z
-	jr MiningGame_HandleJoypad
+	ret
 
 .swap_tools
 	ld a, [wMiningTool]
@@ -371,7 +382,7 @@ MiningAction_Mine:
 
 .no_wall_or_object
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
-	call PlaySFX
+	call ForcePlaySFX
 
 	ld a, [wMiningTool]
 	and a
@@ -411,7 +422,7 @@ MiningAction_Mine:
 .hit_wall
 ; play sfx
 	ld de, SFX_GLASS_TING
-	call PlaySFX
+	call ForcePlaySFX
 ; return
 	jp MiningGame_DrawBoard
 
@@ -473,6 +484,15 @@ MiningGame_GetLocationOffset:
 MiningAction_Collapse:
 	call MiningGame_DrawCrack
 
+	ld a, [wMiningFoundNewObjectTile]
+	and a
+	jr z, .no_new
+	call WaitSFX
+	ld de, SFX_HIT_END_OF_EXP_BAR
+	call PlaySFX
+	xor a
+	ld [wMiningFoundNewObjectTile], a
+.no_new
 ; check if all items collected
 	ld hl, wMiningUncoveredObjects
 	ld e, 4
@@ -534,7 +554,7 @@ MiningGame_ShakeScreen:
 
 .play_sfx
 	ld de, SFX_MOVE_PUZZLE_PIECE
-	call PlaySFX
+	call ForcePlaySFX
 	ret
 
 MiningGame_ClearBoardAnim:
@@ -567,7 +587,7 @@ MiningGame_ClearBoardAnim:
 .play_sfx
 	push de
 	ld de, SFX_MOVE_PUZZLE_PIECE
-	call PlaySFX
+	call ForcePlaySFX
 	pop de
 	ret
 
@@ -872,7 +892,7 @@ MiningGame_GenerateItems:
 .loop
 	call Random
 	maskbits MINING_GAME_NUM_ITEMS
-	cp MINING_GAME_NUM_ITEMS + 1
+	cp MINING_GAME_NUM_ITEMS
 	jr nc, .loop
 	inc a
 	ld d, a
@@ -1457,6 +1477,10 @@ MiningGame_DrawBoard:
 	ld hl, wMiningUncoveredObjects
 	add hl, de
 	dec [hl]
+	jr nz, .not_done
+	ld a, 1
+	ld [wMiningFoundNewObjectTile], a
+.not_done
 	pop de
 
 	pop hl
