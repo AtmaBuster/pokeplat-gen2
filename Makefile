@@ -116,6 +116,9 @@ gfx/pokemon/castform/front_sun.animated.2bpp: gfx/pokemon/castform/front_sun.2bp
 
 ### Misc file-specific graphics rules
 
+engine/games/rock_layers.asm: gfx/underground/mining_layers.png
+	python tools/layertool.py $< $@
+
 gfx/pokemon/%/back.2bpp: rgbgfx += -h
 gfx/pokemon/castform/back_%.2bpp: rgbgfx += -h
 gfx/pokemon/cherrim/back_sun.2bpp: rgbgfx += -h
@@ -147,6 +150,9 @@ gfx/title/logo.2bpp: rgbgfx += -x 4
 
 gfx/trade/ball.2bpp: tools/gfx += --remove-whitespace
 gfx/trade/game_boy_n64.2bpp: tools/gfx += --trim-whitespace
+
+gfx/underground/minigame_obj.2bpp: tools/gfx += --interleave --png=$<
+gfx/underground/items/%.2bpp: tools/gfx += --remove-whitespace
 
 gfx/slots/slots_1.2bpp: tools/gfx += --trim-whitespace
 gfx/slots/slots_2.2bpp: tools/gfx += --interleave --png=$<

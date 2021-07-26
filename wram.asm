@@ -941,6 +941,24 @@ wNamingScreenCursorObjectPointer:: dw ; c6d5
 wNamingScreenLastCharacter:: db ; c6d7
 wNamingScreenStringEntryCoord:: dw ; c6d8
 
+NEXTU
+
+wMiningGame::
+
+wMiningBoardBase:: ds 130
+wMiningBoardDebris:: ds 130
+
+wMiningSpawnedObjects:: ds 4
+wMiningUncoveredObjects:: ds 4
+wMiningTool:: db
+wMiningHitsLeft:: db
+
+wMiningRockLayerBuffer:: ds 5
+wMiningGameAnimTimer:: db
+wMiningGameFailsafeCounter:: db
+
+wMiningGameEnd::
+
 NEXTU ; c6d0
 ; slot machine
 wSlots:: ; c6d0
