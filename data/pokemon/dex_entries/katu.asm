@@ -1,9 +1,9 @@
-	db "null@" ; species name
+	db "PLUMAGE@" ; species name
 
-	db   "null"
-	next "null"
-	next "null"
+	db   "KATU can be found"
+	next "displaying its"
+	next "tail feathers"
 
-	page "null"
-	next "null"
-	next "null.@"
+	page "towards the sky."
+	next "Some say it acts"
+	next "as an antenna.@"

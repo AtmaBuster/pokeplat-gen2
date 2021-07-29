@@ -519,8 +519,8 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,    $e90,  $160 ; BOMSHEAL
 	mon_cry CRY_TEDDIURSA,   $043,  $050 ; CORASUN
 	mon_cry CRY_RATTATA,     $000,  $001 ; CORAMOLA  - todo
-	mon_cry CRY_RATTATA,     $000,  $001 ; MAMBOKING - todo
-	mon_cry CRY_RATTATA,     $000,  $001 ; BITEEL
+	mon_cry CRY_AMPHAROS,    $60e,  $1e3 ; MAMBOKING
+	mon_cry CRY_TOTODILE,    $801,  $03c ; BITEEL
 	mon_cry CRY_TOTODILE,   -$051,  $0e8 ; GROTESS
 	mon_cry CRY_GLIGAR,      $040,  $100 ; RINRING
 	mon_cry CRY_GLIGAR,      $020,  $300 ; BELLRUN
@@ -532,12 +532,12 @@ PokemonCries::
 	mon_cry CRY_RAIKOU,     -$1db,  $150 ; WARWOLF
 	mon_cry CRY_CATERPIE,    $04b,  $0c0 ; CHEEP
 	mon_cry CRY_RATTATA,     $037,  $0af ; JABETTA
-	mon_cry CRY_RATTATA,     $000,  $001 ; SNOBIT    - todo
-	mon_cry CRY_RATTATA,     $000,  $001 ; BLIZBIT   - todo
-	mon_cry CRY_RATTATA,     $000,  $001 ; GLACIHARE - todo
+	mon_cry CRY_WOOPER,      $0b6,  $0b5 ; SNOBIT
+	mon_cry CRY_CHIKORITA,   $104c, $0c8 ; BLIZBIT
+	mon_cry CRY_CLEFAIRY,    $0ba,  $118 ; GLACIHARE
 	mon_cry CRY_RATTATA,     $000,  $001 ; STEMINEEL - todo
 	mon_cry CRY_MUK,         $046,  $14b ; ARSKEED
-	mon_cry CRY_RATTATA,     $000,  $001 ; DRAKARVE  - todo
+	mon_cry CRY_VULPIX,      $74c,  $140 ; DRAKARVE
 	mon_cry CRY_MARILL,      $0c0,  $090 ; PETICORN
 	mon_cry CRY_SPEAROW,     $0a0,  $050 ; GUPGOLD
 	mon_cry CRY_LAPRAS,      $0B0,  $0D0 ; TRITALES
