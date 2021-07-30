@@ -1,5 +1,12 @@
 SECTION "Mining Game", ROMX
 
+PICK_HIT_SFX       EQU SFX_EGG_CRACK
+HAMMER_HIT_SFX     EQU SFX_BELLY_DRUM
+WALL_HIT_SFX       EQU SFX_SHINE
+ITEM_GET_SFX       EQU SFX_HIT_END_OF_EXP_BAR
+COLLAPSE_SHAKE_SFX EQU SFX_MOVE_PUZZLE_PIECE
+COLLAPSE_ANIM_SFX  EQU SFX_MOVE_PUZZLE_PIECE
+
 ForcePlaySFX:
 	push de
 	call SFXChannelsOff
@@ -10,7 +17,7 @@ ForcePlaySFX:
 MINING_GAME_MIN_CRACK EQU 10
 MINING_GAME_MAX_HITS EQU 57 + MINING_GAME_MIN_CRACK
 
-MINING_GAME_NUM_ITEMS EQU 9
+MINING_GAME_NUM_ITEMS EQU 19
 
 NUM_UNIQUE_ROCK_LAYERS EQU 32
 NUM_ROCK_LAYERS EQU NUM_UNIQUE_ROCK_LAYERS * 2
@@ -183,6 +190,12 @@ MiningAction_Play:
 	jr nz, .swap_tools
 	bit A_BUTTON_F, a
 	jr nz, MiningGame_UseTool
+IF DEF(_DEBUG)
+	bit SELECT_F, a
+	ret z
+	ld a, MINING_GAME_MIN_CRACK
+	ld [wMiningHitsLeft], a
+ENDC
 	ret
 
 .swap_tools
@@ -381,12 +394,12 @@ MiningAction_Mine:
 	jp z, .hit_wall
 
 .no_wall_or_object
-	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
-	call ForcePlaySFX
-
 	ld a, [wMiningTool]
 	and a
 	jp z, .pickaxe
+
+	ld de, HAMMER_HIT_SFX
+	call ForcePlaySFX
 
 	trymininglocation -1, -1, 1
 	trymininglocation  0, -1, 2
@@ -401,6 +414,9 @@ MiningAction_Mine:
 	jp MiningGame_DrawBoard
 
 .pickaxe
+	ld de, PICK_HIT_SFX
+	call ForcePlaySFX
+
 	trymininglocation  0, -1, 1
 	trymininglocation -1,  0, 1
 	trymininglocation  1,  0, 1
@@ -421,7 +437,7 @@ MiningAction_Mine:
 
 .hit_wall
 ; play sfx
-	ld de, SFX_GLASS_TING
+	ld de, WALL_HIT_SFX
 	call ForcePlaySFX
 ; return
 	jp MiningGame_DrawBoard
@@ -488,7 +504,7 @@ MiningAction_Collapse:
 	and a
 	jr z, .no_new
 	call WaitSFX
-	ld de, SFX_HIT_END_OF_EXP_BAR
+	ld de, ITEM_GET_SFX
 	call PlaySFX
 	xor a
 	ld [wMiningFoundNewObjectTile], a
@@ -553,7 +569,7 @@ MiningGame_ShakeScreen:
 	ret
 
 .play_sfx
-	ld de, SFX_MOVE_PUZZLE_PIECE
+	ld de, COLLAPSE_SHAKE_SFX
 	call ForcePlaySFX
 	ret
 
@@ -586,7 +602,7 @@ MiningGame_ClearBoardAnim:
 
 .play_sfx
 	push de
-	ld de, SFX_MOVE_PUZZLE_PIECE
+	ld de, COLLAPSE_ANIM_SFX
 	call ForcePlaySFX
 	pop de
 	ret
