@@ -97,7 +97,7 @@ ENDM
 
 
 	map_attributes NewBarkTown, NEW_BARK_TOWN, $01, NORTH
-	connection north, Route29, ROUTE_29, -5
+	connection north, Route29, ROUTE_29, -4
 	
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
 	connection north, Route30, ROUTE_30, 5
@@ -155,7 +155,7 @@ ENDM
 
 	map_attributes Route29, ROUTE_29, $01, SOUTH | EAST
 	connection south, NewBarkTown, NEW_BARK_TOWN, 5
-	connection east, Route30, ROUTE_30, -1
+	connection east, Route30, ROUTE_30, 1
 
 	map_attributes Route30, ROUTE_30, $01, WEST
 	connection west, Route29, ROUTE_29, 1
