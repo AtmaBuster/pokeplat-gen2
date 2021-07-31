@@ -1194,27 +1194,27 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 2, STARLY
-	dbw 2, STARLY
-	dbw 2, STARLY
-	dbw 3, STARLY
 	dbw 2, BIDOOF
-	dbw 3, BIDOOF
+	dbw 3, STARLY
 	dbw 4, BIDOOF
+	dbw 3, KRICKETOT
+	dbw 3, KRICKETOT
+	dbw 3, KRICKETOT
 	; day
 	dbw 2, STARLY
-	dbw 2, STARLY
+	dbw 2, BIDOOF
 	dbw 3, STARLY
-	dbw 2, BIDOOF
-	dbw 2, BIDOOF
 	dbw 3, BIDOOF
+	dbw 3, BIDOOF
+	dbw 4, BIDOOF
 	dbw 4, BIDOOF
 	; nite
 	dbw 2, STARLY
-	dbw 2, STARLY
-	dbw 3, STARLY
 	dbw 2, BIDOOF
 	dbw 3, BIDOOF
-	dbw 4, BIDOOF
+	dbw 3, STARLY
+	dbw 3, KRICKETOT
+	dbw 3, KRICKETOT
 	dbw 3, KRICKETOT
 
 	map_id ROUTE_30
