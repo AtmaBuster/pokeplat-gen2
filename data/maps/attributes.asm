@@ -153,12 +153,12 @@ ENDM
 	map_attributes Route28, ROUTE_28, $2c, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
 
-	map_attributes Route29, ROUTE_29, $01, SOUTH
+	map_attributes Route29, ROUTE_29, $01, SOUTH | EAST
 	connection south, NewBarkTown, NEW_BARK_TOWN, 5
+	connection east, Route30, ROUTE_30, -1
 
-	map_attributes Route30, ROUTE_30, $05, NORTH | SOUTH
-	connection north, Route31, ROUTE_31, -10
-	connection south, CherrygroveCity, CHERRYGROVE_CITY, -5
+	map_attributes Route30, ROUTE_30, $01, WEST
+	connection west, Route29, ROUTE_29, 1
 
 	map_attributes Route31, ROUTE_31, $05, SOUTH | WEST
 	connection south, Route30, ROUTE_30, 10
