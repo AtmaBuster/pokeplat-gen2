@@ -103,11 +103,14 @@ ENDM
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 0
 
-	map_attributes VioletCity, VIOLET_CITY, $05, NORTH | SOUTH | WEST | EAST
+	map_attributes VioletCity, VIOLET_CITY, $01, NORTH | SOUTH | WEST | EAST
 	connection north, UnionCave1F, UNION_CAVE_1F, 0
 	connection south, Route31, ROUTE_31, 9
 	connection west, Route43, ROUTE_43, 0
 	connection east, SproutTower1F, SPROUT_TOWER_1F, 0
+	
+	map_attributes SproutTower1F, SPROUT_TOWER_1F, $01, WEST
+	connection west, VioletCity, VIOLET_CITY, 0
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, WEST | EAST
 	connection west, Route34, ROUTE_34, -18
@@ -374,7 +377,6 @@ ENDM
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
 	map_attributes Route23, ROUTE_23, $0f, 0
-	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
 	map_attributes SproutTower3F, SPROUT_TOWER_3F, $00, 0
 	map_attributes TinTower1F, TIN_TOWER_1F, $00, 0

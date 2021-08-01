@@ -490,8 +490,6 @@ RuinsOfAlphOmanyteChamber_Blocks:
 RuinsOfAlphAerodactylChamber_Blocks:
 	INCBIN "maps/RuinsOfAlphPuzzleChamber.blk"
 
-SproutTower1F_Blocks:
-	INCBIN "maps/SproutTower1F.blk"
 
 BetaSproutTowerCutOut1_Blocks:
 	INCBIN "maps/unused/BetaSproutTowerCutOut1.blk"
@@ -1045,3 +1043,6 @@ BetaBlank_Blocks:
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+	
+SproutTower1F_Blocks:
+	INCBIN "maps/SproutTower1F.blk"

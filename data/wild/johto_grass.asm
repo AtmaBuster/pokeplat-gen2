@@ -2,6 +2,33 @@
 
 JohtoGrassWildMons:
 
+	map_id SPROUT_TOWER_1F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 2, STARLY
+	dbw 2, STARLY
+	dbw 3, STARLY
+	dbw 4, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	; day
+	dbw 2, STARLY
+	dbw 2, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	dbw 4, STARLY
+	dbw 4, STARLY
+	; nite
+	dbw 2, STARLY
+	dbw 2, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+	dbw 3, STARLY
+
 	map_id SPROUT_TOWER_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
