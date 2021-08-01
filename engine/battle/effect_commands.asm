@@ -1981,6 +1981,7 @@ BattleCommand_lowersub:
 
 BattleCommand_moveanim:
 ; moveanim
+	call CheckAlreadyFailed
 	call BattleCommand_lowersub
 	call BattleCommand_moveanimnosub
 	jp BattleCommand_raisesub
