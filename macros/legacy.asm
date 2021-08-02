@@ -6,9 +6,6 @@
 callba EQUS "farcall"
 callab EQUS "callfar"
 
-; macros/scripts/audio.asm
-unknownmusic0xde EQUS "sound_duty"
-
 ; macros/scripts/events.asm
 
 checkmorn EQUS "checktime MORN"
@@ -239,3 +236,89 @@ text_jump              EQUS "text_far"
 anim_enemyfeetobj  EQUS "anim_battlergfx_2row"
 anim_playerheadobj EQUS "anim_battlergfx_1row"
 anim_clearsprites  EQUS "anim_keepsprites"
+
+; macros/scripts/audio.asm
+unknownmusic0xde EQUS "sound_duty"
+
+__ EQU 0
+CC EQU 13
+
+musicheader: MACRO
+	channel_count \1
+	channel \2, \3
+ENDM
+
+sound: MACRO
+	note \1, \2
+	db \3
+	dw \4
+ENDM
+
+noise: MACRO
+	note \1, \2
+	db \3
+	db \4
+ENDM
+
+notetype: MACRO
+if _NARG >= 2
+	note_type \1, \2 >> 4, \2 & $0f
+else
+	note_type \1
+endc
+ENDM
+
+pitchoffset: MACRO
+	transpose \1, \2 - 1
+ENDM
+
+dutycycle EQUS "duty_cycle"
+
+intensity: MACRO
+	volume_envelope \1 >> 4, \1 & $0f
+ENDM
+
+soundinput: MACRO
+	pitch_sweep \1 >> 4, \1 & $0f
+ENDM
+
+;unknownmusic0xde EQUS "sound_duty"
+
+sound_duty: MACRO
+	db duty_cycle_pattern_cmd
+if _NARG == 4
+	db \1 | (\2 << 2) | (\3 << 4) | (\4 << 6)
+else
+	db \1
+endc
+ENDM
+
+togglesfx EQUS "toggle_sfx"
+
+slidepitchto: MACRO
+	pitch_slide \1, (8 - \2), \3
+ENDM
+
+togglenoise EQUS "toggle_noise"
+
+panning: MACRO
+	force_stereo_panning ((\1 >> 4) & 1), (\1 & 1)
+ENDM
+
+tone           EQUS "pitch_offset"
+restartchannel EQUS "restart_channel"
+newsong        EQUS "new_song"
+sfxpriorityon  EQUS "sfx_priority_on"
+sfxpriorityoff EQUS "sfx_priority_off"
+
+stereopanning: MACRO
+	stereo_panning ((\1 >> 4) & 1), (\1 & 1)
+ENDM
+
+sfxtogglenoise EQUS "sfx_toggle_noise"
+setcondition   EQUS "set_condition"
+jumpif         EQUS "sound_jump_if"
+jumpchannel    EQUS "sound_jump"
+loopchannel    EQUS "sound_loop"
+callchannel    EQUS "sound_call"
+endchannel     EQUS "sound_ret"

@@ -1,7 +1,7 @@
 ; pitch
 ; FrequencyTable indexes (see audio/notes.asm)
-	const_def
-	const __ ; 0
+	const_def 1
+;	const __ ; 0
 	const C_ ; 1
 	const C# ; 2
 	const D_ ; 3
@@ -14,7 +14,7 @@
 	const A_ ; a
 	const A# ; b
 	const B_ ; c
-	const CC ; d (used for pitchoffset)
+;	const CC ; d (used for pitchoffset)
 
 ; channel
 ; ChannelPointers indexes (see audio/engine.asm)
