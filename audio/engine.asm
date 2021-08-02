@@ -1113,7 +1113,7 @@ ReadNoiseSample:
 	ld a, [de]
 	inc de
 
-	cp endchannel_cmd
+	cp sound_ret_cmd
 	jr z, .quit
 
 	and $f
@@ -1144,7 +1144,7 @@ ReadNoiseSample:
 ParseMusic:
 ; parses until a note is read or the song is ended
 	call GetMusicByte ; store next byte in a
-	cp endchannel_cmd
+	cp sound_ret_cmd
 	jr z, .endchannel
 	cp FIRST_MUSIC_CMD
 	jr c, .readnote
