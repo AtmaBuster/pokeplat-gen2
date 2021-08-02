@@ -101,6 +101,14 @@ DisplayDexEntry:
 	call GetPokemonIndexFromID
 	ld b, l
 	ld c, h
+	ld a, [wLastDexMode]
+	and a
+	jr nz, .got_number
+	farcall GetSinnohDexNumber
+	ld a, c
+	cp -1
+	jr z, .invalid_number
+.got_number
 	ld hl, sp + 0
 	ld d, h
 	ld e, l
@@ -109,6 +117,16 @@ DisplayDexEntry:
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
 	call PrintNum
 	pop bc
+	jr .continue
+
+.invalid_number
+	pop hl
+	ld a, "?"
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+
+.continue
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wTempSpecies]
 	call CheckCaughtMon

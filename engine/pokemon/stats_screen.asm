@@ -379,10 +379,20 @@ StatsScreen_InitUpperHalf:
 	call GetPokemonIndexFromID
 ; if mon is alt form, use base form index
 	call GetBaseFormNumber
-	ld a, h
-	ld h, l
-	ld l, a
-	push hl
+	ld b, l
+	ld c, h
+	ld a, [wLastDexMode]
+	and a
+	jr nz, .got_number
+	farcall GetSinnohDexNumber
+	ld a, c
+	cp -1
+	jr z, .invalid_number
+.got_number
+;	ld a, h
+;	ld h, l
+;	ld l, a
+	push bc
 	ld hl, sp + 0
 	ld d, h
 	ld e, l
@@ -394,6 +404,19 @@ StatsScreen_InitUpperHalf:
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
 	call PrintNum
 	add sp, 2
+	jr .done_number
+
+.invalid_number
+	hlcoord 8, 0
+	ld a, "№"
+	ld [hli], a
+	ld a, "."
+	ld [hli], a
+	ld a, "?"
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+.done_number
 	hlcoord 14, 0
 	call PrintLevel
 	ld hl, .NicknamePointers

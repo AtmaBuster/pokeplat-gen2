@@ -673,6 +673,7 @@ Pokedex_UpdateOptionScreen:
 
 	ld a, b
 	ld [wCurDexMode], a
+	ld [wLastDexMode], a
 	call Pokedex_OrderMonsByMode
 	call Pokedex_DisplayChangingModesMessage
 	call Pokedex_InitCursorPosition
@@ -1872,11 +1873,11 @@ Pokedex_OrderMonsByMode:
 .NewMode:
 	ld hl, NewPokedexOrder
 	ld de, wPokedexOrder
-	ld bc, NUM_POKEMON * 2
+	ld bc, NUM_SINNOH_DEX_POKEMON * 2
 	call CopyBytes
 	ld a, BANK(wPokedexSeen)
 	ldh [rSVBK], a
-	ld bc, NUM_POKEMON
+	ld bc, NUM_SINNOH_DEX_POKEMON
 	ld hl, NewPokedexOrder + (2 * NUM_POKEMON) - 1
 .new_mode_last_seen_loop
 	ld a, [hld]
@@ -2902,4 +2903,32 @@ Pokedex_SetBGMapMode_3ifDMG_4ifCGB:
 Pokedex_ResetBGMapMode:
 	xor a
 	ldh [hBGMapMode], a
+	ret
+
+GetSinnohDexNumber:
+	ld a, b
+	ld b, c
+	ld c, a
+
+	push de
+	ld de, 2
+	ld hl, NewPokedexOrder
+	call IsInHalfwordArray
+	pop de
+	jr nc, .invalid
+
+	ld bc, $10000 - NewPokedexOrder ;ld bc, -NewPokedexOrder -- see https://github.com/rednex/rgbds/issues/279
+	add hl, bc
+	and a
+	rr h
+	rr l
+
+	inc hl
+
+	ld b, l
+	ld c, h
+	ret
+
+.invalid
+	ld c, -1
 	ret

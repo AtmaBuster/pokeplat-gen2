@@ -32,6 +32,7 @@ NewPokedexOrder:
 	dw GOLBAT
 	dw CROBAT
 	dw GEODUDE
+	dw GRAVELER
 	dw GOLEM
 	dw ONIX
 	dw STEELIX
@@ -213,8 +214,6 @@ NewPokedexOrder:
 
 NewPokedexOrderEnd:
 NUM_NEW_DEX EQU ((NewPokedexOrderEnd - NewPokedexOrder) / 2)
-_numrept = NUM_NEW_DEX
 rept NUM_POKEMON - NUM_NEW_DEX
-    dw _numrept
-_numrept = _numrept + 1
+    dw -1
 endr
