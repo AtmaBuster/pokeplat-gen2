@@ -152,7 +152,6 @@ ROMX $39
 	"bank39"
 ROMX $3a
 	"Audio"
-	"Songs 1"
 ROMX $3b
 	"Songs 2"
 ROMX $3c
@@ -363,6 +362,8 @@ ROMX $98
 	"Pics 32"
 ROMX $99
 	"Sprites 3"
+ROMX $9A
+	"Songs 1"
 WRAM0
 	"Stack"
 	"Audio RAM"
