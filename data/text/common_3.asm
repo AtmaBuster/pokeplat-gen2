@@ -4,8 +4,8 @@ _OakText6::
 	cont "bit about your-"
 	cont "self?"
 	
-	para "Are you a boy?"
-	line "Or are you a girl?"
+	;para "Are you a boy?"
+	;line "Or are you a girl?"
 	
 	para "Tell me, what is"
 	line "your name?"

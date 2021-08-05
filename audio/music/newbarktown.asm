@@ -60,7 +60,7 @@ Music_NewBarkTown_Ch1::
 	volume 7, 7
 	stereo_panning TRUE, TRUE
 	vibrato 18, 2, 3
-	note_type 6, 4, 7
+	note_type 6, 6, 7
 	duty_cycle 2
 	sound_call Music_NewBarkTown_Ch1_sub_1
 	note C#, 4
@@ -138,7 +138,7 @@ Music_NewBarkTown_Ch1::
 	note B_, 4
 	octave 3
 	stereo_panning FALSE, TRUE
-	note_type 6, 4, 7
+	note_type 6, 6, 7
 	duty_cycle 1
 	note E_, 8
 	note G_, 4
@@ -187,7 +187,7 @@ Music_NewBarkTown_Ch1::
 	rest 8
 	octave 4
 	note D_, 8
-	note_type 6, 4, 7
+	note_type 6, 6, 7
 	duty_cycle 2
 	stereo_panning TRUE, TRUE
 	sound_call Music_NewBarkTown_Ch1_sub_1
@@ -259,7 +259,7 @@ Music_NewBarkTown_Ch2::
 .loop
 	stereo_panning FALSE, TRUE
 	vibrato 18, 2, 3
-	note_type 12, 4, 7
+	note_type 12, 6, 7
 	duty_cycle 0
 	octave 4
 	note C_, 1
@@ -400,7 +400,7 @@ Music_NewBarkTown_Ch2::
 	note B_, 4
 	note A_, 4
 	stereo_panning FALSE, TRUE
-	note_type 12, 3, 7
+	note_type 12, 4, 7
 	duty_cycle 0
 	octave 5
 	note G_, 1
@@ -466,7 +466,7 @@ Music_NewBarkTown_Ch2::
 	note G#, 1
 	note F_, 1
 	octave 3
-	note_type 12, 2, 0
+	note_type 12, 4, 0
 	note G#, 4
 	note F_, 4
 	note C_, 4
@@ -518,9 +518,9 @@ Music_NewBarkTown_Ch3::
 	note E_, 2
 	note F_, 4
 	octave 4
-	note G_, 2
-	note G#, 4
-	note A_, 6
+	note F_, 2
+	note G_, 4
+	note G#, 6
 	octave 5
 	note D_, 4
 	note C_, 4
@@ -611,7 +611,6 @@ Music_NewBarkTown_Ch3::
 	note B_, 2
 	note A_, 2
 	stereo_panning TRUE, FALSE
-	note_type 12, 1, 0
 	sound_call Music_NewBarkTown_Ch3_sub_0
 	note A_, 2
 	note G_, 4
@@ -629,6 +628,7 @@ Music_NewBarkTown_Ch3::
 	octave 5
 	note G#, 4
 	note F_, 4
+	note_type 12, 2, 5
 	note C_, 4
 	note D_, 4
 	note E_, 4
