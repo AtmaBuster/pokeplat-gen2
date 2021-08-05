@@ -711,6 +711,8 @@ INCLUDE "data/trainers/parties.asm"
 INCLUDE "data/pokemon/levitate_mons.asm"
 INCLUDE "data/pokemon/pickup_mons.asm"
 
+INCLUDE "engine/games/mining.asm"
+
 SECTION "Debug Menu", ROMX
 if DEF(_DEBUG)
 INCLUDE "engine/debug/debug_menu.asm"

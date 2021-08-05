@@ -205,6 +205,12 @@ CardFlip:
 	call StartGameCornerGame
 	ret
 
+MiningGame:
+	call FadeToMenu
+	farcall _MiningGame
+	call ExitAllMenus
+	ret
+
 DummyNonfunctionalGameCornerGame:
 	call CheckCoinsAndCoinCase
 	ret c

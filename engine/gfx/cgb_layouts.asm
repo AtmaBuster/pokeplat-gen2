@@ -61,6 +61,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
 	dw _CGB1e
+	dw _CGB_MiningGame
 
 _CGB_BattleGrayscale:
 	ld hl, PalPacket_BattleGrayscale + 1
@@ -1067,3 +1068,20 @@ DebugMenuTrainerPicColors::
 	ldh [hCGBPalUpdate], a
 	ret
 endc
+
+_CGB_MiningGame:
+	ld hl, MiningGameBGPals
+	ld de, wBGPals1 palette 4
+	ld bc, 4 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	ld hl, MiningGameOBPals
+	ld de, wOBPals1 palette 4
+	ld bc, 4 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	ret
+
+MiningGameBGPals: INCLUDE "gfx/underground/minigame_bg.pal"
+MiningGameOBPals: INCLUDE "gfx/underground/minigame_ob.pal"

@@ -315,18 +315,22 @@ Debug_SubgameMenu:
 .Jumptable:
 	dba SlotMachine
 	dba CardFlip
+	dba MiningGame
+	dba UnownPuzzle
 
 .MenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 10, 0, SCREEN_WIDTH - 1, 7
+	menu_coords 10, 0, SCREEN_WIDTH - 1, 9
 	dw .MenuData
 	db 1 ; default
 
 .MenuData:
 	db STATICMENU_CURSOR
-	db 2 ; # items
+	db 4 ; # items
 	db "Slots@"
 	db "Card@"
+	db "Mining@"
+	db "Unown@"
 
 Debug_Warp:
 	lb bc, SCREEN_HEIGHT - 2, SCREEN_WIDTH - 2
