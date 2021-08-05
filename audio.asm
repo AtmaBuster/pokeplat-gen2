@@ -18,10 +18,10 @@ INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/rocketbattle.asm"
 INCLUDE "audio/music/elmslab.asm"
 INCLUDE "audio/music/darkcave.asm"
-INCLUDE "audio/music/johtogymbattle.asm"
+INCLUDE "audio/music/johtogymbattle.asm" ; Sinnoh Gym Battle
 INCLUDE "audio/music/championbattle.asm"
 INCLUDE "audio/music/ssaqua.asm"
-INCLUDE "audio/music/newbarktown.asm"
+INCLUDE "audio/music/newbarktown.asm" ; Twinleaf Town
 INCLUDE "audio/music/goldenrodcity.asm"
 INCLUDE "audio/music/vermilioncity.asm"
 INCLUDE "audio/music/titlescreen.asm"
@@ -95,9 +95,7 @@ INCLUDE "audio/music/nationalpark.asm"
 INCLUDE "audio/music/azaleatown.asm"
 INCLUDE "audio/music/cherrygrovecity.asm"
 INCLUDE "audio/music/unioncave.asm"
-INCLUDE "audio/music/johtowildbattle.asm"
-INCLUDE "audio/music/johtowildbattlenight.asm"
-INCLUDE "audio/music/johtotrainerbattle.asm"
+INCLUDE "audio/music/johtotrainerbattle.asm" ; Sinnoh Trainer Battle
 INCLUDE "audio/music/lookyoungster.asm"
 INCLUDE "audio/music/tintower.asm"
 INCLUDE "audio/music/sprouttower.asm"
@@ -127,6 +125,8 @@ INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
+INCLUDE "audio/music/johtowildbattle.asm"       ; Sinnoh Wild Battle (Day)
+INCLUDE "audio/music/johtowildbattlenight.asm"  ; Sinnoh Wild Battle (Night)
 
 
 SECTION "Extra Songs 1", ROMX
