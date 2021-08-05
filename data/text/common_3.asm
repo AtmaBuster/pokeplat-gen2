@@ -1,28 +1,58 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "Now, why don't you"
+	line "tell me a little"
+	cont "bit about your-"
+	cont "self?"
+	
+	;para "Are you a boy?"
+	;line "Or are you a girl?"
+	
+	para "Tell me, what is"
+	line "your name?"
+	
+	;para "OK..."
+	;line "So, you're"
+	;line "<PLAYER>?"
+	
+	;para "Now, this boy"
+	;line "here..."
+
+	;para "I believe he's your"
+	;line "friend."
+	
+	;para "What might his name"
+	;line "be?"
+
+	;para "<RIVAL>, is it?"
+	;line "That's your friend's"
+	;cont "name?"
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
 
-	para "Your very own"
-	line "#MON story is"
+	text "All right,"
+	line "<PLAYER>, the time"
+	cont"has come."
+
+	para "Your very own tale"
+	line "of grand adventure"
 	cont "about to unfold."
 
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	para "On your journey,"
+	line "you will meet"
+	cont "countless #MON"
+	cont "and people."
 
-	para "A world of dreams"
-	line "and adventures"
-
-	para "with #MON"
-	line "awaits! Let's go!"
-
-	para "I'll be seeing you"
-	line "later!"
+	para "I'm sure that"
+	line "along the way you"
+	cont "will discover many"
+	cont "things, perhaps"
+	cont "even something"
+	cont "about yourself."
+	
+	para "Now, go on, leap"
+	line "into the world of"
+	cont "#MON!"
 	done
 
 UnknownText_0x1c40e6::

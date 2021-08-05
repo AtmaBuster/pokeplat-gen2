@@ -668,7 +668,7 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTileMap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_PROF_ELM
 	call PlayMusic
 
 	call RotateFourPalettesRight
@@ -688,7 +688,7 @@ OakSpeech:
 	call RotateThreePalettesRight
 	call ClearTileMap
 
-	ld hl, WOOPER
+	ld hl, BUNEARY
 	call GetPokemonIDFromIndex
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -749,7 +749,7 @@ OakText1:
 OakText2:
 	text_far _OakText2
 	text_asm
-	ld hl, WOOPER
+	ld hl, BUNEARY
 	call GetPokemonIDFromIndex
 	call PlayMonCry
 	call WaitSFX
