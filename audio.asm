@@ -16,7 +16,7 @@ SECTION "Songs 1", ROMX
 INCLUDE "audio/music/route36.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/rocketbattle.asm"
-INCLUDE "audio/music/elmslab.asm"
+INCLUDE "audio/music/elmslab.asm" ; Professor Rowan's Theme
 INCLUDE "audio/music/darkcave.asm"
 INCLUDE "audio/music/johtogymbattle.asm" ; Sinnoh Gym Battle
 INCLUDE "audio/music/championbattle.asm"
