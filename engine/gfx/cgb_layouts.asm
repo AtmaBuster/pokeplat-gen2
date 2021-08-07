@@ -62,6 +62,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_MysteryGift
 	dw _CGB1e
 	dw _CGB_MiningGame
+	dw _CGB_IntroBothPlayerPals
 
 _CGB_BattleGrayscale:
 	ld hl, PalPacket_BattleGrayscale + 1
@@ -1085,3 +1086,28 @@ _CGB_MiningGame:
 
 MiningGameBGPals: INCLUDE "gfx/underground/minigame_bg.pal"
 MiningGameOBPals: INCLUDE "gfx/underground/minigame_ob.pal"
+
+_CGB_IntroBothPlayerPals:
+	ld de, wBGPals1
+	ld a, CHRIS
+	ld [wTrainerClass], a
+	xor a
+	call GetFrontpicPalettePointer
+	call LoadPalette_Mon
+	ld de, wBGPals1 palette 1
+	ld a, KRIS
+	ld [wTrainerClass], a
+	xor a
+	call GetFrontpicPalettePointer
+	call LoadPalette_Mon
+
+	call WipeAttrMap
+
+	hlcoord 10, 4, wAttrMap
+	lb bc, 7, 7
+	ld a, 1
+	call FillBoxCGB
+
+	call ApplyAttrMap
+	call ApplyPals
+	ret

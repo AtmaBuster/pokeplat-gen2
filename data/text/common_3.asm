@@ -3,32 +3,32 @@ _OakText6::
 	line "tell me a little"
 	cont "bit about your-"
 	cont "self?"
-	
-	;para "Are you a boy?"
-	;line "Or are you a girl?"
-	
-	para "Tell me, what is"
-	line "your name?"
-	
-	;para "OK..."
-	;line "So, you're"
-	;line "<PLAYER>?"
-	
-	;para "Now, this boy"
-	;line "here..."
-
-	;para "I believe he's your"
-	;line "friend."
-	
-	;para "What might his name"
-	;line "be?"
-
-	;para "<RIVAL>, is it?"
-	;line "That's your friend's"
-	;cont "name?"
 	prompt
 
+_Oak_AreYouABoyOrAGirl::
+	text "Are you a boy?"
+	line "Or are you a girl?"
+	done
+
 _OakText7::
+	text "Tell me, what is"
+	line "your name?"
+	prompt
+
+_OakText8::
+	text "Now, this boy"
+	line "here…"
+
+	para "I believe he's your"
+	line "friend."
+	prompt
+
+_OakText9::
+	text "What might his"
+	line "name be?"
+	prompt
+
+_OakText10::
 
 	text "All right,"
 	line "<PLAYER>, the time"
@@ -49,10 +49,30 @@ _OakText7::
 	cont "things, perhaps"
 	cont "even something"
 	cont "about yourself."
-	
+
 	para "Now, go on, leap"
 	line "into the world of"
 	cont "#MON!"
+	done
+
+_Oak_YouAreABoy::
+	text "So, you're a boy?"
+	done
+
+_Oak_YouAreAGirl::
+	text "So, you're a girl?"
+	done
+
+_Oak_ConfirmName::
+	text "OK..."
+	line "So, you're"
+	cont "<PLAYER>?"
+	done
+
+_Oak_ConfirmRival::
+	text "<RIVAL>, is it?"
+	line "That's your friend's"
+	cont "name?"
 	done
 
 UnknownText_0x1c40e6::

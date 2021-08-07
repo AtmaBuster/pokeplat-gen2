@@ -63,7 +63,7 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
-	call AreYouABoyOrAreYouAGirl
+;	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
 	call InitializeWorld
 	ld a, 1
@@ -727,6 +727,11 @@ OakSpeech:
 	call RotateThreePalettesRight
 	call ClearTileMap
 
+	call IntroMenuChooseGender
+
+	call RotateThreePalettesRight
+	call ClearTileMap
+
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
@@ -735,10 +740,54 @@ OakSpeech:
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
-	ld hl, OakText6
+.player_name_loop
+	ld hl, OakText7
 	call PrintText
 	call NamePlayer
-	ld hl, OakText7
+
+	ld hl, OakTextConfirmName
+	call PrintText
+	call YesNoBox
+	jr c, .player_name_loop
+
+	call RotateThreePalettesRight
+	call ClearTileMap
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, RIVAL1
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, OakText8
+	call PrintText
+
+.rival_loop
+	ld hl, OakText9
+	call PrintText
+	call IntroNameRival
+
+	ld hl, OakTextConfirmRival
+	call PrintText
+	call YesNoBox
+	jr c, .rival_loop
+
+	call RotateThreePalettesRight
+	call ClearTileMap
+
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawIntroPlayerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, OakText10
 	call PrintText
 	ret
 
@@ -774,6 +823,38 @@ OakText6:
 
 OakText7:
 	text_far _OakText7
+	text_end
+
+OakText8:
+	text_far _OakText8
+	text_end
+
+OakText9:
+	text_far _OakText9
+	text_end
+
+OakText10:
+	text_far _OakText10
+	text_end
+
+OakTextBoy:
+	text_far _Oak_YouAreABoy
+	text_end
+
+OakTextGirl:
+	text_far _Oak_YouAreAGirl
+	text_end
+
+OakTextBoyOrGirl:
+	text_far _Oak_AreYouABoyOrAGirl
+	text_end
+
+OakTextConfirmName:
+	text_far _Oak_ConfirmName
+	text_end
+
+OakTextConfirmRival:
+	text_far _Oak_ConfirmRival
 	text_end
 
 NamePlayer:
@@ -821,6 +902,46 @@ NamePlayer:
 .Kris:
 	db "DAWN@@@@@@@"
 
+IntroNameRival:
+	farcall MovePlayerPicRight
+	farcall ShowRivalNamingChoices
+	ld a, [wMenuCursorY]
+	dec a
+	jr z, .NewName
+	call StoreRivalName
+	farcall ApplyMonOrTrainerPals
+	farcall MovePlayerPicLeft
+	ret
+
+.NewName:
+	ld b, NAME_RIVAL
+	ld de, wRivalName
+	farcall NamingScreen
+
+	call RotateThreePalettesRight
+	call ClearTileMap
+
+	call LoadFontsExtra
+	call WaitBGMap
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld a, RIVAL1
+	ld [wTrainerClass], a
+	call Intro_PrepTrainerPic
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call RotateThreePalettesLeft
+
+	ld hl, wRivalName
+	ld de, .DefaultName
+	call InitName
+	ret
+
+.DefaultName:
+	db "BARRY@@@@@@"
+
 Unreferenced_Function60e9:
 	call LoadMenuHeader
 	call VerticalMenu
@@ -831,11 +952,17 @@ Unreferenced_Function60e9:
 	ret
 
 StorePlayerName:
+	ld hl, wPlayerName
+	jr StoreName
+
+StoreRivalName:
+	ld hl, wRivalName
+StoreName:
+	push hl
 	ld a, "@"
 	ld bc, NAME_LENGTH
-	ld hl, wPlayerName
 	call ByteFill
-	ld hl, wPlayerName
+	pop hl
 	ld de, wStringBuffer2
 	call CopyName2
 	ret
@@ -992,6 +1119,83 @@ Intro_PlacePlayerSprite:
 	db  9 * 8 + 4, 10 * 8, 1
 	db 10 * 8 + 4,  9 * 8, 2
 	db 10 * 8 + 4, 10 * 8, 3
+
+IntroMenuChooseGender:
+	xor a
+	ld [wCurPartySpecies], a
+	farcall DrawBothIntroFrontPics
+
+	ld b, SCGB_INTRO_BOTH_PLAYER_PALS
+	call GetSGBLayout
+	call Intro_RotatePalettesLeftFrontpic
+
+	ld hl, OakText6
+	call PrintText
+
+.gender_loop
+	ld hl, OakTextBoyOrGirl
+	call PrintText
+; time for hacky bullshit :3
+	ld a, "▼"
+	hlcoord 5, 2
+	ld [hl], a
+	ld a, " "
+	hlcoord 13, 2
+	ld [hl], a
+
+	xor a
+	ld [wMenuCursorX], a
+	call DelayFrame
+	call .get_input
+
+	ld a, [wMenuCursorX]
+	and a
+	ld [wPlayerGender], a
+	jr z, .ask_boy
+
+	ld hl, OakTextGirl
+	jr .ask_gender
+
+.ask_boy
+	ld hl, OakTextBoy
+.ask_gender
+	call PrintText
+	call YesNoBox
+	jr c, .gender_loop
+
+	ret
+
+.get_input
+	call JoyTextDelay
+	ldh a, [hJoypadPressed]
+	bit A_BUTTON_F, a
+	ret nz
+	and D_LEFT | D_RIGHT
+	call nz, .swap_cursor
+	call DelayFrame
+	jr .get_input
+
+.swap_cursor
+	ld a, " "
+	hlcoord 5, 2
+	ld [hl], a
+	hlcoord 13, 2
+	ld [hl], a
+	ld a, [wMenuCursorX]
+	xor 1
+	ld [wMenuCursorX], a
+	and a
+	jr z, .cursor_male
+
+	hlcoord 13, 2
+	jr .cursor
+
+.cursor_male
+	hlcoord 5, 2
+.cursor
+	ld a, "▼"
+	ld [hl], a
+	ret
 
 CrystalIntroSequence:
 	callfar Copyright_GFPresents

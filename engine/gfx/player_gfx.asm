@@ -70,6 +70,16 @@ ShowPlayerNamingChoices:
 	call CloseWindow
 	ret
 
+ShowRivalNamingChoices:
+	ld hl, BarryNameMenuHeader
+	call LoadMenuHeader
+	call VerticalMenu
+	ld a, [wMenuCursorY]
+	dec a
+	call CopyNameFromMenu
+	call CloseWindow
+	ret
+
 INCLUDE "data/player_names.asm"
 
 Unreferenced_GetPlayerNameArray:
@@ -173,9 +183,42 @@ HOF_LoadTrainerFrontpic:
 	ldh [hBGMapMode], a
 	ret
 
+DrawBothIntroFrontPics:
+; Draw male character pic at (2,4) and female pic at (10,4)
+; first do male
+	ld a, CHRIS
+	ld [wTrainerClass], a
+	ld de, ChrisPic
+	ld hl, vTiles2
+	ld b, BANK(ChrisPic)
+	ld c, 7 * 7
+	call Get2bpp
+	xor a
+	ldh [hGraphicStartTile], a
+	hlcoord 2, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+; next do female
+	ld a, KRIS
+	ld [wTrainerClass], a
+	ld de, KrisPic
+	ld hl, vTiles2 tile $31
+	ld b, BANK(KrisPic)
+	ld c, 7 * 7
+	call Get2bpp
+	ld a, $31
+	ldh [hGraphicStartTile], a
+	hlcoord 10, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
+
 DrawIntroPlayerPic:
 ; Draw the player pic at (6,4).
+	hlcoord 6, 4
 
+DrawIntroPlayerPicAt:
+	push hl
 ; Get class
 	ld e, CHRIS
 	ld a, [wPlayerGender]
@@ -201,7 +244,7 @@ DrawIntroPlayerPic:
 ; Draw
 	xor a
 	ldh [hGraphicStartTile], a
-	hlcoord 6, 4
+	pop hl
 	lb bc, 7, 7
 	predef PlaceGraphic
 	ret

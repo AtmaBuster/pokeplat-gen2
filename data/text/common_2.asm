@@ -1540,7 +1540,6 @@ _OakText4::
 	prompt
 
 _OakText5::
-	
 	text "What do I do?"
 
 	para "I conduct research"
