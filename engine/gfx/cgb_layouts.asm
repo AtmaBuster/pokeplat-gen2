@@ -63,6 +63,7 @@ LoadSGBLayoutCGB:
 	dw _CGB1e
 	dw _CGB_MiningGame
 	dw _CGB_IntroBothPlayerPals
+	dw _CGB_IntroSandgem
 
 _CGB_BattleGrayscale:
 	ld hl, PalPacket_BattleGrayscale + 1
@@ -1111,3 +1112,14 @@ _CGB_IntroBothPlayerPals:
 	call ApplyAttrMap
 	call ApplyPals
 	ret
+
+_CGB_IntroSandgem:
+	ld hl, .colors
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ret
+
+.colors
+INCLUDE "gfx/intro/sandgem.pal"

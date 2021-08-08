@@ -5,13 +5,27 @@
 	const PLAYERSHOUSE2F_BIG_DOLL
 
 PlayersHouse2F_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .Scene0 ; SCENE_DEFAULT
+	scene_script .Null   ; SCENE_FINISHED
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .InitializeRoom
 	callback MAPCALLBACK_TILES, .SetSpawn
 
-; unused
+.Scene0:
+	applymovement PLAYER, .TurnUpMove
+	opentext
+	writetext IntroSandgemTextCont
+	waitbutton
+	closetext
+	setscene SCENE_FINISHED
+	end
+
+.TurnUpMove
+	turn_head UP
+	step_end
+
 .Null:
 	end
 
@@ -111,6 +125,21 @@ PlayersRadioText3:
 PlayersRadioText4:
 	text "#MON!"
 	line "#MON CHANNEL…"
+	done
+
+IntroSandgemTextCont:
+	text "That conlcudes our"
+	line "special program,"
+	cont "“Let's Ask PROF."
+	cont "ROWAN!”"
+
+	para "Brought to you by"
+	line "JUBILIFE TV on"
+	cont "Nationwide Net!"
+
+	para "See you next week,"
+	line "same time, same"
+	cont "channel!"
 	done
 
 PlayersHouse2F_MapEvents:

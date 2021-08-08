@@ -2816,7 +2816,7 @@ wTeamRocketBaseB1FSceneID::                       db ; d9b2
 wTeamRocketBaseB2FSceneID::                       db ; d9b3
 wTeamRocketBaseB3FSceneID::                       db ; d9b4
 wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db ; d9b5
-wSilverCaveRoom3SceneID::                         db ; d9b6
+wPlayersHouse2FSceneID::                          db ; d988
 wVictoryRoadSceneID::                             db ; d9b7
 wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9

@@ -66,6 +66,8 @@ NewGame:
 ;	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
 	call InitializeWorld
+	call IntroSandgemScene
+
 	ld a, 1
 	ld [wPrevLandmark], a
 
@@ -791,6 +793,20 @@ OakSpeech:
 	call PrintText
 	ret
 
+IF DEF(_DEBUG)
+OakText1:
+OakText2:
+OakText3:
+OakText4:
+OakText5:
+OakText6:
+OakText7:
+OakText8:
+OakText9:
+OakText10:
+	text_end
+
+ELSE
 OakText1:
 	text_far _OakText1
 	text_end
@@ -837,6 +853,8 @@ OakText10:
 	text_far _OakText10
 	text_end
 
+ENDC
+
 OakTextBoy:
 	text_far _Oak_YouAreABoy
 	text_end
@@ -855,6 +873,10 @@ OakTextConfirmName:
 
 OakTextConfirmRival:
 	text_far _Oak_ConfirmRival
+	text_end
+
+IntroSandgemText:
+	text_far _IntroSandgem
 	text_end
 
 NamePlayer:
@@ -971,7 +993,7 @@ ShrinkPlayer:
 	ldh a, [hROMBank]
 	push af
 
-	ld a, 32 ; fade time
+	ld a, 16 ; fade time
 	ld [wMusicFade], a
 	ld de, MUSIC_NONE
 	ld a, e
@@ -1577,3 +1599,82 @@ GameInit::
 	ldh [hWY], a
 	call WaitBGMap
 	jp CrystalIntroSequence
+
+
+PUSHS
+SECTION "Intro Sandgem GFX", ROMX
+IntroSandgemGFX: INCBIN "gfx/intro/sandgem.2bpp"
+.end
+POPS
+IntroSandgemTilemap: INCBIN "gfx/intro/sandgem.tilemap"
+IntroSandgemAttrmap: INCBIN "gfx/intro/sandgem.attrmap"
+
+INTRO_SANDGEM_TILE_CT EQU (IntroSandgemGFX.end - IntroSandgemGFX) / 16
+
+IntroSandgemScene:
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	call DisableLCD
+IF INTRO_SANDGEM_TILE_CT < $80
+	ld de, IntroSandgemGFX
+	ld b, BANK(IntroSandgemGFX)
+	ld hl, vTiles2
+	ld c, INTRO_SANDGEM_TILE_CT
+	call Get2bpp
+ELSE
+	ld de, IntroSandgemGFX
+	ld b, BANK(IntroSandgemGFX)
+	ld hl, vTiles2
+	ld c, $80
+	call Get2bpp
+IF INTRO_SANDGEM_TILE_CT < $100
+	ld de, IntroSandgemGFX + $80 tiles
+	ld b, BANK(IntroSandgemGFX)
+	ld hl, vTiles1
+	ld c, INTRO_SANDGEM_TILE_CT - $80
+	call Get2bpp
+ELSE
+	ld de, IntroSandgemGFX + $80
+	ld b, BANK(IntroSandgemGFX)
+	ld hl, vTiles1
+	ld c, $80
+	call Get2bpp
+
+	ld a, BANK(vTiles5)
+	ldh [rVBK], a
+	ld de, IntroSandgemGFX + $100 tiles
+	ld b, BANK(IntroSandgemGFX)
+	ld hl, vTiles5
+	ld c, INTRO_SANDGEM_TILE_CT - $100
+	call Get2bpp
+	xor a
+	ldh [rVBK], a
+ENDC
+ENDC
+
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * (SCREEN_HEIGHT - 6)
+	ld hl, IntroSandgemTilemap
+	call CopyBytes
+
+	decoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * (SCREEN_HEIGHT - 6)
+	ld hl, IntroSandgemAttrmap
+	call CopyBytes
+
+	call EnableLCD
+	call WaitBGMap2
+	ld b, SCGB_INTRO_SANDGEM
+	call GetSGBLayout
+	call SetPalettes
+	call DelayFrame
+
+	ld de, MUSIC_VIRIDIAN_CITY
+	call PlayMusic
+
+	ld hl, IntroSandgemText
+	call PrintText
+
+	farcall FadeOutPalettes
+	ret

@@ -75,6 +75,23 @@ _Oak_ConfirmRival::
 	cont "name?"
 	done
 
+_IntroSandgem::
+	text "“#MON are by"
+	line "our side, always."
+
+	para "I hope you will"
+	line "understand the"
+	cont "meaning of those"
+	cont "words.”"
+
+	para "That was a comment"
+	line "left by PROF."
+	cont "ROWAN, who has re-"
+	cont "turned to SINNOH"
+	cont "from the KANTO"
+	cont "region."
+	prompt
+
 UnknownText_0x1c40e6::
 	text "The clock's time"
 	line "may be wrong."
