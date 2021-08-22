@@ -50,6 +50,6 @@ BarryNameMenuHeader:
 	db "BARRY@"
 	db "NOLAN@"
 	db "ROY@"
-	db "GAVIN4@"
+	db "GAVIN@"
 	db 2 ; displacement
 	db " NAME @" ; title
