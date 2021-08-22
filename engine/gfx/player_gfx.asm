@@ -131,10 +131,10 @@ GetCardPic:
 	ret
 
 ChrisCardPic:
-INCBIN "gfx/trainer_card/lucas_card.2bpp"
+INCBIN "gfx/trainer_card/chris_card.2bpp"
 
 KrisCardPic:
-INCBIN "gfx/trainer_card/dawn_card.2bpp"
+INCBIN "gfx/trainer_card/kris_card.2bpp"
 
 CardGFX:
 INCBIN "gfx/trainer_card/trainer_card.2bpp"
@@ -250,10 +250,10 @@ DrawIntroPlayerPicAt:
 	ret
 
 ChrisPic:
-INCBIN "gfx/player/lucas.2bpp"
+INCBIN "gfx/player/chris.2bpp"
 
 KrisPic:
-INCBIN "gfx/player/dawn.2bpp"
+INCBIN "gfx/player/kris.2bpp"
 
 GetKrisBackpic:
 ; Kris's backpic is uncompressed.
@@ -264,4 +264,4 @@ GetKrisBackpic:
 	ret
 
 KrisBackpic:
-INCBIN "gfx/player/dawn_back.2bpp"
+INCBIN "gfx/player/kris_back.2bpp"
