@@ -48,8 +48,8 @@ BarryNameMenuHeader:
 	db 5 ; items
 	db "NEW NAME@"
 	db "BARRY@"
-	db "NAME2@"
-	db "NAME3@"
-	db "NAME4@"
+	db "NOLAN@"
+	db "ROY@"
+	db "GAVIN4@"
 	db 2 ; displacement
 	db " NAME @" ; title
