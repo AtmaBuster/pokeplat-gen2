@@ -326,10 +326,10 @@ InitializeNPCNames:
 	call CopyBytes
 	ret
 
-.Rival:  db "???@"
-.Red:    db "RED@"
-.Green:  db "GREEN@"
-.Mom:    db "MOM@"
+.Rival:  db "CEDRIC@"
+.Red:    db "BRENDAN@"
+.Green:  db "MAY@"
+.Mom:    db "JOHANNA@"
 
 InitializeWorld:
 	call ShrinkPlayer
