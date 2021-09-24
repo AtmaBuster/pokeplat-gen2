@@ -64,52 +64,54 @@ OmanyteChamber:
 	ret
 
 SpecialAerodactylChamber:
-	push de
-	push bc
-
-	call GetMapAttributesPointer
-	ld a, h
-	cp HIGH(RuinsOfAlphAerodactylChamber_MapAttributes)
-	jr nz, .nope
-	ld a, l
-	cp LOW(RuinsOfAlphAerodactylChamber_MapAttributes)
-	jr nz, .nope
-
-	ld de, EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
-	ld b, SET_FLAG
-	call EventFlagAction
-
-	scf
-	jr .done
-
-.nope
-	and a
-
-.done
-	pop bc
-	pop de
 	ret
+;	push de
+;	push bc
+;
+;	call GetMapAttributesPointer
+;	ld a, h
+;	cp HIGH(RuinsOfAlphAerodactylChamber_MapAttributes)
+;	jr nz, .nope
+;	ld a, l
+;	cp LOW(RuinsOfAlphAerodactylChamber_MapAttributes)
+;	jr nz, .nope
+;
+;	ld de, EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
+;	ld b, SET_FLAG
+;	call EventFlagAction
+;
+;	scf
+;	jr .done
+;
+;.nope
+;	and a
+;
+;.done
+;	pop bc
+;	pop de
+;	ret
 
 SpecialKabutoChamber:
-	push hl
-	push de
-
-	call GetMapAttributesPointer
-	ld a, h
-	cp HIGH(RuinsOfAlphKabutoChamber_MapAttributes)
-	jr nz, .done
-	ld a, l
-	cp LOW(RuinsOfAlphKabutoChamber_MapAttributes)
-	jr nz, .done
-
-	ld de, EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
-	ld b, SET_FLAG
-	call EventFlagAction
-
-.done
-	pop de
-	pop hl
 	ret
+;	push hl
+;	push de
+;
+;	call GetMapAttributesPointer
+;	ld a, h
+;	cp HIGH(RuinsOfAlphKabutoChamber_MapAttributes)
+;	jr nz, .done
+;	ld a, l
+;	cp LOW(RuinsOfAlphKabutoChamber_MapAttributes)
+;	jr nz, .done
+;
+;	ld de, EVENT_WALL_OPENED_IN_KABUTO_CHAMBER
+;	ld b, SET_FLAG
+;	call EventFlagAction
+;
+;.done
+;	pop de
+;	pop hl
+;	ret
 
 DisplayUnownWords:
 	ld a, [wScriptVar]

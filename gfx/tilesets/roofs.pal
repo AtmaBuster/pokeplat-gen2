@@ -2,6 +2,23 @@
 	RGB 21,21,21, 11,11,11 ; morn/day
 	RGB 21,21,21, 11,11,11 ; nite
 
+; group 1 (Cable Club)
+	RGB 21,21,21, 11,11,11 ; morn/day
+	RGB 21,21,21, 11,11,11 ; nite
+
+; group 2 (Twinleaf)
+	RGB 20,31,14, 11,23,05 ; morn/day
+	RGB 09,13,08, 06,09,04 ; nite
+
+; group 3 (Sandgem)
+	RGB 31,14,28, 31,05,21 ; morn/day
+	RGB 14,07,17, 13,00,08 ; nite
+
+; group 4 (Jubilife)
+	RGB 24,14,31, 13,07,21 ; morn/day
+	RGB 12,03,18, 09,03,15 ; nite
+
+; old
 ; group 1 (Olivine)
 	RGB 14,17,31, 07,11,15 ; morn/day
 	RGB 09,09,17, 05,07,13 ; nite
@@ -37,10 +54,6 @@
 ; group 9 (Lake of Rage)
 	RGB 31,08,04, 09,09,08 ; morn/day
 	RGB 18,05,09, 09,09,08 ; nite
-
-; group 10 (Violet)
-	RGB 24,14,31, 13,07,21 ; morn/day
-	RGB 12,03,18, 09,03,15 ; nite
 
 ; group 11 (Goldenrod)
 	RGB 25,25,00, 20,17,08 ; morn/day
@@ -78,10 +91,6 @@
 	RGB 21,21,25, 16,16,16 ; morn/day
 	RGB 13,13,13, 07,07,07 ; nite
 
-; group 20 (Cable Club)
-	RGB 21,21,21, 11,11,11 ; morn/day
-	RGB 21,21,21, 11,11,11 ; nite
-
 ; group 21 (Celadon)
 	RGB 19,31,15, 31,22,02 ; morn/day
 	RGB 12,13,09, 09,12,03 ; nite
@@ -94,14 +103,6 @@
 	RGB 21,31,07, 13,25,04 ; morn/day
 	RGB 09,14,08, 06,10,04 ; nite
 
-; group 24 (New Bark)
-	RGB 20,31,14, 11,23,05 ; morn/day
-	RGB 09,13,08, 06,09,04 ; nite
-
 ; group 25 (Saffron)
 	RGB 31,26,00, 31,15,00 ; morn/day
 	RGB 13,13,01, 08,08,01 ; nite
-
-; group 26 (Cherrygrove)
-	RGB 31,14,28, 31,05,21 ; morn/day
-	RGB 14,07,17, 13,00,08 ; nite

@@ -95,22 +95,49 @@ endc
 endc
 ENDM
 
+; connections
+	map_attributes TwinleafTown, TWINLEAF_TOWN, $01, NORTH
+	connection north, Route201, ROUTE_201, -4
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $01, NORTH
-	connection north, Route29, ROUTE_29, -4
+	map_attributes JubilifeCity, JUBILIFE_CITY, $01, SOUTH | EAST
+	connection south, Route202, ROUTE_202, 9
+	connection east, Route203, ROUTE_203, 0
+
+	map_attributes Route201, ROUTE_201, $01, SOUTH | EAST
+	connection south, TwinleafTown, TWINLEAF_TOWN, 4
+	connection east, SandgemTown, SANDGEM_TOWN, -1
+
+	map_attributes SandgemTown, SANDGEM_TOWN, $01, NORTH | WEST
+	connection north, Route202, ROUTE_202, 1
+	connection west, Route201, ROUTE_201, 1
+
+	map_attributes Route202, ROUTE_202, $01, NORTH | SOUTH
+	connection north, JubilifeCity, JUBILIFE_CITY, -9
+	connection south, SandgemTown, SANDGEM_TOWN, -1
+
+	map_attributes Route203, ROUTE_203, $01, WEST
+	connection west, JubilifeCity, JUBILIFE_CITY, 0
+
+; no connections
+	map_attributes RowansLab, ROWANS_LAB, $00, 0
+	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
+	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
+	map_attributes DebugRoom, DEBUG_ROOM, $13, 0
+	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
+	map_attributes TradeCenter, TRADE_CENTER, $00, 0
+	map_attributes Colosseum, COLOSSEUM, $00, 0
+	map_attributes TimeCapsule, TIME_CAPSULE, $00, 0
+	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
+	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
+
+
+if 0
 	
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 0
 
-	map_attributes VioletCity, VIOLET_CITY, $01, NORTH | SOUTH | WEST | EAST
-	connection north, UnionCave1F, UNION_CAVE_1F, 0
-	connection south, Route31, ROUTE_31, 9
-	connection west, Route43, ROUTE_43, 0
-	connection east, SproutTower1F, SPROUT_TOWER_1F, 0
 	
-	map_attributes SproutTower1F, SPROUT_TOWER_1F, $01, WEST
-	connection west, VioletCity, VIOLET_CITY, 0
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, WEST | EAST
 	connection west, Route34, ROUTE_34, -18
@@ -157,17 +184,6 @@ ENDM
 	map_attributes Route28, ROUTE_28, $2c, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
 
-	map_attributes Route29, ROUTE_29, $01, SOUTH | EAST
-	connection south, NewBarkTown, NEW_BARK_TOWN, 4
-	connection east, Route30, ROUTE_30, -1
-
-	map_attributes Route30, ROUTE_30, $01, NORTH | WEST
-	connection north, Route31, ROUTE_31, 1
-	connection west, Route29, ROUTE_29, 1
-
-	map_attributes Route31, ROUTE_31, $01, NORTH | SOUTH
-	connection north, VioletCity, VIOLET_CITY, -9
-	connection south, Route30, ROUTE_30, -1
 
 	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 0
@@ -480,7 +496,6 @@ ENDM
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
 	map_attributes SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $00, 0
-	map_attributes SafariZoneBeta, SAFARI_ZONE_BETA, $13, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
@@ -614,12 +629,6 @@ ENDM
 	map_attributes Route12SuperRodHouse, ROUTE_12_SUPER_ROD_HOUSE, $00, 0
 	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
 	map_attributes Route28SteelWingHouse, ROUTE_28_STEEL_WING_HOUSE, $00, 0
-	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
-	map_attributes TradeCenter, TRADE_CENTER, $00, 0
-	map_attributes Colosseum, COLOSSEUM, $00, 0
-	map_attributes TimeCapsule, TIME_CAPSULE, $00, 0
-	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
-	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
 	map_attributes CeladonDeptStore1F, CELADON_DEPT_STORE_1F, $00, 0
 	map_attributes CeladonDeptStore2F, CELADON_DEPT_STORE_2F, $00, 0
 	map_attributes CeladonDeptStore3F, CELADON_DEPT_STORE_3F, $00, 0
@@ -665,9 +674,6 @@ ENDM
 	map_attributes Route2NuggetHouse, ROUTE_2_NUGGET_HOUSE, $00, 0
 	map_attributes Route2Gate, ROUTE_2_GATE, $00, 0
 	map_attributes VictoryRoadGate, VICTORY_ROAD_GATE, $00, 0
-	map_attributes ElmsLab, ELMS_LAB, $00, 0
-	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
-	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
 	map_attributes PlayersNeighborsHouse, PLAYERS_NEIGHBORS_HOUSE, $00, 0
 	map_attributes ElmsHouse, ELMS_HOUSE, $00, 0
 	map_attributes Route26HealHouse, ROUTE_26_HEAL_HOUSE, $00, 0
@@ -695,3 +701,4 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
+endc

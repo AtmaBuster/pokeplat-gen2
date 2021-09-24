@@ -1,8 +1,4 @@
 	object_const_def ; object_event constants
-	const PLAYERSHOUSE2F_CONSOLE
-	const PLAYERSHOUSE2F_DOLL_1
-	const PLAYERSHOUSE2F_DOLL_2
-	const PLAYERSHOUSE2F_BIG_DOLL
 	const PLAYERSHOUSE2F_RIVAL
 
 PlayersHouse2F_MapScripts:
@@ -11,9 +7,8 @@ PlayersHouse2F_MapScripts:
 	scene_script .Dummy  ; SCENE_PLAYERSHOUSE2F_RIVAL
 	scene_script .Dummy  ; SCENE_PLAYERSHOUSE2F_DONE
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .InitializeRoom
-	callback MAPCALLBACK_TILES, .SetSpawn
 
 .Scene0:
 	turnobject PLAYER, UP
@@ -37,63 +32,6 @@ PlayersHouse2F_MapScripts:
 
 .SkipInitialization:
 	return
-
-.SetSpawn:
-	special ToggleMaptileDecorations
-	return
-
-	db 0, 0, 0 ; filler
-
-Doll1Script:
-	describedecoration DECODESC_LEFT_DOLL
-
-Doll2Script:
-	describedecoration DECODESC_RIGHT_DOLL
-
-BigDollScript:
-	describedecoration DECODESC_BIG_DOLL
-
-GameConsoleScript:
-	describedecoration DECODESC_CONSOLE
-
-PlayersHousePosterScript:
-	conditional_event EVENT_PLAYERS_ROOM_POSTER, .Script
-
-.Script:
-	describedecoration DECODESC_POSTER
-
-PlayersHouseRadioScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .NormalRadio
-	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
-	iftrue .AbbreviatedRadio
-	playmusic MUSIC_POKEMON_TALK
-	opentext
-	writetext PlayersRadioText1
-	pause 45
-	writetext PlayersRadioText2
-	pause 45
-	writetext PlayersRadioText3
-	pause 45
-	musicfadeout MUSIC_NEW_BARK_TOWN, 16
-	writetext PlayersRadioText4
-	pause 45
-	closetext
-	setevent EVENT_LISTENED_TO_INITIAL_RADIO
-	end
-
-.NormalRadio:
-	jumpstd radio1
-
-.AbbreviatedRadio:
-	opentext
-	writetext PlayersRadioText4
-	pause 45
-	closetext
-	end
-
-PlayersHouseBookshelfScript:
-	jumpstd picturebookshelf
 
 PlayersHousePCScript:
 	opentext
@@ -320,26 +258,6 @@ PlayersRoom_RivalText5:
 	cont "¥10 million!"
 	done
 
-PlayersRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
-	cont "in next time!"
-	done
-
-PlayersRadioText2:
-	text "#MON CHANNEL!"
-	done
-
-PlayersRadioText3:
-	text "This is DJ MARY,"
-	line "your co-host!"
-	done
-
-PlayersRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
-	done
-
 IntroSandgemTextCont:
 	text "That conlcudes our"
 	line "special program,"
@@ -366,15 +284,8 @@ PlayersHouse2F_MapEvents:
 	coord_event 3,  2, SCENE_PLAYERSHOUSE2F_RIVAL, PlayersRoomRivalScript2
 	coord_event 4,  3, SCENE_PLAYERSHOUSE2F_RIVAL, PlayersRoomRivalScript3
 
-	db 4 ; bg events
+	db 1 ; bg events
 	bg_event  2,  1, BGEVENT_UP, PlayersHousePCScript
-	bg_event  3,  1, BGEVENT_READ, PlayersHouseRadioScript
-	bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript
-	bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript
 
-	db 5 ; object events
-	object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE
-	object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Doll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
-	object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Doll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
-	object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+	db 1 ; object events
 	object_event  7,  0, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_PLAYERS_HOUSE

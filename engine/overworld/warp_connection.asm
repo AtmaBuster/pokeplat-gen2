@@ -1,4 +1,3 @@
-
 HandleNewMap:
 	call ClearUnusedMapBuffer
 	call ResetMapBufferEventFlags
@@ -188,14 +187,14 @@ LoadWarpData:
 
 ; MOUNT_MOON_SQUARE and TIN_TOWER_ROOF are outdoor maps within indoor maps.
 ; Dig and Escape Rope should not take you to them.
-	ld a, [wPrevMapGroup]
-	cp GROUP_MOUNT_MOON_SQUARE ; aka GROUP_TIN_TOWER_ROOF
-	jr nz, .not_mt_moon_or_tin_tower
-	ld a, [wPrevMapNumber]
-	cp MAP_MOUNT_MOON_SQUARE
-	ret z
-	cp MAP_TIN_TOWER_ROOF
-	ret z
+;	ld a, [wPrevMapGroup]
+;	cp GROUP_MOUNT_MOON_SQUARE ; aka GROUP_TIN_TOWER_ROOF
+;	jr nz, .not_mt_moon_or_tin_tower
+;	ld a, [wPrevMapNumber]
+;	cp MAP_MOUNT_MOON_SQUARE
+;	ret z
+;	cp MAP_TIN_TOWER_ROOF
+;	ret z
 .not_mt_moon_or_tin_tower
 
 	ld a, [wPrevWarp]

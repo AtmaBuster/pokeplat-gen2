@@ -1,8 +1,22 @@
 ; Landmarks indexes (see data/maps/landmarks.asm)
 	const_def
 
+	const SPECIAL_MAP
+	const TWINLEAF_TOWN
+	const ROUTE_201
+	const LAKE_VERITY
+	const SANDGEM_TOWN
+	const ROUTE_202
+	const JUBILIFE_CITY
+
+
+
+
+; old definitions
+	const_def
+
 ; Johto landmarks
-	const SPECIAL_MAP       ; 00
+	const _SPECIAL_MAP      ; 00 ; old
 	const NEW_BARK_TOWN     ; 01
 	const ROUTE_29          ; 02
 	const CHERRYGROVE_CITY  ; 03

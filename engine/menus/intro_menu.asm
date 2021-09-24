@@ -411,14 +411,10 @@ Continue:
 	ret
 
 .SpawnAfterE4:
-	ld a, SPAWN_NEW_BARK
+	ld a, SPAWN_TWINLEAF
 	ld [wDefaultSpawnpoint], a
 	call PostCreditsSpawn
 	jp FinishContinueFunction
-
-SpawnAfterRed:
-	ld a, SPAWN_MT_SILVER
-	ld [wDefaultSpawnpoint], a
 
 PostCreditsSpawn:
 	xor a
@@ -498,14 +494,7 @@ FinishContinueFunction:
 	ld hl, wEnteredMapFromContinue
 	set 1, [hl]
 	farcall OverworldLoop
-	ld a, [wSpawnAfterChampion]
-	cp SPAWN_RED
-	jr z, .AfterRed
 	jp Reset
-
-.AfterRed:
-	call SpawnAfterRed
-	jr .loop
 
 DisplaySaveInfoOnContinue:
 	call CheckRTCStatus

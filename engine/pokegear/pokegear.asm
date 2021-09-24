@@ -2286,12 +2286,12 @@ FlyMap:
 ; Note that .NoKanto should be modified in tandem with this branch
 	push af
 ; Start from New Bark Town
-	ld a, FLY_NEW_BARK
+	ld a, FLY_TWINLEAF
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave.
-	ld a, FLY_MT_SILVER
+	ld a, LAST_FLYPOINT
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillJohtoMap
@@ -2310,17 +2310,17 @@ FlyMap:
 ; enters Kanto, fly access is restricted until Indigo Plateau is
 ; visited and its flypoint enabled.
 	push af
-	ld c, SPAWN_INDIGO
-	call HasVisitedSpawn
-	and a
-	jr z, .NoKanto
+;	ld c, SPAWN_INDIGO
+;	call HasVisitedSpawn
+;	and a
+;	jr z, .NoKanto
 ; Kanto's map is only loaded if we've visited Indigo Plateau
 
 ; Flypoints begin at Pallet Town...
-	ld a, FLY_PALLET
+;	ld a, FLY_PALLET
 	ld [wStartFlypoint], a
 ; ...and end at Indigo Plateau
-	ld a, FLY_INDIGO
+;	ld a, FLY_INDIGO
 	ld [wEndFlypoint], a
 ; Because Indigo Plateau is the first flypoint the player
 ; visits, it's made the default flypoint.
@@ -2336,12 +2336,12 @@ FlyMap:
 ; If Indigo Plateau hasn't been visited, we use Johto's map instead
 
 ; Start from New Bark Town
-	ld a, FLY_NEW_BARK
+	ld a, FLY_TWINLEAF
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave
-	ld a, FLY_MT_SILVER
+	ld a, LAST_FLYPOINT
 	ld [wEndFlypoint], a
 	call FillJohtoMap
 	pop af
@@ -2819,130 +2819,131 @@ FlyMapLabelBorderGFX:
 INCBIN "gfx/pokegear/flymap_label_border.1bpp"
 
 Unreferenced_Function92311:
-	xor a
-	ld [wTownMapPlayerIconLandmark], a
-	call ClearBGPalettes
-	call ClearTileMap
-	call ClearSprites
-	ld hl, hInMenu
-	ld a, [hl]
-	push af
-	ld [hl], $1
-	xor a
-	ldh [hBGMapMode], a
-	farcall ClearSpriteAnims
-	call LoadTownMapGFX
-	ld de, FlyMapLabelBorderGFX
-	ld hl, vTiles2 tile $30
-	lb bc, BANK(FlyMapLabelBorderGFX), 6
-	call Request1bpp
-	call FillKantoMap
-	call TownMapBubble
-	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
-	call TownMapBubble
-	call TownMapPals
-	hlbgcoord 0, 0
-	call TownMapBGUpdate
-	call TownMapMon
-	ld a, c
-	ld [wTownMapCursorCoordinates], a
-	ld a, b
-	ld [wTownMapCursorCoordinates + 1], a
-	ld b, SCGB_POKEGEAR_PALS
-	call GetSGBLayout
-	call SetPalettes
-.loop
-	call JoyTextDelay
-	ld hl, hJoyPressed
-	ld a, [hl]
-	and B_BUTTON
-	jr nz, .pressedB
-	ld a, [hl]
-	and A_BUTTON
-	jr nz, .pressedA
-	call .HandleDPad
-	call GetMapCursorCoordinates
-	farcall PlaySpriteAnimations
-	call DelayFrame
-	jr .loop
-
-.pressedB
-	ld a, -1
-	jr .finished_a_b
-
-.pressedA
-	ld a, [wTownMapPlayerIconLandmark]
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, Flypoints + 1
-	add hl, de
-	ld a, [hl]
-.finished_a_b
-	ld [wTownMapPlayerIconLandmark], a
-	pop af
-	ldh [hInMenu], a
-	call ClearBGPalettes
-	ld a, $90
-	ldh [hWY], a
-	xor a ; LOW(vBGMap0)
-	ldh [hBGMapAddress], a
-	ld a, HIGH(vBGMap0)
-	ldh [hBGMapAddress + 1], a
-	ld a, [wTownMapPlayerIconLandmark]
-	ld e, a
-	ret
-
-.HandleDPad:
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_DOWN | D_RIGHT
-	jr nz, .down_right
-	ld a, [hl]
-	and D_UP | D_LEFT
-	jr nz, .up_left
-	ret
-
-.down_right
-	ld hl, wTownMapPlayerIconLandmark
-	ld a, [hl]
-	cp FLY_INDIGO
-	jr c, .okay_dr
-	ld [hl], -1
-.okay_dr
-	inc [hl]
-	jr .continue
-
-.up_left
-	ld hl, wTownMapPlayerIconLandmark
-	ld a, [hl]
-	and a
-	jr nz, .okay_ul
-	ld [hl], FLY_INDIGO + 1
-.okay_ul
-	dec [hl]
-.continue
-	ld a, [wTownMapPlayerIconLandmark]
-	cp KANTO_FLYPOINT
-	jr c, .johto
-	call FillKantoMap
-	xor a
-	ld b, $9c
-	jr .finish
-
-.johto
-	call FillJohtoMap
-	ld a, $90
-	ld b, $98
-.finish
-	ldh [hWY], a
-	ld a, b
-	ldh [hBGMapAddress + 1], a
-	call TownMapBubble
-	call WaitBGMap
-	xor a
-	ldh [hBGMapMode], a
+;	xor a
+;	ld [wTownMapPlayerIconLandmark], a
+;	call ClearBGPalettes
+;	call ClearTileMap
+;	call ClearSprites
+;	ld hl, hInMenu
+;	ld a, [hl]
+;	push af
+;	ld [hl], $1
+;	xor a
+;	ldh [hBGMapMode], a
+;	farcall ClearSpriteAnims
+;	call LoadTownMapGFX
+;	ld de, FlyMapLabelBorderGFX
+;	ld hl, vTiles2 tile $30
+;	lb bc, BANK(FlyMapLabelBorderGFX), 6
+;	call Request1bpp
+;	call FillKantoMap
+;	call TownMapBubble
+;	call TownMapPals
+;	hlbgcoord 0, 0, vBGMap1
+;	call TownMapBGUpdate
+;	call FillJohtoMap
+;	call TownMapBubble
+;	call TownMapPals
+;	hlbgcoord 0, 0
+;	call TownMapBGUpdate
+;	call TownMapMon
+;	ld a, c
+;	ld [wTownMapCursorCoordinates], a
+;	ld a, b
+;	ld [wTownMapCursorCoordinates + 1], a
+;	ld b, SCGB_POKEGEAR_PALS
+;	call GetSGBLayout
+;	call SetPalettes
+;.loop
+;	call JoyTextDelay
+;	ld hl, hJoyPressed
+;	ld a, [hl]
+;	and B_BUTTON
+;	jr nz, .pressedB
+;	ld a, [hl]
+;	and A_BUTTON
+;	jr nz, .pressedA
+;	call .HandleDPad
+;	call GetMapCursorCoordinates
+;	farcall PlaySpriteAnimations
+;	call DelayFrame
+;	jr .loop
+;
+;.pressedB
+;	ld a, -1
+;	jr .finished_a_b
+;
+;.pressedA
+;	ld a, [wTownMapPlayerIconLandmark]
+;	ld l, a
+;	ld h, 0
+;	add hl, hl
+;	ld de, Flypoints + 1
+;	add hl, de
+;	ld a, [hl]
+;.finished_a_b
+;	ld [wTownMapPlayerIconLandmark], a
+;	pop af
+;	ldh [hInMenu], a
+;	call ClearBGPalettes
+;	ld a, $90
+;	ldh [hWY], a
+;	xor a ; LOW(vBGMap0)
+;	ldh [hBGMapAddress], a
+;	ld a, HIGH(vBGMap0)
+;	ldh [hBGMapAddress + 1], a
+;	ld a, [wTownMapPlayerIconLandmark]
+;	ld e, a
+;	ret
+;
+;.HandleDPad:
+;	ld hl, hJoyLast
+;	ld a, [hl]
+;	and D_DOWN | D_RIGHT
+;	jr nz, .down_right
+;	ld a, [hl]
+;	and D_UP | D_LEFT
+;	jr nz, .up_left
+;	ret
+;
+;.down_right
+;	ld hl, wTownMapPlayerIconLandmark
+;	ld a, [hl]
+;	cp FLY_INDIGO
+;	jr c, .okay_dr
+;	ld [hl], -1
+;.okay_dr
+;	inc [hl]
+;	jr .continue
+;
+;.up_left
+;	ld hl, wTownMapPlayerIconLandmark
+;	ld a, [hl]
+;	and a
+;	jr nz, .okay_ul
+;	ld [hl], FLY_INDIGO + 1
+;.okay_ul
+;	dec [hl]
+;.continue
+;	ld a, [wTownMapPlayerIconLandmark]
+;	cp KANTO_FLYPOINT
+;	jr c, .johto
+;	call FillKantoMap
+;	xor a
+;	ld b, $9c
+;	jr .finish
+;
+;.johto
+;	call FillJohtoMap
+;	ld a, $90
+;	ld b, $98
+;.finish
+;	ldh [hWY], a
+;	ld a, b
+;	ldh [hBGMapAddress + 1], a
+;	call TownMapBubble
+;	call WaitBGMap
+;	xor a
+;	ldh [hBGMapMode], a
+;	ret
 	ret

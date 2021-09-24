@@ -359,33 +359,27 @@ Debug_Warp:
 .SpawnTable
 	db SPAWN_HOME
 	db SPAWN_DEBUG
-	db SPAWN_PALLET
-	db SPAWN_VIRIDIAN
-	db SPAWN_PEWTER
-	db SPAWN_CERULEAN
-	db SPAWN_ROCK_TUNNEL
-	db SPAWN_VERMILION
-	db SPAWN_LAVENDER
-	db SPAWN_SAFFRON
-	db SPAWN_CELADON
-	db SPAWN_FUCHSIA
-	db SPAWN_CINNABAR
-	db SPAWN_INDIGO
-	db SPAWN_NEW_BARK
-	db SPAWN_CHERRYGROVE
-	db SPAWN_VIOLET
-	db SPAWN_UNION_CAVE
-	db SPAWN_AZALEA
-	db SPAWN_CIANWOOD
-	db SPAWN_GOLDENROD
-	db SPAWN_OLIVINE
-	db SPAWN_ECRUTEAK
-	db SPAWN_MAHOGANY
-	db SPAWN_LAKE_OF_RAGE
-	db SPAWN_BLACKTHORN
-	db SPAWN_MT_SILVER
-	db SPAWN_FAST_SHIP
-NUM_DEBUG_SPAWNS EQU 28
+	db SPAWN_TWINLEAF
+	db SPAWN_SANDGEM
+	db SPAWN_JUBILIFE
+	db SPAWN_OREBURGH
+	db SPAWN_FLOAROMA
+	db SPAWN_ETERNA
+	db SPAWN_HEARTHOME
+	db SPAWN_SOLACEON
+	db SPAWN_VEILSTONE
+	db SPAWN_PASTORIA
+	db SPAWN_CELESTIC
+	db SPAWN_CANALAVE
+	db SPAWN_SNOWPOINT
+	db SPAWN_SUNYSHORE
+	db SPAWN_LEAGUE_S
+	db SPAWN_LEAGUE_N
+	db SPAWN_FIGHT_AREA
+	db SPAWN_SURVIVAL_AREA
+	db SPAWN_RESORT_AREA
+	db SPAWN_PAL_PARK
+NUM_DEBUG_SPAWNS EQU 22
 
 .MenuHeader:
 	db MENU_BACKUP_TILES
@@ -426,32 +420,26 @@ endr
 .LocNames:
 	db "HOME@@@@@@@@@"
 	db "DEBUG@@@@@@@@"
-	db "PALLET@@@@@@@"
-	db "VIRIDIAN@@@@@"
-	db "PEWTER@@@@@@@"
-	db "CERULEAN@@@@@"
-	db "ROCK TUNNEL@@"
-	db "VERMILION@@@@"
-	db "LAVENDER@@@@@"
-	db "SAFFRON@@@@@@"
-	db "CELADON@@@@@@"
-	db "FUCHSIA@@@@@@"
-	db "CINNABAR@@@@@"
-	db "INDIGO@@@@@@@"
-	db "NEW BARK@@@@@"
-	db "CHERRYGROVE@@"
-	db "VIOLET@@@@@@@"
-	db "UNION CAVE@@@"
-	db "AZALEA@@@@@@@"
-	db "CIANWOOD@@@@@"
-	db "GOLDENROD@@@@"
-	db "OLIVINE@@@@@@"
-	db "ECRUTEAK@@@@@"
-	db "MAHOGANY@@@@@"
-	db "LAKE OF RAGE@"
-	db "BLACKTHORN@@@"
-	db "MT. SILVER@@@"
-	db "FAST SHIP@@@@"
+	db "TWINLEAF@@@@@"
+	db "SANDGEM@@@@@@"
+	db "JUBILIFE@@@@@"
+	db "5@@@@@@@@@@@@"
+	db "6@@@@@@@@@@@@"
+	db "7@@@@@@@@@@@@"
+	db "8@@@@@@@@@@@@"
+	db "9@@@@@@@@@@@@"
+	db "10@@@@@@@@@@@"
+	db "11@@@@@@@@@@@"
+	db "12@@@@@@@@@@@"
+	db "13@@@@@@@@@@@"
+	db "14@@@@@@@@@@@"
+	db "15@@@@@@@@@@@"
+	db "16@@@@@@@@@@@"
+	db "17@@@@@@@@@@@"
+	db "18@@@@@@@@@@@"
+	db "19@@@@@@@@@@@"
+	db "20@@@@@@@@@@@"
+	db "21@@@@@@@@@@@"
 
 Debug_ColorPicker:
 	farcall DebugColorPicker

@@ -74,30 +74,30 @@ EngineFlags:
 	; fly
 	engine_flag wVisitedSpawns, SPAWN_HOME
 	engine_flag wVisitedSpawns, SPAWN_DEBUG
-	engine_flag wVisitedSpawns, SPAWN_PALLET
-	engine_flag wVisitedSpawns, SPAWN_VIRIDIAN
-	engine_flag wVisitedSpawns, SPAWN_PEWTER
-	engine_flag wVisitedSpawns, SPAWN_CERULEAN ; $38
-	engine_flag wVisitedSpawns, SPAWN_ROCK_TUNNEL
-	engine_flag wVisitedSpawns, SPAWN_VERMILION
-	engine_flag wVisitedSpawns, SPAWN_LAVENDER
-	engine_flag wVisitedSpawns, SPAWN_SAFFRON
-	engine_flag wVisitedSpawns, SPAWN_CELADON
-	engine_flag wVisitedSpawns, SPAWN_FUCHSIA
-	engine_flag wVisitedSpawns, SPAWN_CINNABAR
-	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
-	engine_flag wVisitedSpawns, SPAWN_NEW_BARK
-	engine_flag wVisitedSpawns, SPAWN_CHERRYGROVE
-	engine_flag wVisitedSpawns, SPAWN_VIOLET
-	engine_flag wVisitedSpawns, SPAWN_AZALEA
-	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
-	engine_flag wVisitedSpawns, SPAWN_GOLDENROD
-	engine_flag wVisitedSpawns, SPAWN_OLIVINE
-	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK ; $48
-	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
-	engine_flag wVisitedSpawns, SPAWN_LAKE_OF_RAGE
-	engine_flag wVisitedSpawns, SPAWN_BLACKTHORN
-	engine_flag wVisitedSpawns, SPAWN_MT_SILVER
+	engine_flag wVisitedSpawns, SPAWN_TWINLEAF
+	engine_flag wVisitedSpawns, SPAWN_SANDGEM
+	engine_flag wVisitedSpawns, SPAWN_JUBILIFE
+	engine_flag wVisitedSpawns, SPAWN_OREBURGH ; $38
+	engine_flag wVisitedSpawns, SPAWN_FLOAROMA
+	engine_flag wVisitedSpawns, SPAWN_ETERNA
+	engine_flag wVisitedSpawns, SPAWN_HEARTHOME
+	engine_flag wVisitedSpawns, SPAWN_SOLACEON
+	engine_flag wVisitedSpawns, SPAWN_VEILSTONE
+	engine_flag wVisitedSpawns, SPAWN_PASTORIA
+	engine_flag wVisitedSpawns, SPAWN_CELESTIC
+	engine_flag wVisitedSpawns, SPAWN_CANALAVE ; $40
+	engine_flag wVisitedSpawns, SPAWN_SNOWPOINT
+	engine_flag wVisitedSpawns, SPAWN_SUNYSHORE
+	engine_flag wVisitedSpawns, SPAWN_LEAGUE_S
+	engine_flag wVisitedSpawns, SPAWN_LEAGUE_N
+	engine_flag wVisitedSpawns, SPAWN_FIGHT_AREA
+	engine_flag wVisitedSpawns, SPAWN_SURVIVAL_AREA
+	engine_flag wVisitedSpawns, SPAWN_RESORT_AREA
+	engine_flag wVisitedSpawns, SPAWN_PAL_PARK ; $48
+;	engine_flag wVisitedSpawns, SPAWN_
+;	engine_flag wVisitedSpawns, SPAWN_
+;	engine_flag wVisitedSpawns, SPAWN_
+;	engine_flag wVisitedSpawns, SPAWN_
 	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
