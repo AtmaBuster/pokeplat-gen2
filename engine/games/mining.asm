@@ -899,10 +899,10 @@ MiningGame_GenerateItems:
 ; clear object list
 	xor a
 	ld hl, wMiningSpawnedObjects
-	ld [hli], a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
+	push bc
+	ld bc, 8
+	call ByteFill
+	pop bc
 ; choose c different random numbers
 	ld b, 0
 .loop

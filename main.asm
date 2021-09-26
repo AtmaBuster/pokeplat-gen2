@@ -339,18 +339,18 @@ INCLUDE "data/pokemon/first_stages.asm"
 
 SECTION "Phone Scripts 1", ROMX
 
-INCLUDE "engine/phone/scripts/generic_caller.asm"
-INCLUDE "engine/phone/scripts/jack_gossip.asm"
-INCLUDE "engine/phone/scripts/liz_gossip.asm"
-INCLUDE "engine/phone/scripts/chad_gossip.asm"
-INCLUDE "engine/phone/scripts/brent_gossip.asm"
-INCLUDE "engine/phone/scripts/irwin_gossip.asm"
-INCLUDE "engine/phone/scripts/hangups.asm"
-INCLUDE "engine/phone/scripts/reminders.asm"
-INCLUDE "engine/phone/scripts/hangups_2.asm"
-INCLUDE "engine/phone/scripts/reminders_2.asm"
-INCLUDE "engine/phone/scripts/bike_shop.asm"
-INCLUDE "engine/phone/scripts/buena.asm"
+;INCLUDE "engine/phone/scripts/generic_caller.asm"
+;INCLUDE "engine/phone/scripts/jack_gossip.asm"
+;INCLUDE "engine/phone/scripts/liz_gossip.asm"
+;INCLUDE "engine/phone/scripts/chad_gossip.asm"
+;INCLUDE "engine/phone/scripts/brent_gossip.asm"
+;INCLUDE "engine/phone/scripts/irwin_gossip.asm"
+;INCLUDE "engine/phone/scripts/hangups.asm"
+;INCLUDE "engine/phone/scripts/reminders.asm"
+;INCLUDE "engine/phone/scripts/hangups_2.asm"
+;INCLUDE "engine/phone/scripts/reminders_2.asm"
+;INCLUDE "engine/phone/scripts/bike_shop.asm"
+;INCLUDE "engine/phone/scripts/buena.asm"
 
 
 SECTION "Phone Text", ROMX
@@ -419,7 +419,7 @@ INCLUDE "engine/phone/scripts/unused.asm"
 ;INCLUDE "engine/phone/scripts/kenji.asm"
 ;INCLUDE "engine/phone/scripts/parry.asm"
 ;INCLUDE "engine/phone/scripts/erin.asm"
-INCLUDE "engine/phone/scripts/generic_callee.asm"
+;INCLUDE "engine/phone/scripts/generic_callee.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
 
 

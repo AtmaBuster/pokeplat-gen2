@@ -66,7 +66,7 @@ PokecenterNurseScript:
 	sjump .ok
 
 .morn
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
+;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .morn_comcenter
 	farwritetext NurseMornText
 	buttonsound
@@ -77,7 +77,7 @@ PokecenterNurseScript:
 	sjump .ok
 
 .day
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
+;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .day_comcenter
 	farwritetext NurseDayText
 	buttonsound
@@ -88,7 +88,7 @@ PokecenterNurseScript:
 	sjump .ok
 
 .nite
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
+;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .nite_comcenter
 	farwritetext NurseNiteText
 	buttonsound
@@ -100,7 +100,7 @@ PokecenterNurseScript:
 
 .ok
 	; only do this once
-	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
+;	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
 
 	farwritetext NurseAskHealText
 	yesorno
@@ -145,7 +145,7 @@ PokecenterNurseScript:
 
 .pokerus
 	; already cleared earlier in the script
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
+;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	iftrue .pokerus_comcenter
 	farwritetext NursePokerusText
 	waitbutton
@@ -287,16 +287,16 @@ DayToTextScript:
 	db "SATURDAY@"
 
 GoldenrodRocketsScript:
-	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
+;	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
 	end
 
 RadioTowerRocketsScript:
 	setflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	setevent EVENT_GOLDENROD_CITY_CIVILIANS
-	setevent EVENT_RADIO_TOWER_BLACKBELT_BLOCKS_STAIRS
-	clearevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	clearevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
-	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+;	setevent EVENT_GOLDENROD_CITY_CIVILIANS
+;	setevent EVENT_RADIO_TOWER_BLACKBELT_BLOCKS_STAIRS
+;	clearevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+;	clearevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
+;	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
 	specialphonecall SPECIALCALL_WEIRDBROADCAST
 ;	setmapscene MAHOGANY_TOWN, SCENE_FINISHED
 	end
@@ -304,19 +304,19 @@ RadioTowerRocketsScript:
 BugContestResultsWarpScript:
 	special ClearBGPalettes
 	scall BugContestResults_CopyContestantsToResults
-	setevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
-	clearevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
-	setevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
+;	setevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+;	clearevent EVENT_ROUTE_36_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
+;	setevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
 ;	warp ROUTE_36_NATIONAL_PARK_GATE, 0, 4
 	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
 
 BugContestResultsScript:
 	clearflag ENGINE_BUG_CONTEST_TIMER
-	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
-	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
+;	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
+;	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+;	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+;	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
+;	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	opentext
 	farwritetext ContestResults_ReadyToJudgeText
 	waitbutton
@@ -341,7 +341,7 @@ BugContestResults_ReturnAfterWinnersPrize:
 	buttonsound
 
 BugContestResults_FinishUp:
-	checkevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
+;	checkevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
 	iffalse BugContestResults_DidNotLeaveMons
 	farwritetext ContestResults_ReturnPartyText
 	waitbutton
@@ -357,32 +357,32 @@ BugContestResults_CleanUp:
 	closetext
 	setscene SCENE_ROUTE36NATIONALPARKGATE_NOTHING
 ;	setmapscene ROUTE_35_NATIONAL_PARK_GATE, SCENE_ROUTE35NATIONALPARKGATE_NOTHING
-	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	setevent EVENT_BUG_CATCHING_CONTESTANT_1B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_2B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_3B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_4B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_5B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_6B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_7B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_8B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_9B
-	setevent EVENT_BUG_CATCHING_CONTESTANT_10B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_1A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_2A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_3A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_4A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_5A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_6A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_7A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_8A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_9A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_10A
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_1B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_2B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_3B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_4B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_5B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_6B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_7B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_8B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_9B
+;	setevent EVENT_BUG_CATCHING_CONTESTANT_10B
 	setflag ENGINE_DAILY_BUG_CONTEST
 	special PlayMapMusic
 	end
 
 BugContestResults_FirstPlace:
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	getitemname STRING_BUFFER_4, SUN_STONE
 	farwritetext ContestResults_PlayerWonAPrizeText
 	waitbutton
@@ -409,67 +409,67 @@ BugContestResults_ThirdPlace:
 BugContestResults_NoRoomForSunStone:
 	farwritetext BugContestPrizeNoRoomText
 	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
+;	setevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForEverstone:
 	farwritetext BugContestPrizeNoRoomText
 	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
+;	setevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForGoldBerry:
 	farwritetext BugContestPrizeNoRoomText
 	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
+;	setevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForBerry:
 	farwritetext BugContestPrizeNoRoomText
 	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_BERRY
+;	setevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	sjump BugContestResults_DidNotWin
 
 BugContestResults_CopyContestantsToResults:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
 	iftrue .skip1
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_1B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_1B
 .skip1
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
 	iftrue .skip2
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_2B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_2B
 .skip2
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
 	iftrue .skip3
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_3B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_3B
 .skip3
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
 	iftrue .skip4
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_4B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_4B
 .skip4
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
 	iftrue .skip5
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_5B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_5B
 .skip5
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
 	iftrue .skip6
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_6B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_6B
 .skip6
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
 	iftrue .skip7
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_7B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_7B
 .skip7
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
 	iftrue .skip8
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_8B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_8B
 .skip8
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
 	iftrue .skip9
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_9B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_9B
 .skip9
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
+;	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
 	iftrue .skip10
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
+;	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
 .skip10
 	end
 

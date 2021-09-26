@@ -324,7 +324,7 @@ MiningItemList:
 .SkullFossil_1
 	dw SkullFossilGFX
 	dw FossilPal
-	db 12, 4, 4
+	db 14, 4, 4
 	db $00, $01, $02, $03
 	db $04, $05, $06, $07
 	db $08, $09, $0a, $0b

@@ -241,27 +241,27 @@ HatchEggs:
 	ld [wCurPartySpecies], a
 	call SetSeenAndCaughtMon
 
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld a, l
-	sub LOW(TOGEPI)
-	if HIGH(TOGEPI) == 0
-		or h
-	else
-		jr nz, .nottogepi
-		if HIGH(TOGEPI) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(TOGEPI)
-		endc
-	endc
-	jr nz, .nottogepi
-	; set the event flag for hatching togepi
-	ld de, EVENT_TOGEPI_HATCHED
-	ld b, SET_FLAG
-	call EventFlagAction
-.nottogepi
+;	ld a, [wCurPartySpecies]
+;	call GetPokemonIndexFromID
+;	ld a, l
+;	sub LOW(TOGEPI)
+;	if HIGH(TOGEPI) == 0
+;		or h
+;	else
+;		jr nz, .nottogepi
+;		if HIGH(TOGEPI) == 1
+;			dec h
+;		else
+;			ld a, h
+;			cp HIGH(TOGEPI)
+;		endc
+;	endc
+;	jr nz, .nottogepi
+;	; set the event flag for hatching togepi
+;	ld de, EVENT_TOGEPI_HATCHED
+;	ld b, SET_FLAG
+;	call EventFlagAction
+;.nottogepi
 
 	pop de
 
