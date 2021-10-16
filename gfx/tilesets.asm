@@ -335,3 +335,12 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta:
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetLakeGFX:
+INCBIN "gfx/tilesets/lake.2bpp.lz"
+
+TilesetLakeMeta:
+INCBIN "data/tilesets/lake_metatiles.bin"
+
+TilesetLakeColl:
+INCLUDE "data/tilesets/lake_collision.asm"
