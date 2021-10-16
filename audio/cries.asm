@@ -2043,3 +2043,39 @@ Cry_Rattata_Ch8:
 	noise __,  2, $a2, $39
 	noise __,  9, $91, $49
 	endchannel
+; Below are new custom cries
+
+Cry_Turtwig:
+	channel_count 3
+	channel 5, Cry_Turtwig_Ch5
+	channel 6, Cry_Turtwig_Ch6
+	channel 8, Cry_Turtwig_Ch8
+
+Cry_Turtwig_Ch5:
+	sound_duty 0, 1, 3, 3
+	sound __, 16, $f0, $0705
+	sound __, 11, $e0, $0700
+	sound __,  7, $b4, $0710
+	sound __,  5, $d3, $0700
+	sound __,  7, $b2, $0620
+	sound __,  9, $a1, $0624
+	endchannel
+
+Cry_Turtwig_Ch6:
+	sound_duty 2, 0, 2, 0
+	sound __, 16, $b0, $06c3
+	sound __, 11, $a0, $06c1
+	sound __,  7, $84, $06d2
+	sound __,  5, $93, $06c1
+	sound __,  7, $82, $05e1
+	sound __,  9, $61, $05e8
+	endchannel
+
+Cry_Turtwig_Ch8:
+	noise __,  7, $e6, $4c
+	noise __, 16, $d6, $3c
+	noise __, 11, $c5, $4a
+	noise __,  2, $b2, $5b
+	noise __, 16, $c2, $4c
+	endchannel
+	

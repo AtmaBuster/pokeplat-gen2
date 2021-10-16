@@ -72,5 +72,7 @@
 	const CRY_AIPOM
 	const CRY_DUNSPARCE
 	const CRY_DONPHAN
+; Other
+	const CRY_TURTWIG
 
 CRY_SAMPLED EQU $ff
