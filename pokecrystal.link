@@ -42,11 +42,9 @@ ROMX $06
 	"Tileset Data 1"
 ROMX $07
 	"Roofs"
-	"Tileset Data 2"
 	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
-	"Tileset Data 3"
 	"Egg Move Pointers"
 	"Egg Moves 1"
 ROMX $09
@@ -145,7 +143,7 @@ ROMX $34
 ROMX $36
 	"Font Inversed"
 ROMX $37
-	"Tileset Data 6"
+	"Tileset Data 2"
 ROMX $38
 	"bank38"
 ROMX $39
@@ -289,10 +287,9 @@ ROMX $75
 	"16-bit ID stuff"
 ROMX $77
 	"bank77"
-	"Tileset Data 7"
 	"bank77_2"
 ROMX $78
-	"Tileset Data 8"
+
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
@@ -364,6 +361,8 @@ ROMX $99
 	"Sprites 3"
 ROMX $9A
 	"Songs 1"
+ROMX $9B
+	"Tileset Data 3"
 WRAM0
 	"Stack"
 	"Audio RAM"

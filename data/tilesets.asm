@@ -13,40 +13,28 @@ ENDM
 Tilesets::
 ; entries correspond to TILESET_* constants
 	tileset Tileset0
-	tileset TilesetJohto
-	tileset TilesetJohtoModern
-	tileset TilesetKanto
-	tileset TilesetBattleTowerOutside
-	tileset TilesetHouse
-	tileset TilesetPlayersHouse
-	tileset TilesetPokecenter
-	tileset TilesetGate
-	tileset TilesetPort
-	tileset TilesetLab
-	tileset TilesetFacility
-	tileset TilesetMart
-	tileset TilesetMansion
-	tileset TilesetGameCorner
-	tileset TilesetEliteFourRoom
-	tileset TilesetTraditionalHouse
-	tileset TilesetTrainStation
-	tileset TilesetChampionsRoom
-	tileset TilesetLighthouse
+	tileset TilesetSinnoh1
+	tileset TilesetSinnoh2
 	tileset TilesetPlayersRoom
-	tileset TilesetPokeComCenter
-	tileset TilesetBattleTower
-	tileset TilesetTower
-	tileset TilesetCave
-	tileset TilesetPark
-	tileset TilesetRuinsOfAlph
-	tileset TilesetRadioTower
-	tileset TilesetUnderground
-	tileset TilesetIcePath
-	tileset TilesetDarkCave
-	tileset TilesetForest
-	tileset TilesetBetaWordRoom
-	tileset TilesetHoOhWordRoom
-	tileset TilesetKabutoWordRoom
-	tileset TilesetOmanyteWordRoom
-	tileset TilesetAerodactylWordRoom
+	tileset TilesetPlayersHouse
+	tileset TilesetHouse
 	tileset TilesetLake
+	tileset TilesetLab
+	tileset TilesetPokecenter
+	tileset TilesetMart
+	tileset TilesetPokeComCenter
+	tileset TilesetMansion
+	tileset TilesetCave
+	tileset TilesetGate
+	tileset TilesetForest
+	tileset TilesetFacility
+	tileset TilesetBikeShop
+	tileset TilesetPark
+	tileset TilesetRadioTower
+	tileset TilesetSolaceonRuins
+	tileset TilesetTraditionalHouse
+	tileset TilesetGameCorner
+	tileset TilesetSnowpointTemple
+	tileset TilesetMtCoronet
+
+	

@@ -2,10 +2,8 @@ LoadSpecialMapPalette:
 	ld a, [wMapTileset]
 	cp TILESET_POKECOM_CENTER
 	jr z, .pokecom_2f
-	cp TILESET_BATTLE_TOWER
-	jr z, .battle_tower
-	cp TILESET_ICE_PATH
-	jr z, .ice_path
+	cp TILESET_SNOWPOINT_TEMPLE
+	jr z, .snowpoint_temple
 	cp TILESET_HOUSE
 	jr z, .house
 	cp TILESET_RADIO_TOWER
@@ -19,17 +17,12 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.battle_tower
-	call LoadBattleTowerPalette
-	scf
-	ret
-
-.ice_path
+.snowpoint_temple
 	ld a, [wEnvironment]
 	and $7
 	cp INDOOR ; Hall of Fame
 	jr z, .do_nothing
-	call LoadIcePathPalette
+	call LoadSnowpointTemplePalette
 	scf
 	ret
 
@@ -63,27 +56,16 @@ LoadPokeComPalette:
 PokeComPalette:
 INCLUDE "gfx/tilesets/pokecom_center.pal"
 
-LoadBattleTowerPalette:
+LoadSnowpointTemplePalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, BattleTowerPalette
+	ld hl, SnowpointTemplePalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
-
-BattleTowerPalette:
-INCLUDE "gfx/tilesets/battle_tower.pal"
-
-LoadIcePathPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, IcePathPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-
-IcePathPalette:
-INCLUDE "gfx/tilesets/ice_path.pal"
+	
+SnowpointTemplePalette:
+INCLUDE "gfx/tilesets/snowpoint_temple.pal"
 
 LoadHousePalette:
 	ld a, BANK(wBGPals1)
