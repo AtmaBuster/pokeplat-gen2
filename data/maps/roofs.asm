@@ -10,11 +10,11 @@ MapGroupRoofs:
 ; entries correspond to map groups
 ; values are indexes for Roofs (see below)
 	db -1
-	db -1            ; Link
-	db ROOF_TWINLEAF ; Twinleaf
-	db ROOF_TWINLEAF ; Sandgem
-	db ROOF_TWINLEAF ; Jubilife
-	db ROOF_AZALEA   ; Oreburgh
+	db -1             ; Link
+	db ROOF_GOLDENROD ; Twinleaf
+	db ROOF_GOLDENROD ; Sandgem
+	db ROOF_GOLDENROD ; Jubilife
+	db ROOF_AZALEA    ; Oreburgh
 
 Roofs:
 ; entries correspond to ROOF_* constants

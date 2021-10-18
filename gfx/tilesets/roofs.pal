@@ -11,16 +11,16 @@
 	RGB 09,13,08, 06,09,04 ; nite
 
 ; group 3 (Sandgem)
-	RGB 31,14,28, 31,05,21 ; morn/day
-	RGB 14,07,17, 13,00,08 ; nite
+	RGB 15,10,31, 07,05,15 ; morn/day
+	RGB 06,05,17, 02,02,08 ; nite
 
 ; group 4 (Jubilife)
-	RGB 24,14,31, 13,07,21 ; morn/day
-	RGB 12,03,18, 09,03,15 ; nite
+	RGB 26,20,31, 15,10,31 ; morn/day
+	RGB 10,05,21, 04,02,10 ; nite
 
 ; group 5 (Oreburgh)
-	RGB 24,14,31, 13,07,21 ; morn/day
-	RGB 12,03,18, 09,03,15 ; nite
+	RGB 11,10,16, 05,06,07 ; morn/day
+	RGB 03,04,08, 00,00,00 ; nite
 
 ; old
 ; group 1 (Olivine)
