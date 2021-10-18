@@ -18,6 +18,10 @@
 	RGB 24,14,31, 13,07,21 ; morn/day
 	RGB 12,03,18, 09,03,15 ; nite
 
+; group 5 (Oreburgh)
+	RGB 24,14,31, 13,07,21 ; morn/day
+	RGB 12,03,18, 09,03,15 ; nite
+
 ; old
 ; group 1 (Olivine)
 	RGB 14,17,31, 07,11,15 ; morn/day

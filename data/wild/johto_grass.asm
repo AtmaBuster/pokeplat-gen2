@@ -128,6 +128,90 @@ JohtoGrassWildMons:
 	dbw 7, STARLY
 	dbw 7, BIDOOF
 	
+	map_id OREBURGH_GATE_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 5, ZUBAT
+	dbw 5, PSYDUCK
+	dbw 6, ZUBAT
+	dbw 6, PSYDUCK
+	dbw 5, GEODUDE
+	dbw 5, ZUBAT
+	dbw 7, PSYDUCK
+	dbw 7, GEODUDE
+	dbw 7, ZUBAT
+	dbw 8, ZUBAT
+	dbw 7, ZUBAT
+	dbw 8, ZUBAT
+	; day
+	dbw 5, ZUBAT
+	dbw 5, PSYDUCK
+	dbw 6, ZUBAT
+	dbw 6, PSYDUCK
+	dbw 5, GEODUDE
+	dbw 5, ZUBAT
+	dbw 7, PSYDUCK
+	dbw 7, GEODUDE
+	dbw 7, ZUBAT
+	dbw 8, ZUBAT
+	dbw 7, ZUBAT
+	dbw 8, ZUBAT
+	; nite
+	dbw 5, ZUBAT
+	dbw 5, PSYDUCK
+	dbw 6, ZUBAT
+	dbw 6, PSYDUCK
+	dbw 5, GEODUDE
+	dbw 5, ZUBAT
+	dbw 7, PSYDUCK
+	dbw 7, GEODUDE
+	dbw 7, ZUBAT
+	dbw 8, ZUBAT
+	dbw 7, ZUBAT
+	dbw 8, ZUBAT
+
+	map_id OREBURGH_GATE_B1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw  6, ZUBAT
+	dbw  8, PSYDUCK
+	dbw  7, ZUBAT
+	dbw  9, PSYDUCK
+	dbw  6, GEODUDE
+	dbw  8, ZUBAT
+	dbw 10, PSYDUCK
+	dbw  8, GEODUDE
+	dbw  9, ZUBAT
+	dbw 10, GOLBAT
+	dbw  9, ZUBAT
+	dbw 10, GOLBAT
+	; day
+	dbw  6, ZUBAT
+	dbw  8, PSYDUCK
+	dbw  7, ZUBAT
+	dbw  9, PSYDUCK
+	dbw  6, GEODUDE
+	dbw  8, ZUBAT
+	dbw 10, PSYDUCK
+	dbw  8, GEODUDE
+	dbw  9, ZUBAT
+	dbw 10, GOLBAT
+	dbw  9, ZUBAT
+	dbw 10, GOLBAT
+	; nite
+	dbw  6, ZUBAT
+	dbw  8, PSYDUCK
+	dbw  7, ZUBAT
+	dbw  9, PSYDUCK
+	dbw  6, GEODUDE
+	dbw  8, ZUBAT
+	dbw 10, PSYDUCK
+	dbw  8, GEODUDE
+	dbw  9, ZUBAT
+	dbw 10, GOLBAT
+	dbw  9, ZUBAT
+	dbw 10, GOLBAT
+	
 	; map_id [MAP_ID]
 	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	;morn

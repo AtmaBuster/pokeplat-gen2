@@ -53,6 +53,12 @@ ENDM
 
 	map_const JUBILIFE_CITY,                               20, 20 ;  1
 	map_const ROUTE_203,                                   26, 10 ;  2
+	map_const OREBURGH_GATE_1F, 						   15, 10 ;  3
+	map_const OREBURGH_GATE_B1F,                           25,  9 ;  4
+	
+	newgroup													  ;  5
+	
+	map_const OREBURGH_CITY,							   25, 20 ;  1
 
 ;	newgroup                                                      ;  1
 ;

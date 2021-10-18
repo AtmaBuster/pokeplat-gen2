@@ -1,15 +1,15 @@
 	object_const_def ; object_event constants
 
-Route203_MapScripts:
+OreburghCity_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route203_MapEvents:
+OreburghCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 44,  9, OREBURGH_GATE_1F, 1
+	warp_event  6,  5, OREBURGH_GATE_1F, 2
 
 	db 0 ; coord events
 

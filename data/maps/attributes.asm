@@ -129,7 +129,9 @@ ENDM
 	map_attributes TimeCapsule, TIME_CAPSULE, $00, 0
 	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
 	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
-
+	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
+	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
+	map_attributes OreburghCity, OREBURGH_CITY, $09, 0
 
 if 0
 	

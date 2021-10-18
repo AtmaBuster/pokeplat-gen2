@@ -8,6 +8,9 @@
 	const SANDGEM_TOWN
 	const ROUTE_202
 	const JUBILIFE_CITY
+	const ROUTE_203
+	const OREBURGH_GATE
+	const OREBURGH_CITY
 
 
 

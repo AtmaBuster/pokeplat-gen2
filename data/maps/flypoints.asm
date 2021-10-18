@@ -6,10 +6,11 @@ ENDM
 Flypoints:
 ; landmark, spawn point
 	const_def
-; Johto
+; Sinnoh
 	flypoint TWINLEAF, TWINLEAF_TOWN
 	flypoint SANDGEM, SANDGEM_TOWN
 	flypoint JUBILIFE, JUBILIFE_CITY
+	flypoint OREBURGH, OREBURGH_CITY
 
 LAST_FLYPOINT EQU const_value - 1
 	db -1

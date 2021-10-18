@@ -14,6 +14,7 @@ MapGroupRoofs:
 	db ROOF_TWINLEAF ; Twinleaf
 	db ROOF_TWINLEAF ; Sandgem
 	db ROOF_TWINLEAF ; Jubilife
+	db ROOF_AZALEA   ; Oreburgh
 
 Roofs:
 ; entries correspond to ROOF_* constants

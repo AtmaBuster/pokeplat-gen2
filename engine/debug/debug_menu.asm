@@ -423,7 +423,7 @@ endr
 	db "TWINLEAF@@@@@"
 	db "SANDGEM@@@@@@"
 	db "JUBILIFE@@@@@"
-	db "5@@@@@@@@@@@@"
+	db "OREBURGH@@@@@"
 	db "6@@@@@@@@@@@@"
 	db "7@@@@@@@@@@@@"
 	db "8@@@@@@@@@@@@"

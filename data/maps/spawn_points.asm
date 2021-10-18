@@ -10,10 +10,10 @@ SpawnPoints:
 	spawn PLAYERS_HOUSE_2F,            4,  2
 	spawn DEBUG_ROOM,                  0,  0
 
-	spawn TWINLEAF_TOWN,               0,  0
-	spawn SANDGEM_TOWN,                0,  0
-	spawn JUBILIFE_CITY,               0,  0
-	spawn DEBUG_ROOM,                  0,  0
+	spawn TWINLEAF_TOWN,              15, 14
+	spawn SANDGEM_TOWN,               13,  6
+	spawn JUBILIFE_CITY,              31, 26
+	spawn OREBURGH_CITY,              37, 12
 	spawn DEBUG_ROOM,                  0,  0
 	spawn DEBUG_ROOM,                  0,  0
 	spawn DEBUG_ROOM,                  0,  0

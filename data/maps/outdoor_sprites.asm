@@ -7,6 +7,7 @@ OutdoorSprites:
 	dw TwinleafGroupSprites
 	dw SandgemGroupSprites
 	dw JubilifeGroupSprites
+	dw OreburghGroupSprites
 
 CableClubGroupSprites:
 	db SPRITE_OAK
@@ -95,6 +96,9 @@ JubilifeGroupSprites:
 	db SPRITE_WEIRD_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+
+OreburghGroupSprites:
+	db SPRITE_POKE_BALL
 
 if 0
 	dw OlivineGroupSprites

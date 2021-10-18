@@ -24,6 +24,9 @@ INCLUDE "maps/Route201.asm"
 INCLUDE "maps/SandgemTown.asm"
 INCLUDE "maps/Route202.asm"
 INCLUDE "maps/Route203.asm"
+INCLUDE "maps/OreburghGate1F.asm"
+INCLUDE "maps/OreburghGateB1F.asm"
+INCLUDE "maps/OreburghCity.asm"
 
 
 SECTION "Map Scripts 4", ROMX

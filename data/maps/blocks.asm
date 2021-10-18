@@ -37,11 +37,20 @@ SandgemTown_Blocks:
 Route202_Blocks:
 	INCBIN "maps/Route202.blk"
 
-Route203_Blocks:
-	INCBIN "maps/Route203.blk"
-
 JubilifeCity_Blocks:
 	INCBIN "maps/JubilifeCity.blk"
+
+Route203_Blocks:
+	INCBIN "maps/Route203.blk"
+	
+OreburghGate1F_Blocks:
+	INCBIN "maps/OreburghGate1F.blk"
+	
+OreburghGateB1F_Blocks:
+	INCBIN "maps/OreburghGateB1F.blk"
+	
+OreburghCity_Blocks:
+	INCBIN "maps/OreburghCity.blk"
 
 DebugRoom_Blocks:
 	INCBIN "maps/DebugRoom.blk"
