@@ -26,7 +26,7 @@ ENDM
 ; - scripts and events (see data/maps/scripts.asm)
 	const_def
 
-	newgroup                                                      ;  1
+	newgroup ; Pokemon Center/Cable Club                          ;  1
 
 	map_const POKECENTER_2F,                                8,  4 ;  1
 	map_const TRADE_CENTER,                                 5,  4 ;  2
@@ -36,29 +36,40 @@ ENDM
 	map_const MOBILE_BATTLE_ROOM,                           5,  4 ;  6
 	map_const DEBUG_ROOM,                                  26, 13 ;  7
 
-	newgroup                                                      ;  2
+	newgroup ; Twinleaf & Routes                                   ;  2
 
 	map_const TWINLEAF_TOWN,                               10, 10 ;  1
 	map_const ROUTE_201,                                   30,  9 ;  2
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  3
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  4
 
-	newgroup                                                      ;  3
+	newgroup ; Sandgem & Routes                                   ;  3
 
 	map_const SANDGEM_TOWN,                                12, 10 ;  1
 	map_const ROUTE_202,                                   10, 10 ;  2
 	map_const ROWANS_LAB,                                   5,  6 ;  3
 
-	newgroup                                                      ;  4
+	newgroup ; Jubilife & Routes                                  ;  4
 
 	map_const JUBILIFE_CITY,                               20, 20 ;  1
 	map_const ROUTE_203,                                   26, 10 ;  2
-	map_const OREBURGH_GATE_1F, 						   15, 10 ;  3
-	map_const OREBURGH_GATE_B1F,                           25,  9 ;  4
 	
-	newgroup													  ;  5
+	newgroup ; Oreburgh & Routes								  ;  5
 	
 	map_const OREBURGH_CITY,							   25, 20 ;  1
+
+	newgroup ; Lakes & Caverns                                    ;  6
+	
+	map_const LAKE_VERITY_LOW,                             17, 12 ;  1
+	map_const LAKE_VERITY_HIGH,                            17, 12 ;  2
+	map_const LAKE_VERITY_CAVERN,                          10, 10 ;  3
+
+	newgroup ; Dungeons
+	
+	map_const OREBURGH_GATE_1F, 						   15, 10 ;  1
+	map_const OREBURGH_GATE_B1F,                           25,  9 ;  2
+
+
 
 ;	newgroup                                                      ;  1
 ;

@@ -14,6 +14,9 @@ SECTION "Map Scripts 2", ROMX
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/TwinleafTown.asm"
+INCLUDE "maps/LakeVerityLow.asm"
+INCLUDE "maps/LakeVerityHigh.asm"
+INCLUDE "maps/LakeVerityCavern.asm"
 INCLUDE "maps/JubilifeCity.asm"
 INCLUDE "maps/RowansLab.asm"
 

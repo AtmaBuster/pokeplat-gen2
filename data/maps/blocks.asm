@@ -54,6 +54,15 @@ OreburghCity_Blocks:
 
 DebugRoom_Blocks:
 	INCBIN "maps/DebugRoom.blk"
+	
+LakeVerityHigh_Blocks:
+	INCBIN "maps/LakeVerityHigh.blk"
+	
+LakeVerityLow_Blocks:
+	INCBIN "maps/LakeVerityLow.blk"
+	
+LakeVerityCavern_Blocks:
+	INCBIN "maps/LakeVerityCavern.blk"
 
 
 SECTION "Map Blocks 2", ROMX
