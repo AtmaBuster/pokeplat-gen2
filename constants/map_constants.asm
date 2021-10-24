@@ -36,12 +36,16 @@ ENDM
 	map_const MOBILE_BATTLE_ROOM,                           5,  4 ;  6
 	map_const DEBUG_ROOM,                                  26, 13 ;  7
 
-	newgroup ; Twinleaf & Routes                                   ;  2
+	newgroup ; Twinleaf & Routes                                  ;  2
 
 	map_const TWINLEAF_TOWN,                               10, 10 ;  1
 	map_const ROUTE_201,                                   30,  9 ;  2
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  3
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  4
+	map_const RIVAL_HOUSE_1F,                               5,  4 ;  5
+	map_const RIVAL_HOUSE_2F,                               4,  3 ;  6
+	map_const TWINLEAF_HOUSE_1,                             4,  4 ;  7
+	map_const TWINLEAF_HOUSE_2,                             4,  4 ;  8
 
 	newgroup ; Sandgem & Routes                                   ;  3
 

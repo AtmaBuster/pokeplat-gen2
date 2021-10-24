@@ -11,21 +11,25 @@ INCLUDE "maps/DebugRoom.asm"
 
 SECTION "Map Scripts 2", ROMX
 
+INCLUDE "maps/TwinleafTown.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
-INCLUDE "maps/TwinleafTown.asm"
+INCLUDE "maps/RivalHouse1F.asm"
+INCLUDE "maps/RivalHouse2F.asm"
+INCLUDE "maps/TwinleafHouse1.asm"
+INCLUDE "maps/TwinleafHouse2.asm"
 INCLUDE "maps/LakeVerityLow.asm"
 INCLUDE "maps/LakeVerityHigh.asm"
 INCLUDE "maps/LakeVerityCavern.asm"
-INCLUDE "maps/JubilifeCity.asm"
-INCLUDE "maps/RowansLab.asm"
 
 
 SECTION "Map Scripts 3", ROMX
 
 INCLUDE "maps/Route201.asm"
 INCLUDE "maps/SandgemTown.asm"
+INCLUDE "maps/RowansLab.asm"
 INCLUDE "maps/Route202.asm"
+INCLUDE "maps/JubilifeCity.asm"
 INCLUDE "maps/Route203.asm"
 INCLUDE "maps/OreburghGate1F.asm"
 INCLUDE "maps/OreburghGateB1F.asm"

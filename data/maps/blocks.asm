@@ -20,10 +20,16 @@ TwinleafTown_Blocks:
 	INCBIN "maps/TwinleafTown.blk"
 
 PlayersHouse1F_Blocks:
+RivalHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.blk"
 
 PlayersHouse2F_Blocks:
+RivalHouse2F_Blocks:
 	INCBIN "maps/PlayersHouse2F.blk"
+	
+TwinleafHouse1_Blocks:
+TwinleafHouse2_Blocks:
+	INCBIN "maps/HouseInterior1.blk"
 
 RowansLab_Blocks:
 	INCBIN "maps/RowansLab.blk"

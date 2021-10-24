@@ -119,9 +119,8 @@ ENDM
 	connection west, JubilifeCity, JUBILIFE_CITY, 0
 
 ; no connections
-	map_attributes RowansLab, ROWANS_LAB, $00, 0
-	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
-	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
+	
+	
 	map_attributes DebugRoom, DEBUG_ROOM, $13, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
@@ -129,9 +128,16 @@ ENDM
 	map_attributes TimeCapsule, TIME_CAPSULE, $00, 0
 	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
 	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
-	map_attributes LakeVerityLow, LAKE_VERITY_LOW, $1, 0
-	map_attributes LakeVerityHigh, LAKE_VERITY_HIGH, $1, 0
-	map_attributes LakeVerityCavern, LAKE_VERITY_CAVERN, $9, 0
+	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
+	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
+	map_attributes RivalHouse1F, RIVAL_HOUSE_1F, $00, 0
+	map_attributes RivalHouse2F, RIVAL_HOUSE_2F, $00, 0
+	map_attributes TwinleafHouse1, TWINLEAF_HOUSE_1, $00, 0
+	map_attributes TwinleafHouse2, TWINLEAF_HOUSE_2, $00, 0
+	map_attributes LakeVerityLow, LAKE_VERITY_LOW, $01, 0
+	map_attributes LakeVerityHigh, LAKE_VERITY_HIGH, $01, 0
+	map_attributes LakeVerityCavern, LAKE_VERITY_CAVERN, $09, 0
+	map_attributes RowansLab, ROWANS_LAB, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
 	map_attributes OreburghCity, OREBURGH_CITY, $09, 0
