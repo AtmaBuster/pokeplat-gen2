@@ -52,6 +52,7 @@ ENDM
 	map_const SANDGEM_TOWN,                                12, 10 ;  1
 	map_const ROUTE_202,                                   10, 10 ;  2
 	map_const ROWANS_LAB,                                   5,  6 ;  3
+	map_const SANDGEM_HOUSE_1,                              4,  4 ;  4
 
 	newgroup ; Jubilife & Routes                                  ;  4
 

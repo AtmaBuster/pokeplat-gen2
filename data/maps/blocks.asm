@@ -1,5 +1,8 @@
 SECTION "Map Blocks 1", ROMX
 
+DebugRoom_Blocks:
+	INCBIN "maps/DebugRoom.blk"
+
 Pokecenter2F_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
 
@@ -29,7 +32,17 @@ RivalHouse2F_Blocks:
 	
 TwinleafHouse1_Blocks:
 TwinleafHouse2_Blocks:
+SandgemHouse1_Blocks:
 	INCBIN "maps/HouseInterior1.blk"
+	
+LakeVerityHigh_Blocks:
+	INCBIN "maps/LakeVerityHigh.blk"
+	
+LakeVerityLow_Blocks:
+	INCBIN "maps/LakeVerityLow.blk"
+	
+LakeVerityCavern_Blocks:
+	INCBIN "maps/LakeVerityCavern.blk"
 
 RowansLab_Blocks:
 	INCBIN "maps/RowansLab.blk"
@@ -58,17 +71,9 @@ OreburghGateB1F_Blocks:
 OreburghCity_Blocks:
 	INCBIN "maps/OreburghCity.blk"
 
-DebugRoom_Blocks:
-	INCBIN "maps/DebugRoom.blk"
+
 	
-LakeVerityHigh_Blocks:
-	INCBIN "maps/LakeVerityHigh.blk"
-	
-LakeVerityLow_Blocks:
-	INCBIN "maps/LakeVerityLow.blk"
-	
-LakeVerityCavern_Blocks:
-	INCBIN "maps/LakeVerityCavern.blk"
+
 
 
 SECTION "Map Blocks 2", ROMX

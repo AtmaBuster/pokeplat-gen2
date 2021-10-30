@@ -138,6 +138,7 @@ ENDM
 	map_attributes LakeVerityHigh, LAKE_VERITY_HIGH, $01, 0
 	map_attributes LakeVerityCavern, LAKE_VERITY_CAVERN, $09, 0
 	map_attributes RowansLab, ROWANS_LAB, $00, 0
+	map_attributes SandgemHouse1, SANDGEM_HOUSE_1, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
 	map_attributes OreburghCity, OREBURGH_CITY, $09, 0

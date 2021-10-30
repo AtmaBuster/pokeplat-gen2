@@ -28,6 +28,7 @@ SECTION "Map Scripts 3", ROMX
 INCLUDE "maps/Route201.asm"
 INCLUDE "maps/SandgemTown.asm"
 INCLUDE "maps/RowansLab.asm"
+INCLUDE "maps/SandgemHouse1.asm"
 INCLUDE "maps/Route202.asm"
 INCLUDE "maps/JubilifeCity.asm"
 INCLUDE "maps/Route203.asm"
