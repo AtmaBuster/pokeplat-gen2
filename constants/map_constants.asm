@@ -53,6 +53,10 @@ ENDM
 	map_const ROUTE_202,                                   10, 10 ;  2
 	map_const ROWANS_LAB,                                   5,  6 ;  3
 	map_const SANDGEM_HOUSE_1,                              4,  4 ;  4
+	map_const ASSISTANT_HOUSE_1F,                           5,  4 ;  5
+	map_const ASSISTANT_HOUSE_2F,                           4,  3 ;  6
+	map_const SANDGEM_POKEMON_CENTER_1F,                    5,  4 ;  7
+	map_const SANDGEM_POKEMART,                             6,  4 ;  8
 
 	newgroup ; Jubilife & Routes                                  ;  4
 

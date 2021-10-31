@@ -3,6 +3,9 @@ SECTION "Map Blocks 1", ROMX
 DebugRoom_Blocks:
 	INCBIN "maps/DebugRoom.blk"
 
+SandgemPokemonCenter1F_Blocks:
+	INCBIN "maps/PokemonCenter1F.blk"
+	
 Pokecenter2F_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
 
@@ -18,17 +21,24 @@ MobileTradeRoom_Blocks:
 
 MobileBattleRoom_Blocks:
 	INCBIN "maps/MobileBattleRoom.blk"
+	
+SandgemPokeMart_Blocks:
+	INCBIN "maps/PokeMart.blk"
 
 TwinleafTown_Blocks:
 	INCBIN "maps/TwinleafTown.blk"
 
 PlayersHouse1F_Blocks:
-RivalHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.blk"
 
 PlayersHouse2F_Blocks:
-RivalHouse2F_Blocks:
 	INCBIN "maps/PlayersHouse2F.blk"
+	
+RivalHouse1F_Blocks:
+	INCBIN "maps/RivalHouse1F.blk"
+	
+RivalHouse2F_Blocks:
+	INCBIN "maps/RivalHouse2F.blk"
 	
 TwinleafHouse1_Blocks:
 TwinleafHouse2_Blocks:
@@ -44,14 +54,20 @@ LakeVerityLow_Blocks:
 LakeVerityCavern_Blocks:
 	INCBIN "maps/LakeVerityCavern.blk"
 
-RowansLab_Blocks:
-	INCBIN "maps/RowansLab.blk"
-
 Route201_Blocks:
 	INCBIN "maps/Route201.blk"
 
 SandgemTown_Blocks:
 	INCBIN "maps/SandgemTown.blk"
+	
+RowansLab_Blocks:
+	INCBIN "maps/RowansLab.blk"
+	
+AssistantHouse1F_Blocks:
+	INCBIN "maps/AssistantHouse1F.blk"
+
+AssistantHouse2F_Blocks:
+	INCBIN "maps/AssistantHouse2F.blk"
 
 Route202_Blocks:
 	INCBIN "maps/Route202.blk"
