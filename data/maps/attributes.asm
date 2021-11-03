@@ -115,8 +115,12 @@ ENDM
 	connection north, JubilifeCity, JUBILIFE_CITY, -9
 	connection south, SandgemTown, SANDGEM_TOWN, -1
 
-	map_attributes Route203, ROUTE_203, $01, WEST
+	map_attributes Route203, ROUTE_203, $01, WEST | EAST
 	connection west, JubilifeCity, JUBILIFE_CITY, 0
+	connection east, OreburghCity, OREBURGH_CITY, 2
+	
+	map_attributes OreburghCity, OREBURGH_CITY, $09, WEST
+	connection west, Route203, ROUTE_203, -2
 
 ; no connections
 	
@@ -145,7 +149,7 @@ ENDM
 	map_attributes SandgemPokeMart, SANDGEM_POKEMART, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
-	map_attributes OreburghCity, OREBURGH_CITY, $09, 0
+
 
 
 if 0
