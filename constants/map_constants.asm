@@ -62,6 +62,14 @@ ENDM
 
 	map_const JUBILIFE_CITY,                               20, 20 ;  1
 	map_const ROUTE_203,                                   26, 10 ;  2
+	map_const JUBILIFE_APARTMENT_SE_1F,                     6,  4 ;  3
+	map_const JUBILIFE_APARTMENT_SE_2F,                     6,  4 ;  4
+	map_const JUBILIFE_APARTMENT_NE_1F,                     6,  4 ;  5
+	map_const JUBILIFE_APARTMENT_NE_2F,                     6,  4 ;  6
+	map_const JUBILIFE_APARTMENT_SW_1F,                     6,  4 ;  7
+	map_const JUBILIFE_APARTMENT_SW_2F,                     6,  4 ;  8
+	map_const JUBILIFE_POKEMON_CENTER_1F,                      5,  4 ;  9
+	map_const JUBILIFE_POKEMART,                            6,  4 ; 10
 	
 	newgroup ; Oreburgh & Routes								  ;  5
 	

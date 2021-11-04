@@ -24,6 +24,9 @@ INCLUDE "gfx/tilesets/players_house_palette_map.asm"
 TilesetHousePalMap:
 INCLUDE "gfx/tilesets/house_palette_map.asm"
 
+TilesetModernInteriorPalMap:
+INCLUDE "gfx/tilesets/modern_interior_palette_map.asm"
+
 TilesetLakePalMap:
 INCLUDE "gfx/tilesets/lake_palette_map.asm"
 

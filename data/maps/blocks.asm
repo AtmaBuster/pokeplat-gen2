@@ -4,6 +4,7 @@ DebugRoom_Blocks:
 	INCBIN "maps/DebugRoom.blk"
 
 SandgemPokemonCenter1F_Blocks:
+JubilifePokemonCenter1F_Blocks:
 	INCBIN "maps/PokemonCenter1F.blk"
 	
 Pokecenter2F_Blocks:
@@ -23,6 +24,7 @@ MobileBattleRoom_Blocks:
 	INCBIN "maps/MobileBattleRoom.blk"
 	
 SandgemPokeMart_Blocks:
+JubilifePokeMart_Blocks:
 	INCBIN "maps/PokeMart.blk"
 
 TwinleafTown_Blocks:
@@ -74,9 +76,19 @@ Route202_Blocks:
 
 JubilifeCity_Blocks:
 	INCBIN "maps/JubilifeCity.blk"
-
+	
 Route203_Blocks:
 	INCBIN "maps/Route203.blk"
+	
+JubilifeApartmentSE1F_Blocks:
+JubilifeApartmentNE1F_Blocks:
+JubilifeApartmentSW1F_Blocks:
+	INCBIN "maps/JubilifeApartment1F.blk"
+	
+JubilifeApartmentSE2F_Blocks:
+JubilifeApartmentNE2F_Blocks:
+JubilifeApartmentSW2F_Blocks:
+	INCBIN "maps/JubilifeApartment2F.blk"
 	
 OreburghGate1F_Blocks:
 	INCBIN "maps/OreburghGate1F.blk"

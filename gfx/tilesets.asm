@@ -65,6 +65,15 @@ INCBIN "data/tilesets/house_metatiles.bin"
 TilesetHouseColl:
 INCLUDE "data/tilesets/house_collision.asm"
 ;---------------------------------------
+TilesetModernInteriorGFX:
+INCBIN "gfx/tilesets/modern_interior.2bpp.lz"
+
+TilesetModernInteriorMeta:
+INCBIN "data/tilesets/modern_interior_metatiles.bin"
+
+TilesetModernInteriorColl:
+INCLUDE "data/tilesets/modern_interior_collision.asm"
+;---------------------------------------
 TilesetLakeGFX:
 INCBIN "gfx/tilesets/lake.2bpp.lz"
 
@@ -92,6 +101,10 @@ INCBIN "data/tilesets/pokecenter_metatiles.bin"
 TilesetPokecenterColl:
 INCLUDE "data/tilesets/pokecenter_collision.asm"
 ;---------------------------------------
+
+SECTION "Tileset Data 3", ROMX
+
+;---------------------------------------
 TilesetMartGFX:
 INCBIN "gfx/tilesets/mart.2bpp.lz"
 
@@ -100,11 +113,6 @@ INCBIN "data/tilesets/mart_metatiles.bin"
 
 TilesetMartColl:
 INCLUDE "data/tilesets/mart_collision.asm"
-;---------------------------------------
-
-SECTION "Tileset Data 3", ROMX
-
-
 ;---------------------------------------
 TilesetPokeComCenterGFX:
 INCBIN "gfx/tilesets/pokecom_center.2bpp.lz"
@@ -151,6 +159,10 @@ INCBIN "data/tilesets/forest_metatiles.bin"
 TilesetForestColl:
 INCLUDE "data/tilesets/forest_collision.asm"
 ;---------------------------------------
+
+SECTION "Tileset Data 4", ROMX
+
+;---------------------------------------
 TilesetFacilityGFX:
 INCBIN "gfx/tilesets/facility.2bpp.lz"
 
@@ -159,10 +171,6 @@ INCBIN "data/tilesets/facility_metatiles.bin"
 
 TilesetFacilityColl:
 INCLUDE "data/tilesets/facility_collision.asm"
-;---------------------------------------
-
-SECTION "Tileset Data 4", ROMX
-
 ;---------------------------------------
 TilesetBikeShopGFX:
 INCBIN "gfx/tilesets/bike_shop.2bpp.lz"
@@ -200,6 +208,10 @@ INCBIN "data/tilesets/solaceon_ruins_metatiles.bin"
 TilesetSolaceonRuinsColl:
 INCLUDE "data/tilesets/solaceon_ruins_collision.asm"
 ;---------------------------------------
+
+SECTION "Tileset Data 5", ROMX
+
+;---------------------------------------
 TilesetTraditionalHouseGFX:
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
 
@@ -210,9 +222,6 @@ TilesetTraditionalHouseColl:
 INCLUDE "data/tilesets/traditional_house_collision.asm"
 ;---------------------------------------
 
-SECTION "Tileset Data 5", ROMX
-
-;---------------------------------------
 TilesetGameCornerGFX:
 INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 

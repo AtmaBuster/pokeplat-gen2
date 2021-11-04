@@ -218,6 +218,7 @@ UnusedTilesetAnim_fc2bf:
 	dw NULL,  DoneTileAnimation
 
 TilesetHouseAnim:
+TilesetModernInteriorAnim:
 TilesetPlayersHouseAnim:
 TilesetPokecenterAnim:
 TilesetGateAnim:

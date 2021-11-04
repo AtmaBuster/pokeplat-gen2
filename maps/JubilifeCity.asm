@@ -14,15 +14,11 @@ JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 9 ; warp events
-	warp_event 33, 13, DEBUG_ROOM, 1
-	warp_event 22, 11, DEBUG_ROOM, 1
-	warp_event 12, 11, DEBUG_ROOM, 1
-	warp_event  9, 29, DEBUG_ROOM, 1
-	warp_event 23, 31, DEBUG_ROOM, 1
-	warp_event 14, 25, DEBUG_ROOM, 1
-	warp_event 20, 23, DEBUG_ROOM, 1
-	warp_event 31, 19, DEBUG_ROOM, 1
-	warp_event 31, 25, DEBUG_ROOM, 1
+	warp_event 33, 13, JUBILIFE_APARTMENT_NE_1F, 1
+	warp_event 23, 31, JUBILIFE_APARTMENT_SE_1F, 1
+	warp_event  9, 29, JUBILIFE_APARTMENT_SW_1F, 1
+	warp_event 31, 25, JUBILIFE_POKEMON_CENTER_1F, 1
+	warp_event 31, 19, JUBILIFE_POKEMART, 1
 
 	db 0 ; coord events
 

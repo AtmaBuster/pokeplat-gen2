@@ -18,6 +18,7 @@ Tilesets::
 	tileset TilesetPlayersRoom
 	tileset TilesetPlayersHouse
 	tileset TilesetHouse
+	tileset TilesetModernInterior
 	tileset TilesetLake
 	tileset TilesetLab
 	tileset TilesetPokecenter
