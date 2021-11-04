@@ -6,6 +6,8 @@ LoadSpecialMapPalette:
 	jr z, .snowpoint_temple
 	cp TILESET_HOUSE
 	jr z, .house
+	cp TILESET_MODERN_INTERIOR
+	jr z, .house
 	cp TILESET_RADIO_TOWER
 	jr z, .radio_tower
 	cp TILESET_MANSION
