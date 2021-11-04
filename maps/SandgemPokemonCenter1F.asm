@@ -20,5 +20,5 @@ SandgemPokemonCenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 1 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1FNurseScript, -1
