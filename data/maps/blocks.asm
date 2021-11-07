@@ -83,12 +83,12 @@ Route203_Blocks:
 JubilifeApartmentSE1F_Blocks:
 JubilifeApartmentNE1F_Blocks:
 JubilifeApartmentSW1F_Blocks:
-	INCBIN "maps/JubilifeApartment1F.blk"
+	INCBIN "maps/Apartment1F.blk"
 	
 JubilifeApartmentSE2F_Blocks:
 JubilifeApartmentNE2F_Blocks:
 JubilifeApartmentSW2F_Blocks:
-	INCBIN "maps/JubilifeApartment2F.blk"
+	INCBIN "maps/Apartment2F.blk"
 	
 OreburghGate1F_Blocks:
 	INCBIN "maps/OreburghGate1F.blk"
