@@ -90,6 +90,15 @@ JubilifeApartmentNE2F_Blocks:
 JubilifeApartmentSW2F_Blocks:
 	INCBIN "maps/Apartment2F.blk"
 	
+PoketchCompany1F_Blocks:
+	INCBIN "maps/PoketchCompany1F.blk"
+	
+PoketchCompany2F_Blocks:
+	INCBIN "maps/PoketchCompany2F.blk"
+	
+PoketchCompany3F_Blocks:
+	INCBIN "maps/PoketchCompany3F.blk"
+	
 OreburghGate1F_Blocks:
 	INCBIN "maps/OreburghGate1F.blk"
 	

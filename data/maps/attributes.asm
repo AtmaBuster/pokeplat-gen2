@@ -153,6 +153,9 @@ ENDM
 	map_attributes JubilifeApartmentNE2F, JUBILIFE_APARTMENT_NE_2F, $00, 0
 	map_attributes JubilifeApartmentSW1F, JUBILIFE_APARTMENT_SW_1F, $00, 0
 	map_attributes JubilifeApartmentSW2F, JUBILIFE_APARTMENT_SW_2F, $00, 0
+	map_attributes PoketchCompany1F, POKETCH_COMPANY_1F, $00, 0
+	map_attributes PoketchCompany2F, POKETCH_COMPANY_2F, $00, 0
+	map_attributes PoketchCompany3F, POKETCH_COMPANY_3F, $00, 0
 	map_attributes JubilifePokemonCenter1F, JUBILIFE_POKEMON_CENTER_1F, $00, 0
 	map_attributes JubilifePokeMart, JUBILIFE_POKEMART, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
