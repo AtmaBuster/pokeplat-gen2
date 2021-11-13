@@ -79,8 +79,9 @@ ENDM
 	map_const TV_STATION_3F3,                              5,  3 ; 17
 	map_const TV_STATION_4F,                                7,  5 ; 18
 	map_const TV_STATION_ELEVATOR,                          2,  2 ; 19
-	map_const JUBILIFE_POKEMON_CENTER_1F,                   5,  4 ; 20
-	map_const JUBILIFE_POKEMART,                            6,  4 ; 21
+	map_const POKEMON_COMMUNICATION_CENTER,                16, 16 ; 20
+	map_const JUBILIFE_POKEMON_CENTER_1F,                   5,  4 ; 21
+	map_const JUBILIFE_POKEMART,                            6,  4 ; 22
 	
 	newgroup ; Oreburgh & Routes								  ;  5
 	

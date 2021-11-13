@@ -165,6 +165,7 @@ ENDM
 	map_attributes TVStation3F3, TV_STATION_3F3, $00, 0
 	map_attributes TVStation4F, TV_STATION_4F, $00, 0
 	map_attributes TVStationElevator, TV_STATION_ELEVATOR, $00, 0
+	map_attributes PokemonCommunicationCenter, POKEMON_COMMUNICATION_CENTER, $00, 0
 	map_attributes JubilifePokemonCenter1F, JUBILIFE_POKEMON_CENTER_1F, $00, 0
 	map_attributes JubilifePokeMart, JUBILIFE_POKEMART, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
