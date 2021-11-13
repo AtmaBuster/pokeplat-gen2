@@ -99,6 +99,30 @@ PoketchCompany2F_Blocks:
 PoketchCompany3F_Blocks:
 	INCBIN "maps/PoketchCompany3F.blk"
 	
+TVStation1F_Blocks:
+	INCBIN "maps/TVStation1F.blk"
+	
+TVStation2F_Blocks:
+	INCBIN "maps/TVStation2F.blk"
+	
+TVStation2F2_Blocks:
+	INCBIN "maps/TVStation2F2.blk"
+	
+TVStation3F_Blocks:
+	INCBIN "maps/TVStation3F.blk"
+	
+TVStation3F2_Blocks:
+	INCBIN "maps/TVStation3F2.blk"
+	
+TVStation3F3_Blocks:
+	INCBIN "maps/TVStation3F3.blk"
+	
+TVStation4F_Blocks:
+	INCBIN "maps/TVStation4F.blk"
+	
+TVStationElevator_Blocks:
+	INCBIN "maps/TVStationElevator.blk"
+	
 OreburghGate1F_Blocks:
 	INCBIN "maps/OreburghGate1F.blk"
 	

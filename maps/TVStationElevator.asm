@@ -1,0 +1,20 @@
+	object_const_def ; object_event constants
+
+TVStationElevator_MapScripts:
+	db 0 ; scene scripts
+
+	db 0 ; callbacks
+
+TVStationElevator_MapEvents:
+	db 0, 0 ; filler
+
+	db 2 ; warp events
+	
+	warp_event  1,  3, TV_STATION_1F, 4
+	warp_event  2,  3, TV_STATION_1F, 4
+
+	db 0 ; coord events
+
+	db 0 ; bg events
+
+	db 0 ; object events

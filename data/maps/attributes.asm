@@ -122,6 +122,7 @@ ENDM
 	map_attributes OreburghCity, OREBURGH_CITY, $09, WEST
 	connection west, Route203, ROUTE_203, -2
 
+
 ; no connections
 	
 	
@@ -156,6 +157,14 @@ ENDM
 	map_attributes PoketchCompany1F, POKETCH_COMPANY_1F, $00, 0
 	map_attributes PoketchCompany2F, POKETCH_COMPANY_2F, $00, 0
 	map_attributes PoketchCompany3F, POKETCH_COMPANY_3F, $00, 0
+	map_attributes TVStation1F, TV_STATION_1F, $00, 0
+	map_attributes TVStation2F, TV_STATION_2F, $00, 0
+	map_attributes TVStation2F2, TV_STATION_2F2, $00, 0
+	map_attributes TVStation3F, TV_STATION_3F, $00, 0
+	map_attributes TVStation3F2, TV_STATION_3F2, $00, 0
+	map_attributes TVStation3F3, TV_STATION_3F3, $00, 0
+	map_attributes TVStation4F, TV_STATION_4F, $00, 0
+	map_attributes TVStationElevator, TV_STATION_ELEVATOR, $00, 0
 	map_attributes JubilifePokemonCenter1F, JUBILIFE_POKEMON_CENTER_1F, $00, 0
 	map_attributes JubilifePokeMart, JUBILIFE_POKEMART, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
