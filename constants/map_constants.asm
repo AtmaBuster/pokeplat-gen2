@@ -51,7 +51,7 @@ ENDM
 
 	map_const SANDGEM_TOWN,                                12, 10 ;  1
 	map_const ROUTE_202,                                   10, 10 ;  2
-	map_const ROWANS_LAB,                                   5,  6 ;  3
+	map_const ROWANS_LAB,                                   8,  6 ;  3
 	map_const SANDGEM_HOUSE_1,                              4,  4 ;  4
 	map_const ASSISTANT_HOUSE_1F,                           5,  4 ;  5
 	map_const ASSISTANT_HOUSE_2F,                           4,  3 ;  6
@@ -68,20 +68,21 @@ ENDM
 	map_const JUBILIFE_APARTMENT_NE_2F,                     6,  4 ;  6
 	map_const JUBILIFE_APARTMENT_SW_1F,                     6,  4 ;  7
 	map_const JUBILIFE_APARTMENT_SW_2F,                     6,  4 ;  8
-	map_const POKETCH_COMPANY_1F,                           6,  4 ;  9
-	map_const POKETCH_COMPANY_2F,                           6,  4 ; 10
-	map_const POKETCH_COMPANY_3F,                           6,  4 ; 11
-	map_const TV_STATION_1F,                                8,  5 ; 12
-	map_const TV_STATION_2F,                                7,  5 ; 13
-	map_const TV_STATION_2F2,                              7,  5 ; 14
-	map_const TV_STATION_3F,                                7,  5 ; 15
-	map_const TV_STATION_3F2,                              5,  3 ; 16
-	map_const TV_STATION_3F3,                              5,  3 ; 17
-	map_const TV_STATION_4F,                                7,  5 ; 18
-	map_const TV_STATION_ELEVATOR,                          2,  2 ; 19
-	map_const POKEMON_COMMUNICATION_CENTER,                16, 16 ; 20
-	map_const JUBILIFE_POKEMON_CENTER_1F,                   5,  4 ; 21
-	map_const JUBILIFE_POKEMART,                            6,  4 ; 22
+	map_const TRAINERS_SCHOOL,                              7,  4 ;  9
+	map_const POKETCH_COMPANY_1F,                           6,  4 ; 10
+	map_const POKETCH_COMPANY_2F,                           6,  4 ; 11
+	map_const POKETCH_COMPANY_3F,                           6,  4 ; 12
+	map_const TV_STATION_1F,                                8,  5 ; 13
+	map_const TV_STATION_2F,                                7,  5 ; 14
+	map_const TV_STATION_2F2,                               7,  5 ; 15
+	map_const TV_STATION_3F,                                7,  5 ; 16
+	map_const TV_STATION_3F2,                               5,  3 ; 17
+	map_const TV_STATION_3F3,                               5,  3 ; 18
+	map_const TV_STATION_4F,                                7,  5 ; 19
+	map_const TV_STATION_ELEVATOR,                          2,  2 ; 20
+	map_const POKEMON_COMMUNICATION_CENTER,                16, 16 ; 21
+	map_const JUBILIFE_POKEMON_CENTER_1F,                   5,  4 ; 22
+	map_const JUBILIFE_POKEMART,                            6,  4 ; 23
 	
 	newgroup ; Oreburgh & Routes								  ;  5
 	

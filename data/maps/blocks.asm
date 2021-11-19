@@ -89,6 +89,9 @@ JubilifeApartmentSE2F_Blocks:
 JubilifeApartmentNE2F_Blocks:
 JubilifeApartmentSW2F_Blocks:
 	INCBIN "maps/Apartment2F.blk"
+
+TrainersSchool_Blocks:
+	INCBIN "maps/TrainersSchool.blk"
 	
 PoketchCompany1F_Blocks:
 	INCBIN "maps/PoketchCompany1F.blk"

@@ -13,7 +13,7 @@ JubilifeCity_MapScripts:
 JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 10 ; warp events
 	warp_event 33, 13, JUBILIFE_APARTMENT_NE_1F, 1
 	warp_event 23, 31, JUBILIFE_APARTMENT_SE_1F, 1
 	warp_event  9, 29, JUBILIFE_APARTMENT_SW_1F, 1
@@ -23,6 +23,7 @@ JubilifeCity_MapEvents:
 	warp_event 14, 11, POKETCH_COMPANY_1F, 3
 	warp_event 22, 11, TV_STATION_1F, 1
 	warp_event 14, 25, POKEMON_COMMUNICATION_CENTER, 1
+	warp_event 20, 23, TRAINERS_SCHOOL, 1
 
 	db 0 ; coord events
 
