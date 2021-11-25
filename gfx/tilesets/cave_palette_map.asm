@@ -11,7 +11,7 @@
 	tilepal 0, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT
 	tilepal 0, TEXT, TEXT, TEXT, TEXT, BROWN, BROWN, RED, RED
 
-rept 16
+rept 32
 	db $ff
 endr
 
