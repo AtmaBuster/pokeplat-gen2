@@ -137,13 +137,10 @@ OreburghGateB1F_Blocks:
 	
 OreburghCity_Blocks:
 	INCBIN "maps/OreburghCity.blk"
+
+
 	
-OreburghMineB1F_Blocks:
-	INCBIN "maps/OreburghMineB1F.blk"
-	
-OreburghMineB2F_Blocks:
-	INCBIN "maps/OreburghMineB2F.blk"
-	
+
 
 
 SECTION "Map Blocks 2", ROMX

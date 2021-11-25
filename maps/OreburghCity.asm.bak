@@ -10,10 +10,10 @@ OreburghCity_MapEvents:
 
 	db 5 ; warp events
 	warp_event  6,  5, OREBURGH_GATE_1F, 2
-	warp_event 34, 37, OREBURGH_MINE_B1F, 1
-	warp_event 35, 37, OREBURGH_MINE_B1F, 1
-	warp_event 36, 37, OREBURGH_MINE_B1F, 1
-	warp_event 37, 37, OREBURGH_MINE_B1F, 1
+	warp_event 34, 38, OREBURGH_MINE_1F, 1
+	warp_event 35, 38, OREBURGH_MINE_1F, 1
+	warp_event 36, 38, OREBURGH_MINE_1F, 1
+	warp_event 37, 38, OREBURGH_MINE_1F, 1
 
 	db 0 ; coord events
 

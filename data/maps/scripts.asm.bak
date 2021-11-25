@@ -60,8 +60,6 @@ INCLUDE "maps/JubilifePokeMart.asm"
 INCLUDE "maps/OreburghGate1F.asm"
 INCLUDE "maps/OreburghGateB1F.asm"
 INCLUDE "maps/OreburghCity.asm"
-INCLUDE "maps/OreburghMineB1F.asm"
-INCLUDE "maps/OreburghMineB2F.asm"
 
 
 SECTION "Map Scripts 4", ROMX

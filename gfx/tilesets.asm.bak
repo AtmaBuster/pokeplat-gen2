@@ -150,6 +150,15 @@ INCBIN "data/tilesets/gate_metatiles.bin"
 TilesetGateColl:
 INCLUDE "data/tilesets/gate_collision.asm"
 ;---------------------------------------
+TilesetForestGFX:
+INCBIN "gfx/tilesets/forest.2bpp.lz"
+
+TilesetForestMeta:
+INCBIN "data/tilesets/forest_metatiles.bin"
+
+TilesetForestColl:
+INCLUDE "data/tilesets/forest_collision.asm"
+;---------------------------------------
 
 SECTION "Tileset Data 4", ROMX
 
@@ -239,15 +248,6 @@ INCBIN "data/tilesets/mt_coronet_metatiles.bin"
 
 TilesetMtCoronetColl:
 INCLUDE "data/tilesets/mt_coronet_collision.asm"
-;---------------------------------------
-TilesetForestGFX:
-INCBIN "gfx/tilesets/forest.2bpp.lz"
-
-TilesetForestMeta:
-INCBIN "data/tilesets/forest_metatiles.bin"
-
-TilesetForestColl:
-INCLUDE "data/tilesets/forest_collision.asm"
 ;---------------------------------------
 
 

@@ -98,8 +98,7 @@ ENDM
 	
 	map_const OREBURGH_GATE_1F, 						   15, 10 ;  1
 	map_const OREBURGH_GATE_B1F,                           25,  9 ;  2
-	map_const OREBURGH_MINE_B1F,                            8, 12 ;  3
-	map_const OREBURGH_MINE_B2F,                           14, 13 ;  4
+
 
 
 ;	newgroup                                                      ;  1

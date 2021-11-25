@@ -171,8 +171,6 @@ ENDM
 	map_attributes JubilifePokeMart, JUBILIFE_POKEMART, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
-	map_attributes OreburghMineB1F, OREBURGH_MINE_B1F, $09, 0
-	map_attributes OreburghMineB2F, OREBURGH_MINE_B2F, $09, 0
 
 
 
