@@ -44,6 +44,91 @@ JohtoGrassWildMons:
 	dbw 2, STARLY
 	dbw 2, BIDOOF
 	
+	
+	map_id LAKE_VERITY_LOW
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 2, STARLY
+	dbw 2, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	; day
+	dbw 2, STARLY
+	dbw 2, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	; nite
+	dbw 2, STARLY
+	dbw 2, BIDOOF
+	dbw 3, BIDOOF
+	dbw 3, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+
+	map_id LAKE_VERITY_HIGH
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 2, STARLY
+	dbw 2, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	; day
+	dbw 2, STARLY
+	dbw 2, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	; nite
+	dbw 2, STARLY
+	dbw 2, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 3, STARLY
+	dbw 3, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	
 	map_id ROUTE_202
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -211,6 +296,90 @@ JohtoGrassWildMons:
 	dbw 10, GOLBAT
 	dbw  9, ZUBAT
 	dbw 10, GOLBAT
+	
+	map_id OREBURGH_MINE_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 5, GEODUDE
+	dbw 6, GEODUDE
+	dbw 5, GEODUDE
+	dbw 6, GEODUDE
+	dbw 4, GEODUDE
+	dbw 7, GEODUDE
+	dbw 6, ONIX
+	dbw 8, ONIX
+	dbw 8, GEODUDE
+	dbw 7, ZUBAT
+	dbw 8, GEODUDE
+	dbw 7, ZUBAT
+	; day
+	dbw 5, GEODUDE
+	dbw 6, GEODUDE
+	dbw 5, ZUBAT
+	dbw 6, ZUBAT
+	dbw 4, GEODUDE
+	dbw 7, GEODUDE
+	dbw 6, ONIX
+	dbw 8, ONIX
+	dbw 8, GEODUDE
+	dbw 7, ZUBAT
+	dbw 8, GEODUDE
+	dbw 7, ZUBAT
+	; nite
+	dbw 5, GEODUDE
+	dbw 6, GEODUDE
+	dbw 5, ZUBAT
+	dbw 6, ZUBAT
+	dbw 4, GEODUDE
+	dbw 7, GEODUDE
+	dbw 6, ONIX
+	dbw 8, ONIX
+	dbw 8, GEODUDE
+	dbw 7, ZUBAT
+	dbw 8, GEODUDE
+	dbw 7, ZUBAT
+	
+	map_id OREBURGH_MINE_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 6, GEODUDE
+	dbw 7, GEODUDE
+	dbw 6, GEODUDE
+	dbw 7, GEODUDE
+	dbw 5, GEODUDE
+	dbw 8, GEODUDE
+	dbw 7, ONIX
+	dbw 9, ONIX
+	dbw 9, GEODUDE
+	dbw 8, ZUBAT
+	dbw 9, GEODUDE
+	dbw 8, ZUBAT
+	; day
+	dbw 6, GEODUDE
+	dbw 7, GEODUDE
+	dbw 6, ZUBAT
+	dbw 7, ZUBAT
+	dbw 5, GEODUDE
+	dbw 8, GEODUDE
+	dbw 7, ONIX
+	dbw 9, ONIX
+	dbw 9, GEODUDE
+	dbw 8, ZUBAT
+	dbw 9, GEODUDE
+	dbw 8, ZUBAT
+	; nite
+	dbw 6, GEODUDE
+	dbw 7, GEODUDE
+	dbw 6, ZUBAT
+	dbw 7, ZUBAT
+	dbw 5, GEODUDE
+	dbw 8, GEODUDE
+	dbw 7, ONIX
+	dbw 9, ONIX
+	dbw 9, GEODUDE
+	dbw 8, ZUBAT
+	dbw 9, GEODUDE
+	dbw 8, ZUBAT
 	
 	; map_id [MAP_ID]
 	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
