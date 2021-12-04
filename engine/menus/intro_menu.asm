@@ -1659,7 +1659,7 @@ ENDC
 	call SetPalettes
 	call DelayFrame
 
-	ld de, MUSIC_VIRIDIAN_CITY
+	ld de, MUSIC_POKEMON_CHANNEL
 	call PlayMusic
 
 	ld hl, IntroSandgemText
