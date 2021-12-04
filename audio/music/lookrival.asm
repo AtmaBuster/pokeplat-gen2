@@ -199,7 +199,7 @@ Music_LookRival_Ch1::
 	note F_, 1
 	note F_, 1
 	rest 1
-	octave 3
+	octave 2
 	sound_loop 0, .loop
 Music_LookRival_Ch2::
 	duty_cycle 1
