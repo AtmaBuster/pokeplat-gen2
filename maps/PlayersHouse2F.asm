@@ -17,6 +17,7 @@ PlayersHouse2F_MapScripts:
 	waitbutton
 	closetext
 	setscene SCENE_FINISHED
+	turnobject PLAYER, DOWN
 	end
 
 .Dummy:
