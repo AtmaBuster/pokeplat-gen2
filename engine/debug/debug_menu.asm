@@ -442,7 +442,13 @@ endr
 	db "21@@@@@@@@@@@"
 
 Debug_ColorPicker:
+	ldh a, [hMapAnims]
+	push af
+	xor a
+	ldh [hMapAnims], a
 	farcall DebugColorPicker
+	pop af
+	ldh [hMapAnims], a
 	ret
 
 INCLUDE "engine/debug/color_picker.asm"
