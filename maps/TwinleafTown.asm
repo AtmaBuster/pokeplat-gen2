@@ -7,7 +7,7 @@ TwinleafTown_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
-	setflag ENGINE_FLYPOINT_NEW_BARK
+	setflag ENGINE_FLYPOINT_TWINLEAF
 	return
 
 TwinleafTown_MapEvents:

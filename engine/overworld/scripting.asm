@@ -204,7 +204,7 @@ ScriptCommandTable:
 	dw Script_newloadmap                 ; 8a
 	dw Script_pause                      ; 8b
 	dw Script_deactivatefacing           ; 8c
-	dw Script_prioritysjump              ; 8d
+	dw Script_sdefer                     ; 8d
 	dw Script_warpcheck                  ; 8e
 	dw Script_stopandsjump               ; 8f
 	dw Script_return                     ; 90
@@ -1619,7 +1619,7 @@ ScriptJump:
 	ld [wScriptPos + 1], a
 	ret
 
-Script_prioritysjump:
+Script_sdefer:
 ; script command 0x8d
 ; parameters: pointer
 

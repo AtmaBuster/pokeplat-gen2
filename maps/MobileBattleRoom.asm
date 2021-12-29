@@ -6,7 +6,7 @@ MobileBattleRoom_MapScripts:
 	db 0 ; callbacks
 
 .InitializeMobileBattleRoom:
-	prioritysjump .InitializeAndPreparePokecenter2F
+	sdefer .InitializeAndPreparePokecenter2F
 	end
 
 .DummyScene:

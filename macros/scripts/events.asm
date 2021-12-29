@@ -883,9 +883,9 @@ deactivatefacing: MACRO
 	db \1 ; time
 ENDM
 
-	enum prioritysjump_command ; $8d
-prioritysjump: MACRO
-	db prioritysjump_command
+	enum sdefer_command ; $8d
+sdefer: MACRO
+	db sdefer_command
 	dw \1 ; pointer
 ENDM
 
