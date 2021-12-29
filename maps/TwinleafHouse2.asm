@@ -1,4 +1,5 @@
 	object_const_def ; object_event constants
+	const TWINLEAFHOUSE2_OBJECT1
 
 TwinleafHouse2_MapScripts:
 	db 0 ; scene scripts
@@ -16,4 +17,5 @@ TwinleafHouse2_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

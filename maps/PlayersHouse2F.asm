@@ -92,7 +92,7 @@ PlayersRoomRivalScript:
 	playsound SFX_EXIT_BUILDING
 	disappear PLAYERSHOUSE2F_RIVAL
 	waitsfx
-	playmusic MUSIC_NEW_BARK_TOWN
+	special RestartMapMusic
 	setscene SCENE_PLAYERSHOUSE2F_DONE
 	end
 

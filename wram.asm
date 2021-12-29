@@ -2756,8 +2756,9 @@ wPlayersHouse2FSceneID::                          db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wPlayersHouse1FSceneID::                          db
+wTwinleafTownSceneID::                            db
 
-	ds 71
+	ds 70
 
 ; fight counts
 wJackFightCount::    db ; d9f2
