@@ -34,7 +34,12 @@ TwinleafTown_TechnologyGuyScript:
 
 TwinleafTown_ExitGuardGuyScript:
 	faceplayer
+	checkevent EVENT_TALKED_TO_RIVAL_IN_ROOM
+	iftrue .AfterRival
 	jumptext .LookingForYouText
+
+.AfterRival:
+	jumptext .TearingOffText
 
 .LookingForYouText:
 	text "Hiya, <PLAYER>."
@@ -45,6 +50,19 @@ TwinleafTown_ExitGuardGuyScript:
 	para "I think he's home"
 	line "now. Why don't you"
 	cont "go check it out?"
+	done
+
+.TearingOffText:
+	text "Hiya, <PLAYER>."
+
+	para "You're looking for"
+	line "<RIVAL>? He just"
+	cont "went tearing off"
+	cont "a little bit ago."
+
+	para "He's probably not"
+	line "gont too far. Why"
+	cont "not go after him?"
 	done
 
 TwinleafTown_PokemonWomanScript:

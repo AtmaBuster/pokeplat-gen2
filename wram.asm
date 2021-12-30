@@ -2748,17 +2748,19 @@ wFarfetchdPosition:: db ; d964
 wTilesetSpriteAnimId:: db
 
 ; map scene ids
-wPokecenter2FSceneID::                            db
-wTradeCenterSceneID::                             db
-wColosseumSceneID::                               db
-wTimeCapsuleSceneID::                             db
-wPlayersHouse2FSceneID::                          db
-wMobileTradeRoomSceneID::                         db
-wMobileBattleRoomSceneID::                        db
-wPlayersHouse1FSceneID::                          db
-wTwinleafTownSceneID::                            db
+wPokecenter2FSceneID::     db
+wTradeCenterSceneID::      db
+wColosseumSceneID::        db
+wTimeCapsuleSceneID::      db
+wPlayersHouse2FSceneID::   db
+wMobileTradeRoomSceneID::  db
+wMobileBattleRoomSceneID:: db
+wPlayersHouse1FSceneID::   db
+wTwinleafTownSceneID::     db
+wRivalHouse2FSceneID::     db
+wRoute201SceneID::         db
 
-	ds 70
+	ds 68
 
 ; fight counts
 wJackFightCount::    db ; d9f2

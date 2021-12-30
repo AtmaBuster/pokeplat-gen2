@@ -51,6 +51,8 @@ StdScripts::
 	dba PCScript
 	dba GameCornerCoinVendorScript
 	dba HappinessCheckScript
+	dba TableIndexFromGenderScript
+	dba TableIndexFromStarterScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1751,3 +1753,29 @@ Movement_ContestResults_WalkAfterWarp:
 	step DOWN
 	turn_head UP
 	step_end
+
+TableIndexFromGenderScript:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
+	settableindex 0
+	end
+
+.Female:
+	settableindex 1
+	end
+
+TableIndexFromStarterScript:
+	checkevent EVENT_GOT_TURTWIG
+	iftrue .Turtwig
+	checkevent EVENT_GOT_CHIMCHAR
+	iftrue .Chimchar
+	settableindex 2 ; Piplup
+	end
+
+.Turtwig:
+	settableindex 0
+	end
+
+.Chimchar:
+	settableindex 1
+	end

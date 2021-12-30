@@ -20,7 +20,11 @@ SandgemGroupSprites:  ; SandgemTown, Route202
 JubilifeGroupSprites: ; JubilifeCity, Route203
 	db SPRITE_POKEFAN_M
 	db SPRITE_TEACHER
-	; 2 of max 9 walking sprites
+	db SPRITE_SILVER
+	db SPRITE_OAK
+	db SPRITE_KRIS
+	; 5 of max 9 walking sprites
+	db SPRITE_FAMICOM
 	db 0 ; end
 
 OreburghGroupSprites: ; OreburghCity

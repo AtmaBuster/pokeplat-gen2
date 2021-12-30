@@ -34,6 +34,23 @@ ClairGroup:
 	end_list_items
 
 Rival1Group:
+	next_list_item ; RIVAL1 (1)
+	db "BARRY@", TRAINERTYPE_NORMAL
+	db  5
+	dw TURTWIG
+	db -1 ; end
+
+	next_list_item ; RIVAL1 (2)
+	db "BARRY@", TRAINERTYPE_NORMAL
+	db  5
+	dw CHIMCHAR
+	db -1 ; end
+
+	next_list_item ; RIVAL1 (3)
+	db "BARRY@", TRAINERTYPE_NORMAL
+	db  5
+	dw PIPLUP
+	db -1 ; end
 	end_list_items
 
 PokemonProfGroup:

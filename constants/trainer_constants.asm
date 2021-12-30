@@ -25,45 +25,25 @@ CHRIS EQU __enum__
 	const PHONECONTACT_BUENA
 
 	trainerclass FALKNER ; 1
-	const FALKNER1
 
 	trainerclass WHITNEY ; 2
-	const WHITNEY1
 
 	trainerclass BUGSY ; 3
-	const BUGSY1
 
 	trainerclass MORTY ; 4
-	const MORTY1
 
 	trainerclass PRYCE ; 5
-	const PRYCE1
 
 	trainerclass JASMINE ; 6
-	const JASMINE1
 
 	trainerclass CHUCK ; 7
-	const CHUCK1
 
 	trainerclass CLAIR ; 8
-	const CLAIR1
 
 	trainerclass RIVAL1 ; 9
-	const RIVAL1_1_CHIKORITA
-	const RIVAL1_1_CYNDAQUIL
-	const RIVAL1_1_TOTODILE
-	const RIVAL1_2_CHIKORITA
-	const RIVAL1_2_CYNDAQUIL
-	const RIVAL1_2_TOTODILE
-	const RIVAL1_3_CHIKORITA
-	const RIVAL1_3_CYNDAQUIL
-	const RIVAL1_3_TOTODILE
-	const RIVAL1_4_CHIKORITA
-	const RIVAL1_4_CYNDAQUIL
-	const RIVAL1_4_TOTODILE
-	const RIVAL1_5_CHIKORITA
-	const RIVAL1_5_CYNDAQUIL
-	const RIVAL1_5_TOTODILE
+	const RIVAL1_1_TURTWIG
+	const RIVAL1_1_CHIMCHAR
+	const RIVAL1_1_PIPLUP
 
 	trainerclass POKEMON_PROF ; a
 

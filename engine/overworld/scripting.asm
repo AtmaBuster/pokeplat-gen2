@@ -242,6 +242,8 @@ ScriptCommandTable:
 	dw Script_givetmhm                   ; b0
 	dw Script_tmhmnotify                 ; b1
 	dw Script_gettmhmname                ; b2
+	dw Script_writetexttable             ; b3
+	dw Script_loadtrainertable           ; b4
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3037,3 +3039,49 @@ Script_gettmhmname:
 	call GetTMHMName
 	ld de, wStringBuffer1
 	jp GetStringBuffer
+
+Script_writetexttable:
+; script command 0xb3
+; parameters: table of text pointers
+
+	ld a, [wScriptTableIndex]
+	add a
+	ld c, a
+	ld b, 0
+	call GetScriptByte
+	ld l, a
+	call GetScriptByte
+	ld h, a
+	add hl, bc
+	ld a, [wScriptBank]
+	ld b, a
+	call GetFarHalfword
+	ld a, [wScriptBank]
+	ld b, a
+	call MapTextbox
+	ret
+
+Script_loadtrainertable:
+; script command 0xb4
+; parameters: table of trainer data
+
+	call GetScriptByte
+	ld l, a
+	call GetScriptByte
+	ld h, a
+	ld a, [wScriptTableIndex]
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [wScriptBank]
+	ld b, a
+	call GetFarHalfword
+
+	ld a, (1 << 7) | 1
+	ld [wBattleScriptFlags], a
+	ld a, l
+	ld [wOtherTrainerClass], a
+	ld a, h
+	ld [wOtherTrainerID], a
+	ret

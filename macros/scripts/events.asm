@@ -1127,3 +1127,15 @@ gettmhmname: MACRO
 	db \2 ; item
 	db \1 ; string_buffer
 ENDM
+
+	enum writetexttable_command ; $b3
+writetexttable: MACRO
+	db writetexttable_command
+	dw \1 ; text_pointer
+ENDM
+
+	enum loadtrainertable_command ; $b4
+loadtrainertable: MACRO
+	db loadtrainertable_command
+	dw \1 ; trainer data pointer
+ENDM
