@@ -24,7 +24,6 @@ StdScripts::
 	dba DayToTextScript
 	dba BugContestResultsWarpScript
 	dba BugContestResultsScript
-	dba InitializeEventsScript
 	dba AskNumber1MScript
 	dba AskNumber2MScript
 	dba RegisteredNumberMScript
@@ -472,13 +471,6 @@ BugContestResults_CopyContestantsToResults:
 ;	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
 .skip10
 	end
-
-InitializeEventsScript:
-	setevent EVENT_RIVAL_PLAYERS_HOUSE
-	setevent EVENT_TWINLEAF_TOWN_RIVAL
-
-	setevent EVENT_INITIALIZED_EVENTS
-	return
 
 AskNumber1MScript:
 	special RandomPhoneMon

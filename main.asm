@@ -388,6 +388,7 @@ SECTION "Phone Scripts 2", ROMX
 
 INCLUDE "engine/events/std_scripts.asm"
 INCLUDE "engine/phone/scripts/unused.asm"
+INCLUDE "engine/events/init_events.asm"
 ;INCLUDE "engine/phone/scripts/mom.asm"
 ;INCLUDE "engine/phone/scripts/bill.asm"
 ;INCLUDE "engine/phone/scripts/elm.asm"
