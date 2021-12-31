@@ -2376,19 +2376,17 @@ wBaseItems:: ; d241
 wBaseItem1:: db ; d241
 wBaseItem2:: db ; d242
 wBaseGender:: db ; d243
-wBaseUnknown1:: db ; d244
 wBaseEggSteps:: db ; d245
-wBaseUnknown2:: db ; d246
 wBasePicSize:: db ; d247
-wBasePadding:: ds 4 ; d248
 wBaseGrowthRate:: db ; d24c
 wBaseEggGroups:: db ; d24d
+wBaseHappiness:: db ; d24e
 wBaseTMHM:: flag_array NUM_TM_HM_TUTOR ; d24e
 wCurBaseDataEnd::
 
+	
 wCurDamage:: dw ; d256
 
-	ds 2
 
 wMornEncounterRate::  db ; d25a
 wDayEncounterRate::   db ; d25b
@@ -2522,7 +2520,7 @@ wScriptTextAddr::
 	ds 1
 wWildEncounterCooldown:: db ; d452
 wXYComparePointer:: dw ; d453
-	ds 4
+	ds 1
 
 wBattleScriptFlags:: dw ; d459
 wPlayerSpriteSetupFlags:: ; d45b

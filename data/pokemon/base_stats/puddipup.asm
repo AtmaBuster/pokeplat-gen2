@@ -8,14 +8,12 @@
 	db 45 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F25 ; gender ratio
-	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/puddipup/front.dimensions"
-	db 0, 0, 0, 0 ; padding
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
+	db 70 ; happiness
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, ROAR, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, PROTECT, ENDURE, IRON_TAIL, DRAGONBREATH, RETURN, DIG, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, FIRE_BLAST, SWIFT, REST, ATTRACT, FLAMETHROWER
+	tmhm 
 	; end

@@ -8,14 +8,12 @@
 	db 103 ; base exp
 	db NO_ITEM, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
-	db 100 ; unknown 1
 	db 40 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/beldum/front.dimensions"
-	db 0, 0, 0, 0 ; padding
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups
+	db 70 ; happiness
 
 	; tm/hm learnset
-	tmhm
+	tmhm IRON_DEFENSE, IRON_HEAD, ZEN_HEADBUTT 
 	; end

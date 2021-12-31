@@ -22,7 +22,8 @@ IsHMMove::
 	dw FLY
 	dw SURF
 	dw STRENGTH
-	dw FLASH
+	dw DEFOG
+	dw ROCK_SMASH
 	dw WATERFALL
-	dw WHIRLPOOL
+	dw ROCK_CLIMB
 	dw -1 ; end

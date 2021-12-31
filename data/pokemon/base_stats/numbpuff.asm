@@ -8,14 +8,12 @@
 	db 190 ; base exp
 	db NO_ITEM, POISON_BARB ; items
 	db GENDER_F50 ; gender ratio
-	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/numbpuff/front.dimensions"
-	db 0, 0, 0, 0 ; padding
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_WATER_2, EGG_WATER_2 ; egg groups
+	db 70 ; happiness
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, ROLLOUT, TOXIC, HIDDEN_POWER, BLIZZARD, ICY_WIND, PROTECT, RAIN_DANCE, ENDURE, RETURN, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SLUDGE_BOMB, SWIFT, DEFENSE_CURL, REST, ATTRACT, SURF, WHIRLPOOL, WATERFALL, ICE_BEAM
+	tmhm 
 	; end

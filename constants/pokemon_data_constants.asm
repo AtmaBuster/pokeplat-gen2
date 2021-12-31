@@ -15,13 +15,12 @@ BASE_ITEMS       EQUS "(wBaseItems - wCurBaseData)"
 BASE_ITEM_1      EQUS "(wBaseItem1 - wCurBaseData)"
 BASE_ITEM_2      EQUS "(wBaseItem2 - wCurBaseData)"
 BASE_GENDER      EQUS "(wBaseGender - wCurBaseData)"
-BASE_UNKNOWN_1   EQUS "(wBaseUnknown1 - wCurBaseData)"
 BASE_EGG_STEPS   EQUS "(wBaseEggSteps - wCurBaseData)"
-BASE_UNKNOWN_2   EQUS "(wBaseUnknown2 - wCurBaseData)"
 BASE_PIC_SIZE    EQUS "(wBasePicSize - wCurBaseData)"
 BASE_PADDING     EQUS "(wBasePadding - wCurBaseData)"
 BASE_GROWTH_RATE EQUS "(wBaseGrowthRate - wCurBaseData)"
 BASE_EGG_GROUPS  EQUS "(wBaseEggGroups - wCurBaseData)"
+BASE_HAPPINESS   EQUS "(wBaseHappiness - wCurBaseData)"
 BASE_TMHM        EQUS "(wBaseTMHM - wCurBaseData)"
 BASE_DATA_SIZE   EQUS "(wCurBaseDataEnd - wCurBaseData)"
 
@@ -222,7 +221,7 @@ const_value = 1
 	const HAPPINESS_GAINLEVELATHOME   ; 13
 
 ; significant happiness values
-BASE_HAPPINESS        EQU 70
+BASE_FRIENDSHIP       EQU 70  ; BASE_HAPPINESS replaces this
 FRIEND_BALL_HAPPINESS EQU 200
 HAPPINESS_TO_EVOLVE   EQU 220
 HAPPINESS_THRESHOLD_1 EQU 100
