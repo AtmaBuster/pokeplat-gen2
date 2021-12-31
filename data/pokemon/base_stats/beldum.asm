@@ -12,7 +12,7 @@
 	INCBIN "gfx/pokemon/beldum/front.dimensions"
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups
-	db 70 ; happiness
+	db 35 ; happiness
 
 	; tm/hm learnset
 	tmhm IRON_DEFENSE, IRON_HEAD, ZEN_HEADBUTT 
