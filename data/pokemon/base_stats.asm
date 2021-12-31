@@ -4,7 +4,8 @@ _tms1 = 0 ; TM01-TM24 (24)
 _tms2 = 0 ; TM25-TM48 (24)
 _tms3 = 0 ; TM49-TM72 (24)
 _tms4 = 0 ; TM73-TM92 + HM01-HM04 (24)
-_tms5 = 0 ; HM05-HM08 + MT01-MT03 (7/24)
+_tms5 = 0 ; HM05-HM08 + MT01-MT20 (24)
+_tms6 = 0 ; MT21-MT42 (22/24)
 rept _NARG
     if DEF(\1_TMNUM)
     if \1_TMNUM < 24 + 1
@@ -15,8 +16,10 @@ _tms2 = _tms2 | (1 << ((\1_TMNUM) - 1 - 24))
 _tms3 = _tms3 | (1 << ((\1_TMNUM) - 1 - 48))
     elif \1_TMNUM < 96 + 1
 _tms4 = _tms4 | (1 << ((\1_TMNUM) - 1 - 72))
-    else
+    elif \1_TMNUM < 120 + 1
 _tms5 = _tms5 | (1 << ((\1_TMNUM) - 1 - 96))
+    else
+_tms6 = _tms6 | (1 << ((\1_TMNUM) - 1 - 120))
     endc
     else
         fail "\1 is not a TM, HM, or move tutor move"
@@ -39,9 +42,13 @@ rept 3 ; TM73-TM92 + HM01-HM04 (24/24)
     db _tms4 & $ff
 _tms4 = _tms4 >> 8
 endr
-rept 1 ; HM05-HM08 + MT01-MT03 (7/24)
+rept 3 ; HM05-HM08 + MT01-MT20 (24/24)
     db _tms5 & $ff
 _tms5 = _tms5 >> 8
+endr
+rept 3 ; MT21-MT42 (22/24)
+    db _tms6 & $ff
+_tms6 = _tms6 >> 8
 endr
 ENDM
 
