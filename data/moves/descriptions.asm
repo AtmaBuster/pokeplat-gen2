@@ -1487,56 +1487,260 @@ MoveDescriptions2:
 	dw ShadowForceDescription
 
 FakeOutDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Hits first, may"
+	next "cause flinching.@"
+	
 UproarDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Lasts 2-5 turns,"
+	next "prevents sleep.@"
+	
 StockpileDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Charges up power"
+	next "for up to 3 turns.@"
+	
 SpitUpDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Releases stock-"
+	next "piled power.@"
+	
 SwallowDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Absorbs stockpiled"
+	next "power, absorbs HP.@"
+	
 HeatWaveDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Exhales hot breath"
+	next "on foes. May burn.@"
+	
 HailDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Creates a storm of"
+	next "hail for 5 turns.@"
+	
 TormentDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Foes can't use the"
+	next "same move again.@"
+	
 FlatterDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Confuses foe, but"
+	next "raises SPCL.ATK@"
+	
 WillOWispDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Inflicts a burn on"
+	next "the foe with fire.@"
+	
 MementoDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "User faints, and"
+	next "lowers foe's stats.@"
+	
 FacadeDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Boots ATK with a"
+	next "status condition.@"
+	
 FocusPunchDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Powerful, but user"
+	next "flinches if hit.@"
+	
 SmellingsaltDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Hurts foe 2x, but"
+	next "heals paralysis.@"
+	
 FollowMeDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Directs attacks"
+	next "towads the user.@"
+	
 NaturePowerDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Attack's type will"
+	next "change per area.@"
+	
 ChargeDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Powers up next"
+	next "electric attack.@"
+	
 TauntDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Makes foe only use"
+	next "attacking moves.@"
+	
 HelpingHandDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Boosts your ally's"
+	next "move power.@"
+	
 TrickDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Swaps held items"
+	next "with your foe.@"
+	
 RolePlayDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Copies the ability"
+	next "of the target.@"
+	
 WishDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "A wish to restore"
+	next "HP. Takes a turn.@"
+	
 AssistDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Attacks with a"
+	next "partner's move.@"
+	
 IngrainDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Restores HP each"
+	next "turn. No swapping.@"
+	
 SuperpowerDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Attacks hard, then"
+	next "lowers ATK and DEF@"
+	
 MagicCoatDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Reflects statuses"
+	next "back to the user.@"
+	
 RecycleDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Recycles a used"
+	next "held item to use.@"
+	
 RevengeDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Gains power when"
+	next "hurt in this turn.@"
+	
 BrickBreakDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Destroys barriers"
+	next "and does damage.@"
+	
 YawnDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Lulls the foe to"
+	next "sleep next turn.@"
+	
 KnockOffDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Knocks down the"
+	next "foe's held item.@"
+	
 EndeavorDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Matches target's HP"
+	next "to the user's HP@"
+	
 EruptionDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Does damage based"
+	next "on user's HP@"
+	
 SkillSwapDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Copies the ability"
+	next "of the opponent.@"
+	
 ImprisonDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Stops foes from"
+	next "using user moves.@"
+	
 RefreshDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Paralysis, burn,"
+	next "and poison heal.@"
+	
 GrudgeDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Deletes final move"
+	next "PP if user faints.@"
+	
 SnatchDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Steals effects of"
+	next "foe's next move.@"
+	
 SecretPowerDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "This attack varies"
+	next "by location.@"
+	
 DiveDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "User dives below"
+	next "water, then hits.@"
+	
 ArmThrustDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Punches the foe"
+	next "2-5 times.@"
+	
 CamouflageDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Changes type based"
+	next "on user location.@"
+	
 TailGlowDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Flashes a light"
+	next "that raises SP.ATK@"
+	
 LusterPurgeDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Light beams that"
+	next "may lower SP.DEF@"
+	
 MistBallDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Flury of down that"
+	next "may lower SP.ATK@"
+	
 FeatherdanceDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Cover foes in down"
+	next "to reduce ATTACK.@"
+	
 TeeterDanceDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Makes all #MON"
+	next "present confused."
+	
 BlazeKickDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "May burn. Chance"
+	next "for critical-hit.@"
+	
 MudSportDescription:
+        ;"@@@@@@@@@@@@@@@@@@"
+	db   "Weakens electric"
+	next "type attacks.@"
+	
 IceBallDescription:
+		;"@@@@@@@@@@@@@@@@@@"
+	db   "Attacks 5 turns"
+	next "with rising power.@"
+	
 NeedleArmDescription:
+		;"@@@@@@@@@@@@@@@@@@"
+	db   "Uses thorned arms."
+	next "Foes may flinch.@"
+	
 SlackOffDescription:
 HyperVoiceDescription:
 PoisonFangDescription:
