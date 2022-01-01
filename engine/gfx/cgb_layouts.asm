@@ -64,6 +64,8 @@ LoadSGBLayoutCGB:
 	dw _CGB_MiningGame
 	dw _CGB_IntroBothPlayerPals
 	dw _CGB_IntroSandgem
+	dw _CGB_ChooseStarter
+	dw _CGB_ChooseStarterPokePic
 
 _CGB_BattleGrayscale:
 	ld hl, PalPacket_BattleGrayscale + 1
@@ -1115,3 +1117,78 @@ _CGB_IntroSandgem:
 
 .colors
 INCLUDE "gfx/intro/sandgem.pal"
+
+_CGB_ChooseStarterPokePic:
+	ld de, wBGPals1
+	xor a
+	ld [wArceusPalNum], a
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	call GetPlayerOrMonPalettePointer
+	call LoadPalette_Mon
+
+	ld de, SCREEN_WIDTH
+	hlcoord 0, 0, wAttrMap
+	ld a, [wMenuBorderTopCoord]
+.loop
+	and a
+	jr z, .found_top
+	dec a
+	add hl, de
+	jr .loop
+
+.found_top
+	ld a, [wMenuBorderLeftCoord]
+	ld e, a
+	ld d, $0
+	add hl, de
+	ld a, [wMenuBorderTopCoord]
+	ld b, a
+	ld a, [wMenuBorderBottomCoord]
+	inc a
+	sub b
+	ld b, a
+	ld a, [wMenuBorderLeftCoord]
+	ld c, a
+	ld a, [wMenuBorderRightCoord]
+	sub c
+	inc a
+	ld c, a
+	xor a
+	push bc
+	push hl
+	call FillBoxCGB
+	pop hl
+	ld bc, SCREEN_WIDTH + 1
+	add hl, bc
+	pop bc
+	dec b
+	dec b
+	dec b
+	dec c
+	dec c
+	ld a, $08
+	call FillBoxCGB
+	call ApplyAttrMap
+
+_CGB_ChooseStarter:
+	ld hl, .bg_pals
+	ld de, wBGPals1 palette 1
+	ld bc, 6 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+
+	ld hl, .ob_pals
+	ld de, wOBPals1
+	ld bc, 3 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+
+	call ApplyPals
+
+	ret
+
+.bg_pals
+INCLUDE "gfx/misc/briefcase.pal"
+.ob_pals
+INCLUDE "gfx/misc/briefcase_obj.pal"

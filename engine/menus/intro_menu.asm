@@ -1625,7 +1625,7 @@ IF INTRO_SANDGEM_TILE_CT < $100
 	ld c, INTRO_SANDGEM_TILE_CT - $80
 	call Get2bpp
 ELSE
-	ld de, IntroSandgemGFX + $80
+	ld de, IntroSandgemGFX + $80 tiles
 	ld b, BANK(IntroSandgemGFX)
 	ld hl, vTiles1
 	ld c, $80

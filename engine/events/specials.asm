@@ -430,3 +430,9 @@ TrainerHouse:
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	ld [wScriptVar], a
 	jp CloseSRAM
+
+ChooseStarter:
+	call FadeToMenu
+	farcall _ChooseStarter
+	call ExitAllMenus
+	ret

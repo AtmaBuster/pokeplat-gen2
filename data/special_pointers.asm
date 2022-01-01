@@ -184,3 +184,4 @@ SpecialsPointers::
 	add_special DummySpecial_c224 ; $a8
 	add_special ChangePartyMonFormMenu
 	add_special MiningGame
+	add_special ChooseStarter

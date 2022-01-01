@@ -864,14 +864,16 @@ Route201_BriefcaseScript:
 	step_end
 
 Route201_StarterMenu:
+	special ChooseStarter
+
 ; temp?
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .Turtwig
-	ifequal 2, .Chimchar
-	ifequal 3, .Piplup
-	sjump Route201_StarterMenu
+;	loadmenu .MenuHeader
+;	verticalmenu
+;	closewindow
+	ifequal 0, .Turtwig
+	ifequal 1, .Chimchar
+	ifequal 2, .Piplup
+;	sjump Route201_StarterMenu
 
 .Turtwig:
 	givepoke TURTWIG, 5
