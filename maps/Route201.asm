@@ -865,15 +865,10 @@ Route201_BriefcaseScript:
 
 Route201_StarterMenu:
 	special ChooseStarter
-
-; temp?
-;	loadmenu .MenuHeader
-;	verticalmenu
-;	closewindow
 	ifequal 0, .Turtwig
 	ifequal 1, .Chimchar
 	ifequal 2, .Piplup
-;	sjump Route201_StarterMenu
+	end
 
 .Turtwig:
 	givepoke TURTWIG, 5
