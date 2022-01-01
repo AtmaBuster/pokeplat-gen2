@@ -18,10 +18,10 @@ CableClubGroupSprites:
 TwinleafGroupSprites: ; TwinleafTown, Route201
 SandgemGroupSprites:  ; SandgemTown, Route202
 JubilifeGroupSprites: ; JubilifeCity, Route203
-	db SPRITE_POKEFAN_M
+	db SPRITE_FISHER
 	db SPRITE_TEACHER
 	db SPRITE_SILVER
-	db SPRITE_OAK
+	db SPRITE_ELM
 	db SPRITE_KRIS
 	; 5 of max 9 walking sprites
 	db SPRITE_FAMICOM
