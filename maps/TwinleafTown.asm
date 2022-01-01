@@ -39,7 +39,12 @@ TwinleafTown_ExitGuardGuyScript:
 	jumptext .LookingForYouText
 
 .AfterRival:
+	checkevent EVENT_MET_CYRUS_AT_LAKE_VERITY
+	iftrue .AfterCyrus
 	jumptext .TearingOffText
+
+.AfterCyrus:
+	jumptext .GrowingUpToughText
 
 .LookingForYouText:
 	text "Hiya, <PLAYER>."
@@ -65,9 +70,28 @@ TwinleafTown_ExitGuardGuyScript:
 	cont "not go after him?"
 	done
 
+.GrowingUpToughText:
+	text "<RIVAL>? He went"
+	line "tearing off in a"
+	cont "huge rush a while"
+	cont "ago."
+
+	para "…Ouch. He ran into"
+	line "me earlier. It's"
+	cont "still hurting."
+
+	para "That kid's growing"
+	line "up tough."
+	done
+
 TwinleafTown_PokemonWomanScript:
 	faceplayer
+	checkevent EVENT_MET_CYRUS_AT_LAKE_VERITY
+	iftrue .AfterCyrus
 	jumptext .WildMonAttackText
+
+.AfterCyrus:
+	jumptext .LookGoodText
 
 .WildMonAttackText:
 	text "It's true that wild"
@@ -78,6 +102,12 @@ TwinleafTown_PokemonWomanScript:
 	line "open their hearts"
 	cont "to you, so you can"
 	cont "become friends."
+	done
+
+.LookGoodText:
+	text "Oh! A #MON!"
+	line "You look good"
+	cont "together!"
 	done
 
 TwinleafTown_NameSignScript:

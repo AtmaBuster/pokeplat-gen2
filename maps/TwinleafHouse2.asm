@@ -6,6 +6,36 @@ TwinleafHouse2_MapScripts:
 
 	db 0 ; callbacks
 
+TwinleafHouse2_ManScript:
+	faceplayer
+	checkevent EVENT_MET_CYRUS_AT_LAKE_VERITY
+	iftrue .AfterCyrus
+	jumptext .Text1
+
+.AfterCyrus:
+	jumptext .Text2
+
+.Text1:
+	text "You're off to hang"
+	line "with <RIVAL>"
+	cont "again, right?"
+
+	para "You two sure are"
+	line "tight!"
+	done
+
+.Text2:
+	text "I went on an adve-"
+	line "nture with some"
+	cont "#MON a long"
+	cont "time ago."
+
+	para "It was only to"
+	line "SANDGEM, the next"
+	cont "town over, though."
+	cont "Yeah, good times…"
+	done
+
 TwinleafHouse2_MapEvents:
 	db 0, 0 ; filler
 
@@ -18,4 +48,4 @@ TwinleafHouse2_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  5,  5, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafHouse2_ManScript, -1

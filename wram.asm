@@ -2757,8 +2757,9 @@ wPlayersHouse1FSceneID::   db
 wTwinleafTownSceneID::     db
 wRivalHouse2FSceneID::     db
 wRoute201SceneID::         db
+wLakeVerityLowSceneID::    db
 
-	ds 68
+	ds 67
 
 ; fight counts
 wJackFightCount::    db ; d9f2

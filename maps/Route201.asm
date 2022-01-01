@@ -1067,7 +1067,7 @@ Route201_EnterLakeScript:
 	playsound SFX_ENTER_DOOR
 	disappear ROUTE201_RIVAL
 	waitsfx
-	pause 30
+	pause 15
 	applymovement PLAYER, .PlayerEnterLakeMovement
 	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
@@ -1109,6 +1109,115 @@ Route201_EnterLakeScript:
 	step UP
 	step_end
 
+Route201_TrainerTipsSignScript:
+	jumptext .Text
+
+.Text:
+	text "Trainer Tips!"
+
+	para "Don't be shy! Talk"
+	line "to anyone and"
+	cont "everyone you see."
+
+	para "By talking to"
+	line "people, you will"
+	cont "get invaluable"
+	cont "information and"
+	cont "advice."
+	done
+
+Route201_SandgemSignScript:
+	jumptext .Text
+.Text:
+	text "ROUTE 201"
+	line "SANDGEM TOWN"
+	done
+
+Route201_GirlScript:
+	faceplayer
+	jumptext .HealAtHomeText
+
+.HealAtHomeText:
+	text "If your #MON's"
+	line "health, or its HP,"
+	cont "is getting low,"
+	cont "you should go"
+	cont "home and get some"
+	cont "rest."
+	done
+
+.HealAtPMCText:
+	text "If your #MON's"
+	line "health, or its HP,"
+	cont "is getting low,"
+	cont "you should go"
+	cont "to a #MON"
+	cont "CENTER!"
+	done
+
+Route201_MartGuyScript:
+	faceplayer
+	checkevent EVENT_GOT_POTION_FROM_ROUTE_201_CLERK
+	iftrue .After
+	opentext
+	writetext .BeforeText
+	waitbutton
+	verbosegiveitem POTION
+	iffalse .BagFull
+	setevent EVENT_GOT_POTION_FROM_ROUTE_201_CLERK
+.BagFull:
+	closetext
+	end
+
+.After:
+	jumptext .AfterText
+
+.BeforeText:
+	text "Hi! I work at a"
+	line "#MON MART."
+
+	para "Did you know that"
+	line "a #MON's health"
+	cont "is measured by"
+	cont "Hit Points (HP)?"
+
+	para "If a #MON runs"
+	line "out of HP, it will"
+	cont "faint and can't"
+	cont "battle anymore."
+
+	para "If a #MON's HP"
+	line "gets low, you"
+	cont "should heal it"
+	cont "with a POTION."
+
+	para "Here, let me give"
+	line "you one as a free"
+	cont "sample. First one's"
+	cont "free!"
+
+	para "It will go into"
+	line "the MEDICINE"
+	cont "pocket of your bag"
+	cont "automatically."
+	done
+
+.AfterText:
+	text "You can find a"
+	line "#MON MART in"
+	cont "cities and most"
+	cont "major towns."
+	done
+
+Route201_LedgeKidScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "That ledge is one"
+	line "way. Jump down for"
+	cont "a shortcut to"
+	cont "TWINLEAF TOWN!"
+	done
+
 Route201_MapEvents:
 	db 0, 0 ; filler
 
@@ -1132,12 +1241,17 @@ Route201_MapEvents:
 	coord_event  4,  3, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_EnterLakeScriptL
 	coord_event  5,  3, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_EnterLakeScriptR
 
-	db 2 ; bg events
+	db 4 ; bg events
 	bg_event 17, 13, BGEVENT_READ, Route201_TwinleafSignScript
 	bg_event  3,  5, BGEVENT_READ, Route201_LakeVeritySignScript
+	bg_event 39, 11, BGEVENT_READ, Route201_TrainerTipsSignScript
+	bg_event 50,  4, BGEVENT_READ, Route201_SandgemSignScript
 
-	db 4 ; object events
+	db 7 ; object events
 	object_event 18, 12, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_RivalScript, EVENT_ROUTE_201_RIVAL
 	object_event 15, 12, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_RowanScript, EVENT_ROUTE_201_ROWAN
 	object_event 15, 12, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_201_DAWNLUCAS
 	object_event 18, 13, SPRITE_FAMICOM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_BriefcaseScript, EVENT_ROUTE_201_BRIEFCASE
+	object_event 48, 13, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_GirlScript, -1
+	object_event 42,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_MartGuyScript, -1
+	object_event 53,  8, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_LedgeKidScript, -1
