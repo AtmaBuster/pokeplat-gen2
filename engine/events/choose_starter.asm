@@ -13,6 +13,8 @@ _ChooseStarter:
 	ld hl, rLCDC
 	set rLCDC_SPRITE_SIZE, [hl] ; 8x16
 
+	xor a
+	ld [wMenuCursorY], a
 	call BriefcaseMenu_LoadGFX
 	ld a, 1
 	ld [wSpriteUpdatesEnabled], a

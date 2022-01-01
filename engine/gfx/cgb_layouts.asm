@@ -1154,7 +1154,7 @@ _CGB_ChooseStarterPokePic:
 	sub c
 	inc a
 	ld c, a
-	xor a
+	ld a, 7
 	push bc
 	push hl
 	call FillBoxCGB

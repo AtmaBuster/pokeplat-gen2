@@ -5,10 +5,12 @@
 	const ROUTE201_OBJECT3
 
 Route201_MapScripts:
-	db 3 ; scene scripts
+	db 5 ; scene scripts
 	scene_script .Dummy ; SCENE_ROUTE201_FIND_RIVAL
-	scene_script .Dummy ; SCENE_ROUTE201_RIVAL_FOLLOW
+	scene_script .Dummy ; SCENE_ROUTE201_CANT_LEAVE
 	scene_script .Dummy ; SCENE_ROUTE201_NOTHING
+	scene_script .Dummy ; SCENE_ROUTE201_FIND_RIVAL_2
+	scene_script .Dummy ; SCENE_ROUTE201_RIVAL_FOLLOW
 
 	db 0 ; callbacks
 
@@ -594,7 +596,12 @@ Route201_CantLeaveText:
 
 Route201_RivalScript:
 	faceplayer
+	checkevent EVENT_RIVAL_FOLLOWING_PLAYER
+	iftrue .Following
 	jumptext .AdultText
+
+.Following:
+	jumptext .ThatBattleText
 
 .AdultText:
 	text "Hey, <PLAYER>. You"
@@ -607,6 +614,24 @@ Route201_RivalScript:
 	cont "slick."
 	done
 
+.ThatBattleText:
+	text "<RIVAL>: That"
+	line "#MON battle…"
+
+	para "Wasn't that wicked"
+	line "fun or what?"
+
+	para "I mean, I'd pick"
+	line "the moves, and my"
+	cont "#MON would use"
+	cont "them!"
+
+	para "Yeah, I'm going to"
+	line "battle tons and"
+	cont "get real close"
+	cont "with #MON."
+	done
+
 Route201_RowanScript:
 	jumptextfaceplayer .ChooseMonText
 
@@ -617,9 +642,10 @@ Route201_RowanScript:
 	done
 
 Route201_BriefcaseScript:
-	opentext
 	scall Route201_StarterMenu
+	setevent EVENT_GOT_STARTER
 	disappear ROUTE201_OBJECT3
+	opentext
 	writetext .IllChooseThisText
 	buttonsound
 	writetext .ChosenGoodMonsText
@@ -682,6 +708,7 @@ Route201_BriefcaseScript:
 	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
 	waitsfx
+	setmapscene PLAYERS_HOUSE_1F, SCENE_PLAYERSHOUSE1F_AFTER_RIVAL1
 	warpfacing RIGHT, PLAYERS_HOUSE_1F, 4, 4
 	end
 
@@ -864,6 +891,7 @@ Route201_BriefcaseScript:
 	step_end
 
 Route201_StarterMenu:
+	opentext
 	special ChooseStarter
 	ifequal 0, .Turtwig
 	ifequal 1, .Chimchar
@@ -888,18 +916,198 @@ Route201_StarterMenu:
 	getmonname STRING_BUFFER_3, TURTWIG
 	end
 
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
+Route201_RivalFollowScriptL:
+	settableindex 0
+	sjump Route201_RivalFollowScript
 
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 3 ; items
-	db "TURTWIG@"
-	db "CHIMCHAR@"
-	db "PIPLUP@"
+Route201_RivalFollowScriptR:
+	settableindex 1
+Route201_RivalFollowScript:
+	opentext
+	writetext .TooSlowText
+	waitbutton
+	closetext
+	applymovementtable ROUTE201_RIVAL, .ApproachPlayerMovement
+	opentext
+	writetext .NothingToFearText
+	waitbutton
+	closetext
+	follow PLAYER, ROUTE201_RIVAL
+	setscene SCENE_ROUTE201_RIVAL_FOLLOW
+	setevent EVENT_RIVAL_FOLLOWING_PLAYER
+	end
+
+.TooSlowText:
+	text "<RIVAL>: Too slow!"
+	line "<PLAYER>, I'm sick"
+	cont "of waiting!"
+
+	para "I'm going to go see"
+	line "PROF.ROWAN, so I"
+	cont "can thank him"
+	cont "properly."
+
+	para "So, I had this"
+	line "great idea. Listen"
+	cont "up, OK?"
+
+	para "You know that lake"
+	line "where we always"
+	cont "play at?"
+
+	para "You know how they"
+	line "say a legendary"
+	cont "#MON lives"
+	cont "there?"
+
+	para "You guessed it!"
+	line "Let's catch that"
+	cont "#MON."
+
+	para "That'll make PROF."
+	line "ROWAN happy. I'm"
+	cont "sure of that!"
+	done
+
+.NothingToFearText:
+	text "<RIVAL>: Me and"
+	line "you together, we've"
+	cont "got nothing to"
+	cont "fear!"
+	done
+
+.ApproachPlayerMovement:
+	dw .ApproachPlayerMovementLeft
+	dw .ApproachPlayerMovementRight
+
+.ApproachPlayerMovementRight:
+	step RIGHT
+.ApproachPlayerMovementLeft:
+	step DOWN
+	step DOWN
+	step_end
+
+Route201_PlayerCantLeaveScript1:
+	opentext
+	writetext .Text
+	waitbutton
+	closetext
+	applymovement PLAYER, .Movement
+	end
+
+.Text:
+	text "<RIVAL>: Hehehe,"
+	line "<PLAYER>. The lake's"
+	cont "not that way!"
+	done
+
+.Movement:
+	step UP
+	step_end
+
+Route201_PlayerCantLeaveScript2:
+	opentext
+	writetext .Text
+	waitbutton
+	closetext
+	applymovement PLAYER, .Movement
+	end
+
+.Text:
+	text "<RIVAL>: Hey,"
+	line "<PLAYER>!"
+	cont "I said the lake's"
+	cont "not that way!"
+	done
+
+.Movement:
+	step LEFT
+	step_end
+
+Route201_TwinleafSignScript:
+	jumptext .Text
+.Text:
+	text "ROUTE 201"
+	line "TWINLEAF TOWN"
+	done
+
+Route201_LakeVeritySignScript:
+	jumptext .Text
+.Text:
+	text "LAKE VERITY"
+
+	para "According to the"
+	line "legend, this lake"
+	cont "is home to the"
+	cont "#MON said to be"
+	cont "“The Being of"
+	cont "Emotion.”"
+
+	para "It is because of"
+	line "this #MON that"
+	cont "people can experi-"
+	cont "ence sorrow and"
+	cont "joy."
+	done
+
+Route201_EnterLakeScriptL:
+	settableindex 0
+	sjump Route201_EnterLakeScript
+
+Route201_EnterLakeScriptR:
+	settableindex 1
+Route201_EnterLakeScript:
+	turnobject ROUTE201_RIVAL, UP
+	opentext
+	writetext .WereHereText
+	waitbutton
+	closetext
+	stopfollow
+	applymovementtable ROUTE201_RIVAL, .RivalEnterLakeMovement
+	playsound SFX_ENTER_DOOR
+	disappear ROUTE201_RIVAL
+	waitsfx
+	pause 30
+	applymovement PLAYER, .PlayerEnterLakeMovement
+	special FadeOutPalettes
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	clearevent EVENT_RIVAL_FOLLOWING_PLAYER
+	setscene SCENE_ROUTE201_NOTHING
+	warpfacing UP, LAKE_VERITY_LOW, 28, 21
+	end
+
+.WereHereText:
+	text "<RIVAL>: OK! We're"
+	line "at the lake!"
+
+	para "Get ready, because"
+	line "we're capturing"
+	cont "that legendary"
+	cont "#MON."
+
+	para "Trust me on this"
+	line "one. It's here."
+	cont "It even says so"
+	cont "on the sign!"
+	done
+
+.RivalEnterLakeMovement:
+	dw .RivalEnterLakeMovementLeft
+	dw .RivalEnterLakeMovementRight
+
+.RivalEnterLakeMovementLeft:
+	step RIGHT
+	step UP
+	step UP
+	step_end
+
+.RivalEnterLakeMovementRight:
+	step LEFT
+	step UP
+.PlayerEnterLakeMovement:
+	step UP
+	step_end
 
 Route201_MapEvents:
 	db 0, 0 ; filler
@@ -910,17 +1118,23 @@ Route201_MapEvents:
 	warp_event  4,  0, LAKE_VERITY_HIGH, 1
 	warp_event  5,  0, LAKE_VERITY_HIGH, 2
 
-	db 4 ; coord events
+	db 12 ; coord events
 	coord_event 18, 15, SCENE_ROUTE201_FIND_RIVAL, Route201_GetStarterScriptL
 	coord_event 19, 15, SCENE_ROUTE201_FIND_RIVAL, Route201_GetStarterScriptR
 	coord_event 21, 13, SCENE_ROUTE201_CANT_LEAVE, Route201_CantLeaveScript1
 	coord_event 19, 14, SCENE_ROUTE201_CANT_LEAVE, Route201_CantLeaveScript2
-;	coord_event 21, 12, SCENE_ROUTE201_RIVAL_FOLLOW, CoordinatesEvent
-;	coord_event 21, 13, SCENE_ROUTE201_RIVAL_FOLLOW, CoordinatesEvent
-;	coord_event 18, 15, SCENE_ROUTE201_RIVAL_FOLLOW, CoordinatesEvent
-;	coord_event 19, 15, SCENE_ROUTE201_RIVAL_FOLLOW, CoordinatesEvent
+	coord_event 18, 15, SCENE_ROUTE201_FIND_RIVAL_2, Route201_RivalFollowScriptL
+	coord_event 19, 15, SCENE_ROUTE201_FIND_RIVAL_2, Route201_RivalFollowScriptR
+	coord_event 18, 16, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_PlayerCantLeaveScript1
+	coord_event 19, 16, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_PlayerCantLeaveScript1
+	coord_event 21, 12, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_PlayerCantLeaveScript2
+	coord_event 21, 13, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_PlayerCantLeaveScript2
+	coord_event  4,  3, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_EnterLakeScriptL
+	coord_event  5,  3, SCENE_ROUTE201_RIVAL_FOLLOW, Route201_EnterLakeScriptR
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 17, 13, BGEVENT_READ, Route201_TwinleafSignScript
+	bg_event  3,  5, BGEVENT_READ, Route201_LakeVeritySignScript
 
 	db 4 ; object events
 	object_event 18, 12, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_RivalScript, EVENT_ROUTE_201_RIVAL

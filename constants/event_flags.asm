@@ -65,6 +65,8 @@
 	const EVENT_GOT_TURTWIG
 	const EVENT_GOT_CHIMCHAR
 	const EVENT_GOT_PIPLUP
+	const EVENT_GOT_STARTER
+	const EVENT_RIVAL_FOLLOWING_PLAYER
 ; Trainer flags
 	; none yet
 ; Sprite visibility flags
