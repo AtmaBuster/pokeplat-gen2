@@ -271,6 +271,6 @@ TwinleafTown_MapEvents:
 
 	db 4 ; object events
 	object_event  6, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafTown_TechnologyGuyScript, -1
-	object_event  8,  3, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafTown_ExitGuardGuyScript, -1
-	object_event 17,  8, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafTown_PokemonWomanScript, -1
+	object_event  8,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TwinleafTown_ExitGuardGuyScript, -1
+	object_event 17,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafTown_PokemonWomanScript, -1
 	object_event  5,  7, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TWINLEAF_TOWN_RIVAL

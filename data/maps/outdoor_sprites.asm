@@ -23,7 +23,8 @@ JubilifeGroupSprites: ; JubilifeCity, Route203
 	db SPRITE_SILVER
 	db SPRITE_ELM
 	db SPRITE_KRIS
-	; 5 of max 9 walking sprites
+	db SPRITE_ROCKER
+	; 6 of max 9 walking sprites
 	db SPRITE_FAMICOM
 	db 0 ; end
 

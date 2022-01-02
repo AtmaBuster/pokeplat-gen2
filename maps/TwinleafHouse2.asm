@@ -48,4 +48,4 @@ TwinleafHouse2_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  5, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafHouse2_ManScript, -1
+	object_event  5,  5, SPRITE_ROCKER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TwinleafHouse2_ManScript, -1
