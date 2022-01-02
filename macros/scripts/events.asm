@@ -1139,3 +1139,10 @@ loadtrainertable: MACRO
 	db loadtrainertable_command
 	dw \1 ; trainer data pointer
 ENDM
+
+	enum writetextgender_command ; $b5
+writetextgender: MACRO
+	db writetextgender_command
+	dw \1 ; text_pointer (male)
+	dw \2 ; text_pointer (female)
+ENDM

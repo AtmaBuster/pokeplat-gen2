@@ -67,6 +67,7 @@ LakeVerityLow_MapScripts:
 	waitsfx
 	setevent EVENT_MET_CYRUS_AT_LAKE_VERITY
 	setscene SCENE_FINISHED
+	clearevent EVENT_ROUTE_201_GRASS_GUY
 	end
 
 .WhatsGoingOnText:

@@ -2758,8 +2758,9 @@ wTwinleafTownSceneID::     db
 wRivalHouse2FSceneID::     db
 wRoute201SceneID::         db
 wLakeVerityLowSceneID::    db
+wSandgemTownSceneID::      db
 
-	ds 67
+	ds 66
 
 ; fight counts
 wJackFightCount::    db ; d9f2

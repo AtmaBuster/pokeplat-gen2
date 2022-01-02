@@ -244,6 +244,7 @@ ScriptCommandTable:
 	dw Script_gettmhmname                ; b2
 	dw Script_writetexttable             ; b3
 	dw Script_loadtrainertable           ; b4
+	dw Script_writetextgender            ; b5
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3085,3 +3086,25 @@ Script_loadtrainertable:
 	ld a, h
 	ld [wOtherTrainerID], a
 	ret
+
+Script_writetextgender:
+; script command 0xb5
+; parameters: text_pointer for male, text_pointer for female
+
+	call GetScriptByte
+	ld l, a
+	call GetScriptByte
+	ld h, a
+	call GetScriptByte
+	ld e, a
+	call GetScriptByte
+	ld d, a
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .got_it
+	ld h, d
+	ld l, e
+.got_it
+	ld a, [wScriptBank]
+	ld b, a
+	jp MapTextbox

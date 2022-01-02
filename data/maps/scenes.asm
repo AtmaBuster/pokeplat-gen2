@@ -17,4 +17,5 @@ MapScenes::
 	scene_var RIVAL_HOUSE_2F,     wRivalHouse2FSceneID
 	scene_var ROUTE_201,          wRoute201SceneID
 	scene_var LAKE_VERITY_LOW,    wLakeVerityLowSceneID
+	scene_var SANDGEM_TOWN,       wSandgemTownSceneID
 	db -1 ; end

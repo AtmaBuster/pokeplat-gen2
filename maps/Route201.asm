@@ -3,6 +3,10 @@
 	const ROUTE201_ROWAN
 	const ROUTE201_OBJECT2
 	const ROUTE201_OBJECT3
+	const ROUTE201_OBJECT4
+	const ROUTE201_OBJECT5
+	const ROUTE201_OBJECT6
+	const ROUTE201_OBJECT7
 
 Route201_MapScripts:
 	db 5 ; scene scripts
@@ -124,9 +128,8 @@ Route201_GetStarterScript:
 	appear ROUTE201_OBJECT2
 	playmusic MUSIC_RIVAL_ENCOUNTER ; dawnlucas encounter
 	applymovement ROUTE201_OBJECT2, .DawnLucasApproachMovement
-	callstd tableindexfromgender
 	opentext
-	writetexttable .DawnLucasText1Table
+	writetextgender .DawnText1, .LucasText1
 	waitbutton
 	turnobject ROUTE201_OBJECT2, DOWN
 	pause 15
@@ -134,9 +137,9 @@ Route201_GetStarterScript:
 	pause 15
 	turnobject ROUTE201_OBJECT2, RIGHT
 	turnobject ROUTE201_ROWAN, LEFT
-	writetexttable .RowanTalkToDawnLucasTable
+	writetextgender .RowanTalkToDawnText, .RowanTalkToLucasText
 	buttonsound
-	writetexttable .DawnLucasText2Table
+	writetextgender .DawnText2, .LucasText2
 	buttonsound
 	writetext .SideBySideText
 	waitbutton
@@ -152,18 +155,6 @@ Route201_GetStarterScript:
 	setscene SCENE_ROUTE201_CANT_LEAVE
 	closetext
 	end
-
-.DawnLucasText1Table:
-	dw .DawnText1
-	dw .LucasText1
-
-.DawnLucasText2Table:
-	dw .DawnText2
-	dw .LucasText2
-
-.RowanTalkToDawnLucasTable:
-	dw .RowanTalkToDawnText
-	dw .RowanTalkToLucasText
 
 .TooSlowText:
 	text "Too slow!"
@@ -657,12 +648,12 @@ Route201_BriefcaseScript:
 	applymovement ROUTE201_ROWAN, .RowanLeaveMovement
 	disappear ROUTE201_ROWAN
 	opentext
-	writetexttable .WaitForMeText
+	writetextgender .WaitForMeDawnText, .WaitForMeLucasText
 	waitbutton
 	closetext
 	applymovement ROUTE201_OBJECT2, .WalkStepMovement
 	opentext
-	writetexttable .ExcuseMeText
+	writetextgender .ExcuseMeDawnText, .ExcuseMeLucasText
 	waitbutton
 	closetext
 	applymovement ROUTE201_OBJECT2, .DawnLucasLeaveMovement
@@ -716,14 +707,6 @@ Route201_BriefcaseScript:
 	db RIVAL1, RIVAL1_1_CHIMCHAR
 	db RIVAL1, RIVAL1_1_PIPLUP
 	db RIVAL1, RIVAL1_1_TURTWIG
-
-.WaitForMeText:
-	dw .WaitForMeDawnText
-	dw .WaitForMeLucasText
-
-.ExcuseMeText:
-	dw .ExcuseMeDawnText
-	dw .ExcuseMeLucasText
 
 .IllChooseThisText:
 	text "<RIVAL>: Then, I"
@@ -1218,6 +1201,25 @@ Route201_LedgeKidScript:
 	cont "TWINLEAF TOWN!"
 	done
 
+Route201_GrassGuyScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "Wild #MON lurk"
+	line "in tall grass."
+	cont "They can burst out"
+	cont "at any time."
+
+	para "So, if you want to"
+	line "battle wild"
+	cont "#MON, just walk"
+	cont "in the tall grass."
+
+	para "If you want to"
+	line "avoid wild #MON"
+	cont "then stay out of"
+	cont "the tall grass."
+	done
+
 Route201_MapEvents:
 	db 0, 0 ; filler
 
@@ -1247,7 +1249,7 @@ Route201_MapEvents:
 	bg_event 39, 11, BGEVENT_READ, Route201_TrainerTipsSignScript
 	bg_event 50,  4, BGEVENT_READ, Route201_SandgemSignScript
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event 18, 12, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_RivalScript, EVENT_ROUTE_201_RIVAL
 	object_event 15, 12, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_RowanScript, EVENT_ROUTE_201_ROWAN
 	object_event 15, 12, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_201_DAWNLUCAS
@@ -1255,3 +1257,4 @@ Route201_MapEvents:
 	object_event 48, 13, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_GirlScript, -1
 	object_event 42,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_MartGuyScript, -1
 	object_event 53,  8, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_LedgeKidScript, -1
+	object_event 26, 12, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route201_GrassGuyScript, EVENT_ROUTE_201_GRASS_GUY
