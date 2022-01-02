@@ -18,4 +18,5 @@ MapScenes::
 	scene_var ROUTE_201,          wRoute201SceneID
 	scene_var LAKE_VERITY_LOW,    wLakeVerityLowSceneID
 	scene_var SANDGEM_TOWN,       wSandgemTownSceneID
+	scene_var ROWANS_LAB,         wRowansLabSceneID
 	db -1 ; end

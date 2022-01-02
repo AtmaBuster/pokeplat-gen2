@@ -2759,8 +2759,9 @@ wRivalHouse2FSceneID::     db
 wRoute201SceneID::         db
 wLakeVerityLowSceneID::    db
 wSandgemTownSceneID::      db
+wRowansLabSceneID::        db
 
-	ds 66
+	ds 65
 
 ; fight counts
 wJackFightCount::    db ; d9f2

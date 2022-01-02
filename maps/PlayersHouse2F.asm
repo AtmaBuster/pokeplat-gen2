@@ -18,8 +18,10 @@ PlayersHouse2F_MapScripts:
 	closetext
 	setscene SCENE_FINISHED
 	turnobject PLAYER, DOWN
-	end
-
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iffalse .Done
+	variablesprite SPRITE_DAWN_LUCAS, SPRITE_CHRIS
+.Done:
 .Dummy:
 	end
 

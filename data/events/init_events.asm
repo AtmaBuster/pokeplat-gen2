@@ -6,6 +6,7 @@ InitialEvents:
 	dw EVENT_ROUTE_201_BRIEFCASE
 	dw EVENT_ROUTE_201_GRASS_GUY
 	dw EVENT_SANDGEM_TOWN_RIVAL
+	dw EVENT_SANDGEM_TOWN_ROWAN
 
 	dw EVENT_INITIALIZED_EVENTS
 	dw -1 ; end
@@ -18,4 +19,5 @@ initvarsprite: MACRO
 ; variable sprite, appearance sprite
 	db \1 - SPRITE_VARS, \2
 ENDM
+	initvarsprite SPRITE_DAWN_LUCAS, SPRITE_KRIS
 	db -1 ; end

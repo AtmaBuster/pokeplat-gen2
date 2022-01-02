@@ -243,6 +243,7 @@ ENDM
 	dict "<TARGET>",  PlaceMoveTargetsName
 	dict "<USER>",    PlaceMoveUsersName
 	dict "<ENEMY>",   PlaceEnemysName
+	dict "<ASST>",    PlaceDawnLucasName
 	dict "<PLAY_G>",  PlaceGenderedPlayerName
 	dict "ﾟ",         .place
 	dict "ﾞ",         .place
@@ -284,6 +285,21 @@ MobileScriptChar::
 	ld b, h
 	farcall RunMobileScript
 	jp PlaceNextChar
+
+PlaceDawnLucasName:
+	push de
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	ld de, .DawnName
+	jr z, .male
+	ld de, .LucasName
+.male
+	jp PlaceCommandCharacter
+
+.DawnName:
+	db "DAWN@"
+.LucasName:
+	db "LUCAS@"
 
 print_name: MACRO
 	push de
