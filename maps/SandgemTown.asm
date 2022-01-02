@@ -66,30 +66,83 @@ SandgemTown_FirstVisitScript:
 	end
 
 .DawnGreetingText:
-	text "DawnGreetingText"
+	text "DAWN: Oh! There"
+	line "you are! Please,"
+	cont "come with me."
+	cont "The PROFESSOR is"
+	cont "waiting!"
 	done
+
 .LucasGreetingText:
-	text "LucasGreetingText"
+	text "LUCAS: Hi! I've"
+	line "been waiting for"
+	cont "you! Please, come"
+	cont "with me."
+	cont "The PROF's waiting"
+	cont "to see you."
 	done
+
 .DawnLabText:
-	text "DawnLabText"
+	text "This is it! Our"
+	line "#MON RESEARCH"
+	cont "LAB!"
+
+	para "Let's go…"
 	done
+
 .LucasLabText:
-	text "LucasLabText"
+	text "See? This is our"
+	line "#MON RESEARCH"
+	cont "LAB."
+
+	para "We'll just go ahead"
+	line "and…"
 	done
+
 .ThudText:
-	text "ThudText"
+	text "THUD!!"
 	done
+
 .RivalText:
-	text "RivalText"
+	text "<RIVAL>: What the…"
+
+	para "Oh, it's you,"
+	line "<PLAYER>!"
+
+	para "That old guy… He's"
+	line "not scary so much"
+	cont "as he is totally"
+	cont "out there!"
+
+	para "Aww, it doesn't"
+	line "matter, <PLAYER>."
+
+	para "I'm out of here."
+	line "See you later!"
 	done
+
 .DawnYourFriendText:
-	text "DawnYourFriendTex"
-	line "t"
+	text "DAWN: Wow, what"
+	line "was that?"
+
+	para "Your friend sure"
+	line "seems to be really"
+	cont "impatient."
+
+	para "Well, anyway…"
+	line "Let's go inside."
 	done
+
 .LucasYourFriendText:
-	text "LucasYourFriendTe"
-	line "xt"
+	text "LUCAS: What was"
+	line "that?!"
+
+	para "Your friend always"
+	line "seems to be in"
+	cont "such a rush."
+
+	para "Anyway…"
+	line "Let's go in."
 	done
 
 .ApproachPlayerMovement:
