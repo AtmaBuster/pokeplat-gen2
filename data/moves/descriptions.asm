@@ -1871,262 +1871,210 @@ CalmMindDescription:
 	next "and SP.DEF stats.@"
 	
 LeafBladeDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "High chance for"
 	next "a critical-hit.@"
 	
 DragonDanceDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "A dance to raise"
 	next "ATTACK and SPEED.@"
 	
 RockBlastDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Hurls boulders at"
 	next "foes 2-5 times.@"
 	
 ShockWaveDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Zaps foes with a"
 	next "jolt. Won't miss.@"
 	
 WaterPulseDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Ultrasonic waves"
 	next "that may confuse.@"
 	
 DoomDesireDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Blasts foe with"
 	next "light in 2 turns.@"
 	
 PsychoBoostDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "A powerful attack"
 	next "but lowers SP.ATK.@"
 	
 RoostDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User lands to rest"
 	next "and restore HP.@"
 	
 GravityDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Negates flying"
-	next "moves for 5 turns.@"
+	next "types for 5 turns.@"
 	
 MiracleEyeDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   "Lets psychic-moves"
+	db   "Lets psychic moves"
 	next "hit dark types.@"
 	
 WakeUpSlapDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Does 2x damage if"
 	next "asleep. Will wake.@"
 
 HammerArmDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Hits with a fist."
 	next "Lowers user SPEED.@"
 	
 GyroBallDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Slower users do"
 	next "greater damage.@"
 	
 HealingWishDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User faints. Next"
 	next "#MON is healed.@"
 	
 BrineDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Does 2x damage if"
 	next "HP is below half.@"
 	
 NaturalGiftDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Held berry changes"
 	next "the attack's type.@"
 	
 FeintDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Will break through"
 	next "PROTECT or DETECT.@"
 	
 PluckDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Pecks the foe and"
 	next "takes held berry.@"
 	
 TailwindDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Party has boosted"
 	next "SPEED for 3 turns.@"
 	
 AcupressureDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Boosts a random"
 	next "stat by 2 stages.@"
 	
 MetalBurstDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Returns an attack"
 	next "with 1.5x damage.@"
 	
 UTurnDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Attacks first then"
 	next "swaps out user.@"
 	
 CloseCombatDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Attacks and lowers"
 	next "DEFENSE & SP.DEF.@"
 	
 PaybackDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Does double damage"
 	next "if after foe.@"
 	
 AssuranceDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Does 2x damage if"
 	next "user hurt by foe.@"
 	
 EmbargoDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Prevents foe's item"
 	next "usage for 5 turns.@"
 	
 FlingDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Held item changes"
 	next "damage dealt.@"
 	
 PsychoShiftDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Transfers current"
 	next "status to the foe.@"
 	
 TrumpCardDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Does more damage"
 	next "with less PP.@"
 	
 HealBlockDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Foes can't heal HP"
 	next "for 5 turns. @"
 	
 WringOutDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Does more damage"
 	next "to high HP foes.@"
 	
 PowerTrickDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Swaps user ATTACK"
 	next "with user DEFENSE.@"
 	
 GastroAcidDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Removes the enemy's"
 	next "ability in battle.@"
 	
 LuckyChantDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Prevents critical-"
 	next "hits from foes.@"
 	
 MeFirstDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Steals foe's move"
 	next "with 1.5x power.@"
 	
 CopycatDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Uses the last move"
 	next "used in battle.@"
 	
 PowerSwapDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Swaps ATTACK and"
 	next "SP.ATK with foe.@"
 	
 GuardSwapDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Swaps DEFENSE and"
 	next "SP.DEF with foe.@"
 	
 PunishmentDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "More powerful when"
 	next "foe boosts stats.@"
 	
 LastResortDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User must use all"
 	next "other moves once.@"
 	
 WorrySeedDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Prevents foe from"
 	next "falling asleep.@"
 	
 SuckerPunchDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Attacks first if"
 	next "foe readies first.@"
 	
 ToxicSpikesDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Poisons foes that"
 	next "swap into battle.@"
 	
 HeartSwapDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Swaps stat changes"
 	next "with the foe.@"
 	
 AquaRingDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User regains HP"
 	next "each turn.@"
 	
 MagnetRiseDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User levitates for"
 	next "five turns.@"
 	
 FlareBlitzDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User takes damage."
 	next "May burn the foe.@"
 	
 ForcePalmDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Uses a shock wave."
 	next "May paralyze foe.@"
 	
 AuraSphereDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User blasts aura."
 	next "Will always hit.@"
 	
 RockPolishDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Body is polished"
 	next "to raise SPEED.@"
 	
 PoisonJabDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Uses arm to stab."
 	next "May poison foe.@"
 	
 DarkPulseDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Releases darkness."
 	next "Foe may flinch.@"
 	
@@ -2135,338 +2083,271 @@ NightSlashDescription:
 	next "a critical-hit.@"
 	
 AquaTailDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User attacks by"
 	next "swinging its tail.@"
 	
 SeedBombDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User slams seeds"
 	next "on foe from above.@"
 	
 AirSlashDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Slashes with wind."
 	next "Foe may flinch.@"
 	
 XScissorDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User crosses claws"
 	next "and strikes foe.@"
 	
 BugBuzzDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User vibrates. May"
 	next "lower foe SP.DEF.@"
 	
 DragonPulseDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User attacks foe"
 	next "with a shock wave.@"
 	
 DragonRushDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User tackles foe."
 	next "Foe may flinch.@"
 	
 PowerGemDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "User attacks with"
 	next "light from jewels.@"
 	
 DrainPunchDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Drains HP from foe"
 	next "to heal the user.@"
 	
 VacuumWaveDescription:
-		;"@@@@@@@@@@@@@@@@@@"
 	db   "Sends a wave at"
 	next "foes. Hits first.@"
 	
 FocusBlastDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Attacks and lowers"
+	next "foe's SP.DEF stat.@"
 	
 EnergyBallDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Uses nature power."
+	next "May lower SP.DEF.@"
 	
 BraveBirdDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User charges foe,"
+	next "then takes damage.@"
 	
 EarthPowerDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Erupts from earth."
+	next "May lower SP.DEF.@"
 	
 SwitcherooDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User swaps held"
+	next "item with foe.@"
 	
 GigaImpactDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Charges foes. Will"
+	next "immobilize user.@"
 	
 NastyPlotDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Sharply raises the"
+	next "user's SP.ATK.@"
 	
 BulletPunchDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "A tough punch that"
+	next "lands first.@"
 	
 AvalancheDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Does 2x damage if"
+	next "user hurt by foe.@"
 	
 IceShardDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Hurls ice at foe."
+	next "Always goes first.@"
 	
 ShadowClawDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "High chance for"
+	next "a critical-hit.@"
 	
 ThunderFangDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "An electric bite."
+	next "May paralyze foe.@"
 	
 IceFangDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "An icy bite. It"
+	next "may freeze a foe.@"
 	
 FireFangDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Bites with flaming"
+	next "fangs. May burn.@"
 	
 ShadowSneakDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Sneaks behind foe."
+	next "Always goes first.@"
 	
 MudBombDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Throws a mud ball."
+	next "May drop accuracy."
 	
 PsychoCutDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "High chance for"
+	next "a critical-hit.@"
 	
 ZenHeadbuttDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Focuses and rams."
+	next "Foes may flinch.@"
 	
 MirrorShotDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Lets loose energy."
+	next "May drop accuracy.@"
 	
 FlashCannonDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db	 "User blasts light."
+	next "May lower SP.DEF.@"
 	
 RockClimbDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Charges to smash"
+	next "foes. May confuse.@"
 	
 DefogDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Lowers foe's"
+	next "evasion stat.@"
 	
 TrickRoomDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Slow #MON move"
+	next "first for 5 turns.@"
 	
 DracoMeteorDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Calls down comets."
+	next "Drops user SP.ATK.@"
 	
 DischargeDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Strikes down all."
+	next "May paralyze foe.@"
 	
 LavaPlumeDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Flames torch all"
+	next "#MON. May burn.@"
 	
 LeafStormDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Whips up leaves."
+	next "Drops user SP.ATK.@"
 	
 PowerWhipDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Lashes foe with"
+	next "vines violently.@"
 	
 RockWreckerDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Chucks rocks. Will"
+	next "immobilize user.@"
 	
 CrossPoisonDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "High critical-hit"
+	next "ratio. May poison.@"
 	
 GunkShotDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Shoots garbage at"
+	next "foes. May poison.@"
 	
 IronHeadDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Headbutts enemies."
+	next "Foe may flinch.@"
 	
 MagnetBombDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Sticks a bomb to a"
+	next "foe. Never misses.@"
 	
 StoneEdgeDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "High chance for"
+	next "a critical-hit.@"
 	
 CaptivateDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Drops SP.ATK of"
+	next "opposite gender.@"
 	
 StealthRockDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Damages foes who"
+	next "enter battle.@"
 	
 GrassKnotDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Does more damage"
+	next "to heavier foes.@"
 	
 ChatterDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Uses sound waves."
+	next "May confuse foe.@"
 	
 JudgmentDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Move type varies"
+	next "with PLATE held.@"
 	
 BugBiteDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Bites foe and eats"
+	next "their held berry.@"
 	
 ChargeBeamDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Fires electricity."
+	next "May raise SP.ATK.@"
 	
 WoodHammerDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Slams foe. User"
+	next "takes half damage.@"
 	
 AquaJetDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User blasts toward"
+	next "foe. Hits first.@"
 	
 AttackOrderDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "High chance for"
+	next "a critical-hit.@"
 	
 DefendOrderDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Raises the user's"
+	next "SP.DEF & DEFENSE.@"
 	
 HealOrderDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User regains up to"
+	next "half of max HP.@"
 	
 HeadSmashDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Slams foe. User"
+	next "takes half damage.@"
 	
 DoubleHitDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User slams into"
+	next "the target twice.@"
 	
 RoarOfTimeDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Distorts time."
+	next "Immobilizes user.@"
 	
 SpacialRendDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "High chance for"
+	next "a critical-hit.@"
 	
 LunarDanceDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User faints. Next"
+	next "#MON is healed.@"
 	
 CrushGripDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Inflicts more harm"
+	next "if foe HP is high.@"
 	
 MagmaStormDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Traps foe in fire"
+	next "for 2-5 turns.@"
 	
 DarkVoidDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Drags #MON into"
+	next "darkness to sleep.@"
 	
 SeedFlareDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "User attacks. May"
+	next "lower foe SP.DEF.@"
 	
 OminousWindDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "An attack that may"
+	next "raise all stats.@"
 	
 ShadowForceDescription:
-		;"@@@@@@@@@@@@@@@@@@"
-	db   ""
-	next "@"
+	db   "Strikes next turn."
+	next "It always hits.@"
 
 POPS
