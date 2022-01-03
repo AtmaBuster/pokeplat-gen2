@@ -53,6 +53,7 @@ RowansLab_MapScripts:
 	playsound SFX_ITEM
 	waitsfx
 	setflag ENGINE_POKEDEX
+	setevent EVENT_GOT_POKEDEX
 	writetext .ExplainDexText
 	waitbutton
 	writetextgender .DawnHaveDexText, .LucasHaveDexText
@@ -402,7 +403,15 @@ RowansLab_MapScripts:
 
 RowansLab_RowanScript:
 	faceplayer
+	checkevent EVENT_EXITED_LAB
+	iftrue .AfterExitLab
 	jumptext .GoOnText
+
+.AfterExitLab:
+	special ProfOaksPCBoot ; redo later
+	waitbutton
+	closetext
+	end
 
 .GoOnText:
 	text "ROWAN: Go on!"

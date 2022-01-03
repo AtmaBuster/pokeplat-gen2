@@ -53,6 +53,7 @@ StdScripts::
 	dba HappinessCheckScript
 	dba TableIndexFromGenderScript
 	dba TableIndexFromStarterScript
+	dba TableIndexFromFacingScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1778,4 +1779,25 @@ TableIndexFromStarterScript:
 
 .Chimchar:
 	settableindex 1
+	end
+
+TableIndexFromFacingScript:
+	readvar VAR_FACING
+	ifequal DOWN, .Down
+	ifequal UP, .Up
+	ifequal LEFT, .Left
+; Right
+	settableindex 3
+	end
+
+.Down:
+	settableindex 0
+	end
+
+.Up:
+	settableindex 1
+	end
+
+.Left:
+	settableindex 2
 	end

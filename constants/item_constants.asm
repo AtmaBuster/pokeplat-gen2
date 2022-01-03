@@ -11,7 +11,7 @@
 	const BRIGHTPOWDER ; 03
 	const GREAT_BALL   ; 04
 	const POKE_BALL    ; 05
-	const TOWN_MAP     ; 06
+	const TOWN_MAP     ; 06 ; free?
 	const BICYCLE      ; 07
 	const MOON_STONE   ; 08
 	const ANTIDOTE     ; 09
@@ -30,7 +30,7 @@
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
 	const WATER_STONE  ; 18
-	const ITEM_19      ; 19
+	const JOURNAL      ; 19
 	const HP_UP        ; 1a
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
@@ -50,18 +50,18 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
-	const ITEM_2D      ; 2d
+	const PARCEL       ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const ITEM_32      ; 32
+	const ITEM_32      ; 32 ; free
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SPECIAL    ; 35
 	const COIN_CASE    ; 36
 	const ITEMFINDER   ; 37
-	const POKE_FLUTE   ; 38
+	const POKE_FLUTE   ; 38 ; free
 	const EXP_SHARE    ; 39
 	const OLD_ROD      ; 3a
 	const GOOD_ROD     ; 3b
@@ -71,12 +71,12 @@
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
-	const RED_SCALE    ; 42
+	const RED_SCALE    ; 42 ; free
 	const SECRETPOTION ; 43
-	const S_S_TICKET   ; 44
-	const MYSTERY_EGG  ; 45
-	const CLEAR_BELL   ; 46
-	const SILVER_WING  ; 47
+	const S_S_TICKET   ; 44 ; free
+	const MYSTERY_EGG  ; 45 ; free
+	const CLEAR_BELL   ; 46 ; free
+	const SILVER_WING  ; 47 ; free
 	const MOOMOO_MILK  ; 48
 	const QUICK_CLAW   ; 49
 	const PSNCUREBERRY ; 4a
@@ -95,7 +95,7 @@
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
 	const BLU_APRICORN ; 59
-	const ITEM_5A      ; 5a
+	const ITEM_5A      ; 5a ; free
 	const AMULET_COIN  ; 5b
 	const YLW_APRICORN ; 5c
 	const GRN_APRICORN ; 5d
@@ -105,10 +105,10 @@
 	const WHT_APRICORN ; 61
 	const BLACKBELT    ; 62
 	const BLK_APRICORN ; 63
-	const ITEM_64      ; 64
+	const ITEM_64      ; 64 ; free
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66
-	const SLOWPOKETAIL ; 67
+	const SLOWPOKETAIL ; 67 ; free?
 	const PINK_BOW     ; 68
 	const STICK        ; 69
 	const SMOKE_BALL   ; 6a
@@ -120,54 +120,54 @@
 	const EVERSTONE    ; 70
 	const SPELL_TAG    ; 71
 	const RAGECANDYBAR ; 72
-	const GS_BALL      ; 73
-	const BLUE_CARD    ; 74
+	const GS_BALL      ; 73 ; free
+	const BLUE_CARD    ; 74 ; free
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
-	const ITEM_78      ; 78
+	const ITEM_78      ; 78 ; free
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b
 	const REVIVAL_HERB ; 7c
 	const HARD_STONE   ; 7d
 	const LUCKY_EGG    ; 7e
-	const CARD_KEY     ; 7f
-	const MACHINE_PART ; 80
-	const EGG_TICKET   ; 81
-	const LOST_ITEM    ; 82
+	const CARD_KEY     ; 7f ; free
+	const MACHINE_PART ; 80 ; free
+	const EGG_TICKET   ; 81 ; free
+	const LOST_ITEM    ; 82 ; free
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
-	const BASEMENT_KEY ; 85
-	const PASS         ; 86
-	const ITEM_87      ; 87
-	const ITEM_88      ; 88
-	const ITEM_89      ; 89
+	const BASEMENT_KEY ; 85 ; free
+	const PASS         ; 86 ; free
+	const ITEM_87      ; 87 ; free
+	const ITEM_88      ; 88 ; free
+	const ITEM_89      ; 89 ; free
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
-	const ITEM_8D      ; 8d
-	const ITEM_8E      ; 8e
+	const ITEM_8D      ; 8d ; free
+	const ITEM_8E      ; 8e ; free
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const ITEM_91      ; 91
+	const ITEM_91      ; 91 ; free
 	const LEFTOVERS    ; 92
-	const ITEM_93      ; 93
-	const ITEM_94      ; 94
-	const ITEM_95      ; 95
+	const ITEM_93      ; 93 ; free
+	const ITEM_94      ; 94 ; free
+	const ITEM_95      ; 95 ; free
 	const MYSTERYBERRY ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
-	const ITEM_99      ; 99
-	const ITEM_9A      ; 9a
-	const ITEM_9B      ; 9b
+	const ITEM_99      ; 99 ; free
+	const ITEM_9A      ; 9a ; free
+	const ITEM_9B      ; 9b ; free
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1
-	const ITEM_A2      ; a2
+	const ITEM_A2      ; a2 ; free
 	const LIGHT_BALL   ; a3
 	const FRIEND_BALL  ; a4
 	const MOON_BALL    ; a5
@@ -176,15 +176,15 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const POLKADOT_BOW ; aa
-	const ITEM_AB      ; ab
+	const ITEM_AB      ; ab ; free
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
-	const SQUIRTBOTTLE ; af
-	const ITEM_B0      ; b0
+	const SQUIRTBOTTLE ; af ; free
+	const ITEM_B0      ; b0 ; free
 	const PARK_BALL    ; b1
-	const RAINBOW_WING ; b2
-	const ITEM_B3      ; b3
+	const RAINBOW_WING ; b2 ; free
+	const ITEM_B3      ; b3 ; free
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
@@ -195,10 +195,10 @@
 	const BLUESKY_MAIL ; bb
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
-	const ITEM_BE      ; be
-	const ITEM_DC      ; bf
-	const ITEM_C3      ; c0
-	const ITEM_FA      ; c1
+	const ITEM_BE      ; be ; free
+	const ITEM_DC      ; bf ; free
+	const ITEM_C3      ; c0 ; free
+	const ITEM_FA      ; c1 ; free
 	const NET_BALL     ; c2
 	const DIVE_BALL    ; c3
 	const NEST_BALL    ; c4

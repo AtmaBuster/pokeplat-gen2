@@ -22,6 +22,7 @@ SandgemTown_MapScripts:
 	end
 
 .AfterLabScript:
+	setevent EVENT_EXITED_LAB
 	turnobject SANDGEMTOWN_DAWNLUCAS, UP
 	applymovement PLAYER, .ExitLabMovement
 	appear SANDGEMTOWN_ROWAN
@@ -82,6 +83,7 @@ SandgemTown_MapScripts:
 	special RestartMapMusic
 	disappear SANDGEMTOWN_DAWNLUCAS
 	setscene SCENE_SANDGEMTOWN_NOTHING
+	setevent EVENT_TELLING_MOM_ABOUT_DEX
 	end
 
 .RowanPlayerNameText:

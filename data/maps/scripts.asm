@@ -51,6 +51,10 @@ INCLUDE "maps/TVStation2F.asm"
 INCLUDE "maps/TVStation2F2.asm"
 INCLUDE "maps/TVStation3F.asm"
 INCLUDE "maps/TVStation3F2.asm"
+
+
+SECTION "Map Scripts 4", ROMX
+
 INCLUDE "maps/TVStation3F3.asm"
 INCLUDE "maps/TVStation4F.asm"
 INCLUDE "maps/TVStationElevator.asm"
@@ -64,7 +68,6 @@ INCLUDE "maps/OreburghMineB1F.asm"
 INCLUDE "maps/OreburghMineB2F.asm"
 
 
-SECTION "Map Scripts 4", ROMX
 SECTION "Map Scripts 5", ROMX
 SECTION "Map Scripts 6", ROMX
 SECTION "Map Scripts 7", ROMX

@@ -54,3 +54,4 @@
 	enum happinesschecknpc
 	enum tableindexfromgender
 	enum tableindexfromstarter
+	enum tableindexfromfacing

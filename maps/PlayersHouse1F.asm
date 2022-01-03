@@ -1,5 +1,6 @@
 	object_const_def ; object_event constants
 	const PLAYERSHOUSE1F_MOM
+	const PLAYERSHOUSE1F_RIVALMOM
 
 PlayersHouse1F_MapScripts:
 	db 4 ; scene scripts
@@ -62,7 +63,6 @@ PlayersHouse1F_MapScripts:
 	step_end
 
 .AfterRival1:
-	turnobject PLAYERSHOUSE1F_MOM, LEFT
 	opentext
 	writetext .WhatsTheMatterText
 	waitbutton
@@ -130,6 +130,11 @@ PlayersHouse1F_MomScript:
 	special FadeInQuickly
 	special RestartMapMusic
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	checkevent EVENT_GOT_PARCEL
+	iftrue .Done
+	checkevent EVENT_TELLING_MOM_ABOUT_DEX
+	iftrue .TellMomAboutDex
+.Done:
 	end
 
 .AlreadyHealed:
@@ -156,6 +161,58 @@ PlayersHouse1F_MomScript:
 
 .BeforeExit:
 	jumptext .ImpatientText
+
+.TellMomAboutDex:
+	opentext
+	writetext .WhatIsItText
+	waitbutton
+	verbosegiveitem JOURNAL
+; bag cannot be full normally, ignore fail case
+	writetext .ThatsAJournalText
+	waitbutton
+	turnobject PLAYERSHOUSE1F_MOM, LEFT
+	writetext .FullOfAdventureText
+	waitbutton
+	faceplayer
+	writetext .IllBeAllRightText
+	waitbutton
+	closetext
+	appear PLAYERSHOUSE1F_RIVALMOM
+	turnobject PLAYERSHOUSE1F_MOM, DOWN
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM, 15
+	applymovement PLAYERSHOUSE1F_RIVALMOM, .RivalMomEnterMovement
+	opentext
+	writetext .IsRivalHereText
+	buttonsound
+	writetext .NotHereText
+	buttonsound
+	writetext .MustHaveLeftText
+	buttonsound
+	writetext .DeliverToHimText
+	waitbutton
+	faceplayer
+	writetext .WontYoutext
+	waitbutton
+	closetext
+	callstd tableindexfromfacing
+	applymovementtable PLAYERSHOUSE1F_RIVALMOM, .RivalMomGoToPlayerMovement
+	setlasttalked PLAYERSHOUSE1F_RIVALMOM
+	faceplayer
+	faceobject PLAYER, PLAYERSHOUSE1F_RIVALMOM
+	opentext
+	writetext .TakeThisToHimText
+	waitbutton
+	verbosegiveitem PARCEL
+; bag cannot be full normally, ignore fail case
+	writetext .ByeByeText
+	buttonsound
+	writetext .LetMeThinkText
+	waitbutton
+	closetext
+	applymovementtable PLAYERSHOUSE1F_RIVALMOM, .RivalMomLeaveMovement
+	disappear PLAYERSHOUSE1F_RIVALMOM
+	setevent EVENT_GOT_PARCEL
+	end
 
 .TakeCareText:
 	text "Mom: Bye-bye,"
@@ -251,6 +308,197 @@ PlayersHouse1F_MomScript:
 	cont "what it was about."
 	done
 
+.WhatIsItText:
+	text "Mom: What is it,"
+	line "<PLAYER>?"
+
+	para "…"
+
+	para "Wow. PROF.ROWAN"
+	line "asked you to do"
+	cont "something that"
+	cont "big."
+
+	para "OK, dear, go for"
+	line "it! Your mom's got"
+	cont "your back!"
+
+	para "Oh, I know!"
+	line "<PLAYER>, I've got"
+	cont "something that"
+	cont "you'll find useful."
+	done
+
+.ThatsAJournalText:
+	text "That's a JOURNAL."
+	line "It keeps a record"
+	cont "of your daily"
+	cont "events."
+
+	para "Check it, and"
+	line "you'll be able to"
+	cont "remember what you"
+	cont "did last."
+	done
+
+.FullOfAdventureText:
+	text "Gee, a journey"
+	line "full of adventure…"
+
+	para "I envy you, kiddo."
+
+	para "Plus, you're not"
+	line "alone. You have"
+	cont "your #MON with"
+	cont "you."
+
+	para "I wish I could go"
+	line "instead!"
+	done
+
+.IllBeAllRightText:
+	text "I'm just joking,"
+	line "dear!"
+	cont "Yup, <PLAYER>!"
+
+	para "I'll be all right"
+	line "by myself, so you"
+	cont "go and enjoy your"
+	cont "adventure!"
+
+	para "When you're exposed"
+	line "to new things, and"
+	cont "experience new"
+	cont "sensations…"
+
+	para "It makes your"
+	line "mother happy, too."
+
+	para "…But come back"
+	line "sometimes."
+
+	para "I would like to"
+	line "see the kinds of"
+	cont "#MON you've"
+	cont "caught, dear."
+	done
+
+.IsRivalHereText:
+	text "<RIVAL>'s mom:"
+	line "Excuse me. Is my"
+	cont "<RIVAL> here?"
+	done
+
+.NotHereText:
+	text "Mom: Oh?"
+	line "No, he's not…"
+	done
+
+.MustHaveLeftText:
+	text "<RIVAL>'s mom: Oh…"
+	line "Then, he must have"
+	cont "left already…"
+
+	para "What to do…"
+
+	para "That boy shouted"
+	line "about going on an"
+	cont "adventure, then he"
+	cont "bolted."
+
+	para "He's so headstrong"
+	line "and reckless…"
+
+	para "I at least wanted"
+	line "him to take this…"
+	done
+
+.DeliverToHimText:
+	text "Mom: Not to worry,"
+	line "<PLAYER> will"
+	cont "deliver it to him."
+	done
+
+.WontYoutext:
+	text "Won't you, <PLAYER>?"
+	done
+
+.TakeThisToHimText:
+	text "<RIVAL>'s mom: Oh,"
+	line "really? You'd do"
+	cont "that for me?"
+
+	para "<PLAYER>, please"
+	line "take this to"
+	cont "<RIVAL> for me."
+	done
+
+.ByeByeText:
+	text "Mom: Bye-bye,"
+	line "<PLAYER>! Enjoy"
+	cont "your adventure!"
+	done
+
+.LetMeThinkText:
+	text "<RIVAL>'s mom: Let"
+	line "me thing…"
+
+	para "Knowing my boy, he"
+	line "would probably"
+	cont "head straight to"
+	cont "JUBILIFE CITY…"
+
+	para "OK, take that to"
+	line "my <RIVAL>, then."
+	done
+
+.RivalMomEnterMovement:
+	step UP
+	step_end
+
+.RivalMomGoToPlayerMovement:
+	dw .RivalMomGoToPlayerMovementU
+	dw .RivalMomGoToPlayerMovementD
+	dw .RivalMomGoToPlayerMovementR
+	dw .NoStep
+
+.RivalMomLeaveMovement:
+	dw .RivalMomLeaveMovementU
+	dw .RivalMomLeaveMovementD
+	dw .RivalMomLeaveMovementR
+	dw .NoStep
+
+.RivalMomGoToPlayerMovementD:
+	step RIGHT
+	turn_head UP
+.NoStep:
+	step_end
+
+.RivalMomGoToPlayerMovementU:
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	turn_head LEFT
+	step_end
+
+.RivalMomGoToPlayerMovementR:
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+.RivalMomLeaveMovementU:
+	step DOWN
+	step DOWN
+.RivalMomLeaveMovementR:
+	step DOWN
+	step LEFT
+.RivalMomLeaveMovementD:
+	step DOWN
+	step_end
+
 PlayersHouse1F_TryExitFirstTimeScript:
 	turnobject PLAYERSHOUSE1F_MOM, DOWN
 	turnobject PLAYER, UP
@@ -293,5 +541,6 @@ PlayersHouse1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouse1F_MomScript, -1
+	db 2 ; object events
+	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouse1F_MomScript, -1
+	object_event  6,  7, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PLAYERS_HOUSE_1F_RIVAL_MOM

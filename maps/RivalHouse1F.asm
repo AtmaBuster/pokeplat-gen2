@@ -19,7 +19,17 @@ RivalHouse1F_RivalsMomScript:
 	jumptext .RocketedOffText
 
 .SecondTalk:
+	checkevent EVENT_GOT_STARTER
+	iftrue .AfterMon
 	jumptext .WaitingText
+
+.AfterMon:
+	checkevent EVENT_GOT_POKEDEX
+	iftrue .AfterDex
+	jumptext .AfterMon
+
+.AfterDex:
+	jumptext .AfterDex
 
 .CallingOnRivalText:
 	text "<RIVAL>'s mom: Oh,"
@@ -57,6 +67,30 @@ RivalHouse1F_RivalsMomScript:
 	line "<RIVAL> should be"
 	cont "out on ROUTE 201"
 	cont "by now."
+
+	para "He just can't sit"
+	line "still. Who does he"
+	cont "take after?"
+	done
+
+.AfterMonText:
+	text "<RIVAL>'s mom: Oh,"
+	line "you've become"
+	cont "friends with a"
+	cont "#MON, too."
+	done
+
+.AfterDexText:
+	text "<RIVAL>'s mom: My"
+	line "<RIVAL> took off"
+	cont "like a rocket as"
+	cont "usual."
+
+	para "He was shouting"
+	line "something about"
+	cont "becoming the"
+	cont "greatest TRAINER"
+	cont "ever…"
 
 	para "He just can't sit"
 	line "still. Who does he"

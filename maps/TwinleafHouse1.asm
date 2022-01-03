@@ -8,7 +8,14 @@ TwinleafHouse1_MapScripts:
 	db 0 ; callbacks
 
 TwinleafHouse1GrannyScript:
-	jumptextfaceplayer .Granny
+	faceplayer
+	checkevent EVENT_GOT_POKEDEX
+	iftrue .AfterDex
+	jumptext .Granny
+
+.AfterDex:
+	jumptext .AfterDexText
+
 .Granny:
 	text "Did you hear?"
 
@@ -26,14 +33,36 @@ TwinleafHouse1GrannyScript:
 	cont "was gone?"
 	done
 
+.AfterDexText:
+	text "Well! PROFESSOR"
+	line "ROWAN gave you a"
+	cont "#DEX, did he?"
+	done
+
 TwinleafHouse1TwinScript:
-	jumptextfaceplayer .Twin
+	faceplayer
+	checkevent EVENT_GOT_POKEDEX
+	iftrue .AfterDex
+	jumptext .Twin
+
+.AfterDex:
+	jumptext .AfterDexText
+
 .Twin:
 	text "Listen, listen,"
 	next "<PLAYER>."
 
 	para "I want a cute"
 	line "#MON!"
+	done
+
+.AfterDexText:
+	text "Listen, listen,"
+	line "<PLAYER>."
+
+	para "Do you think I can"
+	line "be friends with"
+	cont "#MON like you?"
 	done
 
 TwinleafHouse1_MapEvents:
