@@ -55,7 +55,6 @@ Route201_GetStarterScript:
 	applymovement ROUTE201_RIVAL, .RivalRunToGrassMovement
 	opentext
 	writetext .HoldItText
-	waitbutton
 	closetext
 	turnobject ROUTE201_RIVAL, LEFT
 	turnobject PLAYER, LEFT
@@ -210,8 +209,7 @@ Route201_GetStarterScript:
 	done
 
 .HoldItText:
-	text "Hold it!"
-	done
+	text_big "Hold it!@"
 
 .NoPokemonText:
 	text "PROFESSOR: You two"

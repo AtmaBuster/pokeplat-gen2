@@ -732,9 +732,19 @@ TextCommand_BIG::
 ; [$17]["...@"]
 	push hl
 	push bc
-	ld de, wStringBuffer5
-	ld bc, 19
-	call CopyBytes
+	ld d, h
+	ld e, l
+	ld hl, wOptions
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	ld hl, wStringBuffer5
+	call PlaceString
+	pop af
+	ld hl, wOptions
+	ld [hl], a
+	ld a, "@"
+	ld [bc], a
 	pop bc
 	pop de
 	push de

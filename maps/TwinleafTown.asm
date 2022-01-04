@@ -167,6 +167,7 @@ TwinleafTown_MeetRivalScript:
 	follow PLAYER, TWINLEAFTOWN_RIVAL
 	applymovement PLAYER, .RivalBumpMovement
 	stopfollow
+	playsound SFX_BUMP
 	opentext
 	writetext .ThudText
 	closetext

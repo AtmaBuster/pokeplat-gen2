@@ -28,7 +28,6 @@ SandgemTown_MapScripts:
 	appear SANDGEMTOWN_ROWAN
 	opentext
 	writetext .RowanPlayerNameText
-	waitbutton
 	closetext
 	turnobject PLAYER, UP
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -87,8 +86,7 @@ SandgemTown_MapScripts:
 	end
 
 .RowanPlayerNameText:
-	text "<PLAYER>!"
-	done
+	text_big "<PLAYER>!@"
 
 .HaveSomethingText:
 	text "ROWAN: I have"
@@ -372,9 +370,9 @@ SandgemTown_FirstVisitScript:
 	closetext
 	appear SANDGEMTOWN_RIVAL
 	applymovement SANDGEMTOWN_RIVAL, .RivalExitMovement
+	playsound SFX_BUMP
 	opentext
 	writetext .ThudText
-	waitbutton
 	closetext
 	showemote EMOTE_SHOCK, SANDGEMTOWN_RIVAL, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -438,8 +436,7 @@ SandgemTown_FirstVisitScript:
 	done
 
 .ThudText:
-	text "THUD!!"
-	done
+	text_big "Thud!!@"
 
 .RivalText:
 	text "<RIVAL>: What the…"
