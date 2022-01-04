@@ -38,8 +38,8 @@ RivalHouse2F_MapScripts:
 
 .TakeStuffText:
 	text "<RIVAL>:…I'd better"
-	line "take my Bag and"
-	cont "Journal, too…"
+	line "take my BAG and"
+	cont "JOURNAL, too…"
 	done
 
 .WaitingText:
