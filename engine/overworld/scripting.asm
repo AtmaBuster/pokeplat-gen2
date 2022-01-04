@@ -637,6 +637,10 @@ PocketIsFullText:
 	text_far UnknownText_0x1c474b
 	text_end
 
+TMPocketIsFullText:
+	text_far _TMPocketIsFullText
+	text_end
+
 Script_pokemart:
 ; script command 0x94
 ; parameters: mart_type, mart_id
@@ -2986,7 +2990,7 @@ GiveTMHMScript:
 
 .Full:
 	buttonsound
-	pocketisfull
+	writetext TMPocketIsFullText
 	end
 
 ReceivedTMHMText:

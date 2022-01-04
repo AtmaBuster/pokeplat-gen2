@@ -375,8 +375,10 @@ SandgemTown_FirstVisitScript:
 	opentext
 	writetext .ThudText
 	waitbutton
+	closetext
 	showemote EMOTE_SHOCK, SANDGEMTOWN_RIVAL, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
+	opentext
 	writetext .RivalText
 	waitbutton
 	closetext
@@ -601,7 +603,7 @@ SandgemTown_SaveWomanScript:
 	text "So I don't forget"
 	line "what's happened,"
 	cont "till now, I'd"
-	cont "better save this…"
+	cont "better SAVE this…"
 
 	para "There! Now I can"
 	line "take a break."

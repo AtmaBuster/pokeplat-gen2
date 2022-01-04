@@ -350,6 +350,11 @@ _PutTMHMInPocketText::
 	line "in the TM POCKET."
 	prompt
 
+_TMPocketIsFullText::
+	text "The TM POCKET"
+	line "is full…"
+	prompt
+
 UnknownText_0x1c475f::
 	text "I see all."
 	line "I know all…"
