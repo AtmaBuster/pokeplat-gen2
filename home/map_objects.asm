@@ -16,36 +16,38 @@ GetSpritePalette::
 
 GetSpriteVTile::
 	push hl
+	push de
 	push bc
-	ld hl, wUsedSprites + 2
-	ld c, SPRITE_GFX_LIST_CAPACITY - 1
+	ldh [hUsedSpriteIndex], a
+	farcall GetSprite
+	ld hl, wSpriteFlags
+	res 5, [hl]
+	ldh a, [hObjectStructIndexBuffer]
+	; objects 10+ load in vbk0
+	cp 10
+	jr c, .continue
+	set 5, [hl]
+	sub 10
+.continue
+	add a
+	add a
 	ld b, a
-	ldh a, [hMapObjectIndexBuffer]
-	cp 0
-	jr z, .nope
-	ld a, b
-.loop
-	cp [hl]
-	jr z, .found
-	inc hl
-	inc hl
-	dec c
-	jr nz, .loop
-	ld a, [wUsedSprites + 1]
-	scf
-	jr .done
-
-.nope
-	ld a, [wUsedSprites + 1]
-	jr .done
-
-.found
-	inc hl
+	add b
+	add b
+	ldh [hUsedSpriteTile], a
+	push af
+	farcall GetUsedSprite
+	pop af
+	ld b, a
 	xor a
-	ld a, [hl]
-
-.done
+	ld a, b
+	ld hl, wSpriteFlags
+	bit 5, [hl]
+	jr z, .using_vbk0
+	or $80
+.using_vbk0
 	pop bc
+	pop de
 	pop hl
 	ret
 

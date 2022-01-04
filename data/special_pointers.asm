@@ -171,7 +171,7 @@ SpecialsPointers::
 	add_special Function1037eb
 	add_special Function10383c
 	add_special StubbedTrainerRankings_Healings
-	add_special RefreshSprites
+	add_special ReloadVisibleSprites
 	add_special Function1037c2
 	add_special Mobile_DummyReturnFalse ; $a0
 	add_special Function103780

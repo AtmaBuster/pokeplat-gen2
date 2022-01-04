@@ -1,5 +1,4 @@
 HandleNewMap:
-	call ClearUnusedMapBuffer
 	call ResetMapBufferEventFlags
 	call ResetFlashIfOutOfCave
 	call GetCurrentMapSceneID
@@ -315,7 +314,7 @@ LoadGraphics:
 	ldh [hMapAnims], a
 	xor a
 	ldh [hTileAnimFrame], a
-	farcall RefreshSprites
+	farcall ReloadVisibleSprites
 	call LoadFontsExtra
 	farcall LoadOverworldFont
 	ret

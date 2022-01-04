@@ -34,7 +34,6 @@ INCLUDE "maps/AssistantHouse2F.asm"
 INCLUDE "maps/SandgemPokemonCenter1F.asm"
 INCLUDE "maps/SandgemPokeMart.asm"
 INCLUDE "maps/Route202.asm"
-INCLUDE "maps/JubilifeCity.asm"
 INCLUDE "maps/Route203.asm"
 INCLUDE "maps/JubilifeApartmentSE1F.asm"
 INCLUDE "maps/JubilifeApartmentSE2F.asm"
@@ -43,6 +42,10 @@ INCLUDE "maps/JubilifeApartmentNE2F.asm"
 INCLUDE "maps/JubilifeApartmentSW1F.asm"
 INCLUDE "maps/JubilifeApartmentSW2F.asm"
 INCLUDE "maps/TrainersSchool.asm"
+
+
+SECTION "Map Scripts 4", ROMX
+
 INCLUDE "maps/PoketchCompany1F.asm"
 INCLUDE "maps/PoketchCompany2F.asm"
 INCLUDE "maps/PoketchCompany3F.asm"
@@ -51,10 +54,6 @@ INCLUDE "maps/TVStation2F.asm"
 INCLUDE "maps/TVStation2F2.asm"
 INCLUDE "maps/TVStation3F.asm"
 INCLUDE "maps/TVStation3F2.asm"
-
-
-SECTION "Map Scripts 4", ROMX
-
 INCLUDE "maps/TVStation3F3.asm"
 INCLUDE "maps/TVStation4F.asm"
 INCLUDE "maps/TVStationElevator.asm"
@@ -69,6 +68,8 @@ INCLUDE "maps/OreburghMineB2F.asm"
 
 
 SECTION "Map Scripts 5", ROMX
+
+INCLUDE "maps/JubilifeCity.asm"
 SECTION "Map Scripts 6", ROMX
 SECTION "Map Scripts 7", ROMX
 SECTION "Map Scripts 8", ROMX
