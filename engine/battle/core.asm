@@ -3252,7 +3252,7 @@ MonFaintedAnimation:
 	ret
 
 .Spaces:
-	db "	   @"
+	db "       @"
 
 SlideBattlePicOut:
 	ldh [hMapObjectIndexBuffer], a
