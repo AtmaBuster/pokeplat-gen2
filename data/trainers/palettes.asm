@@ -17,7 +17,6 @@ INCBIN "gfx/trainers/clair.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/will.gbcpal", middle_colors
-DudePalette:
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors

@@ -9483,13 +9483,17 @@ InitBattleDisplay:
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
 
-; Special exception for Dude.
-	ld b, BANK(DudeBackpic)
-	ld hl, DudeBackpic
+;; Special exception for Dude.
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
-	jr z, .Decompress
+	jr nz, .regular_backpic
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr nz, .Chris
+	farcall GetKrisBackpic
+	ret
 
+.regular_backpic
 ; What gender are we?
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a

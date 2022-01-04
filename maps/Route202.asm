@@ -40,6 +40,27 @@ Route202_CatchTutorialScript:
 	end
 
 .CatchTutorial:
+	playmusic MUSIC_RIVAL_ENCOUNTER ; dawnlucas encounter
+	writetextgender .DawnCatchMonText, .LucasCatchMonText
+	waitbutton
+	closetext
+	follow ROUTE202_DAWNLUCAS, PLAYER
+	applymovement ROUTE202_DAWNLUCAS, .EnterGrassMovement
+	stopfollow
+	loadwildmon BIDOOF, 2
+	catchtutorial BATTLETYPE_TUTORIAL
+	turnobject ROUTE202_DAWNLUCAS, RIGHT
+	opentext
+	writetextgender .DawnDoneCatchText, .LucasDoneCatchText
+	waitbutton
+	verbosegiveitem POKE_BALL, 5
+; ignore fail case
+	writetextgender .DawnLotsOfMonText, .LucasLotsOfMonText
+	waitbutton
+	closetext
+	applymovement ROUTE202_DAWNLUCAS, .LeaveMovement
+	disappear ROUTE202_DAWNLUCAS
+	setscene SCENE_FINISHED
 	end
 
 .DawnTellFamilyText:
@@ -104,6 +125,25 @@ Route202_CatchTutorialScript:
 	line "right away."
 	done
 
+.DawnCatchMonText:
+	text "DawnCatchMonText"
+	done
+.LucasCatchMonText:
+	text "LucasCatchMonText"
+	done
+.DawnDoneCatchText:
+	text "DawnDoneCatchText"
+	done
+.LucasDoneCatchText:
+	text "LucasDoneCatchText"
+	done
+.DawnLotsOfMonText:
+	text "DawnLotsOfMonText"
+	done
+.LucasLotsOfMonText:
+	text "LucasLotsOfMonText"
+	done
+
 .ApproachPlayerMovement:
 	dw .ApproachPlayerMovementU
 	dw .ApproachPlayerMovementD
@@ -137,6 +177,19 @@ Route202_CatchTutorialScript:
 	step LEFT
 	step UP
 	turn_head RIGHT
+	step_end
+
+.EnterGrassMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+.LeaveMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 Route202_SandgemSignScript:

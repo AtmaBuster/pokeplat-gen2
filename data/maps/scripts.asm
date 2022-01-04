@@ -43,6 +43,10 @@ INCLUDE "maps/JubilifeApartmentNE2F.asm"
 INCLUDE "maps/JubilifeApartmentSW1F.asm"
 INCLUDE "maps/JubilifeApartmentSW2F.asm"
 INCLUDE "maps/TrainersSchool.asm"
+
+
+SECTION "Map Scripts 4", ROMX
+
 INCLUDE "maps/PoketchCompany1F.asm"
 INCLUDE "maps/PoketchCompany2F.asm"
 INCLUDE "maps/PoketchCompany3F.asm"
@@ -51,10 +55,6 @@ INCLUDE "maps/TVStation2F.asm"
 INCLUDE "maps/TVStation2F2.asm"
 INCLUDE "maps/TVStation3F.asm"
 INCLUDE "maps/TVStation3F2.asm"
-
-
-SECTION "Map Scripts 4", ROMX
-
 INCLUDE "maps/TVStation3F3.asm"
 INCLUDE "maps/TVStation4F.asm"
 INCLUDE "maps/TVStationElevator.asm"

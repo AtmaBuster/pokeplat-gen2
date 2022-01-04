@@ -721,7 +721,10 @@ GetPlayerOrMonPalettePointer:
 	ret
 	
 .dude
-	ld hl, DudePalette
+	ld a, [wPlayerGender]
+	and a
+	jr nz, .male
+	ld hl, KrisPalette
 	ret
 
 .male
