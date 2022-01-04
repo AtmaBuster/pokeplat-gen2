@@ -34,7 +34,6 @@ INCLUDE "maps/AssistantHouse2F.asm"
 INCLUDE "maps/SandgemPokemonCenter1F.asm"
 INCLUDE "maps/SandgemPokeMart.asm"
 INCLUDE "maps/Route202.asm"
-INCLUDE "maps/JubilifeCity.asm"
 INCLUDE "maps/Route203.asm"
 INCLUDE "maps/JubilifeApartmentSE1F.asm"
 INCLUDE "maps/JubilifeApartmentSE2F.asm"
@@ -69,6 +68,8 @@ INCLUDE "maps/OreburghMineB2F.asm"
 
 
 SECTION "Map Scripts 5", ROMX
+
+INCLUDE "maps/JubilifeCity.asm"
 SECTION "Map Scripts 6", ROMX
 SECTION "Map Scripts 7", ROMX
 SECTION "Map Scripts 8", ROMX

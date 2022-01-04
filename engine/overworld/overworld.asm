@@ -16,40 +16,7 @@ _ReplaceKrisSprite::
 	ret
 
 Function14146: ; mobile
-	ld hl, wSpriteFlags
-	ld a, [hl]
-	push af
-	res 7, [hl]
-	set 6, [hl]
-	call LoadUsedSpritesGFX
-	pop af
-	ld [wSpriteFlags], a
-	ret
-
 Function14157: ; mobile
-	ld hl, wSpriteFlags
-	ld a, [hl]
-	push af
-	set 7, [hl]
-	res 6, [hl]
-	call LoadUsedSpritesGFX
-	pop af
-	ld [wSpriteFlags], a
-	ret
-
-RefreshSprites::
-	call .Refresh
-	call LoadUsedSpritesGFX
-	ret
-
-.Refresh:
-	xor a
-	ld bc, wUsedSpritesEnd - wUsedSprites
-	ld hl, wUsedSprites
-	call ByteFill
-	call GetPlayerSprite
-	call AddMapSprites
-	call LoadAndSortSprites
 	ret
 
 GetPlayerSprite:
@@ -91,49 +58,54 @@ GetPlayerSprite:
 
 INCLUDE "data/sprites/player_sprites.asm"
 
-AddMapSprites:
-	call GetMapEnvironment
-	call CheckOutdoorMap
-	jr z, .outdoor
-	call AddIndoorSprites
+ReloadVisibleSprites::
+	push hl
+	push de
+	push bc
+	call GetPlayerSprite
+	xor a
+	ldh [hUsedSpriteIndex], a
+	call ReloadSpriteIndex
+	pop bc
+	pop de
+	pop hl
 	ret
 
-.outdoor
-	call AddOutdoorSprites
-	ret
-
-AddIndoorSprites:
-	ld hl, wMap1ObjectSprite
-	ld a, 1
+ReloadSpriteIndex::
+; Reloads sprites using hUsedSpriteIndex.
+; Used to reload variable sprites
+	ld hl, wObjectStructs
+	ld de, OBJECT_STRUCT_LENGTH
+	push bc
+	ldh a, [hUsedSpriteIndex]
+	ld b, a
+	xor a
 .loop
-	push af
+	ldh [hObjectStructIndexBuffer], a
 	ld a, [hl]
-	call AddSpriteGFX
-	ld de, OBJECT_LENGTH
-	add hl, de
-	pop af
-	inc a
-	cp NUM_OBJECTS
-	jr nz, .loop
-	ret
-
-AddOutdoorSprites:
-	ld a, [wMapGroup]
-	dec a
-	ld c, a
-	ld b, 0
-	ld hl, OutdoorSprites
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-.loop
-	ld a, [hli]
 	and a
-	ret z
-	call AddSpriteGFX
-	jr .loop
+	jr z, .done
+	bit 7, b
+	jr z, .continue
+	cp b
+	jr nz, .done
+.continue
+	push hl
+	call GetSpriteVTile
+	pop hl
+	push hl
+	inc hl
+	inc hl
+	ld [hl], a
+	pop hl
+.done
+	add hl, de
+	ldh a, [hObjectStructIndexBuffer]
+	inc a
+	cp NUM_OBJECT_STRUCTS
+	jr nz, .loop
+	pop bc
+	ret
 
 LoadUsedSpritesGFX:
 	ld a, MAPCALLBACK_SPRITES
@@ -164,7 +136,7 @@ SafeGetSprite:
 	pop hl
 	ret
 
-GetSprite:
+GetSprite::
 	call GetMonSprite
 	ret c
 
@@ -302,11 +274,6 @@ _GetSpritePalette::
 	ld c, a
 	ret
 
-LoadAndSortSprites:
-	call LoadSpriteGFX
-	call ArrangeUsedSprites
-	ret
-
 AddSpriteGFX:
 ; Add any new sprite ids to a list of graphics to be loaded.
 ; Return carry if the list is full.
@@ -343,88 +310,6 @@ AddSpriteGFX:
 	pop bc
 	pop hl
 	and a
-	ret
-
-LoadSpriteGFX:
-	ld hl, wUsedSprites
-	ld b, SPRITE_GFX_LIST_CAPACITY
-.loop
-	ld a, [hli]
-	and a
-	jr z, .done
-	push hl
-	call .LoadSprite
-	pop hl
-	ld [hli], a
-	dec b
-	jr nz, .loop
-
-.done
-	ret
-
-.LoadSprite:
-	push bc
-	call GetSprite
-	pop bc
-	ld a, l
-	ret
-
-ArrangeUsedSprites:
-; Get the length of each sprite and space them out in VRAM.
-; Crystal introduces a second table in VRAM bank 0.
-
-	ld hl, wUsedSprites
-	ld c, SPRITE_GFX_LIST_CAPACITY
-	ld b, 0
-.FirstTableLength:
-; Keep going until the end of the list.
-	ld a, [hli]
-	and a
-	jr z, .quit
-
-	ld a, [hl]
-	call GetSpriteLength
-
-; Spill over into the second table after $80 tiles.
-	add b
-	cp $80
-	jr z, .loop
-	jr nc, .SecondTable
-
-.loop
-	ld [hl], b
-	inc hl
-	ld b, a
-
-; Assumes the next table will be reached before c hits 0.
-	dec c
-	jr nz, .FirstTableLength
-
-.SecondTable:
-; The second tile table starts at tile $80.
-	ld b, $80
-	dec hl
-.SecondTableLength:
-; Keep going until the end of the list.
-	ld a, [hli]
-	and a
-	jr z, .quit
-
-	ld a, [hl]
-	call GetSpriteLength
-
-; There are only two tables, so don't go any further than that.
-	add b
-	jr c, .quit
-
-	ld [hl], b
-	ld b, a
-	inc hl
-
-	dec c
-	jr nz, .SecondTableLength
-
-.quit
 	ret
 
 GetSpriteLength:
@@ -484,7 +369,7 @@ GetUsedSprites:
 .done
 	ret
 
-GetUsedSprite:
+GetUsedSprite::
 	ldh a, [hUsedSpriteIndex]
 	call SafeGetSprite
 	ldh a, [hUsedSpriteTile]
@@ -551,7 +436,7 @@ endr
 	bit 5, a
 	ld a, $1
 	jr z, .bankswitch
-	ld a, $0
+	xor a
 
 .bankswitch
 	ldh [rVBK], a
@@ -592,7 +477,5 @@ LoadEmote::
 INCLUDE "data/sprites/emotes.asm"
 
 INCLUDE "data/sprites/sprite_mons.asm"
-
-INCLUDE "data/maps/outdoor_sprites.asm"
 
 INCLUDE "data/sprites/sprites.asm"
