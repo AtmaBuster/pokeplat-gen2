@@ -106,6 +106,13 @@ _ResetWRAM:
 	ld bc, wMoveIndexTableEnd - wMoveIndexTable
 	call ByteFill
 
+	ld a, BANK("TMs and HMs")
+	ldh [rSVBK], a
+	ld hl, wTMsHMs
+	ld bc, wTMsHMsEnd - wTMsHMs
+	xor a
+	call ByteFill
+
 	ld a, 1
 	ldh [rSVBK], a
 
