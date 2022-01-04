@@ -1008,10 +1008,10 @@ Route201_PlayerCantLeaveScript2:
 	step_end
 
 Route201_TwinleafSignScript:
-	jumptext .Text
+	jumptextsign .Text
 .Text:
-	text "ROUTE 201"
-	line "TWINLEAF TOWN"
+	text "<SIGN|> ROUTE 201"
+	line "<SIGND> TWINLEAF TOWN"
 	done
 
 Route201_LakeVeritySignScript:
@@ -1110,10 +1110,10 @@ Route201_TrainerTipsSignScript:
 	done
 
 Route201_SandgemSignScript:
-	jumptext .Text
+	jumptextsign .Text
 .Text:
-	text "ROUTE 201"
-	line "SANDGEM TOWN"
+	text "    ROUTE 201"
+	line "<SIGNR> SANDGEM TOWN"
 	done
 
 Route201_GirlScript:

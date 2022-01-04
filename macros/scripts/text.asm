@@ -137,6 +137,12 @@ text_far: MACRO
 	db BANK(\1)
 ENDM
 
+	enum TX_BIG ; $17
+text_big: MACRO
+	db TX_BIG
+	db \1
+ENDM
+
 	enum_set $50
 
 	enum TX_END ; $50

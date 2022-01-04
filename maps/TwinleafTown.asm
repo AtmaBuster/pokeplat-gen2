@@ -169,9 +169,10 @@ TwinleafTown_MeetRivalScript:
 	stopfollow
 	opentext
 	writetext .ThudText
-	waitbutton
+	closetext
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	showemote EMOTE_SHOCK, TWINLEAFTOWN_RIVAL, 15
+	opentext
 	writetext .SeeRowanText
 	waitbutton
 	closetext
@@ -189,8 +190,7 @@ TwinleafTown_MeetRivalScript:
 	end
 
 .ThudText:
-	text "THUD!!"
-	done
+	text_big "Thud!!@"
 
 .SeeRowanText:
 	text "<RIVAL>: What was"

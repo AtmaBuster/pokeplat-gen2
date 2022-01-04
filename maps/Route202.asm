@@ -290,7 +290,11 @@ Route202_CatchTutorialScript:
 	step_end
 
 Route202_SandgemSignScript:
-	end
+	jumptextsign .Text
+.Text:
+	text "<SIGN|> ROUTE 202"
+	line "<SIGND> SANDGEM TOWN"
+	done
 
 Route202_MapEvents:
 	db 0, 0 ; filler

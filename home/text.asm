@@ -219,9 +219,6 @@ ENDM
 	dict "<MOM>",     PrintMomsName
 	dict "<PLAYER>",  PrintPlayerName
 	dict "<RIVAL>",   PrintRivalName
-	dict "<ROUTE>",   PlaceJPRoute
-	dict "<WATASHI>", PlaceWatashi
-	dict "<KOKO_WA>", PlaceKokoWa
 	dict "<RED>",     PrintRedsName
 	dict "<GREEN>",   PrintGreensName
 	dict "#",         PlacePOKe
@@ -229,7 +226,6 @@ ENDM
 	dict "<ROCKET>",  RocketChar
 	dict "<TM>",      TMChar
 	dict "<TRAINER>", TrainerChar
-	dict "<KOUGEKI>", PlaceKougeki
 	dict "<LF>",      LineFeedChar
 	dict "<CONT>",    ContText
 	dict "<……>",      SixDotsChar
@@ -244,38 +240,12 @@ ENDM
 	dict "<USER>",    PlaceMoveUsersName
 	dict "<ENEMY>",   PlaceEnemysName
 	dict "<ASST>",    PlaceDawnLucasName
-	dict "<PLAY_G>",  PlaceGenderedPlayerName
-	dict "ﾟ",         .place
-	dict "ﾞ",         .place
+	dict "<SIGNR>",   PlaceSignRight
+	dict "<SIGNL>",   PlaceSignLeft
+	dict "<SIGNU>",   PlaceSignUp
+	dict "<SIGND>",   PlaceSignDown
+	dict "<SIGN|>",   "<ARROW_|>"
 
-	cp FIRST_REGULAR_TEXT_CHAR
-	jr nc, .place
-
-	cp "パ"
-	jr nc, .handakuten
-
-.dakuten
-	cp FIRST_HIRAGANA_DAKUTEN_CHAR
-	jr nc, .hiragana_dakuten
-	add "カ" - "ガ"
-	jr .katakana_dakuten
-.hiragana_dakuten
-	add "か" - "が"
-.katakana_dakuten
-	ld b, "ﾞ" ; dakuten
-	jr .place
-
-.handakuten
-	cp "ぱ"
-	jr nc, .hiragana_handakuten
-	add "ハ" - "パ"
-	jr .katakana_handakuten
-.hiragana_handakuten
-	add "は" - "ぱ"
-.katakana_handakuten
-	ld b, "ﾟ" ; handakuten
-
-.place
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
@@ -318,13 +288,11 @@ TMChar:       print_name TMCharText
 PCChar:       print_name PCCharText
 RocketChar:   print_name RocketCharText
 PlacePOKe:    print_name PlacePOKeText
-PlaceKougeki: print_name KougekiText
 SixDotsChar:  print_name SixDotsCharText
 PlacePKMN:    print_name PlacePKMNText
 PlacePOKE:    print_name PlacePOKEText
-PlaceJPRoute: print_name PlaceJPRouteText
-PlaceWatashi: print_name PlaceWatashiText
-PlaceKokoWa:  print_name PlaceKokoWaText
+PlaceSignRight: print_name ArrowRText
+PlaceSignLeft:  print_name ArrowLText
 
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]
@@ -383,18 +351,26 @@ PlaceEnemysName::
 	ld de, wOTClassName
 	jr PlaceCommandCharacter
 
-PlaceGenderedPlayerName::
+PlaceSignUp:
 	push de
-	ld de, wPlayerName
-	call PlaceString
-	ld h, b
-	ld l, c
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	ld de, KunSuffixText
-	jr z, PlaceCommandCharacter
-	ld de, ChanSuffixText
-; fallthrough
+	ld de, SCREEN_WIDTH-1
+	ld a, "<ARROW_U>"
+	jr PlaceMultiLineArrow
+
+PlaceSignDown:
+	push de
+	ld de, -SCREEN_WIDTH-1
+	ld a, "<ARROW_D>"
+PlaceMultiLineArrow:
+	ld [hli], a
+	push hl
+	add hl, de
+	ld a, "<ARROW_|>"
+	ld [hl], a
+	pop hl
+	pop de
+	call PrintLetterDelay
+	jp NextChar
 
 PlaceCommandCharacter::
 	call PlaceString
@@ -408,18 +384,13 @@ TrainerCharText:: db "TRAINER@"
 PCCharText::      db "PC@"
 RocketCharText::  db "ROCKET@"
 PlacePOKeText::   db "POKé@"
-KougekiText::     db "こうげき@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Enemy @"
 PlacePKMNText::   db "<PK><MN>@"
 PlacePOKEText::   db "<PO><KE>@"
 String_Space::    db " @"
-; These strings have been dummied out.
-PlaceJPRouteText::
-PlaceWatashiText::
-PlaceKokoWaText:: db "@"
-KunSuffixText::   db "@"
-ChanSuffixText::  db "@"
+ArrowRText::      db "<ARROW_-><ARROW_-><ARROW_R>@"
+ArrowLText::      db "<ARROW_L><ARROW_-><ARROW_->@"
 
 NextLineChar::
 	pop hl
@@ -721,6 +692,7 @@ TextCommands::
 	dw TextCommand_STRINGBUFFER     ; TX_STRINGBUFFER
 	dw TextCommand_DAY              ; TX_DAY
 	dw TextCommand_FAR              ; TX_FAR
+	dw TextCommand_BIG              ; TX_BIG
 
 TextCommand_START::
 ; text_start
@@ -752,6 +724,27 @@ TextCommand_RAM::
 	ld l, c
 	call PlaceString
 	pop hl
+	ret
+
+TextCommand_BIG::
+; text_big
+; write BIG text until "@"
+; [$17]["...@"]
+	push hl
+	push bc
+	ld de, wStringBuffer5
+	ld bc, 19
+	call CopyBytes
+	pop bc
+	pop de
+	push de
+	farcall PrintBigText
+	pop hl
+.skiploop
+	ld a, [hli]
+	cp "@"
+	jr nz, .skiploop
+	dec hl
 	ret
 
 TextCommand_FAR::

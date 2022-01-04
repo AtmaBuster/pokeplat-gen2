@@ -13,6 +13,11 @@
 	charmap "<RED>",     $38 ; wRedsName
 	charmap "<GREEN>",   $39 ; wGreensName
 	charmap "<ENEMY>",   $3f
+	charmap "<SIGNR>",   $40
+	charmap "<SIGNL>",   $41
+	charmap "<SIGNU>",   $42
+	charmap "<SIGND>",   $43
+	charmap "<SIGN|>",   $44
 	charmap "<MOM>",     $49 ; wMomsName
 	charmap "<PKMN>",    $4a ; "<PK><MN>"
 	charmap "<_CONT>",   $4b ; implements "<CONT>"
@@ -160,12 +165,16 @@
 	charmap "y",         $b8
 	charmap "z",         $b9
 
+	charmap "<ARROW_U>", $be
+
 	charmap "Ä",         $c0
 	charmap "Ö",         $c1
 	charmap "Ü",         $c2
 	charmap "ä",         $c3
 	charmap "ö",         $c4
 	charmap "ü",         $c5
+
+	charmap "<ARROW_|>", $ce
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1
@@ -174,6 +183,11 @@
 	charmap "'s",        $d4
 	charmap "'t",        $d5
 	charmap "'v",        $d6
+
+	charmap "<ARROW_L>", $db
+	charmap "<ARROW_->", $dc
+	charmap "<ARROW_R>", $dd
+	charmap "<ARROW_D>", $de
 
 	charmap "←",         $df
 	charmap "'",         $e0

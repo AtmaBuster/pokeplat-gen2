@@ -145,3 +145,52 @@ LoadStatsScreenPageTilesGFX:
 	lb bc, BANK(StatsScreenPageTilesGFX), 17
 	call Get2bpp_2
 	ret
+
+_LoadBigFontCharacters::
+	ld hl, wStringBuffer5
+	ld de, vTiles1
+.loop
+	call SafeLoadBigFontCharacter
+	ld a, b
+	cp "@"
+	ret z
+	jr .loop
+
+SafeLoadBigFontCharacter:
+; wait for vblank
+	di
+.waitloop
+	ldh a, [rLY]
+	cp $90
+	jr c, .waitloop
+	ld a, [hli]
+	ld b, a
+	cp "@"
+	jr z, .done
+	push hl
+	push bc
+	call .LoadOneChar
+	pop bc
+	pop hl
+.done
+	reti
+
+.LoadOneChar:
+	sub $80
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld bc, Font
+	add hl, bc
+	ld c, 8
+.loop
+	ld a, [hli]
+REPT 6
+	ld [de], a
+	inc de
+ENDR
+	dec c
+	jr nz, .loop
+	ret
