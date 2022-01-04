@@ -126,22 +126,119 @@ Route202_CatchTutorialScript:
 	done
 
 .DawnCatchMonText:
-	text "DawnCatchMonText"
+	text "DAWN: Oh, that's"
+	line "right!"
+
+	para "<PLAYER>, I haven't"
+	line "shown you how to"
+	cont "catch a #MON."
+
+	para "I'll demonstrate"
+	line "how to catch one,"
+	cont "so just watch, OK?"
 	done
+
 .LucasCatchMonText:
-	text "LucasCatchMonText"
+	text "LUCAS: <PLAYER>, do"
+	line "you know how to"
+	cont "catch a #MON?"
+
+	para "I'll demonstrate"
+	line "how to catch one,"
+	cont "so just watch, OK?"
 	done
+
 .DawnDoneCatchText:
-	text "DawnDoneCatchText"
+	text "DAWN: Giggle…"
+	line "See? Isn't it neat?"
+
+	para "Actually, it's"
+	line "better to lower"
+	cont "your target's HP" ; change this text or change catch tutorial
+	cont "more than I did."
+
+	para "It's important to"
+	line "get the #MON's"
+	cont "HP down as low as"
+	cont "possible."
+
+	para "This is because a"
+	line "healthy #MON is"
+	cont "very difficult to"
+	cont "catch."
+
+	para "Oh, #MON also"
+	line "get easier to"
+	cont "catch if you make"
+	cont "them sleep or"
+	cont "something by using"
+	cont "a #MON's move."
+
+	para "OK, <PLAYER>, to"
+	line "get you started,"
+	cont "I'll give you five"
+	cont "# BALLS!"
 	done
+
 .LucasDoneCatchText:
-	text "LucasDoneCatchText"
+	text "LUCAS: And that's"
+	line "how it's done."
+
+	para "Actually, I should"
+	line "have lowered the"
+	cont "target's HP some"
+	cont "more."
+
+	para "Yup, the important"
+	line "thing is to lower"
+	cont "the #MON's HP as"
+	cont "much as possible."
+
+	para "See, a healthy"
+	line "#MON isn't easy"
+	cont "to catch."
+
+	para "Oh, yeah. They"
+	line "also get easier to"
+	cont "catch if you make"
+	cont "one of your"
+	cont "#MON put them"
+	cont "to sleep or such."
+
+	para "Here, <PLAYER>, I'll"
+	line "give you five"
+	cont "# BALLS to get"
+	cont "you started."
 	done
+
 .DawnLotsOfMonText:
-	text "DawnLotsOfMonText"
+	text "If you have lots"
+	line "of #MON with"
+	cont "you, it will be"
+	cont "safer on long"
+	cont "trips."
+
+	para "Plus, it will be a"
+	line "lot more fun with"
+	cont "your #MON"
+	cont "friends along."
+
+	para "OK, I need to get"
+	line "going. Bye, now!"
 	done
+
 .LucasLotsOfMonText:
-	text "LucasLotsOfMonText"
+	text "If you have lots"
+	line "of #MON wit"
+	cont "you, you'll be able"
+	cont "to travel farther."
+
+	para "That way, you'll"
+	line "have a better shot"
+	cont "of meeting more"
+	cont "#MON."
+
+	para "See you around!"
 	done
 
 .ApproachPlayerMovement:

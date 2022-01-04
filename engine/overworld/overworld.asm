@@ -59,6 +59,7 @@ GetPlayerSprite:
 INCLUDE "data/sprites/player_sprites.asm"
 
 ReloadVisibleSprites::
+	call LoadUsedSpritesGFX
 	push hl
 	push de
 	push bc
