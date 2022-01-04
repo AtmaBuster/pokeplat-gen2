@@ -48,4 +48,4 @@ SandgemHouse1_MapEvents:
 
 	db 2 ; object events
 	object_event  1,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemHouse1_GuyScript, -1
-	object_event  6,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemHouse1_GirlScript, -1
+	object_event  6,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandgemHouse1_GirlScript, -1

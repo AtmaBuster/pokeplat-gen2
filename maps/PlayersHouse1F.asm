@@ -72,7 +72,7 @@ PlayersHouse1F_MapScripts:
 	end
 
 .WhatsTheMatterText:
-	text "Mom: What's the"
+	text "MOM: What's the"
 	line "matter, dear?"
 
 	para "…"
@@ -215,14 +215,14 @@ PlayersHouse1F_MomScript:
 	end
 
 .TakeCareText:
-	text "Mom: Bye-bye,"
+	text "MOM: Bye-bye,"
 	line "<PLAYER>!"
 
 	para "You take care now!"
 	done
 
 .WelcomeHomeText:
-	text "Mom: Welcome home,"
+	text "MOM: Welcome home,"
 	line "<PLAYER>. Are you"
 	cont "and your #MON"
 	cont "healthy?"
@@ -232,7 +232,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .LookingGoodText:
-	text "Mom: <PLAYER>!"
+	text "MOM: <PLAYER>!"
 
 	para "You and your"
 	line "#MON are look-"
@@ -243,7 +243,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .TreatWithKindnessText:
-	text "Mom: <PLAYER>."
+	text "MOM: <PLAYER>."
 
 	para "Listen. Always"
 	line "treat your #MON"
@@ -256,7 +256,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .RemindOfFatherText:
-	text "Mom: <PLAYER>."
+	text "MOM: <PLAYER>."
 
 	para "Seeing you reminds"
 	line "me so much of your"
@@ -265,9 +265,9 @@ PlayersHouse1F_MomScript:
 	done
 
 .VisitRivalsMomText:
-	text "Mom: While you're"
+	text "MOM: While you're"
 	line "gone I go visit"
-	cont "<RIVAL>'s mom."
+	cont "<RIVAL>'s MOM."
 
 	para "We talk about this"
 	line "and that."
@@ -278,7 +278,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .GetWorriedText:
-	text "Mom: <PLAYER>, is"
+	text "MOM: <PLAYER>, is"
 	line "everything all"
 	cont "right?"
 
@@ -292,14 +292,14 @@ PlayersHouse1F_MomScript:
 	done
 
 .RivalWaitingText:
-	text "Mom: What is it?"
+	text "MOM: What is it?"
 
 	para "Isn't <RIVAL>"
 	line "waiting for you?"
 	done
 
 .ImpatientText:
-	text "Mom: You know how"
+	text "MOM: You know how"
 	line "impatient <RIVAL>"
 	cont "is, don't you?"
 
@@ -309,7 +309,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .WhatIsItText:
-	text "Mom: What is it,"
+	text "MOM: What is it,"
 	line "<PLAYER>?"
 
 	para "…"
@@ -384,18 +384,18 @@ PlayersHouse1F_MomScript:
 	done
 
 .IsRivalHereText:
-	text "<RIVAL>'s mom:"
+	text "<RIVAL>'s MOM:"
 	line "Excuse me. Is my"
 	cont "<RIVAL> here?"
 	done
 
 .NotHereText:
-	text "Mom: Oh?"
+	text "MOM: Oh?"
 	line "No, he's not…"
 	done
 
 .MustHaveLeftText:
-	text "<RIVAL>'s mom: Oh…"
+	text "<RIVAL>'s MOM: Oh…"
 	line "Then, he must have"
 	cont "left already…"
 
@@ -414,7 +414,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .DeliverToHimText:
-	text "Mom: Not to worry,"
+	text "MOM: Not to worry,"
 	line "<PLAYER> will"
 	cont "deliver it to him."
 	done
@@ -424,7 +424,7 @@ PlayersHouse1F_MomScript:
 	done
 
 .TakeThisToHimText:
-	text "<RIVAL>'s mom: Oh,"
+	text "<RIVAL>'s MOM: Oh,"
 	line "really? You'd do"
 	cont "that for me?"
 
@@ -434,14 +434,14 @@ PlayersHouse1F_MomScript:
 	done
 
 .ByeByeText:
-	text "Mom: Bye-bye,"
+	text "MOM: Bye-bye,"
 	line "<PLAYER>! Enjoy"
 	cont "your adventure!"
 	done
 
 .LetMeThinkText:
 	text "<RIVAL>'s mom: Let"
-	line "me thing…"
+	line "me think…"
 
 	para "Knowing my boy, he"
 	line "would probably"
@@ -510,7 +510,7 @@ PlayersHouse1F_TryExitFirstTimeScript:
 	end
 
 .DontGoIntoGrassText:
-	text "Mom: Oh, yes!"
+	text "MOM: Oh, yes!"
 	line "<PLAYER>!"
 
 	para "Don't go into the"
@@ -543,4 +543,4 @@ PlayersHouse1F_MapEvents:
 
 	db 2 ; object events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouse1F_MomScript, -1
-	object_event  6,  7, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PLAYERS_HOUSE_1F_RIVAL_MOM
+	object_event  6,  7, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PLAYERS_HOUSE_1F_RIVAL_MOM

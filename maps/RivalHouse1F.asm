@@ -32,7 +32,7 @@ RivalHouse1F_RivalsMomScript:
 	jumptext .AfterDex
 
 .CallingOnRivalText:
-	text "<RIVAL>'s mom: Oh,"
+	text "<RIVAL>'s MOM: Oh,"
 	line "hi, <PLAYER>."
 
 	para "Are you looking"
@@ -49,7 +49,7 @@ RivalHouse1F_RivalsMomScript:
 	done
 
 .RocketedOffText:
-	text "<RIVAL>'s mom: That"
+	text "<RIVAL>'s MOM: That"
 	line "kid rocketed off"
 	cont "again like usual."
 
@@ -63,7 +63,7 @@ RivalHouse1F_RivalsMomScript:
 	done
 
 .WaitingText:
-	text "<RIVAL>'s mom: My"
+	text "<RIVAL>'s MOM: My"
 	line "<RIVAL> should be"
 	cont "out on ROUTE 201"
 	cont "by now."
@@ -74,14 +74,14 @@ RivalHouse1F_RivalsMomScript:
 	done
 
 .AfterMonText:
-	text "<RIVAL>'s mom: Oh,"
+	text "<RIVAL>'s MOM: Oh,"
 	line "you've become"
 	cont "friends with a"
 	cont "#MON, too."
 	done
 
 .AfterDexText:
-	text "<RIVAL>'s mom: My"
+	text "<RIVAL>'s MOM: My"
 	line "<RIVAL> took off"
 	cont "like a rocket as"
 	cont "usual."
@@ -110,4 +110,4 @@ RivalHouse1F_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  7,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RivalHouse1F_RivalsMomScript, -1
+	object_event  7,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RivalHouse1F_RivalsMomScript, -1

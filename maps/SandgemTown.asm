@@ -601,7 +601,7 @@ SandgemTown_SaveWomanScript:
 	jumptextfaceplayer .Text
 .Text:
 	text "So I don't forget"
-	line "what's happened,"
+	line "what's happened"
 	cont "till now, I'd"
 	cont "better SAVE this…"
 
@@ -634,6 +634,6 @@ SandgemTown_MapEvents:
 	object_event  8,  7, SPRITE_DAWN_LUCAS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SANDGEM_TOWN_DAWNLUCAS
 	object_event  8,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SANDGEM_TOWN_RIVAL
 	object_event  8,  5, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SANDGEM_TOWN_ROWAN
-	object_event 21, 14, SPRITE_CHRIS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemTown_PokemonCoolKidScript, -1
-	object_event 10, 10, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemTown_PokedexGuyScript, -1
-	object_event 18, 11, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemTown_SaveWomanScript, -1
+	object_event 21, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemTown_PokemonCoolKidScript, -1
+	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemTown_PokedexGuyScript, -1
+	object_event 18, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandgemTown_SaveWomanScript, -1
