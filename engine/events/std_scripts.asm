@@ -54,10 +54,9 @@ StdScripts::
 	dba TableIndexFromGenderScript
 	dba TableIndexFromStarterScript
 	dba TableIndexFromFacingScript
+	dba PokeMartClerk
 
 PokecenterNurseScript:
-; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
-
 	opentext
 	checktime MORN
 	iftrue .morn
@@ -68,42 +67,19 @@ PokecenterNurseScript:
 	sjump .ok
 
 .morn
-;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .morn_comcenter
 	farwritetext NurseMornText
-	buttonsound
-	sjump .ok
-.morn_comcenter
-	farwritetext PokeComNurseMornText
 	buttonsound
 	sjump .ok
 
 .day
-;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .day_comcenter
 	farwritetext NurseDayText
-	buttonsound
-	sjump .ok
-.day_comcenter
-	farwritetext PokeComNurseDayText
 	buttonsound
 	sjump .ok
 
 .nite
-;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .nite_comcenter
 	farwritetext NurseNiteText
 	buttonsound
-	sjump .ok
-.nite_comcenter
-	farwritetext PokeComNurseNiteText
-	buttonsound
-	sjump .ok
-
 .ok
-	; only do this once
-;	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
-
 	farwritetext NurseAskHealText
 	yesorno
 	iffalse .done
@@ -146,20 +122,9 @@ PokecenterNurseScript:
 	end
 
 .pokerus
-	; already cleared earlier in the script
-;	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .pokerus_comcenter
 	farwritetext NursePokerusText
 	waitbutton
 	closetext
-	sjump .pokerus_done
-
-.pokerus_comcenter
-	farwritetext PokeComNursePokerusText
-	waitbutton
-	closetext
-
-.pokerus_done
 	setflag ENGINE_CAUGHT_POKERUS
 	specialphonecall SPECIALCALL_POKERUS
 	end
@@ -1800,4 +1765,41 @@ TableIndexFromFacingScript:
 
 .Left:
 	settableindex 2
+	end
+
+PokeMartClerk:
+	opentext
+	readvar VAR_BADGES
+	ifless 1, .Badge0
+	ifless 3, .Badge1
+	ifless 5, .Badge3
+	ifless 7, .Badge5
+	ifless 8, .Badge7
+	pokemart MARTTYPE_STANDARD, MART_8_BADGE
+	closetext
+	end
+
+.Badge0:
+	pokemart MARTTYPE_STANDARD, MART_0_BADGE
+	closetext
+	end
+
+.Badge1:
+	pokemart MARTTYPE_STANDARD, MART_1_BADGE
+	closetext
+	end
+
+.Badge3:
+	pokemart MARTTYPE_STANDARD, MART_3_BADGE
+	closetext
+	end
+
+.Badge5:
+	pokemart MARTTYPE_STANDARD, MART_5_BADGE
+	closetext
+	end
+
+.Badge7:
+	pokemart MARTTYPE_STANDARD, MART_7_BADGE
+	closetext
 	end

@@ -26,10 +26,10 @@ RivalHouse1F_RivalsMomScript:
 .AfterMon:
 	checkevent EVENT_GOT_POKEDEX
 	iftrue .AfterDex
-	jumptext .AfterMon
+	jumptext .AfterMonText
 
 .AfterDex:
-	jumptext .AfterDex
+	jumptext .AfterDexText
 
 .CallingOnRivalText:
 	text "<RIVAL>'s MOM: Oh,"

@@ -55,3 +55,4 @@
 	enum tableindexfromgender
 	enum tableindexfromstarter
 	enum tableindexfromfacing
+	enum pokemartclerk
