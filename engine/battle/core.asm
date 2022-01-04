@@ -8188,68 +8188,69 @@ TextJump_BattleMonNick01:
 	text_end
 
 WithdrawMonText:
-	ld hl, .WithdrawMonText
-	jp BattleTextbox
+    ld hl, .WithdrawMonText
+    jp BattleTextbox
 
 .WithdrawMonText:
-	text_far Text_BattleMonNickComma
-	text_asm
-; Print text to withdraw mon
-; depending on HP the message is different
-	ld hl, wEnemyMonMaxHP
-	ld a, [hli]
-	ld l, [hl]
-	ld h, a
-	dec hl
-	ld a, h
-	or l
-	ld hl, TextJump_ComeBack
-	ret z
-	push de
-	push bc
-	ld hl, wEnemyMonHP + 1
-	ld de, wEnemyHPAtTimeOfPlayerSwitch + 1
-	ld b, [hl]
-	dec hl
-	ld a, [de]
-	sub b
-	ldh [hMultiplicand + 2], a
-	dec de
-	ld b, [hl]
-	ld a, [de]
-	sbc b
-	ldh [hMultiplicand + 1], a
-	ld a, 25
-	ldh [hMultiplier], a
-	call Multiply
-	ld hl, wEnemyMonMaxHP
-	ld a, [hli]
-	ld b, [hl]
-	srl a
-	rr b
-	srl a
-	rr b
-	ld a, b
-	ld b, 4
-	ldh [hDivisor], a
-	call Divide
-	pop bc
-	pop de
-	ldh a, [hQuotient + 3]
-	ld hl, TextJump_ThatsEnoughComeBack
-	and a
-	ret z
+    text_far Text_BattleMonNickComma
+    text_asm
+    push de
+    push bc
+    ld hl, wEnemyMonHP + 1
+    ld de, wEnemyHPAtTimeOfPlayerSwitch + 1
+    ld b, [hl]
+    dec hl
+    ld a, [de]
+    sub b
+    ldh [hMultiplicand + 2], a
+    dec hl
+    ld a, [de]
+    sub b
+    ldh [hMultiplicand + 2], a
+    dec de
+    ld b, [hl]
+    ld a, [de]
+    sbc b
+    ldh [hMultiplicand + 1], a
+    ld a, 25
+        ldh [hMultiplicand + 1], a
+    ld c, 100
+    ld hl, wEnemyMonMaxHP
+    ld a, [hli]
+    ld b, [hl]
+    and a
+    jr z, .shift_done
+.shift
+    rra
+    rr b
+    srl c
+    and a
+    jr nz, .shift
+.shift_done
+    ld a, c
+    ldh [hMultiplier], a
+    call Multiply
+    ld a, b
+    ld b, 4
+    ldh [hDivisor], a
+    call Divide
+    pop bc
+    pop de
+    ldh a, [hQuotient + 3]
+    ld hl, TextJump_ThatsEnoughComeBack
+    and a
+    ret z
 
-	ld hl, TextJump_ComeBack
-	cp 30
-	ret c
+    ld hl, TextJump_ComeBack
+    cp 30
+    ret c
 
-	ld hl, TextJump_OKComeBack
-	cp 70
-	ret c
+    ld hl, TextJump_OKComeBack
+    cp 70
+    ret c
 
-	ld hl, TextJump_GoodComeBack
-	ret
+    ld hl, TextJump_GoodComeBack
+    ret
 
 TextJump_ThatsEnoughComeBack:
 	text_far Text_ThatsEnoughComeBack
