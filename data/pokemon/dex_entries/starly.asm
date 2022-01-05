@@ -6,4 +6,4 @@
 
 	page "after BUG #MON."
 	next "Its singing is"
-	next "noisy and annoying.@"
+	next "loud and annoying.@"
