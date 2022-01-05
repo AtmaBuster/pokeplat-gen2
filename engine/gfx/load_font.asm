@@ -149,29 +149,27 @@ LoadStatsScreenPageTilesGFX:
 _LoadBigFontCharacters::
 	ld hl, wStringBuffer5
 	ld de, vTiles1
-.loop
-	call SafeLoadBigFontCharacter
-	ld a, b
-	cp "@"
-	ret z
-	jr .loop
-
-SafeLoadBigFontCharacter:
-; wait for vblank
+.loop_frm
 	di
-.waitloop
+.wait_vblank
 	ldh a, [rLY]
 	cp $90
-	jr c, .waitloop
+	jr c, .wait_vblank
+	ld c, 6
+.loop_chr
 	ld a, [hli]
-	ld b, a
 	cp "@"
 	jr z, .done
-	push hl
 	push bc
+	push hl
 	call .LoadOneChar
-	pop bc
 	pop hl
+	pop bc
+	dec c
+	jr nz, .loop_chr
+	ei
+	jr .loop_frm
+
 .done
 	reti
 
