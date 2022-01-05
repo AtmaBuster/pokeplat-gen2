@@ -7,6 +7,23 @@
 ;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
 ; - db -1 ; end
 
+trainermon_normal: MACRO
+	db \1
+	dw \2
+ENDM
+trainermon_moves: MACRO
+	trainermon_normal \1, \2
+	dw \3, \4, \5, \6
+ENDM
+trainermon_item: MACRO
+	trainermon_normal \1, \2
+	db \3
+ENDM
+trainermon_full: MACRO
+	trainermon_item \1, \2, \3
+	dw \4, \5, \6, \7
+ENDM
+
 SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
@@ -36,20 +53,17 @@ ClairGroup:
 Rival1Group:
 	next_list_item ; RIVAL1 (1)
 	db "BARRY@", TRAINERTYPE_NORMAL
-	db  5
-	dw TURTWIG
+	trainermon_normal  5, TURTWIG
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (2)
 	db "BARRY@", TRAINERTYPE_NORMAL
-	db  5
-	dw CHIMCHAR
+	trainermon_normal  5, CHIMCHAR
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (3)
 	db "BARRY@", TRAINERTYPE_NORMAL
-	db  5
-	dw PIPLUP
+	trainermon_normal  5, PIPLUP
 	db -1 ; end
 	end_list_items
 
@@ -90,6 +104,30 @@ ErikaGroup:
 	end_list_items
 
 YoungsterGroup:
+	next_list_item ; YOUNGSTER (1)
+	db "TRISTAN@", TRAINERTYPE_NORMAL
+	trainermon_normal  5, STARLY
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (2)
+	db "TRISTAN@", TRAINERTYPE_NORMAL
+	trainermon_normal 24, STARAVIA
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (3)
+	db "TRISTAN@", TRAINERTYPE_NORMAL
+	trainermon_normal 35, STARAPTOR
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (4)
+	db "TRISTAN@", TRAINERTYPE_NORMAL
+	trainermon_normal 45, STARAPTOR
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (5)
+	db "LOGAN@", TRAINERTYPE_MOVES
+	trainermon_moves  5, BURMY, TACKLE, NO_MOVE, NO_MOVE, NO_MOVE
+	db -1 ; end
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
@@ -101,6 +139,10 @@ BirdKeeperGroup:
 	end_list_items
 
 LassGroup:
+	next_list_item ; LASS (1)
+	db "NATALIE@", TRAINERTYPE_NORMAL
+	trainermon_normal  5, BIDOOF
+	db -1 ; end
 	end_list_items
 
 JanineGroup:

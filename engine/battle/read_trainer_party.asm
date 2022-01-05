@@ -18,12 +18,12 @@ ReadTrainerParty:
 	xor a
 	call ByteFill
 
-	ld a, [wOtherTrainerClass]
-	cp CAL
-	jr nz, .not_cal2
-	ld a, [wOtherTrainerID]
-	cp CAL2
-	jr z, .cal2
+;	ld a, [wOtherTrainerClass]
+;	cp CAL
+;	jr nz, .not_cal2
+;	ld a, [wOtherTrainerID]
+;	cp CAL2
+;	jr z, .cal2
 	ld a, [wOtherTrainerClass]
 .not_cal2
 

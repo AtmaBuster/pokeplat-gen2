@@ -517,15 +517,15 @@
 	const EVENT_1FE                              ; EV 1fe
 	const EVENT_1FF                              ; EV 1ff
 ; Trainer flags                                      ; EV -
-	const EVENT_200                              ; EV 200
-	const EVENT_201                              ; EV 201
-	const EVENT_202                              ; EV 202
-	const EVENT_203                              ; EV 203
-	const EVENT_204                              ; EV 204
-	const EVENT_205                              ; EV 205
-	const EVENT_206                              ; EV 206
-	const EVENT_207                              ; EV 207
-	const EVENT_208                              ; EV 208
+	const EVENT_BEAT_RIVAL1_1_TURTWIG            ; EV ---
+	const EVENT_BEAT_RIVAL1_1_CHIMCHAR           ; EV ---
+	const EVENT_BEAT_RIVAL1_1_PIPLUP             ; EV ---
+	const EVENT_BEAT_YOUNGSTER_TRISTAN1          ; EV ---
+	const EVENT_BEAT_YOUNGSTER_TRISTAN2          ; EV ---
+	const EVENT_BEAT_YOUNGSTER_TRISTAN3          ; EV ---
+	const EVENT_BEAT_YOUNGSTER_TRISTAN4          ; EV ---
+	const EVENT_BEAT_YOUNGSTER_LOGAN             ; EV ---
+	const EVENT_BEAT_LASS_NATALIE                ; EV ---
 	const EVENT_209                              ; EV 209
 	const EVENT_20A                              ; EV 20a
 	const EVENT_20B                              ; EV 20b
@@ -1031,7 +1031,7 @@
 	const EVENT_3FF                              ; EV 3ff
 ; Sprite visibility flags                            ; EV -
 ; Itemballs                                          ; EV -
-	const EVENT_400                              ; EV 400
+	const EVENT_ROUTE_202_POTION                 ; EV 400
 	const EVENT_401                              ; EV 401
 	const EVENT_402                              ; EV 402
 	const EVENT_403                              ; EV 403

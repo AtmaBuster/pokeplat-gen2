@@ -1,5 +1,9 @@
 	object_const_def ; object_event constants
 	const ROUTE202_DAWNLUCAS
+	const ROUTE202_YOUNGSTER_TRISTAN
+	const ROUTE202_LASS_NATALIE
+	const ROUTE202_YOUNGSTER_LOGAN
+	const ROUTE202_OBJECT4
 
 Route202_MapScripts:
 	db 2 ; scene scripts
@@ -10,6 +14,98 @@ Route202_MapScripts:
 
 .Dummy:
 	end
+
+TrainerYoungsterTristan:
+	trainer YOUNGSTER, TRISTAN1, EVENT_BEAT_YOUNGSTER_TRISTAN1, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "You're a #MON"
+	line "TRAINER, and so am"
+	cont "I! Our eyes met,"
+	cont "so battle we must!"
+	done
+
+.BeatenText:
+	text "Too strong!"
+	line "Too strong!"
+	done
+
+.AfterText:
+	text "Don't be shy about"
+	line "talking to any"
+	cont "TRAINERS you'd like"
+	cont "to battle."
+
+	para "#MON get strong"
+	line "from battling."
+	done
+
+TrainerLassNatalie:
+	trainer LASS, NATALIE, EVENT_BEAT_LASS_NATALIE, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "I spy, with my"
+	line "little eye…"
+
+	para "A TRAINER!"
+	line "A battle, please!"
+	done
+
+.BeatenText:
+	text "Oh, boo!"
+	line "I can't win!"
+	done
+
+.AfterText:
+	text "My #MON are all"
+	line "tuckered out!"
+
+	para "I need to go to a"
+	line "#MON CENTER!"
+	done
+
+TrainerYoungsterLogan:
+	trainer YOUNGSTER, LOGAN, EVENT_BEAT_YOUNGSTER_LOGAN, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "Let's have a"
+	line "#MON battle!"
+
+	para "Humph! But I'm"
+	line "gonna win!"
+	done
+
+.BeatenText:
+	text "You beat me?!"
+	line "You've got talent!"
+	done
+
+.AfterText:
+	text "Battling was fun!"
+	line "Yup! I'm going to"
+	cont "battle everyone!"
+	done
 
 Route202_CatchTutorialScriptU:
 	settableindex 0
@@ -296,6 +392,47 @@ Route202_SandgemSignScript:
 	line "<SIGND> SANDGEM TOWN"
 	done
 
+Route202_PotionScript:
+	itemball POTION
+
+Route202_TimeOfDayKidScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "Some #MON only"
+	line "appear in the"
+	cont "morning."
+
+	para "Some only come out"
+	line "at night."
+
+	para "I'll keep looking"
+	line "till I've seen them"
+	cont "all!"
+	done
+
+Route202_TrainerTipsSignScript:
+	jumptext .Text
+.Text:
+	text "Trainer Tips!"
+
+	para "All #MON that"
+	line "are involved in a"
+	cont "battle earn some"
+	cont "EXP. POINTS!"
+
+	para "The more your"
+	line "#MON battle,"
+	cont "the stronger they"
+	cont "will become."
+	done
+
+Route202_JubilifeSignScript:
+	jumptextsign .Text
+.Text:
+	text "<SIGNU> ROUTE 202"
+	line "<SIGN|> JUBILIFE CITY"
+	done
+
 Route202_MapEvents:
 	db 0, 0 ; filler
 
@@ -305,8 +442,15 @@ Route202_MapEvents:
 	coord_event 14, 16, SCENE_DEFAULT, Route202_CatchTutorialScriptU
 	coord_event 14, 17, SCENE_DEFAULT, Route202_CatchTutorialScriptD
 
-	db 1 ; bg events
+	db 3 ; bg events
 	bg_event 16, 16, BGEVENT_READ, Route202_SandgemSignScript
+	bg_event  9,  9, BGEVENT_READ, Route202_TrainerTipsSignScript
+	bg_event  7,  3, BGEVENT_READ, Route202_JubilifeSignScript
 
-	db 1 ; object events
+	db 6 ; object events
 	object_event 11, 16, SPRITE_DAWN_LUCAS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_202_DAWNLUCAS
+	object_event  4,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerYoungsterTristan, -1
+	object_event 14, 11, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerLassNatalie, -1
+	object_event 16,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerYoungsterLogan, -1
+	object_event  6,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route202_TimeOfDayKidScript, -1
+	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route202_PotionScript, EVENT_ROUTE_202_POTION
