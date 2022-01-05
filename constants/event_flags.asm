@@ -74,7 +74,7 @@
 	const EVENT_GOT_PARCEL                       ; EV 043
 	const EVENT_EXITED_LAB                       ; EV 044
 	const EVENT_TELLING_MOM_ABOUT_DEX            ; EV 045
-	const EVENT_046                              ; EV 046
+	const EVENT_MET_LOOKER_IN_JUBILIFE           ; EV 046
 	const EVENT_047                              ; EV 047
 	const EVENT_048                              ; EV 048
 	const EVENT_049                              ; EV 049
@@ -1587,8 +1587,8 @@
 	const EVENT_SANDGEM_TOWN_ROWAN               ; EV 627
 	const EVENT_ROUTE_202_DAWNLUCAS              ; EV 628
 	const EVENT_PLAYERS_HOUSE_1F_RIVAL_MOM       ; EV 629
-	const EVENT_62A                              ; EV 62a
-	const EVENT_62B                              ; EV 62b
+	const EVENT_JUBILIFE_CITY_DAWNLUCAS          ; EV 62a
+	const EVENT_JUBILIFE_CITY_LOOKER             ; EV 62b
 	const EVENT_62C                              ; EV 62c
 	const EVENT_62D                              ; EV 62d
 	const EVENT_62E                              ; EV 62e

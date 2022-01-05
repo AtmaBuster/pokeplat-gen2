@@ -20,4 +20,5 @@ MapScenes::
 	scene_var SANDGEM_TOWN,       wSandgemTownSceneID
 	scene_var ROWANS_LAB,         wRowansLabSceneID
 	scene_var ROUTE_202,          wRoute202SceneID
+	scene_var JUBILIFE_CITY,      wJubilifeCitySceneID
 	db -1 ; end

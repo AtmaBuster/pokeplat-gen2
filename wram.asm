@@ -2771,8 +2771,9 @@ wLakeVerityLowSceneID::    db
 wSandgemTownSceneID::      db
 wRowansLabSceneID::        db
 wRoute202SceneID::         db
+wJubilifeCitySceneID::     db
 
-	ds 64
+	ds 63
 
 ; fight counts
 wJackFightCount::    db ; d9f2
