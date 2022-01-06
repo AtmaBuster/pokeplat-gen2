@@ -43,18 +43,18 @@ Music:
 	dba Music_CherrygroveCity
 	dba Music_LookKimonoGirl
 	dba Music_UnionCave
-	dba Music_JohtoWildBattle
-	dba Music_JohtoTrainerBattle
+	dba Music_SinnohWildBattle
+	dba Music_SinnohTrainerBattle
 	dba Music_Route30
 	dba Music_EcruteakCity
 	dba Music_VioletCity
-	dba Music_JohtoGymBattle
+	dba Music_SinnohGymBattle
 	dba Music_ChampionBattle
 	dba Music_RivalBattle
 	dba Music_RocketBattle
-	dba Music_ElmsLab
+	dba Music_RowansLab
 	dba Music_DarkCave
-	dba Music_Route29
+	dba Music_Route201
 	dba Music_Route36
 	dba Music_SSAqua
 	dba Music_LookYoungster
@@ -62,10 +62,10 @@ Music:
 	dba Music_LookRocket
 	dba Music_LookPokemaniac
 	dba Music_LookSage
-	dba Music_NewBarkTown
+	dba Music_TwinleafTown
 	dba Music_GoldenrodCity
 	dba Music_VermilionCity
-	dba Music_PokemonChannel
+	dba Music_SpecialProgram
 	dba Music_PokeFluteChannel
 	dba Music_TinTower
 	dba Music_SproutTower
@@ -76,7 +76,7 @@ Music:
 	dba Music_Route37
 	dba Music_RocketHideout
 	dba Music_DragonsDen
-	dba Music_JohtoWildBattleNight
+	dba Music_SinnohWildBattleNight
 	dba Music_RuinsOfAlphRadio
 	dba Music_SuccessfulCapture
 	dba Music_Route26

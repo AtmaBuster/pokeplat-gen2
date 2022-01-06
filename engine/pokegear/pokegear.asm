@@ -1720,7 +1720,7 @@ RadioMusicRestartPokemonChannel:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	pop de
-	ld de, MUSIC_POKEMON_CHANNEL
+	ld de, MUSIC_SPECIAL_PROGRAM
 	call PlayMusic
 	ret
 

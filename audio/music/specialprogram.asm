@@ -1,11 +1,11 @@
-Music_PokemonChannel:
+Music_SpecialProgram:
 	channel_count 4
-	channel 1, Music_PokemonChannel_Ch1
-	channel 2, Music_PokemonChannel_Ch2
-	channel 3, Music_PokemonChannel_Ch3
-    channel 4, Music_PokemonChannel_Ch4
+	channel 1, Music_SpecialProgram_Ch1
+	channel 2, Music_SpecialProgram_Ch2
+	channel 3, Music_SpecialProgram_Ch3
+    channel 4, Music_SpecialProgram_Ch4
 
-Music_PokemonChannel_Ch1::
+Music_SpecialProgram_Ch1::
 	tempo 155
 	volume 7, 7
 	stereo_panning TRUE, FALSE
@@ -55,7 +55,7 @@ Music_PokemonChannel_Ch1::
 	note C_, 4
 	note E_, 2
 	sound_loop 0, .loop
-Music_PokemonChannel_Ch2::
+Music_SpecialProgram_Ch2::
 	stereo_panning FALSE, TRUE
 	duty_cycle 2
 	note_type 12, 12, 3
@@ -95,7 +95,7 @@ Music_PokemonChannel_Ch2::
 	note A_, 2
 	note C_, 2
 	sound_loop 0, .loop
-Music_PokemonChannel_Ch3::
+Music_SpecialProgram_Ch3::
 	vibrato 8, 3, 4
 	note_type 12, 2, 5
 .loop
@@ -137,7 +137,7 @@ Music_PokemonChannel_Ch3::
 	note G_, 2
 	note C_, 2
 	sound_loop 0, .loop
-Music_PokemonChannel_Ch4_sub_0:
+Music_SpecialProgram_Ch4_sub_0:
 	drum_note 4, 2
 	drum_note 4, 2
 	drum_note 3, 2
@@ -147,12 +147,12 @@ Music_PokemonChannel_Ch4_sub_0:
 	drum_note 3, 2
 	drum_note 4, 2
 	sound_ret
-Music_PokemonChannel_Ch4::
+Music_SpecialProgram_Ch4::
 	toggle_noise 3
 	drum_speed 12
 .loop
-	sound_call Music_PokemonChannel_Ch4_sub_0
-	sound_call Music_PokemonChannel_Ch4_sub_0
-	sound_call Music_PokemonChannel_Ch4_sub_0
-	sound_call Music_PokemonChannel_Ch4_sub_0
+	sound_call Music_SpecialProgram_Ch4_sub_0
+	sound_call Music_SpecialProgram_Ch4_sub_0
+	sound_call Music_SpecialProgram_Ch4_sub_0
+	sound_call Music_SpecialProgram_Ch4_sub_0
 	sound_loop 0, .loop

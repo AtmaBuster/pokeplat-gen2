@@ -60,7 +60,7 @@ Route201_GetStarterScript:
 	turnobject PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	appear ROUTE201_ROWAN
-	playmusic MUSIC_PROF_ELM
+	playmusic MUSIC_PROF_ROWAN
 	applymovement ROUTE201_ROWAN, .RowanApproachMovement
 	opentext
 	writetext .NoPokemonText

@@ -1,11 +1,11 @@
-Music_ElmsLab:
+Music_RowansLab:
 	channel_count 4
-	channel 1, Music_ElmsLab_Ch1
-	channel 2, Music_ElmsLab_Ch2
-	channel 3, Music_ElmsLab_Ch3
-	channel 4, Music_ElmsLab_Ch4
+	channel 1, Music_RowansLab_Ch1
+	channel 2, Music_RowansLab_Ch2
+	channel 3, Music_RowansLab_Ch3
+	channel 4, Music_RowansLab_Ch4
 
-Music_ElmsLab_Ch1_sub_0:
+Music_RowansLab_Ch1_sub_0:
 	note E_, 2
 	note A_, 2
 	note B_, 2
@@ -78,7 +78,7 @@ Music_ElmsLab_Ch1_sub_0:
 	octave 2
 	note A_, 2
 	sound_ret
-Music_ElmsLab_Ch1_sub_1:
+Music_RowansLab_Ch1_sub_1:
 	note E_, 6
 	note E_, 1
 	note E_, 1
@@ -86,7 +86,7 @@ Music_ElmsLab_Ch1_sub_1:
 	note E_, 2
 	note E_, 4
 	sound_ret
-Music_ElmsLab_Ch1::
+Music_RowansLab_Ch1::
 	tempo 154
 	volume 7, 7
 	vibrato 16, 1, 5
@@ -94,13 +94,13 @@ Music_ElmsLab_Ch1::
 	stereo_panning TRUE, FALSE
 	note_type 12, 11, 2
 	octave 3
-	sound_call Music_ElmsLab_Ch1_sub_1
-	sound_call Music_ElmsLab_Ch1_sub_1
+	sound_call Music_RowansLab_Ch1_sub_1
+	sound_call Music_RowansLab_Ch1_sub_1
 .loop
 	volume_envelope 10, 2
-	sound_call Music_ElmsLab_Ch1_sub_0
+	sound_call Music_RowansLab_Ch1_sub_0
 	octave 3
-	sound_call Music_ElmsLab_Ch1_sub_0
+	sound_call Music_RowansLab_Ch1_sub_0
 	volume_envelope 9, 5
 	note A_, 4
 	note F#, 4
@@ -169,7 +169,7 @@ Music_ElmsLab_Ch1::
 	note_type 12, 11, 2
 	octave 3
 	sound_loop 0, .loop
-Music_ElmsLab_Ch2_sub_0:
+Music_RowansLab_Ch2_sub_0:
 	octave 4
 	note C#, 12
 	note E_, 3
@@ -211,7 +211,7 @@ Music_ElmsLab_Ch2_sub_0:
 	rest 1
 	octave 3
 	sound_ret
-Music_ElmsLab_Ch2_sub_1:
+Music_RowansLab_Ch2_sub_1:
 	note A_, 6
 	note A_, 1
 	note A_, 1
@@ -225,7 +225,7 @@ Music_ElmsLab_Ch2_sub_1:
 	note A_, 2
 	note A_, 2
 	sound_ret
-Music_ElmsLab_Ch2_sub_2:
+Music_RowansLab_Ch2_sub_2:
 	note A_, 1
 	rest 5
 	note A_, 1
@@ -236,21 +236,21 @@ Music_ElmsLab_Ch2_sub_2:
 	rest 1
 	note A_, 1
 	sound_ret
-Music_ElmsLab_Ch2::
+Music_RowansLab_Ch2::
 	duty_cycle 3
 	vibrato 18, 3, 6
 	stereo_panning FALSE, TRUE
 	note_type 12, 12, 2
 	octave 3
-	sound_call Music_ElmsLab_Ch2_sub_1
+	sound_call Music_RowansLab_Ch2_sub_1
 	note A_, 1
 	note B_, 1
 .loop
 	volume_envelope 12, 7
-	sound_call Music_ElmsLab_Ch2_sub_0
+	sound_call Music_RowansLab_Ch2_sub_0
 	note A_, 10
 	rest 4
-	sound_call Music_ElmsLab_Ch2_sub_0
+	sound_call Music_RowansLab_Ch2_sub_0
 	note A_, 12
 	rest 2
 	stereo_panning TRUE, TRUE
@@ -370,9 +370,9 @@ Music_ElmsLab_Ch2::
 	octave 1
 	note B_, 2
 	note E_, 2
-	sound_call Music_ElmsLab_Ch2_sub_2
+	sound_call Music_RowansLab_Ch2_sub_2
 	rest 3
-	sound_call Music_ElmsLab_Ch2_sub_2
+	sound_call Music_RowansLab_Ch2_sub_2
 	rest 1
 	stereo_panning FALSE, TRUE
 	volume_envelope 12, 7
@@ -380,7 +380,7 @@ Music_ElmsLab_Ch2::
 	note A_, 1
 	note B_, 1
 	sound_loop 0, .loop
-Music_ElmsLab_Ch3_sub_0:
+Music_RowansLab_Ch3_sub_0:
 	note A_, 1
 	rest 5
 	note A_, 1
@@ -467,7 +467,7 @@ Music_ElmsLab_Ch3_sub_0:
 	note A_, 2
 	rest 2
 	sound_ret
-Music_ElmsLab_Ch3_sub_1:
+Music_RowansLab_Ch3_sub_1:
 	note A_, 3
 	rest 3
 	note A_, 1
@@ -477,17 +477,17 @@ Music_ElmsLab_Ch3_sub_1:
 	note A_, 2
 	rest 2
 	sound_ret
-Music_ElmsLab_Ch3::
+Music_RowansLab_Ch3::
 	stereo_panning TRUE, TRUE
 	vibrato 0, 0, 0
 	note_type 12, 2, 7
 	octave 2
-	sound_call Music_ElmsLab_Ch3_sub_1
-	sound_call Music_ElmsLab_Ch3_sub_1
+	sound_call Music_RowansLab_Ch3_sub_1
+	sound_call Music_RowansLab_Ch3_sub_1
 .loop
-	sound_call Music_ElmsLab_Ch3_sub_0
+	sound_call Music_RowansLab_Ch3_sub_0
 	note A_, 2
-	sound_call Music_ElmsLab_Ch3_sub_0
+	sound_call Music_RowansLab_Ch3_sub_0
 	octave 4
 	stereo_panning FALSE, TRUE
 	vibrato 24, 2, 3
@@ -583,7 +583,7 @@ Music_ElmsLab_Ch3::
 	note_type 12, 2, 7
 	vibrato 0, 0, 0
 	sound_loop 0, .loop
-Music_ElmsLab_Ch4_sub_1:
+Music_RowansLab_Ch4_sub_1:
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -593,7 +593,7 @@ Music_ElmsLab_Ch4_sub_1:
 	drum_note 3, 2
 	drum_note 3, 4
 	sound_ret
-Music_ElmsLab_Ch4_sub_2:
+Music_RowansLab_Ch4_sub_2:
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -606,7 +606,7 @@ Music_ElmsLab_Ch4_sub_2:
 	drum_note 3, 1
 	drum_note 3, 1
 	sound_ret
-Music_ElmsLab_Ch4_sub_3:
+Music_RowansLab_Ch4_sub_3:
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -617,7 +617,7 @@ Music_ElmsLab_Ch4_sub_3:
 	drum_note 3, 2
 	drum_note 3, 2
 	sound_ret
-Music_ElmsLab_Ch4_sub_4:
+Music_RowansLab_Ch4_sub_4:
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -628,7 +628,7 @@ Music_ElmsLab_Ch4_sub_4:
 	drum_note 3, 2
 	drum_note 3, 2
 	sound_ret
-Music_ElmsLab_Ch4_sub_5:
+Music_RowansLab_Ch4_sub_5:
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -647,22 +647,22 @@ Music_ElmsLab_Ch4_sub_5:
 	drum_note 3, 1
 	drum_speed 12
 	sound_ret
-Music_ElmsLab_Ch4::
+Music_RowansLab_Ch4::
 	toggle_noise 3
 	drum_speed 12
-	sound_call Music_ElmsLab_Ch4_sub_1
-	sound_call Music_ElmsLab_Ch4_sub_2
+	sound_call Music_RowansLab_Ch4_sub_1
+	sound_call Music_RowansLab_Ch4_sub_2
 .loop
-	sound_call Music_ElmsLab_Ch4_sub_3
-	sound_call Music_ElmsLab_Ch4_sub_4
-	sound_call Music_ElmsLab_Ch4_sub_4
-	sound_call Music_ElmsLab_Ch4_sub_5
-	sound_call Music_ElmsLab_Ch4_sub_4
-	sound_call Music_ElmsLab_Ch4_sub_3
-	sound_call Music_ElmsLab_Ch4_sub_4
-	sound_call Music_ElmsLab_Ch4_sub_5
-	sound_call Music_ElmsLab_Ch4_sub_4
-	sound_call Music_ElmsLab_Ch4_sub_4
-	sound_call Music_ElmsLab_Ch4_sub_3
-	sound_call Music_ElmsLab_Ch4_sub_5
+	sound_call Music_RowansLab_Ch4_sub_3
+	sound_call Music_RowansLab_Ch4_sub_4
+	sound_call Music_RowansLab_Ch4_sub_4
+	sound_call Music_RowansLab_Ch4_sub_5
+	sound_call Music_RowansLab_Ch4_sub_4
+	sound_call Music_RowansLab_Ch4_sub_3
+	sound_call Music_RowansLab_Ch4_sub_4
+	sound_call Music_RowansLab_Ch4_sub_5
+	sound_call Music_RowansLab_Ch4_sub_4
+	sound_call Music_RowansLab_Ch4_sub_4
+	sound_call Music_RowansLab_Ch4_sub_3
+	sound_call Music_RowansLab_Ch4_sub_5
 	sound_loop 0, .loop

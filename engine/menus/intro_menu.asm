@@ -667,7 +667,7 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTileMap
 
-	ld de, MUSIC_PROF_ELM
+	ld de, MUSIC_PROF_ROWAN
 	call PlayMusic
 
 	call RotateFourPalettesRight
@@ -1667,7 +1667,7 @@ ENDC
 	call SetPalettes
 	call DelayFrame
 
-	ld de, MUSIC_POKEMON_CHANNEL
+	ld de, MUSIC_SPECIAL_PROGRAM
 	call PlayMusic
 
 	ld hl, IntroSandgemText

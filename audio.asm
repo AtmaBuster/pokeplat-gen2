@@ -14,14 +14,14 @@ INCLUDE "audio/sfx_pointers.asm"
 SECTION "Songs 1", ROMX
 
 INCLUDE "audio/music/route36.asm"
-INCLUDE "audio/music/rivalbattle.asm"
+INCLUDE "audio/music/rivalbattle.asm" ; Rival Battle (Barry's theme)
 INCLUDE "audio/music/rocketbattle.asm"
-INCLUDE "audio/music/elmslab.asm" ; Professor Rowan's Theme
+INCLUDE "audio/music/rowanslab.asm" ; Professor Rowan's Theme
 INCLUDE "audio/music/darkcave.asm"
-INCLUDE "audio/music/johtogymbattle.asm" ; Sinnoh Gym Battle
+INCLUDE "audio/music/sinnohgymbattle.asm" ; Sinnoh Gym Battle
 INCLUDE "audio/music/championbattle.asm"
 INCLUDE "audio/music/ssaqua.asm"
-INCLUDE "audio/music/newbarktown.asm" ; Twinleaf Town
+INCLUDE "audio/music/twinleaftown.asm" ; Twinleaf Town
 INCLUDE "audio/music/goldenrodcity.asm"
 INCLUDE "audio/music/vermilioncity.asm"
 INCLUDE "audio/music/titlescreen.asm"
@@ -47,7 +47,7 @@ INCLUDE "audio/music/showmearound.asm"
 INCLUDE "audio/music/gamecorner.asm"
 INCLUDE "audio/music/bicycle.asm"
 INCLUDE "audio/music/looksage.asm"
-INCLUDE "audio/music/pokemonchannel.asm"
+INCLUDE "audio/music/specialprogram.asm" ; Special Program - Listening to Professor Rowan (Intro TV)
 INCLUDE "audio/music/lighthouse.asm"
 INCLUDE "audio/music/lakeofrage.asm"
 INCLUDE "audio/music/indigoplateau.asm"
@@ -69,7 +69,7 @@ INCLUDE "audio/music/route30.asm"
 SECTION "Songs 3", ROMX
 
 INCLUDE "audio/music/violetcity.asm"
-INCLUDE "audio/music/route29.asm"
+INCLUDE "audio/music/route201.asm" ; Route 201
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
@@ -88,14 +88,14 @@ INCLUDE "audio/music/gym.asm"
 INCLUDE "audio/music/pallettown.asm"
 INCLUDE "audio/music/profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"
-INCLUDE "audio/music/lookrival.asm"
-INCLUDE "audio/music/aftertherivalfight.asm"
+INCLUDE "audio/music/lookrival.asm" ; Rival's theme (Barry)
+INCLUDE "audio/music/aftertherivalfight.asm" ; Blank
 INCLUDE "audio/music/surf.asm"
 INCLUDE "audio/music/nationalpark.asm"
 INCLUDE "audio/music/azaleatown.asm"
 INCLUDE "audio/music/cherrygrovecity.asm"
 INCLUDE "audio/music/unioncave.asm"
-INCLUDE "audio/music/johtotrainerbattle.asm" ; Sinnoh Trainer Battle
+INCLUDE "audio/music/sinnohtrainerbattle.asm" ; Sinnoh Trainer Battle
 INCLUDE "audio/music/lookyoungster.asm"
 INCLUDE "audio/music/tintower.asm"
 INCLUDE "audio/music/sprouttower.asm"
@@ -125,8 +125,8 @@ INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
-INCLUDE "audio/music/johtowildbattle.asm"       ; Sinnoh Wild Battle (Day)
-INCLUDE "audio/music/johtowildbattlenight.asm"  ; Sinnoh Wild Battle (Night)
+INCLUDE "audio/music/sinnohwildbattle.asm"       ; Sinnoh Wild Battle (Day)
+INCLUDE "audio/music/sinnohwildbattlenight.asm"  ; Sinnoh Wild Battle (Night)
 
 
 SECTION "Extra Songs 1", ROMX

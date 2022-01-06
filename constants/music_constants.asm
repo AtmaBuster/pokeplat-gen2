@@ -43,18 +43,18 @@
 	const MUSIC_CHERRYGROVE_CITY             ; 26
 	const MUSIC_KIMONO_ENCOUNTER             ; 27
 	const MUSIC_UNION_CAVE                   ; 28
-	const MUSIC_JOHTO_WILD_BATTLE            ; 29
-	const MUSIC_JOHTO_TRAINER_BATTLE         ; 2a
+	const MUSIC_SINNOH_WILD_BATTLE           ; 29
+	const MUSIC_SINNOH_TRAINER_BATTLE        ; 2a
 	const MUSIC_ROUTE_30                     ; 2b
 	const MUSIC_ECRUTEAK_CITY                ; 2c
 	const MUSIC_VIOLET_CITY                  ; 2d
-	const MUSIC_JOHTO_GYM_LEADER_BATTLE      ; 2e
+	const MUSIC_SINNOH_GYM_LEADER_BATTLE     ; 2e
 	const MUSIC_CHAMPION_BATTLE              ; 2f
 	const MUSIC_RIVAL_BATTLE                 ; 30
 	const MUSIC_ROCKET_BATTLE                ; 31
-	const MUSIC_PROF_ELM                     ; 32
+	const MUSIC_PROF_ROWAN                   ; 32
 	const MUSIC_DARK_CAVE                    ; 33
-	const MUSIC_ROUTE_29                     ; 34
+	const MUSIC_ROUTE_201                    ; 34
 	const MUSIC_ROUTE_36                     ; 35
 	const MUSIC_SS_AQUA                      ; 36
 	const MUSIC_YOUNGSTER_ENCOUNTER          ; 37
@@ -62,10 +62,10 @@
 	const MUSIC_ROCKET_ENCOUNTER             ; 39
 	const MUSIC_POKEMANIAC_ENCOUNTER         ; 3a
 	const MUSIC_SAGE_ENCOUNTER               ; 3b
-	const MUSIC_NEW_BARK_TOWN                ; 3c
+	const MUSIC_TWINLEAF_TOWN                ; 3c
 	const MUSIC_GOLDENROD_CITY               ; 3d
 	const MUSIC_VERMILION_CITY               ; 3e
-	const MUSIC_POKEMON_CHANNEL              ; 3f
+	const MUSIC_SPECIAL_PROGRAM              ; 3f
 	const MUSIC_POKE_FLUTE_CHANNEL           ; 40
 	const MUSIC_TIN_TOWER                    ; 41
 	const MUSIC_SPROUT_TOWER                 ; 42
@@ -76,7 +76,7 @@
 	const MUSIC_ROUTE_37                     ; 47
 	const MUSIC_ROCKET_HIDEOUT               ; 48
 	const MUSIC_DRAGONS_DEN                  ; 49
-	const MUSIC_JOHTO_WILD_BATTLE_NIGHT      ; 4a
+	const MUSIC_SINNOH_WILD_BATTLE_NIGHT     ; 4a
 	const MUSIC_RUINS_OF_ALPH_RADIO          ; 4b
 	const MUSIC_CAPTURE                      ; 4c
 	const MUSIC_ROUTE_26                     ; 4d
