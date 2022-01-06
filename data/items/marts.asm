@@ -6,6 +6,7 @@ Marts:
 	dw Mart5Badge
 	dw Mart7Badge
 	dw Mart8Badge
+	dw MartJubilife
 .End
 
 Mart0Badge:
@@ -110,6 +111,12 @@ Mart8Badge:
 	db REPEL
 	db SUPER_REPEL
 	db MAX_REPEL
+	db -1 ; end
+
+MartJubilife:
+	db 2 ; # items
+	db BLUESKY_MAIL
+	db HEAL_BALL
 	db -1 ; end
 
 DefaultMart:

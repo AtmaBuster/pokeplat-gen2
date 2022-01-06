@@ -15,3 +15,4 @@
 	const MART_5_BADGE
 	const MART_7_BADGE
 	const MART_8_BADGE
+	const MART_JUBILIFE

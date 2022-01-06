@@ -159,3 +159,4 @@ SPRITE_VARS EQU const_value
 	const SPRITE_DOLL_2 ; f2
 	const SPRITE_BIG_DOLL ; f3
 	const SPRITE_DAWN_LUCAS ; f4
+	const SPRITE_DAWN_LUCAS2 ; f5

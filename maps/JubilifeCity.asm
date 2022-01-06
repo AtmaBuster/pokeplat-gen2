@@ -1,6 +1,19 @@
 	object_const_def ; object_event constants
 	const JUBILIFECITY_DAWNLUCAS
 	const JUBILIFECITY_LOOKER
+	const JUBILIFECITY_OBJECT2
+	const JUBILIFECITY_OBJECT3
+	const JUBILIFECITY_OBJECT4
+	const JUBILIFECITY_OBJECT5
+	const JUBILIFECITY_OBJECT6
+	const JUBILIFECITY_OBJECT7
+	const JUBILIFECITY_OBJECT8
+	const JUBILIFECITY_OBJECT9
+	const JUBILIFECITY_OBJECT10
+	const JUBILIFECITY_OBJECT11
+	const JUBILIFECITY_OBJECT12
+	const JUBILIFECITY_OBJECT13
+	const JUBILIFECITY_OBJECT14
 
 JubilifeCity_MapScripts:
 	db 4 ; scene scripts
@@ -9,11 +22,19 @@ JubilifeCity_MapScripts:
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH
 	scene_script .Dummy ; SCENE_JUBILIFECITY_NOTHING
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .Objects
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_JUBILIFE
+	return
+
+.Objects:
+	checkevent EVENT_GAVE_PARCEL_TO_RIVAL
+	iffalse .Done
+	moveobject JUBILIFECITY_DAWNLUCAS, 27, 19 ; reuse for Poketch President
+.Done:
 	return
 
 .Dummy:
@@ -53,6 +74,7 @@ JubilifeCity_DawnLucasScript:
 	writetextgender .DawnLearnMoreText, .LucasLearnMoreText
 	waitbutton
 	closetext
+	moveobject JUBILIFECITY_LOOKER, 30, 21
 	follow JUBILIFECITY_DAWNLUCAS, PLAYER
 	applymovementtable JUBILIFECITY_DAWNLUCAS, .FollowMovement
 	turnobject JUBILIFECITY_LOOKER, DOWN
@@ -131,7 +153,7 @@ JubilifeCity_DawnLucasScript:
 	closetext
 	applymovement JUBILIFECITY_DAWNLUCAS, .DawnLucasLeaveMovement
 	disappear JUBILIFECITY_DAWNLUCAS
-	setscene SCENE_JUBILIFECITY_NOTHING
+	setscene SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL
 	end
 
 .DawnCatchingText:
@@ -596,6 +618,415 @@ ENDR
 	step DOWN
 	step_end
 
+JubilifeCity_MapNameSignScript:
+	jumptext .Text
+.Text:
+	text "JUBILIFE CITY"
+	line "City of Joy"
+	done
+
+JubilifeCity_LookerScript:
+	faceplayer
+	checkevent EVENT_GAVE_PARCEL_TO_RIVAL
+	iftrue .Poketch
+	jumptext .SchoolText
+
+.Poketch:
+	jumptext .PoketchText
+
+.SchoolText:
+	text "Ah, it is you!"
+
+	para "Have no fear."
+	line "There are no shady"
+	cont "characters about."
+
+	para "Incidentally, have"
+	line "you visited the"
+	cont "TRAINER'S SCHOOL?"
+
+	para "Did your friend"
+	line "not guide you"
+	cont "there earlier?"
+	done
+
+.PoketchText:
+	text "Ah, it is you!"
+
+	para "Have no fear."
+	line "There are no shady"
+	cont "characters about."
+
+	para "Incidentally, have"
+	line "you not obtained"
+	cont "a #TCH?"
+
+	para "I believe a"
+	line "#TCH is now"
+	cont "free in exchange"
+	cont "for some COUPONS?"
+	done
+
+JubilifeCity_GlobalTerminalGuardScript:
+	faceplayer
+	readvar VAR_BADGES
+	ifequal 0, .NoBadges
+	jumptext .GlobalTerminalText
+
+.NoBadges:
+	jumptext .NoBadgesText
+
+.GlobalTerminalText: ; change this text
+	text "Past here is the"
+	line "GLOBAL TERMINAL."
+
+	para "It lets you trade"
+	line "with the whole"
+	cont "world!"
+
+	para "Trading #MON"
+	line "means connecting"
+	cont "with friends, both"
+	cont "old and new."
+
+	para "That's awesome!"
+	done
+
+.NoBadgesText: ; change this text
+	text "Past here is the"
+	line "GLOBAL TERMINAL,"
+	cont "your gateway to"
+	cont "the world!"
+
+	para "Oh, you don't have"
+	line "any GYM BADGES."
+
+	para "Sorry, but the"
+	line "GLOBAL TERMINAL is"
+	cont "off-limits if you"
+	cont "don't have a"
+	cont "GYM BADGE."
+	done
+
+JubilifeCity_SchoolGuyScript:
+	faceplayer
+	opentext
+	writetext .KnowMuchText
+	yesorno
+	iffalse .SaidNo
+	writetext .KnowledgeableText
+	waitbutton
+	closetext
+	end
+
+.SaidNo:
+	writetext .NotKnowledgeableText
+	waitbutton
+	closetext
+	end
+
+.KnowMuchText:
+	text "Hello, TRAINER!"
+
+	para "Do you know much"
+	line "about #MON?"
+	done
+
+.KnowledgeableText:
+	text "Ah, I see! You are"
+	line "knowledgeable!"
+
+	para "I imagine that you"
+	line "wouldn't need to"
+	cont "visit the"
+	cont "TRAINER'S SCHOOL,"
+	cont "then."
+
+	para "But do visit it if"
+	line "you have the time."
+
+	para "You may discover"
+	line "something new!"
+	done
+
+.NotKnowledgeableText:
+	text "Oh, you're not"
+	line "knowledgeable…"
+
+	para "But not to worry!"
+	line "There's the"
+	cont "TRAINER'S SCHOOL."
+
+	para "The SCHOOL will"
+	line "teach you the"
+	cont "basics of #MON."
+	done
+
+JubilifeCity_TradeKidLScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "I'm trading #MON"
+	line "with my buddy!"
+	done
+
+JubilifeCity_TradeKidRScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "I made my #MON"
+	line "hold an item"
+	cont "before trading it."
+
+	para "That will make the"
+	line "other TRAINER"
+	cont "happy!"
+	done
+
+JubilifeCity_SixBallsKidScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "OK, set six"
+	line "# BALLS in my"
+	cont "belt…"
+
+	para "Yeah, that'll do"
+	line "it. At most, you"
+	cont "can have six"
+	cont "#MON with you."
+	done
+
+JubilifeCity_CarvedOutManScript:
+	faceplayer
+	jumptext .CarvedOutText
+
+.CarvedOutText:
+	text "JUBILIFE CITY's"
+	line "built on land they"
+	cont "carved out of a"
+	cont "mountain."
+
+	para "The people and"
+	line "#MON of"
+	cont "OREBURGH CITY"
+	cont "helped out with"
+	cont "that undertaking."
+	done
+
+JubilifeCity_CultureShockGuyScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "Hiya, where'd you"
+	line "come from?"
+
+	para "…"
+
+	para "TWINLEAF TOWN,"
+	line "huh…"
+
+	para "It's a nice place."
+	line "Quiet and all."
+
+	para "JUBILIFE CITY is a"
+	line "big place, so it"
+	cont "might be a bit of"
+	cont "a shock to you."
+	done
+
+JubilifeCity_HappinessLadyScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "When you walk with"
+	line "your #MON, they"
+	cont "grow friendlier."
+	done
+
+JubilifeCity_GroupGuyScript:
+JubilifeCity_InterviewGirlScript:
+	jumptextfaceplayer .Text
+.Text:
+	text "Did you see me on"
+	line "TV? I was in an"
+	cont "interview!"
+	done
+
+JubilifeCity_Clown1Script:
+	faceplayer
+	checkevent EVENT_GAVE_PARCEL_TO_RIVAL
+	iftrue .DoQuiz
+	jumptext .StickAroundText
+
+.DoQuiz:
+	end
+
+.StickAroundText:
+	text "Hi there. You"
+	line "should stick"
+	cont "around."
+
+	para "We're doing a"
+	line "#TCH campaign"
+	cont "soon."
+
+	para "Before it starts,"
+	line "I think you should"
+	cont "brush up at the"
+	cont "TRAINER'S SCHOOL."
+	done
+
+JubilifeCity_Clown2Script:
+JubilifeCity_Clown3Script:
+	end
+
+JubilifeCity_SchoolSignScript:
+	jumptext .Text
+.Text:
+	text "TRAINER'S SCHOOL"
+
+	para "The First Step for"
+	line "TRAINERS!"
+	done
+
+JubilifeCity_CondoSignScript:
+	jumptext .Text
+.Text:
+	text "JUBILIFE"
+	line "CONDOMINIUMS"
+
+	para "Tenants wanted"
+	done
+
+JubilifeCity_TVBuildingSignScript:
+	jumptext .Text
+.Text:
+	text "JUBILIFE TV"
+
+	para "The Fun-and-Games"
+	line "TV Station!"
+	done
+
+JubilifeCity_PoketchBuildingSignScript:
+	jumptext .Text
+.Text:
+	text "#TCH COMPANY"
+
+	para "#MON Watches"
+	line "for the World"
+	done
+
+JubilifeCity_GlobalTerminalSignScript:
+	jumptext .Text
+.Text:
+	text "GLOBAL TERMINAL"
+
+	para "Your Gateway to"
+	line "the Whole World!"
+	done
+
+JubilifeCity_PMCSignScript:
+	jumptext .Text
+.Text:
+	text "Heal your #MON!"
+	line "#MON CENTER"
+	done
+
+JubilifeCity_MartSignScript:
+	jumptext .Text
+.Text:
+	text "All Your Item"
+	line "Needs Fulfilled!"
+	cont "#MON MART"
+	done
+
+JubilifeCity_HiddenPotion:
+	hiddenitem POTION, EVENT_JUBILIFE_CITY_HIDDEN_POTION
+
+JubilifeCity_GlobalTerminalStopScript:
+	turnobject JUBILIFECITY_OBJECT2, DOWN
+	opentext
+	writetext .CantEnterText
+	waitbutton
+	closetext
+	applymovement PLAYER, .LeaveMovement
+	end
+
+.CantEnterText: ; change this text
+	text "Past here is the"
+	line "GLOBAL TERMINAL,"
+	cont "your gateway to"
+	cont "the world!"
+
+	para "Oh, you don't have"
+	line "any GYM BADGES."
+
+	para "Sorry, but the"
+	line "GLOBAL TERMINAL is"
+	cont "off-limits if you"
+	cont "don't have a"
+	cont "GYM BADGE."
+	done
+
+.LeaveMovement:
+	step RIGHT
+	step_end
+
+JubilifeCity_CantLeaveRivalScriptU:
+	settableindex 0
+	sjump JubilifeCity_CantLeaveRivalScript
+
+JubilifeCity_CantLeaveRivalScriptD:
+	settableindex 1
+JubilifeCity_CantLeaveRivalScript:
+	showemote EMOTE_SHOCK, JUBILIFECITY_LOOKER, 15
+	turnobject PLAYER, LEFT
+	applymovementtable JUBILIFECITY_LOOKER, .ApproachPlayerMovement
+	opentext
+	writetext .VisitSchoolText
+	waitbutton
+	closetext
+	follow JUBILIFECITY_LOOKER, PLAYER
+	applymovement JUBILIFECITY_LOOKER, .PullBackMovement
+	stopfollow
+	pause 5
+	applymovementtable JUBILIFECITY_LOOKER, .ReturnMovement
+	end
+
+.VisitSchoolText:
+	text "LOOKER: Hello, my"
+	line "friend. Have you"
+	cont "visited the"
+	cont "TRAINER'S SCHOOL?"
+
+	para "Did your friend"
+	line "not guide you"
+	cont "there earlier?"
+	done
+
+.ApproachPlayerMovement:
+	dw .ApproachPlayerMovementU
+	dw .ApproachPlayerMovementD
+
+.ReturnMovement:
+	dw .ReturnMovementU
+	dw .ReturnMovementD
+
+.ApproachPlayerMovementU:
+	step UP
+.ApproachPlayerMovementD:
+	step UP
+	step RIGHT
+	step_end
+
+.PullBackMovement:
+	step LEFT
+	turn_head RIGHT
+	step_end
+
+.ReturnMovementU:
+	step DOWN
+.ReturnMovementD:
+	step DOWN
+	turn_head UP
+	step_end
+
 JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -604,7 +1035,7 @@ JubilifeCity_MapEvents:
 	warp_event 23, 31, JUBILIFE_APARTMENT_SE_1F, 1
 	warp_event  9, 29, JUBILIFE_APARTMENT_SW_1F, 1
 	warp_event 31, 25, JUBILIFE_POKEMON_CENTER_1F, 1
-	warp_event 31, 19, JUBILIFE_POKEMART, 1
+	warp_event 31, 19, JUBILIFE_POKEMART, 2
 	warp_event 11, 11, POKETCH_COMPANY_1F, 1
 	warp_event 14, 11, POKETCH_COMPANY_1F, 3
 	warp_event 22, 11, TV_STATION_1F, 1
@@ -616,39 +1047,40 @@ JubilifeCity_MapEvents:
 	coord_event 27, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript2
 	coord_event 28, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript3
 	coord_event 29, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript4
-	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, CoordinatesEvent
-	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, CoordinatesEvent
-	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, CoordinatesEvent
+	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, JubilifeCity_CantLeaveRivalScriptU
+	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, JubilifeCity_CantLeaveRivalScriptD
+	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, JubilifeCity_GlobalTerminalStopScript
 	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, CoordinatesEvent
 	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, CoordinatesEvent
-	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, CoordinatesEvent
+	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_GlobalTerminalStopScript
 
-	db 11 ; bg events
-	bg_event 31, 31, BGEVENT_READ, BGEvent
-	bg_event 36, 13, BGEVENT_READ, BGEvent
-	bg_event 30,  8, BGEVENT_READ, BGEvent
-	bg_event  7, 13, BGEVENT_READ, BGEvent
-	bg_event 24, 22, BGEVENT_READ, BGEvent
-	bg_event 30, 12, BGEVENT_READ, BGEvent
-	bg_event 24, 12, BGEVENT_READ, BGEvent
-	bg_event 10, 12, BGEVENT_READ, BGEvent
-	bg_event 32, 25, BGEVENT_READ, BGEvent
-	bg_event 32, 19, BGEVENT_READ, BGEvent
-	bg_event 11, 16, BGEVENT_ITEM, BGEvent
+	db 12 ; bg events
+	bg_event 31, 31, BGEVENT_READ, JubilifeCity_MapNameSignScript
+	bg_event 36, 13, BGEVENT_READ, JubilifeCity_MapNameSignScript
+	bg_event 30,  8, BGEVENT_READ, JubilifeCity_MapNameSignScript
+	bg_event  7, 13, BGEVENT_READ, JubilifeCity_MapNameSignScript
+	bg_event 24, 22, BGEVENT_READ, JubilifeCity_SchoolSignScript
+	bg_event 30, 12, BGEVENT_READ, JubilifeCity_CondoSignScript
+	bg_event 24, 12, BGEVENT_READ, JubilifeCity_TVBuildingSignScript
+	bg_event 10, 12, BGEVENT_READ, JubilifeCity_PoketchBuildingSignScript
+	bg_event 13, 27, BGEVENT_READ, JubilifeCity_GlobalTerminalSignScript
+	bg_event 32, 25, BGEVENT_READ, JubilifeCity_PMCSignScript
+	bg_event 32, 19, BGEVENT_READ, JubilifeCity_MartSignScript
+	bg_event 11, 16, BGEVENT_ITEM, JubilifeCity_HiddenPotion
 
 	db 15 ; object events
-	object_event 27, 32, SPRITE_DAWN_LUCAS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_JUBILIFE_CITY_DAWNLUCAS
-	object_event 30, 21, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_JUBILIFE_CITY_LOOKER
-	object_event 17, 26, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 26, 27, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 31, 28, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 32, 28, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 27, 19, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 24, 18, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 27, 11, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 13, 15, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 22, 16, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 19, 13, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 33, 20, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 22, 12, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  9, 13, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 27, 32, SPRITE_DAWN_LUCAS2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_JUBILIFE_CITY_DAWNLUCAS
+	object_event 35, 16, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, JubilifeCity_LookerScript, EVENT_JUBILIFE_CITY_LOOKER
+	object_event 17, 26, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_GlobalTerminalGuardScript, -1
+	object_event 21, 26, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_SchoolGuyScript, -1
+	object_event 31, 28, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_TradeKidLScript, -1
+	object_event 32, 28, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_TradeKidRScript, -1
+	object_event 29, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_SixBallsKidScript, -1
+	object_event 24, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_CarvedOutManScript, -1
+	object_event 28, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_CultureShockGuyScript, -1
+	object_event 13, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_HappinessLadyScript, -1
+	object_event 22, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_GroupGuyScript, -1
+	object_event 19, 13, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_InterviewGirlScript, -1
+	object_event 22, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown1Script, -1
+	object_event 33, 20, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown2Script, EVENT_JUBILIFE_CITY_CLOWNS
+	object_event  9, 13, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown3Script, EVENT_JUBILIFE_CITY_CLOWNS

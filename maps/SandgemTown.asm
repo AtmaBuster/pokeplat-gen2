@@ -613,7 +613,7 @@ SandgemTown_MapEvents:
 	warp_event  8,  5, ROWANS_LAB, 1
 	warp_event  7, 13, SANDGEM_HOUSE_1, 1
 	warp_event 13, 13, ASSISTANT_HOUSE_1F, 1
-	warp_event 21,  5, SANDGEM_POKEMART, 1
+	warp_event 21,  5, SANDGEM_POKEMART, 2
 	warp_event 13,  5, SANDGEM_POKEMON_CENTER_1F, 1
 
 	db 2 ; coord events

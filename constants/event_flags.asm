@@ -74,15 +74,15 @@
 	const EVENT_GOT_PARCEL                       ; EV 043
 	const EVENT_EXITED_LAB                       ; EV 044
 	const EVENT_TELLING_MOM_ABOUT_DEX            ; EV 045
-	const EVENT_MET_LOOKER_IN_JUBILIFE           ; EV 046
-	const EVENT_047                              ; EV 047
-	const EVENT_048                              ; EV 048
-	const EVENT_049                              ; EV 049
-	const EVENT_04A                              ; EV 04a
-	const EVENT_04B                              ; EV 04b
-	const EVENT_04C                              ; EV 04c
-	const EVENT_04D                              ; EV 04d
-	const EVENT_04E                              ; EV 04e
+	const EVENT_GAVE_PARCEL_TO_RIVAL             ; EV 046
+	const EVENT_GOT_COAL_BADGE                   ; EV 047
+	const EVENT_GOT_FOREST_BADGE                 ; EV 048
+	const EVENT_GOT_COBBLE_BADGE                 ; EV 049
+	const EVENT_GOT_FEN_BADGE                    ; EV 04a
+	const EVENT_GOT_RELIC_BADGE                  ; EV 04b
+	const EVENT_GOT_MINE_BADGE                   ; EV 04c
+	const EVENT_GOT_ICICLE_BADGE                 ; EV 04d
+	const EVENT_GOT_BEACON_BADGE                 ; EV 04e
 	const EVENT_04F                              ; EV 04f
 	const EVENT_050                              ; EV 050
 	const EVENT_051                              ; EV 051
@@ -1287,7 +1287,8 @@
 	const EVENT_4FD                              ; EV 4fd
 	const EVENT_4FE                              ; EV 4fe
 	const EVENT_4FF                              ; EV 4ff
-	const EVENT_500                              ; EV 500
+; hidden items
+	const EVENT_JUBILIFE_CITY_HIDDEN_POTION      ; EV 500
 	const EVENT_501                              ; EV 501
 	const EVENT_502                              ; EV 502
 	const EVENT_503                              ; EV 503
@@ -1589,7 +1590,7 @@
 	const EVENT_PLAYERS_HOUSE_1F_RIVAL_MOM       ; EV 629
 	const EVENT_JUBILIFE_CITY_DAWNLUCAS          ; EV 62a
 	const EVENT_JUBILIFE_CITY_LOOKER             ; EV 62b
-	const EVENT_62C                              ; EV 62c
+	const EVENT_JUBILIFE_CITY_CLOWNS             ; EV 62c
 	const EVENT_62D                              ; EV 62d
 	const EVENT_62E                              ; EV 62e
 	const EVENT_62F                              ; EV 62f
