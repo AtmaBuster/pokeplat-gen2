@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
-	const TRADECENTER_CHRIS1
-	const TRADECENTER_CHRIS2
+	const TRADECENTER_LUCAS1
+	const TRADECENTER_LUCAS2
 
 TradeCenter_MapScripts:
 	db 2 ; scene scripts
@@ -20,13 +20,13 @@ TradeCenter_MapScripts:
 .SetWhichChris:
 	special CableClubCheckWhichChris
 	iffalse .Chris2
-	disappear TRADECENTER_CHRIS2
-	appear TRADECENTER_CHRIS1
+	disappear TRADECENTER_LUCAS2
+	appear TRADECENTER_LUCAS1
 	return
 
 .Chris2:
-	disappear TRADECENTER_CHRIS1
-	appear TRADECENTER_CHRIS2
+	disappear TRADECENTER_LUCAS1
+	appear TRADECENTER_LUCAS2
 	return
 
 .InitializeAndPreparePokecenter2F:
@@ -66,5 +66,5 @@ TradeCenter_MapEvents:
 	bg_event  5,  4, BGEVENT_LEFT, TradeCenterConsoleScript
 
 	db 2 ; object events
-	object_event  3,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	object_event  6,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	object_event  3,  4, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  6,  4, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2

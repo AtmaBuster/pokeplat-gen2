@@ -1385,6 +1385,7 @@ CastformSwFrontpic:    INCBIN "gfx/pokemon/castform/front_snow.animated.2bpp.lz"
 CastformSwBackpic:     INCBIN "gfx/pokemon/castform/back_snow.2bpp.lz"
 CherrimSFrontpic:      INCBIN "gfx/pokemon/cherrim/front_sun.animated.2bpp.lz"
 CherrimSBackpic:       INCBIN "gfx/pokemon/cherrim/back_sun.2bpp.lz"
+SchoolgirlPic:         INCBIN "gfx/trainers/schoolgirl.2bpp.lz"
 
 PlaceholderFrontpic:   INCBIN "gfx/pokemon/placeholder/front.animated.2bpp.lz"
 PlaceholderBackpic:    INCBIN "gfx/pokemon/placeholder/back.2bpp.lz"

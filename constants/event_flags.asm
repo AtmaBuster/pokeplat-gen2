@@ -83,7 +83,7 @@
 	const EVENT_GOT_MINE_BADGE                   ; EV 04c
 	const EVENT_GOT_ICICLE_BADGE                 ; EV 04d
 	const EVENT_GOT_BEACON_BADGE                 ; EV 04e
-	const EVENT_04F                              ; EV 04f
+	const EVENT_TRAINERS_SCHOOL_GOT_POTION       ; EV 04f
 	const EVENT_050                              ; EV 050
 	const EVENT_051                              ; EV 051
 	const EVENT_052                              ; EV 052
@@ -525,9 +525,9 @@
 	const EVENT_BEAT_YOUNGSTER_TRISTAN3          ; EV ---
 	const EVENT_BEAT_YOUNGSTER_TRISTAN4          ; EV ---
 	const EVENT_BEAT_YOUNGSTER_LOGAN             ; EV ---
+	const EVENT_BEAT_SCHOOLBOY_HARRISON          ; EV ---
 	const EVENT_BEAT_LASS_NATALIE                ; EV ---
-	const EVENT_209                              ; EV 209
-	const EVENT_20A                              ; EV 20a
+	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
 	const EVENT_20B                              ; EV 20b
 	const EVENT_20C                              ; EV 20c
 	const EVENT_20D                              ; EV 20d
@@ -1032,7 +1032,7 @@
 ; Sprite visibility flags                            ; EV -
 ; Itemballs                                          ; EV -
 	const EVENT_ROUTE_202_POTION                 ; EV 400
-	const EVENT_401                              ; EV 401
+	const EVENT_TRAINERS_SCHOOL_X_ATTACK         ; EV 401
 	const EVENT_402                              ; EV 402
 	const EVENT_403                              ; EV 403
 	const EVENT_404                              ; EV 404
@@ -1591,7 +1591,7 @@
 	const EVENT_JUBILIFE_CITY_DAWNLUCAS          ; EV 62a
 	const EVENT_JUBILIFE_CITY_LOOKER             ; EV 62b
 	const EVENT_JUBILIFE_CITY_CLOWNS             ; EV 62c
-	const EVENT_62D                              ; EV 62d
+	const EVENT_TRAINERS_SCHOOL_RIVAL            ; EV 62d
 	const EVENT_62E                              ; EV 62e
 	const EVENT_62F                              ; EV 62f
 	const EVENT_630                              ; EV 630

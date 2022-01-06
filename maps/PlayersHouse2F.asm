@@ -20,8 +20,8 @@ PlayersHouse2F_MapScripts:
 	turnobject PLAYER, DOWN
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iffalse .Done
-	variablesprite SPRITE_DAWN_LUCAS, SPRITE_CHRIS
-	variablesprite SPRITE_DAWN_LUCAS2, SPRITE_CHRIS
+	variablesprite SPRITE_DAWN_LUCAS, SPRITE_LUCAS
+	variablesprite SPRITE_DAWN_LUCAS2, SPRITE_LUCAS
 .Done:
 .Dummy:
 	end
@@ -286,4 +286,4 @@ PlayersHouse2F_MapEvents:
 	bg_event  2,  1, BGEVENT_UP, PlayersHousePCScript
 
 	db 1 ; object events
-	object_event  7,  0, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_PLAYERS_HOUSE
+	object_event  7,  0, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_PLAYERS_HOUSE

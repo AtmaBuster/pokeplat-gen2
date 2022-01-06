@@ -79,4 +79,4 @@ RivalHouse2F_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  4,  2, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVALS_HOUSE_2F_RIVAL
+	object_event  4,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVALS_HOUSE_2F_RIVAL

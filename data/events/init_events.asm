@@ -21,6 +21,6 @@ initvarsprite: MACRO
 ; variable sprite, appearance sprite
 	db \1 - SPRITE_VARS, \2
 ENDM
-	initvarsprite SPRITE_DAWN_LUCAS, SPRITE_KRIS
-	initvarsprite SPRITE_DAWN_LUCAS2, SPRITE_KRIS
+	initvarsprite SPRITE_DAWN_LUCAS, SPRITE_DAWN
+	initvarsprite SPRITE_DAWN_LUCAS2, SPRITE_DAWN
 	db -1 ; end

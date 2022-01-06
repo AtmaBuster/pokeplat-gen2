@@ -63,6 +63,6 @@ SandgemPokemonCenter1F_MapEvents:
 
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1FNurseScript, -1
-	object_event  5,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1F_NiceLadyWomanScript, -1
-	object_event  8,  3, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1F_PCGuyScript, -1
-	object_event  1,  5, SPRITE_CHRIS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1F_TopFloorGirlScript, -1
+	object_event  5,  3, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1F_NiceLadyWomanScript, -1
+	object_event  8,  3, SPRITE_LUCAS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1F_PCGuyScript, -1
+	object_event  1,  5, SPRITE_LUCAS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokemonCenter1F_TopFloorGirlScript, -1

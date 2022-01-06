@@ -57,6 +57,8 @@ CHRIS EQU __enum__
 	const LOGAN
 
 	trainerclass SCHOOLBOY ; 17
+	const HARRISON
+
 	trainerclass BIRD_KEEPER ; 18
 	trainerclass LASS ; 19
 	const NATALIE
@@ -103,6 +105,8 @@ CHRIS EQU __enum__
 	trainerclass OFFICER ; 41
 	trainerclass GRUNTF ; 42
 	trainerclass MYSTICALMAN ; 43
+	trainerclass SCHOOLGIRL ; 44
+	const KRISTIN
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

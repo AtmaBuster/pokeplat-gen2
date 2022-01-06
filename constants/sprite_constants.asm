@@ -2,10 +2,10 @@
 ; OverworldSprites indexes (see data/sprites/sprites.asm)
 	const_def
 	const SPRITE_NONE ; 00
-	const SPRITE_CHRIS ; 01
-	const SPRITE_CHRIS_BIKE ; 02
+	const SPRITE_LUCAS ; 01
+	const SPRITE_LUCAS_BIKE ; 02
 	const SPRITE_GAMEBOY_KID ; 03
-	const SPRITE_SILVER ; 04
+	const SPRITE_RIVAL ; 04
 	const SPRITE_OAK ; 05
 	const SPRITE_RED ; 06
 	const SPRITE_BLUE ; 07
@@ -17,7 +17,7 @@
 	const SPRITE_BLAINE ; 0d
 	const SPRITE_REDS_MOM ; 0e
 	const SPRITE_DAISY ; 0f
-	const SPRITE_ELM ; 10
+	const SPRITE_ROWAN ; 10
 	const SPRITE_WILL ; 11
 	const SPRITE_FALKNER ; 12
 	const SPRITE_WHITNEY ; 13
@@ -93,12 +93,12 @@
 	const SPRITE_ROCK ; 59
 	const SPRITE_BOULDER ; 5a
 	const SPRITE_SNES ; 5b
-	const SPRITE_FAMICOM ; 5c
+	const SPRITE_BRIEFCASE ; 5c
 	const SPRITE_FRUIT_TREE ; 5d
 	const SPRITE_GOLD_TROPHY ; 5e
 	const SPRITE_SILVER_TROPHY ; 5f
-	const SPRITE_KRIS ; 60
-	const SPRITE_KRIS_BIKE ; 61
+	const SPRITE_DAWN ; 60
+	const SPRITE_DAWN_BIKE ; 61
 	const SPRITE_KURT_OUTSIDE ; 62
 	const SPRITE_SUICUNE ; 63
 	const SPRITE_ENTEI ; 64

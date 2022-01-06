@@ -13,7 +13,22 @@ trainermon_normal: MACRO
 ENDM
 trainermon_moves: MACRO
 	trainermon_normal \1, \2
-	dw \3, \4, \5, \6
+	dw \3
+IF _NARG > 3
+	dw \4
+ELSE
+	dw NO_MOVE
+ENDC
+IF _NARG > 4
+	dw \5
+ELSE
+	dw NO_MOVE
+ENDC
+IF _NARG > 5
+	dw \6
+ELSE
+	dw NO_MOVE
+ENDC
 ENDM
 trainermon_item: MACRO
 	trainermon_normal \1, \2
@@ -21,7 +36,22 @@ trainermon_item: MACRO
 ENDM
 trainermon_full: MACRO
 	trainermon_item \1, \2, \3
-	dw \4, \5, \6, \7
+	dw \4
+IF _NARG > 4
+	dw \5
+ELSE
+	dw NO_MOVE
+ENDC
+IF _NARG > 5
+	dw \6
+ELSE
+	dw NO_MOVE
+ENDC
+IF _NARG > 6
+	dw \7
+ELSE
+	dw NO_MOVE
+ENDC
 ENDM
 
 SECTION "Enemy Trainer Parties 1", ROMX
@@ -126,13 +156,17 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (5)
 	db "LOGAN@", TRAINERTYPE_MOVES
-	trainermon_moves  5, BURMY, TACKLE, NO_MOVE, NO_MOVE, NO_MOVE
+	trainermon_moves  5, BURMY, TACKLE
 	db -1 ; end
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
 
 SchoolboyGroup:
+	next_list_item ; SCHOOLBOY (1)
+	db "HARRISON@", TRAINERTYPE_MOVES
+	trainermon_moves  6, STARLY, QUICK_ATTACK
+	db -1 ; end
 	end_list_items
 
 BirdKeeperGroup:
@@ -269,4 +303,11 @@ GruntFGroup:
 	end_list_items
 
 MysticalmanGroup:
+	end_list_items
+
+SchoolgirlGroup:
+	next_list_item ; SCHOOLGIRL (1)
+	db "KRISTIN@", TRAINERTYPE_NORMAL
+	trainermon_normal  6, BIDOOF
+	db -1 ; end
 	end_list_items

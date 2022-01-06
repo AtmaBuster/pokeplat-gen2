@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
-	const COLOSSEUM_CHRIS1
-	const COLOSSEUM_CHRIS2
+	const COLOSSEUM_LUCAS1
+	const COLOSSEUM_LUCAS2
 
 Colosseum_MapScripts:
 	db 3 ; scene scripts
@@ -25,13 +25,13 @@ Colosseum_MapScripts:
 .SetWhichChris:
 	special CableClubCheckWhichChris
 	iffalse .Chris2
-	disappear COLOSSEUM_CHRIS2
-	appear COLOSSEUM_CHRIS1
+	disappear COLOSSEUM_LUCAS2
+	appear COLOSSEUM_LUCAS1
 	return
 
 .Chris2:
-	disappear COLOSSEUM_CHRIS1
-	appear COLOSSEUM_CHRIS2
+	disappear COLOSSEUM_LUCAS1
+	appear COLOSSEUM_LUCAS2
 	return
 
 .PreparePokecenter2F:
@@ -74,5 +74,5 @@ Colosseum_MapEvents:
 	bg_event  5,  4, BGEVENT_LEFT, ColosseumConsoleScript
 
 	db 2 ; object events
-	object_event  3,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	object_event  6,  4, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	object_event  3,  4, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	object_event  6,  4, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CableClubFriendScript, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
