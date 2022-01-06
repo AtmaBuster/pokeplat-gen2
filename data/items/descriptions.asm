@@ -205,14 +205,14 @@ ItemDescriptions:
 	dw EvoStoneDesc
 	dw EvoStoneDesc
 	dw EvoStoneDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
+	dw HoldTradeDesc
 	dw OddKeystoneDesc
 	dw DragonFangDesc
 	dw BlackGlassesDesc
@@ -241,19 +241,19 @@ ItemDescriptions:
 	dw FossilDesc
 	dw FossilDesc
 	dw FossilDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
-	dw PlaceholderDesc
+	dw DeepSeaToothDesc
+	dw DeepSeaScaleDesc
+	dw SeaIncenseDesc
+	dw LaxIncenseDesc
+	dw OddIncenseDesc
+	dw RockIncenseDesc
+	dw FullIncenseDesc
+	dw WaveIncenseDesc
+	dw RoseIncenseDesc
+	dw LuckIncenseDesc
+	dw PureIncenseDesc
+	dw HoneyDesc
+	dw HoldTradeDesc
 	dw QuestionMarkDesc
 
 MasterBallDesc:
@@ -930,9 +930,8 @@ QuickBallDesc:
 	next "best on turn one.@"
 
 OddKeystoneDesc:
-PlaceholderDesc:
-	db "PLACEHOLDER"
-	next "PLACEHOLDER@"
+	db   "Keeps a tower from"
+	next "from collapsing.@"
 
 GracideaDesc:
 	db   "A flower used to"
@@ -953,3 +952,55 @@ LustrousOrbDesc:
 FossilDesc:
 	db   "A fossil of a pre-"
 	next "historic #MON.@"
+	
+HoldTradeDesc:
+	db   "Hold and trade to"
+	next "evolve a #MON.@"
+	
+DeepSeaToothDesc:
+	db   "Raises SP.ATK of"
+	next "CLAMPERL. (HOLD)@"
+	
+DeepSeaScaleDesc:
+	db   "Raises SP.DEF"
+	next "CLAMPERL. (HOLD)@"
+	
+SeaIncenseDesc:
+	db   "Powers up water-"
+	next "type moves. (HOLD)@"
+	
+LaxIncenseDesc:
+	db   "Lowers the foe's"
+	next "accuracy. (HOLD)@"
+	
+OddIncenseDesc:
+	db   "Powers up psychic-"
+	next "type moves. (HOLD)@"
+	
+RockIncenseDesc:
+	db   "Powers up rock-"
+	next "type moves. (HOLD)@"
+
+FullIncenseDesc:
+	db   "Forces the user to"
+	next "move last. (HOLD)@"
+	
+WaveIncenseDesc:
+	db   "Powers up water-"
+	next "type moves. (HOLD)@"
+	
+RoseIncenseDesc:
+	db   "Powers up grass-"
+	next "type moves. (HOLD)@"
+	
+LuckIncenseDesc:
+	db   "Doubles monetary"
+	next "earnings. (HOLD)@"
+	
+PureIncenseDesc:
+	db   "Helps repel wild"
+	next "#MON. (HOLD)@"
+
+HoneyDesc:
+	db   "Slather on trees."
+	next "Attracts #MON.@"
