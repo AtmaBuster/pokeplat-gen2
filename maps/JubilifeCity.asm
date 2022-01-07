@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const JUBILIFECITY_DAWNLUCAS
+	const JUBILIFECITY_DAWNLUCAS_PRES
 	const JUBILIFECITY_LOOKER
 	const JUBILIFECITY_OBJECT2
 	const JUBILIFECITY_OBJECT3
@@ -16,9 +16,10 @@
 	const JUBILIFECITY_OBJECT14
 
 JubilifeCity_MapScripts:
-	db 4 ; scene scripts
+	db 5 ; scene scripts
 	scene_script .Dummy ; SCENE_JUBILIFECITY_FIRST_TIME
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL
+	scene_script .Dummy ; SCENE_JUBILIFECITY_START_POKETCH
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH
 	scene_script .Dummy ; SCENE_JUBILIFECITY_NOTHING
 
@@ -33,7 +34,7 @@ JubilifeCity_MapScripts:
 .Objects:
 	checkevent EVENT_GAVE_PARCEL_TO_RIVAL
 	iffalse .Done
-	moveobject JUBILIFECITY_DAWNLUCAS, 27, 19 ; reuse for Poketch President
+	moveobject JUBILIFECITY_DAWNLUCAS_PRES, 27, 19 ; reuse for Poketch President
 .Done:
 	return
 
@@ -55,9 +56,9 @@ JubilifeCity_DawnLucasScript3:
 JubilifeCity_DawnLucasScript4:
 	settableindex 3
 JubilifeCity_DawnLucasScript:
-	applymovement JUBILIFECITY_DAWNLUCAS, .EnterMovement
-	showemote EMOTE_SHOCK, JUBILIFECITY_DAWNLUCAS, 15
-	applymovementtable JUBILIFECITY_DAWNLUCAS, .ApproachPlayerMovement
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .EnterMovement
+	showemote EMOTE_SHOCK, JUBILIFECITY_DAWNLUCAS_PRES, 15
+	applymovementtable JUBILIFECITY_DAWNLUCAS_PRES, .ApproachPlayerMovement
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetextgender .DawnCatchingText, .LucasCatchingText
@@ -75,17 +76,17 @@ JubilifeCity_DawnLucasScript:
 	waitbutton
 	closetext
 	moveobject JUBILIFECITY_LOOKER, 30, 21
-	follow JUBILIFECITY_DAWNLUCAS, PLAYER
-	applymovementtable JUBILIFECITY_DAWNLUCAS, .FollowMovement
+	follow JUBILIFECITY_DAWNLUCAS_PRES, PLAYER
+	applymovementtable JUBILIFECITY_DAWNLUCAS_PRES, .FollowMovement
 	turnobject JUBILIFECITY_LOOKER, DOWN
-	applymovement JUBILIFECITY_DAWNLUCAS, .FinishFollowMovement
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .FinishFollowMovement
 	opentext
 	writetextgender .DawnThatGuyText, .LucasThatGuyText
 	waitbutton
 	closetext
 	applymovement JUBILIFECITY_LOOKER, .LookerMovement
 	pause 10
-	applymovement JUBILIFECITY_DAWNLUCAS, .ToLookerMovement
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .ToLookerMovement
 	stopfollow
 	applymovement PLAYER, .PlayerToLookerMovement
 	opentext
@@ -139,20 +140,20 @@ JubilifeCity_DawnLucasScript:
 	writetextgender .DawnSoundsHardText, .LucasSoundsHardText
 	waitbutton
 	closetext
-	applymovement JUBILIFECITY_DAWNLUCAS, .MoveToSchoolMovement
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .MoveToSchoolMovement
 	turnobject PLAYER, LEFT
 	opentext
 	writetextgender .DawnSchoolText, .LucasSchoolText
 	waitbutton
 	closetext
 	applymovement PLAYER, .MoveToSchoolMovement
-	turnobject JUBILIFECITY_DAWNLUCAS, RIGHT
+	turnobject JUBILIFECITY_DAWNLUCAS_PRES, RIGHT
 	opentext
 	writetextgender .DawnYourPalText, .LucasYourPalText
 	waitbutton
 	closetext
-	applymovement JUBILIFECITY_DAWNLUCAS, .DawnLucasLeaveMovement
-	disappear JUBILIFECITY_DAWNLUCAS
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .DawnLucasLeaveMovement
+	disappear JUBILIFECITY_DAWNLUCAS_PRES
 	setscene SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL
 	end
 
@@ -855,6 +856,35 @@ JubilifeCity_Clown1Script:
 	jumptext .StickAroundText
 
 .DoQuiz:
+	opentext
+	checkevent EVENT_GOT_POKETCH_COUPON_3
+	iftrue .DoAnswer
+	writetext .QuestionText
+	yesorno
+	iftrue .Correct
+	playsound SFX_WRONG
+	writetext .WrongText
+	waitsfx
+.Done:
+	waitbutton
+	closetext
+	end
+
+.Correct:
+	playsound SFX_ELEVATOR_END
+	writetext .RightText
+	waitsfx
+	buttonsound
+.DoAnswer:
+	writetext .AnswerText
+	checkevent EVENT_GOT_POKETCH_COUPON_3
+	iftrue .Done
+	buttonsound
+	writetext .CouponText
+	waitbutton
+	verbosegiveitem COUPON
+	setevent EVENT_GOT_POKETCH_COUPON_3
+	closetext
 	end
 
 .StickAroundText:
@@ -872,9 +902,189 @@ JubilifeCity_Clown1Script:
 	cont "TRAINER'S SCHOOL."
 	done
 
+.QuestionText:
+	text "Hi! I'm a #TCH"
+	line "campaign clown!"
+
+	para "Let's roll out my"
+	line "question!"
+
+	para "Can a #MON hold"
+	line "an item?"
+	done
+
+.WrongText:
+	text "Bzzzzt! That's the"
+	line "wrong answer…"
+	done
+
+.RightText:
+	text "Ding-ding! You're"
+	line "absolutely right!"
+	done
+
+.AnswerText:
+	text "A #MON may hold"
+	line "a single item."
+
+	para "Some items become"
+	line "effective as soon"
+	cont "as they are held"
+	cont "by a #MON."
+
+	para "BERRIES are eaten"
+	line "by #MON as"
+	cont "necessary during"
+	cont "battle."
+	done
+
+.CouponText:
+	text "Here you go! Your"
+	line "#TCH COUPON!"
+	done
+
 JubilifeCity_Clown2Script:
-JubilifeCity_Clown3Script:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_POKETCH_COUPON_1
+	iftrue .DoAnswer
+	writetext .QuestionText
+	yesorno
+	iftrue .Correct
+	playsound SFX_WRONG
+	writetext .WrongText
+	waitsfx
+.Done:
+	waitbutton
+	closetext
 	end
+
+.Correct:
+	playsound SFX_ELEVATOR_END
+	writetext .RightText
+	waitsfx
+	buttonsound
+.DoAnswer:
+	writetext .AnswerText
+	checkevent EVENT_GOT_POKETCH_COUPON_1
+	iftrue .Done
+	buttonsound
+	writetext .CouponText
+	waitbutton
+	verbosegiveitem COUPON
+	setevent EVENT_GOT_POKETCH_COUPON_1
+	closetext
+	end
+
+.QuestionText:
+	text "Hi! I'm a #TCH"
+	line "campaign clown!"
+
+	para "Let's roll out my"
+	line "question!"
+
+	para "Does a #MON"
+	line "grow by defeating"
+	cont "others and gaining"
+	cont "EXP. POINTS?"
+	done
+
+.WrongText:
+	text "Bzzzzt! That's the"
+	line "wrong answer…"
+	done
+
+.RightText:
+	text "Ding-ding! You're"
+	line "absolutely right!"
+	done
+
+.AnswerText:
+	text "#MON grow"
+	line "stronger by"
+	cont "defeating other"
+	cont "#MON in battle."
+
+	para "Some #MON even"
+	line "grow into an"
+	cont "entirely different"
+	cont "form in a process"
+	cont "called evolution."
+	done
+
+.CouponText:
+	text "Here you go! Your"
+	line "#TCH COUPON!"
+	done
+
+JubilifeCity_Clown3Script:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_POKETCH_COUPON_2
+	iftrue .DoAnswer
+	writetext .QuestionText
+	yesorno
+	iftrue .Correct
+	playsound SFX_WRONG
+	writetext .WrongText
+	waitsfx
+.Done:
+	waitbutton
+	closetext
+	end
+
+.Correct:
+	playsound SFX_ELEVATOR_END
+	writetext .RightText
+	waitsfx
+	buttonsound
+.DoAnswer:
+	writetext .AnswerText
+	checkevent EVENT_GOT_POKETCH_COUPON_2
+	iftrue .Done
+	buttonsound
+	writetext .CouponText
+	waitbutton
+	verbosegiveitem COUPON
+	setevent EVENT_GOT_POKETCH_COUPON_2
+	closetext
+	end
+
+.QuestionText:
+	text "Hi! I'm a #TCH"
+	line "campaign clown!"
+
+	para "Let's roll out my"
+	line "question!"
+
+	para "Just like #MON"
+	line "types, the moves"
+	cont "of #MON also"
+	cont "have types?"
+	done
+
+.WrongText:
+	text "Bzzzzt! That's the"
+	line "wrong answer…"
+	done
+
+.RightText:
+	text "Ding-ding! You're"
+	line "absolutely right!"
+	done
+
+.AnswerText:
+	text "If the #MON's"
+	line "type matches its"
+	cont "move's type, that"
+	cont "move is made much"
+	cont "more powerful!"
+	done
+
+.CouponText:
+	text "Here you go! Your"
+	line "#TCH COUPON!"
+	done
 
 JubilifeCity_SchoolSignScript:
 	jumptext .Text
@@ -1027,6 +1237,255 @@ JubilifeCity_CantLeaveRivalScript:
 	turn_head UP
 	step_end
 
+JubilifeCity_CantLeavePoketchScriptU:
+	settableindex 0
+	sjump JubilifeCity_CantLeavePoketchScript
+
+JubilifeCity_CantLeavePoketchScriptD:
+	settableindex 1
+JubilifeCity_CantLeavePoketchScript:
+	showemote EMOTE_SHOCK, JUBILIFECITY_LOOKER, 15
+	turnobject PLAYER, LEFT
+	applymovementtable JUBILIFECITY_LOOKER, .ApproachPlayerMovement
+	opentext
+	writetext .GetPoketchText
+	waitbutton
+	closetext
+	follow JUBILIFECITY_LOOKER, PLAYER
+	applymovement JUBILIFECITY_LOOKER, .PullBackMovement
+	stopfollow
+	pause 5
+	applymovementtable JUBILIFECITY_LOOKER, .ReturnMovement
+	end
+
+.GetPoketchText:
+	text "LOOKER: Tell me,"
+	line "have you not yet"
+	cont "obtained a"
+	cont "#TCH?"
+
+	para "I believe a"
+	line "#TCH is now"
+	cont "free in exchange"
+	cont "for some COUPONS?"
+	done
+
+.ApproachPlayerMovement:
+	dw .ApproachPlayerMovementU
+	dw .ApproachPlayerMovementD
+
+.ReturnMovement:
+	dw .ReturnMovementU
+	dw .ReturnMovementD
+
+.ApproachPlayerMovementU:
+	step UP
+.ApproachPlayerMovementD:
+	step UP
+	step RIGHT
+	step_end
+
+.PullBackMovement:
+	step LEFT
+	turn_head RIGHT
+	step_end
+
+.ReturnMovementU:
+	step DOWN
+.ReturnMovementD:
+	step DOWN
+	turn_head UP
+	step_end
+
+JubilifeCity_StartPoketchScript1:
+	settableindex 0
+	sjump JubilifeCity_StartPoketchScript
+
+JubilifeCity_StartPoketchScript2:
+	settableindex 1
+	sjump JubilifeCity_StartPoketchScript
+
+JubilifeCity_StartPoketchScript3:
+	settableindex 2
+	sjump JubilifeCity_StartPoketchScript
+
+JubilifeCity_StartPoketchScript4:
+	settableindex 3
+JubilifeCity_StartPoketchScript:
+	showemote EMOTE_SHOCK, JUBILIFECITY_DAWNLUCAS_PRES, 15
+	applymovementtable JUBILIFECITY_DAWNLUCAS_PRES, .ApproachPlayerMovement
+	opentext
+	writetext .HaveNoPoketchText
+	buttonsound
+	writetext .IInventedText
+	waitbutton
+	closetext
+	setscene SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH
+	end
+
+.HaveNoPoketchText:
+	text "Oh, oh, oh?"
+
+	para "You call yourself"
+	line "a #MON TRAINER?"
+
+	para "And yet you have"
+	line "no #TCH?"
+
+	para "That is,"
+	line "#MON WATCH, or"
+	cont "#TCH for short!"
+
+	para "Oh my, you are a"
+	line "rare case indeed!"
+	done
+
+.IInventedText:
+	text "You see, I"
+	line "invented, and now"
+	cont "manufacture,"
+	cont "#TCHES."
+
+	para "Not only that, I'm"
+	line "now conducting the"
+	cont "#TCH promo"
+	cont "campaign!"
+
+	para "All you have to do"
+	line "is find three"
+	cont "clowins in"
+	cont "JUBILIFE CITY."
+
+	para "If you can find"
+	line "them…"
+
+	para "I will gift you a"
+	line "#TCH!"
+	done
+
+.ApproachPlayerMovement:
+	dw .ApproachPlayerMovement1
+	dw .ApproachPlayerMovement2
+	dw .ApproachPlayerMovement3
+	dw .ApproachPlayerMovement4
+
+.ApproachPlayerMovement1:
+	step LEFT
+.ApproachPlayerMovement2:
+	step DOWN
+	step_end
+
+.ApproachPlayerMovement4:
+	step RIGHT
+.ApproachPlayerMovement3:
+	step RIGHT
+	step DOWN
+	step_end
+
+JubilifeCity_PresScript:
+	faceplayer
+	checkevent EVENT_GOT_POKETCH_COUPON_1
+	iffalse .Intro
+	checkevent EVENT_GOT_POKETCH_COUPON_2
+	iffalse .Intro
+	checkevent EVENT_GOT_POKETCH_COUPON_3
+	iffalse .Intro
+	opentext
+	writetext .CountText
+	buttonsound
+	takeitem COUPON, 3
+	writetext .GotPoketchText
+	playsound SFX_ITEM
+	waitsfx
+	setflag ENGINE_POKEGEAR
+	setflag ENGINE_MAP_CARD
+	writetext .AddAppsText
+	waitbutton
+	closetext
+	callstd tableindexfromfacing
+	applymovementtable JUBILIFECITY_DAWNLUCAS_PRES, .LeaveMovement
+	disappear JUBILIFECITY_DAWNLUCAS_PRES
+	setevent EVENT_GOT_POKETCH
+	disappear JUBILIFECITY_LOOKER
+	setscene SCENE_JUBILIFECITY_NOTHING
+	end
+
+.Intro:
+	jumptext .IntroText
+
+.CountText:
+	text "OK, let me count"
+	line "your COUPONS!"
+
+	para "I'll use the"
+	line "#TCH here…"
+
+	para "One, two, three!"
+	line "Bravo! I say,"
+	cont "bravo!"
+
+	para "In return for"
+	line "these COUPONS, I"
+	cont "present you this"
+	cont "#MON WATCH, or"
+	cont "#TCH for short!"
+	done
+
+.GotPoketchText:
+	text "<PLAYER> received"
+	line "a #TCH!"
+	done
+
+.AddAppsText: ; change this?
+	text "You can add apps"
+	line "to your #TCH to"
+	cont "make it even more"
+	cont "versatile!"
+
+	para "Touch the #TCH"
+	line "screen and find"
+	cont "the apps that are"
+	cont "right for you!"
+	done
+
+.LeaveMovement:
+	dw .LeaveMovement2
+	dw .LeaveMovement1
+	dw .LeaveMovement1
+	dw .LeaveMovement1
+
+.LeaveMovement2:
+	step LEFT
+	step UP
+.LeaveMovement1:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+.IntroText:
+	text "The three clowns"
+	line "will each ask you"
+	cont "a skill-testing"
+	cont "question."
+
+	para "The questions all"
+	line "have to do with"
+	cont "#MON."
+
+	para "After all, a"
+	line "#TCH is a tool"
+	cont "for #MON"
+	cont "TRAINERS."
+
+	para "Collect a COUPON"
+	line "from each clown,"
+	cont "then come see me,"
+	cont "OK?"
+	done
+
 JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1042,7 +1501,7 @@ JubilifeCity_MapEvents:
 	warp_event 14, 25, POKEMON_COMMUNICATION_CENTER, 1
 	warp_event 20, 23, TRAINERS_SCHOOL, 1
 
-	db 10 ; coord events
+	db 15 ; coord events
 	coord_event 26, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript1
 	coord_event 27, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript2
 	coord_event 28, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript3
@@ -1050,8 +1509,13 @@ JubilifeCity_MapEvents:
 	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, JubilifeCity_CantLeaveRivalScriptU
 	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, JubilifeCity_CantLeaveRivalScriptD
 	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL, JubilifeCity_GlobalTerminalStopScript
-	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, CoordinatesEvent
-	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, CoordinatesEvent
+	coord_event 26, 21, SCENE_JUBILIFECITY_START_POKETCH, JubilifeCity_StartPoketchScript1
+	coord_event 27, 21, SCENE_JUBILIFECITY_START_POKETCH, JubilifeCity_StartPoketchScript2
+	coord_event 28, 21, SCENE_JUBILIFECITY_START_POKETCH, JubilifeCity_StartPoketchScript3
+	coord_event 29, 21, SCENE_JUBILIFECITY_START_POKETCH, JubilifeCity_StartPoketchScript4
+	coord_event 17, 27, SCENE_JUBILIFECITY_START_POKETCH, JubilifeCity_GlobalTerminalStopScript
+	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_CantLeavePoketchScriptU
+	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_CantLeavePoketchScriptD
 	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_GlobalTerminalStopScript
 
 	db 12 ; bg events
@@ -1069,7 +1533,7 @@ JubilifeCity_MapEvents:
 	bg_event 11, 16, BGEVENT_ITEM, JubilifeCity_HiddenPotion
 
 	db 15 ; object events
-	object_event 27, 32, SPRITE_DAWN_LUCAS2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_JUBILIFE_CITY_DAWNLUCAS
+	object_event 27, 32, SPRITE_DAWN_LUCAS2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_PresScript, EVENT_JUBILIFE_CITY_DAWNLUCAS
 	object_event 35, 16, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, JubilifeCity_LookerScript, EVENT_JUBILIFE_CITY_LOOKER
 	object_event 17, 26, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_GlobalTerminalGuardScript, -1
 	object_event 21, 26, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_SchoolGuyScript, -1

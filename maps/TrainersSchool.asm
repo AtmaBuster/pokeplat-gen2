@@ -21,6 +21,7 @@ TrainersSchool_RivalScript:
 	writetext .DeliveredText
 	playsound SFX_ITEM
 	waitsfx
+	takeitem PARCEL
 	writetext .WhatIsThisText
 	waitbutton
 	verbosegiveitem TOWN_MAP ; change to map card
@@ -30,10 +31,11 @@ TrainersSchool_RivalScript:
 	callstd tableindexfromfacing
 	applymovementtable TRAINERSSCHOOL_RIVAL, .LeaveMovement
 	disappear TRAINERSSCHOOL_RIVAL
-	setmapscene JUBILIFE_CITY, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH
+	setmapscene JUBILIFE_CITY, SCENE_JUBILIFECITY_START_POKETCH
 	clearevent EVENT_JUBILIFE_CITY_CLOWNS
 	variablesprite SPRITE_DAWN_LUCAS2, SPRITE_POKEFAN_M
 	clearevent EVENT_JUBILIFE_CITY_DAWNLUCAS
+	setevent EVENT_GAVE_PARCEL_TO_RIVAL
 	end
 
 .ComeToStudyText:

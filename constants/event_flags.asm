@@ -84,10 +84,10 @@
 	const EVENT_GOT_ICICLE_BADGE                 ; EV 04d
 	const EVENT_GOT_BEACON_BADGE                 ; EV 04e
 	const EVENT_TRAINERS_SCHOOL_GOT_POTION       ; EV 04f
-	const EVENT_050                              ; EV 050
-	const EVENT_051                              ; EV 051
-	const EVENT_052                              ; EV 052
-	const EVENT_053                              ; EV 053
+	const EVENT_GOT_POKETCH_COUPON_1             ; EV 050
+	const EVENT_GOT_POKETCH_COUPON_2             ; EV 051
+	const EVENT_GOT_POKETCH_COUPON_3             ; EV 052
+	const EVENT_GOT_POKETCH                      ; EV 053
 	const EVENT_054                              ; EV 054
 	const EVENT_055                              ; EV 055
 	const EVENT_056                              ; EV 056

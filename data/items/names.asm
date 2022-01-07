@@ -48,7 +48,7 @@ ItemNames::
 	db "SODA POP@"
 	db "LEMONADE@"
 	db "X ATTACK@"
-	db "???@"
+	db "COUPON@"
 	db "X DEFEND@"
 	db "X SPEED@"
 	db "X SPECIAL@"

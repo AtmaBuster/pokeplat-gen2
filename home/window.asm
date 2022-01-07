@@ -36,7 +36,7 @@ CloseText::
 	xor a
 	ldh [hBGMapMode], a
 	call SafeUpdateSprites
-	farcall ReloadVisibleSprites
+;	farcall ReloadVisibleSprites
 	ld a, $90
 	ldh [hWY], a
 	call ReplaceKrisSprite

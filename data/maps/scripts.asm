@@ -59,6 +59,10 @@ INCLUDE "maps/TVStation3F3.asm"
 INCLUDE "maps/TVStation4F.asm"
 INCLUDE "maps/TVStationElevator.asm"
 INCLUDE "maps/PokemonCommunicationCenter.asm"
+
+
+SECTION "Map Scripts 5", ROMX
+
 INCLUDE "maps/JubilifePokemonCenter1F.asm"
 INCLUDE "maps/JubilifePokeMart.asm"
 INCLUDE "maps/OreburghGate1F.asm"
@@ -68,7 +72,6 @@ INCLUDE "maps/OreburghMineB1F.asm"
 INCLUDE "maps/OreburghMineB2F.asm"
 
 
-SECTION "Map Scripts 5", ROMX
 SECTION "Map Scripts 6", ROMX
 SECTION "Map Scripts 7", ROMX
 SECTION "Map Scripts 8", ROMX
