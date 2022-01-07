@@ -21,4 +21,5 @@ MapScenes::
 	scene_var ROWANS_LAB,         wRowansLabSceneID
 	scene_var ROUTE_202,          wRoute202SceneID
 	scene_var JUBILIFE_CITY,      wJubilifeCitySceneID
+	scene_var ROUTE_203,          wRoute203SceneID
 	db -1 ; end

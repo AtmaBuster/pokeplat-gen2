@@ -2772,8 +2772,9 @@ wSandgemTownSceneID::      db
 wRowansLabSceneID::        db
 wRoute202SceneID::         db
 wJubilifeCitySceneID::     db
+wRoute203SceneID::         db
 
-	ds 63
+	ds 62
 
 ; fight counts
 wJackFightCount::    db ; d9f2
