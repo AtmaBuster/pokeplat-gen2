@@ -11,6 +11,70 @@
 	const ROUTE_203
 	const OREBURGH_GATE
 	const OREBURGH_CITY
+	const ROUTE_204
+	const RAVAGED_PATH
+	const FLOAROMA_TOWN
+	const VALLEY_WINDWORKS
+	const ROUTE_205
+	const FLOAROMA_MEADOW
+	const ETERNA_FOREST
+	const ETERNA_CITY
+	const ROUTE_211
+	const ROUTE_206
+	const WAYWARD_CAVE
+	const ROUTE_207
+	const MT_CORONET
+	const ROUTE_208
+	const HEARTHOME_CITY
+	const AMITY_SQUARE
+	const ROUTE_209
+	const SOLACEON_TOWN
+	const SOLACEON_RUINS
+	const ROUTE_210
+	const ROUTE_215
+	const VEILSTONE_CITY
+	const ROUTE_214
+	const MANIAC_TUNNEL
+	const LAKE_VALOR
+	const ROUTE_213
+	const PASTORIA_CITY
+	const GREAT_MARSH
+	const ROUTE_212
+	const POKEMON_MANSION
+	const ROUTE_218
+	const CANALAVE_CITY
+	const IRON_ISLAND
+	const ROUTE_216
+	const ROUTE_217
+	const LAKE_ACUITY
+	const SNOWPOINT_CITY
+	const SNOWPOINT_TEMPLE
+	const SPEAR_PILLAR
+	const ROUTE_222
+	const SUNYSHORE_CITY
+	const ROUTE_223
+	const VICTORY_ROAD
+	const POKEMON_LEAGUE
+	const ROUTE_219
+	const ROUTE_220
+	const ROUTE_221
+	const PAL_PARK
+	const ROUTE_224
+	const FIGHT_AREA
+	const BATTLE_FRONTIER
+	const ROUTE_225
+	const SURVIVAL_AREA
+	const ROUTE_226
+	const ROUTE_227
+	const STARK_MOUNTAIN
+	const ROUTE_228
+	const ROUTE_229
+	const RESORT_AREA
+	const ROUTE_230
+	const FULLMOON_ISLAND
+	const NEWMOON_ISLAND
+	const SEABREAK_PATH
+	const FLOWER_PARADISE
 
 
 
@@ -109,7 +173,7 @@ KANTO_LANDMARK EQU const_value
 	const CINNABAR_ISLAND   ; 55
 	const ROUTE_21          ; 56
 	const ROUTE_22          ; 57
-	const VICTORY_ROAD      ; 58
+	const _VICTORY_ROAD     ; 58 ; old
 	const ROUTE_23          ; 59
 	const INDIGO_PLATEAU    ; 5a
 	const ROUTE_26          ; 5b

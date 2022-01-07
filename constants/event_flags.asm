@@ -88,10 +88,10 @@
 	const EVENT_GOT_POKETCH_COUPON_2             ; EV 051
 	const EVENT_GOT_POKETCH_COUPON_3             ; EV 052
 	const EVENT_GOT_POKETCH                      ; EV 053
-	const EVENT_054                              ; EV 054
-	const EVENT_055                              ; EV 055
-	const EVENT_056                              ; EV 056
-	const EVENT_057                              ; EV 057
+	const EVENT_BEAT_LEAGUE                      ; EV 054
+	const EVENT_VISITED_FULLMOON_ISLAND          ; EV 055
+	const EVENT_VISITED_NEWMOON_ISLAND           ; EV 056
+	const EVENT_UNLOCKED_FLOWER_PARADISE         ; EV 057
 	const EVENT_058                              ; EV 058
 	const EVENT_059                              ; EV 059
 	const EVENT_05A                              ; EV 05a
@@ -520,6 +520,9 @@
 	const EVENT_BEAT_RIVAL1_1_TURTWIG            ; EV ---
 	const EVENT_BEAT_RIVAL1_1_CHIMCHAR           ; EV ---
 	const EVENT_BEAT_RIVAL1_1_PIPLUP             ; EV ---
+	const EVENT_BEAT_RIVAL1_2_TURTWIG            ; EV ---
+	const EVENT_BEAT_RIVAL1_2_CHIMCHAR           ; EV ---
+	const EVENT_BEAT_RIVAL1_2_PIPLUP             ; EV ---
 	const EVENT_BEAT_YOUNGSTER_TRISTAN1          ; EV ---
 	const EVENT_BEAT_YOUNGSTER_TRISTAN2          ; EV ---
 	const EVENT_BEAT_YOUNGSTER_TRISTAN3          ; EV ---
@@ -528,9 +531,6 @@
 	const EVENT_BEAT_SCHOOLBOY_HARRISON          ; EV ---
 	const EVENT_BEAT_LASS_NATALIE                ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_20B                              ; EV 20b
-	const EVENT_20C                              ; EV 20c
-	const EVENT_20D                              ; EV 20d
 	const EVENT_20E                              ; EV 20e
 	const EVENT_20F                              ; EV 20f
 	const EVENT_210                              ; EV 210

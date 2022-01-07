@@ -95,6 +95,24 @@ Rival1Group:
 	db "BARRY@", TRAINERTYPE_NORMAL
 	trainermon_normal  5, PIPLUP
 	db -1 ; end
+
+	next_list_item ; RIVAL1 (4)
+	db "BARRY@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, STARLY
+	trainermon_normal  9, TURTWIG
+	db -1 ; end
+
+	next_list_item ; RIVAL1 (5)
+	db "BARRY@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, STARLY
+	trainermon_normal  9, CHIMCHAR
+	db -1 ; end
+
+	next_list_item ; RIVAL1 (6)
+	db "BARRY@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, STARLY
+	trainermon_normal  9, PIPLUP
+	db -1 ; end
 	end_list_items
 
 PokemonProfGroup:

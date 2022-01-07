@@ -572,8 +572,16 @@ PokegearMap_KantoMap:
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
-	ld d, SILVER_CAVE
-	ld e, NEW_BARK_TOWN
+	ld de, EVENT_BEAT_LEAGUE
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	ld d, FLOWER_PARADISE
+	jr nz, .got_first
+	ld d, PAL_PARK
+.got_first
+	ld e, TWINLEAF_TOWN
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -636,6 +644,8 @@ PokegearMap_ContinueMap:
 	ld [hl], a
 .wrap_around_up
 	inc [hl]
+	call CheckHiddenLandmark
+	jr c, .up
 	jr .done_dpad
 
 .down
@@ -648,6 +658,8 @@ PokegearMap_ContinueMap:
 	ld [hl], a
 .wrap_around_down
 	dec [hl]
+	call CheckHiddenLandmark
+	jr c, .down
 .done_dpad
 	ld a, [wPokegearMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
@@ -658,6 +670,41 @@ PokegearMap_ContinueMap:
 	ld a, [wPokegearMapCursorLandmark]
 	call PokegearMap_UpdateCursorPosition
 	ret
+
+CheckHiddenLandmark:
+	ld a, [hl]
+	ld c, a
+	ld hl, .special_landmarks
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	cp c
+	jr z, .hit
+	inc hl
+	inc hl
+	jr .loop
+
+.hit
+	push de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	pop de
+	ld a, c
+	and a
+	ret nz
+	scf
+	ret
+	
+.special_landmarks ; landmark, event flag
+	dbw FULLMOON_ISLAND, EVENT_VISITED_FULLMOON_ISLAND
+	dbw NEWMOON_ISLAND,  EVENT_VISITED_NEWMOON_ISLAND
+	dbw SEABREAK_PATH,   EVENT_UNLOCKED_FLOWER_PARADISE
+	dbw FLOWER_PARADISE, EVENT_UNLOCKED_FLOWER_PARADISE
+	db -1
 
 PokegearMap_InitPlayerIcon:
 	push af
@@ -2662,7 +2709,44 @@ TownMapBGUpdate:
 
 FillJohtoMap:
 	ld de, JohtoMap
-	jr FillTownMap
+	call FillTownMap
+; check Fullmoon Island
+	ld de, EVENT_VISITED_FULLMOON_ISLAND
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	call z, .FullmoonIsland
+; check Newmoon Island
+	ld de, EVENT_VISITED_NEWMOON_ISLAND
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	call z, .NewmoonIsland
+; check Seabreak Path and Flower Paradise
+	ld de, EVENT_UNLOCKED_FLOWER_PARADISE
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	call z, .FlowerParadise
+	ret
+
+.FullmoonIsland:
+	hlcoord 1, 3
+	ld [hl], $18
+	ret
+
+.NewmoonIsland:
+	hlcoord 3, 3
+	ld [hl], $18
+	ret
+
+.FlowerParadise:
+	hlcoord 18, 3
+	ld [hl], $18
+	hlcoord 18, 4
+	ld [hl], $18
+	hlcoord 18, 5
+	ld [hl], $18
+	hlcoord 18, 6
+	ld [hl], $18
+	ret
 
 FillKantoMap:
 	ld de, KantoMap

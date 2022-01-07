@@ -36,6 +36,9 @@ CHRIS EQU __enum__
 	const RIVAL1_1_TURTWIG
 	const RIVAL1_1_CHIMCHAR
 	const RIVAL1_1_PIPLUP
+	const RIVAL1_2_TURTWIG
+	const RIVAL1_2_CHIMCHAR
+	const RIVAL1_2_PIPLUP
 
 	trainerclass POKEMON_PROF ; a
 	trainerclass WILL ; b

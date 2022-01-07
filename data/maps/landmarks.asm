@@ -76,6 +76,10 @@ Landmarks:
 	landmark 132,  36, Route229Name
 	landmark 132,  44, ResortAreaName
 	landmark 120,  44, Route230Name
+	landmark  12,  28, FullmoonIslandName
+	landmark  28,  28, NewmoonIslandName
+	landmark 148,  44, SeabreakPathName
+	landmark 148,  28, FlowerParadiseName
 
 TwinleafTownName:    db "TWINLEAF¯TOWN@"
 SandgemTownName:     db "SANDGEM¯TOWN@"
@@ -121,7 +125,7 @@ SendoffSpringName:   db "SENDOFF¯SPRING@"
 FullmoonIslandName:  db "FULLMOON¯ISLAND@"
 NewmoonIslandName:   db "NEWMOON¯ISLAND@"
 SeabreakPathName:    db "SEABREAK¯PATH@"
-FlowerParadiseName:  db "FLOWER PARADISE@"
+FlowerParadiseName:  db "FLOWER¯PARADISE@"
 HallOfOriginName:    db "HALL OF¯ORIGIN@"
 Route201Name:        db "ROUTE 201@"
 Route202Name:        db "ROUTE 202@"
