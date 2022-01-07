@@ -2,7 +2,7 @@
 
 TrainerPicPointers::
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
-	dba FalknerPic
+	dba RoarkPic
 	dba WhitneyPic
 	dba BugsyPic
 	dba MortyPic
