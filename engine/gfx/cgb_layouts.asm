@@ -1052,9 +1052,9 @@ DebugMenuPokePicApplyPal::
 	ret
 
 DebugMenuTrainerPicColors::
-	ld a, [wMenuCursorY]
 	xor a
 	ld [wArceusPalNum], a
+	ld a, [wMenuCursorY]
 	call GetTrainerPalettePointer
 	ld de, wBGPals1 palette 1
 	call LoadPalette_Mon
