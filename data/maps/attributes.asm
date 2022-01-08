@@ -99,7 +99,8 @@ ENDM
 	map_attributes TwinleafTown, TWINLEAF_TOWN, $01, NORTH
 	connection north, Route201, ROUTE_201, -4
 
-	map_attributes JubilifeCity, JUBILIFE_CITY, $01, SOUTH | EAST
+	map_attributes JubilifeCity, JUBILIFE_CITY, $01, NORTH | SOUTH | EAST
+	connection north, Route204, ROUTE_204, 9
 	connection south, Route202, ROUTE_202, 9
 	connection east, Route203, ROUTE_203, 0
 
@@ -118,6 +119,9 @@ ENDM
 	map_attributes Route203, ROUTE_203, $01, WEST | EAST
 	connection west, JubilifeCity, JUBILIFE_CITY, 0
 	connection east, OreburghCity, OREBURGH_CITY, 2
+	
+	map_attributes Route204, ROUTE_204, $1, SOUTH
+	connection south, JubilifeCity, JUBILIFE_CITY, -9
 	
 	map_attributes OreburghCity, OREBURGH_CITY, $09, WEST
 	connection west, Route203, ROUTE_203, -2

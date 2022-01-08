@@ -40,6 +40,7 @@ SECTION "Map Scripts 4", ROMX
 INCLUDE "maps/Route202.asm"
 INCLUDE "maps/JubilifeCity.asm"
 INCLUDE "maps/Route203.asm"
+INCLUDE "maps/Route204.asm"
 INCLUDE "maps/JubilifeApartmentSE1F.asm"
 INCLUDE "maps/JubilifeApartmentSE2F.asm"
 INCLUDE "maps/JubilifeApartmentNE1F.asm"

@@ -80,6 +80,9 @@ JubilifeCity_Blocks:
 Route203_Blocks:
 	INCBIN "maps/Route203.blk"
 	
+Route204_Blocks:
+	INCBIN "maps/Route204.blk"
+	
 JubilifeApartmentSE1F_Blocks:
 JubilifeApartmentNE1F_Blocks:
 JubilifeApartmentSW1F_Blocks:
