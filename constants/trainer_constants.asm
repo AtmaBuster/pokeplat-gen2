@@ -107,7 +107,11 @@ CHRIS EQU __enum__
 	trainerclass EXECUTIVEM ; 33
 	trainerclass PSYCHIC_T ; 34
 	trainerclass PICNICKER ; 35
+	const DIANA
+
 	trainerclass CAMPER ; 36
+	const CURTIS
+
 	trainerclass EXECUTIVEF ; 37
 	trainerclass SAGE ; 38
 	trainerclass MEDIUM ; 39

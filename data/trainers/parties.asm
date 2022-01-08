@@ -354,9 +354,18 @@ PsychicGroup:
 	end_list_items
 
 PicnickerGroup:
+	next_list_item ; PICNICKER (1)
+	db "DIANA@", TRAINERTYPE_NORMAL
+	trainermon_normal  9, BIDOOF
+	db -1 ; end
 	end_list_items
 
 CamperGroup:
+	next_list_item ; CAMPER (1)
+	db "CURTIS@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, STARLY
+	trainermon_normal  7, SHINX
+	db -1 ; end
 	end_list_items
 
 ExecutiveFGroup:

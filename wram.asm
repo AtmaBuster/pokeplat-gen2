@@ -2774,8 +2774,9 @@ wRowansLabSceneID::        db
 wRoute202SceneID::         db
 wJubilifeCitySceneID::     db
 wRoute203SceneID::         db
+wOreburghGate1FSceneID::     db
 
-	ds 62
+	ds 61
 
 ; fight counts
 wJackFightCount::    db ; d9f2

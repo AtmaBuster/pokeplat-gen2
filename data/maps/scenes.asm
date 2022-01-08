@@ -22,4 +22,5 @@ MapScenes::
 	scene_var ROUTE_202,          wRoute202SceneID
 	scene_var JUBILIFE_CITY,      wJubilifeCitySceneID
 	scene_var ROUTE_203,          wRoute203SceneID
+	scene_var OREBURGH_GATE_1F,   wOreburghGate1FSceneID
 	db -1 ; end

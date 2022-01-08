@@ -92,7 +92,7 @@
 	const EVENT_VISITED_FULLMOON_ISLAND          ; EV 055
 	const EVENT_VISITED_NEWMOON_ISLAND           ; EV 056
 	const EVENT_UNLOCKED_FLOWER_PARADISE         ; EV 057
-	const EVENT_058                              ; EV 058
+	const EVENT_GOT_HM05_ROCK_SMASH              ; EV 058
 	const EVENT_059                              ; EV 059
 	const EVENT_05A                              ; EV 05a
 	const EVENT_05B                              ; EV 05b
@@ -541,9 +541,9 @@
 	const EVENT_BEAT_LASS_MADELINE2              ; EV ---
 	const EVENT_BEAT_LASS_MADELINE3              ; EV ---
 	const EVENT_BEAT_LASS_MADELINE4              ; EV ---
+	const EVENT_BEAT_PICNICKER_DIANA             ; EV ---
+	const EVENT_BEAT_CAMPER_CURTIS               ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_219                              ; EV 219
-	const EVENT_21A                              ; EV 21a
 	const EVENT_21B                              ; EV 21b
 	const EVENT_21C                              ; EV 21c
 	const EVENT_21D                              ; EV 21d
