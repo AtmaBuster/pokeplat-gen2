@@ -1033,9 +1033,9 @@
 ; Itemballs                                          ; EV -
 	const EVENT_ROUTE_202_POTION                 ; EV 400
 	const EVENT_TRAINERS_SCHOOL_X_ATTACK         ; EV 401
-	const EVENT_402                              ; EV 402
-	const EVENT_403                              ; EV 403
-	const EVENT_404                              ; EV 404
+	const EVENT_ROUTE_203_POKE_BALL              ; EV 402
+	const EVENT_ROUTE_203_REPEL                  ; EV 403
+	const EVENT_ROUTE_203_X_DEFEND               ; EV 404
 	const EVENT_405                              ; EV 405
 	const EVENT_406                              ; EV 406
 	const EVENT_407                              ; EV 407
@@ -1592,7 +1592,7 @@
 	const EVENT_JUBILIFE_CITY_LOOKER             ; EV 62b
 	const EVENT_JUBILIFE_CITY_CLOWNS             ; EV 62c
 	const EVENT_TRAINERS_SCHOOL_RIVAL            ; EV 62d
-	const EVENT_62E                              ; EV 62e
+	const EVENT_ROUTE_203_RIVAL                  ; EV 62e
 	const EVENT_62F                              ; EV 62f
 	const EVENT_630                              ; EV 630
 	const EVENT_631                              ; EV 631
