@@ -88,14 +88,18 @@ ENDM
 	newgroup ; Oreburgh & Routes								  ;  5
 	
 	map_const OREBURGH_CITY,							   25, 20 ;  1
+	
+	newgroup ; Canalave & Route 218                                  6
+	
+	map_const ROUTE_218,                                   20, 12 ;  1
 
-	newgroup ; Lakes & Caverns                                    ;  6
+	newgroup ; Lakes & Caverns                                    ;  7
 	
 	map_const LAKE_VERITY_LOW,                             17, 12 ;  1
 	map_const LAKE_VERITY_HIGH,                            17, 12 ;  2
 	map_const LAKE_VERITY_CAVERN,                          10, 10 ;  3
 
-	newgroup ; Dungeons
+	newgroup ; Dungeons                                           ;  8
 	
 	map_const OREBURGH_GATE_1F, 						   15, 10 ;  1
 	map_const OREBURGH_GATE_B1F,                           25,  9 ;  2
