@@ -517,6 +517,22 @@
 	const EVENT_1FE                              ; EV 1fe
 	const EVENT_1FF                              ; EV 1ff
 ; Trainer flags                                      ; EV -
+	const EVENT_BEAR_LEADER_ROARK1               ; EV ---
+	const EVENT_BEAR_LEADER_ROARK2               ; EV ---
+	const EVENT_BEAR_LEADER_GARDENIA1            ; EV ---
+	const EVENT_BEAR_LEADER_GARDENIA2            ; EV ---
+	const EVENT_BEAR_LEADER_MAYLENE1             ; EV ---
+	const EVENT_BEAR_LEADER_MAYLENE2             ; EV ---
+	const EVENT_BEAR_LEADER_WAKE1                ; EV ---
+	const EVENT_BEAR_LEADER_WAKE2                ; EV ---
+	const EVENT_BEAR_LEADER_FANTINA1             ; EV ---
+	const EVENT_BEAR_LEADER_FANTINA2             ; EV ---
+	const EVENT_BEAR_LEADER_BYRON1               ; EV ---
+	const EVENT_BEAR_LEADER_BYRON2               ; EV ---
+	const EVENT_BEAR_LEADER_CANDICE1             ; EV ---
+	const EVENT_BEAR_LEADER_CANDICE2             ; EV ---
+	const EVENT_BEAR_LEADER_VOLKNER1             ; EV ---
+	const EVENT_BEAR_LEADER_VOLKNER2             ; EV ---
 	const EVENT_BEAT_RIVAL1_1_TURTWIG            ; EV ---
 	const EVENT_BEAT_RIVAL1_1_CHIMCHAR           ; EV ---
 	const EVENT_BEAT_RIVAL1_1_PIPLUP             ; EV ---
@@ -544,22 +560,6 @@
 	const EVENT_BEAT_PICNICKER_DIANA             ; EV ---
 	const EVENT_BEAT_CAMPER_CURTIS               ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_21B                              ; EV 21b
-	const EVENT_21C                              ; EV 21c
-	const EVENT_21D                              ; EV 21d
-	const EVENT_21E                              ; EV 21e
-	const EVENT_21F                              ; EV 21f
-	const EVENT_220                              ; EV 220
-	const EVENT_221                              ; EV 221
-	const EVENT_222                              ; EV 222
-	const EVENT_223                              ; EV 223
-	const EVENT_224                              ; EV 224
-	const EVENT_225                              ; EV 225
-	const EVENT_226                              ; EV 226
-	const EVENT_227                              ; EV 227
-	const EVENT_228                              ; EV 228
-	const EVENT_229                              ; EV 229
-	const EVENT_22A                              ; EV 22a
 	const EVENT_22B                              ; EV 22b
 	const EVENT_22C                              ; EV 22c
 	const EVENT_22D                              ; EV 22d

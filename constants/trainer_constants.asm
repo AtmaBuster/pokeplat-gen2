@@ -25,14 +25,36 @@ CHRIS EQU __enum__
 	const PHONECONTACT_BUENA
 
 	trainerclass ROARK ; 1
+	const ROARK1
+	const ROARK2
+
 	trainerclass GARDENIA ; 2
+	const GARDENIA1
+	const GARDENIA2
+
 	trainerclass MAYLENE ; 3
+	const MAYLENE1
+	const MAYLENE2
+
 	trainerclass WAKE ; 4
+	const WAKE1
+	const WAKE2
+
 	trainerclass FANTINA ; 5
+	const FANTINA1
+	const FANTINA2
+
 	trainerclass BYRON ; 6
+	const BYRON1
+	const BYRON2
+
 	trainerclass CANDICE ; 7
+	const CANDICE1
+	const CANDICE2
+
 	trainerclass VOLKNER ; 8
 	const VOLKNER1
+	const VOLKNER2
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_TURTWIG
