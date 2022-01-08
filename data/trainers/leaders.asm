@@ -5,14 +5,14 @@
 ; accounted for prior to the list check.
 
 GymLeaders:
-	db FALKNER
-	db WHITNEY
-	db BUGSY
-	db MORTY
-	db PRYCE
-	db JASMINE
-	db CHUCK
-	db CLAIR
+	db ROARK
+	db GARDENIA
+	db MAYLENE
+	db WAKE
+	db FANTINA
+	db BYRON
+	db CANDICE
+	db VOLKNER
 	db WILL
 	db BRUNO
 	db KAREN

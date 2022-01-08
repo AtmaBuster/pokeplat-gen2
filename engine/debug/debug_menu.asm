@@ -105,10 +105,11 @@ DebugMenu::
 	db "Fill Bag@"
 	db "Fill TM/HM@"
 	db "Play Cry@"
+	db "Trainer@"
 
 .MenuItems
-	db 13
-	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+	db 14
+	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 	db -1
 
 .Jumptable
@@ -125,6 +126,7 @@ DebugMenu::
 	dw Debug_FillBag
 	dw Debug_FillTMHM
 	dw Debug_PlayCry
+	dw Debug_Trainer
 
 Debug_SoundTest:
 	ld de, MUSIC_NONE
@@ -1393,4 +1395,253 @@ PrintHexNum:
 .ok
 	add "0"
 	ld [hli], a
+	ret
+
+Debug_Trainer:
+	xor a
+	ldh [hDebugMenuDataBuffer], a
+	ldh [hDebugMenuDataBuffer + 1], a
+	ldh [hDebugMenuCursorPos], a
+	hlcoord 0, 0
+	lb bc, 6, SCREEN_WIDTH - 2
+	call Textbox
+	call WaitBGMap2
+	call .update_display
+.loop
+	call JoyTextDelay
+	ldh a, [hJoyLast]
+	cp B_BUTTON
+	jp z, .end
+	cp D_LEFT
+	jr z, .left
+	cp D_RIGHT
+	jr z, .right
+	cp A_BUTTON
+	jp z, .fight
+	and D_UP | D_DOWN
+	jr nz, .change
+	jr .loop
+
+.change
+	ldh a, [hDebugMenuCursorPos]
+	inc a
+	and 1
+	ldh [hDebugMenuCursorPos], a
+	call .update_display
+	jr .loop
+
+.left
+	call .get_value
+.left_loop
+	dec d
+	dec a
+	jr nz, .left_loop
+	call .put_value
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	call z, .reset_trainer_num
+	call .update_display
+	jr .loop
+
+.right
+	call .get_value
+.right_loop
+	inc d
+	dec a
+	jr nz, .right_loop
+	call .put_value
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	call z, .reset_trainer_num
+	call .update_display
+	jr .loop
+
+.reset_trainer_num
+	ld a, 1
+	ldh [hDebugMenuDataBuffer + 1], a
+	ret
+
+.update_display
+	hlcoord 1, 2
+	ld a, " "
+	ld [hl], a
+	hlcoord 1, 5
+	ld a, " "
+	ld [hl], a
+	ldh a, [hDebugMenuCursorPos]
+	and a
+	hlcoord 1, 2
+	jr z, .got_cursor_pos
+	hlcoord 1, 5
+.got_cursor_pos
+	ld a, "▶"
+	ld [hl], a
+	call .update_class
+	hlcoord 3, 5
+	ld a, " "
+	ld bc, 15
+	call ByteFill
+	call .get_trainer_name
+	jr c, .skip_trainer_name
+	hlcoord 3, 5
+	ld de, wStringBuffer1
+	call PlaceString
+.skip_trainer_name
+	hlcoord 3, 6
+	ld de, hDebugMenuDataBuffer + 1
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	ret
+
+.update_class
+	hlcoord 3, 2
+	ld a, " "
+	ld bc, 15
+	call ByteFill
+	ld a, TRAINER_NAME
+	ld [wNamedObjectTypeBuffer], a
+	ldh a, [hDebugMenuDataBuffer]
+	and a
+	jr z, .skip_class_name
+	cp NUM_TRAINER_CLASSES
+	jr nc, .skip_class_name
+	ld [wCurSpecies], a
+	ld [wTrainerClass], a
+	call GetName
+	hlcoord 3, 2
+	ld de, wStringBuffer1
+	call PlaceString
+.skip_class_name
+	hlcoord 3, 3
+	ld de, hDebugMenuDataBuffer
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	ret
+
+.fight
+	ldh a, [hDebugMenuDataBuffer]
+	and a
+	jp z, .loop
+	cp NUM_TRAINER_CLASSES
+	jp nc, .loop
+	ld [wOtherTrainerClass], a
+	ldh a, [hDebugMenuDataBuffer + 1]
+	and a
+	jp z, .loop
+	ld [wOtherTrainerID], a
+	ld a, $1
+	ld [wBattleScriptFlags], a
+	ld hl, wWinTextPointer
+	ld a, LOW(DefaultWinText)
+	ld [hli], a
+	ld a, HIGH(DefaultWinText)
+	ld [hli], a
+	ld a, LOW(DefaultLossText)
+	ld [hli], a
+	ld a, HIGH(DefaultLossText)
+	ld [hl], a
+	call BufferScreen
+	predef StartBattle
+	ld a, MAPSETUP_RELOADMAP
+	ldh [hMapEntryMethod], a
+	ld a, MAPSTATUS_ENTER
+	call LoadMapStatus
+	ld hl, wScriptFlags
+	res SCRIPT_RUNNING, [hl]
+	pop af
+	ret
+
+.end
+	ret
+
+.get_value
+	ldh a, [hDebugMenuCursorPos]
+	ld hl, hDebugMenuDataBuffer
+	add l
+	ld l, a
+	ld d, [hl]
+	ldh a, [hJoyDown]
+	and SELECT
+	ld a, 1
+	ret z
+	ld a, 10
+	ret
+
+.put_value
+	ldh a, [hDebugMenuCursorPos]
+	ld hl, hDebugMenuDataBuffer
+	add l
+	ld l, a
+	ld [hl], d
+	ret
+
+.cancel_trainer_name
+	scf
+	ret
+
+.get_trainer_name
+	ldh a, [hDebugMenuDataBuffer]
+	and a
+	jr z, .cancel_trainer_name
+	cp NUM_TRAINER_CLASSES
+	jr nc, .cancel_trainer_name
+	dec a
+	ld c, a
+	add a
+	add c
+	ld c, a
+	ld b, 0
+	ld hl, TrainerGroups
+	ld a, BANK(TrainerGroups)
+	add hl, bc
+	call GetFarByte
+	push af
+	ld a, BANK(TrainerGroups)
+	inc hl
+	call GetFarHalfword
+	pop af
+	ld b, a
+	ldh a, [hDebugMenuDataBuffer + 1]
+	and a
+	jr z, .cancel_trainer_name
+	dec a
+	and a
+	jr z, .got_loc
+	ld c, a
+.trainer_name_loop
+	ld a, b
+	call GetFarByte
+	push bc
+	ld b, 0
+	ld c, a
+	add hl, bc
+	pop bc
+	dec c
+	jr z, .got_loc
+	jr .trainer_name_loop
+
+.got_loc
+	inc hl
+	ld de, wStringBuffer1
+	ld a, b
+	ld bc, 18
+	call FarCopyBytes
+	ld a, "@"
+	ld [wStringBuffer2 - 1], a
+	ld hl, wStringBuffer1
+	ld c, 18
+	call Debug_SanitizeString
+	and a
+	ret
+
+Debug_SanitizeString:
+.loop
+	ld a, [hli]
+	cp "@"
+	ret z
+	cp $80
+	jr nc, .loop
+	dec hl
+	ld a, "@"
+	ld [hl], a
 	ret

@@ -24,14 +24,16 @@ CHRIS EQU __enum__
 	const PHONECONTACT_ELM
 	const PHONECONTACT_BUENA
 
-	trainerclass FALKNER ; 1
-	trainerclass WHITNEY ; 2
-	trainerclass BUGSY ; 3
-	trainerclass MORTY ; 4
-	trainerclass PRYCE ; 5
-	trainerclass JASMINE ; 6
-	trainerclass CHUCK ; 7
-	trainerclass CLAIR ; 8
+	trainerclass ROARK ; 1
+	trainerclass GARDENIA ; 2
+	trainerclass MAYLENE ; 3
+	trainerclass WAKE ; 4
+	trainerclass FANTINA ; 5
+	trainerclass BYRON ; 6
+	trainerclass CANDICE ; 7
+	trainerclass VOLKNER ; 8
+	const VOLKNER1
+
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_TURTWIG
 	const RIVAL1_1_CHIMCHAR

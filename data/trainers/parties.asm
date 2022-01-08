@@ -56,28 +56,35 @@ ENDM
 
 SECTION "Enemy Trainer Parties 1", ROMX
 
-FalknerGroup:
+RoarkGroup:
 	end_list_items
 
-WhitneyGroup:
+GardeniaGroup:
 	end_list_items
 
-BugsyGroup:
+MayleneGroup:
 	end_list_items
 
-MortyGroup:
+CrasherWakeGroup:
 	end_list_items
 
-PryceGroup:
+FantinaGroup:
 	end_list_items
 
-JasmineGroup:
+ByronGroup:
 	end_list_items
 
-ChuckGroup:
+CandiceGroup:
 	end_list_items
 
-ClairGroup:
+VolknerGroup:
+	next_list_item ; VOLKNER (1)
+	db "VOLKNER@", TRAINERTYPE_ITEM_MOVES
+	trainermon_full 46, JOLTEON,    NO_ITEM,    CHARGE_BEAM,  THUNDER_WAVE, IRON_TAIL,   QUICK_ATTACK
+	trainermon_full 46, RAICHU,     NO_ITEM,    CHARGE_BEAM,  SIGNAL_BEAM,  FOCUS_BLAST, QUICK_ATTACK
+	trainermon_full 48, LUXRAY,     NO_ITEM,    THUNDER_FANG, ICE_FANG,     FIRE_FANG,   CRUNCH
+	trainermon_full 50, ELECTIVIRE, GOLD_BERRY, THUNDERPUNCH, FIRE_PUNCH,   GIGA_IMPACT, QUICK_ATTACK
+	db -1 ; end
 	end_list_items
 
 Rival1Group:

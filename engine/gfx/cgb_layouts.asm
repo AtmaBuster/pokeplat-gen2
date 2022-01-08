@@ -670,27 +670,27 @@ _CGB_TrainerCard:
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
-	ld a, BUGSY
+	ld a, GARDENIA
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
-	ld a, WHITNEY
+	ld a, MAYLENE
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
-	ld a, MORTY
+	ld a, WAKE
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; CLAIR
+	ld a, ROARK ; CLAIR
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
-	ld a, JASMINE
+	ld a, BYRON
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black
-	ld a, PRYCE ; CHUCK
+	ld a, CANDICE ; CHUCK
 	call GetTrainerPalettePointer
 	call LoadPalette_Mon
 ;	call LoadPalette_White_Col1_Col2_Black

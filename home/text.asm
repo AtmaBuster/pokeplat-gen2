@@ -1088,3 +1088,10 @@ TextCommand_DAY::
 .Fri:    db "FRI@"
 .Satur:  db "SATUR@"
 .Day:    db "DAY@"
+
+DefaultWinText::
+	text "Win"
+	done
+DefaultLossText::
+	text "Loss"
+	done
