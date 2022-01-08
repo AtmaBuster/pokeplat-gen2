@@ -196,6 +196,157 @@ Route203_RepelScript:
 Route203_XDefendScript:
 	itemball X_DEFEND
 
+TrainerYoungsterMichael:
+	trainer YOUNGSTER, MICHAEL, EVENT_BEAT_YOUNGSTER_MICHAEL, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "I get my energy"
+	line "from my #MON!"
+
+	para "Here we go!"
+	line "KRICKETOT! ZUBAT!"
+	done
+
+.BeatenText:
+	text "Ack! My #MON…"
+	done
+
+.AfterText:
+	text "Keep out of the"
+	line "grass or dodge the"
+	cont "eyes of TRAINERS…?"
+
+	para "I have a hard time"
+	line "deciding."
+	done
+
+TrainerYoungsterDallas:
+	trainer YOUNGSTER, DALLAS1, EVENT_BEAT_YOUNGSTER_DALLAS1, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "I'm never apart"
+	line "from my SHINX."
+
+	para "Our bond is"
+	line "strong!"
+	done
+
+.BeatenText:
+	text "So sad…"
+	line "And so crushed…"
+	done
+
+.AfterText:
+	text "I don't bear"
+	line "grudges over"
+	cont "losing."
+
+	para "But I promise I'll"
+	line "get tougher!"
+	done
+
+TrainerYoungsterBastian:
+	trainer YOUNGSTER, BASTIAN, EVENT_BEAT_YOUNGSTER_BASTIAN, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "Before I challenge"
+	line "the GYM LEADER,"
+	cont "I'll test my"
+	cont "strength on you!"
+	done
+
+.BeatenText:
+	text "I guess it means"
+	line "I'm not ready for"
+	cont "the GYM challenge…"
+	done
+
+.AfterText:
+	text "I guess if you"
+	line "don't have a single"
+	cont "GYM BADGE, you're a"
+	cont "total nobody…"
+	done
+
+TrainerLassKaitlin:
+	trainer LASS, KAITLIN, EVENT_BEAT_LASS_KAITLIN, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "I found a TRAINER"
+	line "while looking for"
+	cont "some #MON!"
+	done
+
+.BeatenText:
+	text "Hunh? You're"
+	line "finished so soon?"
+	done
+
+.AfterText:
+	text "I walk through the"
+	line "tall grass until"
+	cont "I find the #MON"
+	cont "I want."
+	done
+
+TrainerLassMadeline:
+	trainer LASS, MADELINE1, EVENT_BEAT_LASS_MADELINE1, .SeenText, .BeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext .AfterText
+	waitbutton
+	closetext
+	end
+
+.SeenText:
+	text "I got a nifty-keen"
+	line "GYM BADGE from the"
+	cont "GYM LEADER in"
+	cont "OREBURGH CITY!"
+	done
+
+.BeatenText:
+	text "Oh, I lost!"
+	line "Lalala!"
+	done
+
+.AfterText:
+	text "I'm collecting lots"
+	line "of GYM BADGES."
+
+	para "They're so sparkly"
+	line "and pretty!"
+	done
+
 Route203_MapEvents:
 	db 0, 0 ; filler
 
@@ -214,12 +365,12 @@ Route203_MapEvents:
 
 	db 10 ; object events
 	object_event  8, 14, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_203_RIVAL
-	object_event 11,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 11,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerYoungsterMichael, -1
 	object_event 13, 14, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route203_LassScript, -1
-	object_event 26, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 35, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 40,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 42, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 26, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerYoungsterDallas, -1
+	object_event 35, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerYoungsterBastian, -1
+	object_event 42, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerLassKaitlin, -1
+	object_event 39,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerLassMadeline, -1
 	object_event 15,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route203_PokeBallScript, EVENT_ROUTE_203_POKE_BALL
 	object_event 25,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route203_RepelScript, EVENT_ROUTE_203_REPEL
 	object_event 33, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route203_XDefendScript, EVENT_ROUTE_203_X_DEFEND

@@ -176,6 +176,43 @@ YoungsterGroup:
 	db "LOGAN@", TRAINERTYPE_MOVES
 	trainermon_moves  5, BURMY, TACKLE
 	db -1 ; end
+
+	next_list_item ; YOUNGSTER (6)
+	db "MICHAEL@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, KRICKETOT
+	trainermon_normal  6, ZUBAT
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (7)
+	db "DALLAS@", TRAINERTYPE_NORMAL
+	trainermon_normal  8, SHINX
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (8)
+	db "DALLAS@", TRAINERTYPE_NORMAL
+	trainermon_normal 22, LUXIO
+	trainermon_normal 22, BIBAREL
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (9)
+	db "DALLAS@", TRAINERTYPE_NORMAL
+	trainermon_normal 32, LUXIO
+	trainermon_normal 32, BIBAREL
+	trainermon_normal 32, GRAVELER
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (10)
+	db "DALLAS@", TRAINERTYPE_NORMAL
+	trainermon_normal 50, LUXRAY
+	trainermon_normal 50, BIBAREL
+	trainermon_normal 50, GOLEM
+	trainermon_normal 50, STARAPTOR
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (11)
+	db "BASTIAN@", TRAINERTYPE_NORMAL
+	trainermon_normal  8, MACHOP
+	db -1 ; end
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
@@ -194,6 +231,37 @@ LassGroup:
 	next_list_item ; LASS (1)
 	db "NATALIE@", TRAINERTYPE_NORMAL
 	trainermon_normal  5, BIDOOF
+	db -1 ; end
+
+	next_list_item ; LASS (2)
+	db "KAITLIN@", TRAINERTYPE_NORMAL
+	trainermon_normal  4, BIDOOF
+	trainermon_normal  4, BUDEW
+	trainermon_normal  4, STARLY
+	trainermon_normal  4, ABRA
+	db -1 ; end
+
+	next_list_item ; LASS (3)
+	db "MADELINE@", TRAINERTYPE_NORMAL
+	trainermon_normal  8, PSYDUCK
+	db -1 ; end
+
+	next_list_item ; LASS (4)
+	db "MADELINE@", TRAINERTYPE_NORMAL
+	trainermon_normal 22, PSYDUCK
+	trainermon_normal 22, BUNEARY
+	db -1 ; end
+
+	next_list_item ; LASS (5)
+	db "MADELINE@", TRAINERTYPE_NORMAL
+	trainermon_normal 33, GOLDUCK
+	trainermon_normal 33, BUNEARY
+	db -1 ; end
+
+	next_list_item ; LASS (6)
+	db "MADELINE@", TRAINERTYPE_NORMAL
+	trainermon_normal 43, GOLDUCK
+	trainermon_normal 43, LOPUNNY
 	db -1 ; end
 	end_list_items
 

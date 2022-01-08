@@ -58,6 +58,12 @@ CHRIS EQU __enum__
 	const TRISTAN3
 	const TRISTAN4
 	const LOGAN
+	const MICHAEL
+	const DALLAS1
+	const DALLAS2
+	const DALLAS3
+	const DALLAS4
+	const BASTIAN
 
 	trainerclass SCHOOLBOY ; 17
 	const HARRISON
@@ -65,6 +71,11 @@ CHRIS EQU __enum__
 	trainerclass BIRD_KEEPER ; 18
 	trainerclass LASS ; 19
 	const NATALIE
+	const KAITLIN
+	const MADELINE1
+	const MADELINE2
+	const MADELINE3
+	const MADELINE4
 
 	trainerclass JANINE ; 1a
 	trainerclass COOLTRAINERM ; 1b

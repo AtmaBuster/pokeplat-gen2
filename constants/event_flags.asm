@@ -528,20 +528,20 @@
 	const EVENT_BEAT_YOUNGSTER_TRISTAN3          ; EV ---
 	const EVENT_BEAT_YOUNGSTER_TRISTAN4          ; EV ---
 	const EVENT_BEAT_YOUNGSTER_LOGAN             ; EV ---
+	const EVENT_BEAT_YOUNGSTER_MICHAEL           ; EV ---
+	const EVENT_BEAT_YOUNGSTER_DALLAS1           ; EV ---
+	const EVENT_BEAT_YOUNGSTER_DALLAS2           ; EV ---
+	const EVENT_BEAT_YOUNGSTER_DALLAS3           ; EV ---
+	const EVENT_BEAT_YOUNGSTER_DALLAS4           ; EV ---
+	const EVENT_BEAT_YOUNGSTER_BASTIAN           ; EV ---
 	const EVENT_BEAT_SCHOOLBOY_HARRISON          ; EV ---
 	const EVENT_BEAT_LASS_NATALIE                ; EV ---
+	const EVENT_BEAT_LASS_KAITLIN                ; EV ---
+	const EVENT_BEAT_LASS_MADELINE1              ; EV ---
+	const EVENT_BEAT_LASS_MADELINE2              ; EV ---
+	const EVENT_BEAT_LASS_MADELINE3              ; EV ---
+	const EVENT_BEAT_LASS_MADELINE4              ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_20E                              ; EV 20e
-	const EVENT_20F                              ; EV 20f
-	const EVENT_210                              ; EV 210
-	const EVENT_211                              ; EV 211
-	const EVENT_212                              ; EV 212
-	const EVENT_213                              ; EV 213
-	const EVENT_214                              ; EV 214
-	const EVENT_215                              ; EV 215
-	const EVENT_216                              ; EV 216
-	const EVENT_217                              ; EV 217
-	const EVENT_218                              ; EV 218
 	const EVENT_219                              ; EV 219
 	const EVENT_21A                              ; EV 21a
 	const EVENT_21B                              ; EV 21b
