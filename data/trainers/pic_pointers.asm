@@ -9,7 +9,7 @@ TrainerPicPointers::
 	dba PrycePic
 	dba JasminePic
 	dba ChuckPic
-	dba ClairPic
+	dba VolknerPic
 	dba Rival1Pic
 	dba PokemonProfPic
 	dba WillPic
