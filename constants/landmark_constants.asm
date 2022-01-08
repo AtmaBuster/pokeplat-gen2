@@ -11,6 +11,7 @@
 	const ROUTE_203
 	const OREBURGH_GATE
 	const OREBURGH_CITY
+	const OREBURGH_MINE
 	const ROUTE_204
 	const RAVAGED_PATH
 	const FLOAROMA_TOWN

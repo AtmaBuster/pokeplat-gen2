@@ -16,6 +16,7 @@ Landmarks:
 	landmark  48, 100, Route203Name
 	landmark  56, 100, OreburghGateName
 	landmark  60, 100, OreburghCityName
+	landmark  60, 104, OreburghMineName
 	landmark  36,  88, Route204Name
 	landmark  36,  90, RavagedPathName
 	landmark  36,  76, FloaromaTownName
@@ -100,6 +101,7 @@ SurvivalAreaName:    db "SURVIVAL¯AREA@"
 ResortAreaName:      db "RESORT AREA@"
 LakeVerityName:      db "LAKE VERITY@"
 OreburghGateName:    db "OREBURGH¯GATE@"
+OreburghMineName:    db "OREBURGH¯MINE@"
 RavagedPathName:     db "RAVAGED¯PATH@"
 FloaromaMeadowName:  db "FLOAROMA¯MEADOW@"
 ValleyWindworksName: db "VALLEY¯WINDWORKS@"
