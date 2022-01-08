@@ -19,19 +19,19 @@
 	const SPRITE_DAISY ; 0f
 	const SPRITE_ROWAN ; 10
 	const SPRITE_WILL ; 11
-	const SPRITE_FALKNER ; 12
+	const SPRITE_ROARK ; 12
 	const SPRITE_WHITNEY ; 13
-	const SPRITE_BUGSY ; 14
+	const SPRITE_GARDENIA ; 14
 	const SPRITE_MORTY ; 15
 	const SPRITE_CHUCK ; 16
 	const SPRITE_JASMINE ; 17
 	const SPRITE_PRYCE ; 18
-	const SPRITE_CLAIR ; 19
-	const SPRITE_BROCK ; 1a
+	const SPRITE_VOLKNER ; 19
+	const SPRITE_WORKER ; 1a
 	const SPRITE_KAREN ; 1b
 	const SPRITE_BRUNO ; 1c
-	const SPRITE_MISTY ; 1d
-	const SPRITE_LANCE ; 1e
+	const SPRITE_VETERAN ; 1d
+	const SPRITE_CYNTHIA ; 1e
 	const SPRITE_SURGE ; 1f
 	const SPRITE_ERIKA ; 20
 	const SPRITE_KOGA ; 21

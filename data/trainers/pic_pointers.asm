@@ -18,7 +18,7 @@ TrainerPicPointers::
 	dba KarenPic
 	dba KogaPic
 	dba ChampionPic
-	dba BrockPic
+	dba WorkerPic
 	dba MistyPic
 	dba LtSurgePic
 	dba ScientistPic

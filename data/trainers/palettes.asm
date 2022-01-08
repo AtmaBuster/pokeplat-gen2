@@ -22,7 +22,7 @@ INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
-INCBIN "gfx/trainers/brock.gbcpal", middle_colors
+INCBIN "gfx/trainers/worker.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
 INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
 INCBIN "gfx/trainers/scientist.gbcpal", middle_colors
