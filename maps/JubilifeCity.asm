@@ -1522,7 +1522,7 @@ JubilifeCity_MapEvents:
 	bg_event 31, 31, BGEVENT_READ, JubilifeCity_MapNameSignScript
 	bg_event 36, 13, BGEVENT_READ, JubilifeCity_MapNameSignScript
 	bg_event 30,  8, BGEVENT_READ, JubilifeCity_MapNameSignScript
-	bg_event  7, 13, BGEVENT_READ, JubilifeCity_MapNameSignScript
+	bg_event  5, 13, BGEVENT_READ, JubilifeCity_MapNameSignScript
 	bg_event 24, 22, BGEVENT_READ, JubilifeCity_SchoolSignScript
 	bg_event 30, 12, BGEVENT_READ, JubilifeCity_CondoSignScript
 	bg_event 24, 12, BGEVENT_READ, JubilifeCity_TVBuildingSignScript

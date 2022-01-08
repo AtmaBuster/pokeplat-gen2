@@ -132,6 +132,9 @@ TVStationElevator_Blocks:
 PokemonCommunicationCenter_Blocks:
 	INCBIN "maps/PokemonCommunicationCenter.blk"
 	
+Route218_Blocks:
+	INCBIN "maps/Route218.blk"
+	
 OreburghGate1F_Blocks:
 	INCBIN "maps/OreburghGate1F.blk"
 	

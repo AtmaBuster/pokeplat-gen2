@@ -1,11 +1,11 @@
 	object_const_def ; object_event constants
 
-TVStation2F_MapScripts:
+Route218_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TVStation2F_MapEvents:
+Route218_MapEvents:
 	db 0, 0 ; filler
 
 	db 0 ; warp events

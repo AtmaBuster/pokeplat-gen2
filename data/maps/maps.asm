@@ -21,8 +21,9 @@ MapGroupPointers::
 	dw MapGroup_Sandgem     ;  3
 	dw MapGroup_Jubilife    ;  4
 	dw MapGroup_Oreburgh    ;  5
-	dw MapGroup_Lakes       ;  6
-	dw MapGroup_Dungeons    ;  7
+	dw MapGroup_Canalave    ;  6
+	dw MapGroup_Lakes       ;  7
+	dw MapGroup_Dungeons    ;  8
 
 MapGroup_CableClub:
 	map Pokecenter2F, TILESET_POKECENTER, INDOOR, SPECIAL_MAP, MUSIC_POKEMON_CENTER, TRUE, PALETTE_DAY, FISHGROUP_SHORE
@@ -81,6 +82,9 @@ MapGroup_Jubilife:
 
 MapGroup_Oreburgh:
 	map OreburghCity, TILESET_SINNOH_2, TOWN, OREBURGH_CITY, MUSIC_AZALEA_TOWN, FALSE, PALETTE_AUTO, FISHGROUP_SHORE
+	
+MapGroup_Canalave:
+	map Route218, TILESET_SINNOH_1, ROUTE, ROUTE_218, MUSIC_ROUTE_1, FALSE, PALETTE_AUTO, FISHGROUP_SHORE
 
 MapGroup_Lakes:
 	map LakeVerityLow, TILESET_LAKE, ROUTE, LAKE_VERITY, MUSIC_UNION_CAVE, FALSE, PALETTE_AUTO, FISHGROUP_SHORE

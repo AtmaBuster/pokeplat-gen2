@@ -47,6 +47,7 @@ INCLUDE "maps/JubilifeApartmentNE1F.asm"
 INCLUDE "maps/JubilifeApartmentNE2F.asm"
 INCLUDE "maps/JubilifeApartmentSW1F.asm"
 INCLUDE "maps/JubilifeApartmentSW2F.asm"
+INCLUDE "maps/Route218.asm"
 
 
 SECTION "Map Scripts 5", ROMX
