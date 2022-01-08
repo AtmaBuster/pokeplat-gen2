@@ -24,7 +24,7 @@ TrainersSchool_RivalScript:
 	takeitem PARCEL
 	writetext .WhatIsThisText
 	waitbutton
-	verbosegiveitem TOWN_MAP ; change to map card
+;	verbosegiveitem TOWN_MAP ; change to map card
 	writetext .NextDestinationText
 	waitbutton
 	closetext

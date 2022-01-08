@@ -883,6 +883,7 @@ wDexArrowCursorDelayCounter:: db
 wDexArrowCursorBlinkCounter:: db
 wDexSearchSlowpokeFrame:: db
 wUnlockedUnownMode:: db
+wUnlockedNationalMode:: db
 wDexCurUnownIndex:: db
 wDexUnownCount:: db
 wDexConvertedMonType:: db ; mon type converted from dex search mon type
@@ -903,7 +904,7 @@ wPrevDexEntryBackup:: dw
 wPrevDexEntryJumptableIndex:: db
 
 wPokedexNameBuffer:: ds MON_NAME_LENGTH
-	ds 231
+	ds 230
 
 NEXTU ; c6d0
 ; pokegear

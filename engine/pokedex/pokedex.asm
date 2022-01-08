@@ -96,6 +96,7 @@ InitPokedex:
 	ld [wcf66], a
 
 	call Pokedex_CheckUnlockedUnownMode
+	call Pokedex_CheckUnlockedNationalMode
 
 	ld a, [wLastDexMode]
 	ld [wCurDexMode], a
@@ -124,6 +125,20 @@ Pokedex_CheckUnlockedUnownMode:
 .unlocked
 	ld a, TRUE
 	ld [wUnlockedUnownMode], a
+	ret
+
+Pokedex_CheckUnlockedNationalMode:
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_NATIONAL_DEX_F, a
+	jr nz, .unlocked
+
+	xor a
+	ld [wUnlockedNationalMode], a
+	ret
+
+.unlocked
+	ld a, TRUE
+	ld [wUnlockedNationalMode], a
 	ret
 
 Pokedex_InitCursorPosition:
@@ -596,6 +611,15 @@ Pokedex_InitOptionScreen:
 	call Pokedex_DrawOptionScreenBG
 	call Pokedex_InitArrowCursor
 	ld a, [wCurDexMode] ; Index of the topmost visible item in a scrolling menu ???
+	cp 2
+	jr c, .ok
+	ld h, a
+	ld a, [wUnlockedNationalMode]
+	and a
+	ld a, h
+	jr nz, .ok
+	dec a
+.ok
 	ld [wDexArrowCursorPosIndex], a
 	call Pokedex_DisplayModeDescription
 	call WaitBGMap
@@ -607,12 +631,21 @@ Pokedex_InitOptionScreen:
 Pokedex_UpdateOptionScreen:
 	ld a, [wUnlockedUnownMode]
 	and a
-	jr nz, .okay
-	ld de, .NoUnownModeArrowCursorData
-	jr .okay2
-.okay
+	jr z, .no_unown_mode
+	ld a, [wUnlockedNationalMode]
+	and a
+	ld de, .NoNatModeArrowCursorData
+	jr z, .got_it
 	ld de, .ArrowCursorData
-.okay2
+	jr .got_it
+
+.no_unown_mode
+	ld a, [wUnlockedNationalMode]
+	and a
+	ld de, .NoUnownModeNoNatModeArrowCursorData
+	jr z, .got_it
+	ld de, .NoUnownModeArrowCursorData
+.got_it
 	call Pokedex_MoveArrowCursor
 	call c, Pokedex_DisplayModeDescription
 	ld hl, hJoyPressed
@@ -626,6 +659,15 @@ Pokedex_UpdateOptionScreen:
 
 .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
+	and a
+	jr z, .ok
+	ld h, a
+	ld a, [wUnlockedNationalMode]
+	and a
+	ld a, h
+	jr nz, .ok
+	inc a
+.ok
 	ld hl, .MenuActionJumptable
 	call Pokedex_LoadPointer
 	jp hl
@@ -636,16 +678,27 @@ Pokedex_UpdateOptionScreen:
 	ld [wJumptableIndex], a
 	ret
 
+.NoUnownModeNoNatModeArrowCursorData:
+	db D_UP | D_DOWN, 2
+	dwcoord 2,  4 ; SINNOH
+	dwcoord 2,  8 ; ABC
+
 .NoUnownModeArrowCursorData:
 	db D_UP | D_DOWN, 3
-	dwcoord 2,  4 ; NEW
-	dwcoord 2,  6 ; OLD
+	dwcoord 2,  4 ; SINNOH
+	dwcoord 2,  6 ; NATIONAL
 	dwcoord 2,  8 ; ABC
+
+.NoNatModeArrowCursorData:
+	db D_UP | D_DOWN, 3
+	dwcoord 2,  4 ; SINNOH
+	dwcoord 2,  8 ; ABC
+	dwcoord 2, 10 ; UNOWN
 
 .ArrowCursorData:
 	db D_UP | D_DOWN, 4
-	dwcoord 2,  4 ; NEW
-	dwcoord 2,  6 ; OLD
+	dwcoord 2,  4 ; SINNOH
+	dwcoord 2,  6 ; NATIONAL
 	dwcoord 2,  8 ; ABC
 	dwcoord 2, 10 ; UNOWN
 
@@ -1332,9 +1385,16 @@ Pokedex_DrawOptionScreenBG:
 	call PlaceString
 	ld a, [wUnlockedUnownMode]
 	and a
-	ret z
+	jr z, .skip_unown
 	hlcoord 3, 10
 	ld de, .UnownMode
+	call PlaceString
+.skip_unown
+	ld a, [wUnlockedNationalMode]
+	and a
+	ret nz
+	hlcoord 3, 6
+	ld de, .NatDex
 	call PlaceString
 	ret
 
@@ -1342,10 +1402,13 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "NEW #DEX MODE"
-	next "OLD #DEX MODE"
-	next "A to Z MODE"
+	db   "SINNOH #DEX"
+	next "NATIONAL #DEX"
+	next "ALPHABETICAL"
 	db   "@"
+
+.NatDex:
+	db "                @"
 
 .UnownMode:
 	db "UNOWN MODE@"
@@ -1964,6 +2027,15 @@ Pokedex_DisplayModeDescription:
 	lb bc, 4, 18
 	call Pokedex_PlaceBorder
 	ld a, [wDexArrowCursorPosIndex]
+	and a
+	jr z, .ok
+	ld h, a
+	ld a, [wUnlockedNationalMode]
+	and a
+	ld a, h
+	jr nz, .ok
+	inc a
+.ok
 	ld hl, .Modes
 	call Pokedex_LoadPointer
 	ld e, l
@@ -1982,11 +2054,11 @@ Pokedex_DisplayModeDescription:
 
 .NewMode:
 	db   "<PK><MN> are listed by"
-	next "evolution type.@"
+	next "SINNOH number.@"
 
 .OldMode:
 	db   "<PK><MN> are listed by"
-	next "official type.@"
+	next "national number.@"
 
 .ABCMode:
 	db   "<PK><MN> are listed"
