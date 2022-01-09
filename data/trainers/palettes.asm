@@ -17,10 +17,10 @@ INCBIN "gfx/trainers/volkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/will.gbcpal", middle_colors
-INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
+INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
 INCBIN "gfx/trainers/worker.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors

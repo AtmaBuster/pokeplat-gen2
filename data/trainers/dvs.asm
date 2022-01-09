@@ -1,22 +1,22 @@
 TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	;  atk,def,spd,spc
-	dn  9, 10,  7,  7 ; FALKNER
-	dn  8,  8,  8,  8 ; BUGSY
-	dn  9,  8,  8,  8 ; WHITNEY
-	dn  9,  8,  8,  8 ; MORTY
-	dn  9,  8,  8,  8 ; PRYCE
-	dn  9,  8,  8,  8 ; JASMINE
-	dn  9,  8,  8,  8 ; CHUCK
-	dn  7, 12, 13, 13 ; CLAIR
+	dn  9, 10,  7,  7 ; ROARK
+	dn  7,  8,  8,  8 ; GARDENIA
+	dn  7,  8,  8,  8 ; MAYLENE
+	dn  9,  8,  8,  8 ; WAKE
+	dn  7,  8,  8,  8 ; FANTINA
+	dn  9,  8,  8,  8 ; BYRON
+	dn  7,  8,  8,  8 ; CANDICE
+	dn  9, 12, 13, 13 ; VOLKNER
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn  9,  8,  8,  8 ; POKEMON_PROF
-	dn 13, 12, 13, 13 ; WILL
+	dn 13, 12, 13, 13 ; AARON
+	dn  7, 12, 13, 13 ; BERTHA
+	dn 13, 15, 13, 15 ; FLINT
+	dn 13, 12, 13, 13 ; LUCIAN
 	dn 13, 12, 13, 13 ; CAL
-	dn 13, 12, 13, 13 ; BRUNO
-	dn  7, 15, 13, 15 ; KAREN
-	dn 13, 12, 13, 13 ; KOGA
-	dn 13, 12, 13, 13 ; CHAMPION
+	dn  7, 12, 13, 13 ; CHAMPION
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE

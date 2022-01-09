@@ -517,22 +517,32 @@
 	const EVENT_1FE                              ; EV 1fe
 	const EVENT_1FF                              ; EV 1ff
 ; Trainer flags                                      ; EV -
-	const EVENT_BEAR_LEADER_ROARK1               ; EV ---
-	const EVENT_BEAR_LEADER_ROARK2               ; EV ---
-	const EVENT_BEAR_LEADER_GARDENIA1            ; EV ---
-	const EVENT_BEAR_LEADER_GARDENIA2            ; EV ---
-	const EVENT_BEAR_LEADER_MAYLENE1             ; EV ---
-	const EVENT_BEAR_LEADER_MAYLENE2             ; EV ---
-	const EVENT_BEAR_LEADER_WAKE1                ; EV ---
-	const EVENT_BEAR_LEADER_WAKE2                ; EV ---
-	const EVENT_BEAR_LEADER_FANTINA1             ; EV ---
-	const EVENT_BEAR_LEADER_FANTINA2             ; EV ---
-	const EVENT_BEAR_LEADER_BYRON1               ; EV ---
-	const EVENT_BEAR_LEADER_BYRON2               ; EV ---
-	const EVENT_BEAR_LEADER_CANDICE1             ; EV ---
-	const EVENT_BEAR_LEADER_CANDICE2             ; EV ---
-	const EVENT_BEAR_LEADER_VOLKNER1             ; EV ---
-	const EVENT_BEAR_LEADER_VOLKNER2             ; EV ---
+	const EVENT_BEAT_LEADER_ROARK1               ; EV ---
+	const EVENT_BEAT_LEADER_ROARK2               ; EV ---
+	const EVENT_BEAT_LEADER_GARDENIA1            ; EV ---
+	const EVENT_BEAT_LEADER_GARDENIA2            ; EV ---
+	const EVENT_BEAT_LEADER_MAYLENE1             ; EV ---
+	const EVENT_BEAT_LEADER_MAYLENE2             ; EV ---
+	const EVENT_BEAT_LEADER_WAKE1                ; EV ---
+	const EVENT_BEAT_LEADER_WAKE2                ; EV ---
+	const EVENT_BEAT_LEADER_FANTINA1             ; EV ---
+	const EVENT_BEAT_LEADER_FANTINA2             ; EV ---
+	const EVENT_BEAT_LEADER_BYRON1               ; EV ---
+	const EVENT_BEAT_LEADER_BYRON2               ; EV ---
+	const EVENT_BEAT_LEADER_CANDICE1             ; EV ---
+	const EVENT_BEAT_LEADER_CANDICE2             ; EV ---
+	const EVENT_BEAT_LEADER_VOLKNER1             ; EV ---
+	const EVENT_BEAT_LEADER_VOLKNER2             ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_AARON1           ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_AARON2           ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_BERTHA1          ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_BERTHA2          ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_FLINT1           ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_FLINT2           ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_LUCIAN1          ; EV ---
+	const EVENT_BEAT_ELITE_FOUR_LUCIAN2          ; EV ---
+	const EVENT_BEAT_CHAMPION_CYNTHIA1 ; EV ---
+	const EVENT_BEAT_CHAMPION_CYNTHIA2 ; EV ---
 	const EVENT_BEAT_RIVAL1_1_TURTWIG            ; EV ---
 	const EVENT_BEAT_RIVAL1_1_CHIMCHAR           ; EV ---
 	const EVENT_BEAT_RIVAL1_1_PIPLUP             ; EV ---
@@ -560,16 +570,6 @@
 	const EVENT_BEAT_PICNICKER_DIANA             ; EV ---
 	const EVENT_BEAT_CAMPER_CURTIS               ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_22B                              ; EV 22b
-	const EVENT_22C                              ; EV 22c
-	const EVENT_22D                              ; EV 22d
-	const EVENT_22E                              ; EV 22e
-	const EVENT_22F                              ; EV 22f
-	const EVENT_230                              ; EV 230
-	const EVENT_231                              ; EV 231
-	const EVENT_232                              ; EV 232
-	const EVENT_233                              ; EV 233
-	const EVENT_234                              ; EV 234
 	const EVENT_235                              ; EV 235
 	const EVENT_236                              ; EV 236
 	const EVENT_237                              ; EV 237

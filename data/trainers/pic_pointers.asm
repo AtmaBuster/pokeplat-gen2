@@ -13,10 +13,10 @@ TrainerPicPointers::
 	dba Rival1Pic
 	dba PokemonProfPic
 	dba WillPic
-	dba CalPic
 	dba BrunoPic
 	dba KarenPic
 	dba KogaPic
+	dba CalPic
 	dba ChampionPic
 	dba WorkerPic
 	dba MistyPic

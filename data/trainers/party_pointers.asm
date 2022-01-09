@@ -12,11 +12,11 @@ TrainerGroups:
 	dba VolknerGroup
 	dba Rival1Group
 	dba PokemonProfGroup
-	dba WillGroup
+	dba AaronGroup
+	dba BerthaGroup
+	dba FlintGroup
+	dba LucianGroup
 	dba PKMNTrainerGroup
-	dba BrunoGroup
-	dba KarenGroup
-	dba KogaGroup
 	dba ChampionGroup
 	dba BrockGroup
 	dba MistyGroup

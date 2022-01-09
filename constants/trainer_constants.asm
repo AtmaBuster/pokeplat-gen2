@@ -65,12 +65,27 @@ CHRIS EQU __enum__
 	const RIVAL1_2_PIPLUP
 
 	trainerclass POKEMON_PROF ; a
-	trainerclass WILL ; b
-	trainerclass CAL ; c
-	trainerclass BRUNO ; d
-	trainerclass KAREN ; e
-	trainerclass KOGA ; f
+	trainerclass AARON ; b
+	const AARON1
+	const AARON2
+
+	trainerclass BERTHA ; c
+	const BERTHA1
+	const BERTHA2
+
+	trainerclass FLINT ; d
+	const FLINT1
+	const FLINT2
+
+	trainerclass LUCIAN ; e
+	const LUCIAN1
+	const LUCIAN2
+
+	trainerclass CAL ; f
 	trainerclass CHAMPION ; 10
+	const CYNTHIA1
+	const CYNTHIA2
+
 	trainerclass BROCK ; 11
 	trainerclass MISTY ; 12
 	trainerclass LT_SURGE ; 13

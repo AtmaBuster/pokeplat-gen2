@@ -13,10 +13,10 @@ GymLeaders:
 	db BYRON
 	db CANDICE
 	db VOLKNER
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+	db AARON
+	db BERTHA
+	db FLINT
+	db LUCIAN
 	db CHAMPION
 	db RED
 ; fallthrough
