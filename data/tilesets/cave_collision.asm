@@ -103,7 +103,7 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; 66
 	tilecoll FLOOR, WALL, WALL, WALL ; 67
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 68
-	tilecoll UP_WALL, UP_WALL, WALL, WALL ; 69
+	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 69
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; 6a
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 6b
 	tilecoll WALL, WALL, WALL, WALL ; 6c
