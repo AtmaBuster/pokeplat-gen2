@@ -255,6 +255,7 @@ ItemDescriptions:
 	dw HoneyDesc
 	dw HoldTradeDesc
 	dw QuestionMarkDesc
+	dw QuestionMarkDesc
 
 MasterBallDesc:
 	db   "The best BALL. It"
