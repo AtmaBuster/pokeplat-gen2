@@ -9,6 +9,10 @@ JubilifePokemonCenter1F_Blocks:
 	
 Pokecenter2F_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
+	
+JubilifeWestGate_Blocks:
+CanalaveEastGate_Blocks:
+	INCBIN "maps/EastWestGate.blk"
 
 TradeCenter_Blocks:
 TimeCapsule_Blocks:

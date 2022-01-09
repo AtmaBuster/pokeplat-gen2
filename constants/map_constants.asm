@@ -89,9 +89,11 @@ ENDM
 	
 	map_const OREBURGH_CITY,							   25, 20 ;  1
 	
-	newgroup ; Canalave & Route 218                                  6
+	newgroup ; Canalave, Route 218 & Islands                         6
 	
-	map_const ROUTE_218,                                   20, 12 ;  1
+	map_const JUBILIFE_WEST_GATE,                           5,  4 ;  1
+	map_const ROUTE_218,                                   22, 12 ;  2
+	map_const CANALAVE_EAST_GATE,                           5,  4 ;  3
 
 	newgroup ; Lakes & Caverns                                    ;  7
 	

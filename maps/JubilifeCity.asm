@@ -1489,7 +1489,7 @@ JubilifeCity_PresScript:
 JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 10 ; warp events
+	db 12 ; warp events
 	warp_event 33, 13, JUBILIFE_APARTMENT_NE_1F, 1
 	warp_event 23, 31, JUBILIFE_APARTMENT_SE_1F, 1
 	warp_event  9, 29, JUBILIFE_APARTMENT_SW_1F, 1
@@ -1500,6 +1500,8 @@ JubilifeCity_MapEvents:
 	warp_event 22, 11, TV_STATION_1F, 1
 	warp_event 14, 25, POKEMON_COMMUNICATION_CENTER, 1
 	warp_event 20, 23, TRAINERS_SCHOOL, 1
+	warp_event  2, 14, JUBILIFE_WEST_GATE, 1
+	warp_event  2, 15, JUBILIFE_WEST_GATE, 2
 
 	db 15 ; coord events
 	coord_event 26, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript1

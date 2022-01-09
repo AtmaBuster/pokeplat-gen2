@@ -48,6 +48,7 @@ INCLUDE "maps/JubilifeApartmentNE2F.asm"
 INCLUDE "maps/JubilifeApartmentSW1F.asm"
 INCLUDE "maps/JubilifeApartmentSW2F.asm"
 INCLUDE "maps/Route218.asm"
+INCLUDE "maps/CanalaveEastGate.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -67,6 +68,7 @@ INCLUDE "maps/TVStationElevator.asm"
 INCLUDE "maps/PokemonCommunicationCenter.asm"
 INCLUDE "maps/JubilifePokemonCenter1F.asm"
 INCLUDE "maps/JubilifePokeMart.asm"
+INCLUDE "maps/JubilifeWestGate.asm"
 INCLUDE "maps/OreburghGate1F.asm"
 INCLUDE "maps/OreburghGateB1F.asm"
 INCLUDE "maps/OreburghCity.asm"
