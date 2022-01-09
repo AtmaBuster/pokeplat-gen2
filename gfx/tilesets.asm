@@ -123,6 +123,15 @@ INCBIN "data/tilesets/pokecom_center_metatiles.bin"
 TilesetPokeComCenterColl:
 INCLUDE "data/tilesets/pokecom_center_collision.asm"
 ;---------------------------------------
+TilesetGym1GFX:
+INCBIN "gfx/tilesets/gym_1.2bpp.lz"
+
+TilesetGym1Meta:
+INCBIN "data/tilesets/gym_1_metatiles.bin"
+
+TilesetGym1Coll:
+INCLUDE "data/tilesets/gym_1_collision.asm"
+;---------------------------------------
 TilesetMansionGFX:
 INCBIN "gfx/tilesets/mansion.2bpp.lz"
 

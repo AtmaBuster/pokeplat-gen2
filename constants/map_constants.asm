@@ -90,7 +90,7 @@ ENDM
 	map_const OREBURGH_CITY,							   25, 20 ;  1
 	map_const OREBURGH_POKEMON_CENTER_1F,                   5,  4 ;  2
 	map_const OREBURGH_POKEMART,                            6,  4 ;  3
-	;map_const OREBURGH_GYM,                                 ?,  ?  ; 4
+	map_const OREBURGH_GYM,                                 5, 10  ; 4
 	map_const OREBURGH_APARTMENT_NW_1F,                     6,  4  ; 5
 	map_const OREBURGH_APARTMENT_NW_2F,                     6,  4  ; 6
 	map_const OREBURGH_APARTMENT_N_1F,                      6,  4  ; 7

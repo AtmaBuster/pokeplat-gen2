@@ -182,6 +182,7 @@ ENDM
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
 	map_attributes OreburghPokemonCenter1F, OREBURGH_POKEMON_CENTER_1F, $00, 0
 	map_attributes OreburghPokeMart, OREBURGH_POKEMART, $00, 0
+	map_attributes OreburghGym, OREBURGH_GYM, $00, 0
 	map_attributes OreburghApartmentNW1F, OREBURGH_APARTMENT_NW_1F, $00, 0
 	map_attributes OreburghApartmentNW2F, OREBURGH_APARTMENT_NW_2F, $00, 0
 	map_attributes OreburghApartmentN1F, OREBURGH_APARTMENT_N_1F, $00, 0

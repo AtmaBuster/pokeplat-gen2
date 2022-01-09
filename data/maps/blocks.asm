@@ -159,6 +159,9 @@ OreburghGateB1F_Blocks:
 OreburghCity_Blocks:
 	INCBIN "maps/OreburghCity.blk"
 	
+OreburghGym_Blocks:
+	INCBIN "maps/OreburghGym.blk"
+	
 OreburghMineB1F_Blocks:
 	INCBIN "maps/OreburghMineB1F.blk"
 	

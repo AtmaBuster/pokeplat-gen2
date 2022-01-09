@@ -10,6 +10,8 @@ LoadSpecialMapPalette:
 	jr z, .house
 	cp TILESET_RADIO_TOWER
 	jr z, .radio_tower
+	cp TILESET_GYM_1
+	jr z, .gym_1
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	jr .do_nothing
@@ -35,6 +37,11 @@ LoadSpecialMapPalette:
 
 .radio_tower
 	call LoadRadioTowerPalette
+	scf
+	ret
+	
+.gym_1
+	call LoadGym1Palette
 	scf
 	ret
 
@@ -102,7 +109,7 @@ LoadMansionPalette:
 	call FarCopyWRAM
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1 palette PAL_BG_YELLOW
-	ld hl, MansionPalette2
+	ld hl, MansionPalette1
 	ld bc, 1 palettes
 	call FarCopyWRAM
 	ld a, BANK(wBGPals1)
@@ -117,5 +124,13 @@ LoadMansionPalette:
 	call FarCopyWRAM
 	ret
 
-MansionPalette2:
-INCLUDE "gfx/tilesets/mansion_2.pal"
+LoadGym1Palette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, Gym1Palette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+Gym1Palette:
+INCLUDE "gfx/tilesets/gym_1.pal"

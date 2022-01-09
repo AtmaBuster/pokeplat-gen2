@@ -225,6 +225,7 @@ TilesetGateAnim:
 TilesetLabAnim:
 TilesetFacilityAnim:
 TilesetMartAnim:
+TilesetGym1Anim:
 TilesetMansionAnim:
 TilesetGameCornerAnim:
 TilesetTraditionalHouseAnim:
