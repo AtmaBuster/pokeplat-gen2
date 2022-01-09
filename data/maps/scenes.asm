@@ -5,6 +5,7 @@ scene_var: MACRO
 ENDM
 
 MapScenes::
+	scene_var DEBUG_ROOM,         wDebugRoomSceneID
 	scene_var POKECENTER_2F,      wPokecenter2FSceneID
 	scene_var TRADE_CENTER,       wTradeCenterSceneID
 	scene_var COLOSSEUM,          wColosseumSceneID
@@ -23,4 +24,5 @@ MapScenes::
 	scene_var JUBILIFE_CITY,      wJubilifeCitySceneID
 	scene_var ROUTE_203,          wRoute203SceneID
 	scene_var OREBURGH_GATE_1F,   wOreburghGate1FSceneID
+	scene_var OREBURGH_GYM,       wOreburghGymSceneID
 	db -1 ; end

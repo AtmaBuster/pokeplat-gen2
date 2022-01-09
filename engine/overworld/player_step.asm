@@ -268,3 +268,214 @@ UpdateOverworldMap:
 	ret nc
 	inc [hl]
 	ret
+
+ReloadWalkedTile::
+	hlcoord 8, 6
+	ld de, wBGMapBuffer
+	call .CommitTiles
+	hlcoord 8, 6, wAttrMap
+	ld de, wBGMapPalBuffer
+	call .CommitTiles
+	ld a, [wBGMapAnchor]
+	swap a
+	rrca
+	add 8 << 3
+	rlca
+	swap a
+	add $c0
+	ld l, a
+	ld a, [wBGMapAnchor + 1]
+	adc 0
+	ld h, a
+	ld c, 4
+	ld de, wBGMapBufferPtrs
+.ptr_loop
+	ld a, h
+	and HIGH($9800 | $9900 | $9a00 | $9b00)
+	ld h, a
+	ld a, l
+	ld [de], a
+	inc de
+	ld a, h
+	ld [de], a
+	inc de
+
+	ld a, BG_MAP_WIDTH
+	call .AddHLDecC
+	jr nz, .ptr_loop
+	call .ApplyAttributes
+	ret
+
+.CommitTiles:
+	ld c, 4
+.tile_loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	inc de
+	ld a, SCREEN_WIDTH - 1
+	call .AddHLDecC
+	jr nz, .tile_loop
+	ret
+	ret
+
+.AddHLDecC:
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	dec c
+	ret
+
+.ApplyAttributes:
+	di
+.wait_for_vblank
+	ldh a, [rLY]
+	cp $90
+	jr c, .wait_for_vblank
+	ld a, [wOverBridge]
+	and a
+	jr z, .under_bridge
+	ldh a, [rVBK]
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	ld hl, wBGMapBufferPtrs
+	ld c, 4
+.attr_loop
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	ld a, [de]
+	res 7, a
+	ld [de], a
+	inc de
+	ld a, [de]
+	res 7, a
+	ld [de], a
+	dec c
+	jr nz, .attr_loop
+	pop af
+	ldh [rVBK], a
+	reti
+
+.under_bridge
+	ld hl, wBGMapBufferPtrs
+	ld c, 4
+.attr_loop_u
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+	call .check_under_bridge_tile
+	inc de
+	call .check_under_bridge_tile
+	dec c
+	jr nz, .attr_loop_u
+	reti
+
+.check_under_bridge_tile
+	ld a, [de]
+	push hl
+	ld hl, wTilesetPalettes
+	add [hl]
+	ld l, a
+	ld a, [wTilesetPalettes + 1]
+	adc 0
+	ld h, a
+	ld a, BANK(Tileset0PalMap) ; all same bank
+	call GetFarByte
+	pop hl
+	bit 7, a
+	ret z
+	push af
+	ld a, 1
+	ldh [rVBK], a
+	pop af
+	ld [de], a
+	xor a
+	ldh [rVBK], a
+	ret
+
+ScrollMapUp::
+	call ReloadWalkedTile
+	hlcoord 0, 0
+	ld de, wBGMapBuffer
+	call BackupBGMapRow
+	ld c, 2 * SCREEN_WIDTH
+	call FarCallScrollBGMapPalettes
+	ld a, [wBGMapAnchor]
+	ld e, a
+	ld a, [wBGMapAnchor + 1]
+	ld d, a
+	call UpdateBGMapRow
+	ld a, $1
+	ldh [hBGMapUpdate], a
+	ret
+
+ScrollMapDown::
+	call ReloadWalkedTile
+	hlcoord 0, SCREEN_HEIGHT - 2
+	ld de, wBGMapBuffer
+	call BackupBGMapRow
+	ld c, 2 * SCREEN_WIDTH
+	call FarCallScrollBGMapPalettes
+	ld a, [wBGMapAnchor]
+	ld l, a
+	ld a, [wBGMapAnchor + 1]
+	ld h, a
+	ld bc, BG_MAP_WIDTH tiles
+	add hl, bc
+; cap d at HIGH(vBGMap0)
+	ld a, h
+	and %00000011
+	or HIGH(vBGMap0)
+	ld e, l
+	ld d, a
+	call UpdateBGMapRow
+	ld a, $1
+	ldh [hBGMapUpdate], a
+	ret
+
+ScrollMapLeft::
+	call ReloadWalkedTile
+	hlcoord 0, 0
+	ld de, wBGMapBuffer
+	call BackupBGMapColumn
+	ld c, 2 * SCREEN_HEIGHT
+	call FarCallScrollBGMapPalettes
+	ld a, [wBGMapAnchor]
+	ld e, a
+	ld a, [wBGMapAnchor + 1]
+	ld d, a
+	call UpdateBGMapColumn
+	ld a, $1
+	ldh [hBGMapUpdate], a
+	ret
+
+ScrollMapRight::
+	call ReloadWalkedTile
+	hlcoord SCREEN_WIDTH - 2, 0
+	ld de, wBGMapBuffer
+	call BackupBGMapColumn
+	ld c, 2 * SCREEN_HEIGHT
+	call FarCallScrollBGMapPalettes
+	ld a, [wBGMapAnchor]
+	ld e, a
+	and %11100000
+	ld b, a
+	ld a, e
+	add SCREEN_HEIGHT
+	and %00011111
+	or b
+	ld e, a
+	ld a, [wBGMapAnchor + 1]
+	ld d, a
+	call UpdateBGMapColumn
+	ld a, $1
+	ldh [hBGMapUpdate], a
+	ret

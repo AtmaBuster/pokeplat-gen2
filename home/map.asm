@@ -1116,81 +1116,6 @@ UnmaskObject::
 	ld [hl], 0 ; unmasked
 	ret
 
-ScrollMapUp::
-	hlcoord 0, 0
-	ld de, wBGMapBuffer
-	call BackupBGMapRow
-	ld c, 2 * SCREEN_WIDTH
-	call FarCallScrollBGMapPalettes
-	ld a, [wBGMapAnchor]
-	ld e, a
-	ld a, [wBGMapAnchor + 1]
-	ld d, a
-	call UpdateBGMapRow
-	ld a, $1
-	ldh [hBGMapUpdate], a
-	ret
-
-ScrollMapDown::
-	hlcoord 0, SCREEN_HEIGHT - 2
-	ld de, wBGMapBuffer
-	call BackupBGMapRow
-	ld c, 2 * SCREEN_WIDTH
-	call FarCallScrollBGMapPalettes
-	ld a, [wBGMapAnchor]
-	ld l, a
-	ld a, [wBGMapAnchor + 1]
-	ld h, a
-	ld bc, BG_MAP_WIDTH tiles
-	add hl, bc
-; cap d at HIGH(vBGMap0)
-	ld a, h
-	and %00000011
-	or HIGH(vBGMap0)
-	ld e, l
-	ld d, a
-	call UpdateBGMapRow
-	ld a, $1
-	ldh [hBGMapUpdate], a
-	ret
-
-ScrollMapLeft::
-	hlcoord 0, 0
-	ld de, wBGMapBuffer
-	call BackupBGMapColumn
-	ld c, 2 * SCREEN_HEIGHT
-	call FarCallScrollBGMapPalettes
-	ld a, [wBGMapAnchor]
-	ld e, a
-	ld a, [wBGMapAnchor + 1]
-	ld d, a
-	call UpdateBGMapColumn
-	ld a, $1
-	ldh [hBGMapUpdate], a
-	ret
-
-ScrollMapRight::
-	hlcoord SCREEN_WIDTH - 2, 0
-	ld de, wBGMapBuffer
-	call BackupBGMapColumn
-	ld c, 2 * SCREEN_HEIGHT
-	call FarCallScrollBGMapPalettes
-	ld a, [wBGMapAnchor]
-	ld e, a
-	and %11100000
-	ld b, a
-	ld a, e
-	add SCREEN_HEIGHT
-	and %00011111
-	or b
-	ld e, a
-	ld a, [wBGMapAnchor + 1]
-	ld d, a
-	call UpdateBGMapColumn
-	ld a, $1
-	ldh [hBGMapUpdate], a
-	ret
-
 BackupBGMapRow::
 	ld c, 2 * SCREEN_WIDTH
 .loop
@@ -1449,6 +1374,11 @@ SaveScreen_LoadNeighbor::
 	jr nz, .row
 	ret
 
+GenericBridgeFinish::
+;	farcall ReanchorBGMap_NoOAMUpdate
+;	call BufferScreen
+	ld a, 1
+	ld [wOverworldDelay], a
 GetMovementPermissions::
 	xor a
 	ld [wTilePermissions], a

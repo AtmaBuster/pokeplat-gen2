@@ -2757,6 +2757,7 @@ wFarfetchdPosition:: db ; d964
 wTilesetSpriteAnimId:: db
 
 ; map scene ids
+wDebugRoomSceneID::
 wPokecenter2FSceneID::     db
 wTradeCenterSceneID::      db
 wColosseumSceneID::        db
@@ -2774,9 +2775,10 @@ wRowansLabSceneID::        db
 wRoute202SceneID::         db
 wJubilifeCitySceneID::     db
 wRoute203SceneID::         db
-wOreburghGate1FSceneID::     db
+wOreburghGate1FSceneID::   db
+wOreburghGymSceneID::      db
 
-	ds 61
+	ds 60
 
 ; fight counts
 wJackFightCount::    db ; d9f2
@@ -2822,7 +2824,7 @@ wCelebiEvent:: ; dbf3
 ; bit 2: forest is restless
 	db
 
-	ds 1
+wOverBridge:: db
 
 wBikeFlags:: ; dbf5
 ; bit 0: using strength

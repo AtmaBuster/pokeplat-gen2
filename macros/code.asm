@@ -116,3 +116,23 @@ popwrambank: MACRO
 	pop af
 	ldh [rSVBK], a
 ENDM
+
+changebridgeblock: MACRO
+	; lb de, \1 + 4, \2 + 4
+	; call GetBlockLocation
+	ld hl, wOverworldMapBlocks + (\2 / 2 + 3) * (\4_WIDTH + 6) + \1 / 2 + 3
+	; hard-coding the above calculation for efficiency
+	ld [hl], \3
+ENDM
+
+bridgeon: MACRO
+	ld a, 1
+	ld [wOverBridge], a
+	jp GenericBridgeFinish
+ENDM
+
+bridgeoff: MACRO
+	xor a
+	ld [wOverBridge], a
+	jp GenericBridgeFinish
+ENDM
