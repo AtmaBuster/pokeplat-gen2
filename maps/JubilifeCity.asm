@@ -1490,9 +1490,9 @@ JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 12 ; warp events
-	warp_event 33, 13, JUBILIFE_APARTMENT_NE_1F, 1
-	warp_event 23, 31, JUBILIFE_APARTMENT_SE_1F, 1
-	warp_event  9, 29, JUBILIFE_APARTMENT_SW_1F, 1
+	warp_event 33, 13, JUBILIFE_APARTMENT_NE_1F, 2
+	warp_event 23, 31, JUBILIFE_APARTMENT_SE_1F, 2
+	warp_event  9, 29, JUBILIFE_APARTMENT_SW_1F, 2
 	warp_event 31, 25, JUBILIFE_POKEMON_CENTER_1F, 1
 	warp_event 31, 19, JUBILIFE_POKEMART, 2
 	warp_event 11, 11, POKETCH_COMPANY_1F, 1

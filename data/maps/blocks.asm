@@ -5,6 +5,7 @@ DebugRoom_Blocks:
 
 SandgemPokemonCenter1F_Blocks:
 JubilifePokemonCenter1F_Blocks:
+OreburghPokemonCenter1F_Blocks:
 	INCBIN "maps/PokemonCenter1F.blk"
 	
 Pokecenter2F_Blocks:
@@ -29,6 +30,7 @@ MobileBattleRoom_Blocks:
 	
 SandgemPokeMart_Blocks:
 JubilifePokeMart_Blocks:
+OreburghPokeMart_Blocks:
 	INCBIN "maps/PokeMart.blk"
 
 TwinleafTown_Blocks:
@@ -49,6 +51,9 @@ RivalHouse2F_Blocks:
 TwinleafHouse1_Blocks:
 TwinleafHouse2_Blocks:
 SandgemHouse1_Blocks:
+OreburghHouseW_Blocks:
+OreburghHouseN_Blocks:
+OreburghHouseE_Blocks:
 	INCBIN "maps/HouseInterior1.blk"
 	
 LakeVerityHigh_Blocks:
@@ -90,11 +95,17 @@ Route204_Blocks:
 JubilifeApartmentSE1F_Blocks:
 JubilifeApartmentNE1F_Blocks:
 JubilifeApartmentSW1F_Blocks:
+OreburghApartmentNW1F_Blocks:
+OreburghApartmentN1F_Blocks:
+OreburghApartmentE1F_Blocks:
 	INCBIN "maps/Apartment1F.blk"
 	
 JubilifeApartmentSE2F_Blocks:
 JubilifeApartmentNE2F_Blocks:
 JubilifeApartmentSW2F_Blocks:
+OreburghApartmentNW2F_Blocks:
+OreburghApartmentN2F_Blocks:
+OreburghApartmentE2F_Blocks:
 	INCBIN "maps/Apartment2F.blk"
 
 TrainersSchool_Blocks:

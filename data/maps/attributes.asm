@@ -180,6 +180,17 @@ ENDM
 	map_attributes JubilifeWestGate, JUBILIFE_WEST_GATE, $00, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
+	map_attributes OreburghPokemonCenter1F, OREBURGH_POKEMON_CENTER_1F, $00, 0
+	map_attributes OreburghPokeMart, OREBURGH_POKEMART, $00, 0
+	map_attributes OreburghApartmentNW1F, OREBURGH_APARTMENT_NW_1F, $00, 0
+	map_attributes OreburghApartmentNW2F, OREBURGH_APARTMENT_NW_2F, $00, 0
+	map_attributes OreburghApartmentN1F, OREBURGH_APARTMENT_N_1F, $00, 0
+	map_attributes OreburghApartmentN2F, OREBURGH_APARTMENT_N_2F, $00, 0
+	map_attributes OreburghApartmentE1F, OREBURGH_APARTMENT_E_1F, $00, 0
+	map_attributes OreburghApartmentE2F, OREBURGH_APARTMENT_E_2F, $00, 0
+	map_attributes OreburghHouseW, OREBURGH_HOUSE_W, $00, 0
+	map_attributes OreburghHouseN, OREBURGH_HOUSE_N, $00, 0
+	map_attributes OreburghHouseE, OREBURGH_HOUSE_E, $00, 0
 	map_attributes OreburghMineB1F, OREBURGH_MINE_B1F, $09, 0
 	map_attributes OreburghMineB2F, OREBURGH_MINE_B2F, $09, 0
 	map_attributes CanalaveEastGate, CANALAVE_EAST_GATE, $0, 0
