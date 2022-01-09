@@ -45,6 +45,9 @@ INCLUDE "gfx/tilesets/pokecom_center_palette_map.asm"
 TilesetGym1PalMap:
 INCLUDE "gfx/tilesets/gym_1_palette_map.asm"
 
+TilesetMuseumPalMap:
+INCLUDE "gfx/tilesets/museum_palette_map.asm"
+
 TilesetMansionPalMap:
 INCLUDE "gfx/tilesets/mansion_palette_map.asm"
 

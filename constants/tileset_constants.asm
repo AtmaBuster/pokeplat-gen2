@@ -12,19 +12,20 @@
 	const TILESET_MART                 ; 0a DEPARTMENT STORE
 	const TILESET_POKECOM_CENTER       ; 0b GLOBAL TRADE STATION
 	const TILESET_GYM_1                ; 0c OREBURGH GYM
-	const TILESET_MANSION              ; 0d APARTMENT BUILDING
-	const TILESET_CAVE                 ; 0e ASSORTED CAVES
-	const TILESET_GATE                 ; 0f GATEHOUSES
-	const TILESET_FOREST               ; 10 ETERNA FOREST
-	const TILESET_FACILITY             ; 11 GALACTIC HIDEOUT
-	const TILESET_BIKE_SHOP            ; 12 BIKE SHOP
-	const TILESET_PARK                 ; 13 AMITY SQUARE
-	const TILESET_RADIO_TOWER          ; 14 REPLACES CONTEST HALL
-	const TILESET_SOLACEON_RUINS       ; 15 SOLACEON RUINS
-	const TILESET_TRADITIONAL_HOUSE    ; 16 CELESIC HOUSE
-	const TILESET_GAME_CORNER          ; 17 VEILSTONE GAME CORNER
-	const TILESET_SNOWPOINT_TEMPLE     ; 18 SNOWPOINT TEMPLE
-	const TILESET_MT_CORONET           ; 19 MT. CORONET
+	const TILESET_MUSEUM               ; 0d MINING MUSEUM
+	const TILESET_MANSION              ; 0e APARTMENT BUILDING
+	const TILESET_CAVE                 ; 0f ASSORTED CAVES
+	const TILESET_GATE                 ; 10 GATEHOUSES
+	const TILESET_FOREST               ; 11 ETERNA FOREST
+	const TILESET_FACILITY             ; 12 GALACTIC HIDEOUT
+	const TILESET_BIKE_SHOP            ; 13 BIKE SHOP
+	const TILESET_PARK                 ; 14 AMITY SQUARE
+	const TILESET_RADIO_TOWER          ; 15 REPLACES CONTEST HALL
+	const TILESET_SOLACEON_RUINS       ; 16 SOLACEON RUINS
+	const TILESET_TRADITIONAL_HOUSE    ; 17 CELESIC HOUSE
+	const TILESET_GAME_CORNER          ; 18 VEILSTONE GAME CORNER
+	const TILESET_SNOWPOINT_TEMPLE     ; 19 SNOWPOINT TEMPLE
+	const TILESET_MT_CORONET           ; 1a MT. CORONET
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

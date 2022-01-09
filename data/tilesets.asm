@@ -25,6 +25,7 @@ Tilesets::
 	tileset TilesetMart
 	tileset TilesetPokeComCenter
 	tileset TilesetGym1
+	tileset TilesetMuseum
 	tileset TilesetMansion
 	tileset TilesetCave
 	tileset TilesetGate

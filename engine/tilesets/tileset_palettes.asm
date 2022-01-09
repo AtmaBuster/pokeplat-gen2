@@ -12,6 +12,8 @@ LoadSpecialMapPalette:
 	jr z, .radio_tower
 	cp TILESET_GYM_1
 	jr z, .gym_1
+	cp TILESET_MUSEUM
+	jr z, .museum
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	jr .do_nothing
@@ -42,6 +44,11 @@ LoadSpecialMapPalette:
 	
 .gym_1
 	call LoadGym1Palette
+	scf
+	ret
+	
+.museum
+	call LoadMuseumPalette
 	scf
 	ret
 
@@ -134,3 +141,14 @@ LoadGym1Palette:
 
 Gym1Palette:
 INCLUDE "gfx/tilesets/gym_1.pal"
+
+LoadMuseumPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MuseumPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+MuseumPalette:
+INCLUDE "gfx/tilesets/museum.pal"

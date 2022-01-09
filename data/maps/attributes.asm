@@ -192,6 +192,7 @@ ENDM
 	map_attributes OreburghHouseW, OREBURGH_HOUSE_W, $00, 0
 	map_attributes OreburghHouseN, OREBURGH_HOUSE_N, $00, 0
 	map_attributes OreburghHouseE, OREBURGH_HOUSE_E, $00, 0
+	map_attributes OreburghMuseum, OREBURGH_MUSEUM, $00, 0
 	map_attributes OreburghMineB1F, OREBURGH_MINE_B1F, $09, 0
 	map_attributes OreburghMineB2F, OREBURGH_MINE_B2F, $09, 0
 	map_attributes CanalaveEastGate, CANALAVE_EAST_GATE, $0, 0

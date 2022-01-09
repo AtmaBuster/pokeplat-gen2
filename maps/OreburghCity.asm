@@ -8,7 +8,7 @@ OreburghCity_MapScripts:
 OreburghCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 14 ; warp events
+	db 15 ; warp events
 	warp_event  6,  5, OREBURGH_GATE_1F, 2
 	warp_event 34, 37, OREBURGH_MINE_B1F, 1
 	warp_event 35, 37, OREBURGH_MINE_B1F, 1
@@ -23,6 +23,7 @@ OreburghCity_MapEvents:
 	warp_event 31,  7, OREBURGH_HOUSE_N, 1
 	warp_event 41, 25, OREBURGH_HOUSE_E, 1
 	warp_event 22, 11, OREBURGH_GYM, 1
+	warp_event 40,  5, OREBURGH_MUSEUM, 1
 
 	db 0 ; coord events
 

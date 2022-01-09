@@ -84,6 +84,7 @@ INCLUDE "maps/OreburghApartmentE2F.asm"
 INCLUDE "maps/OreburghHouseW.asm"
 INCLUDE "maps/OreburghHouseN.asm"
 INCLUDE "maps/OreburghHouseE.asm"
+INCLUDE "maps/OreburghMuseum.asm"
 INCLUDE "maps/OreburghMineB1F.asm"
 INCLUDE "maps/OreburghMineB2F.asm"
 

@@ -132,6 +132,15 @@ INCBIN "data/tilesets/gym_1_metatiles.bin"
 TilesetGym1Coll:
 INCLUDE "data/tilesets/gym_1_collision.asm"
 ;---------------------------------------
+TilesetMuseumGFX:
+INCBIN "gfx/tilesets/museum.2bpp.lz"
+
+TilesetMuseumMeta:
+INCBIN "data/tilesets/museum_metatiles.bin"
+
+TilesetMuseumColl:
+INCLUDE "data/tilesets/museum_collision.asm"
+;---------------------------------------
 TilesetMansionGFX:
 INCBIN "gfx/tilesets/mansion.2bpp.lz"
 
@@ -140,6 +149,10 @@ INCBIN "data/tilesets/mansion_metatiles.bin"
 
 TilesetMansionColl:
 INCLUDE "data/tilesets/mansion_collision.asm"
+;---------------------------------------
+
+SECTION "Tileset Data 4", ROMX
+
 ;---------------------------------------
 TilesetCaveGFX:
 INCBIN "gfx/tilesets/cave.2bpp.lz"
@@ -158,10 +171,6 @@ INCBIN "data/tilesets/gate_metatiles.bin"
 
 TilesetGateColl:
 INCLUDE "data/tilesets/gate_collision.asm"
-;---------------------------------------
-
-SECTION "Tileset Data 4", ROMX
-
 ;---------------------------------------
 TilesetFacilityGFX:
 INCBIN "gfx/tilesets/facility.2bpp.lz"
@@ -199,6 +208,10 @@ INCBIN "data/tilesets/radio_tower_metatiles.bin"
 TilesetRadioTowerColl:
 INCLUDE "data/tilesets/radio_tower_collision.asm"
 ;---------------------------------------
+
+SECTION "Tileset Data 5", ROMX
+
+;---------------------------------------
 TilesetSolaceonRuinsGFX:
 INCBIN "gfx/tilesets/solaceon_ruins.2bpp.lz"
 
@@ -207,10 +220,6 @@ INCBIN "data/tilesets/solaceon_ruins_metatiles.bin"
 
 TilesetSolaceonRuinsColl:
 INCLUDE "data/tilesets/solaceon_ruins_collision.asm"
-;---------------------------------------
-
-SECTION "Tileset Data 5", ROMX
-
 ;---------------------------------------
 TilesetTraditionalHouseGFX:
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
