@@ -8163,7 +8163,7 @@ BattleCommand_taunt:
 	jp StdBattleTextbox
 
 .fail
-	call AnimateFailedMove
+	farcall AnimateFailedMove
 	jp PrintButItFailed
 
 BattleCommand_trumpcard:
@@ -8218,7 +8218,7 @@ BattleCommand_refresh:
 	jp CalcEnemyStats
 
 .fail
-	call AnimateFailedMove
+	farcall AnimateFailedMove
 	jp PrintButItFailed
 
 BattleCommand_wakeupslap:
@@ -8546,7 +8546,7 @@ BattleCommand_swallow:
 	jp StdBattleTextbox
 
 .hp_full
-	call AnimateFailedMove
+	farcall AnimateFailedMove
 	ld hl, HPIsFullText
 	call StdBattleTextbox
 	farjump EndMoveEffect
