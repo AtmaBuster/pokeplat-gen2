@@ -245,6 +245,7 @@ ScriptCommandTable:
 	dw Script_writetexttable             ; b3
 	dw Script_loadtrainertable           ; b4
 	dw Script_writetextgender            ; b5
+	dw Script_setmovedata                ; b6
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3114,3 +3115,15 @@ Script_writetextgender:
 	ld a, [wScriptBank]
 	ld b, a
 	jp MapTextbox
+
+Script_setmovedata:
+; script command 0xb6
+; parameters: object id, move data
+
+	call GetScriptByte
+	call GetScriptObject
+	ld b, a
+	call GetScriptByte
+	ld d, a
+	farcall SetObjectMoveData
+	ret

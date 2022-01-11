@@ -1146,3 +1146,10 @@ writetextgender: MACRO
 	dw \1 ; text_pointer (male)
 	dw \2 ; text_pointer (female)
 ENDM
+
+	enum setmovedata_command ; $b6
+setmovedata: MACRO
+	db setmovedata_command
+	db \1 ; object id
+	db \2 ; move data
+ENDM

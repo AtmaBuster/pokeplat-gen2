@@ -11,16 +11,17 @@
 	const JUBILIFECITY_OBJECT9
 	const JUBILIFECITY_OBJECT10
 	const JUBILIFECITY_OBJECT11
-	const JUBILIFECITY_OBJECT12
+	const JUBILIFECITY_CLOWN_ROWAN
 	const JUBILIFECITY_OBJECT13
 	const JUBILIFECITY_OBJECT14
 
 JubilifeCity_MapScripts:
-	db 5 ; scene scripts
+	db 6 ; scene scripts
 	scene_script .Dummy ; SCENE_JUBILIFECITY_FIRST_TIME
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL
 	scene_script .Dummy ; SCENE_JUBILIFECITY_START_POKETCH
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH
+	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC
 	scene_script .Dummy ; SCENE_JUBILIFECITY_NOTHING
 
 	db 2 ; callbacks
@@ -32,10 +33,23 @@ JubilifeCity_MapScripts:
 	return
 
 .Objects:
+	checkevent EVENT_GALACTIC_IN_JUBILIFE
+	iftrue .MoveGalactic
 	checkevent EVENT_GAVE_PARCEL_TO_RIVAL
 	iffalse .Done
 	moveobject JUBILIFECITY_DAWNLUCAS_PRES, 27, 19 ; reuse for Poketch President
 .Done:
+	return
+
+.MoveGalactic:
+	moveobject JUBILIFECITY_DAWNLUCAS_PRES, 29, 2
+	moveobject JUBILIFECITY_CLOWN_ROWAN, 28, 3
+	moveobject JUBILIFECITY_OBJECT13, 27, 2
+	moveobject JUBILIFECITY_OBJECT14, 27, 3
+	setmovedata JUBILIFECITY_DAWNLUCAS_PRES, SPRITEMOVEDATA_STANDING_LEFT
+	setmovedata JUBILIFECITY_CLOWN_ROWAN, SPRITEMOVEDATA_STANDING_LEFT
+	setmovedata JUBILIFECITY_OBJECT13, SPRITEMOVEDATA_STANDING_RIGHT
+	setmovedata JUBILIFECITY_OBJECT14, SPRITEMOVEDATA_STANDING_RIGHT
 	return
 
 .Dummy:
@@ -1486,6 +1500,425 @@ JubilifeCity_PresScript:
 	cont "OK?"
 	done
 
+JubilifeCity_GalacticScript1:
+	settableindex 0
+	sjump JubilifeCity_GalacticScript
+
+JubilifeCity_GalacticScript2:
+	settableindex 1
+	sjump JubilifeCity_GalacticScript
+
+JubilifeCity_GalacticScript3:
+	settableindex 2
+	sjump JubilifeCity_GalacticScript
+
+JubilifeCity_GalacticScript4:
+	settableindex 3
+JubilifeCity_GalacticScript:
+	opentext
+	writetext .NowNowNowText
+	waitbutton
+	closetext
+	turnobject JUBILIFECITY_CLOWN_ROWAN, DOWN
+	showemote EMOTE_SHOCK, JUBILIFECITY_CLOWN_ROWAN, 15
+	applymovementtable PLAYER, .ApproachMovement
+	opentext
+	writetext .RowanHelloText
+	waitbutton
+	writetext .DifficultText
+	waitbutton
+	turnobject JUBILIFECITY_CLOWN_ROWAN, LEFT
+	writetext .NuisanceText
+	waitbutton
+	turnobject JUBILIFECITY_CLOWN_ROWAN, DOWN
+	writetext .AdultsText
+	waitbutton
+	writetext .PersonalText
+	waitbutton
+	writetext .CivilityText
+	waitbutton
+	turnobject JUBILIFECITY_DAWNLUCAS_PRES, DOWN
+	writetextgender .DawnBattleText, .LucasBattleText
+	waitbutton
+	closetext
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .DawnLucasToGruntMovement
+	applymovement PLAYER, .PlayerToGruntMovement
+	winlosstext .WinText, 0
+	loadtrainer GRUNTM, GRUNTM1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext .RetreatText
+	waitbutton
+	closetext
+	follow JUBILIFECITY_OBJECT13, JUBILIFECITY_OBJECT14
+	applymovement JUBILIFECITY_OBJECT13, .RetreatMovement
+	stopfollow
+	disappear JUBILIFECITY_OBJECT13
+	disappear JUBILIFECITY_OBJECT14
+	turnobject JUBILIFECITY_CLOWN_ROWAN, DOWN
+	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .ToPlayerMovement
+	opentext
+	writetext .TeamGalacticText
+	waitbutton
+	writetextgender .DawnEvolutionText, .LucasEvolutionText
+	waitbutton
+	writetext .AllOverText
+	waitbutton
+	closetext
+	turnobject PLAYER, DOWN
+	follow JUBILIFECITY_CLOWN_ROWAN, JUBILIFECITY_DAWNLUCAS_PRES
+	applymovement JUBILIFECITY_CLOWN_ROWAN, .RowanLeaveMovement
+	stopfollow
+	disappear JUBILIFECITY_DAWNLUCAS_PRES
+	disappear JUBILIFECITY_CLOWN_ROWAN
+	setscene SCENE_JUBILIFECITY_NOTHING
+	clearevent EVENT_GALACTIC_IN_JUBILIFE
+	end
+
+.NowNowNowText:
+	text "MYSTERY MAN: Now,"
+	line "now, now, now!"
+
+	para "PROFESSOR ROWAN,"
+	line "you must comply."
+
+	para "Hand over all your"
+	line "research findings."
+
+	para "For free,"
+	line "naturally."
+
+	para "Failure to comply"
+	line "will result in a"
+	cont "painful time for"
+	cont "your assistant."
+	done
+
+.RowanHelloText:
+	text "ROWAN: Ah,"
+	line "<PLAYER>."
+
+	para "Well?"
+	line "How is the #DEX"
+	cont "progressing?"
+
+	para "Hm! That's"
+	line "OREBURGH's GYM"
+	cont "BADGE, I see."
+
+	para "But hadn't I given"
+	line "you your first"
+	cont "#MON only"
+	cont "recently…?"
+
+	para "Perhaps being a"
+	line "TRAINER is like"
+	cont "second nature to"
+	cont "you."
+	done
+
+.DifficultText:
+	text "MYSTERY MAN: Oh,"
+	line "PROFESSOR of"
+	cont "#MON, must you"
+	cont "be so difficult?"
+
+	para "We are speaking to"
+	line "you on business."
+
+	para "Because this is"
+	line "work for us."
+
+	para "What we're saying"
+	line "is… we demand you"
+	cont "comply with our"
+	cont "demands."
+	done
+
+.NuisanceText:
+	text "ROWAN: Quiet, you"
+	line "lot! Why must you"
+	cont "be a nuisance?"
+
+	para "Let me list some"
+	line "lessons you still"
+	cont "need to learn."
+
+	para "1: Don't loiter"
+	line "about for no good"
+	cont "reason."
+
+	para "2: Don't interrupt"
+	line "others while they"
+	cont "are attempting to"
+	cont "converse."
+
+	para "3: If you don't get"
+	line "your way, don't"
+	cont "raise your voice."
+
+	para "4: Don't think that"
+	line "you've grown strong"
+	cont "just because you're"
+	cont "in a group."
+
+	para "5: What is with"
+	line "those outlandish"
+	cont "outfits you have"
+	cont "on?"
+	done
+
+.AdultsText:
+	text "My goodness… You"
+	line "call yourselves"
+	cont "adults?"
+
+	para "You kids, don't"
+	line "grow up to be like"
+	cont "these sorry"
+	cont "specimens."
+	done
+
+.PersonalText:
+	text "MYSTERY MAN: Eeeh!"
+
+	para "You had to make"
+	line "this personal!"
+
+	para "You have forced"
+	line "our hand into"
+	cont "making a show of"
+	cont "force!"
+
+	para "We will make you"
+	line "regret insulting"
+	cont "TEAM GALACTIC!"
+	done
+
+.CivilityText:
+	text "ROWAN: You kids,"
+	line "give these thugs a"
+	cont "lesson in"
+	cont "civility, please."
+	done
+
+.DawnBattleText: ; change this text?
+	text "DAWN: <PLAYER>!"
+	line "Let's battle"
+	cont "together!"
+	done
+
+.LucasBattleText: ; change this text?
+	text "LUCAS: <PLAYER>!"
+	line "Join me and battle"
+	cont "these guys!"
+	done
+
+.WinText:
+	text "How is this"
+	line "madness possible?"
+
+	para "Losing to kids?"
+	line "This won't do…"
+
+	para "Time to retreat."
+	done
+
+.RetreatText:
+	text "GRUNT 1: You leave"
+	line "us no option. We"
+	cont "will retreat for"
+	cont "now."
+
+	para "We shall do so"
+	line "because TEAM"
+	cont "GALACTIC is"
+	cont "benevolent to all."
+	done
+
+.TeamGalacticText:
+	text "ROWAN: That lot…"
+	line "They called"
+	cont "themselves"
+	cont "TEAM GALACTIC."
+
+	para "When #MON"
+	line "evolve, they seem"
+	cont "to release some"
+	cont "type of energy…"
+
+	para "However, I believe"
+	line "that it's a mystic"
+	cont "power far beyond"
+	cont "our control."
+
+	para "But TEAM GALACTIC"
+	line "seems to be"
+	cont "studying that"
+	cont "power's potential."
+
+	para "They want to know"
+	line "if it can be used"
+	cont "as energy for"
+	cont "something…"
+	done
+
+.DawnEvolutionText:
+	text "DAWN: <PLAYER>, did"
+	line "you know?"
+
+	para "The PROFESSOR"
+	line "studies the"
+	cont "evolution of"
+	cont "#MON, too."
+
+	para "According to his"
+	line "research, 90"
+	cont "percent of all"
+	cont "#MON are"
+	cont "somehow tied to"
+	cont "evolution."
+
+	para "Well, maybe that's"
+	line "the reason those"
+	cont "people tried to"
+	cont "take PROF.ROWAN's"
+	cont "research data by"
+	cont "force."
+
+	para "That's really"
+	line "unforgivable!"
+	done
+
+.LucasEvolutionText:
+	text "LUCAS: <PLAYER>,"
+	line "did you know about"
+	cont "this?"
+
+	para "The PROFESSOR also"
+	line "studies the"
+	cont "evolution of"
+	cont "#MON."
+
+	para "According to his"
+	line "research, 90"
+	cont "percent of all"
+	cont "#MON are"
+	cont "somehow tied to"
+	cont "evolution!"
+
+	para "Maybe that's the"
+	line "reason those goons"
+	cont "tried to take the"
+	cont "PROFESSOR's"
+	cont "research data."
+
+	para "They're not allowed"
+	line "to do that!"
+	done
+
+.AllOverText:
+	text "ROWAN: It's all"
+	line "over, so you can"
+	cont "relax now."
+
+	para "Still, thanks to"
+	line "you two, nothing"
+	cont "came of that"
+	cont "situation."
+	cont "I appreciate that."
+
+	para "Incidentally,"
+	line "<PLAYER>."
+	cont "Kudos to you for"
+	cont "your battling"
+	cont "skill."
+
+	para "It got me"
+	line "thinking. Why don't"
+	cont "you collect all"
+	cont "the GYM BADGES of"
+	cont "SINNOH?"
+
+	para "Doing so, you will"
+	line "be sure to"
+	cont "encounter lots of"
+	cont "#MON."
+
+	para "That, of course,"
+	line "means your #DEX"
+	cont "pages will fill"
+	cont "up continuously."
+
+	para "In other words, it"
+	line "will be of great"
+	cont "help to my"
+	cont "research."
+
+	para "That said, I've"
+	line "given you your"
+	cont "first #MON and"
+	cont "#DEX as yours"
+	cont "to keep."
+
+	para "You're free to do"
+	line "with them as you"
+	cont "wish."
+
+	para "Take care now."
+	done
+
+.ApproachMovement:
+	dw .ApproachMovement1
+	dw .ApproachMovement2
+	dw .ApproachMovement3
+	dw .ApproachMovement4
+
+.ApproachMovement1:
+	step RIGHT
+.ApproachMovement2:
+	step RIGHT
+.ApproachMovement3:
+	step UP
+	step_end
+
+.ApproachMovement4:
+	step LEFT
+	step UP
+	step_end
+
+.DawnLucasToGruntMovement:
+	step LEFT
+	step_end
+
+.PlayerToGruntMovement:
+	step LEFT
+	turn_head UP
+	step_end
+
+.RetreatMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+.ToPlayerMovement:
+	step LEFT
+	step DOWN
+	step_end
+
+.RowanLeaveMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
 JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1503,7 +1936,7 @@ JubilifeCity_MapEvents:
 	warp_event  2, 14, JUBILIFE_WEST_GATE, 1
 	warp_event  2, 15, JUBILIFE_WEST_GATE, 2
 
-	db 15 ; coord events
+	db 19 ; coord events
 	coord_event 26, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript1
 	coord_event 27, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript2
 	coord_event 28, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript3
@@ -1519,6 +1952,10 @@ JubilifeCity_MapEvents:
 	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_CantLeavePoketchScriptU
 	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_CantLeavePoketchScriptD
 	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_GlobalTerminalStopScript
+	coord_event 26,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript1
+	coord_event 27,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript2
+	coord_event 28,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript3
+	coord_event 29,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript4
 
 	db 12 ; bg events
 	bg_event 31, 31, BGEVENT_READ, JubilifeCity_MapNameSignScript
@@ -1547,6 +1984,6 @@ JubilifeCity_MapEvents:
 	object_event 13, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_HappinessLadyScript, -1
 	object_event 22, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_GroupGuyScript, -1
 	object_event 19, 13, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_InterviewGirlScript, -1
-	object_event 22, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown1Script, -1
-	object_event 33, 20, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown2Script, EVENT_JUBILIFE_CITY_CLOWNS
-	object_event  9, 13, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown3Script, EVENT_JUBILIFE_CITY_CLOWNS
+	object_event 22, 12, SPRITE_CLOWN_ROWAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown1Script, EVENT_JUBILIFE_CITY_CLOWN1
+	object_event 33, 20, SPRITE_CLOWN_GALACTIC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown2Script, EVENT_JUBILIFE_CITY_CLOWNS
+	object_event  9, 13, SPRITE_CLOWN_GALACTIC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown3Script, EVENT_JUBILIFE_CITY_CLOWNS

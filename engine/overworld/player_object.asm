@@ -70,6 +70,16 @@ CopyDECoordsToMapObject::
 	ld [hl], e
 	ret
 
+SetObjectMoveData::
+	push de
+	ld a, b
+	call GetMapObject
+	pop de
+	ld hl, MAPOBJECT_MOVEMENT
+	add hl, bc
+	ld [hl], d
+	ret
+
 PlayerSpawn_ConvertCoords:
 	push bc
 	ld a, [wXCoord]

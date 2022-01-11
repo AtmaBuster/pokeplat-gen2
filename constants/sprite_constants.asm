@@ -154,9 +154,11 @@ SPRITE_POKEMON EQU const_value
 ; wVariableSprites indexes (see wram.asm)
 	const_def $f0
 SPRITE_VARS EQU const_value
-	const SPRITE_CONSOLE ; f0
-	const SPRITE_DOLL_1 ; f1
-	const SPRITE_DOLL_2 ; f2
-	const SPRITE_BIG_DOLL ; f3
-	const SPRITE_DAWN_LUCAS ; f4
-	const SPRITE_DAWN_LUCAS2 ; f5
+	const SPRITE_CONSOLE        ; f0
+	const SPRITE_DOLL_1         ; f1
+	const SPRITE_DOLL_2         ; f2
+	const SPRITE_BIG_DOLL       ; f3
+	const SPRITE_DAWN_LUCAS     ; f4
+	const SPRITE_DAWN_LUCAS2    ; f5
+	const SPRITE_CLOWN_GALACTIC ; f6
+	const SPRITE_CLOWN_ROWAN    ; f7

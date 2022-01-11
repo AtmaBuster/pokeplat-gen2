@@ -106,6 +106,8 @@ CHRIS EQU __enum__
 	const DALLAS3
 	const DALLAS4
 	const BASTIAN
+	const JONATHON
+	const DARIUS
 
 	trainerclass SCHOOLBOY ; 17
 	const HARRISON
@@ -125,6 +127,8 @@ CHRIS EQU __enum__
 	trainerclass BEAUTY ; 1d
 	trainerclass POKEMANIAC ; 1e
 	trainerclass GRUNTM ; 1f
+	const GRUNTM1
+
 	trainerclass GENTLEMAN ; 20
 	trainerclass SKIER ; 21
 	trainerclass TEACHER ; 22

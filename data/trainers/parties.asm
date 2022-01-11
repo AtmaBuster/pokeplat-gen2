@@ -432,6 +432,17 @@ YoungsterGroup:
 	db "BASTIAN@", TRAINERTYPE_NORMAL
 	trainermon_normal  8, MACHOP
 	db -1 ; end
+
+	next_list_item ; YOUNGSTER (12)
+	db "JONATHON@", TRAINERTYPE_NORMAL
+	trainermon_normal 11, GEODUDE
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (13)
+	db "DARIUS@", TRAINERTYPE_NORMAL
+	trainermon_normal  9, GEODUDE
+	trainermon_normal  9, ONIX
+	db -1 ; end
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
@@ -500,6 +511,11 @@ PokemaniacGroup:
 	end_list_items
 
 GruntMGroup:
+	next_list_item ; GRUNTM (1)
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	trainermon_normal 11, STUNKY
+	trainermon_normal 11, GLAMEOW
+	db -1 ; end
 	end_list_items
 
 GentlemanGroup:

@@ -1581,7 +1581,7 @@ RematchGiftFScript:
 GymStatue1Script:
 	getcurlandmarkname STRING_BUFFER_3
 	opentext
-	farwritetext GymStatue_CityGymText
+	farwritetext GymStatue_CityGymText1
 	waitbutton
 	closetext
 	end
@@ -1589,9 +1589,7 @@ GymStatue1Script:
 GymStatue2Script:
 	getcurlandmarkname STRING_BUFFER_3
 	opentext
-	farwritetext GymStatue_CityGymText
-	buttonsound
-	farwritetext GymStatue_WinningTrainersText
+	farwritetext GymStatue_CityGymText2
 	waitbutton
 	closetext
 	end

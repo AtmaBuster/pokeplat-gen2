@@ -39,6 +39,10 @@ SECTION "Map Scripts 4", ROMX
 
 INCLUDE "maps/Route202.asm"
 INCLUDE "maps/JubilifeCity.asm"
+
+
+SECTION "Map Scripts 5", ROMX
+
 INCLUDE "maps/Route203.asm"
 INCLUDE "maps/Route204.asm"
 INCLUDE "maps/JubilifeApartmentSE1F.asm"
@@ -49,10 +53,6 @@ INCLUDE "maps/JubilifeApartmentSW1F.asm"
 INCLUDE "maps/JubilifeApartmentSW2F.asm"
 INCLUDE "maps/Route218.asm"
 INCLUDE "maps/CanalaveEastGate.asm"
-
-
-SECTION "Map Scripts 5", ROMX
-
 INCLUDE "maps/TrainersSchool.asm"
 INCLUDE "maps/PoketchCompany1F.asm"
 INCLUDE "maps/PoketchCompany2F.asm"
@@ -86,10 +86,13 @@ INCLUDE "maps/OreburghHouseN.asm"
 INCLUDE "maps/OreburghHouseE.asm"
 INCLUDE "maps/OreburghMuseum.asm"
 INCLUDE "maps/OreburghMineB1F.asm"
-INCLUDE "maps/OreburghMineB2F.asm"
 
 
 SECTION "Map Scripts 6", ROMX
+
+INCLUDE "maps/OreburghMineB2F.asm"
+
+
 SECTION "Map Scripts 7", ROMX
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX

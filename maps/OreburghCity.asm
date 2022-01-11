@@ -1,5 +1,5 @@
 	object_const_def ; object_event constants
-	const OREBURGHCITY_OBJECT0
+	const OREBURGHCITY_RIVAL
 	const OREBURGHCITY_YOUNGSTER1
 	const OREBURGHCITY_OBJECT2
 	const OREBURGHCITY_OBJECT3
@@ -13,9 +13,10 @@
 	const OREBURGHCITY_OBJECT11
 
 OreburghCity_MapScripts:
-	db 2 ; scene scripts
-	scene_script .Dummy ; SCENE_DEFAULT
-	scene_script .Dummy ; SCENE_FINISHED
+	db 3 ; scene scripts
+	scene_script .Dummy ; SCENE_OREBURGHCITY_FIRST_VISIT
+	scene_script .Dummy ; SCENE_OREBURGHCITY_AFTER_GYM
+	scene_script .Dummy ; SCENE_OREBURGHCITY_NOTHING
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
@@ -43,7 +44,7 @@ OreburghCity_FirstTimeScript:
 	waitbutton
 	closetext
 	special RestartMapMusic
-	setscene SCENE_FINISHED
+	setscene SCENE_OREBURGHCITY_NOTHING
 	end
 
 .HowdyText:
@@ -154,7 +155,12 @@ OreburghCity_GymKidScript:
 	jumptext .YourFriendText
 
 .AfterMine:
+	checkflag ENGINE_COALBADGE
+	iftrue .AfterBadge
 	jumptext .LeaderWaitingText
+
+.AfterBadge:
+	jumptext .AfterBadgeText
 
 .YourFriendText:
 	text "Is that guy in"
@@ -172,6 +178,15 @@ OreburghCity_GymKidScript:
 
 	para "The GYM LEADER's"
 	line "waiting for you."
+	done
+
+.AfterBadgeText:
+	text "Can I see your"
+	line "TRAINER CASE?"
+
+	para "It's got the GYM"
+	line "BADGE you just"
+	cont "won, right?"
 	done
 
 OreburghCity_RivalScript:
@@ -437,6 +452,103 @@ OreburghCity_MachopScript:
 	line "Chopo!"
 	done
 
+OreburghCity_AfterGymRivalScript:
+	moveobject OREBURGHCITY_RIVAL, 13, 10
+	appear OREBURGHCITY_RIVAL
+	applymovement OREBURGHCITY_RIVAL, .ApproachPlayerMovement
+	follow PLAYER, OREBURGHCITY_RIVAL
+	applymovement PLAYER, .BumpMovement
+	opentext
+	writetext .ThudText
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	writetext .WhoopsText
+	waitbutton
+	turnobject OREBURGHCITY_RIVAL, DOWN
+	writetext .Route207Text
+	waitbutton
+	turnobject OREBURGHCITY_RIVAL, UP
+	writetext .NextStopText
+	waitbutton
+	closetext
+	applymovement PLAYER, .OutOfTheWayMovement
+	stopfollow
+	applymovement OREBURGHCITY_RIVAL, .LeaveMovement
+	special RestartMapMusic
+	disappear OREBURGHCITY_RIVAL
+	setscene SCENE_OREBURGHCITY_NOTHING
+	end
+
+.ThudText:
+	text_big "Thud!!@"
+
+.WhoopsText:
+	text "<RIVAL>: Whoops!"
+	line "<PLAYER>!"
+
+	para "You got the GYM"
+	line "BADGE, huh?"
+
+	para "ETERNA CITY is the"
+	line "next place with a"
+	cont "GYM that gives"
+	cont "away BADGES, yeah?"
+	done
+
+.Route207Text:
+	text "So, yeah, I went"
+	line "to ROUTE 207, but"
+	cont "you can't go there"
+	cont "without a BICYCLE,"
+
+	para "I made my team"
+	line "battle and"
+	cont "toughened them up,"
+	cont "so it wasn't a"
+	cont "waste."
+	done
+
+.NextStopText:
+	text "So, I'm going back"
+	line "to JUBILIFE CITY."
+
+	para "Next stop, the"
+	line "ETERNA GYM BADGE!"
+
+	para "Ten seconds before"
+	line "I dash!"
+
+	para "Nine…"
+
+	para "Bah! Who's got time"
+	line "to count?!"
+	done
+
+.ApproachPlayerMovement:
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step UP
+	step_end
+
+.BumpMovement:
+	step UP
+	turn_head DOWN
+	step_end
+
+.OutOfTheWayMovement:
+	step RIGHT
+	turn_head LEFT
+	step_end
+
+.LeaveMovement:
+	step LEFT
+	step UP
+	step UP
+	step_end
+
 OreburghCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -457,8 +569,9 @@ OreburghCity_MapEvents:
 	warp_event 22, 11, OREBURGH_GYM, 1
 	warp_event 40,  5, OREBURGH_MUSEUM, 1
 
-	db 1 ; coord events
-	coord_event  7,  8, SCENE_DEFAULT, OreburghCity_FirstTimeScript
+	db 2 ; coord events
+	coord_event  7,  8, SCENE_OREBURGHCITY_FIRST_VISIT, OreburghCity_FirstTimeScript
+	coord_event  7,  8, SCENE_OREBURGHCITY_AFTER_GYM, OreburghCity_AfterGymRivalScript
 
 	db 6 ; bg events
 	bg_event  9,  6, BGEVENT_READ, OreburghCity_NameSignScript

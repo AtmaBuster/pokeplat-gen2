@@ -137,7 +137,7 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_FORESTBADGE
 	call CheckBadge
 	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
@@ -290,9 +290,9 @@ OWFlash:
 
 .CheckUseFlash:
 ; Flash
-	ld de, ENGINE_ZEPHYRBADGE
-	farcall CheckBadge
-	jr c, .nozephyrbadge
+;	ld de, ENGINE_ZEPHYRBADGE
+;	farcall CheckBadge
+;	jr c, .nozephyrbadge
 	push hl
 	farcall SpecialAerodactylChamber
 	pop hl
@@ -310,9 +310,9 @@ OWFlash:
 	ld a, $80
 	ret
 
-.nozephyrbadge
-	ld a, $80
-	ret
+;.nozephyrbadge
+;	ld a, $80
+;	ret
 
 UseFlash:
 	ld hl, Script_UseFlash
@@ -356,7 +356,7 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_FENBADGE
 	call CheckBadge
 	jr c, .asm_c956
 	ld hl, wBikeFlags
@@ -513,7 +513,7 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_FENBADGE
 	call CheckEngineFlag
 	jr c, .quit
 
@@ -570,7 +570,7 @@ FlyFunction:
 
 .TryFly:
 ; Fly
-	ld de, ENGINE_STORMBADGE
+	ld de, ENGINE_COBBLEBADGE
 	call CheckBadge
 	jr c, .nostormbadge
 	call GetMapEnvironment
@@ -650,7 +650,7 @@ WaterfallFunction:
 
 .TryWaterfall:
 ; Waterfall
-	ld de, ENGINE_RISINGBADGE
+	ld de, ENGINE_BEACONBADGE
 	farcall CheckBadge
 	ld a, $80
 	ret c
@@ -721,7 +721,7 @@ TryWaterfallOW::
 	ld hl, WATERFALL
 	call CheckPartyMoveIndex
 	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
+	ld de, ENGINE_BEACONBADGE
 	call CheckEngineFlag
 	jr c, .failed
 	call CheckMapCanWaterfall
@@ -984,7 +984,7 @@ StrengthFunction:
 
 .TryStrength:
 ; Strength
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_MINEBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1084,7 +1084,7 @@ TryStrengthOW:
 	call CheckPartyMoveIndex
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_MINEBADGE
 	call CheckEngineFlag
 	jr c, .nope
 
@@ -1123,7 +1123,7 @@ Jumptable_cdae:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
-	ld de, ENGINE_GLACIERBADGE
+;	ld de, ENGINE_GLACIERBADGE
 	call CheckBadge
 	jr c, .noglacierbadge
 	call TryWhirlpoolMenu
@@ -1217,7 +1217,7 @@ TryWhirlpoolOW::
 	ld hl, WHIRLPOOL
 	call CheckPartyMoveIndex
 	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
+;	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .failed
 	call TryWhirlpoolMenu
@@ -1351,6 +1351,10 @@ TryRockSmashFromMenu:
 	cp $18
 	jr nz, .no_rock
 
+	ld de, ENGINE_COALBADGE
+	call CheckBadge
+	jr c, .nocoalbadge
+
 	ld hl, RockSmashFromMenuScript
 	call QueueScript
 	ld a, $81
@@ -1358,6 +1362,10 @@ TryRockSmashFromMenu:
 
 .no_rock
 	call FieldMoveFailed
+	ld a, $80
+	ret
+
+.nocoalbadge
 	ld a, $80
 	ret
 
@@ -1417,6 +1425,8 @@ UnknownText_0xcf58:
 AskRockSmashScript:
 	callasm HasRockSmash
 	ifequal 1, .no
+	checkflag ENGINE_COALBADGE
+	iffalse .no
 
 	opentext
 	writetext UnknownText_0xcf77
@@ -1799,7 +1809,7 @@ TryCutOW::
 	call CheckPartyMoveIndex
 	jr c, .cant_cut
 
-	ld de, ENGINE_HIVEBADGE
+	ld de, ENGINE_FORESTBADGE
 	call CheckEngineFlag
 	jr c, .cant_cut
 

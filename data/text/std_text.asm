@@ -278,18 +278,29 @@ ContestResults_PartyFullText:
 	line "in BILL's PC."
 	done
 
-GymStatue_CityGymText:
+GymStatue_CityGymText1:
 	text_ram wStringBuffer3
 	text_start
 	line "#MON GYM"
-	done
 
-GymStatue_WinningTrainersText:
-	text "LEADER: @"
+	para "LEADER: @"
 	text_ram wStringBuffer4
 	text_start
 	para "WINNING TRAINERS:"
-	line "<PLAYER>"
+	line "<RIVAL>"
+	done
+
+GymStatue_CityGymText2:
+	text_ram wStringBuffer3
+	text_start
+	line "#MON GYM"
+
+	para "LEADER: @"
+	text_ram wStringBuffer4
+	text_start
+	para "WINNING TRAINERS:"
+	line "<RIVAL>"
+	cont "<PLAYER>"
 	done
 
 CoinVendor_WelcomeText:

@@ -98,8 +98,8 @@
 	const EVENT_OREBURGH_GOT_SUPER_POTION        ; EV 05b
 	const EVENT_TALKED_TO_ARCEUS_GUY_IN_MINE     ; EV 05c
 	const EVENT_GOT_FLAME_PLATE_IN_MINE          ; EV 05d
-	const EVENT_05E                              ; EV 05e
-	const EVENT_05F                              ; EV 05f
+	const EVENT_GOT_TM_STEALTH_ROCK              ; EV 05e
+	const EVENT_GALACTIC_IN_JUBILIFE             ; EV 05f
 	const EVENT_060                              ; EV 060
 	const EVENT_061                              ; EV 061
 	const EVENT_062                              ; EV 062
@@ -562,6 +562,8 @@
 	const EVENT_BEAT_YOUNGSTER_DALLAS3           ; EV ---
 	const EVENT_BEAT_YOUNGSTER_DALLAS4           ; EV ---
 	const EVENT_BEAT_YOUNGSTER_BASTIAN           ; EV ---
+	const EVENT_BEAT_YOUNGSTER_JONATHON          ; EV ---
+	const EVENT_BEAT_YOUNGSTER_DARIUS            ; EV ---
 	const EVENT_BEAT_SCHOOLBOY_HARRISON          ; EV ---
 	const EVENT_BEAT_LASS_NATALIE                ; EV ---
 	const EVENT_BEAT_LASS_KAITLIN                ; EV ---
@@ -569,12 +571,10 @@
 	const EVENT_BEAT_LASS_MADELINE2              ; EV ---
 	const EVENT_BEAT_LASS_MADELINE3              ; EV ---
 	const EVENT_BEAT_LASS_MADELINE4              ; EV ---
+	const EVENT_BEAT_GRUNT_GRUNTM1               ; EV ---
 	const EVENT_BEAT_PICNICKER_DIANA             ; EV ---
 	const EVENT_BEAT_CAMPER_CURTIS               ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_237                              ; EV 237
-	const EVENT_238                              ; EV 238
-	const EVENT_239                              ; EV 239
 	const EVENT_23A                              ; EV 23a
 	const EVENT_23B                              ; EV 23b
 	const EVENT_23C                              ; EV 23c
@@ -1596,7 +1596,7 @@
 	const EVENT_OREBURGH_CITY_RIVAL              ; EV 62f
 	const EVENT_OREBURGH_MINE_B1F_HIKER          ; EV 630
 	const EVENT_OREBURGH_MINE_B2F_ROARK          ; EV 631
-	const EVENT_632                              ; EV 632
+	const EVENT_JUBILIFE_CITY_CLOWN1             ; EV 632
 	const EVENT_633                              ; EV 633
 	const EVENT_634                              ; EV 634
 	const EVENT_635                              ; EV 635
