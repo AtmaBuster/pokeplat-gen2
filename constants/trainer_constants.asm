@@ -86,7 +86,10 @@ CHRIS EQU __enum__
 	const CYNTHIA1
 	const CYNTHIA2
 
-	trainerclass BROCK ; 11
+	trainerclass WORKER ; 11
+	const MASON
+	const COLIN
+
 	trainerclass MISTY ; 12
 	trainerclass LT_SURGE ; 13
 	trainerclass SCIENTIST ; 14

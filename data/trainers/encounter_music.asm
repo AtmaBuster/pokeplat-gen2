@@ -19,7 +19,7 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; koga
 	db MUSIC_HIKER_ENCOUNTER       ; cal
 	db MUSIC_OFFICER_ENCOUNTER     ; champion
-	db MUSIC_YOUNGSTER_ENCOUNTER   ; brock
+	db MUSIC_HIKER_ENCOUNTER       ; brock
 	db MUSIC_LASS_ENCOUNTER        ; misty
 	db MUSIC_OFFICER_ENCOUNTER     ; lt_surge
 	db MUSIC_ROCKET_ENCOUNTER      ; scientist

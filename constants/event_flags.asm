@@ -93,11 +93,11 @@
 	const EVENT_VISITED_NEWMOON_ISLAND           ; EV 056
 	const EVENT_UNLOCKED_FLOWER_PARADISE         ; EV 057
 	const EVENT_GOT_HM05_ROCK_SMASH              ; EV 058
-	const EVENT_059                              ; EV 059
-	const EVENT_05A                              ; EV 05a
-	const EVENT_05B                              ; EV 05b
-	const EVENT_05C                              ; EV 05c
-	const EVENT_05D                              ; EV 05d
+	const EVENT_TALKED_TO_OREBURGH_RIVAL         ; EV 059
+	const EVENT_TALKED_TO_ROARK_IN_MINE          ; EV 05a
+	const EVENT_OREBURGH_GOT_SUPER_POTION        ; EV 05b
+	const EVENT_TALKED_TO_ARCEUS_GUY_IN_MINE     ; EV 05c
+	const EVENT_GOT_FLAME_PLATE_IN_MINE          ; EV 05d
 	const EVENT_05E                              ; EV 05e
 	const EVENT_05F                              ; EV 05f
 	const EVENT_060                              ; EV 060
@@ -541,8 +541,10 @@
 	const EVENT_BEAT_ELITE_FOUR_FLINT2           ; EV ---
 	const EVENT_BEAT_ELITE_FOUR_LUCIAN1          ; EV ---
 	const EVENT_BEAT_ELITE_FOUR_LUCIAN2          ; EV ---
-	const EVENT_BEAT_CHAMPION_CYNTHIA1 ; EV ---
-	const EVENT_BEAT_CHAMPION_CYNTHIA2 ; EV ---
+	const EVENT_BEAT_CHAMPION_CYNTHIA1           ; EV ---
+	const EVENT_BEAT_CHAMPION_CYNTHIA2           ; EV ---
+	const EVENT_BEAT_WORKER_MASON                ; EV ---
+	const EVENT_BEAT_WORKER_COLIN                ; EV ---
 	const EVENT_BEAT_RIVAL1_1_TURTWIG            ; EV ---
 	const EVENT_BEAT_RIVAL1_1_CHIMCHAR           ; EV ---
 	const EVENT_BEAT_RIVAL1_1_PIPLUP             ; EV ---
@@ -570,8 +572,6 @@
 	const EVENT_BEAT_PICNICKER_DIANA             ; EV ---
 	const EVENT_BEAT_CAMPER_CURTIS               ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN          ; EV ---
-	const EVENT_235                              ; EV 235
-	const EVENT_236                              ; EV 236
 	const EVENT_237                              ; EV 237
 	const EVENT_238                              ; EV 238
 	const EVENT_239                              ; EV 239
@@ -1036,9 +1036,9 @@
 	const EVENT_ROUTE_203_POKE_BALL              ; EV 402
 	const EVENT_ROUTE_203_REPEL                  ; EV 403
 	const EVENT_ROUTE_203_X_DEFEND               ; EV 404
-	const EVENT_405                              ; EV 405
-	const EVENT_406                              ; EV 406
-	const EVENT_407                              ; EV 407
+	const EVENT_OREBURGH_CITY_DIRE_HIT           ; EV 405
+	const EVENT_OREBURGH_MINE_B2F_ESCAPE_ROPE    ; EV 406
+	const EVENT_OREBURGH_MINE_B2F_POTION         ; EV 407
 	const EVENT_408                              ; EV 408
 	const EVENT_409                              ; EV 409
 	const EVENT_40A                              ; EV 40a
@@ -1593,9 +1593,9 @@
 	const EVENT_JUBILIFE_CITY_CLOWNS             ; EV 62c
 	const EVENT_TRAINERS_SCHOOL_RIVAL            ; EV 62d
 	const EVENT_ROUTE_203_RIVAL                  ; EV 62e
-	const EVENT_62F                              ; EV 62f
-	const EVENT_630                              ; EV 630
-	const EVENT_631                              ; EV 631
+	const EVENT_OREBURGH_CITY_RIVAL              ; EV 62f
+	const EVENT_OREBURGH_MINE_B1F_HIKER          ; EV 630
+	const EVENT_OREBURGH_MINE_B2F_ROARK          ; EV 631
 	const EVENT_632                              ; EV 632
 	const EVENT_633                              ; EV 633
 	const EVENT_634                              ; EV 634

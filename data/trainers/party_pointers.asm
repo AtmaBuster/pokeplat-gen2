@@ -18,7 +18,7 @@ TrainerGroups:
 	dba LucianGroup
 	dba PKMNTrainerGroup
 	dba ChampionGroup
-	dba BrockGroup
+	dba WorkerGroup
 	dba MistyGroup
 	dba LtSurgeGroup
 	dba ScientistGroup

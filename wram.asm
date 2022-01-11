@@ -2777,8 +2777,9 @@ wJubilifeCitySceneID::     db
 wRoute203SceneID::         db
 wOreburghGate1FSceneID::   db
 wOreburghGymSceneID::      db
+wOreburghCitySceneID::     db
 
-	ds 60
+	ds 59
 
 ; fight counts
 wJackFightCount::    db ; d9f2

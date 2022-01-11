@@ -16,7 +16,7 @@ TrainerClassNames::
 	db "ELITE FOUR@"
 	db "<PKMN> TRAINER@"
 	db "CHAMPION@"
-	db "LEADER@"
+	db "WORKER@"
 	db "LEADER@"
 	db "LEADER@"
 	db "SCIENTIST@"

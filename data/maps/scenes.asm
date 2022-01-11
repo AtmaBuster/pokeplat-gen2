@@ -25,4 +25,5 @@ MapScenes::
 	scene_var ROUTE_203,          wRoute203SceneID
 	scene_var OREBURGH_GATE_1F,   wOreburghGate1FSceneID
 	scene_var OREBURGH_GYM,       wOreburghGymSceneID
+	scene_var OREBURGH_CITY,      wOreburghCitySceneID
 	db -1 ; end

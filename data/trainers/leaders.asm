@@ -21,12 +21,4 @@ GymLeaders:
 	db RED
 ; fallthrough
 KantoGymLeaders:
-	db BROCK
-	db MISTY
-	db LT_SURGE
-	db ERIKA
-	db JANINE
-	db SABRINA
-	db BLAINE
-	db BLUE
 	db -1

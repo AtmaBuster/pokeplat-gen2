@@ -345,7 +345,17 @@ ChampionGroup:
 	db -1 ; end
 	end_list_items
 
-BrockGroup:
+WorkerGroup:
+	next_list_item ; WORKER (1)
+	db "MASON@", TRAINERTYPE_NORMAL
+	trainermon_normal  9, GEODUDE
+	db -1 ; end
+
+	next_list_item ; WORKER (2)
+	db "COLIN@", TRAINERTYPE_NORMAL
+	trainermon_normal  6, GEODUDE
+	trainermon_normal  8, MACHOP
+	db -1 ; end
 	end_list_items
 
 MistyGroup:

@@ -8,7 +8,6 @@ PnP_HiddenPeople:
 	db CHAMPION
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
-	db BROCK
 	db MISTY
 	db LT_SURGE
 	db ERIKA
