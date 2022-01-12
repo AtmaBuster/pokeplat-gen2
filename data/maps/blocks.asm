@@ -82,6 +82,9 @@ AssistantHouse2F_Blocks:
 
 Route202_Blocks:
 	INCBIN "maps/Route202.blk"
+	
+Route219_Blocks:
+	INCBIN "maps/Route219.blk"
 
 JubilifeCity_Blocks:
 	INCBIN "maps/JubilifeCity.blk"

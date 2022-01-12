@@ -109,13 +109,17 @@ ENDM
 	connection south, TwinleafTown, TWINLEAF_TOWN, 4
 	connection east, SandgemTown, SANDGEM_TOWN, -1
 
-	map_attributes SandgemTown, SANDGEM_TOWN, $01, NORTH | WEST
+	map_attributes SandgemTown, SANDGEM_TOWN, $01, NORTH | SOUTH | WEST
 	connection north, Route202, ROUTE_202, 1
+	connection south, Route219, ROUTE_219, 2
 	connection west, Route201, ROUTE_201, 1
 
 	map_attributes Route202, ROUTE_202, $01, NORTH | SOUTH
 	connection north, JubilifeCity, JUBILIFE_CITY, -9
 	connection south, SandgemTown, SANDGEM_TOWN, -1
+	
+	map_attributes Route219, ROUTE_219, $41, NORTH
+	connection north, SandgemTown, SANDGEM_TOWN, -2
 
 	map_attributes Route203, ROUTE_203, $01, WEST | EAST
 	connection west, JubilifeCity, JUBILIFE_CITY, 0

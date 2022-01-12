@@ -38,6 +38,7 @@ INCLUDE "maps/SandgemPokeMart.asm"
 SECTION "Map Scripts 4", ROMX
 
 INCLUDE "maps/Route202.asm"
+INCLUDE "maps/Route219.asm"
 INCLUDE "maps/JubilifeCity.asm"
 
 
