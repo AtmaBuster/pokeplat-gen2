@@ -468,5 +468,5 @@ RowansLab_MapEvents:
 	db 4 ; object events
 	object_event  4,  4, SPRITE_ROWAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RowansLab_RowanScript, -1
 	object_event  5, 11, SPRITE_DAWN_LUCAS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROWANS_LAB_DAWNLUCAS
-	object_event  2,  8, SPRITE_LUCAS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RowansLab_DawnLucasFatherScript, -1
+	object_event  2,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RowansLab_DawnLucasFatherScript, -1
 	object_event  6,  8, SPRITE_LUCAS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RowansLab_AideScript, -1

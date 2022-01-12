@@ -187,10 +187,16 @@ CheckForLuckyNumberWinners:
 	cp 5
 	jr z, .okay
 	ld b, 2
-	cp 3
+	cp 4
 	jr nc, .okay
 	ld b, 3
+	cp 3
+	jr nc, .okay
+	ld b, 4
 	cp 2
+	jr nc, .okay
+	ld b, 5
+	cp 1
 	jr nz, .nomatch
 
 .okay

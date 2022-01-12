@@ -54,7 +54,7 @@ ItemNames::
 	db "X SPECIAL@"
 	db "COIN CASE@"
 	db "ITEMFINDER@"
-	db "???@"
+	db "HEART SCALE@"
 	db "EXP.SHARE@"
 	db "OLD ROD@"
 	db "GOOD ROD@"

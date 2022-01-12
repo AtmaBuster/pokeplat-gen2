@@ -216,23 +216,9 @@ CheckUnusedTwoDayTimer:
 	ret
 
 RestartLuckyNumberCountdown:
-	call .GetDaysUntilNextFriday
+	ld a, 1
 	ld hl, wLuckyNumberDayBuffer
 	jp InitNDaysCountdown
-
-.GetDaysUntilNextFriday:
-	call GetWeekday
-	ld c, a
-	ld a, FRIDAY
-	sub c
-	jr z, .friday_saturday
-	jr nc, .earlier ; could have done "ret nc"
-
-.friday_saturday
-	add 7
-
-.earlier
-	ret
 
 _CheckLuckyNumberShowFlag:
 	ld hl, wLuckyNumberDayBuffer

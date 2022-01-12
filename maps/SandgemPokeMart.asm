@@ -46,5 +46,5 @@ SandgemPokeMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokeMart_ClerkScript, -1
-	object_event  8,  3, SPRITE_LUCAS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokeMart_PotionGuyScript, -1
-	object_event  5,  6, SPRITE_LUCAS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokeMart_BallKidScript, -1
+	object_event  8,  3, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokeMart_PotionGuyScript, -1
+	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SandgemPokeMart_BallKidScript, -1

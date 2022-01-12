@@ -284,6 +284,9 @@ TwinleafTown_CantLeaveScript:
 	step DOWN
 	step_end
 
+TwinleafTown_HiddenOddKeystone:
+	hiddenitem ODD_KEYSTONE, EVENT_TWINLEAF_TOWN_HIDDEN_ODD_KEYSTONE
+
 TwinleafTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -300,10 +303,11 @@ TwinleafTown_MapEvents:
 	coord_event 10,  1, SCENE_TWINLEAFTOWN_CANT_LEAVE, TwinleafTown_CantLeaveScriptL
 	coord_event 11,  1, SCENE_TWINLEAFTOWN_CANT_LEAVE, TwinleafTown_CantLeaveScriptR
 
-	db 3 ; bg events
+	db 4 ; bg events
 	bg_event 11,  9, BGEVENT_READ, TwinleafTown_NameSignScript
 	bg_event 13, 13, BGEVENT_READ, TwinleafTown_PlayersMailboxScript
 	bg_event  3,  7, BGEVENT_READ, TwinleafTown_RivalsMailboxScript
+	bg_event  7, 19, BGEVENT_ITEM, TwinleafTown_HiddenOddKeystone
 
 	db 4 ; object events
 	object_event  6, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TwinleafTown_TechnologyGuyScript, -1

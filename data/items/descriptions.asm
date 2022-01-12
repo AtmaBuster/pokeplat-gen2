@@ -24,7 +24,7 @@ ItemDescriptions:
 	dw EvoStoneDesc
 	dw EvoStoneDesc
 	dw EvoStoneDesc
-	dw QuestionMarkDesc
+	dw JournalDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -44,18 +44,18 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw QuestionMarkDesc
+	dw ParcelDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw QuestionMarkDesc
+	dw CouponDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
-	dw QuestionMarkDesc
+	dw HeartScaleDesc
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -333,6 +333,10 @@ MaxElixerDesc:
 	db   "Fully restores the"
 	next "PP of one #MON.@"
 
+JournalDesc:
+	db   "A notebook full of"
+	next "useful hints.@"
+
 HPUpDesc:
 	db   "Raises the HP of"
 	next "one #MON.@"
@@ -409,6 +413,10 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
+ParcelDesc:
+	db   "A parcel entrusted"
+	next "in your care.@"
+
 FreshWaterDesc:
 	db   "Restores #MON"
 	next "HP by 50.@"
@@ -424,6 +432,10 @@ LemonadeDesc:
 XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
+
+CouponDesc:
+	db   "A coupon exchanged"
+	next "for a #TCH.@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."
@@ -444,6 +456,10 @@ CoinCaseDesc:
 ItemfinderDesc:
 	db   "Checks for unseen"
 	next "items in the area.@"
+
+HeartScaleDesc:
+	db   "A scale valued"
+	next "by collectors.@"
 
 ExpShareDesc:
 	db   "Shares battle EXP."

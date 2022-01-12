@@ -14,7 +14,7 @@ MiningItemList:
 	dbw CLAW_FOSSIL,  .ClawFossil  ; 0d
 	dbw ARMOR_FOSSIL, .ArmorFossil ; 0e
 	dbw SKULL_FOSSIL, .SkullFossil ; 0f
-	dbw POKE_BALL,    .HeartScale  ; 10
+	dbw HEART_SCALE,  .HeartScale  ; 10
 	dbw FIRE_STONE,   .FireStone   ; 11
 	dbw THICK_CLUB,   .ThickClub   ; 12
 	dbw WATER_STONE,  .WaterStone  ; 13
