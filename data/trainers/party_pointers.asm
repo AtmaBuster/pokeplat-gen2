@@ -19,7 +19,7 @@ TrainerGroups:
 	dba PKMNTrainerGroup
 	dba ChampionGroup
 	dba WorkerGroup
-	dba MistyGroup
+	dba VeteranGroup
 	dba LtSurgeGroup
 	dba ScientistGroup
 	dba ErikaGroup

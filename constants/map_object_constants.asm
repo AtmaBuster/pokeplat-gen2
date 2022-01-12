@@ -143,9 +143,9 @@ MAPOBJECT_SCREEN_HEIGHT EQU (SCREEN_HEIGHT / 2) + 2
 	const SPRITEMOVEDATA_STANDING_RIGHT       ; 09
 	const SPRITEMOVEDATA_SPINRANDOM_FAST      ; 0a
 	const SPRITEMOVEDATA_PLAYER               ; 0b
-	const SPRITEMOVEDATA_0C                   ; 0c
-	const SPRITEMOVEDATA_0D                   ; 0d
-	const SPRITEMOVEDATA_0E                   ; 0e
+	const SPRITEMOVEDATA_TURN_UP_RIGHT        ; 0c
+	const SPRITEMOVEDATA_TURN_LEFT_RIGHT      ; 0d
+	const SPRITEMOVEDATA_TURN_DOWN_UP         ; 0e
 	const SPRITEMOVEDATA_0F                   ; 0f
 	const SPRITEMOVEDATA_10                   ; 10
 	const SPRITEMOVEDATA_11                   ; 11
@@ -181,9 +181,9 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const SPRITEMOVEFN_FAST_RANDOM_SPIN      ; 05
 	const SPRITEMOVEFN_STANDING              ; 06
 	const SPRITEMOVEFN_OBEY_DPAD             ; 07
-	const SPRITEMOVEFN_08                    ; 08
-	const SPRITEMOVEFN_09                    ; 09
-	const SPRITEMOVEFN_0A                    ; 0a
+	const SPRITEMOVEFN_TURN_UP_RIGHT         ; 08
+	const SPRITEMOVEFN_TURN_LEFT_RIGHT       ; 09
+	const SPRITEMOVEFN_TURN_DOWN_UP          ; 0a
 	const SPRITEMOVEFN_0B                    ; 0b
 	const SPRITEMOVEFN_0C                    ; 0c
 	const SPRITEMOVEFN_0D                    ; 0d

@@ -2899,7 +2899,7 @@ wdc60:: db
 wStepCount:: db ; dc73
 wPoisonStepCount:: db ; dc74
 wHappinessStepCount:: db
-	ds 1
+wNumPlatesFound:: db
 
 wParkBallsRemaining::
 wSafariBallsRemaining:: db ; dc79

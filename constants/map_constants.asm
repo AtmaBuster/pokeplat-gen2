@@ -86,22 +86,23 @@ ENDM
 	map_const JUBILIFE_POKEMON_CENTER_1F,                   5,  4 ; 23
 	map_const JUBILIFE_POKEMART,                            6,  4 ; 24
 	
-	newgroup ; Oreburgh & Routes								  ;  5
+	newgroup ; Oreburgh & Routes                                     5
 	
-	map_const OREBURGH_CITY,							   25, 20 ;  1
-	map_const OREBURGH_POKEMON_CENTER_1F,                   5,  4 ;  2
-	map_const OREBURGH_POKEMART,                            6,  4 ;  3
-	map_const OREBURGH_GYM,                                 5, 10  ; 4
-	map_const OREBURGH_APARTMENT_NW_1F,                     6,  4  ; 5
-	map_const OREBURGH_APARTMENT_NW_2F,                     6,  4  ; 6
-	map_const OREBURGH_APARTMENT_N_1F,                      6,  4  ; 7
-	map_const OREBURGH_APARTMENT_N_2F,                      6,  4  ; 8
-	map_const OREBURGH_APARTMENT_E_1F,                      6,  4  ; 9
-	map_const OREBURGH_APARTMENT_E_2F,                      6,  4  ; 10
-	map_const OREBURGH_HOUSE_W,                             4,  4  ; 11
-	map_const OREBURGH_HOUSE_N,                             4,  4  ; 12
-	map_const OREBURGH_HOUSE_E,                             4,  4  ; 13
-	map_const OREBURGH_MUSEUM,                              8,  5  ; 14
+	map_const OREBURGH_CITY,                               25, 20 ;  1
+	map_const ROUTE_207,                                   20, 10 ;  2
+	map_const OREBURGH_POKEMON_CENTER_1F,                   5,  4 ;  3
+	map_const OREBURGH_POKEMART,                            6,  4 ;  4
+	map_const OREBURGH_GYM,                                 5, 10 ;  5
+	map_const OREBURGH_APARTMENT_NW_1F,                     6,  4 ;  6
+	map_const OREBURGH_APARTMENT_NW_2F,                     6,  4 ;  7
+	map_const OREBURGH_APARTMENT_N_1F,                      6,  4 ;  8
+	map_const OREBURGH_APARTMENT_N_2F,                      6,  4 ;  9
+	map_const OREBURGH_APARTMENT_E_1F,                      6,  4 ; 10
+	map_const OREBURGH_APARTMENT_E_2F,                      6,  4 ; 11
+	map_const OREBURGH_HOUSE_W,                             4,  4 ; 12
+	map_const OREBURGH_HOUSE_N,                             4,  4 ; 13
+	map_const OREBURGH_HOUSE_E,                             4,  4 ; 14
+	map_const OREBURGH_MUSEUM,                              8,  5 ; 15
 	
 	newgroup ; Canalave, Route 218 & Islands                         6
 	

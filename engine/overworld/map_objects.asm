@@ -529,9 +529,9 @@ MapObjectMovementPattern:
 	dw .RandomSpin2 ; 05
 	dw .Standing ; 06
 	dw .ObeyDPad ; 07
-	dw .Movement08 ; 08
-	dw .Movement09 ; 09
-	dw .Movement0a ; 0a
+	dw .TurnUpRight ; 08
+	dw .TurnLeftRight ; 09
+	dw .TurnDownUp ; 0a
 	dw .Movement0b ; 0b
 	dw .Movement0c ; 0c
 	dw .Movement0d ; 0d
@@ -629,16 +629,37 @@ MapObjectMovementPattern:
 	ld hl, Function5000
 	jp HandleMovementData
 
-.Movement08:
-	ld hl, Function5015
-	jp HandleMovementData
+.TurnUpRight:
+	call Random
+	ldh a, [hRandomAdd]
+; UP = %0100, RIGHT = %1100
+	and %00001000
+	or %00000100
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld [hl], a
+	jp RandomStepDuration_Slow
 
-.Movement09:
-	ld hl, Function5026
-	jp HandleMovementData
+.TurnLeftRight:
+	call Random
+	ldh a, [hRandomAdd]
+; LEFT = %1000, RIGHT = %1100
+	and %00000100
+	or %00001000
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld [hl], a
+	jp RandomStepDuration_Slow
 
-.Movement0a:
-	jp _GetMovementObject
+.TurnDownUp:
+	call Random
+	ldh a, [hRandomAdd]
+; DOWN = %0000, UP = %0100
+	and %00000100
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld [hl], a
+	jp RandomStepDuration_Slow
 
 .Movement0b:
 	jp _GetMovementObject
@@ -1855,34 +1876,6 @@ Function5000: ; unscripted?
 GetMovementByte:
 	ld hl, wMovementDataBank
 	call _GetMovementByte
-	ret
-
-Function5015:
-	ld hl, OBJECT_MOVEMENT_BYTE_INDEX
-	add hl, bc
-	ld e, [hl]
-	inc [hl]
-	ld d, 0
-	ld hl, wc2e2
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	add hl, de
-	ld a, [hl]
-	ret
-
-Function5026:
-	ld hl, OBJECT_MOVEMENT_BYTE_INDEX
-	add hl, bc
-	ld e, [hl]
-	inc [hl]
-	ld d, 0
-	ld hl, wc2e6
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	add hl, de
-	ld a, [hl]
 	ret
 
 _GetMovementObject:

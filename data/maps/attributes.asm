@@ -131,8 +131,12 @@ ENDM
 	map_attributes Route218, ROUTE_218, $1, EAST
 	connection east, JubilifeCity, JUBILIFE_CITY, 0
 	
-	map_attributes OreburghCity, OREBURGH_CITY, $09, WEST
+	map_attributes OreburghCity, OREBURGH_CITY, $09, NORTH | WEST
+	connection north, Route207, ROUTE_207, 12
 	connection west, Route203, ROUTE_203, -2
+
+	map_attributes Route207, ROUTE_207, $09, SOUTH
+	connection south, OreburghCity, OREBURGH_CITY, -12
 
 
 ; no connections

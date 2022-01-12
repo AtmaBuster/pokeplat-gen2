@@ -14,6 +14,11 @@ FindItemInBallScript::
 	writetext .text_found
 	playsound SFX_ITEM
 	pause 60
+	callasm .CheckIfPlate
+	iffalse .SkipPlate
+	scall PlateEngravingScript
+	buttonsound
+.SkipPlate:
 	itemnotify
 	closetext
 	end
@@ -55,6 +60,124 @@ FindItemInBallScript::
 	ld a, $1
 	ld [wScriptVar], a
 	ret
+
+.CheckIfPlate:
+	xor a
+	ld [wScriptVar], a
+	ld a, [wItemBallItemID]
+	ld b, BANK(PlateItems)
+	ld hl, PlateItems
+	ld de, 2
+	call IsInFarArray
+	ret nc
+	ld hl, wNumPlatesFound
+	inc [hl]
+	ld a, [hl]
+	ld [wScriptVar], a
+	ret
+
+PlateEngravingScript:
+	writetext .IntroText
+	buttonsound
+	ifequal 1, .One
+	ifequal 2, .Two
+	ifequal 3, .Three
+	ifequal 4, .Four
+	ifequal 5, .Five
+	ifequal 6, .Six
+	ifequal 7, .Seven
+	ifequal 8, .Eight
+.One:
+	writetext .OneText
+	end
+
+.Two:
+	writetext .TwoText
+	end
+
+.Three:
+	writetext .ThreeText
+	end
+
+.Four:
+	writetext .FourText
+	end
+
+.Five:
+	writetext .FiveText
+	end
+
+.Six:
+	writetext .SixText
+	end
+
+.Seven:
+	writetext .SevenText
+	end
+
+.Eight:
+	writetext .EightText
+	end
+
+.IntroText:
+	text "There is text"
+	line "engraved in the"
+	cont "back of the PLATE…"
+	done
+
+.OneText:
+	text "“When the universe"
+	line "was created, its"
+	cont "shards became this"
+	cont "PLATE.”"
+	done
+
+.TwoText:
+	text "“The power of"
+	line "defeated giants"
+	cont "infuses this"
+	cont "PLATE.”"
+	done
+
+.ThreeText:
+	text "“Two beings of"
+	line "time and space set"
+	cont "free from the"
+	cont "ORIGINAL ONE.”"
+	done
+
+.FourText:
+	text "“Three beings were"
+	line "born to bind time"
+	cont "and space.”"
+	done
+
+.FiveText:
+	text "“Two make matter"
+	line "and three make"
+	cont "spirit, shaping"
+	cont "the world.”"
+	done
+
+.SixText:
+	text "“The ORIGINAL ONE"
+	line "breathed alone"
+	cont "before the"
+	cont "universe came.”"
+	done
+
+.SevenText:
+	text "“The powers of the"
+	line "PLATES are shared"
+	cont "among #MON.”"
+	done
+
+.EightText:
+	text "“The rightful"
+	line "bearer of a PLATE"
+	cont "draws from the"
+	cont "PLATE it holds.”"
+	done
 
 FindTMHMInBallScript::
 	callasm .TryReceiveItem

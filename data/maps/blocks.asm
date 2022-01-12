@@ -173,7 +173,9 @@ OreburghMineB1F_Blocks:
 	
 OreburghMineB2F_Blocks:
 	INCBIN "maps/OreburghMineB2F.blk"
-	
+
+Route207_Blocks:
+	INCBIN "maps/Route207.blk"
 
 
 SECTION "Map Blocks 2", ROMX

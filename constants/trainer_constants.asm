@@ -90,7 +90,9 @@ CHRIS EQU __enum__
 	const MASON
 	const COLIN
 
-	trainerclass MISTY ; 12
+	trainerclass VETERAN ; 12
+	const GRANT
+
 	trainerclass LT_SURGE ; 13
 	trainerclass SCIENTIST ; 14
 	trainerclass ERIKA ; 15
@@ -108,6 +110,7 @@ CHRIS EQU __enum__
 	const BASTIAN
 	const JONATHON
 	const DARIUS
+	const TYLER
 
 	trainerclass SCHOOLBOY ; 17
 	const HARRISON
@@ -120,6 +123,11 @@ CHRIS EQU __enum__
 	const MADELINE2
 	const MADELINE3
 	const MADELINE4
+	const SARAH
+	const SAMANTHA1
+	const SAMANTHA2
+	const SAMANTHA3
+	const SAMANTHA4
 
 	trainerclass JANINE ; 1a
 	trainerclass COOLTRAINERM ; 1b

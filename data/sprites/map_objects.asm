@@ -97,24 +97,24 @@ SpriteMovementData::
 	db 0 ; flags2
 	db 0 ; palette flags
 
-; SPRITEMOVEDATA_0C
-	db SPRITEMOVEFN_08 ; movement function
+; SPRITEMOVEDATA_TURN_UP_RIGHT
+	db SPRITEMOVEFN_TURN_UP_RIGHT ; movement function
 	db DOWN ; facing
 	db OBJECT_ACTION_STAND ; action
 	db 0 ; flags1
 	db 0 ; flags2
 	db 0 ; palette flags
 
-; SPRITEMOVEDATA_0D
-	db SPRITEMOVEFN_09 ; movement function
+; SPRITEMOVEDATA_TURN_LEFT_RIGHT
+	db SPRITEMOVEFN_TURN_LEFT_RIGHT ; movement function
 	db DOWN ; facing
 	db OBJECT_ACTION_STAND ; action
 	db 0 ; flags1
 	db 0 ; flags2
 	db 0 ; palette flags
 
-; SPRITEMOVEDATA_0E
-	db SPRITEMOVEFN_0A ; movement function
+; SPRITEMOVEDATA_TURN_DOWN_UP
+	db SPRITEMOVEFN_TURN_DOWN_UP ; movement function
 	db DOWN ; facing
 	db OBJECT_ACTION_STAND ; action
 	db 0 ; flags1

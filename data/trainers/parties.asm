@@ -358,7 +358,13 @@ WorkerGroup:
 	db -1 ; end
 	end_list_items
 
-MistyGroup:
+VeteranGroup:
+	next_list_item ; VETERAN (1)
+	db "GRANT@", TRAINERTYPE_NORMAL
+	trainermon_normal 34, RIOLU
+	trainermon_normal 34, GRAVELER
+	trainermon_normal 34, STARAPTOR
+	db -1 ; end
 	end_list_items
 
 LtSurgeGroup:
@@ -443,6 +449,11 @@ YoungsterGroup:
 	trainermon_normal  9, GEODUDE
 	trainermon_normal  9, ONIX
 	db -1 ; end
+
+	next_list_item ; YOUNGSTER (14)
+	db "TYLER@", TRAINERTYPE_NORMAL
+	trainermon_normal  8, MAGIKARP
+	db -1 ; end
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
@@ -492,6 +503,34 @@ LassGroup:
 	db "MADELINE@", TRAINERTYPE_NORMAL
 	trainermon_normal 43, GOLDUCK
 	trainermon_normal 43, LOPUNNY
+	db -1 ; end
+
+	next_list_item ; LASS (7)
+	db "SARAH@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, SHINX
+	db -1 ; end
+
+	next_list_item ; LASS (8)
+	db "SAMANTHA@", TRAINERTYPE_NORMAL
+	trainermon_normal  7, BUDEW
+	db -1 ; end
+
+	next_list_item ; LASS (9)
+	db "SAMANTHA@", TRAINERTYPE_NORMAL
+	trainermon_normal 24, BUDEW
+	db -1 ; end
+
+	next_list_item ; LASS (10)
+	db "SAMANTHA@", TRAINERTYPE_NORMAL
+	trainermon_normal 33, BEAUTIFLY
+	trainermon_normal 33, ROSELIA
+	db -1 ; end
+
+	next_list_item ; LASS (11)
+	db "SAMANTHA@", TRAINERTYPE_NORMAL
+	trainermon_normal 51, COMBEE
+	trainermon_normal 51, ROSELIA
+	trainermon_normal 51, BEAUTIFLY
 	db -1 ; end
 	end_list_items
 

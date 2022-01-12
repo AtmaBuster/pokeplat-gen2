@@ -545,6 +545,7 @@
 	const EVENT_BEAT_CHAMPION_CYNTHIA2            ; EV ---
 	const EVENT_BEAT_WORKER_MASON                 ; EV ---
 	const EVENT_BEAT_WORKER_COLIN                 ; EV ---
+	const EVENT_BEAT_VETERAN_GRANT                ; EV ---
 	const EVENT_BEAT_RIVAL1_1_TURTWIG             ; EV ---
 	const EVENT_BEAT_RIVAL1_1_CHIMCHAR            ; EV ---
 	const EVENT_BEAT_RIVAL1_1_PIPLUP              ; EV ---
@@ -564,6 +565,7 @@
 	const EVENT_BEAT_YOUNGSTER_BASTIAN            ; EV ---
 	const EVENT_BEAT_YOUNGSTER_JONATHON           ; EV ---
 	const EVENT_BEAT_YOUNGSTER_DARIUS             ; EV ---
+	const EVENT_BEAT_YOUNGSTER_TYLER              ; EV ---
 	const EVENT_BEAT_SCHOOLBOY_HARRISON           ; EV ---
 	const EVENT_BEAT_LASS_NATALIE                 ; EV ---
 	const EVENT_BEAT_LASS_KAITLIN                 ; EV ---
@@ -571,17 +573,15 @@
 	const EVENT_BEAT_LASS_MADELINE2               ; EV ---
 	const EVENT_BEAT_LASS_MADELINE3               ; EV ---
 	const EVENT_BEAT_LASS_MADELINE4               ; EV ---
+	const EVENT_BEAT_LASS_SARAH                   ; EV ---
+	const EVENT_BEAT_LASS_SAMANTHA1               ; EV ---
+	const EVENT_BEAT_LASS_SAMANTHA2               ; EV ---
+	const EVENT_BEAT_LASS_SAMANTHA3               ; EV ---
+	const EVENT_BEAT_LASS_SAMANTHA4               ; EV ---
 	const EVENT_BEAT_GRUNT_GRUNTM1                ; EV ---
 	const EVENT_BEAT_PICNICKER_DIANA              ; EV ---
 	const EVENT_BEAT_CAMPER_CURTIS                ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN           ; EV ---
-	const EVENT_23A                               ; EV 23a
-	const EVENT_23B                               ; EV 23b
-	const EVENT_23C                               ; EV 23c
-	const EVENT_23D                               ; EV 23d
-	const EVENT_23E                               ; EV 23e
-	const EVENT_23F                               ; EV 23f
-	const EVENT_240                               ; EV 240
 	const EVENT_241                               ; EV 241
 	const EVENT_242                               ; EV 242
 	const EVENT_243                               ; EV 243
@@ -1041,10 +1041,10 @@
 	const EVENT_OREBURGH_MINE_B2F_POTION          ; EV 407
 	const EVENT_ROUTE_218_X_ACCURACY              ; EV 408
 	const EVENT_ROUTE_219_ANTIDOTE                ; EV 409
-	const EVENT_40A                               ; EV 40a
-	const EVENT_40B                               ; EV 40b
-	const EVENT_40C                               ; EV 40c
-	const EVENT_40D                               ; EV 40d
+	const EVENT_ROUTE_204_PARLYZ_HEAL             ; EV 40a
+	const EVENT_ROUTE_204_HP_UP                   ; EV 40b
+	const EVENT_ROUTE_204_SEA_INCENSE             ; EV 40c
+	const EVENT_ROUTE_207_POKE_BALL               ; EV 40d
 	const EVENT_40E                               ; EV 40e
 	const EVENT_40F                               ; EV 40f
 	const EVENT_410                               ; EV 410
