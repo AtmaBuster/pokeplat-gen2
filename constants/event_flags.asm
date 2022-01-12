@@ -100,10 +100,10 @@
 	const EVENT_GOT_FLAME_PLATE_IN_MINE          ; EV 05d
 	const EVENT_GOT_TM_STEALTH_ROCK              ; EV 05e
 	const EVENT_GALACTIC_IN_JUBILIFE             ; EV 05f
-	const EVENT_060                              ; EV 060
-	const EVENT_061                              ; EV 061
-	const EVENT_062                              ; EV 062
-	const EVENT_063                              ; EV 063
+	const EVENT_GOT_OLD_ROD                      ; EV 060
+	const EVENT_GOT_GOOD_ROD                     ; EV 061
+	const EVENT_GOT_SUPER_ROD                    ; EV 062
+	const EVENT_JUBILIFE_GOT_QUICK_CLAW          ; EV 063
 	const EVENT_064                              ; EV 064
 	const EVENT_065                              ; EV 065
 	const EVENT_066                              ; EV 066
@@ -1039,7 +1039,7 @@
 	const EVENT_OREBURGH_CITY_DIRE_HIT           ; EV 405
 	const EVENT_OREBURGH_MINE_B2F_ESCAPE_ROPE    ; EV 406
 	const EVENT_OREBURGH_MINE_B2F_POTION         ; EV 407
-	const EVENT_408                              ; EV 408
+	const EVENT_ROUTE_218_X_ACCURACY             ; EV 408
 	const EVENT_409                              ; EV 409
 	const EVENT_40A                              ; EV 40a
 	const EVENT_40B                              ; EV 40b

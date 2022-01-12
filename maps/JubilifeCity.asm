@@ -33,6 +33,12 @@ JubilifeCity_MapScripts:
 	return
 
 .Objects:
+IF DEF(_DEMO1)
+	checkflag ENGINE_COALBADGE
+	iffalse .SkipDemo
+	moveobject JUBILIFECITY_OBJECT2, 14, 26
+.SkipDemo
+ENDC
 	checkevent EVENT_GALACTIC_IN_JUBILIFE
 	iftrue .MoveGalactic
 	checkevent EVENT_GAVE_PARCEL_TO_RIVAL
@@ -686,6 +692,18 @@ JubilifeCity_GlobalTerminalGuardScript:
 	faceplayer
 	readvar VAR_BADGES
 	ifequal 0, .NoBadges
+IF DEF(_DEMO1)
+	jumptext .DemoText
+.DemoText:
+	text "I'm sorry, the"
+	line "GLOBAL TERMINAL is"
+	cont "closed for the"
+	cont "time being."
+
+	para "Please visit in a"
+	line "later version."
+	done
+ENDC
 	jumptext .GlobalTerminalText
 
 .NoBadges:
@@ -811,7 +829,12 @@ JubilifeCity_SixBallsKidScript:
 
 JubilifeCity_CarvedOutManScript:
 	faceplayer
+	checkflag ENGINE_COALBADGE
+	iftrue .AfterBadge
 	jumptext .CarvedOutText
+
+.AfterBadge:
+	jumptext .AfterBadgeText
 
 .CarvedOutText:
 	text "JUBILIFE CITY's"
@@ -824,6 +847,29 @@ JubilifeCity_CarvedOutManScript:
 	cont "OREBURGH CITY"
 	cont "helped out with"
 	cont "that undertaking."
+	done
+
+.AfterBadgeText:
+	text "Hello! Let me ask"
+	line "you, have you paid"
+	cont "a visit to the"
+	cont "TV station?"
+
+	para "If you've never"
+	line "been, you owe it"
+	cont "to yourself to"
+	cont "make the trip."
+
+	para "And, if you've been"
+	line "there before, it"
+	cont "never hurts to"
+	cont "visit again."
+
+	para "After all, you can"
+	line "be a star!"
+
+	para "Or at least dream"
+	line "of being one!"
 	done
 
 JubilifeCity_CultureShockGuyScript:
@@ -1919,6 +1965,93 @@ JubilifeCity_GalacticScript:
 	step DOWN
 	step_end
 
+JubilifeCity_TypeKidScript:
+	faceplayer
+	opentext
+	writetext .WhichTypeText
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Fire
+	ifequal 2, .Water
+; Grass
+	writetext .GrassText
+	waitbutton
+	closetext
+	end
+
+.Fire:
+	writetext .FireText
+	waitbutton
+	closetext
+	end
+
+.Water:
+	writetext .WaterText
+	waitbutton
+	closetext
+	end
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 12, 4, 19, 11
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_DISABLE_B | STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "FIRE@"
+	db "WATER@"
+	db "GRASS@"
+
+.WhichTypeText:
+	text "The way you look…"
+
+	para "You're obviously a"
+	line "TRAINER!"
+
+	para "Can you tell me"
+	line "what type of"
+	cont "#MON you like?"
+	done
+
+.GrassText:
+	text "You chose the"
+	line "GRASS type?"
+
+	para "No wonder you look"
+	line "so calm."
+
+	para "I think you need"
+	line "to watch out you"
+	cont "don't get burned"
+	cont "by fire."
+	done
+
+.FireText:
+	text "The FIRE type?"
+
+	para "You must have a"
+	line "fiery personality."
+
+	para "You'd better watch"
+	line "out that fire isn't"
+	cont "doused by water,"
+	cont "though."
+	done
+
+.WaterText:
+	text "A person that"
+	line "likes the WATER"
+	cont "type must be"
+	cont "somewhat cool."
+
+	para "But beware of"
+	line "being drained by"
+	cont "thirsty grass."
+	done
+
 JubilifeCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1982,7 +2115,8 @@ JubilifeCity_MapEvents:
 	object_event 24, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_CarvedOutManScript, -1
 	object_event 28, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_CultureShockGuyScript, -1
 	object_event 13, 15, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_HappinessLadyScript, -1
-	object_event 22, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_GroupGuyScript, -1
+;	object_event 22, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_GroupGuyScript, -1
+	object_event 13, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_TypeKidScript, -1
 	object_event 19, 13, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_InterviewGirlScript, -1
 	object_event 22, 12, SPRITE_CLOWN_ROWAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown1Script, EVENT_JUBILIFE_CITY_CLOWN1
 	object_event 33, 20, SPRITE_CLOWN_GALACTIC, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, JubilifeCity_Clown2Script, EVENT_JUBILIFE_CITY_CLOWNS

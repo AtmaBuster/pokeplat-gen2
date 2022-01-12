@@ -5,6 +5,16 @@ Route218_MapScripts:
 
 	db 0 ; callbacks
 
+Route218_XAccuracyScript:
+	itemball X_ACCURACY
+
+Route218_SignScript:
+	jumptextsign .Text
+.Text:
+	text "    ROUTE 218"
+	line "<SIGNR> JUBILIFE CITY"
+	done
+
 Route218_MapEvents:
 	db 0, 0 ; filler
 
@@ -16,6 +26,8 @@ Route218_MapEvents:
 	
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 39, 13, BGEVENT_READ, Route218_SignScript
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route218_XAccuracyScript, EVENT_ROUTE_218_X_ACCURACY

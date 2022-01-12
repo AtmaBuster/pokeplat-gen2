@@ -74,6 +74,10 @@ INCLUDE "maps/OreburghGateB1F.asm"
 INCLUDE "maps/OreburghCity.asm"
 INCLUDE "maps/OreburghPokemonCenter1F.asm"
 INCLUDE "maps/OreburghPokeMart.asm"
+
+
+SECTION "Map Scripts 6", ROMX
+
 INCLUDE "maps/OreburghGym.asm"
 INCLUDE "maps/OreburghApartmentNW1F.asm"
 INCLUDE "maps/OreburghApartmentNW2F.asm"
@@ -86,10 +90,6 @@ INCLUDE "maps/OreburghHouseN.asm"
 INCLUDE "maps/OreburghHouseE.asm"
 INCLUDE "maps/OreburghMuseum.asm"
 INCLUDE "maps/OreburghMineB1F.asm"
-
-
-SECTION "Map Scripts 6", ROMX
-
 INCLUDE "maps/OreburghMineB2F.asm"
 
 
