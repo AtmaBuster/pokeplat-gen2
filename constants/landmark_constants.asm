@@ -132,7 +132,7 @@
 	const ROUTE_46          ; 2d
 	const SILVER_CAVE       ; 2e
 
-KANTO_LANDMARK EQU const_value
+
 	const PALLET_TOWN       ; 2f
 	const ROUTE_1           ; 30
 	const VIRIDIAN_CITY     ; 31
@@ -179,6 +179,7 @@ KANTO_LANDMARK EQU const_value
 	const INDIGO_PLATEAU    ; 5a
 	const ROUTE_26          ; 5b
 	const ROUTE_27          ; 5c
+KANTO_LANDMARK EQU const_value
 	const TOHJO_FALLS       ; 5d
 	const ROUTE_28          ; 5e
 	const FAST_SHIP         ; 5f
