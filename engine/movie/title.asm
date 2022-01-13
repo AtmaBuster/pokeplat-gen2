@@ -79,10 +79,10 @@ _TitleScreen:
 	call ByteFill
 
 ; Suicune gfx
-	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 0 | VRAM_BANK_1
-	call ByteFill
+;	hlbgcoord 0, 12
+;	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+;	ld a, 0 | VRAM_BANK_1
+;	call ByteFill
 
 ; Back to VRAM bank 0
 	ld a, $0
@@ -252,6 +252,7 @@ SuicuneFrameIterator:
 	db $08 ; vTiles5 tile $08
 
 LoadSuicuneFrame:
+	ret
 	hlcoord 6, 12
 	ld b, 6
 .bgrows
@@ -305,6 +306,7 @@ DrawTitleGraphic:
 	ret
 
 InitializeBackground:
+	ret
 	ld hl, wVirtualOAMSprite00
 	ld d, -$22
 	ld e, $0

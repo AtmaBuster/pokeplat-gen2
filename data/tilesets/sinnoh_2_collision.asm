@@ -59,9 +59,9 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 3a
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 3b
 	tilecoll WALL, WALL, TALL_GRASS, TALL_GRASS ; 3c
-	tilecoll WALL, WALL, WALL, WALL ; 3d
+	tilecoll WALL, WALL, WALL, WALK_DOWN ; 3d
 	tilecoll WALL, WALL, WALL, WALL ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
 	tilecoll WALL, WALL, WALL, WALL ; 40
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 41
-	tilecoll , , ,  ; 42
+	tilecoll WALL, WALL, WALL, WALL ; 42

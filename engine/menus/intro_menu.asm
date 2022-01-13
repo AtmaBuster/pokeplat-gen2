@@ -1217,9 +1217,9 @@ IntroMenuChooseGender:
 	ret
 
 CrystalIntroSequence:
-	callfar Copyright_GFPresents
-	jr c, StartTitleScreen
-	farcall CrystalIntro
+;	callfar Copyright_GFPresents
+;	jr c, StartTitleScreen
+;	farcall CrystalIntro
 
 StartTitleScreen:
 	ldh a, [rSVBK]
