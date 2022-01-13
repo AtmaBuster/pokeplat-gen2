@@ -191,9 +191,14 @@ DoNPCTrade:
 	ld e, NPCTRADE_DIALOG
 	call GetTradeAttribute
 	ld a, [hl]
-	cp TRADE_DIALOGSET_GIRL
+	cp TRADE_DIALOGSET_HILARY
+	jr nz, .caught_by_girl
+	cp TRADE_DIALOGSET_MINDY
+	jr nz, .caught_by_girl
 	ld a, CAUGHT_BY_GIRL
-	jr c, .okay
+	jr .okay
+
+.caught_by_girl
 	ld a, CAUGHT_BY_BOY
 .okay
 	ld [wOTTrademonCaughtData], a
@@ -214,11 +219,13 @@ DoNPCTrade:
 	ld e, NPCTRADE_DIALOG
 	call GetTradeAttribute
 	ld a, [hl]
-	cp TRADE_DIALOG_COMPLETE
-	ld b, RESET_FLAG
-	jr c, .incomplete
-	ld b, SET_FLAG
-.incomplete
+	ld b, CAUGHT_BY_GIRL
+	cp TRADE_DIALOGSET_HILARY
+	jr z, .got_gender
+	cp TRADE_DIALOGSET_MINDY
+	jr z, .got_gender
+	ld b, CAUGHT_BY_BOY
+.got_gender
 	farcall SetGiftPartyMonCaughtData
 
 	ld e, NPCTRADE_NICK

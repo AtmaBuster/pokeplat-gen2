@@ -1375,44 +1375,58 @@ UnknownText_0x1bd445::
 	text_end ; unused
 
 _NPCTradeIntroText1::
-	text "I collect #MON."
-	line "Do you have"
-	cont "@"
+	text "Listen, listen. Do"
+	line "you have a #MON"
+	cont "called @"
 	text_ram wStringBuffer1
 	text "?"
 
-	para "Want to trade it"
-	line "for my @"
+	para "Would you be"
+	line "willing to trade"
+	cont "your @"
+	text_ram wStringBuffer1
+	text ""
+	cont "for my @"
 	text_ram wStringBuffer2
 	text "?"
 	done
 
 _NPCTradeCancelText1::
-	text "You don't want to"
-	line "trade? Aww…"
+	text "Oh, OK…"
+
+	para "Well, I can't make"
+	line "you trade me."
+
+	para "But if you change"
+	line "your mind, I'll be"
+	cont "here waiting!"
 	done
 
 _NPCTradeWrongText1::
-	text "Huh? That's not"
-	line "@"
+	text "What I asked for"
+	line "was @"
 	text_ram wStringBuffer1
-	text ". "
-	cont "What a letdown…"
+	text "…"
 	done
 
 _NPCTradeCompleteText1::
-	text "Yay! I got myself"
+	text "Be nice to my"
 	line "@"
-	text_ram wStringBuffer1
+	text_ram wStringBuffer2
 	text "!"
-	cont "Thanks!"
+
+	para "I'll be sure to"
+	line "look after your"
+	cont "@"
+	text_ram wStringBuffer1
+	text " in"
+	cont "return!"
 	done
 
 _NPCTradeAFterText1::
-	text "Hi, how's my old"
-	line "@"
-	text_ram wStringBuffer2
-	text " doing?"
+	text "Thanks to #MON,"
+	line "I got to become"
+	cont "friends with you!"
 	done
 
 _NPCTradeIntroText2::

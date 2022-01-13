@@ -91,11 +91,14 @@ INCLUDE "maps/OreburghHouseN.asm"
 INCLUDE "maps/OreburghHouseE.asm"
 INCLUDE "maps/OreburghMuseum.asm"
 INCLUDE "maps/OreburghMineB1F.asm"
+
+
+SECTION "Map Scripts 7", ROMX
+
 INCLUDE "maps/OreburghMineB2F.asm"
 INCLUDE "maps/Route207.asm"
 
 
-SECTION "Map Scripts 7", ROMX
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX
 SECTION "Map Scripts 10", ROMX

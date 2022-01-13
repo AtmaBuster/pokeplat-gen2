@@ -104,9 +104,9 @@
 	const EVENT_GOT_GOOD_ROD                      ; EV 061
 	const EVENT_GOT_SUPER_ROD                     ; EV 062
 	const EVENT_JUBILIFE_GOT_QUICK_CLAW           ; EV 063
-	const EVENT_064                               ; EV 064
-	const EVENT_065                               ; EV 065
-	const EVENT_066                               ; EV 066
+	const EVENT_OREBURGH_GOT_DUSK_BALL            ; EV 064
+	const EVENT_OREBURGH_GOT_HEAL_BALL            ; EV 065
+	const EVENT_OREBURGH_GOT_GREAT_BALL           ; EV 066
 	const EVENT_067                               ; EV 067
 	const EVENT_068                               ; EV 068
 	const EVENT_069                               ; EV 069

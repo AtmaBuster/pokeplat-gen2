@@ -7,6 +7,7 @@ Marts:
 	dw Mart7Badge
 	dw Mart8Badge
 	dw MartJubilife
+	dw MartOreburgh
 .End
 
 Mart0Badge:
@@ -117,6 +118,13 @@ MartJubilife:
 	db 2 ; # items
 	db BLUESKY_MAIL
 	db HEAL_BALL
+	db -1 ; end
+
+MartOreburgh:
+	db 3 ; # items
+	db LITEBLUEMAIL
+	db HEAL_BALL
+	db NET_BALL
 	db -1 ; end
 
 DefaultMart:
