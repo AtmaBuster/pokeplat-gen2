@@ -41,5 +41,5 @@ Route207_MapEvents:
 	bg_event 11, 16, BGEVENT_READ, Route207_SignScript
 
 	db 2 ; object events
-	object_event 19, 15, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route207_BikerScript, -1
+	object_event 16, 15, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route207_BikerScript, -1
 	object_event  3,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route207_PokeBallScript, EVENT_ROUTE_207_POKE_BALL
