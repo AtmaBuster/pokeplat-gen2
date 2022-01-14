@@ -89,7 +89,7 @@ ENDM
 	newgroup ; Oreburgh & Routes                                     5
 	
 	map_const OREBURGH_CITY,                               25, 20 ;  1
-	map_const ROUTE_207,                                   30, 10 ;  2
+	map_const ROUTE_207,                                   27, 10 ;  2
 	map_const OREBURGH_POKEMON_CENTER_1F,                   5,  4 ;  3
 	map_const OREBURGH_POKEMART,                            6,  4 ;  4
 	map_const OREBURGH_GYM,                                 5, 10 ;  5
