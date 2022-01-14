@@ -25,10 +25,14 @@ endr
 ; Fish for monsters with rod b from encounter data in FishGroup at hl.
 ; Return monster e at level d.
 
+IF DEF(_DEBUG)
+	ld de, 0
+ELSE
 	call Random
 	cp [hl]
 	ld de, 0
 	ret nc
+ENDC
 
 	; Get encounter data by rod:
 	; 0: Old
@@ -52,12 +56,20 @@ endr
 	inc hl
 	inc hl
 	inc hl
+	inc hl
 	jr .loop
 .ok
 	inc hl
 
 .load
+; get level in range
 	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	inc a
+	sub e
+	call RandomRange
+	add e
 	ld e, a
 	ld a, [hli]
 	ld h, [hl]
@@ -92,10 +104,10 @@ GetFishGroupIndex:
 	jr z, .done
 
 	ld a, d
-	cp FISHGROUP_QWILFISH
-	jr z, .qwilfish
-	cp FISHGROUP_REMORAID
-	jr z, .remoraid
+;	cp FISHGROUP_QWILFISH
+;	jr z, .qwilfish
+;	cp FISHGROUP_REMORAID
+;	jr z, .remoraid
 
 .done
 	dec d
@@ -103,18 +115,18 @@ GetFishGroupIndex:
 	ld d, 0
 	ret
 
-.qwilfish
-	ld a, [wFishingSwarmFlag]
-	cp FISHSWARM_QWILFISH
-	jr nz, .done
-	ld d, FISHGROUP_QWILFISH_SWARM
-	jr .done
+;.qwilfish
+;	ld a, [wFishingSwarmFlag]
+;	cp FISHSWARM_QWILFISH
+;	jr nz, .done
+;	ld d, FISHGROUP_QWILFISH_SWARM
+;	jr .done
 
-.remoraid
-	ld a, [wFishingSwarmFlag]
-	cp FISHSWARM_REMORAID
-	jr nz, .done
-	ld d, FISHGROUP_REMORAID_SWARM
-	jr .done
+;.remoraid
+;	ld a, [wFishingSwarmFlag]
+;	cp FISHSWARM_REMORAID
+;	jr nz, .done
+;	ld d, FISHGROUP_REMORAID_SWARM
+;	jr .done
 
 INCLUDE "data/wild/fish.asm"

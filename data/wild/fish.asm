@@ -5,8 +5,28 @@ fishgroup: MACRO
 	dbwww \1, \2, \3, \4
 ENDM
 
+newfishset: MACRO
+fish_total = 0
+ENDM
+
+fishmon: MACRO
+fish_total = fish_total + \1
+if fish_total > 100
+	fail "fish mon error"
+endc
+	db fish_total percent
+	db \2, \3 ; min level, max level
+	dw \4 ; mon
+ENDM
+
 FishGroups:
 ; entries correspond to FISHGROUP_* constants
+	fishgroup 50 percent + 1, .Default_Old, .Twinleaf_Good, .Twinleaf_Super
+	fishgroup 50 percent + 1, .Default_Old, .Verity_Good, .Verity_Super
+	fishgroup 50 percent + 1, .Default_Old, .Route203_Good, .Route203_Super
+	fishgroup 50 percent + 1, .Default_Old, .Route218_Good, .Route218_Super
+	fishgroup 50 percent + 1, .Default_Old, .Route219_Good, .Route219_Super
+	fishgroup 50 percent + 1, .Default_Old, .OreburghGate_Good, .OreburghGate_Super
 	fishgroup 50 percent + 1, .Shore_Old,            .Shore_Good,            .Shore_Super
 	fishgroup 50 percent + 1, .Ocean_Old,            .Ocean_Good,            .Ocean_Super
 	fishgroup 50 percent + 1, .Lake_Old,             .Lake_Good,             .Lake_Super
@@ -20,6 +40,61 @@ FishGroups:
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+
+.Default_Old:
+	newfishset
+	fishmon 100, 3, 15, MAGIKARP
+
+.Twinleaf_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 45, 15, 35, GOLDEEN
+
+.Twinleaf_Super:
+.Verity_Super:
+.Route203_Super:
+	newfishset
+	fishmon 55, 30, 55, GYARADOS
+	fishmon 45, 30, 55, SEAKING
+
+.Verity_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 40, 15, 20, GOLDEEN
+	fishmon  5, 25, 35, SEAKING
+
+.Route203_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 45, 10, 25, GOLDEEN
+
+.Route218_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 45, 15, 25, FINNEON
+
+.Route218_Super:
+.Route219_Super:
+	newfishset
+	fishmon 55, 30, 55, GYARADOS
+	fishmon 45, 30, 55, LUMINEON
+
+.Route219_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 40, 15, 20, FINNEON
+	fishmon  5, 25, 35, LUMINEON
+
+.OreburghGate_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 45, 10, 25, BARBOACH
+
+.OreburghGate_Super:
+	newfishset
+	fishmon 55, 30, 55, GYARADOS
+	fishmon 45, 30, 55, WHISCASH
+
 
 .Shore_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP

@@ -380,6 +380,133 @@ JohtoGrassWildMons:
 	dbw 8, ZUBAT
 	dbw 9, GEODUDE
 	dbw 8, ZUBAT
+
+	map_id ROUTE_204
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, WURMPLE
+	dbw 3, KRICKETOT
+	dbw 4, BUDEW
+	dbw 4, SHINX
+	dbw 5, BUDEW
+	dbw 5, SHINX
+	dbw 5, STARLY
+	dbw 5, BIDOOF
+	dbw 6, STARLY
+	dbw 6, BIDOOF
+	; day
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, WURMPLE
+	dbw 3, BUDEW
+	dbw 4, BUDEW
+	dbw 4, SHINX
+	dbw 5, BUDEW
+	dbw 5, SHINX
+	dbw 5, STARLY
+	dbw 5, BIDOOF
+	dbw 6, STARLY
+	dbw 6, BIDOOF
+	; nite
+	dbw 4, STARLY
+	dbw 4, BIDOOF
+	dbw 4, KRICKETOT
+	dbw 3, ZUBAT
+	dbw 4, BUDEW
+	dbw 4, SHINX
+	dbw 5, BUDEW
+	dbw 5, SHINX
+	dbw 5, STARLY
+	dbw 5, BIDOOF
+	dbw 6, STARLY
+	dbw 6, BIDOOF
+
+	map_id ROUTE_207
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 7, MACHOP
+	dbw 5, GEODUDE
+	dbw 6, PONYTA
+	dbw 5, KRICKETOT
+	dbw 5, PONYTA
+	dbw 6, MACHOP
+	dbw 8, MACHOP
+	dbw 6, GEODUDE
+	dbw 7, PONYTA
+	dbw 7, GEODUDE
+	dbw 7, PONYTA
+	dbw 7, GEODUDE
+	; day
+	dbw 7, MACHOP
+	dbw 5, GEODUDE
+	dbw 6, PONYTA
+	dbw 5, MACHOP
+	dbw 5, PONYTA
+	dbw 6, MACHOP
+	dbw 8, MACHOP
+	dbw 6, GEODUDE
+	dbw 7, PONYTA
+	dbw 7, GEODUDE
+	dbw 7, PONYTA
+	dbw 7, GEODUDE
+	; nite
+	dbw 7, MACHOP
+	dbw 5, GEODUDE
+	dbw 6, KRICKETOT
+	dbw 5, ZUBAT
+	dbw 5, PONYTA
+	dbw 6, MACHOP
+	dbw 8, MACHOP
+	dbw 6, GEODUDE
+	dbw 7, PONYTA
+	dbw 7, GEODUDE
+	dbw 7, PONYTA
+	dbw 7, GEODUDE
+
+;	map_id RAVAGED_PATH
+	map_id DEBUG_ROOM
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 4, ZUBAT
+	dbw 4, PSYDUCK
+	dbw 5, ZUBAT
+	dbw 5, PSYDUCK
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	dbw 6, PSYDUCK
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	; day
+	dbw 4, ZUBAT
+	dbw 4, PSYDUCK
+	dbw 5, ZUBAT
+	dbw 5, PSYDUCK
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	dbw 6, PSYDUCK
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	; nite
+	dbw 4, ZUBAT
+	dbw 4, PSYDUCK
+	dbw 5, ZUBAT
+	dbw 5, PSYDUCK
+	dbw 3, ZUBAT
+	dbw 3, ZUBAT
+	dbw 6, PSYDUCK
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
+	dbw 6, ZUBAT
 	
 	; map_id [MAP_ID]
 	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
