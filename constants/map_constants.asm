@@ -63,7 +63,7 @@ ENDM
 
 	map_const JUBILIFE_CITY,                               20, 20 ;  1
 	map_const ROUTE_203,                                   26, 10 ;  2
-	map_const ROUTE_204,                                   12, 20 ;  3
+	map_const ROUTE_204_S,                                 12, 20 ;  3
 	map_const JUBILIFE_APARTMENT_SE_1F,                     6,  4 ;  4
 	map_const JUBILIFE_APARTMENT_SE_2F,                     6,  4 ;  5
 	map_const JUBILIFE_APARTMENT_NE_1F,                     6,  4 ;  6
@@ -118,10 +118,11 @@ ENDM
 
 	newgroup ; Dungeons                                           ;  8
 	
-	map_const OREBURGH_GATE_1F, 						   15, 10 ;  1
-	map_const OREBURGH_GATE_B1F,                           25,  9 ;  2
-	map_const OREBURGH_MINE_B1F,                            8, 12 ;  3
-	map_const OREBURGH_MINE_B2F,                           14, 13 ;  4
+	map_const RAVAGED_PATH,                                11, 16 ;  1
+	map_const OREBURGH_GATE_1F, 						   15, 10 ;  2
+	map_const OREBURGH_GATE_B1F,                           25,  9 ;  3
+	map_const OREBURGH_MINE_B1F,                            8, 12 ;  4
+	map_const OREBURGH_MINE_B2F,                           14, 13 ;  5
 
 
 ;	newgroup                                                      ;  1

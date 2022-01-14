@@ -381,7 +381,7 @@ JohtoGrassWildMons:
 	dbw 9, GEODUDE
 	dbw 8, ZUBAT
 
-	map_id ROUTE_204
+	map_id ROUTE_204_S
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 4, STARLY
@@ -465,8 +465,7 @@ JohtoGrassWildMons:
 	dbw 7, PONYTA
 	dbw 7, GEODUDE
 
-;	map_id RAVAGED_PATH
-	map_id DEBUG_ROOM
+	map_id RAVAGED_PATH
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 4, ZUBAT

@@ -1,6 +1,6 @@
 	object_const_def ; object_event constants
 
-Route204_MapScripts:
+Route204S_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
@@ -130,10 +130,11 @@ Route204_HPUpScript:
 Route204_SeaIncenseScript:
 	itemball SEA_INCENSE
 
-Route204_MapEvents:
+Route204S_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event  6, 21, RAVAGED_PATH, 1
 
 	db 0 ; coord events
 
