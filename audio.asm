@@ -13,7 +13,7 @@ INCLUDE "audio/sfx_pointers.asm"
 
 SECTION "Songs 1", ROMX
 
-INCLUDE "audio/music/route36.asm"
+INCLUDE "audio/music/route206.asm"
 INCLUDE "audio/music/rivalbattle.asm" ; Rival Battle (Barry's theme)
 INCLUDE "audio/music/rocketbattle.asm"
 INCLUDE "audio/music/rowanslab.asm" ; Professor Rowan's Theme

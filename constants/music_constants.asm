@@ -55,7 +55,7 @@
 	const MUSIC_PROF_ROWAN                   ; 32
 	const MUSIC_DARK_CAVE                    ; 33
 	const MUSIC_ROUTE_201                    ; 34
-	const MUSIC_ROUTE_36                     ; 35
+	const MUSIC_ROUTE_206                    ; 35
 	const MUSIC_SS_AQUA                      ; 36
 	const MUSIC_YOUNGSTER_ENCOUNTER          ; 37
 	const MUSIC_BEAUTY_ENCOUNTER             ; 38

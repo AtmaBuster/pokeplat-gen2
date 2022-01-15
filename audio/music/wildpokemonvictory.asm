@@ -180,3 +180,4 @@ Music_WildPokemonVictory_branch_f45f4:
 	note __, 4
 	note C#, 2
 	endchannel
+	
