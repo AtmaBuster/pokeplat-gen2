@@ -169,7 +169,7 @@ SandgemTown_MapScripts:
 
 .DawnPMCText:
 	text "This building with"
-	line "the red roof is a" ; this needs to change
+	line "the # sign is a"
 	cont "#MON CENTER."
 
 	para "It's the place that"
@@ -184,7 +184,7 @@ SandgemTown_MapScripts:
 
 .LucasPMCText:
 	text "This building with"
-	line "the red roof is a" ; this needs to change
+	line "the # sign is a"
 	cont "#MON CENTER."
 
 	para "You can get your"
@@ -199,7 +199,7 @@ SandgemTown_MapScripts:
 
 .DawnMartText:
 	text "The building with"
-	line "the blue roof over" ; this needs to change
+	line "the MART sign over"
 	cont "here is the"
 	cont "# MART. It's a"
 	cont "shop where you can"
@@ -220,7 +220,7 @@ SandgemTown_MapScripts:
 .LucasMartText:
 	text "Over here, the"
 	line "building with the"
-	cont "blue roof is the" ; this needs to change
+	cont "MART sign is the"
 	cont "# MART."
 
 	para "It's a shop where"

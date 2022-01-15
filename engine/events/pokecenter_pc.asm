@@ -44,6 +44,7 @@ PCPC_BILLS_PC     EQU 1
 PCPC_OAKS_PC      EQU 2
 PCPC_HALL_OF_FAME EQU 3
 PCPC_TURN_OFF     EQU 4
+PCPC_SOMEONES_PC  EQU 5
 
 .JumpTable:
 ; entries correspond to PCPC_* constants
@@ -52,22 +53,48 @@ PCPC_TURN_OFF     EQU 4
 	dw OaksPC,       .String_OaksPC
 	dw HallOfFamePC, .String_HallOfFame
 	dw TurnOffPC,    .String_TurnOff
+	dw BillsPC,      .String_SomeonesPC
 
 .String_PlayersPC:  db "<PLAYER>'s PC@"
-.String_BillsPC:    db "BILL's PC@"
+.String_BillsPC:    db "BEBE's PC@"
 .String_OaksPC:     db "PROF.OAK's PC@"
 .String_HallOfFame: db "HALL OF FAME@"
 .String_TurnOff:    db "TURN OFF@"
+.String_SomeonesPC: db "SOMEONE's PC@"
 
 .WhichPC:
-	; before Pokédex
+	; before Pokédex / SOMEONE's PC
+	db 3
+	db PCPC_SOMEONES_PC
+	db PCPC_PLAYERS_PC
+	db PCPC_TURN_OFF
+	db -1 ; end
+
+	; before Hall Of Fame / SOMEONE's PC
+	db 4
+	db PCPC_SOMEONES_PC
+	db PCPC_PLAYERS_PC
+	db PCPC_OAKS_PC
+	db PCPC_TURN_OFF
+	db -1 ; end
+
+	; postgame / SOMEONE's PC
+	db 5
+	db PCPC_SOMEONES_PC
+	db PCPC_PLAYERS_PC
+	db PCPC_OAKS_PC
+	db PCPC_HALL_OF_FAME
+	db PCPC_TURN_OFF
+	db -1 ; end
+
+	; before Pokédex / BEBE's PC
 	db 3
 	db PCPC_BILLS_PC
 	db PCPC_PLAYERS_PC
 	db PCPC_TURN_OFF
 	db -1 ; end
 
-	; before Hall Of Fame
+	; before Hall Of Fame / BEBE's PC
 	db 4
 	db PCPC_BILLS_PC
 	db PCPC_PLAYERS_PC
@@ -75,7 +102,7 @@ PCPC_TURN_OFF     EQU 4
 	db PCPC_TURN_OFF
 	db -1 ; end
 
-	; postgame
+	; postgame / BEBE's PC
 	db 5
 	db PCPC_BILLS_PC
 	db PCPC_PLAYERS_PC
@@ -85,6 +112,16 @@ PCPC_TURN_OFF     EQU 4
 	db -1 ; end
 
 .ChooseWhichPCListToUse:
+	call .ChooseWhichPCListToUse_1
+	ld b, a
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_MET_BEBE_F, a
+	ld a, b
+	ret z
+	add 3
+	ret
+
+.ChooseWhichPCListToUse_1:
 	call CheckReceivedDex
 	jr nz, .got_dex
 	ld a, 0 ; before Pokédex

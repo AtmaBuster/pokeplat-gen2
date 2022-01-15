@@ -28,8 +28,8 @@ JubilifePokemonCenter1F_TypeGirlScript:
 
 JubilifePokemonCenter1F_UnionRoomGuyScript:
 	jumptextfaceplayer .Text
-.Text: ; change this text
-	text "In the UNION ROOM"
+.Text:
+	text "In the CABLE CLUB"
 	line "upstairs, you can"
 	cont "chat and trade"
 	cont "with other people."

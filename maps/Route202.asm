@@ -250,8 +250,9 @@ Route202_CatchTutorialScript:
 
 	para "Actually, it's"
 	line "better to lower"
-	cont "your target's HP" ; change this text or change catch tutorial
-	cont "more than I did."
+	cont "your target's HP"
+	cont "before trying to"
+	cont "capture it."
 
 	para "It's important to"
 	line "get the #MON's"
@@ -282,8 +283,7 @@ Route202_CatchTutorialScript:
 
 	para "Actually, I should"
 	line "have lowered the"
-	cont "target's HP some"
-	cont "more."
+	cont "target's HP some."
 
 	para "Yup, the important"
 	line "thing is to lower"

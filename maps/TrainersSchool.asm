@@ -24,7 +24,16 @@ TrainersSchool_RivalScript:
 	takeitem PARCEL
 	writetext .WhatIsThisText
 	waitbutton
-;	verbosegiveitem TOWN_MAP ; change to map card
+	writetext .ReceivedAppText
+	waitsfx
+	playsound SFX_ITEM
+	waitbutton
+	writetext .ButNoPoketchText
+	waitsfx
+	playsound SFX_WRONG
+	waitbutton
+	writetext .RivalCampaignText
+	buttonsound
 	writetext .NextDestinationText
 	waitbutton
 	closetext
@@ -73,7 +82,7 @@ TrainersSchool_RivalScript:
 	line "this…?"
 
 	para "Score! It's a TOWN"
-	line "MAP!"
+	line "MAP #TCH APP!"
 
 	para "Huh? Why are there"
 	line "two in here?"
@@ -86,8 +95,32 @@ TrainersSchool_RivalScript:
 	line "take one!"
 	done
 
+.ReceivedAppText:
+	text "<PLAYER> got the"
+	line "TOWN MAP APP!"
+	done
+
+.ButNoPoketchText:
+	text "But <PLAYER> doesn't"
+	line "have a #TCH…"
+	done
+
+.RivalCampaignText:
+	text "<RIVAL>: Oh,"
+	line "<PLAYER>, you don't"
+	cont "have a #TCH?"
+
+	para "I think there's a"
+	line "special campaign"
+	cont "going on with a"
+	cont "#TCH for the"
+	cont "prize."
+
+	para "Go give that a go!"
+	done
+
 .NextDestinationText:
-	text "<RIVAL>: Hmm…"
+	text "Hmm…"
 
 	para "Well, according to"
 	line "the TOWN MAP, I"

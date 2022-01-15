@@ -1597,7 +1597,7 @@
 	const EVENT_OREBURGH_MINE_B1F_HIKER           ; EV 630
 	const EVENT_OREBURGH_MINE_B2F_ROARK           ; EV 631
 	const EVENT_JUBILIFE_CITY_CLOWN1              ; EV 632
-	const EVENT_633                               ; EV 633
+	const EVENT_POKETCH_COMPANY_1F_PRESIDENT      ; EV 633
 	const EVENT_634                               ; EV 634
 	const EVENT_635                               ; EV 635
 	const EVENT_636                               ; EV 636

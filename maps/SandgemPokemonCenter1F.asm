@@ -27,7 +27,7 @@ SandgemPokemonCenter1F_PCGuyScript:
 .Text:
 	text "Do you see that PC"
 	line "over there? That"
-	cont "fancy blue one?" ; change
+	cont "fancy hi-tech one?"
 
 	para "If you've got any"
 	line "#MON, it's free"

@@ -16,12 +16,13 @@
 	const JUBILIFECITY_OBJECT14
 
 JubilifeCity_MapScripts:
-	db 6 ; scene scripts
+	db 7 ; scene scripts
 	scene_script .Dummy ; SCENE_JUBILIFECITY_FIRST_TIME
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_RIVAL
 	scene_script .Dummy ; SCENE_JUBILIFECITY_START_POKETCH
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH
 	scene_script .Dummy ; SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC
+	scene_script .Dummy ; SCENE_JUBILIFECITY_NO_GLOBAL_TERMINAL
 	scene_script .Dummy ; SCENE_JUBILIFECITY_NOTHING
 
 	db 2 ; callbacks
@@ -137,10 +138,10 @@ JubilifeCity_DawnLucasScript:
 	buttonsound
 	writetext .ThievesAmongUsText
 	waitbutton
-;	verbosegiveitem VS_SEEKER ; remove?
+;	verbosegiveitem VS_RECORDER ; remove?
 ; ignore fail case
-	writetext .VsRecorderText
-	waitbutton
+;	writetext .VsRecorderText
+;	waitbutton
 	closetext
 	turnobject JUBILIFECITY_LOOKER, LEFT
 	pause 10
@@ -415,33 +416,34 @@ JubilifeCity_DawnLucasScript:
 	cont "out for characters"
 	cont "arousing my sus-"
 	cont "picion."
-
-	para "Incidentally, you"
-	line "are TRAINERS, yes?"
-
-	para "Perhaps you can"
-	line "make use of this?"
 	done
 
-.VsRecorderText:
-	text "That VS.RECORDER,"
-	line "is is a nifty dev-"
-	cont "ice for recording"
-	cont "a match."
+;	para "Incidentally, you"
+;	line "are TRAINERS, yes?"
 
-	para "I obtained it"
-	line "because it is"
-	cont "quite popular"
-	cont "these days."
+;	para "Perhaps you can"
+;	line "make use of this?"
+;	done
 
-	para "But myself, I do"
-	line "not do #MON"
-	cont "battling often."
+;.VsRecorderText:
+;	text "That VS.RECORDER,"
+;	line "is is a nifty dev-"
+;	cont "ice for recording"
+;	cont "a match."
 
-	para "It will be in"
-	line "better hands with"
-	cont "you."
-	done
+;	para "I obtained it"
+;	line "because it is"
+;	cont "quite popular"
+;	cont "these days."
+
+;	para "But myself, I do"
+;	line "not do #MON"
+;	cont "battling often."
+
+;	para "It will be in"
+;	line "better hands with"
+;	cont "you."
+;	done
 
 .HaveARequestText:
 	text "LOOKER: Also, I"
@@ -1467,7 +1469,8 @@ JubilifeCity_PresScript:
 	disappear JUBILIFECITY_DAWNLUCAS_PRES
 	setevent EVENT_GOT_POKETCH
 	disappear JUBILIFECITY_LOOKER
-	setscene SCENE_JUBILIFECITY_NOTHING
+	setscene SCENE_JUBILIFECITY_NO_GLOBAL_TERMINAL
+	clearflag EVENT_POKETCH_COMPANY_1F_PRESIDENT
 	end
 
 .Intro:
@@ -1749,13 +1752,12 @@ JubilifeCity_GalacticScript:
 	cont "civility, please."
 	done
 
-.DawnBattleText: ; change this text?
+.DawnBattleText:
 	text "DAWN: <PLAYER>!"
-	line "Let's battle"
-	cont "together!"
+	line "Let's battle them!"
 	done
 
-.LucasBattleText: ; change this text?
+.LucasBattleText:
 	text "LUCAS: <PLAYER>!"
 	line "Join me and battle"
 	cont "these guys!"
@@ -2069,7 +2071,7 @@ JubilifeCity_MapEvents:
 	warp_event  2, 14, JUBILIFE_WEST_GATE, 1
 	warp_event  2, 15, JUBILIFE_WEST_GATE, 2
 
-	db 19 ; coord events
+	db 20 ; coord events
 	coord_event 26, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript1
 	coord_event 27, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript2
 	coord_event 28, 37, SCENE_JUBILIFECITY_FIRST_TIME, JubilifeCity_DawnLucasScript3
@@ -2085,6 +2087,7 @@ JubilifeCity_MapEvents:
 	coord_event 37, 14, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_CantLeavePoketchScriptU
 	coord_event 37, 15, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_CantLeavePoketchScriptD
 	coord_event 17, 27, SCENE_JUBILIFECITY_CANT_LEAVE_POKETCH, JubilifeCity_GlobalTerminalStopScript
+	coord_event 17, 27, SCENE_JUBILIFECITY_NO_GLOBAL_TERMINAL, JubilifeCity_GlobalTerminalStopScript
 	coord_event 26,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript1
 	coord_event 27,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript2
 	coord_event 28,  5, SCENE_JUBILIFECITY_CANT_LEAVE_GALACTIC, JubilifeCity_GalacticScript3

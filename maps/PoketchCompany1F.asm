@@ -89,7 +89,7 @@ PoketchCompany1F_MapEvents:
 
 	db 4 ; object events
 	object_event  9,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PoketchCompany1F_ReceptionistScript, -1
-	object_event 10,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PoketchCompany1F_PresidentScript, -1
+	object_event 10,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PoketchCompany1F_PresidentScript, EVENT_POKETCH_COMPANY_1F_PRESIDENT
 	object_event  6,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PoketchCompany1F_AppDeveloperScript, -1
 	object_event  3,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PoketchCompany1F_TVGirlScript, -1
 ;	object_event  4,  0, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PoketchCompany1F_, -1
