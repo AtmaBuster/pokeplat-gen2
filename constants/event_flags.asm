@@ -1045,10 +1045,10 @@
 	const EVENT_ROUTE_204_HP_UP                   ; EV 40b
 	const EVENT_ROUTE_204_SEA_INCENSE             ; EV 40c
 	const EVENT_ROUTE_207_POKE_BALL               ; EV 40d
-	const EVENT_40E                               ; EV 40e
-	const EVENT_40F                               ; EV 40f
-	const EVENT_410                               ; EV 410
-	const EVENT_411                               ; EV 411
+	const EVENT_RAVAGED_PATH_POTION               ; EV 40e
+	const EVENT_RAVAGED_PATH_TM_ROCK_TOMB         ; EV 40f
+	const EVENT_RAVAGED_PATH_LUCK_INCENSE         ; EV 410
+	const EVENT_RAVAGED_PATH_TM_WATER_PULSE       ; EV 411
 	const EVENT_412                               ; EV 412
 	const EVENT_413                               ; EV 413
 	const EVENT_414                               ; EV 414

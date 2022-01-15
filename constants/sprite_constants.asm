@@ -76,7 +76,7 @@
 	const SPRITE_GYM_GUY ; 48
 	const SPRITE_SAILOR ; 49
 	const SPRITE_BIKER ; 4a
-	const SPRITE_PHARMACIST ; 4b
+	const SPRITE_CLOWN ; 4b
 	const SPRITE_MONSTER ; 4c
 	const SPRITE_FAIRY ; 4d
 	const SPRITE_BIRD ; 4e
