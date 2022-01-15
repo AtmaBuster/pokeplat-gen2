@@ -1049,7 +1049,7 @@
 	const EVENT_RAVAGED_PATH_TM_ROCK_TOMB         ; EV 40f
 	const EVENT_RAVAGED_PATH_LUCK_INCENSE         ; EV 410
 	const EVENT_RAVAGED_PATH_TM_WATER_PULSE       ; EV 411
-	const EVENT_412                               ; EV 412
+	const EVENT_OREBURGH_MINE_B1F_POKE_BALL       ; EV 412
 	const EVENT_413                               ; EV 413
 	const EVENT_414                               ; EV 414
 	const EVENT_415                               ; EV 415

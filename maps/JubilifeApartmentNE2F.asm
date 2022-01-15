@@ -21,7 +21,7 @@ JubilifeApartmentNE2F_GuyScript:
 	line "catch a #MON"
 	cont "and have it"
 	cont "battle-ready right"
-	cont "waya."
+	cont "away."
 
 	para "Of course, if your"
 	line "team has six"
