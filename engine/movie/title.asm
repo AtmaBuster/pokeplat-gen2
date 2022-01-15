@@ -169,6 +169,8 @@ _TitleScreen:
 	inc hl
 	dec b
 	jr nz, .loop
+	dec hl
+	ld [hl], 0
 
 ; Make sure the rest of the buffer is empty
 	ld hl, wLYOverrides + 80
