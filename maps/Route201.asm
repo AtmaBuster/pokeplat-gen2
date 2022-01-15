@@ -1094,7 +1094,7 @@ Route201_TrainerTipsSignScript:
 	jumptext .Text
 
 .Text:
-	text "Trainer Tips!"
+	text "TRAINER TIPS!"
 
 	para "Don't be shy! Talk"
 	line "to anyone and"

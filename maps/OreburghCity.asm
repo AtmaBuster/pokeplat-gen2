@@ -424,18 +424,12 @@ OreburghCity_SuperPotionGuyScript:
 	done
 
 .AfterText:
-	text "There's no"
-	line "question. This is"
-	cont "hard, hard work."
+	text "Feeling hale and"
+	line "hearty puts a"
+	cont "smiile on my face."
 
-	para "But working along-"
-	line "side #MON…"
-
-	para "It gives me a"
-	line "boost somehow."
-
-	para "Here, take one of"
-	line "these."
+	para "And that makes me"
+	line "happy."
 	done
 
 OreburghCity_MachopScript:

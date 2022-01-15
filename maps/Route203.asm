@@ -148,7 +148,7 @@ Route203_JubilifeSignScript:
 Route203_TrainerTips1Script:
 	jumptext .Text
 .Text:
-	text "Trainer Tips!"
+	text "TRAINER TIPS!"
 
 	para "#MON moves use"
 	line "energy called"
@@ -163,7 +163,7 @@ Route203_TrainerTips1Script:
 Route203_TrainerTips2Script:
 	jumptext .Text
 .Text:
-	text "Trainer Tips!"
+	text "TRAINER TIPS!"
 
 	para "If a #MON is"
 	line "about to evolve,"

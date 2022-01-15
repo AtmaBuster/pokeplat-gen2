@@ -413,7 +413,7 @@ Route202_TimeOfDayKidScript:
 Route202_TrainerTipsSignScript:
 	jumptext .Text
 .Text:
-	text "Trainer Tips!"
+	text "TRAINER TIPS!"
 
 	para "All #MON that"
 	line "are involved in a"

@@ -18,7 +18,7 @@ OreburghApartmentE1F_WhichMovesGuyScript:
 	jumptextfaceplayer .Text
 .Text:
 	text "I always have a"
-	line "rottem time trying"
+	line "rotten time trying"
 	cont "to decide which"
 	cont "moves my #MON"
 	cont "should learn."

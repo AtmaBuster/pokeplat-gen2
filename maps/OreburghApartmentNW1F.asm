@@ -13,7 +13,7 @@ OreburghApartmentNW1F_KidScript:
 	cont "TRAINER you meet."
 
 	para "Obviously, they're"
-	line "a lot tought."
+	line "a lot tougher."
 	cont "A lot."
 
 	para "I'd take as many"

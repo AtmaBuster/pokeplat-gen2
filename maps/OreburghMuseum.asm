@@ -143,7 +143,7 @@ OreburghMuseum_CoalSign2Script:
 	para "“The buried plant"
 	line "matter was forced"
 	cont "ever deeper under"
-	cont "the gorund due to"
+	cont "the ground due to"
 	cont "tremors and"
 	cont "fissures caused by"
 	cont "shifting"
