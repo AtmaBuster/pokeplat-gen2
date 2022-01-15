@@ -527,6 +527,32 @@ PlayersHouse1F_TryExitFirstTimeScript:
 	line "sweetie!"
 	done
 
+PlayersHouse1F_SinkScript:
+	jumptext .Text
+.Text:
+	text "MOM's kitchen is"
+	line "spotless!"
+
+	para "You can see your"
+	line "face on the floor!"
+	done
+
+PlayersHouse1F_FridgeScript:
+	jumptext .Text
+.Text:
+	text "MOM's favorite"
+	line "dessert is in the"
+	cont "regrigerator."
+	done
+
+PlayersHouse1F_CounterScript:
+	jumptext .Text
+.Text:
+	text "This is where MOM"
+	line "does all her"
+	cont "delicious cooking."
+	done
+
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -539,7 +565,12 @@ PlayersHouse1F_MapEvents:
 	coord_event  7,  7, SCENE_PLAYERSHOUSE1F_TRY_EXIT_FIRST_TIME, PlayersHouse1F_TryExitFirstTimeScript
 	coord_event  6,  7, SCENE_PLAYERSHOUSE1F_TRY_EXIT_FIRST_TIME, PlayersHouse1F_TryExitFirstTimeScript
 
-	db 0 ; bg events
+	db 5 ; bg events
+	bg_event  0,  1, BGEVENT_READ, PlayersHouse1F_SinkScript
+	bg_event  1,  1, BGEVENT_READ, PlayersHouse1F_SinkScript
+	bg_event  2,  1, BGEVENT_READ, PlayersHouse1F_FridgeScript
+	bg_event  0,  3, BGEVENT_READ, PlayersHouse1F_CounterScript
+	bg_event  1,  3, BGEVENT_READ, PlayersHouse1F_CounterScript
 
 	db 2 ; object events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouse1F_MomScript, -1
