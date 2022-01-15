@@ -41,6 +41,7 @@ MAP_NONE   EQU 0
 	const FISHGROUP_ROUTE_203
 	const FISHGROUP_ROUTE_218
 	const FISHGROUP_ROUTE_219
+	const FISHGROUP_RAVAGED_PATH
 	const FISHGROUP_OREBURGH_GATE
 
 ; connection directions (see data/maps/data.asm)

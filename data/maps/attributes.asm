@@ -100,7 +100,7 @@ ENDM
 	connection north, Route201, ROUTE_201, -4
 
 	map_attributes JubilifeCity, JUBILIFE_CITY, $01, NORTH | SOUTH | WEST | EAST
-	connection north, Route204, ROUTE_204, 9
+	connection north, Route204S, ROUTE_204_S, 9
 	connection south, Route202, ROUTE_202, 9
 	connection west, Route218, ROUTE_218, 0
 	connection east, Route203, ROUTE_203, 0
@@ -125,7 +125,7 @@ ENDM
 	connection west, JubilifeCity, JUBILIFE_CITY, 0
 	connection east, OreburghCity, OREBURGH_CITY, 2
 	
-	map_attributes Route204, ROUTE_204, $1, SOUTH
+	map_attributes Route204S, ROUTE_204_S, $1, SOUTH
 	connection south, JubilifeCity, JUBILIFE_CITY, -9
 	
 	map_attributes Route218, ROUTE_218, $1, EAST
@@ -186,6 +186,7 @@ ENDM
 	map_attributes JubilifePokemonCenter1F, JUBILIFE_POKEMON_CENTER_1F, $00, 0
 	map_attributes JubilifePokeMart, JUBILIFE_POKEMART, $00, 0
 	map_attributes JubilifeWestGate, JUBILIFE_WEST_GATE, $00, 0
+	map_attributes RavagedPath, RAVAGED_PATH, $09, 0
 	map_attributes OreburghGate1F, OREBURGH_GATE_1F, $09, 0
 	map_attributes OreburghGateB1F, OREBURGH_GATE_B1F, $09, 0
 	map_attributes OreburghPokemonCenter1F, OREBURGH_POKEMON_CENTER_1F, $00, 0

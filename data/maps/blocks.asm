@@ -92,8 +92,8 @@ JubilifeCity_Blocks:
 Route203_Blocks:
 	INCBIN "maps/Route203.blk"
 	
-Route204_Blocks:
-	INCBIN "maps/Route204.blk"
+Route204S_Blocks:
+	INCBIN "maps/Route204S.blk"
 	
 JubilifeApartmentSE1F_Blocks:
 JubilifeApartmentNE1F_Blocks:
@@ -149,6 +149,9 @@ TVStationElevator_Blocks:
 	
 PokemonCommunicationCenter_Blocks:
 	INCBIN "maps/PokemonCommunicationCenter.blk"
+	
+RavagedPath_Blocks:
+	INCBIN "maps/RavagedPath.blk"
 	
 Route218_Blocks:
 	INCBIN "maps/Route218.blk"

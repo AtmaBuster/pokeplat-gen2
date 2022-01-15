@@ -45,7 +45,7 @@ INCLUDE "maps/JubilifeCity.asm"
 SECTION "Map Scripts 5", ROMX
 
 INCLUDE "maps/Route203.asm"
-INCLUDE "maps/Route204.asm"
+INCLUDE "maps/Route204S.asm"
 INCLUDE "maps/JubilifeApartmentSE1F.asm"
 INCLUDE "maps/JubilifeApartmentSE2F.asm"
 INCLUDE "maps/JubilifeApartmentNE1F.asm"
@@ -70,6 +70,7 @@ INCLUDE "maps/PokemonCommunicationCenter.asm"
 INCLUDE "maps/JubilifePokemonCenter1F.asm"
 INCLUDE "maps/JubilifePokeMart.asm"
 INCLUDE "maps/JubilifeWestGate.asm"
+INCLUDE "maps/RavagedPath.asm"
 
 
 SECTION "Map Scripts 6", ROMX

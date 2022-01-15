@@ -34,6 +34,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Default_Old, .Route218_Good, .Route218_Super
 	fishgroup 50 percent + 1, .Default_Old, .Route219_Good, .Route219_Super
 	fishgroup 50 percent + 1, .Default_Old, .OreburghGate_Good, .OreburghGate_Super
+	fishgroup 50 percent + 1, .Default_Old, .RavagedPath_Good, .RavagedPath_Super
 
 	startfishsets
 
@@ -80,7 +81,17 @@ FishGroups:
 	fishmon 55, 10, 25, MAGIKARP
 	fishmon 40, 15, 20, FINNEON
 	fishmon  5, 25, 35, LUMINEON
-
+	
+.RavagedPath_Good:
+	newfishset
+	fishmon 55, 10, 25, MAGIKARP
+	fishmon 45, 10, 25, BARBOACH
+	
+.RavagedPath_Super:
+	newfishset 
+	fishmon 55, 30, 55, GYARADOS
+	fishmon 45, 30, 55, WHISCASH
+	
 .OreburghGate_Good:
 	newfishset
 	fishmon 55, 10, 25, MAGIKARP
