@@ -495,7 +495,7 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; FROSLASS
 	mon_cry CRY_RATTATA,     $000,  $001 ; ROTOM
 	mon_cry CRY_RATTATA,     $000,  $001 ; UXIE
-	mon_cry CRY_RATTATA,     $000,  $001 ; MESPRIT
+	mon_cry CRY_ENTEI,       $154,  $1f4 ; MESPRIT
 	mon_cry CRY_RATTATA,     $000,  $001 ; AZELF
 	mon_cry CRY_RATTATA,     $000,  $001 ; DIALGA
 	mon_cry CRY_RATTATA,     $000,  $001 ; PALKIA
