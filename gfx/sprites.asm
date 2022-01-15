@@ -109,5 +109,6 @@ StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
 
 SECTION "Sprites 3", ROMX
 
+ScientistFSpriteGFX::          INCBIN "gfx/sprites/scientist_f.2bpp"
 BlankSpriteGFX::
 	ds $c0
