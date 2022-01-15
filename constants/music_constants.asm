@@ -24,7 +24,7 @@
 	const MUSIC_BICYCLE                      ; 13
 	const MUSIC_HALL_OF_FAME                 ; 14
 	const MUSIC_VIRIDIAN_CITY                ; 15
-	const MUSIC_CELADON_CITY                 ; 16
+	const MUSIC_POKE_MART                    ; 16
 	const MUSIC_TRAINER_VICTORY              ; 17
 	const MUSIC_WILD_VICTORY                 ; 18
 	const MUSIC_GYM_VICTORY                  ; 19
@@ -39,13 +39,13 @@
 	const MUSIC_EVOLUTION                    ; 22
 	const MUSIC_NATIONAL_PARK                ; 23
 	const MUSIC_CREDITS                      ; 24
-	const MUSIC_AZALEA_TOWN                  ; 25
+	const MUSIC_OREBURGH_CITY                ; 25
 	const MUSIC_CHERRYGROVE_CITY             ; 26
 	const MUSIC_KIMONO_ENCOUNTER             ; 27
 	const MUSIC_UNION_CAVE                   ; 28
 	const MUSIC_SINNOH_WILD_BATTLE           ; 29
 	const MUSIC_SINNOH_TRAINER_BATTLE        ; 2a
-	const MUSIC_ROUTE_30                     ; 2b
+	const MUSIC_ROUTE_203                    ; 2b
 	const MUSIC_ECRUTEAK_CITY                ; 2c
 	const MUSIC_VIOLET_CITY                  ; 2d
 	const MUSIC_SINNOH_GYM_LEADER_BATTLE     ; 2e

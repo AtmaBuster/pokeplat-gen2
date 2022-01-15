@@ -24,7 +24,7 @@ Music:
 	dba Music_Bicycle
 	dba Music_HallOfFame
 	dba Music_ViridianCity
-	dba Music_CeladonCity
+	dba Music_PokeMart
 	dba Music_TrainerVictory
 	dba Music_WildPokemonVictory
 	dba Music_GymLeaderVictory
@@ -39,13 +39,13 @@ Music:
 	dba Music_Evolution
 	dba Music_NationalPark
 	dba Music_Credits
-	dba Music_AzaleaTown
+	dba Music_OreburghCity
 	dba Music_CherrygroveCity
 	dba Music_LookKimonoGirl
 	dba Music_UnionCave
 	dba Music_SinnohWildBattle
 	dba Music_SinnohTrainerBattle
-	dba Music_Route30
+	dba Music_Route203
 	dba Music_EcruteakCity
 	dba Music_VioletCity
 	dba Music_SinnohGymBattle

@@ -63,11 +63,11 @@ INCLUDE "audio/music/magnettrain.asm"
 INCLUDE "audio/music/lavendertown.asm"
 INCLUDE "audio/music/dancinghall.asm"
 INCLUDE "audio/music/contestresults.asm"
-INCLUDE "audio/music/route30.asm"
 
 
 SECTION "Songs 3", ROMX
 
+INCLUDE "audio/music/route203.asm"
 INCLUDE "audio/music/violetcity.asm"
 INCLUDE "audio/music/route201.asm" ; Route 201
 INCLUDE "audio/music/halloffame.asm"
@@ -79,7 +79,7 @@ INCLUDE "audio/music/printer.asm"
 SECTION "Songs 4", ROMX
 
 INCLUDE "audio/music/viridiancity.asm"
-INCLUDE "audio/music/celadoncity.asm"
+INCLUDE "audio/music/pokemart.asm"
 INCLUDE "audio/music/wildpokemonvictory.asm"
 INCLUDE "audio/music/successfulcapture.asm"
 INCLUDE "audio/music/gymleadervictory.asm"
@@ -92,7 +92,7 @@ INCLUDE "audio/music/lookrival.asm" ; Rival's theme (Barry)
 INCLUDE "audio/music/aftertherivalfight.asm" ; Blank
 INCLUDE "audio/music/surf.asm"
 INCLUDE "audio/music/nationalpark.asm"
-INCLUDE "audio/music/azaleatown.asm"
+INCLUDE "audio/music/oreburghcity.asm"
 INCLUDE "audio/music/cherrygrovecity.asm"
 INCLUDE "audio/music/unioncave.asm"
 INCLUDE "audio/music/sinnohtrainerbattle.asm" ; Sinnoh Trainer Battle

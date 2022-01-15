@@ -177,7 +177,7 @@ Gen2ToGen1LinkComms:
 	cp USING_INTERNAL_CLOCK
 	ld c, 66
 	call z, DelayFrames
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ROUTE_203
 	call PlayMusic
 	jp InitTradeMenuDisplay
 
@@ -479,7 +479,7 @@ Gen2ToGen2LinkComms:
 	jp Function28b22
 
 .ready_to_trade
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ROUTE_203
 	call PlayMusic
 	jp InitTradeMenuDisplay
 
