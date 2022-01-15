@@ -401,7 +401,7 @@ PokemonCries::
 	mon_cry CRY_RATTATA,     $000,  $001 ; RAYQUAZA
 	mon_cry CRY_RATTATA,     $000,  $001 ; JIRACHI
 	mon_cry CRY_RATTATA,     $000,  $001 ; DEOXYS
-	mon_cry CRY_TURTWIG,     $060,  $0c0 ; TURTWIG
+	mon_cry CRY_RATTATA,     $000,  $001 ; TURTWIG
 	mon_cry CRY_RATTATA,     $000,  $001 ; GROTLE
 	mon_cry CRY_RATTATA,     $000,  $001 ; TORTERRA
 	mon_cry CRY_RATTATA,     $000,  $001 ; CHIMCHAR
