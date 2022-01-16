@@ -15,7 +15,7 @@ Debug_MusicNames::
 	db "Heal Pokemon@@@@@@"
 	db "Lavender Town@@@@@"
 	db "Route 2@@@@@@@@@@@"
-	db "Mt. Moon@@@@@@@@@@"
+	db "Oreburgh Gate@@@@@"
 	db "Follow Me!@@@@@@@@"
 	db "Game Corner@@@@@@@"
 	db "Bicycle@@@@@@@@@@@"
