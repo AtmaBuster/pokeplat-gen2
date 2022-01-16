@@ -142,13 +142,13 @@ Pack:
 	ld c, PACKSTATE_INITITEMSPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
-	farcall _CheckTossableItem
-	ld a, [wItemAttributeParamBuffer]
-	and a
-	jr nz, .use_quit
-	ld hl, .MenuHeader2
-	ld de, .Jumptable2
-	jr .load_jump
+;	farcall _CheckTossableItem
+;	ld a, [wItemAttributeParamBuffer]
+;	and a
+;	jr nz, .use_quit
+;	ld hl, .MenuHeader2
+;	ld de, .Jumptable2
+;	jr .load_jump
 
 .use_quit
 	ld hl, .MenuHeader1

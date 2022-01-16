@@ -10,4 +10,7 @@ TrainerClassMusic::
 	db FANTINA, BYRON, CANDICE, VOLKNER
 	db AARON, BERTHA, FLINT, LUCIAN, -1
 
+	dw MUSIC_ROCKET_BATTLE
+	db GRUNTM, -1
+
 	dw -1

@@ -1455,7 +1455,9 @@ JubilifeCity_PresScript:
 	opentext
 	writetext .CountText
 	buttonsound
-	takeitem COUPON, 3
+	takeitem COUPON
+	takeitem COUPON
+	takeitem COUPON
 	writetext .GotPoketchText
 	playsound SFX_ITEM
 	waitsfx
