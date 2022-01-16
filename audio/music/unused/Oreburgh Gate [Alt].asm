@@ -97,10 +97,10 @@ Music_OreburghGate_Ch1::
 	sound_loop 0, .loop
 Music_OreburghGate_Ch2::
 	pitch_offset 1
-	duty_cycle 2
+	duty_cycle 0
 	vibrato 18, 3, 6
 	stereo_panning FALSE, TRUE
-	note_type 12, 6, 7
+	note_type 12, 10, 7
 .loop
 	octave 3
 	note G_, 1
@@ -228,9 +228,9 @@ Music_OreburghGate_Ch2::
 	note E_, 1
 	sound_loop 0, .loop
 Music_OreburghGate_Ch3::
-	note_type 12, 2, 1
+	note_type 12, 1, 8
 .loop
-	octave 5
+	octave 3
 	note F#, 10
 	note G_, 1
 	note A_, 1
@@ -240,9 +240,9 @@ Music_OreburghGate_Ch3::
 	note G_, 1
 	note A_, 1
 	note F#, 10
-	octave 4
+	octave 2
 	note A_, 2
-	octave 5
+	octave 3
 	note D#, 10
 	note E_, 1
 	note F#, 1
