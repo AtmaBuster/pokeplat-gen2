@@ -28,7 +28,7 @@
 	const MUSIC_TRAINER_VICTORY              ; 17
 	const MUSIC_WILD_VICTORY                 ; 18
 	const MUSIC_GYM_VICTORY                  ; 19
-	const MUSIC_MT_MOON_SQUARE               ; 1a
+	const MUSIC_LUCASS_THEME                 ; 1a
 	const MUSIC_GYM                          ; 1b
 	const MUSIC_DAWNS_THEME                  ; 1c
 	const MUSIC_POKEMON_TALK                 ; 1d

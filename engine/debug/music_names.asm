@@ -25,7 +25,7 @@ Debug_MusicNames::
 	db "Victory, Trainer@@"
 	db "Victory, Wild@@@@@"
 	db "Victory, Leader@@@"
-	db "Mt. Moon Square@@@"
+	db "Lucas's Theme@@@@@@"
 	db "Gym@@@@@@@@@@@@@@@"
 	db "Dawn's Theme@@@@@@@"
 	db "Pokemon Talk@@@@@@"

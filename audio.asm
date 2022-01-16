@@ -74,6 +74,7 @@ INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
 INCLUDE "audio/music/printer.asm"
+INCLUDE "audio/music/lucasstheme.asm"
 
 
 SECTION "Songs 4", ROMX
@@ -83,7 +84,6 @@ INCLUDE "audio/music/pokemart.asm"
 INCLUDE "audio/music/wildpokemonvictory.asm"
 INCLUDE "audio/music/successfulcapture.asm"
 INCLUDE "audio/music/gymleadervictory.asm"
-INCLUDE "audio/music/mtmoonsquare.asm"
 INCLUDE "audio/music/gym.asm"
 INCLUDE "audio/music/profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"

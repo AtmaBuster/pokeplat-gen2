@@ -28,7 +28,7 @@ Music:
 	dba Music_TrainerVictory
 	dba Music_WildPokemonVictory
 	dba Music_GymLeaderVictory
-	dba Music_MtMoonSquare
+	dba Music_LucassTheme
 	dba Music_Gym
 	dba Music_DawnsTheme
 	dba Music_ProfOaksPokemonTalk
