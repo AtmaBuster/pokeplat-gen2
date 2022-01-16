@@ -18,7 +18,7 @@ Music:
 	dba Music_HealPokemon
 	dba Music_LavenderTown
 	dba Music_Route2
-	dba Music_MtMoon
+	dba Music_OreburghGate
 	dba Music_ShowMeAround
 	dba Music_GameCorner
 	dba Music_Bicycle

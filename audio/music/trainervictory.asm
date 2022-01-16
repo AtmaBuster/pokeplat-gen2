@@ -389,11 +389,11 @@ Music_TrainerVictory_Ch2_loop:
 	loopchannel 0, Music_TrainerVictory_Ch2_loop
 
 Music_TrainerVictory_Ch3:
-	notetype $C, $12
+	notetype $C, $14
 	vibrato $0E, $25
 	octave 5
 	note A#, 1
-	notetype $4, $12
+	notetype $4, $14
 	note __, 1
 	note A#, 3
 	note __, 1
@@ -404,7 +404,7 @@ Music_TrainerVictory_Ch3:
 	octave 6
 	note C_, 4
 	note D_, 4
-	notetype $C, $12
+	notetype $C, $14
 	note D#, 8
 Music_TrainerVictory_Ch3_loop:
 	octave 5
