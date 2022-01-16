@@ -5,6 +5,7 @@ Music_SuccessfulCapture:
 
 Music_SuccessfulCapture_Ch1:
 	tempo 104
+	.loop
 	volume $77
 	notetype $C, $A2
 	dutycycle 2
@@ -49,10 +50,11 @@ Music_SuccessfulCapture_Ch1:
 	note F_, 2
 	note A_, 4
 	note B_, 4
-	.loop
+	sound_loop 0, .loop
 
 
 Music_SuccessfulCapture_Ch2:
+	.loop
 	notetype $C, $B2
 	dutycycle 2
 	octave 4
@@ -114,9 +116,10 @@ Music_SuccessfulCapture_Ch2:
 	note D_, 2
 	note D_, 4
 	note C_, 8
-	.loop
+	sound_loop 0, .loop
 
 Music_SuccessfulCapture_Ch3:
+	.loop
 	notetype $6, $12
 	octave 5
 	note G#, 3
@@ -247,4 +250,4 @@ Music_SuccessfulCapture_Ch3:
 	note __, 1
 	note G_, 3
 	note __, 1
-	.loop
+	sound_loop 0, .loop

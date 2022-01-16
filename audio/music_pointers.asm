@@ -30,7 +30,7 @@ Music:
 	dba Music_GymLeaderVictory
 	dba Music_MtMoonSquare
 	dba Music_Gym
-	dba Music_PalletTown
+	dba Music_DawnsTheme
 	dba Music_ProfOaksPokemonTalk
 	dba Music_ProfOak
 	dba Music_LookRival

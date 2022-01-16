@@ -125,7 +125,7 @@ Route201_GetStarterScript:
 	turnobject ROUTE201_ROWAN, RIGHT
 	pause 30
 	appear ROUTE201_OBJECT2
-	playmusic MUSIC_RIVAL_ENCOUNTER ; dawnlucas encounter
+	playmusic MUSIC_DAWNS_THEME ; dawnlucas encounter
 	applymovement ROUTE201_OBJECT2, .DawnLucasApproachMovement
 	opentext
 	writetextgender .DawnText1, .LucasText1

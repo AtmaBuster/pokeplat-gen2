@@ -619,7 +619,7 @@ Music_RivalBattle_Ch3_sub_9:
 	sound_ret
 Music_RivalBattle_Ch3::
 	vibrato 0, 0, 0
-	note_type 12, 13, 0
+	note_type 12, 13, 4
 	octave 4
 	note G_, 1
 	note A_, 1

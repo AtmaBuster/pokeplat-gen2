@@ -168,7 +168,7 @@ OreburghCity_GymKidScript:
 	cont "your friend?"
 
 	para "He's sort of"
-	line "twitcy and"
+	line "twitchy and"
 	cont "impatient."
 	done
 

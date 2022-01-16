@@ -2859,7 +2859,7 @@ CantUseOnEggText:
 	text_end
 
 IsntTheTimeText:
-	; OAK:  ! This isn't the time to use that!
+	; ROWAN:  ! This isn't the time to use that!
 	text_far UnknownText_0x1c5d6e
 	text_end
 

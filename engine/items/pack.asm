@@ -1844,7 +1844,7 @@ Text_ThrewAway:
 	text_end
 
 Text_ThisIsntTheTime:
-	; OAK:  ! This isn't the time to use that!
+	; ROWAN:  ! This isn't the time to use that!
 	text_far UnknownText_0x1c0bee
 	text_end
 

@@ -85,7 +85,6 @@ INCLUDE "audio/music/successfulcapture.asm"
 INCLUDE "audio/music/gymleadervictory.asm"
 INCLUDE "audio/music/mtmoonsquare.asm"
 INCLUDE "audio/music/gym.asm"
-INCLUDE "audio/music/pallettown.asm"
 INCLUDE "audio/music/profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"
 INCLUDE "audio/music/lookrival.asm" ; Rival's theme (Barry)
@@ -134,6 +133,7 @@ SECTION "Extra Songs 1", ROMX
 INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/clair.asm"
 INCLUDE "audio/music/mobileadapter.asm"
+INCLUDE "audio/music/dawnstheme.asm"
 
 
 SECTION "Extra Songs 2", ROMX

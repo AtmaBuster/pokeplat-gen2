@@ -80,7 +80,7 @@ JubilifeCity_DawnLucasScript:
 	applymovement JUBILIFECITY_DAWNLUCAS_PRES, .EnterMovement
 	showemote EMOTE_SHOCK, JUBILIFECITY_DAWNLUCAS_PRES, 15
 	applymovementtable JUBILIFECITY_DAWNLUCAS_PRES, .ApproachPlayerMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_DAWNS_THEME
 	opentext
 	writetextgender .DawnCatchingText, .LucasCatchingText
 	buttonsound
