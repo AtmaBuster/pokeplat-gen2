@@ -1279,15 +1279,15 @@ ImprisonText:
 	prompt
 
 WaterSportText:
-	text "Electricity's power"
-	line "was weakened!"
-	prompt
-
-MudSportText:
 	text "Fire's power was"
 	line "weakened!"
 	prompt
 
+MudSportText:
+	text "Electricity's power"
+	line "was weakened!"
+	prompt
+	
 IngrainText:
 	text "<USER>"
 	line "planted its roots!"
