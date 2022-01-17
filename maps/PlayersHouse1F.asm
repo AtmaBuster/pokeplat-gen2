@@ -542,7 +542,7 @@ PlayersHouse1F_FridgeScript:
 .Text:
 	text "MOM's favorite"
 	line "dessert is in the"
-	cont "regrigerator."
+	cont "refrigerator."
 	done
 
 PlayersHouse1F_CounterScript:

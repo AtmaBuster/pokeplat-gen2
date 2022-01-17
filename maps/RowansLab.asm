@@ -103,7 +103,7 @@ RowansLab_MapScripts:
 
 .FirstSawText:
 	text "PROFESSOR: When I"
-	line "first say you two"
+	line "first saw you two"
 	cont "about to step into"
 	cont "the tall grass"
 	cont "without #MON, I"
@@ -258,7 +258,7 @@ RowansLab_MapScripts:
 	line "that you go every-"
 	cont "where and meet"
 	cont "every kind of"
-	cont "#MON is this"
+	cont "#MON in this"
 	cont "region!"
 	done
 
