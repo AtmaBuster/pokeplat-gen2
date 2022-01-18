@@ -8344,7 +8344,7 @@ BattleCommand_mudsport:
 	jp nz, AnimateAndPrintFailedMove2
 	set SUBSTATUS_MUD_SPORT, [hl]
 	call AnimateCurrentMove2
-	ld hl, WaterSportText
+	ld hl, MudSportText
 	jp StdBattleTextbox
 
 CheckSports:
