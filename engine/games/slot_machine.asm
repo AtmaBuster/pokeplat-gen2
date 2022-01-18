@@ -152,7 +152,7 @@ _SlotMachine:
 	ld [wJumptableIndex], a
 	ld a, SLOTS_NO_BIAS
 	ld [wSlotBias], a
-	ld de, MUSIC_GAME_CORNER
+	ld de, MUSIC_NONE
 	call PlayMusic
 	xor a
 	ld [wKeepSevenBiasChance], a ; 87.5% chance

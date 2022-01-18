@@ -56,7 +56,7 @@ _CardFlip:
 	ld a, $2
 	ld [wCardFlipCursorY], a
 	ld [wCardFlipCursorX], a
-	ld de, MUSIC_GAME_CORNER
+	ld de, MUSIC_NONE
 	call PlayMusic
 .MasterLoop:
 	ld a, [wJumptableIndex]

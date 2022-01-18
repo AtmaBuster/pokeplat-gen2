@@ -60,7 +60,7 @@ PlayBattleMusic:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
-	ld de, MUSIC_SUICUNE_BATTLE
+	ld de, MUSIC_NONE
 	jp z, .done
 	cp BATTLETYPE_ROAMING
 	jp z, .done
@@ -83,7 +83,7 @@ PlayBattleMusic:
 	jr .done
 
 .kantowild
-	ld de, MUSIC_KANTO_WILD_BATTLE
+	ld de, MUSIC_NONE
 	jr .done
 
 .trainermusic
@@ -118,7 +118,7 @@ PlayBattleMusic:
 	jr .done
 
 .kantotrainer
-	ld de, MUSIC_KANTO_TRAINER_BATTLE
+	ld de, MUSIC_NONE
 
 .done
 	call PlayMusic
