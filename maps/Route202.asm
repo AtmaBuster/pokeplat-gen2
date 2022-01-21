@@ -136,7 +136,7 @@ Route202_CatchTutorialScript:
 	end
 
 .CatchTutorial:
-	playmusic MUSIC_DAWNS_THEME ; dawnlucas encounter
+	callstd dawnlucasmusic
 	writetextgender .DawnCatchMonText, .LucasCatchMonText
 	waitbutton
 	closetext

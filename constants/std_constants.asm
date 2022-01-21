@@ -56,3 +56,4 @@
 	enum tableindexfromstarter
 	enum tableindexfromfacing
 	enum pokemartclerk
+	enum dawnlucasmusic

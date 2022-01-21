@@ -55,6 +55,7 @@ StdScripts::
 	dba TableIndexFromStarterScript
 	dba TableIndexFromFacingScript
 	dba PokeMartClerk
+	dba DawnLucasMusicScript
 
 PokecenterNurseScript:
 	opentext
@@ -1800,4 +1801,14 @@ PokeMartClerk:
 .Badge7:
 	pokemart MARTTYPE_STANDARD, MART_7_BADGE
 	closetext
+	end
+
+DawnLucasMusicScript:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
+	playmusic MUSIC_DAWNS_THEME
+	end
+
+.Female:
+	playmusic MUSIC_LUCASS_THEME
 	end
