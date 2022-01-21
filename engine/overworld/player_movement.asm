@@ -399,6 +399,32 @@ ENDC
 	and [hl]
 	jr z, .DontJump
 
+; make sure the place the player lands is clear
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wWalkingX]
+	add a ; *2
+	add d
+	ld d, a
+	ld a, [wPlayerStandingMapY]
+	ld e, a
+	ld a, [wWalkingY]
+	add a ; *2
+	add e
+	ld e, a
+; make sure tile is walkable
+	push de
+	call GetCoordTile
+	call .CheckWalkable
+	pop de
+	jr c, .DontJump
+; make sure there's no NPC
+	xor a
+	ldh [hMapObjectIndexBuffer], a
+	farcall IsNPCAtCoord
+	jr c, .DontJump
+
+; A-ok
 	ld de, SFX_JUMP_OVER_LEDGE
 	call PlaySFX
 	ld a, STEP_LEDGE

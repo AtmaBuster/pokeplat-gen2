@@ -235,7 +235,7 @@ SandgemTown_MapScripts:
 	cont "very much stuff."
 
 	para "Don't worry about"
-	line "it, OK>"
+	line "it, OK?"
 	done
 
 .DawnTellFamilyText:
