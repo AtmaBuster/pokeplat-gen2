@@ -58,7 +58,7 @@ tools:
 	$(MAKE) -C tools/
 
 
-RGBASMFLAGS = -L -Weverything -D _DEMO1
+RGBASMFLAGS = -L -Weverything
 $(crystal_obj): RGBASMFLAGS +=
 $(crystal_debug_obj):   RGBASMFLAGS += -D _DEBUG
 
