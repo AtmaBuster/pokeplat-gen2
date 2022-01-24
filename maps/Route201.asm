@@ -329,7 +329,7 @@ Route201_GetStarterScript:
 
 .RecklessKidsText:
 	text "PROFESSOR: A pair"
-	line "of reckelss kids"
+	line "of reckless kids"
 	cont "who foolishly try"
 	cont "to enter tall"
 	cont "grass without"
