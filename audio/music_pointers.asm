@@ -20,7 +20,7 @@ Music:
 	dba Music_SinnohWildBattleNight
 	dba Music_WildPokemonVictory
 	dba Music_SuccessfulCapture
-	dba Music_CherrygroveCity
+	dba Music_SandgemTown
 	dba Music_ShowMeAround
 	dba Music_PokemonCenter
 	dba Music_HealPokemon

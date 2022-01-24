@@ -56,7 +56,6 @@ INCLUDE "audio/music/profoak.asm"
 INCLUDE "audio/music/lookrival.asm"
 INCLUDE "audio/music/surf.asm"
 INCLUDE "audio/music/oreburghcity.asm"
-INCLUDE "audio/music/cherrygrovecity.asm"
 INCLUDE "audio/music/unioncave.asm"
 INCLUDE "audio/music/sinnohtrainerbattle.asm"
 INCLUDE "audio/music/lookyoungster.asm"
@@ -83,6 +82,7 @@ INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/mobileadapter.asm"
 INCLUDE "audio/music/dawnstheme.asm"
 INCLUDE "audio/music/postcredits.asm"
+INCLUDE "audio/music/sandgemtown.asm"
 
 
 SECTION "Songs 4", ROMX

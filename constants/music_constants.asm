@@ -19,9 +19,10 @@
 	const MUSIC_TRAINER_VICTORY              ; 0e
 	const MUSIC_SINNOH_WILD_BATTLE           ; 0f
 	const MUSIC_SINNOH_WILD_BATTLE_NIGHT     ; 10
+	; fix numbers below                      ; 11
 	const MUSIC_WILD_VICTORY                 ; 12
 	const MUSIC_CAPTURE                      ; 13
-	const MUSIC_CHERRYGROVE_CITY             ; 14 - Replace with Sandgem Town
+	const MUSIC_SANDGEM_TOWN                 ; 14 - Replace with Sandgem Town
 	const MUSIC_SHOW_ME_AROUND               ; 15
 	const MUSIC_POKEMON_CENTER               ; 16
 	const MUSIC_HEAL                         ; 17
