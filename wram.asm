@@ -1489,6 +1489,9 @@ wcf65:: db
 wcf66:: db
 
 NEXTU ; cf64
+wStatsScreenFlags:: db
+
+NEXTU ; cf64
 ; intro and title data
 wIntroSceneFrameCounter:: db
 UNION ; cf65
@@ -1795,6 +1798,9 @@ wBugContestWinnersEnd::
 	bugcontestwinner wBugContestTemp
 	ds 4
 wBugContestWinnerName:: ds NAME_LENGTH
+
+NEXTU ; d002
+wStatsScreenSortBuffer:: ds 5 * 2
 
 NEXTU ; d002
 ; mart items
