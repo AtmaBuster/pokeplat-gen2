@@ -71,3 +71,14 @@ AbilityNames:
 	db "SLOW START@"
 	db "MULTITYPE@"
 	db "FLOWER GIFT@"
+
+AbilityDescriptions:
+	db "No special ability@"
+	db "Only super effect-││ive moves hit@"
+	db "Not affected by   ││GROUND-type moves@"
+	db "May pick up items@"
+	db "Can't attack on   ││consecutive turns@"
+	db "Changes form in   ││sun, rain, or hail@"
+	db "Temporarily halves││ATTACK and SPEED@"
+	db "Changes type to   ││match held PLATE@"
+	db "Changes form in   ││sunny weather@"

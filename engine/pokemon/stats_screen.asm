@@ -798,10 +798,17 @@ PlaceBluePage:
 	dw wBufferMonOT
 
 PlaceOrangePage:
+	call .PlaceAbilityDescBorder
 	call .PlaceCaughtLocation
 	call .PlaceCaughtLevel
 	call .PlaceAbility
 	call .PlaceCharacteristic
+	ret
+
+.PlaceAbilityDescBorder:
+	hlcoord 0, 13
+	lb bc, 2, 18
+	call Textbox
 	ret
 
 .PlaceCaughtLocation:
@@ -810,7 +817,15 @@ PlaceOrangePage:
 	and CAUGHT_TIME_MASK
 	rlca
 	rlca
+	push af
+	ld a, [wTempMonCaughtLevel]
+	and CAUGHT_LEVEL_MASK
+	cp CAUGHT_EGG_LEVEL
 	ld hl, .time_strings
+	jr nz, .got_strings
+	ld hl, .hatched_strings
+.got_strings
+	pop af
 	call GetNthString
 	ld d, h
 	ld e, l
@@ -840,10 +855,16 @@ PlaceOrangePage:
 	ret
 
 .time_strings
-	db "MET AT@"
-	db "MET IN THE MORN AT@"
-	db "MET IN THE DAY AT@"
-	db "MET AT NIGHT AT@"
+	db "MET: ???@"
+	db "MET: MORN@"
+	db "MET: DAY@"
+	db "MET: NITE@"
+
+.hatched_strings
+	db "HATCHED: ???@"
+	db "HATCHED: MORN@"
+	db "HATCHED: DAY@"
+	db "HATCHED: NITE@"
 
 .PlaceCaughtLevel:
 	ld a, [wTempMonCaughtLevel]
@@ -852,27 +873,23 @@ PlaceOrangePage:
 	cp CAUGHT_EGG_LEVEL
 	jr z, .egg
 	ld [wDeciramBuffer], a
-	hlcoord 5, 11
+	hlcoord 17, 9
 	ld de, wDeciramBuffer
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 3
 	call PrintNum
-	hlcoord 4, 11
+	hlcoord 16, 9
 	ld [hl], "<LV>"
-
-	hlcoord 1, 11
-	ld de, MetAtLevelString
-	call PlaceString
 
 	ret
 
 .egg
-	hlcoord 1, 11
+	hlcoord 16, 9
 	ld de, HatchedAtLevelString
 	call PlaceString
 	ret
 
 .unknown_level
-	hlcoord 1, 11
+	hlcoord 16, 9
 	ld de, MetUnknownLevelString
 	call PlaceString
 	ret
@@ -883,15 +900,23 @@ PlaceOrangePage:
 	call GetMonAbility
 	ld a, b
 	ld hl, AbilityNames
+	push af
 	call GetNthString
 	ld d, h
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 1, 14
+	hlcoord 7, 12
 	call PlaceString
-	hlcoord 1, 13
+	hlcoord 1, 12
 	ld de, AbilityString
+	call PlaceString
+	pop af
+	ld hl, AbilityDescriptions
+	call GetNthString
+	ld d, h
+	ld e, l
+	hlcoord 1, 14
 	call PlaceString
 	ret
 
@@ -971,7 +996,7 @@ PlaceOrangePage:
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	hlcoord 1, 16
+	hlcoord 1, 17
 	call PlaceString
 	ret
 
@@ -1015,19 +1040,16 @@ INCLUDE "data/pokemon/abilities.asm"
 INCLUDE "data/pokemon/characteristics.asm"
 
 AbilityString:
-	db "ABILITY:@"
-
-MetAtLevelString:
-	db "AT@"
+	db "ABIL:@"
 
 HatchedAtLevelString:
-	db "HATCHED AT <LV>5@"
+	db "<LV>5@"
 
 MetUnkownMapString:
 	db "???@"
 
 MetUnknownLevelString:
-	db "AT AN UNKNOWN LV.@"
+	db "<LV>??@"
 
 IDNoString:
 	db "<ID>№.@"
