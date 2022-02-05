@@ -6204,18 +6204,24 @@ MoveInfoBox:
 	call .PrintPP
 
 	callfar UpdateMoveData
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 1, 9
-;	ld de, .Type
-	ld de, wStringBuffer1
-	call PlaceString
-
-;	hlcoord 7, 11
+IF DEF(_USE_PSS)
+	hlcoord 7, 11
 	ld h, b
 	ld l, c
 	ld [hl], "/"
+
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	ld b, a
+	farcall GetMoveCategoryName
+
+	hlcoord 1, 9
+	ld de, wStringBuffer1
+ELSE
+	hlcoord 1, 9
+	ld de, .Type
+ENDC
+	call PlaceString
+
 
 ;	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
@@ -6228,8 +6234,8 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
-;.Type:
-;	db "TYPE/@"
+.Type:
+	db "TYPE/@"
 
 .PrintPP:
 	hlcoord 5, 11

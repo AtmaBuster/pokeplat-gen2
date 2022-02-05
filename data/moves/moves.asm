@@ -4,7 +4,15 @@ move: MACRO
 	; the animation byte will be filled when the move is loaded
 	db \1 ; effect
 	db \2 ; power
+IF DEF(_USE_PSS)
 	db \3 | \7 ; type and category
+ELSE
+IF \3 < FIRE ; first special type
+	db \3 | PHYSICAL
+ELSE
+	db \3 | SPECIAL
+ENDC
+ENDC
 	db \4 percent ; accuracy
 	db \5 ; pp
 	db \6 percent ; effect chance

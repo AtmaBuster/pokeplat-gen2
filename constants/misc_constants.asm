@@ -1,3 +1,7 @@
+; Definitions
+; Physical/Special Split
+;_USE_PSS EQU 1
+
 ; Boolean checks
 FALSE EQU 0
 TRUE  EQU 1
