@@ -36,6 +36,7 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetSinnoh1Anim:
 TilesetSinnoh2Anim:
+TilesetSinnoh3Anim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

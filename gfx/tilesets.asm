@@ -33,6 +33,18 @@ INCBIN "data/tilesets/sinnoh_2_metatiles.bin"
 TilesetSinnoh2Coll:
 INCLUDE "data/tilesets/sinnoh_2_collision.asm"
 ;---------------------------------------
+TilesetSinnoh3GFX:
+INCBIN "gfx/tilesets/sinnoh_3.2bpp.lz"
+
+TilesetSinnoh3Meta:
+INCBIN "data/tilesets/sinnoh_3_metatiles.bin"
+
+TilesetSinnoh3Coll:
+INCLUDE "data/tilesets/sinnoh_3_collision.asm"
+;---------------------------------------
+
+SECTION "Tileset Data 2", ROMX
+;---------------------------------------
 TilesetPlayersRoomGFX:
 INCBIN "gfx/tilesets/players_room.2bpp.lz"
 
@@ -42,10 +54,6 @@ INCBIN "data/tilesets/players_room_metatiles.bin"
 TilesetPlayersRoomColl:
 INCLUDE "data/tilesets/players_room_collision.asm"
 ;---------------------------------------
-
-SECTION "Tileset Data 2", ROMX
-
-;---------------------------------------
 TilesetPlayersHouseGFX:
 INCBIN "gfx/tilesets/players_house.2bpp.lz"
 
@@ -54,7 +62,6 @@ INCBIN "data/tilesets/players_house_metatiles.bin"
 
 TilesetPlayersHouseColl:
 INCLUDE "data/tilesets/players_house_collision.asm"
-
 ;---------------------------------------
 TilesetHouseGFX:
 INCBIN "gfx/tilesets/house.2bpp.lz"

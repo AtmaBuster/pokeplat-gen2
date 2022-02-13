@@ -98,6 +98,8 @@ SECTION "Map Scripts 7", ROMX
 
 INCLUDE "maps/OreburghMineB2F.asm"
 INCLUDE "maps/Route207.asm"
+INCLUDE "maps/Route204N.asm"
+INCLUDE "maps/FloaromaTown.asm"
 
 
 SECTION "Map Scripts 8", ROMX

@@ -1,31 +1,32 @@
 ; Tilesets indexes (see data/tilesets.asm)
 	const_def 1
 	const TILESET_SINNOH_1             ; 01 WEST SINNOH 1 (TWINLEAF, SANDGEM, JUBILIFE)
-	const TILESET_SINNOH_2             ; 02 WEST SINNOH 2 (OREBURGH, ETERNA)
-	const TILESET_PLAYERS_ROOM         ; 03 TWINLEAF 2F
-	const TILESET_PLAYERS_HOUSE        ; 04 TWINLEAF 1F
-	const TILESET_HOUSE                ; 05 INTERIOR
-	const TILESET_MODERN_INTERIOR      ; 06 CITY APARTMENTS
-	const TILESET_LAKE                 ; 07 LAKES & SENDOFF SPRING
-	const TILESET_LAB                  ; 08 ROWAN'S LAB
-	const TILESET_POKECENTER           ; 09 POKEMON CENTER
-	const TILESET_MART                 ; 0a DEPARTMENT STORE
-	const TILESET_POKECOM_CENTER       ; 0b GLOBAL TRADE STATION
-	const TILESET_GYM_1                ; 0c OREBURGH GYM
-	const TILESET_MUSEUM               ; 0d MINING MUSEUM
-	const TILESET_MANSION              ; 0e APARTMENT BUILDING
-	const TILESET_CAVE                 ; 0f ASSORTED CAVES
-	const TILESET_GATE                 ; 10 GATEHOUSES
-	const TILESET_FOREST               ; 11 ETERNA FOREST
-	const TILESET_FACILITY             ; 12 GALACTIC HIDEOUT
-	const TILESET_BIKE_SHOP            ; 13 BIKE SHOP
-	const TILESET_PARK                 ; 14 AMITY SQUARE
-	const TILESET_RADIO_TOWER          ; 15 REPLACES CONTEST HALL
-	const TILESET_SOLACEON_RUINS       ; 16 SOLACEON RUINS
-	const TILESET_TRADITIONAL_HOUSE    ; 17 CELESIC HOUSE
-	const TILESET_GAME_CORNER          ; 18 VEILSTONE GAME CORNER
-	const TILESET_SNOWPOINT_TEMPLE     ; 19 SNOWPOINT TEMPLE
-	const TILESET_MT_CORONET           ; 1a MT. CORONET
+	const TILESET_SINNOH_2             ; 02 WEST SINNOH 2 (OREBURGH, CANALAVE)
+	const TILESET_SINNOH_3             ; 03 WEST SINNOH 3 (FLOAROMA, ETERNA)
+	const TILESET_PLAYERS_ROOM         ; 04 TWINLEAF 2F
+	const TILESET_PLAYERS_HOUSE        ; 05 TWINLEAF 1F
+	const TILESET_HOUSE                ; 06 INTERIOR
+	const TILESET_MODERN_INTERIOR      ; 07 CITY APARTMENTS
+	const TILESET_LAKE                 ; 08 LAKES & SENDOFF SPRING
+	const TILESET_LAB                  ; 09 ROWAN'S LAB
+	const TILESET_POKECENTER           ; 0a POKEMON CENTER
+	const TILESET_MART                 ; 0b DEPARTMENT STORE
+	const TILESET_POKECOM_CENTER       ; 0c GLOBAL TRADE STATION
+	const TILESET_GYM_1                ; 0d OREBURGH GYM
+	const TILESET_MUSEUM               ; 0e MINING MUSEUM
+	const TILESET_MANSION              ; 0f APARTMENT BUILDING
+	const TILESET_CAVE                 ; 10 ASSORTED CAVES
+	const TILESET_GATE                 ; 11 GATEHOUSES
+	const TILESET_FOREST               ; 12 ETERNA FOREST
+	const TILESET_FACILITY             ; 13 GALACTIC HIDEOUT
+	const TILESET_BIKE_SHOP            ; 14 BIKE SHOP
+	const TILESET_PARK                 ; 15 AMITY SQUARE
+	const TILESET_RADIO_TOWER          ; 16 REPLACES CONTEST HALL
+	const TILESET_SOLACEON_RUINS       ; 17 SOLACEON RUINS
+	const TILESET_TRADITIONAL_HOUSE    ; 18 CELESIC HOUSE
+	const TILESET_GAME_CORNER          ; 19 VEILSTONE GAME CORNER
+	const TILESET_SNOWPOINT_TEMPLE     ; 1a SNOWPOINT TEMPLE
+	const TILESET_MT_CORONET           ; 1b MT. CORONET
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

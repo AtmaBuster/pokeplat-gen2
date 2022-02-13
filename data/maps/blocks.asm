@@ -180,6 +180,11 @@ OreburghMineB2F_Blocks:
 Route207_Blocks:
 	INCBIN "maps/Route207.blk"
 
+Route204N_Blocks:
+	INCBIN "maps/Route204N.blk"
+
+FloaromaTown_Blocks:
+	INCBIN "maps/FloaromaTown.blk"
 
 SECTION "Map Blocks 2", ROMX
 

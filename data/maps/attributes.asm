@@ -137,6 +137,12 @@ ENDM
 
 	map_attributes Route207, ROUTE_207, $09, SOUTH
 	connection south, OreburghCity, OREBURGH_CITY, -12
+	
+	map_attributes Route204N, ROUTE_204_N, $01, NORTH
+	connection north, FloaromaTown, FLOAROMA_TOWN, 0
+	
+	map_attributes, FloaromaTown, FLOAROMA_TOWN, $01, SOUTH
+	connection south, Route204N, ROUTE_204_N, 0
 
 
 ; no connections

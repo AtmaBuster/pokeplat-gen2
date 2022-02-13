@@ -15,6 +15,9 @@ INCLUDE "gfx/tilesets/sinnoh_1_palette_map.asm"
 TilesetSinnoh2PalMap:
 INCLUDE "gfx/tilesets/sinnoh_2_palette_map.asm"
 
+TilesetSinnoh3PalMap:
+INCLUDE "gfx/tilesets/sinnoh_3_palette_map.asm"
+
 TilesetPlayersRoomPalMap:
 INCLUDE "gfx/tilesets/players_room_palette_map.asm"
 

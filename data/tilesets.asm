@@ -15,6 +15,7 @@ Tilesets::
 	tileset Tileset0
 	tileset TilesetSinnoh1
 	tileset TilesetSinnoh2
+	tileset TilesetSinnoh3
 	tileset TilesetPlayersRoom
 	tileset TilesetPlayersHouse
 	tileset TilesetHouse
