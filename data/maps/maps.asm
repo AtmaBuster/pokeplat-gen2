@@ -22,8 +22,9 @@ MapGroupPointers::
 	dw MapGroup_Jubilife    ;  4
 	dw MapGroup_Oreburgh    ;  5
 	dw MapGroup_Canalave    ;  6
-	dw MapGroup_Lakes       ;  7
-	dw MapGroup_Dungeons    ;  8
+	dw MapGroup_Floaroma    ;  7
+	dw MapGroup_Lakes       ;  8
+	dw MapGroup_Dungeons    ;  9
 
 MapGroup_CableClub:
 	map Pokecenter2F, TILESET_POKECENTER, INDOOR, SPECIAL_MAP, MUSIC_POKEMON_CENTER, TRUE, PALETTE_DAY, FISHGROUP_NONE
