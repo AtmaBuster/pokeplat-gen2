@@ -114,10 +114,14 @@ ENDM
 	map_const ROUTE_204_N,                                 12, 21 ;  1
 	map_const FLOAROMA_TOWN,                               14, 10 ;  2
 	map_const FLOAROMA_POKEMON_CENTER_1F,                   5,  4 ;  3
-	map_const FLOAROMA_POKEMART,                           6,  4 ;  4
-	;map_const FLOAROMA_FLOWER_SHOP,                         1,  1 ;  5
-	;map_const FLOAROMA_HOUSE_W,                             1,  1 ;  6
-	;map_const FLOAROMA_HOUSE_E,                             1,  1 ;  7
+	map_const FLOAROMA_POKEMART,                            6,  4 ;  4
+	map_const FLOAROMA_HOUSE_W,                             4,  4 ;  5
+	map_const FLOAROMA_HOUSE_E,                             4,  4 ;  6
+	map_const FLOAROMA_FLOWER_SHOP,                         5,  3 ;  7
+	;map_const FLOAROMA_MEADOW                               X,  X ;  8
+	;map_const FLOAROMA_MEADOW_HOUSE                         X,  X ;  9
+	;map_const ROUTE_205,                                    X,  X ; 10
+
 
 	newgroup ; Lakes & Caverns                                       8
 	

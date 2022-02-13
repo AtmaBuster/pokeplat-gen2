@@ -102,6 +102,9 @@ INCLUDE "maps/Route204N.asm"
 INCLUDE "maps/FloaromaTown.asm"
 INCLUDE "maps/FloaromaPokemonCenter1F.asm"
 INCLUDE "maps/FloaromaPokeMart.asm"
+INCLUDE "maps/FloaromaHouseW.asm"
+INCLUDE "maps/FloaromaHouseE.asm"
+INCLUDE "maps/FloaromaFlowerShop.asm"
 
 
 SECTION "Map Scripts 8", ROMX

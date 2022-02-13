@@ -56,6 +56,8 @@ SandgemHouse1_Blocks:
 OreburghHouseW_Blocks:
 OreburghHouseN_Blocks:
 OreburghHouseE_Blocks:
+FloaromaHouseW_Blocks:
+FloaromaHouseE_Blocks:
 	INCBIN "maps/HouseInterior1.blk"
 	
 LakeVerityHigh_Blocks:
@@ -187,6 +189,9 @@ Route204N_Blocks:
 
 FloaromaTown_Blocks:
 	INCBIN "maps/FloaromaTown.blk"
+	
+FloaromaFlowerShop_Blocks:
+	INCBIN "maps/FloaromaFlowerShop.blk"
 
 SECTION "Map Blocks 2", ROMX
 
