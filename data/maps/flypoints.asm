@@ -11,6 +11,7 @@ Flypoints:
 	flypoint SANDGEM, SANDGEM_TOWN
 	flypoint JUBILIFE, JUBILIFE_CITY
 	flypoint OREBURGH, OREBURGH_CITY
+	flypoint FLOAROMA, FLOAROMA_TOWN
 
 LAST_FLYPOINT EQU const_value - 1
 	db -1

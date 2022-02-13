@@ -58,3 +58,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; 39
 	tilecoll WALL, WALL, WALL, WALL ; 3a
 	tilecoll WARP_CARPET_UP, WARP_CARPET_UP, FLOOR, FLOOR ; 3b
+	tilecoll FLOOR, WALL, CUT_TREE, WALL ; 3c

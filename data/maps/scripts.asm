@@ -100,6 +100,8 @@ INCLUDE "maps/OreburghMineB2F.asm"
 INCLUDE "maps/Route207.asm"
 INCLUDE "maps/Route204N.asm"
 INCLUDE "maps/FloaromaTown.asm"
+INCLUDE "maps/FloaromaPokemonCenter1F.asm"
+INCLUDE "maps/FloaromaPokeMart.asm"
 
 
 SECTION "Map Scripts 8", ROMX

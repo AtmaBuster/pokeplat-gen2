@@ -8,7 +8,8 @@ Route204N_MapScripts:
 Route204N_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event 14, 17, RAVAGED_PATH, 2
 
 	db 0 ; coord events
 

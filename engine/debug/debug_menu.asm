@@ -426,7 +426,7 @@ endr
 	db "SANDGEM@@@@@@"
 	db "JUBILIFE@@@@@"
 	db "OREBURGH@@@@@"
-	db "6@@@@@@@@@@@@"
+	db "FLOAROMA@@@@@"
 	db "7@@@@@@@@@@@@"
 	db "8@@@@@@@@@@@@"
 	db "9@@@@@@@@@@@@"

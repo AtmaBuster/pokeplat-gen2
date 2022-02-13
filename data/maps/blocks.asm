@@ -6,6 +6,7 @@ DebugRoom_Blocks:
 SandgemPokemonCenter1F_Blocks:
 JubilifePokemonCenter1F_Blocks:
 OreburghPokemonCenter1F_Blocks:
+FloaromaPokemonCenter1F_Blocks:
 	INCBIN "maps/PokemonCenter1F.blk"
 	
 Pokecenter2F_Blocks:
@@ -31,6 +32,7 @@ MobileBattleRoom_Blocks:
 SandgemPokeMart_Blocks:
 JubilifePokeMart_Blocks:
 OreburghPokeMart_Blocks:
+FloaromaPokeMart_Blocks:
 	INCBIN "maps/PokeMart.blk"
 
 TwinleafTown_Blocks:

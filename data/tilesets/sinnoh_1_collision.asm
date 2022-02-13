@@ -146,3 +146,4 @@
 	tilecoll WATER, WATER, WALL, WALL ; 91
 	tilecoll WATER, WALL, WALL, WALL ; 92
 	tilecoll WATER, WATER, WATER, WATER ; 93
+	tilecoll FLOOR, WALL, CUT_TREE, WALL ; 94

@@ -63,7 +63,7 @@ ENDM
 
 	map_const JUBILIFE_CITY,                               20, 20 ;  1
 	map_const ROUTE_203,                                   26, 10 ;  2
-	map_const ROUTE_204_S,                                 12, 20 ;  3
+	map_const ROUTE_204_S,                                 12, 21 ;  3
 	map_const JUBILIFE_APARTMENT_SE_1F,                     6,  4 ;  4
 	map_const JUBILIFE_APARTMENT_SE_2F,                     6,  4 ;  5
 	map_const JUBILIFE_APARTMENT_NE_1F,                     6,  4 ;  6
@@ -111,8 +111,13 @@ ENDM
 	map_const CANALAVE_EAST_GATE,                           5,  4 ;  3
 	
 	newgroup ; Floaroma, Eterna, Routes                              7
-	map_const ROUTE_204_N,                                 12, 10 ;  1
+	map_const ROUTE_204_N,                                 12, 21 ;  1
 	map_const FLOAROMA_TOWN,                               14, 10 ;  2
+	map_const FLOAROMA_POKEMON_CENTER_1F,                   5,  4 ;  3
+	map_const FLOAROMA_POKEMART,                           6,  4 ;  4
+	;map_const FLOAROMA_FLOWER_SHOP,                         1,  1 ;  5
+	;map_const FLOAROMA_HOUSE_W,                             1,  1 ;  6
+	;map_const FLOAROMA_HOUSE_E,                             1,  1 ;  7
 
 	newgroup ; Lakes & Caverns                                       8
 	

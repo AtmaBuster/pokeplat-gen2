@@ -14,7 +14,7 @@ SpawnPoints:
 	spawn SANDGEM_TOWN,               13,  6
 	spawn JUBILIFE_CITY,              31, 26
 	spawn OREBURGH_CITY,              37, 12
-	spawn DEBUG_ROOM,                  0,  0
+	spawn FLOAROMA_TOWN,              13, 16
 	spawn DEBUG_ROOM,                  0,  0
 	spawn DEBUG_ROOM,                  0,  0
 	spawn DEBUG_ROOM,                  0,  0
