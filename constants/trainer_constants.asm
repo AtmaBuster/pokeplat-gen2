@@ -139,9 +139,16 @@ CHRIS EQU __enum__
 
 	trainerclass GENTLEMAN ; 20
 	trainerclass SKIER ; 21
-	trainerclass TEACHER ; 22
+	trainerclass AROMA_LADY ; 22
+	const TAYLOR
+
 	trainerclass SABRINA ; 23
 	trainerclass BUG_CATCHER ; 24
+	const BRAN1
+	const BRAN2
+	const BRAN3
+	const BRAN4
+
 	trainerclass FISHER ; 25
 	trainerclass SWIMMERM ; 26
 	trainerclass SWIMMERF ; 27
@@ -171,6 +178,8 @@ CHRIS EQU __enum__
 	trainerclass POKEFANM ; 3b
 	trainerclass KIMONO_GIRL ; 3c
 	trainerclass TWINS ; 3d
+	const LIVANDLIZ
+
 	trainerclass POKEFANF ; 3e
 	trainerclass RED ; 3f
 	trainerclass BLUE ; 40

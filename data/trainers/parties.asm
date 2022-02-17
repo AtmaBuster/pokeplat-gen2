@@ -563,13 +563,43 @@ GentlemanGroup:
 SkierGroup:
 	end_list_items
 
-TeacherGroup:
+AromaLadyGroup:
+	next_list_item ; AROMA_LADY (1)
+	db "TAYLOR@", TRAINERTYPE_NORMAL
+	trainermon_normal  9, BUDEW
+	trainermon_normal 11, CHERUBI
+	db -1 ; end
 	end_list_items
 
 SabrinaGroup:
 	end_list_items
 
 BugCatcherGroup:
+	next_list_item ; BUG_CATCHER (1)
+	db "BRAN@", TRAINERTYPE_MOVES
+	trainermon_moves 10, WURMPLE,   TACKLE, STRING_SHOT, POISON_STING
+	trainermon_moves 11, KRICKETOT, BIDE
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (2)
+	db "BRAN@", TRAINERTYPE_NORMAL
+	trainermon_normal 21, DUSTOX
+	trainermon_normal 23, KRICKETUNE
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (3)
+	db "BRAN@", TRAINERTYPE_NORMAL
+	trainermon_normal 30, DUSTOX
+	trainermon_normal 32, KRICKETUNE
+	trainermon_normal 34, SCYTHER
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (4)
+	db "BRAN@", TRAINERTYPE_NORMAL
+	trainermon_normal 49, DUSTOX
+	trainermon_normal 51, KRICKETUNE
+	trainermon_normal 53, SCIZOR
+	db -1 ; end
 	end_list_items
 
 FisherGroup:
@@ -654,6 +684,11 @@ KimonoGirlGroup:
 	end_list_items
 
 TwinsGroup:
+	next_list_item ; TWINS (1)
+	db "LIV & LIZ@", TRAINERTYPE_NORMAL
+	trainermon_normal 11, PACHIRISU
+	trainermon_normal 11, PACHIRISU
+	db -1 ; end
 	end_list_items
 
 PokefanFGroup:

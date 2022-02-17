@@ -35,7 +35,7 @@ TrainerGroups:
 	dba GruntMGroup
 	dba GentlemanGroup
 	dba SkierGroup
-	dba TeacherGroup
+	dba AromaLadyGroup
 	dba SabrinaGroup
 	dba BugCatcherGroup
 	dba FisherGroup

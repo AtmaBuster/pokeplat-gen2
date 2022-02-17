@@ -10,7 +10,7 @@ BattleTowerTrainers:
 	db "ZABOROWSKI", LASS
 	db "WRIGHT@@@@", YOUNGSTER
 	db "ALEXANDER@", HIKER
-	db "KAWAKAMI@@", TEACHER
+	db "KAWAKAMI@@", AROMA_LADY
 	db "BICKETT@@@", POKEFANM
 	db "SAITO@@@@@", KIMONO_GIRL
 	db "CRAWFORD@@", BOARDER
@@ -50,7 +50,7 @@ BattleTowerTrainers:
 	db "JACKSON@@@", POKEFANF
 	db "KAHN@@@@@@", POKEMANIAC
 	db "LEONG@@@@@", YOUNGSTER
-	db "MARINO@@@@", TEACHER
+	db "MARINO@@@@", AROMA_LADY
 	db "NEWMAN@@@@", SAILOR
 	db "NGUYEN@@@@", BLACKBELT_T
 	db "OGDEN@@@@@", SUPER_NERD

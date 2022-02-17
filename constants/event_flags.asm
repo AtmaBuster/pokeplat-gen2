@@ -107,7 +107,7 @@
 	const EVENT_OREBURGH_GOT_DUSK_BALL            ; EV 064
 	const EVENT_OREBURGH_GOT_HEAL_BALL            ; EV 065
 	const EVENT_OREBURGH_GOT_GREAT_BALL           ; EV 066
-	const EVENT_067                               ; EV 067
+	const EVENT_ROUTE_204_GOT_TM_CAPTIVATE        ; EV 067
 	const EVENT_068                               ; EV 068
 	const EVENT_069                               ; EV 069
 	const EVENT_06A                               ; EV 06a
@@ -579,15 +579,15 @@
 	const EVENT_BEAT_LASS_SAMANTHA3               ; EV ---
 	const EVENT_BEAT_LASS_SAMANTHA4               ; EV ---
 	const EVENT_BEAT_GRUNT_GRUNTM1                ; EV ---
+	const EVENT_BEAT_AROMA_LADY_TAYLOR            ; EV ---
+	const EVENT_BEAT_BUG_CATCHER_BRAN1            ; EV ---
+	const EVENT_BEAT_BUG_CATCHER_BRAN2            ; EV ---
+	const EVENT_BEAT_BUG_CATCHER_BRAN3            ; EV ---
+	const EVENT_BEAT_BUG_CATCHER_BRAN4            ; EV ---
 	const EVENT_BEAT_PICNICKER_DIANA              ; EV ---
 	const EVENT_BEAT_CAMPER_CURTIS                ; EV ---
+	const EVENT_BEAT_TWINS_LIVANDLIZ              ; EV ---
 	const EVENT_BEAT_SCHOOLGIRL_KRISTIN           ; EV ---
-	const EVENT_241                               ; EV 241
-	const EVENT_242                               ; EV 242
-	const EVENT_243                               ; EV 243
-	const EVENT_244                               ; EV 244
-	const EVENT_245                               ; EV 245
-	const EVENT_246                               ; EV 246
 	const EVENT_247                               ; EV 247
 	const EVENT_248                               ; EV 248
 	const EVENT_249                               ; EV 249
@@ -1029,6 +1029,7 @@
 	const EVENT_3FD                               ; EV 3fd
 	const EVENT_3FE                               ; EV 3fe
 	const EVENT_3FF                               ; EV 3ff
+assert const_value == $400
 ; Sprite visibility flags                             ; EV -
 ; Itemballs                                           ; EV -
 	const EVENT_ROUTE_202_POTION                  ; EV 400
@@ -1050,8 +1051,8 @@
 	const EVENT_RAVAGED_PATH_LUCK_INCENSE         ; EV 410
 	const EVENT_RAVAGED_PATH_TM_WATER_PULSE       ; EV 411
 	const EVENT_OREBURGH_MINE_B1F_POKE_BALL       ; EV 412
-	const EVENT_413                               ; EV 413
-	const EVENT_414                               ; EV 414
+	const EVENT_ROUTE_204_AWAKENING               ; EV 413
+	const EVENT_ROUTE_204_TM_BULLET_SEED          ; EV 414
 	const EVENT_415                               ; EV 415
 	const EVENT_416                               ; EV 416
 	const EVENT_417                               ; EV 417

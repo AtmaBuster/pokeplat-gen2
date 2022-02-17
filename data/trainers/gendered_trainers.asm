@@ -33,7 +33,7 @@ FemaleTrainers:
 	db LASS
 	db BEAUTY
 	db SKIER
-	db TEACHER
+	db AROMA_LADY
 	db SWIMMERF
 	db PICNICKER
 	db KIMONO_GIRL

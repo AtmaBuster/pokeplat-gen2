@@ -532,7 +532,7 @@ MapObjectMovementPattern:
 	dw .TurnUpRight ; 08
 	dw .TurnLeftRight ; 09
 	dw .TurnDownUp ; 0a
-	dw .Movement0b ; 0b
+	dw .TurnDownRight ; 0b
 	dw .Movement0c ; 0c
 	dw .Movement0d ; 0d
 	dw .Movement0e ; 0e
@@ -661,8 +661,18 @@ MapObjectMovementPattern:
 	ld [hl], a
 	jp RandomStepDuration_Slow
 
-.Movement0b:
-	jp _GetMovementObject
+.TurnDownRight:
+	call Random
+	ldh a, [hRandomAdd]
+; DOWN = %0000, RIGHT = %1100
+	and %00000100
+	ld l, a
+	add a
+	add l
+	ld hl, OBJECT_FACING
+	add hl, bc
+	ld [hl], a
+	jp RandomStepDuration_Slow
 
 .Movement0c:
 	jp _GetMovementObject

@@ -34,7 +34,7 @@ TrainerClassDVs:
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn  9,  8,  8,  8 ; SKIER
-	dn  6,  8,  8,  8 ; TEACHER
+	dn  6,  8,  8,  8 ; AROMA_LADY
 	dn  7, 13,  8,  7 ; SABRINA
 	dn  9,  8,  8,  8 ; BUG_CATCHER
 	dn  9,  8,  8,  8 ; FISHER

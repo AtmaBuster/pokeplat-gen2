@@ -34,7 +34,7 @@ BTTrainerClassGenders:
 	db MALE   ; GRUNTM
 	db MALE   ; GENTLEMAN
 	db FEMALE ; SKIER
-	db FEMALE ; TEACHER
+	db FEMALE ; AROMA_LADY
 	db FEMALE ; SABRINA
 	db MALE   ; BUG_CATCHER
 	db MALE   ; FISHER

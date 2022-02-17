@@ -121,8 +121,8 @@ SpriteMovementData::
 	db 0 ; flags2
 	db 0 ; palette flags
 
-; SPRITEMOVEDATA_0F
-	db SPRITEMOVEFN_0B ; movement function
+; SPRITEMOVEDATA_TURN_DOWN_RIGHT
+	db SPRITEMOVEFN_TURN_DOWN_RIGHT ; movement function
 	db DOWN ; facing
 	db OBJECT_ACTION_STAND ; action
 	db 0 ; flags1

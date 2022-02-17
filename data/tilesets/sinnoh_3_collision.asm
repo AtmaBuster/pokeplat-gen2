@@ -9,7 +9,7 @@
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 08
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 0a
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 0b
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 0b
 	tilecoll WALL, WALL, WALL, FLOOR ; 0c
 	tilecoll WALL, FLOOR, WALL, WALL ; 0d
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 0e

@@ -35,7 +35,7 @@ TrainerPicPointers::
 	dba GruntmPic
 	dba GentlemanPic
 	dba SkierPic
-	dba TeacherPic
+	dba AromaLadyPic
 	dba SabrinaPic
 	dba BugCatcherPic
 	dba FisherPic

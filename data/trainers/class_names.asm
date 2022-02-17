@@ -33,7 +33,7 @@ TrainerClassNames::
 	db "GALACTIC@"
 	db "GENTLEMAN@"
 	db "SKIER@"
-	db "TEACHER@"
+	db "AROMA LADY@"
 	db "LEADER@"
 	db "BUG CATCHER@"
 	db "FISHER@"
