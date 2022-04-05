@@ -120,7 +120,7 @@ ENDM
 	map_const FLOAROMA_FLOWER_SHOP,                         5,  3 ;  7
 	;map_const FLOAROMA_MEADOW                               X,  X ;  8
 	;map_const FLOAROMA_MEADOW_HOUSE                         X,  X ;  9
-	;map_const ROUTE_205,                                    X,  X ; 10
+	map_const ROUTE_205_S,                                  13, 26 ; 10
 
 
 	newgroup ; Lakes & Caverns                                       8

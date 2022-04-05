@@ -143,9 +143,12 @@ ENDM
 	connection north, FloaromaTown, FLOAROMA_TOWN, 0
 	connection south, JubilifeCity, JUBILIFE_CITY, 9
 
-	map_attributes, FloaromaTown, FLOAROMA_TOWN, $01, SOUTH
+	map_attributes, FloaromaTown, FLOAROMA_TOWN, $01, SOUTH | EAST
 	connection south, Route204N, ROUTE_204_N, 0
-
+	connection east, Route205S, ROUTE_205_S, -18
+	
+	map_attributes, Route205S, ROUTE_205_S, $01, WEST
+	connection west, FloaromaTown, FLOAROMA_TOWN, 18
 
 ; no connections
 	

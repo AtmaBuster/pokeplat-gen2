@@ -192,6 +192,9 @@ FloaromaTown_Blocks:
 	
 FloaromaFlowerShop_Blocks:
 	INCBIN "maps/FloaromaFlowerShop.blk"
+	
+Route205S_Blocks:
+	INCBIN "maps/Route205S.blk"
 
 SECTION "Map Blocks 2", ROMX
 
