@@ -221,6 +221,7 @@ ENDM
 	map_attributes FloaromaHouseW, FLOAROMA_HOUSE_W, $0, 0
 	map_attributes FloaromaHouseE, FLOAROMA_HOUSE_E, $0, 0
 	map_attributes FloaromaFlowerShop, FLOAROMA_FLOWER_SHOP, $0, 0
+	map_attributes EternaForestInt, ETERNA_FOREST_INT, $6, 0
 
 
 if 0
