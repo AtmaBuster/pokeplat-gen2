@@ -120,11 +120,11 @@ ENDM
 	map_const FLOAROMA_FLOWER_SHOP,                         5,  3 ;  7
 	;map_const FLOAROMA_MEADOW,                              X,  X ;  8
 	;map_const FLOAROMA_MEADOW_HOUSE,                        X,  X ;  9
-	map_const ROUTE_205_S,                                 13, 26 ; 10
+	map_const ROUTE_205_S,                                 14, 25 ; 10
 	;map_const ROUTE_205_N,                                  X,  X ;  11
-	;map_const VALLEY_WINDWORKS_EXT,                         X,  X ;  12
+	map_const VALLEY_WINDWORKS_EXT,                        13, 13 ; 12
 	;map_const VALLEY_WINDWORKS_INT,                         X,  X ;  13
-	;map_const ETERNA_FOREST_EXT,                            X,  X ;  14
+	map_const ETERNA_FOREST_EXT,                           17,  17 ;  14
 	;map_const FUEGO_IRONWORKS_EXT,                          X,  X ;  15
 	
 

@@ -196,8 +196,17 @@ FloaromaFlowerShop_Blocks:
 Route205S_Blocks:
 	INCBIN "maps/Route205S.blk"
 	
+ValleyWindworksExt_Blocks:
+	INCBIN "maps/ValleyWindworksExt.blk"
+	
 EternaForestInt_Blocks:
 	INCBIN "maps/EternaForestInt.blk"
+	
+EternaForestExt_Blocks:
+	INCBIN "maps/EternaForestExt.blk"
+	
+
+	
 
 SECTION "Map Blocks 2", ROMX
 

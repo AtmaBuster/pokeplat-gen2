@@ -106,7 +106,9 @@ INCLUDE "maps/FloaromaHouseW.asm"
 INCLUDE "maps/FloaromaHouseE.asm"
 INCLUDE "maps/FloaromaFlowerShop.asm"
 INCLUDE "maps/Route205S.asm"
+INCLUDE "maps/ValleyWindworksExt.asm"
 INCLUDE "maps/EternaForestInt.asm"
+INCLUDE "maps/EternaForestExt.asm"
 
 
 SECTION "Map Scripts 8", ROMX

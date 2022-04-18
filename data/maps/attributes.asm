@@ -145,10 +145,19 @@ ENDM
 
 	map_attributes, FloaromaTown, FLOAROMA_TOWN, $01, SOUTH | EAST
 	connection south, Route204N, ROUTE_204_N, 0
-	connection east, Route205S, ROUTE_205_S, -18
+	connection east, Route205S, ROUTE_205_S, -17
 	
-	map_attributes, Route205S, ROUTE_205_S, $01, WEST
-	connection west, FloaromaTown, FLOAROMA_TOWN, 18
+	map_attributes, Route205S, ROUTE_205_S, $01, NORTH | WEST | EAST
+	connection north, EternaForestExt, ETERNA_FOREST_EXT, 7
+	connection west, FloaromaTown, FLOAROMA_TOWN, 17
+	connection east, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, 12
+	
+	map_attributes, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, $4E, WEST
+	connection west, Route205S, ROUTE_205_S, -12
+	
+	map_attributes, EternaForestExt, ETERNA_FOREST_EXT, $4E, SOUTH ;| EAST
+	connection south, Route205S, ROUTE_205_S, -7
+	;connection east, Route205N, ROUTE_205_N, 0
 
 ; no connections
 	
