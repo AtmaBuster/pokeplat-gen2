@@ -12,6 +12,7 @@ Flypoints:
 	flypoint JUBILIFE, JUBILIFE_CITY
 	flypoint OREBURGH, OREBURGH_CITY
 	flypoint FLOAROMA, FLOAROMA_TOWN
+	flypoint ETERNA, ETERNA_CITY
 
 LAST_FLYPOINT EQU const_value - 1
 	db -1

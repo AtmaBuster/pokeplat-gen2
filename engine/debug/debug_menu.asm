@@ -427,7 +427,7 @@ endr
 	db "JUBILIFE@@@@@"
 	db "OREBURGH@@@@@"
 	db "FLOAROMA@@@@@"
-	db "7@@@@@@@@@@@@"
+	db "ETERNA@@@@@@@"
 	db "8@@@@@@@@@@@@"
 	db "9@@@@@@@@@@@@"
 	db "10@@@@@@@@@@@"
