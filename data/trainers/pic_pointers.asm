@@ -3,20 +3,20 @@
 TrainerPicPointers::
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	dba RoarkPic
-	dba WhitneyPic
-	dba BugsyPic
-	dba MortyPic
-	dba PrycePic
-	dba JasminePic
-	dba ChuckPic
+	dba GardeniaPic
+	dba MaylenePic
+	dba WakePic
+	dba FantinaPic
+	dba ByronPic
+	dba CandicePic
 	dba VolknerPic
 	dba Rival1Pic
 	dba PokemonProfPic
-	dba WillPic
-	dba BrunoPic
-	dba KarenPic
-	dba KogaPic
-	dba CalPic
+	dba AaronPic
+	dba FlintPic
+	dba LucianPic
+	dba BerthaPic
+	dba LucasDPPic
 	dba ChampionPic
 	dba WorkerPic
 	dba MistyPic
@@ -47,24 +47,24 @@ TrainerPicPointers::
 	dba GuitaristPic
 	dba HikerPic
 	dba BikerPic
-	dba BlainePic
+	dba BattleGirlPic
 	dba BurglarPic
 	dba FirebreatherPic
 	dba JugglerPic
 	dba BlackbeltTPic
 	dba ExecutivemPic
-	dba PsychicTPic
+	dba PsychicMalePic
 	dba PicnickerPic
 	dba CamperPic
 	dba ExecutivefPic
-	dba SagePic
+	dba PsychicFemalePic
 	dba MediumPic
 	dba BoarderPic
 	dba PokefanmPic
 	dba KimonoGirlPic
 	dba TwinsPic
 	dba PokefanfPic
-	dba RedPic
+	dba DawnDPPic
 	dba BluePic
 	dba OfficerPic
 	dba GruntfPic
