@@ -205,6 +205,8 @@ EternaForestInt_Blocks:
 EternaForestExt_Blocks:
 	INCBIN "maps/EternaForestExt.blk"
 	
+Route205N_Blocks:
+	INCBIN "maps/Route205N.blk"
 
 	
 

@@ -109,6 +109,7 @@ INCLUDE "maps/Route205S.asm"
 INCLUDE "maps/ValleyWindworksExt.asm"
 INCLUDE "maps/EternaForestInt.asm"
 INCLUDE "maps/EternaForestExt.asm"
+INCLUDE "maps/Route205N.asm"
 
 
 SECTION "Map Scripts 8", ROMX

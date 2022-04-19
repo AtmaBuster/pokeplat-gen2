@@ -155,9 +155,13 @@ ENDM
 	map_attributes, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, $4E, WEST
 	connection west, Route205S, ROUTE_205_S, -12
 	
-	map_attributes, EternaForestExt, ETERNA_FOREST_EXT, $4E, SOUTH ;| EAST
+	map_attributes, EternaForestExt, ETERNA_FOREST_EXT, $4E, SOUTH | EAST
 	connection south, Route205S, ROUTE_205_S, -7
-	;connection east, Route205N, ROUTE_205_N, 0
+	connection east, Route205N, ROUTE_205_N, -5
+	
+	map_attributes, Route205N, ROUTE_205_N, $4E, WEST | EAST
+	connection west, EternaForestExt, ETERNA_FOREST_EXT, 5
+	;connection east, EternaCity, ETERNA_CITY, 0
 
 ; no connections
 	
