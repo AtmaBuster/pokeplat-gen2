@@ -161,8 +161,11 @@ ENDM
 	
 	map_attributes, Route205N, ROUTE_205_N, $4E, WEST | EAST
 	connection west, EternaForestExt, ETERNA_FOREST_EXT, 5
-	;connection east, EternaCity, ETERNA_CITY, 0
-
+	connection east, EternaCity, ETERNA_CITY, 0
+	
+	map_attributes, EternaCity, ETERNA_CITY, $4E, WEST ; | EAST
+	connection west, Route205N, ROUTE_205_N, 0
+	
 ; no connections
 	
 	

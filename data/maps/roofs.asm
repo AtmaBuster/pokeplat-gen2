@@ -15,6 +15,8 @@ MapGroupRoofs:
 	db ROOF_GOLDENROD ; Sandgem
 	db ROOF_GOLDENROD ; Jubilife
 	db ROOF_AZALEA    ; Oreburgh
+	db -1             ; Canalave
+	db ROOF_VIOLET    ; Eterna
 	db -1			  ; Lake & Cavern
 	db -1             ; Dungeons
 

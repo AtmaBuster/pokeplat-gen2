@@ -126,6 +126,7 @@ ENDM
 	map_const ETERNA_FOREST_EXT,                           17, 17 ;  13
 	map_const ROUTE_205_N,                                 14, 12 ; 14
 	;map_const FUEGO_IRONWORKS_EXT,                          X,  X ;  15
+	map_const ETERNA_CITY,                                 25, 22 ; 16
 	
 
 	newgroup ; Lakes & Caverns                                       8

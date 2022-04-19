@@ -33,15 +33,6 @@ INCBIN "data/tilesets/sinnoh_2_metatiles.bin"
 TilesetSinnoh2Coll:
 INCLUDE "data/tilesets/sinnoh_2_collision.asm"
 ;---------------------------------------
-TilesetSinnoh3GFX:
-INCBIN "gfx/tilesets/sinnoh_3.2bpp.lz"
-
-TilesetSinnoh3Meta:
-INCBIN "data/tilesets/sinnoh_3_metatiles.bin"
-
-TilesetSinnoh3Coll:
-INCLUDE "data/tilesets/sinnoh_3_collision.asm"
-;---------------------------------------
 
 SECTION "Tileset Data 2", ROMX
 ;---------------------------------------
@@ -276,10 +267,22 @@ INCLUDE "data/tilesets/forest_collision.asm"
 ;---------------------------------------
 
 
+SECTION "Tileset Data 5", ROMX
 
 
-;SECTION "Tileset Data 5", ROMX
-;SECTION "Tileset Data 6", ROMX
+SECTION "Tileset Data 6", ROMX
+;---------------------------------------
+TilesetSinnoh3GFX:
+INCBIN "gfx/tilesets/sinnoh_3.2bpp.lz"
+
+TilesetSinnoh3Coll:
+INCLUDE "data/tilesets/sinnoh_3_collision.asm"
+
+TilesetSinnoh3Meta:
+INCBIN "data/tilesets/sinnoh_3_metatiles.bin"
+;---------------------------------------
+
+
 ;SECTION "Tileset Data 7", ROMX
 ;SECTION "Tileset Data 8", ROMX
 ;SECTION "Tileset Data 9", ROMX
