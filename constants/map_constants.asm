@@ -118,24 +118,24 @@ ENDM
 	map_const FLOAROMA_HOUSE_W,                             4,  4 ;  5
 	map_const FLOAROMA_HOUSE_E,                             4,  4 ;  6
 	map_const FLOAROMA_FLOWER_SHOP,                         5,  3 ;  7
-	;map_const FLOAROMA_MEADOW,                              X,  X ;  8
-	;map_const FLOAROMA_MEADOW_HOUSE,                        X,  X ;  9
-	map_const ROUTE_205_S,                                 14, 25 ; 10
-	map_const VALLEY_WINDWORKS_EXT,                        13, 13 ; 11
-	;map_const VALLEY_WINDWORKS_INT,                         X,  X ;  12
-	map_const ETERNA_FOREST_EXT,                           17, 17 ;  13
-	map_const ROUTE_205_N,                                 14, 12 ; 14
-	;map_const FUEGO_IRONWORKS_EXT,                          X,  X ;  15
-	map_const ETERNA_CITY,                                 25, 22 ; 16
+	map_const ROUTE_205_S,                                 14, 25 ;  8
+	map_const VALLEY_WINDWORKS_EXT,                        13, 13 ;  9
+	map_const ETERNA_FOREST_EXT,                           17, 17 ;  11
+	map_const ROUTE_205_N,                                 14, 12 ; 12
+	;map_const FUEGO_IRONWORKS_EXT,                          X,  X ;  13
+	map_const ETERNA_CITY,                                 25, 22 ; 14
 	
-
-	newgroup ; Lakes & Caverns                                       8
+	newgroup ; Floaroma Meadow                                    ;  8
+	map_const FLOAROMA_MEADOW,                             20, 20 ;  1
+	;map_const FLOAROMA_MEADOW_HOUSE,                        X,  X ;  2
+	
+	newgroup ; Lakes & Caverns                                       9
 	
 	map_const LAKE_VERITY_LOW,                             17, 12 ;  1
 	map_const LAKE_VERITY_HIGH,                            17, 12 ;  2
 	map_const LAKE_VERITY_CAVERN,                          10, 10 ;  3
 
-	newgroup ; Dungeons                                              9
+	newgroup ; Dungeons                                             10
 	
 	map_const RAVAGED_PATH,                                11, 16 ;  1
 	map_const OREBURGH_GATE_1F, 						   15, 10 ;  2
@@ -143,10 +143,13 @@ ENDM
 	map_const OREBURGH_MINE_B1F,                            8, 12 ;  4
 	map_const OREBURGH_MINE_B2F,                           14, 13 ;  5
 	map_const ETERNA_FOREST_INT,                           30, 30 ;  6
-	;map_const OLD_CHATEAU_1F,                               X,  X ;   7
-	;map_const OLD_CHATEAU_1F_E,                             X,  X ;   8
-	;map_const OLD_CHATEAU_1F_W,                             X,  X ;   9
-	;map_const OLD_CHATEAU_1F_DINING,                        X,  X ;  10
-	;map_const OLD_CHATEAU_2F,                               X,  X ;  11
-	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  12
+	;map_const VALLEY_WINDWORKS_INT,                         X,  X ;   7
+	;map_const OLD_CHATEAU_1F,                               X,  X ;   8
+	;map_const OLD_CHATEAU_1F_E,                             X,  X ;   9
+	;map_const OLD_CHATEAU_1F_W,                             X,  X ;  10
+	;map_const OLD_CHATEAU_1F_DINING,                        X,  X ;  11
+	;map_const OLD_CHATEAU_2F,                               X,  X ;  12
+	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  13
+	
+
 	

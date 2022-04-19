@@ -61,6 +61,20 @@ TilesetParkAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
+	
+TilesetMeadowAnim:
+	dw NULL,  ForestTreeLeftAnimation
+	dw NULL,  ForestTreeRightAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  ForestTreeLeftAnimation2
+	dw NULL,  ForestTreeRightAnimation2
+	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $14, AnimateWaterTile
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
 
 TilesetForestAnim:
 	dw NULL,  ForestTreeLeftAnimation

@@ -281,7 +281,15 @@ INCLUDE "data/tilesets/sinnoh_3_collision.asm"
 TilesetSinnoh3Meta:
 INCBIN "data/tilesets/sinnoh_3_metatiles.bin"
 ;---------------------------------------
+TilesetMeadowGFX:
+INCBIN "gfx/tilesets/meadow.2bpp.lz"
 
+TilesetMeadowColl:
+INCLUDE "data/tilesets/meadow_collision.asm"
+
+TilesetMeadowMeta:
+INCBIN "data/tilesets/meadow_metatiles.bin"
+;---------------------------------------
 
 ;SECTION "Tileset Data 7", ROMX
 ;SECTION "Tileset Data 8", ROMX

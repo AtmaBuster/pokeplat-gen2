@@ -231,13 +231,14 @@ ENDM
 	map_attributes OreburghMuseum, OREBURGH_MUSEUM, $00, 0
 	map_attributes OreburghMineB1F, OREBURGH_MINE_B1F, $09, 0
 	map_attributes OreburghMineB2F, OREBURGH_MINE_B2F, $09, 0
-	map_attributes CanalaveEastGate, CANALAVE_EAST_GATE, $0, 0
-	map_attributes FloaromaPokemonCenter1F, FLOAROMA_POKEMON_CENTER_1F, $0, 0
-	map_attributes FloaromaPokeMart, FLOAROMA_POKEMART, $0, 0
-	map_attributes FloaromaHouseW, FLOAROMA_HOUSE_W, $0, 0
-	map_attributes FloaromaHouseE, FLOAROMA_HOUSE_E, $0, 0
-	map_attributes FloaromaFlowerShop, FLOAROMA_FLOWER_SHOP, $0, 0
-	map_attributes EternaForestInt, ETERNA_FOREST_INT, $6, 0
+	map_attributes CanalaveEastGate, CANALAVE_EAST_GATE, $00, 0
+	map_attributes FloaromaPokemonCenter1F, FLOAROMA_POKEMON_CENTER_1F, $00, 0
+	map_attributes FloaromaPokeMart, FLOAROMA_POKEMART, $00, 0
+	map_attributes FloaromaHouseW, FLOAROMA_HOUSE_W, $00, 0
+	map_attributes FloaromaHouseE, FLOAROMA_HOUSE_E, $00, 0
+	map_attributes FloaromaFlowerShop, FLOAROMA_FLOWER_SHOP, $00, 0
+	map_attributes EternaForestInt, ETERNA_FOREST_INT, $06, 0
+	map_attributes FloaromaMeadow, FLOAROMA_MEADOW, $02, 0
 
 
 if 0

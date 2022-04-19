@@ -211,6 +211,8 @@ Route205N_Blocks:
 EternaCity_Blocks:
 	INCBIN "maps/EternaCity.blk"
 
+FloaromaMeadow_Blocks:
+	INCBIN "maps/FloaromaMeadow.blk"
 	
 
 SECTION "Map Blocks 2", ROMX

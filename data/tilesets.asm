@@ -30,6 +30,7 @@ Tilesets::
 	tileset TilesetMansion
 	tileset TilesetCave
 	tileset TilesetGate
+	tileset TilesetMeadow
 	tileset TilesetForest
 	tileset TilesetFacility
 	tileset TilesetBikeShop

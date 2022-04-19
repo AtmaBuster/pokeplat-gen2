@@ -16,6 +16,8 @@ LoadSpecialMapPalette:
 	jr z, .museum
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
+	cp TILESET_MEADOW
+	jr z, .meadow
 	jr .do_nothing
 
 .pokecom_2f
@@ -54,6 +56,11 @@ LoadSpecialMapPalette:
 
 .mansion_mobile
 	call LoadMansionPalette
+	scf
+	ret
+	
+.meadow
+	call LoadMeadowPalette
 	scf
 	ret
 
@@ -152,3 +159,14 @@ LoadMuseumPalette:
 
 MuseumPalette:
 INCLUDE "gfx/tilesets/museum.pal"
+
+LoadMeadowPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, MeadowPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+MeadowPalette:
+INCLUDE "gfx/tilesets/meadow.pal"

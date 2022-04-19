@@ -60,6 +60,9 @@ INCLUDE "gfx/tilesets/cave_palette_map.asm"
 TilesetGatePalMap:
 INCLUDE "gfx/tilesets/gate_palette_map.asm"
 
+TilesetMeadowPalMap:
+INCLUDE "gfx/tilesets/meadow_palette_map.asm"
+
 TilesetForestPalMap:
 INCLUDE "gfx/tilesets/forest_palette_map.asm"
 

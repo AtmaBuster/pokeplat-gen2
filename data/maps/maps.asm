@@ -23,8 +23,9 @@ MapGroupPointers::
 	dw MapGroup_Oreburgh    ;  5
 	dw MapGroup_Canalave    ;  6
 	dw MapGroup_Floaroma    ;  7
-	dw MapGroup_Lakes       ;  8
-	dw MapGroup_Dungeons    ;  9
+	dw MapGroup_Meadow      ;  8
+	dw MapGroup_Lakes       ;  9
+	dw MapGroup_Dungeons    ; 10
 
 MapGroup_CableClub:
 	map Pokecenter2F, TILESET_POKECENTER, INDOOR, SPECIAL_MAP, MUSIC_POKEMON_CENTER, TRUE, PALETTE_DAY, FISHGROUP_NONE
@@ -117,6 +118,9 @@ MapGroup_Floaroma:
 	map EternaForestExt, TILESET_SINNOH_3, ROUTE, ETERNA_FOREST, MUSIC_PLACEHOLDER, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	map Route205N, TILESET_SINNOH_3, ROUTE, ROUTE_205, MUSIC_PLACEHOLDER, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	map EternaCity, TILESET_SINNOH_3, TOWN, ETERNA_CITY, MUSIC_PLACEHOLDER, FALSE, PALETTE_AUTO, FISHGROUP_NONE
+	
+MapGroup_Meadow:
+	map FloaromaMeadow, TILESET_MEADOW, ROUTE, FLOAROMA_MEADOW, MUSIC_PLACEHOLDER, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	
 MapGroup_Lakes:
 	map LakeVerityLow, TILESET_LAKE, ROUTE, LAKE_VERITY, MUSIC_UNION_CAVE, FALSE, PALETTE_AUTO, FISHGROUP_LAKE_VERITY
