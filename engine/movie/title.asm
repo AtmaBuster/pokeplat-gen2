@@ -39,7 +39,7 @@ _TitleScreen:
 ; line 0 (copyright)
 	hlbgcoord 0, 0, vBGMap1
 	ld bc, BG_MAP_WIDTH
-	ld a, 0 ; palette
+	ld a, 2 ; palette
 	call ByteFill
 
 ; BG Map 0:
@@ -49,7 +49,7 @@ _TitleScreen:
 ; lines 3-4
 	hlbgcoord 0, 2
 	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 2
+	ld a, 3
 	call ByteFill
 ; line 5
 	hlbgcoord 0, 4
@@ -75,7 +75,7 @@ _TitleScreen:
 ; 'CRYSTAL VERSION'
 	hlbgcoord 5, 8
 	ld bc, NAME_LENGTH ; length of version text
-	ld a, 0
+	ld a, 2
 	call ByteFill
 
 ; Giratina 1
@@ -181,7 +181,6 @@ _TitleScreen:
 	call DrawTitleGraphic
 
 ; Initialize running Suicune?
-;	ld d, $0
 ;	call LoadSuicuneFrame
 
 ; Initialize background crystal
@@ -221,7 +220,7 @@ _TitleScreen:
 ; (This part is actually totally pointless, you can't
 ;  see anything until these values are overwritten!)
 
-	ld b, 140 / 2 ; alternate for 80 lines
+	ld b, 70 / 2 ; alternate for 80 lines
 	ld hl, wLYOverrides
 .loop
 ; $00 is the middle position
@@ -235,9 +234,9 @@ _TitleScreen:
 	ld [hl], 0
 
 ; Make sure the rest of the buffer is empty
-	ld hl, wLYOverrides + 140
+	ld hl, wLYOverrides + 70
 	xor a
-	ld bc, wLYOverridesEnd - (wLYOverrides + 140)
+	ld bc, wLYOverridesEnd - (wLYOverrides + 70)
 	call ByteFill
 
 ; Let LCD Stat know we're messing around with SCX
@@ -281,64 +280,397 @@ _TitleScreen:
 
 	ret
 
-; SuicuneFrameIterator:
-	; ld hl, wSuicuneFrame
-	; ld a, [hl]
-	; ld c, a
-	; inc [hl]
+TitleScreenFadeInMon:
+;GOLD PARTS	
+	ld c, 6
+	call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 2
+	ld a, LOW(palred 11 + palgreen 5 + palblue 03)
+	ld [hli], a
+	ld a, HIGH(palred 11 + palgreen 5 + palblue 03)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 1 color 2
+	ld a, LOW(palred 11 + palgreen 5 + palblue 03)
+	ld [hli], a
+	ld a, HIGH(palred 11 + palgreen 5 + palblue 03)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 7 color 2
+	ld a, LOW(palred 11 + palgreen 5 + palblue 03)
+	ld [hli], a
+	ld a, HIGH(palred 11 + palgreen 5 + palblue 03)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 0 color 3
+	ld a, LOW(palred 8 + palgreen 8 + palblue 8)
+	ld [hli], a
+	ld a, HIGH(palred 8 + palgreen 8 + palblue 8)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 1 color 3
+	ld a, LOW(palred 8 + palgreen 8 + palblue 8)
+	ld [hli], a
+	ld a, HIGH(palred 8 + palgreen 8 + palblue 8)
+	ld [hl], a
+	call SetPalettes
+	
+	ld c, 6
+	call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 2
+	ld a, LOW(palred 21 + palgreen 15 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 21 + palgreen 15 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 1 color 2
+	ld a, LOW(palred 21 + palgreen 15 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 21 + palgreen 15 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 7 color 2
+	ld a, LOW(palred 21 + palgreen 15 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 21 + palgreen 15 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 0 color 3
+	ld a, LOW(palred 15 + palgreen 15 + palblue 15)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 15 + palblue 15)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 1 color 3
+	ld a, LOW(palred 15 + palgreen 15 + palblue 15)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 15 + palblue 15)
+	ld [hl], a
+	call SetPalettes
 
-; Only do this once every eight frames
-	; and %111
-	; ret nz
+	ld c, 6
+	call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 2
+	ld a, LOW(palred 31 + palgreen 25 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 31 + palgreen 25 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 1 color 2
+	ld a, LOW(palred 31 + palgreen 25 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 31 + palgreen 25 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 7 color 2
+	ld a, LOW(palred 31 + palgreen 25 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 31 + palgreen 25 + palblue 08)
+	ld [hl], a
+	call SetPalettes
 
-	; ld a, c
-	; and %11000
-	; sla a
-	; swap a
-	; ld e, a
-	; ld d, $0
-	; ld hl, .Frames
-	; add hl, de
-	; ld d, [hl]
-	; xor a
-	; ldh [hBGMapMode], a
-	; call LoadSuicuneFrame
-	; ld a, $1
-	; ldh [hBGMapMode], a
-	; ld a, $3
-	; ldh [hBGMapThird], a
-	; ret
+	ld hl, wBGPals1 palette 0 color 3
+	ld a, LOW(PALRGB_WHITE)
+	ld [hli], a
+	ld a, HIGH(PALRGB_WHITE)
+	ld [hl], a
+	call SetPalettes
+	
+	ld hl, wBGPals1 palette 1 color 3
+	ld a, LOW(PALRGB_WHITE)
+	ld [hli], a
+	ld a, HIGH(PALRGB_WHITE)
+	ld [hl], a
+	call SetPalettes
+	ret
+ 
+TitleScreenFadeInReds:
+	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes		
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes
+	
+	ld c, 10
+	call DelayFrames
+	
+   	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes	
+    ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 7 + palgreen 00 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 7 + palgreen 00 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 7 + palgreen 00 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 7 + palgreen 00 + palblue 08)
+	ld [hl], a
+	call SetPalettes 
 
-; .Frames:
-	; db $80 ; vTiles3 tile $80
-	; db $88 ; vTiles3 tile $88
-	; db $00 ; vTiles5 tile $00
-	; db $08 ; vTiles5 tile $08
+	ld c, 15
+	call DelayFrames
+	
+   	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 15 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes	
+    ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 15 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 15 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes 
+	
+	ld c, 20
+	call DelayFrames
 
-; LoadSuicuneFrame:
-	; hlcoord 6, 11
-	; ld b, 7
-; .bgrows
-	; ld c, 8
-; .col
-	; ld a, d
-	; ld [hli], a
-	; inc d
-	; dec c
-	; jr nz, .col
-	; ld a, SCREEN_WIDTH - 8
-	; add l
-	; ld l, a
-	; ld a, 0
-	; adc h
-	; ld h, a
-	; ld a, 8
-	; add d
-	; ld d, a
-	; dec b
-	; jr nz, .bgrows
-	; ret
+	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 18 + palgreen 06 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 18 + palgreen 06 + palblue 05)
+	ld [hl], a
+	call SetPalettes	
+    ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 10 + palgreen 06 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 10 + palgreen 06 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 18 + palgreen 06 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 18 + palgreen 06 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 18 + palgreen 06 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 18 + palgreen 06 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 10 + palgreen 06 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 10 + palgreen 06 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	ret
 
+TitleScreenFadeOutReds:
+	; ld c, 25
+	; call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 15 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes	
+    ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 15 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 15 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 15 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes 
+	
+	ld c, 15
+	call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes	
+    ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 7 + palgreen 00 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 7 + palgreen 00 + palblue 08)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 9 + palgreen 03 + palblue 05)
+	ld [hli], a
+	ld a, HIGH(palred 9 + palgreen 03 + palblue 05)
+	ld [hl], a
+	call SetPalettes
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 7 + palgreen 00 + palblue 08)
+	ld [hli], a
+	ld a, HIGH(palred 7 + palgreen 00 + palblue 08)
+	ld [hl], a
+	call SetPalettes 
+
+	ld c, 15
+	call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes		
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 04 + palgreen 00 + palblue 06)
+	ld [hli], a
+	ld a, HIGH(palred 04 + palgreen 00 + palblue 06)
+	ld [hl], a
+	call SetPalettes	
+	
+	ld c, 15
+	call DelayFrames
+	
+	ld hl, wBGPals1 palette 0 color 1
+	ld a, LOW(palred 00 + palgreen 00 + palblue 00)
+	ld [hli], a
+	ld a, HIGH(palred 00 + palgreen 00 + palblue 00)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 1 color 0
+	ld a, LOW(palred 00 + palgreen 00 + palblue 00)
+	ld [hli], a
+	ld a, HIGH(palred 00 + palgreen 00 + palblue 00)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 1 color 1
+	ld a, LOW(palred 00 + palgreen 00 + palblue 00)
+	ld [hli], a
+	ld a, HIGH(palred 00 + palgreen 00 + palblue 00)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 7 color 1
+	ld a, LOW(palred 00 + palgreen 00 + palblue 00)
+	ld [hli], a
+	ld a, HIGH(palred 00 + palgreen 00 + palblue 00)
+	ld [hl], a
+	call SetPalettes	
+	ld hl, wBGPals1 palette 7 color 3
+	ld a, LOW(palred 00 + palgreen 00 + palblue 00)
+	ld [hli], a
+	ld a, HIGH(palred 00 + palgreen 00 + palblue 00)
+	ld [hl], a
+	call SetPalettes
+    ret
+
+	
 DrawTitleGraphic:
 ; input:
 ;   hl: draw location

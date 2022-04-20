@@ -1287,6 +1287,7 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
+;	farcall LoadSuicuneFrame
 ;	farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
@@ -1341,7 +1342,7 @@ TitleScreenEntrance:
 ; Lay out a base (all lines scrolling together).
 	ld e, a
 	ld hl, wLYOverrides
-	ld bc, 14 * 10 - 1 ; logo height
+	ld bc, 7 * 10 - 1 ; logo height
 	call ByteFill
 
 ; Reversed signage for every other line's position.
@@ -1350,7 +1351,7 @@ TitleScreenEntrance:
 	xor $ff
 	inc a
 
-	ld b, 14 * 10 / 2 - 1 ; logo height / 2
+	ld b, 7 * 10 / 2 - 1 ; logo height / 2
 	ld hl, wLYOverrides + 1
 .loop
 	ld [hli], a
@@ -1358,7 +1359,7 @@ TitleScreenEntrance:
 	dec b
 	jr nz, .loop
 
-	farcall AnimateTitleCrystal
+;	farcall AnimateTitleCrystal
 	ret
 
 .done
@@ -1367,7 +1368,7 @@ TitleScreenEntrance:
 	inc [hl]
 	xor a
 	ldh [hLCDCPointer], a
-
+    
 ; Play the title screen music.
 	ld de, MUSIC_TITLE
 	call PlayMusic
@@ -1391,6 +1392,8 @@ TitleScreenTimer:
 
 TitleScreenMain:
 ; Run the timer down.
+
+	farcall TitleScreenFadeInMon
 	ld hl, wTitleScreenTimer
 	ld e, [hl]
 	inc hl
@@ -1399,11 +1402,23 @@ TitleScreenMain:
 	or d
 	jr z, .end
 
-	dec de
+    dec de
 	ld [hl], d
 	dec hl
 	ld [hl], e
+	
+.awaitUserInterruptionLoop
+	farcall TitleScreenFadeInReds
+	ld c, 30
+	call JoyTitleScreenInput
+    jr c, .finishedWaiting
+	farcall TitleScreenFadeOutReds
+	ld c, 25
+	call JoyTitleScreenInput
+    jr c, .finishedWaiting
+	jr .awaitUserInterruptionLoop
 
+.finishedWaiting
 ; Save data can be deleted by pressing Up + B + Select.
 	call GetJoypad
 	ld hl, hJoyDown

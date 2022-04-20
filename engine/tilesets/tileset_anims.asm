@@ -908,14 +908,10 @@ AnimateWaterPalette:
 	ret nz
 
 ; Only update on even frames.
-	ld a, [wTileAnimationTimer]
-	ld l, a
-	and 1 ; odd
-	ret nz
 
 ; Ready for BGPD input...
 
-	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_WATER
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette 0
 	ldh [rBGPI], a
 
 	ldh a, [rSVBK]
@@ -931,7 +927,7 @@ AnimateWaterPalette:
 	jr z, .color2
 
 .color1
-	ld hl, wBGPals1 palette PAL_BG_WATER color 1
+	ld hl, wBGPals1 palette 0 color 1
 	ld a, [hli]
 	ldh [rBGPD], a
 	ld a, [hli]
@@ -939,7 +935,7 @@ AnimateWaterPalette:
 	jr .end
 
 .color0
-	ld hl, wBGPals1 palette PAL_BG_WATER color 0
+	ld hl, wBGPals1 palette 0 color 0
 	ld a, [hli]
 	ldh [rBGPD], a
 	ld a, [hli]
@@ -947,7 +943,7 @@ AnimateWaterPalette:
 	jr .end
 
 .color2
-	ld hl, wBGPals1 palette PAL_BG_WATER color 2
+	ld hl, wBGPals1 palette 0 color 2
 	ld a, [hli]
 	ldh [rBGPD], a
 	ld a, [hli]
