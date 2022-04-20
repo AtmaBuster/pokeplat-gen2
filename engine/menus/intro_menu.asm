@@ -1287,7 +1287,7 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
+;	farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
 	ret
@@ -1341,7 +1341,7 @@ TitleScreenEntrance:
 ; Lay out a base (all lines scrolling together).
 	ld e, a
 	ld hl, wLYOverrides
-	ld bc, 8 * 10 - 1 ; logo height
+	ld bc, 14 * 10 - 1 ; logo height
 	call ByteFill
 
 ; Reversed signage for every other line's position.
@@ -1350,7 +1350,7 @@ TitleScreenEntrance:
 	xor $ff
 	inc a
 
-	ld b, 8 * 10 / 2 - 1 ; logo height / 2
+	ld b, 14 * 10 / 2 - 1 ; logo height / 2
 	ld hl, wLYOverrides + 1
 .loop
 	ld [hli], a
