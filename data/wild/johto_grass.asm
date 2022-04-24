@@ -507,35 +507,251 @@ JohtoGrassWildMons:
 	dbw 6, ZUBAT
 	dbw 6, ZUBAT
 	
-	; map_id [MAP_ID]
-	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; Below this point is confusing, as morning/swarm aren't distinct from
+	;normal encounters, and don't match either. 
+	
+	map_id ROUTE_204_S
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	;morn
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
+	dbw 9, STARLY
+	dbw 9, BIDOOF
+	dbw 9, WURMPLE
+	dbw 8, BIDOOF
+	dbw 9, BUDEW
+	dbw 9, SHINX
+	dbw 10, BUDEW
+	dbw 10, SHINX
+	dbw 10, STARLY
+	dbw 10, BIDOOF
+	dbw 11, STARLY
+	dbw 11, BIDOOF
 	;day
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
-	; dbw 
+	dbw 9, STARLY
+	dbw 9, BIDOOF
+	dbw 9, WURMPLE
+	dbw 8, BUDEW
+	dbw 9, BUDEW
+	dbw 9, SHINX
+	dbw 10, BUDEW
+	dbw 10, SHINX
+	dbw 10, STARLY
+	dbw 10, BIDOOF
+	dbw 11, STARLY
+	dbw 11, BIDOOF
 	;nite
+	dbw 9, STARLY
+	dbw 9, BIDOOF
+	dbw 9, KRICKETOT
+	dbw 8, ZUBAT
+	dbw 9, BUDEW
+	dbw 9, SHINX
+	dbw 10, BUDEW
+	dbw 10, SHINX
+	dbw 10, STARLY
+	dbw 10, BIDOOF
+	dbw 11, STARLY
+	dbw 11, BIDOOF
+
+	
+	map_id ROUTE_205_S
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	;morn
+	dbw 12, BIDOOF
+	dbw 12, BUDEW
+	dbw 13, BIDOOF
+	dbw 12, BUDEW
+	dbw 14, SILCOON
+	dbw 14, CASCOON
+	dbw 13, BIDOOF
+	dbw 14, BIDOOF
+	dbw 13, BUDEW
+	dbw 14, BUDEW
+	dbw 15, BEAUTIFLY
+	dbw 15, DUSTOX
+	;day
+	dbw 12, BIDOOF
+	dbw 12, BUDEW
+	dbw 13, WURMPLE
+	dbw 12, BUDEW
+	dbw 14, SILCOON
+	dbw 14, CASCOON
+	dbw 13, BIDOOF
+	dbw 14, BIDOOF
+	dbw 13, BUDEW
+	dbw 14, BUDEW
+	dbw 15, BEAUTIFLY
+	dbw 15, DUSTOX
+	;nite
+	dbw 12, BIDOOF
+	dbw 12, BUDEW
+	dbw 13, KRICKETOT
+	dbw 12, HOOTHOOT
+	dbw 14, SILCOON
+	dbw 14, CASCOON
+	dbw 13, BIDOOF
+	dbw 14, BIDOOF
+	dbw 13, BUDEW
+	dbw 14, BUDEW
+	dbw 15, BEAUTIFLY
+	dbw 15, DUSTOX
+	
+	map_id ROUTE_205_N
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	;morn
+	dbw 12, BIDOOF
+	dbw 12, BUDEW
+	dbw 13, BIDOOF
+	dbw 12, BUDEW
+	dbw 14, SILCOON
+	dbw 14, CASCOON
+	dbw 13, BIDOOF
+	dbw 14, BIDOOF
+	dbw 13, BUDEW
+	dbw 14, BUDEW
+	dbw 15, BEAUTIFLY
+	dbw 15, DUSTOX
+	;day
+	dbw 12, BIDOOF
+	dbw 12, BUDEW
+	dbw 13, WURMPLE
+	dbw 12, BUDEW
+	dbw 14, SILCOON
+	dbw 14, CASCOON
+	dbw 13, BIDOOF
+	dbw 14, BIDOOF
+	dbw 13, BUDEW
+	dbw 14, BUDEW
+	dbw 15, BEAUTIFLY
+	dbw 15, DUSTOX
+	;nite
+	dbw 12, BIDOOF
+	dbw 12, BUDEW
+	dbw 13, KRICKETOT
+	dbw 12, HOOTHOOT
+	dbw 14, SILCOON
+	dbw 14, CASCOON
+	dbw 13, BIDOOF
+	dbw 14, BIDOOF
+	dbw 13, BUDEW
+	dbw 14, BUDEW
+	dbw 15, BEAUTIFLY
+	dbw 15, DUSTOX
+
+	;Below is good
+
+	map_id ETERNA_FOREST_INT
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	;morn
+	dbw 11, BUNEARY
+	dbw 10, BUDEW
+	dbw 10, WURMPLE
+	dbw 12, KRICKETOT
+	dbw 11, BUDEW
+	dbw 12, BIDOOF
+	dbw 12, SILCOON
+	dbw 12, CASCOON
+	dbw 13, BUNEARY
+	dbw 13, GASTLY
+	dbw 14, BEAUTIFLY
+	dbw 14, DUSTOX
+	;day
+	dbw 11, BUNEARY
+	dbw 10, BUDEW
+	dbw 10, WURMPLE
+	dbw 12, BUDEW
+	dbw 11, BUDEW
+	dbw 12, BIDOOF
+	dbw 12, SILCOON
+	dbw 12, CASCOON
+	dbw 13, BUNEARY
+	dbw 13, GASTLY
+	dbw 14, BEAUTIFLY
+	dbw 14, DUSTOX
+	;nite
+	dbw 11, BUNEARY
+	dbw 10, BUDEW
+	dbw 10, KRICKETOT
+	dbw 12, HOOTHOOT
+	dbw 11, BUDEW
+	dbw 12, BIDOOF
+	dbw 12, SILCOON
+	dbw 12, CASCOON
+	dbw 13, BUNEARY
+	dbw 13, GASTLY
+	dbw 14, BEAUTIFLY
+	dbw 14, DUSTOX
+	
+	map_id VALLEY_WINDWORKS_EXT
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	;morn
+	dbw 9, SHELLOS
+	dbw 10, SHINX
+	dbw 9, BUIZEL
+	dbw 10, SHELLOS
+	dbw 10, BUIZEL
+	dbw 11, SHELLOS
+	dbw 9, PACHIRISU
+	dbw 11, PACHIRISU
+	dbw 11, BUIZEL
+	dbw 12, SHELLOS
+	dbw 11, BUIZEL
+	dbw 12, SHELLOS
+	;day
+	dbw 9, SHELLOS
+	dbw 10, SHINX
+	dbw 9, BUIZEL
+	dbw 10, SHELLOS
+	dbw 10, BUIZEL
+	dbw 11, SHELLOS
+	dbw 9, PACHIRISU
+	dbw 11, PACHIRISU
+	dbw 11, BUIZEL
+	dbw 12, SHELLOS
+	dbw 11, BUIZEL
+	dbw 12, SHELLOS
+	;nite
+	dbw 9, SHELLOS
+	dbw 10, SHINX
+	dbw 9, BUIZEL
+	dbw 10, SHELLOS
+	dbw 10, BUIZEL
+	dbw 11, SHELLOS
+	dbw 9, PACHIRISU
+	dbw 11, PACHIRISU
+	dbw 11, BUIZEL
+	dbw 12, SHELLOS
+	dbw 11, BUIZEL
+	dbw 12, SHELLOS
+	
+	; map_id [MAP CONSTANT NAME]
+	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; ;morn
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; ;day
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; dbw 
+	; ;nite
 	; dbw 
 	; dbw 
 	; dbw 

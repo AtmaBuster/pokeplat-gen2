@@ -143,27 +143,27 @@ ENDM
 	connection north, FloaromaTown, FLOAROMA_TOWN, 0
 	connection south, JubilifeCity, JUBILIFE_CITY, 9
 
-	map_attributes, FloaromaTown, FLOAROMA_TOWN, $01, SOUTH | EAST
+	map_attributes FloaromaTown, FLOAROMA_TOWN, $01, SOUTH | EAST
 	connection south, Route204N, ROUTE_204_N, 0
 	connection east, Route205S, ROUTE_205_S, -17
 	
-	map_attributes, Route205S, ROUTE_205_S, $01, NORTH | WEST | EAST
+	map_attributes Route205S, ROUTE_205_S, $01, NORTH | WEST | EAST
 	connection north, EternaForestExt, ETERNA_FOREST_EXT, 7
 	connection west, FloaromaTown, FLOAROMA_TOWN, 17
 	connection east, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, 12
 	
-	map_attributes, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, $4E, WEST
+	map_attributes ValleyWindworksExt, VALLEY_WINDWORKS_EXT, $4E, WEST
 	connection west, Route205S, ROUTE_205_S, -12
 	
-	map_attributes, EternaForestExt, ETERNA_FOREST_EXT, $4E, SOUTH | EAST
+	map_attributes EternaForestExt, ETERNA_FOREST_EXT, $4E, SOUTH | EAST
 	connection south, Route205S, ROUTE_205_S, -7
 	connection east, Route205N, ROUTE_205_N, -5
 	
-	map_attributes, Route205N, ROUTE_205_N, $4E, WEST | EAST
+	map_attributes Route205N, ROUTE_205_N, $4E, WEST | EAST
 	connection west, EternaForestExt, ETERNA_FOREST_EXT, 5
 	connection east, EternaCity, ETERNA_CITY, 0
 	
-	map_attributes, EternaCity, ETERNA_CITY, $4E, WEST ; | EAST
+	map_attributes EternaCity, ETERNA_CITY, $4E, WEST ; | EAST
 	connection west, Route205N, ROUTE_205_N, 0
 	
 ; no connections

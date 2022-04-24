@@ -18,6 +18,7 @@ GrassMonProbTable:
 	mon_prob 100,  11 ; 1% chance
 
 ;(3rd/4th slot is swapped slot for time and swarm)
+;(Interpret left column as morning, disregard swarm)
 
 WaterMonProbTable:
 	mon_prob 60,  0 ; 60% chance
