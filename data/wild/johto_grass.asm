@@ -507,16 +507,14 @@ JohtoGrassWildMons:
 	dbw 6, ZUBAT
 	dbw 6, ZUBAT
 	
-	; Below this point is confusing, as morning/swarm aren't distinct from
-	;normal encounters, and don't match either. 
+	map_id ROUTE_204_N
 	
-	map_id ROUTE_204_S
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	;morn
 	dbw 9, STARLY
 	dbw 9, BIDOOF
 	dbw 9, WURMPLE
-	dbw 8, BIDOOF
+	dbw 8, KRICKETOT
 	dbw 9, BUDEW
 	dbw 9, SHINX
 	dbw 10, BUDEW
@@ -558,8 +556,8 @@ JohtoGrassWildMons:
 	;morn
 	dbw 12, BIDOOF
 	dbw 12, BUDEW
-	dbw 13, BIDOOF
-	dbw 12, BUDEW
+	dbw 13, WURMPLE
+	dbw 12, KRICKETOT
 	dbw 14, SILCOON
 	dbw 14, CASCOON
 	dbw 13, BIDOOF
@@ -596,12 +594,13 @@ JohtoGrassWildMons:
 	dbw 15, DUSTOX
 	
 	map_id ROUTE_205_N
+	; Has same encounters as Route 205 South, intentional or nah?
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	;morn
 	dbw 12, BIDOOF
 	dbw 12, BUDEW
-	dbw 13, BIDOOF
-	dbw 12, BUDEW
+	dbw 13, WURMPLE
+	dbw 12, KRICKETOT
 	dbw 14, SILCOON
 	dbw 14, CASCOON
 	dbw 13, BIDOOF
@@ -636,8 +635,6 @@ JohtoGrassWildMons:
 	dbw 14, BUDEW
 	dbw 15, BEAUTIFLY
 	dbw 15, DUSTOX
-
-	;Below is good
 
 	map_id ETERNA_FOREST_INT
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
