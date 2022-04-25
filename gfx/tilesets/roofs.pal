@@ -31,8 +31,8 @@
 	RGB 15,11,01, 11,10,01 ; nite
 
 ;group 8 (Floaroma Meadow)
-	RGB 23, 15, 31,  23, 15, 31 ; Needs Nite
-	RGB 16, 05, 31,  16, 05, 31 ; Needs Nite
+	RGB 23, 15, 31,  16, 05, 31 ; 
+	RGB 23, 15, 31,  16, 05, 31 ; Needs Nite
 
 ; group 8 (Lake & Cavern)
 	RGB 00,00,00, 00,00,00 ; morn/day
