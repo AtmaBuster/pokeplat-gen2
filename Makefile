@@ -87,7 +87,7 @@ endif
 
 poke%.gbc: $$(%_obj) pokecrystal.link
 	$(RGBLINK) -n poke$*.sym -m poke$*.map -l pokecrystal.link -o $@ $(filter %.o,$^)
-	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 5 -t PM_CRYSTAL $@
+	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 5 -t PM_PLATINUM $@
 	tools/sort_symfile.sh pokecrystal.sym
 
 %.lz: %
@@ -228,3 +228,4 @@ gfx/unknown/unknown_egg.2bpp: rgbgfx += -h
 
 %.dimensions: %.png
 	tools/png_dimensions $< $@
+	
