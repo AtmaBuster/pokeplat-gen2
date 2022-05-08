@@ -15,7 +15,7 @@ INCBIN "gfx/trainers/byron.gbcpal", middle_colors
 INCBIN "gfx/trainers/candice.gbcpal", middle_colors
 INCBIN "gfx/trainers/volkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
-INCBIN "gfx/trainers/oak.gbcpal", middle_colors
+INCBIN "gfx/trainers/rowan.gbcpal", middle_colors
 INCBIN "gfx/trainers/aaron.gbcpal", middle_colors
 INCBIN "gfx/trainers/flint.gbcpal", middle_colors
 INCBIN "gfx/trainers/lucian.gbcpal", middle_colors
@@ -56,11 +56,11 @@ INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors
 INCBIN "gfx/trainers/blackbelt_t.gbcpal", middle_colors
-INCBIN "gfx/trainers/executive_m.gbcpal", middle_colors
+INCBIN "gfx/trainers/jupiter.gbcpal", middle_colors
 INCBIN "gfx/trainers/psychic_male.gbcpal", middle_colors
 INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
-INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
+INCBIN "gfx/trainers/mars.gbcpal", middle_colors
 INCBIN "gfx/trainers/psychic_female.gbcpal", middle_colors
 INCBIN "gfx/trainers/medium.gbcpal", middle_colors
 INCBIN "gfx/trainers/boarder.gbcpal", middle_colors

@@ -52,11 +52,11 @@ TrainerPicPointers::
 	dba FirebreatherPic
 	dba JugglerPic
 	dba BlackbeltTPic
-	dba ExecutivemPic
+	dba JupiterPic
 	dba PsychicMalePic
 	dba PicnickerPic
 	dba CamperPic
-	dba ExecutivefPic
+	dba MarsPic
 	dba PsychicFemalePic
 	dba MediumPic
 	dba BoarderPic
