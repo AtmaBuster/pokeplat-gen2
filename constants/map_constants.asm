@@ -120,10 +120,10 @@ ENDM
 	map_const FLOAROMA_FLOWER_SHOP,                         5,  3 ;  7
 	map_const ROUTE_205_S,                                 14, 25 ;  8
 	map_const VALLEY_WINDWORKS_EXT,                        13, 13 ;  9
-	map_const ETERNA_FOREST_EXT,                           17, 17 ;  11
-	map_const ROUTE_205_N,                                 14, 12 ; 12
-	;map_const FUEGO_IRONWORKS_EXT,                          X,  X ;  13
-	map_const ETERNA_CITY,                                 25, 22 ; 14
+	map_const ETERNA_FOREST_EXT,                           17, 17 ; 10
+	map_const ROUTE_205_N,                                 14, 12 ; 11
+	map_const FUEGO_IRONWORKS_EXT,                         14, 17 ; 12
+	map_const ETERNA_CITY,                                 25, 22 ; 13
 	
 	newgroup ; Floaroma Meadow                                    ;  8
 	map_const FLOAROMA_MEADOW,                             20, 20 ;  1

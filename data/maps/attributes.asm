@@ -70,6 +70,17 @@ if _len > \3_HEIGHT
 _len = \3_HEIGHT
 endc
 
+elif "\1" == "west2"
+_blk = (\3_WIDTH * _src) + \3_WIDTH + -3
+_map = (CURRENT_MAP_WIDTH + 6) * _tgt
+_win = (\3_WIDTH + 6) * 2 + -6
+_y = (\4) * -2
+_x = \3_WIDTH * 2 - 1
+_len = CURRENT_MAP_HEIGHT + 3 - (\4)
+if _len > \3_HEIGHT
+_len = \3_HEIGHT
+endc
+
 elif "\1" == "east"
 _blk = (\3_WIDTH * _src)
 _map = (CURRENT_MAP_WIDTH + 6) * _tgt + CURRENT_MAP_WIDTH + 3
@@ -143,13 +154,15 @@ ENDM
 	connection north, FloaromaTown, FLOAROMA_TOWN, 0
 	connection south, JubilifeCity, JUBILIFE_CITY, 9
 
-	map_attributes FloaromaTown, FLOAROMA_TOWN, $01, SOUTH | EAST
+	map_attributes FloaromaTown, FLOAROMA_TOWN, $01, NORTH | SOUTH | EAST
+	connection north, FuegoIronworksExt, FUEGO_IRONWORKS_EXT, 0
 	connection south, Route204N, ROUTE_204_N, 0
 	connection east, Route205S, ROUTE_205_S, -17
 	
-	map_attributes Route205S, ROUTE_205_S, $01, NORTH | WEST | EAST
+	map_attributes Route205S, ROUTE_205_S, $01, NORTH | WEST | EAST | WEST2
 	connection north, EternaForestExt, ETERNA_FOREST_EXT, 7
 	connection west, FloaromaTown, FLOAROMA_TOWN, 17
+	connection west2, FuegoIronworksExt, FUEGO_IRONWORKS_EXT, 0
 	connection east, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, 12
 	
 	map_attributes ValleyWindworksExt, VALLEY_WINDWORKS_EXT, $4E, WEST
@@ -165,6 +178,10 @@ ENDM
 	
 	map_attributes EternaCity, ETERNA_CITY, $4E, WEST ; | EAST
 	connection west, Route205N, ROUTE_205_N, 0
+	
+	map_attributes FuegoIronworksExt, FUEGO_IRONWORKS_EXT, $00, SOUTH | EAST
+	connection south, FloaromaTown, FLOAROMA_TOWN, 0
+	connection east, Route205S, ROUTE_205_S, 0
 	
 ; no connections
 	
@@ -239,8 +256,3 @@ ENDM
 	map_attributes FloaromaFlowerShop, FLOAROMA_FLOWER_SHOP, $00, 0
 	map_attributes EternaForestInt, ETERNA_FOREST_INT, $06, 0
 	map_attributes FloaromaMeadow, FLOAROMA_MEADOW, $02, 0
-
-
-if 0
-
-endc

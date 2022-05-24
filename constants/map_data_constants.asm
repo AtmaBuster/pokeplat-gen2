@@ -50,6 +50,7 @@ MAP_NONE   EQU 0
 	const WEST_F
 	const SOUTH_F
 	const NORTH_F
+	const WEST2_F
 
 ; wMapConnections
 	const_def
@@ -57,6 +58,7 @@ MAP_NONE   EQU 0
 	shift_const WEST
 	shift_const SOUTH
 	shift_const NORTH
+	shift_const WEST2
 
 ; SpawnPoints indexes (see data/maps/spawn_points.asm)
 const_value = -1

@@ -444,6 +444,12 @@ GetMapConnections::
 	call GetMapConnection
 .no_west
 
+	bit WEST2_F, b ; only for Route 205 South -> Fuego Ironworks
+	jr z, .no_west2
+	ld de, wSouthMapConnection ; not used for Route 205 South
+	call GetMapConnection
+.no_west2
+
 	bit EAST_F, b
 	ret z
 	ld de, wEastMapConnection
@@ -753,6 +759,29 @@ FillMapConnections::
 	cp $ff
 	jr z, .West
 	ld b, a
+	ld a, [wMapConnections]
+	bit WEST2_F, a
+	jr z, .do_south
+	ld a, [wSouthConnectedMapNumber]
+	ld c, a
+	call GetAnyMapBlocksBank
+
+	ld a, [wSouthConnectionStripPointer]
+	ld l, a
+	ld a, [wSouthConnectionStripPointer + 1]
+	ld h, a
+	ld a, [wSouthConnectionStripLocation]
+	ld e, a
+	ld a, [wSouthConnectionStripLocation + 1]
+	ld d, a
+	ld a, [wSouthConnectionStripLength]
+	ld b, a
+	ld a, [wSouthConnectedMapWidth]
+	ldh [hConnectionStripLength], a
+	call FillWestConnectionStrip
+	jr .West
+
+.do_south
 	ld a, [wSouthConnectedMapNumber]
 	ld c, a
 	call GetAnyMapBlocksBank

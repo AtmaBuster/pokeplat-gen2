@@ -112,6 +112,7 @@ INCLUDE "maps/EternaForestExt.asm"
 INCLUDE "maps/Route205N.asm"
 INCLUDE "maps/EternaCity.asm"
 INCLUDE "maps/FloaromaMeadow.asm"
+INCLUDE "maps/FuegoIronworksExt.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX

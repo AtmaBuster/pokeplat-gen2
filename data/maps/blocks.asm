@@ -213,6 +213,9 @@ EternaCity_Blocks:
 
 FloaromaMeadow_Blocks:
 	INCBIN "maps/FloaromaMeadow.blk"
+
+FuegoIronworksExt_Blocks:
+	INCBIN "maps/FuegoIronworksExt.blk"
 	
 
 SECTION "Map Blocks 2", ROMX

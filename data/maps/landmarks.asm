@@ -22,7 +22,8 @@ Landmarks:
 	landmark  36,  76, FloaromaTownName
 	landmark  44,  76, ValleyWindworksName
 	landmark  44,  68, Route205Name
-	landmark  36,  68, FloaromaMeadowName
+	landmark  36,  72, FloaromaMeadowName
+	landmark  36,  68, FuegoIronworksName
 	landmark  44,  60, EternaForestName
 	landmark  60,  60, EternaCityName
 	landmark  68,  60, Route211Name
@@ -104,6 +105,7 @@ OreburghGateName:    db "OREBURGH¯GATE@"
 OreburghMineName:    db "OREBURGH¯MINE@"
 RavagedPathName:     db "RAVAGED¯PATH@"
 FloaromaMeadowName:  db "FLOAROMA¯MEADOW@"
+FuegoIronworksName:  db "FUEGO¯IRONWORKS@"
 ValleyWindworksName: db "VALLEY¯WINDWORKS@"
 EternaForestName:    db "ETERNA¯FOREST@"
 WaywardCaveName:     db "WAYWARD¯CAVE@"
