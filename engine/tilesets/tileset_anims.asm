@@ -43,7 +43,7 @@ TilesetSinnoh3Anim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $03, AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
@@ -56,24 +56,37 @@ TilesetParkAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $03, AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
-	
+
 TilesetMeadowAnim:
-	dw NULL,  ForestTreeLeftAnimation
-	dw NULL,  ForestTreeRightAnimation
+	dw vTiles2 tile $03, AnimateMeadowFlower1
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $04, AnimateMeadowFlower2
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $05, AnimateMeadowFlower3
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $10, AnimateMeadowFlower4
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  ForestTreeLeftAnimation2
-	dw NULL,  ForestTreeRightAnimation2
-	dw NULL,  AnimateFlowerTile
-	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
+
+;TilesetMeadowAnim:
+;	dw NULL,  ForestTreeLeftAnimation
+;	dw NULL,  ForestTreeRightAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  ForestTreeLeftAnimation2
+;	dw NULL,  ForestTreeRightAnimation2
+;	dw NULL,  AnimateFlowerTile
+;	dw vTiles2 tile $14, AnimateWaterTile
+;	dw NULL,  StandingTileFrame8
+;	dw NULL,  DoneTileAnimation
 
 TilesetForestAnim:
 	dw NULL,  ForestTreeLeftAnimation
@@ -83,7 +96,7 @@ TilesetForestAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  ForestTreeLeftAnimation2
 	dw NULL,  ForestTreeRightAnimation2
-	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $03, AnimateFlowerTile
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  StandingTileFrame8
@@ -126,7 +139,7 @@ UnusedTilesetAnim_fc0d7:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $03, AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -261,7 +274,7 @@ TilesetLakeAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $03, AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -618,19 +631,34 @@ GetForestTreeFrame:
 	xor a
 	ret
 
+AnimateMeadowFlower2:
+	ld a, 1
+	jr SetFlowerTile
+
+AnimateMeadowFlower3:
+	ld a, 2
+	jr SetFlowerTile
+
+AnimateMeadowFlower4:
+	ld a, 3
+	jr SetFlowerTile
+
+AnimateMeadowFlower1:
 AnimateFlowerTile:
-; No parameters.
+	ld a, 0
+
+SetFlowerTile:
+	ld hl, wTileAnimationTimer
+	add [hl]
+	and %10
 
 ; Save sp in bc (see WriteTile).
 	ld hl, sp+0
 	ld b, h
 	ld c, l
 
-; Alternate tile graphic every other frame
-	ld a, [wTileAnimationTimer]
-	and %10
-
 ; CGB has different color mappings for flowers.
+	push de
 	ld e, a
 	ldh a, [hCGB]
 	and 1
@@ -641,9 +669,12 @@ AnimateFlowerTile:
 	ld d, 0
 	ld hl, FlowerTileFrames
 	add hl, de
+	pop de
 	ld sp, hl
 
-	ld hl, vTiles2 tile $03
+	ld h, d
+	ld l, e
+;	ld hl, vTiles2 tile $03
 
 	jp WriteTile
 
