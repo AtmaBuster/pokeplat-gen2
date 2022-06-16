@@ -3040,6 +3040,8 @@ wPokemonDataEnd::
 wGameDataEnd::
 ; dff5
 
+wFirstSpindaDVs:: dw
+
 
 SECTION "Pic Animations", WRAMX
 
@@ -3245,6 +3247,12 @@ wScratchAttrMap:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
 
 NEXTU ; d000
 wDecompressScratch:: ds $100 tiles
+
+NEXTU
+
+	ds $f00
+wSpindaSpotLineList:: ds 12
+
 ENDU ; e000
 
 

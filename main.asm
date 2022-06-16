@@ -713,6 +713,11 @@ INCLUDE "data/pokemon/pickup_mons.asm"
 
 INCLUDE "engine/games/mining.asm"
 
+SECTION "Spinda Spots", ROMX, ALIGN[8]
+
+INCLUDE "engine/gfx/spinda_spots.asm"
+
+
 SECTION "Debug Menu", ROMX
 if DEF(_DEBUG)
 INCLUDE "engine/debug/debug_menu.asm"

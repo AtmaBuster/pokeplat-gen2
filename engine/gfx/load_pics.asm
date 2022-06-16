@@ -1,5 +1,10 @@
 GetUnownLetter:
 ; Return Unown letter in wUnownLetter based on DVs at hl
+; Also puts DVs into hSpindaDVs
+	ld a, [hli]
+	ldh [hSpindaDVs], a
+	ld a, [hld]
+	ldh [hSpindaDVs + 1], a
 
 ; Take the middle 2 bits of each DV and place them in order:
 ;	atk  def  spd  spc
@@ -98,6 +103,9 @@ _GetFrontpic:
 	ld a, b
 	ld de, wDecompressScratch
 	call FarDecompress
+	ldh a, [hLoadSpindaSpots]
+	and a
+	call nz, PutSpotsOnSprite
 	; calculate tile count from final address; requires wDecompressScratch to be at the beginning of the bank
 	swap e
 	swap d
@@ -120,26 +128,42 @@ _GetFrontpic:
 	pop hl
 	ret
 
+PutSpotsOnSprite:
+	farcall PutSpindaSpots
+	xor a
+	ldh [hLoadSpindaSpots], a
+	ret
+
 GetPicIndirectPointer:
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
 	ld a, l
+; idc if this is more optimized/future-proof, it's harder to read
+;	sub LOW(UNOWN)
+;	if HIGH(UNOWN) == 0
+;		or h
+;	else
+;		jr nz, .not_unown_or_spinda
+;		if HIGH(UNOWN) == 1
+;			dec h
+;		else
+;			ld a, h
+;			cp HIGH(UNOWN)
+;		endc
+;	endc
 	sub LOW(UNOWN)
-	if HIGH(UNOWN) == 0
-		or h
-	else
-		jr nz, .not_unown
-		if HIGH(UNOWN) == 1
-			dec h
-		else
-			ld a, h
-			cp HIGH(UNOWN)
-		endc
-	endc
+	or h
 	jr z, .unown
-.not_unown
+	ld a, l
+	sub LOW(SPINDA)
+	jr nz, .not_unown_or_spinda
+	dec h
+	jr nz, .not_unown_or_spinda
+	ld a, 1
+	ldh [hLoadSpindaSpots], a
+.not_unown_or_spinda
 	ld hl, PokemonPicPointers
 	ld d, BANK(PokemonPicPointers)
 .done

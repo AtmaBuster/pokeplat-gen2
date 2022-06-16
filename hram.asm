@@ -178,6 +178,9 @@ hMusicStore:: db ; ffef
 
 hHLBuffer:: dw
 
+hSpindaDVs:: dw
+hLoadSpindaSpots:: db
+
 if DEF(_DEBUG)
 hDebugMenuCursorPos:: db
 hDebugMenuDataBuffer:: ds 8

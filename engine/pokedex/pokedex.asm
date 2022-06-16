@@ -2767,6 +2767,10 @@ Pokedex_LoadSelectedMonTiles:
 	jr z, .QuestionMark
 	ld a, [wFirstUnownSeen]
 	ld [wUnownLetter], a
+	ld a, [wFirstSpindaDVs]
+	ldh [hSpindaDVs], a
+	ld a, [wFirstSpindaDVs + 1]
+	ldh [hSpindaDVs + 1], a
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
 	call GetBaseData

@@ -3653,6 +3653,7 @@ LoadEnemyMonToSwitchTo:
 	ld a, [wUnownLetter]
 	ld [wFirstUnownSeen], a
 .skip_unown
+	farcall CheckFirstSpinda
 
 	ld hl, wEnemyMonHP
 	ld a, [hli]
@@ -8713,6 +8714,7 @@ InitEnemyWildmon:
 	ld a, [wUnownLetter]
 	ld [wFirstUnownSeen], a
 .skip_unown
+	farcall CheckFirstSpinda
 	ld de, vTiles2
 	predef GetAnimatedFrontpic
 	xor a
@@ -10611,4 +10613,24 @@ ForceMysteryBerryEffect:
 	ld [de], a
 .done
 	scf
+	ret
+
+CheckFirstSpinda:
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(SPINDA)
+	ret nz
+	dec h
+	ret nz
+	ld a, [wFirstSpindaDVs]
+	and a
+	ret nz
+	ld a, [wFirstSpindaDVs + 1]
+	and a
+	ret nz
+	ld a, [wEnemyMonDVs]
+	ld [wFirstSpindaDVs], a
+	ld a, [wEnemyMonDVs + 1]
+	ld [wFirstSpindaDVs + 1], a
 	ret
