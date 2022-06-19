@@ -5084,17 +5084,90 @@ BattleAnim_RefreshSprite:
 
 
 BattleAnim_FakeOut:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_obj ANIM_OBJ_99, 136, 46, $e0
+	anim_obj ANIM_OBJ_99, 136, 46, $20
+	anim_wait 16
+	anim_sound 0, 0, SFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_clearobjs
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAGE
+	anim_bgeffect ANIM_BG_1F, $14, $2, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Uproar:
 BattleAnim_Stockpile:
 BattleAnim_SpitUp:
 BattleAnim_Swallow:
 BattleAnim_HeatWave:
+	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_FIRE
+	anim_bgp $90
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_sound 0, 0, SFX_EMBER
+.loop
+	anim_obj ANIM_OBJ_HEAT_WAVE, 88, 0, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 56, 16, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 72, 32, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 24, 48, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 40, 64, $1
+	anim_loop 3, .loop
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_ret
+
 BattleAnim_Hail:
 BattleAnim_Torment:
 BattleAnim_Flatter:
 BattleAnim_WillOWisp:
+	anim_1gfx ANIM_GFX_FIRE
+	anim_bgp $1b
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_WILL_O_WISP, 64, 92, $0
+	anim_wait 40
+	anim_sound 0, 0, SFX_CURSE
+.loop
+	anim_obj ANIM_OBJ_WILL_O_WISP_IMPACT, 132, 68, $0
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 40
+	anim_ret
+
 BattleAnim_Memento:
+	anim_1gfx ANIM_GFX_ANGELS
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_bgeffect ANIM_BG_19, $0, $1, $40
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_19
+	anim_bgp $1b
+	anim_obp0 $f
+	anim_obj ANIM_OBJ_SPITE, 124, 16, $0
+	anim_sound 0, 1, SFX_SPITE
+	anim_wait 96
+	anim_ret
+
 BattleAnim_Facade:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SAND
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_2C, $0, $1, $0
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_wait 8
+.loop
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_SWEAT, 56, 80, $0
+	anim_wait 28
+	anim_loop 3, .loop
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_00, 136, 48, $0
+	anim_wait 24
+	anim_incbgeffect ANIM_BG_2C
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
 BattleAnim_FocusPunch:
 BattleAnim_SmellingSalts:
 BattleAnim_FollowMe:
