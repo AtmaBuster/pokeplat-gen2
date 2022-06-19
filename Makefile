@@ -119,9 +119,6 @@ gfx/pokemon/castform/front_sun.animated.2bpp: gfx/pokemon/castform/front_sun.2bp
 
 ### Misc file-specific graphics rules
 
-engine/games/rock_layers.asm: gfx/underground/mining_layers.png
-	python tools/layertool.py $< $@
-
 gfx/pokemon/%/back.2bpp: rgbgfx += -h
 gfx/pokemon/castform/back_%.2bpp: rgbgfx += -h
 gfx/pokemon/cherrim/back_sun.2bpp: rgbgfx += -h
