@@ -224,6 +224,18 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_WILL_O_WISP
 	const ANIM_OBJ_WILL_O_WISP_IMPACT
 	const ANIM_OBJ_SWEAT
+	const ANIM_OBJ_CHARGE
+	const ANIM_OBJ_TAUNT
+	const ANIM_OBJ_TRICK_TO
+	const ANIM_OBJ_TRICK_FROM
+	const ANIM_OBJ_ASSIST
+	const ANIM_OBJ_VERTICAL_CHOP
+	const ANIM_OBJ_VERTICAL_CHOP_STILL
+	const ANIM_OBJ_SKILL_SWAP_TO
+	const ANIM_OBJ_SKILL_SWAP_FROM
+	const ANIM_OBJ_HAND_REVERSE
+	const ANIM_OBJ_FEATHER_DANCE
+	const ANIM_OBJ_TEETER_DANCE
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
 	const_def
@@ -307,6 +319,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMFUNC_4D
 	const BATTLEANIMFUNC_4E
 	const BATTLEANIMFUNC_4F
+	const BATTLEANIMFUNC_52
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
 	const_def
@@ -495,6 +508,11 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMFRAMESET_B6
 	const BATTLEANIMFRAMESET_B7
 	const BATTLEANIMFRAMESET_B8
+	const BATTLEANIMFRAMESET_B9
+	const BATTLEANIMFRAMESET_BA
+	const BATTLEANIMFRAMESET_BB
+	const BATTLEANIMFRAMESET_BC
+	const BATTLEANIMFRAMESET_C7
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
 	const_def
@@ -714,6 +732,9 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLEANIMOAMSET_D5
 	const BATTLEANIMOAMSET_D6
 	const BATTLEANIMOAMSET_D7
+	const BATTLEANIMOAMSET_D8
+	const BATTLEANIMOAMSET_D9
+	const BATTLEANIMOAMSET_E0
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
 	const_def 1
@@ -814,6 +835,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_GFX_AEROBLAST
 	const ANIM_GFX_PLAYERHEAD
 	const ANIM_GFX_ENEMYFEET
+	const ANIM_GFX_TAUNT
 
 ; battle_bg_effect struct members (see macros/wram.asm)
 	const_def

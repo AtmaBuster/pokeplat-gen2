@@ -316,3 +316,6 @@ _ExecuteBGEffects:
 _QueueBGEffect:
 	callfar QueueBGEffect
 	ret
+
+GenericDummyFunction::
+	ret
