@@ -720,6 +720,48 @@ JohtoGrassWildMons:
 	dbw 11, BUIZEL
 	dbw 12, SHELLOS
 	
+	map_id FUEGO_IRONWORKS_EXT
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	;morn
+	dbw 28, MAGMAR
+	dbw 29, MAGNEMITE
+	dbw 29, MAGMAR
+	dbw 29, FLOATZEL
+	dbw 30, FLOATZEL
+	dbw 30, GASTRODON
+	dbw 28, MAGNEMITE
+	dbw 30, MAGNEMITE
+	dbw 31, FLOATZEL
+	dbw 31, GASTRODON
+	dbw 31, FLOATZEL
+	dbw 31, GASTRODON
+	;day
+	dbw 28, MAGMAR
+	dbw 29, MAGNEMITE
+	dbw 29, MAGMAR
+	dbw 29, FLOATZEL
+	dbw 30, FLOATZEL
+	dbw 30, GASTRODON
+	dbw 28, MAGNEMITE
+	dbw 30, MAGNEMITE
+	dbw 31, FLOATZEL
+	dbw 31, GASTRODON
+	dbw 31, FLOATZEL
+	dbw 31, GASTRODON
+	;nite
+	dbw 28, MAGMAR
+	dbw 29, MAGNEMITE
+	dbw 29, GASTRODON
+	dbw 29, FLOATZEL
+	dbw 30, FLOATZEL
+	dbw 30, GASTRODON
+	dbw 28, MAGNEMITE
+	dbw 30, MAGNEMITE
+	dbw 31, FLOATZEL
+	dbw 31, GASTRODON
+	dbw 31, FLOATZEL
+	dbw 31, GASTRODON
+	
 	; map_id [MAP CONSTANT NAME]
 	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; ;morn

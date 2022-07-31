@@ -8,8 +8,10 @@ FuegoIronworksExt_MapScripts:
 FuegoIronworksExt_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
-
+	db 2 ; warp events
+	warp_event 12, 19, FLOAROMA_MEADOW, 3
+	warp_event 13, 19, FLOAROMA_MEADOW, 4
+	
 	db 0 ; coord events
 
 	db 0 ; bg events

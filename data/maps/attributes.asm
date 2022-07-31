@@ -157,12 +157,12 @@ ENDM
 	map_attributes FloaromaTown, FLOAROMA_TOWN, $01, NORTH | SOUTH | EAST
 	connection north, FuegoIronworksExt, FUEGO_IRONWORKS_EXT, 0
 	connection south, Route204N, ROUTE_204_N, 0
-	connection east, Route205S, ROUTE_205_S, -17
+	connection east, Route205S, ROUTE_205_S, -13
 	
 	map_attributes Route205S, ROUTE_205_S, $01, NORTH | WEST | EAST | WEST2
 	connection north, EternaForestExt, ETERNA_FOREST_EXT, 7
-	connection west, FloaromaTown, FLOAROMA_TOWN, 17
-	connection west2, FuegoIronworksExt, FUEGO_IRONWORKS_EXT, 0
+	connection west, FloaromaTown, FLOAROMA_TOWN, 13
+	connection west2, FuegoIronworksExt, FUEGO_IRONWORKS_EXT, 2
 	connection east, ValleyWindworksExt, VALLEY_WINDWORKS_EXT, 12
 	
 	map_attributes ValleyWindworksExt, VALLEY_WINDWORKS_EXT, $4E, WEST
@@ -179,9 +179,9 @@ ENDM
 	map_attributes EternaCity, ETERNA_CITY, $4E, WEST ; | EAST
 	connection west, Route205N, ROUTE_205_N, 0
 	
-	map_attributes FuegoIronworksExt, FUEGO_IRONWORKS_EXT, $00, SOUTH | EAST
+	map_attributes FuegoIronworksExt, FUEGO_IRONWORKS_EXT, $01, SOUTH | EAST
 	connection south, FloaromaTown, FLOAROMA_TOWN, 0
-	connection east, Route205S, ROUTE_205_S, 0
+	connection east, Route205S, ROUTE_205_S, -2
 	
 ; no connections
 	

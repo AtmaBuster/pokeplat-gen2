@@ -112,7 +112,7 @@ ENDM
 	
 	newgroup ; Floaroma, Eterna, Routes                              7
 	map_const ROUTE_204_N,                                 12, 21 ;  1
-	map_const FLOAROMA_TOWN,                               14, 10 ;  2
+	map_const FLOAROMA_TOWN,                               14, 14 ;  2
 	map_const FLOAROMA_POKEMON_CENTER_1F,                   5,  4 ;  3
 	map_const FLOAROMA_POKEMART,                            6,  4 ;  4
 	map_const FLOAROMA_HOUSE_W,                             4,  4 ;  5
@@ -122,7 +122,7 @@ ENDM
 	map_const VALLEY_WINDWORKS_EXT,                        13, 13 ;  9
 	map_const ETERNA_FOREST_EXT,                           17, 17 ; 10
 	map_const ROUTE_205_N,                                 14, 12 ; 11
-	map_const FUEGO_IRONWORKS_EXT,                         14, 17 ; 12
+	map_const FUEGO_IRONWORKS_EXT,                         10, 10 ; 12
 	map_const ETERNA_CITY,                                 25, 22 ; 13
 	
 	newgroup ; Floaroma Meadow                                    ;  8
