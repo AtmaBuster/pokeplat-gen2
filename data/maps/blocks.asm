@@ -7,6 +7,7 @@ SandgemPokemonCenter1F_Blocks:
 JubilifePokemonCenter1F_Blocks:
 OreburghPokemonCenter1F_Blocks:
 FloaromaPokemonCenter1F_Blocks:
+EternaPokemonCenter1F_Blocks:
 	INCBIN "maps/PokemonCenter1F.blk"
 	
 Pokecenter2F_Blocks:
@@ -33,6 +34,7 @@ SandgemPokeMart_Blocks:
 JubilifePokeMart_Blocks:
 OreburghPokeMart_Blocks:
 FloaromaPokeMart_Blocks:
+EternaPokeMart_Blocks:
 	INCBIN "maps/PokeMart.blk"
 
 TwinleafTown_Blocks:
@@ -226,6 +228,13 @@ Route205House_Blocks:
 	
 ValleyWindworksInt_Blocks:
 	INCBIN "maps/ValleyWindworksInt.blk"
+	
+EternaGym_Blocks:
+	INCBIN "maps/EternaGym.blk"
+	
+EternaHouseW_Blocks:
+EternaHouseE_Blocks:
+	INCBIN "maps/HouseInterior2.blk"
 
 SECTION "Map Blocks 2", ROMX
 

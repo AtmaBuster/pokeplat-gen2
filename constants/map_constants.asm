@@ -126,6 +126,18 @@ ENDM
 	map_const ROUTE_205_N,                                 14, 12 ; 13
 	map_const FUEGO_IRONWORKS_EXT,                         10, 10 ; 14
 	map_const ETERNA_CITY,                                 25, 22 ; 15
+	map_const ETERNA_POKEMON_CENTER_1F,						5,  4 ;  16
+	map_const ETERNA_POKEMART, 								6,  4 ;  17
+	map_const ETERNA_GYM,									5,  5 ;  18
+	;map_const BIKE_SHOP,									X,  X ;  19
+	;map_const HERBAL_SHOP,									X,  X ;  20
+	;map_const UNDERGROUND_MANS_HOUSE,						X,  X ;  21
+	;map_const ETERNA_APARTMENT_1F,							X,  X ;  22
+	;map_const ETERNA_APARTMENT_2F,							X,  X ;  23
+	;map_const ETERNA_APARTMENT_3F,							X,  X ;  24
+	map_const ETERNA_HOUSE_W,								4,  4 ;  25
+	map_const ETERNA_HOUSE_E,								4,  4 ;  26
+	
 	map_const ROUTE_211_W,                                 12, 12 ; 16
 	
 	newgroup ; Floaroma Meadow                                    ;  8
@@ -146,13 +158,13 @@ ENDM
 	map_const OREBURGH_MINE_B1F,                            8, 12 ;  4
 	map_const OREBURGH_MINE_B2F,                           14, 13 ;  5
 	map_const ETERNA_FOREST_INT,                           30, 30 ;  6
-	;map_const VALLEY_WINDWORKS_INT,                         X,  X ;   7
 	;map_const OLD_CHATEAU_1F,                               X,  X ;   8
 	;map_const OLD_CHATEAU_1F_E,                             X,  X ;   9
 	;map_const OLD_CHATEAU_1F_W,                             X,  X ;  10
 	;map_const OLD_CHATEAU_1F_DINING,                        X,  X ;  11
 	;map_const OLD_CHATEAU_2F,                               X,  X ;  12
 	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  13
-	
-
-	
+	;map_const ETERNA_GALACTIC_HQ_1F, 						 X,  X ;  14
+	;map_const ETERNA_GALACTIC_HQ_2F, 						 X,  X ;  15
+	;map_const ETERNA_GALACTIC_HQ_3F, 						 X,  X ;  16
+	;map_const ETERNA_GALACTIC_HQ_4F, 						 X,  X ;  17

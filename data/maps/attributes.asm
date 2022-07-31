@@ -263,4 +263,9 @@ ENDM
 	map_attributes FloaromaMeadowHouse, FLOAROMA_MEADOW_HOUSE, $00, 0
 	map_attributes Route205House, ROUTE_205_HOUSE, $00, 0
 	map_attributes ValleyWindworksInt, VALLEY_WINDWORKS_INT, $00, 0
+	map_attributes EternaPokemonCenter1F, ETERNA_POKEMON_CENTER_1F, $00, 0
+	map_attributes EternaPokeMart, ETERNA_POKEMART, $00, 0
+	map_attributes EternaGym, ETERNA_GYM, $00, 0
+	map_attributes EternaHouseW, ETERNA_HOUSE_W, $00, 0
+	map_attributes EternaHouseE, ETERNA_HOUSE_E, $00, 0
 	

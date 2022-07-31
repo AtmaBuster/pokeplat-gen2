@@ -1,14 +1,16 @@
 	object_const_def ; object_event constants
 
-Route211W_MapScripts:
+EternaGym_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route211W_MapEvents:
+EternaGym_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event  4,  9, ETERNA_CITY, 3
+	warp_event  5,  9, ETERNA_CITY, 3
 
 	db 0 ; coord events
 
