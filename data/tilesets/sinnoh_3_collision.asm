@@ -180,3 +180,17 @@
 	tilecoll WALL, WALL, WALL, WALL ; b3
 	tilecoll WALL, WALL, WALL, WALL ; b4
 	tilecoll WALL, FLOOR, WALL, FLOOR ; b5
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; b6
+	tilecoll WALL, WATER, WALL, WATER ; b7
+	tilecoll WALL, WALL, WALL, FLOOR ; b8
+	tilecoll WALL, FLOOR, WALL, FLOOR ; b9
+	tilecoll WALL, FLOOR, FLOOR, WALL ; ba
+	tilecoll WATER, WALL, WATER, WALL ; bb
+	tilecoll WALL, FLOOR, WALL, FLOOR ; bc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bd
+	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; be
+	tilecoll WALL, FLOOR, WALL, FLOOR ; bf
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; c0
+	tilecoll WALL, FLOOR, WALL, CAVE ; c1
+	tilecoll WALL, WALL, WALL, WALL ; c2
+	tilecoll WALL, WALL, WALL, WALL ; c3

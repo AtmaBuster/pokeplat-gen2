@@ -124,6 +124,7 @@ ENDM
 	map_const ROUTE_205_N,                                 14, 12 ; 11
 	map_const FUEGO_IRONWORKS_EXT,                         10, 10 ; 12
 	map_const ETERNA_CITY,                                 25, 22 ; 13
+	map_const ROUTE_211_W,                                 12, 12 ; 14
 	
 	newgroup ; Floaroma Meadow                                    ;  8
 	map_const FLOAROMA_MEADOW,                             20, 20 ;  1

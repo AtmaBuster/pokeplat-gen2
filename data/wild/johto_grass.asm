@@ -762,6 +762,48 @@ JohtoGrassWildMons:
 	dbw 31, FLOATZEL
 	dbw 31, GASTRODON
 	
+	map_id ROUTE_211_W
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	;morn
+	dbw 13, MEDITITE
+	dbw 14, BIDOOF
+	dbw 14, MEDITITE
+	dbw 15, MEDITITE
+	dbw 14, CHINGLING
+	dbw 14, MACHOP
+	dbw 16, CHINGLING
+	dbw 14, BRONZOR
+	dbw 15, MACHOP
+	dbw 16, BRONZOR
+	dbw 15, MACHOP
+	dbw 16, BRONZOR
+	;day
+	dbw 13, MEDITITE
+	dbw 14, BIDOOF
+	dbw 14, MEDITITE
+	dbw 15, MEDITITE
+	dbw 14, CHINGLING
+	dbw 14, MACHOP
+	dbw 16, CHINGLING
+	dbw 14, BRONZOR
+	dbw 15, MACHOP
+	dbw 16, BRONZOR
+	dbw 15, MACHOP
+	dbw 16, BRONZOR
+	;nite
+	dbw 13, MEDITITE
+	dbw 14, BIDOOF
+	dbw 14, ZUBAT
+	dbw 15, HOOTHOOT
+	dbw 14, CHINGLING
+	dbw 14, MACHOP
+	dbw 16, CHINGLING
+	dbw 14, BRONZOR
+	dbw 15, MACHOP
+	dbw 16, BRONZOR
+	dbw 15, MACHOP
+	dbw 16, BRONZOR
+	
 	; map_id [MAP CONSTANT NAME]
 	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; ;morn
