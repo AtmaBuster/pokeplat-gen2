@@ -15,4 +15,4 @@ rept 32
 	db $ff
 endr
 
-	tilepal 1, PRIORITY_ROOF
+	tilepal 1, PRIORITY_ROOF, GRAY, GRAY, GRAY, GRAY, GRAY
