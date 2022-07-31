@@ -114,6 +114,9 @@ INCLUDE "maps/EternaCity.asm"
 INCLUDE "maps/FloaromaMeadow.asm"
 INCLUDE "maps/FuegoIronworksExt.asm"
 INCLUDE "maps/Route211W.asm"
+INCLUDE "maps/FloaromaMeadowHouse.asm"
+INCLUDE "maps/Route205House.asm"
+INCLUDE "maps/ValleyWindworksInt.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX

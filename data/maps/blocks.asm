@@ -58,6 +58,7 @@ OreburghHouseN_Blocks:
 OreburghHouseE_Blocks:
 FloaromaHouseW_Blocks:
 FloaromaHouseE_Blocks:
+FloaromaMeadowHouse_Blocks:
 	INCBIN "maps/HouseInterior1.blk"
 	
 LakeVerityHigh_Blocks:
@@ -219,6 +220,12 @@ FuegoIronworksExt_Blocks:
 
 Route211W_Blocks:
 	INCBIN "maps/Route211W.blk"
+	
+Route205House_Blocks:
+	INCBIN "maps/Route205House.blk"
+	
+ValleyWindworksInt_Blocks:
+	INCBIN "maps/ValleyWindworksInt.blk"
 
 SECTION "Map Blocks 2", ROMX
 

@@ -1,15 +1,16 @@
 	object_const_def ; object_event constants
 
-ValleyWindworksExt_MapScripts:
+Route205House_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-ValleyWindworksExt_MapEvents:
+Route205House_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event 14, 13, VALLEY_WINDWORKS_INT, 1
+	db 2 ; warp events
+	warp_event  2,  7, ROUTE_205_S, 3
+	warp_event  3,  7, ROUTE_205_S, 3
 
 	db 0 ; coord events
 

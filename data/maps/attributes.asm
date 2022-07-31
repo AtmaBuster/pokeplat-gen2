@@ -260,3 +260,7 @@ ENDM
 	map_attributes FloaromaFlowerShop, FLOAROMA_FLOWER_SHOP, $00, 0
 	map_attributes EternaForestInt, ETERNA_FOREST_INT, $06, 0
 	map_attributes FloaromaMeadow, FLOAROMA_MEADOW, $02, 0
+	map_attributes FloaromaMeadowHouse, FLOAROMA_MEADOW_HOUSE, $00, 0
+	map_attributes Route205House, ROUTE_205_HOUSE, $00, 0
+	map_attributes ValleyWindworksInt, VALLEY_WINDWORKS_INT, $00, 0
+	

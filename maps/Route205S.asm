@@ -8,9 +8,10 @@ Route205S_MapScripts:
 Route205S_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 12,  2, ETERNA_FOREST_INT, 1
 	warp_event 13,  2, ETERNA_FOREST_INT, 2
+	warp_event 19,  9, ROUTE_205_HOUSE, 1
 
 	db 0 ; coord events
 
