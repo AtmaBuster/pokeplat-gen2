@@ -108,7 +108,11 @@ JubilifeApartmentSW1F_Blocks:
 OreburghApartmentNW1F_Blocks:
 OreburghApartmentN1F_Blocks:
 OreburghApartmentE1F_Blocks:
+EternaApartment1F_Blocks:
 	INCBIN "maps/Apartment1F.blk"
+	
+EternaApartment2F_Blocks:
+	INCBIN "maps/Apartment2F.blk"
 	
 JubilifeApartmentSE2F_Blocks:
 JubilifeApartmentNE2F_Blocks:
@@ -116,7 +120,8 @@ JubilifeApartmentSW2F_Blocks:
 OreburghApartmentNW2F_Blocks:
 OreburghApartmentN2F_Blocks:
 OreburghApartmentE2F_Blocks:
-	INCBIN "maps/Apartment2F.blk"
+EternaApartment3F_Blocks:
+	INCBIN "maps/Apartment3F.blk"
 
 TrainersSchool_Blocks:
 	INCBIN "maps/TrainersSchool.blk"
@@ -235,6 +240,9 @@ EternaGym_Blocks:
 EternaHouseW_Blocks:
 EternaHouseE_Blocks:
 	INCBIN "maps/HouseInterior2.blk"
+	
+EternaBikeShop_Blocks:
+	INCBIN "maps/EternaBikeShop.blk"
 
 SECTION "Map Blocks 2", ROMX
 

@@ -120,8 +120,12 @@ INCLUDE "maps/ValleyWindworksInt.asm"
 INCLUDE "maps/EternaPokemonCenter1F.asm"
 INCLUDE "maps/EternaPokeMart.asm"
 INCLUDE "maps/EternaGym.asm"
+INCLUDE "maps/EternaBikeShop.asm"
 INCLUDE "maps/EternaHouseW.asm"
 INCLUDE "maps/EternaHouseE.asm"
+INCLUDE "maps/EternaApartment1F.asm"
+INCLUDE "maps/EternaApartment2F.asm"
+INCLUDE "maps/EternaApartment3F.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX
