@@ -130,8 +130,8 @@ ENDM
 	map_const ETERNA_POKEMART, 								6,  4 ;  17
 	map_const ETERNA_GYM,									5,  5 ;  18
 	map_const ETERNA_BIKE_SHOP,								5,  4 ;  19
-	;map_const HERBAL_SHOP,									X,  X ;  20
-	;map_const UNDERGROUND_MANS_HOUSE,						X,  X ;  21
+	map_const ETERNA_HERB_SHOP,								4,  3 ;  20
+	map_const ETERNA_UNDERGROUND_HOUSE,						4,  3 ;  21
 	map_const ETERNA_APARTMENT_1F,							6,  4 ;  22
 	map_const ETERNA_APARTMENT_2F,							6,  4 ;  23
 	map_const ETERNA_APARTMENT_3F,							6,  4 ;  24

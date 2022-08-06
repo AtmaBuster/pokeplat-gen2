@@ -243,6 +243,12 @@ EternaHouseE_Blocks:
 	
 EternaBikeShop_Blocks:
 	INCBIN "maps/EternaBikeShop.blk"
+	
+EternaHerbShop_Blocks:
+	INCBIN "maps/EternaHerbShop.blk"
+	
+EternaUndergroundHouse_Blocks:
+	INCBIN "maps/EternaUndergroundHouse.blk"
 
 SECTION "Map Blocks 2", ROMX
 

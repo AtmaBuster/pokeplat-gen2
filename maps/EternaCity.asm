@@ -13,7 +13,7 @@ EternaCity_MapScripts:
 EternaCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 9 ; warp events
 	warp_event 13, 15, ETERNA_POKEMON_CENTER_1F, 1
 	warp_event 17, 27, ETERNA_POKEMART, 2
 	warp_event 18, 35, ETERNA_GYM, 2
@@ -21,6 +21,8 @@ EternaCity_MapEvents:
 	warp_event 29, 19, ETERNA_HOUSE_E, 2
 	warp_event 18, 21, ETERNA_BIKE_SHOP, 1
 	warp_event 21, 27, ETERNA_APARTMENT_1F, 2
+	warp_event 23,  9, ETERNA_HERB_SHOP, 1
+	warp_event 17, 15, ETERNA_UNDERGROUND_HOUSE, 2
 
 	db 0 ; coord events
 

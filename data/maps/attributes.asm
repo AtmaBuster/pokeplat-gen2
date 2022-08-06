@@ -267,10 +267,11 @@ ENDM
 	map_attributes EternaPokeMart, ETERNA_POKEMART, $00, 0
 	map_attributes EternaGym, ETERNA_GYM, $00, 0
 	map_attributes EternaBikeShop, ETERNA_BIKE_SHOP, $00, 0
+	map_attributes EternaHerbShop, ETERNA_HERB_SHOP, $00, 0
+	map_attributes EternaUndergroundHouse, ETERNA_UNDERGROUND_HOUSE, $00, 0
 	map_attributes EternaApartment1F, ETERNA_APARTMENT_1F, $00, 0
 	map_attributes EternaApartment2F, ETERNA_APARTMENT_2F, $00, 0
 	map_attributes EternaApartment3F, ETERNA_APARTMENT_3F, $00, 0
 	map_attributes EternaHouseW, ETERNA_HOUSE_W, $00, 0
 	map_attributes EternaHouseE, ETERNA_HOUSE_E, $00, 0
-	
 	
