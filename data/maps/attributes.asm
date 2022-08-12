@@ -274,4 +274,7 @@ ENDM
 	map_attributes EternaApartment3F, ETERNA_APARTMENT_3F, $00, 0
 	map_attributes EternaHouseW, ETERNA_HOUSE_W, $00, 0
 	map_attributes EternaHouseE, ETERNA_HOUSE_E, $00, 0
-	
+	map_attributes EternaGalacticBuilding1F, ETERNA_GALACTIC_BUILDING_1F, $00, 0
+	map_attributes EternaGalacticBuilding2F, ETERNA_GALACTIC_BUILDING_2F, $00, 0
+	map_attributes EternaGalacticBuilding3F, ETERNA_GALACTIC_BUILDING_3F, $00, 0
+	map_attributes EternaGalacticBuilding4F, ETERNA_GALACTIC_BUILDING_4F, $00, 0

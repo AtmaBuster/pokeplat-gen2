@@ -249,6 +249,18 @@ EternaHerbShop_Blocks:
 	
 EternaUndergroundHouse_Blocks:
 	INCBIN "maps/EternaUndergroundHouse.blk"
+	
+EternaGalacticBuilding1F_Blocks:
+	INCBIN "maps/EternaGalacticBuilding1F.blk"
+	
+EternaGalacticBuilding2F_Blocks:
+	INCBIN "maps/EternaGalacticBuilding2F.blk"
+	
+EternaGalacticBuilding3F_Blocks:
+	INCBIN "maps/EternaGalacticBuilding3F.blk"
+	
+EternaGalacticBuilding4F_Blocks:
+	INCBIN "maps/EternaGalacticBuilding4F.blk"
 
 SECTION "Map Blocks 2", ROMX
 

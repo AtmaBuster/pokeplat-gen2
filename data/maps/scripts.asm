@@ -128,6 +128,10 @@ INCLUDE "maps/EternaApartment2F.asm"
 INCLUDE "maps/EternaApartment3F.asm"
 INCLUDE "maps/EternaHerbShop.asm"
 INCLUDE "maps/EternaUndergroundHouse.asm"
+INCLUDE "maps/EternaGalacticBuilding1F.asm"
+INCLUDE "maps/EternaGalacticBuilding2F.asm"
+INCLUDE "maps/EternaGalacticBuilding3F.asm"
+INCLUDE "maps/EternaGalacticBuilding4F.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX

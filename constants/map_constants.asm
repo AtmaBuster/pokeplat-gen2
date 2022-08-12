@@ -164,7 +164,7 @@ ENDM
 	;map_const OLD_CHATEAU_1F_DINING,                        X,  X ;  11
 	;map_const OLD_CHATEAU_2F,                               X,  X ;  12
 	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  13
-	;map_const ETERNA_GALACTIC_HQ_1F, 						 X,  X ;  14
-	;map_const ETERNA_GALACTIC_HQ_2F, 						 X,  X ;  15
-	;map_const ETERNA_GALACTIC_HQ_3F, 						 X,  X ;  16
-	;map_const ETERNA_GALACTIC_HQ_4F, 						 X,  X ;  17
+	map_const ETERNA_GALACTIC_BUILDING_1F, 					 9,  6 ;  14
+	map_const ETERNA_GALACTIC_BUILDING_2F, 					 8,  5 ;  15
+	map_const ETERNA_GALACTIC_BUILDING_3F, 					 8,  5 ;  16
+	map_const ETERNA_GALACTIC_BUILDING_4F, 					 8,  4 ;  17
