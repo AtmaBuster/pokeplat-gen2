@@ -1091,7 +1091,6 @@ Music_SandgemTown_Ch3:
 Music_SandgemTown_Ch4:
 	toggle_noise 3
 	drum_speed 12
-	drum_note x, x
 	rest 16
 	rest 16
 	drum_note 5, 8 ; Triangle    2/8/9 are hat - 5 is a triangle - 11 kick2 - 12 open hat
