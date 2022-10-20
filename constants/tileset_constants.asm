@@ -28,6 +28,7 @@
 	const TILESET_GAME_CORNER          ; 1a VEILSTONE GAME CORNER
 	const TILESET_SNOWPOINT_TEMPLE     ; 1b SNOWPOINT TEMPLE
 	const TILESET_MT_CORONET           ; 1c MT. CORONET
+	const TILESET_OLD_CHATEAU          ; 1d OLD CHATEAU
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

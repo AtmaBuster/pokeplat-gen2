@@ -137,7 +137,6 @@ ENDM
 	map_const ETERNA_APARTMENT_3F,							6,  4 ;  24
 	map_const ETERNA_HOUSE_W,								4,  4 ;  25
 	map_const ETERNA_HOUSE_E,								4,  4 ;  26
-	
 	map_const ROUTE_211_W,                                 12, 12 ; 16
 	
 	newgroup ; Floaroma Meadow                                    ;  8
@@ -158,13 +157,12 @@ ENDM
 	map_const OREBURGH_MINE_B1F,                            8, 12 ;  4
 	map_const OREBURGH_MINE_B2F,                           14, 13 ;  5
 	map_const ETERNA_FOREST_INT,                           30, 30 ;  6
-	;map_const OLD_CHATEAU_1F,                               X,  X ;   8
-	;map_const OLD_CHATEAU_1F_E,                             X,  X ;   9
-	;map_const OLD_CHATEAU_1F_W,                             X,  X ;  10
-	;map_const OLD_CHATEAU_1F_DINING,                        X,  X ;  11
-	;map_const OLD_CHATEAU_2F,                               X,  X ;  12
-	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  13
-	map_const ETERNA_GALACTIC_BUILDING_1F, 					 9,  6 ;  14
-	map_const ETERNA_GALACTIC_BUILDING_2F, 					 8,  5 ;  15
-	map_const ETERNA_GALACTIC_BUILDING_3F, 					 8,  5 ;  16
-	map_const ETERNA_GALACTIC_BUILDING_4F, 					 8,  4 ;  17
+	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  10
+	map_const ETERNA_GALACTIC_BUILDING_1F, 					9,  6 ;  11
+	map_const ETERNA_GALACTIC_BUILDING_2F, 					8,  5 ;  12
+	map_const ETERNA_GALACTIC_BUILDING_3F, 					8,  5 ;  13
+	map_const ETERNA_GALACTIC_BUILDING_4F, 					8,  4 ;  14
+	map_const OLD_CHATEAU_ENTRYWAY,                        19,  6 ;   7
+	map_const OLD_CHATEAU_DINING,                          15,  5 ;   8
+	map_const OLD_CHATEAU_BEDROOMS,                        17,  8 ;   9
+	

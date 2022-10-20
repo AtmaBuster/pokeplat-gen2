@@ -93,6 +93,9 @@ INCLUDE "gfx/tilesets/snowpoint_temple_palette_map.asm"
 TilesetMtCoronetPalMap:
 INCLUDE "gfx/tilesets/mt_coronet_palette_map.asm"
 
+TilesetOldChateauPalMap:
+INCLUDE "gfx/tilesets/old_chateau_palette_map.asm"
+
 ; unused
 rept 26
 	db $06

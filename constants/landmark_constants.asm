@@ -20,6 +20,7 @@
 	const FLOAROMA_MEADOW
 	const FUEGO_IRONWORKS
 	const ETERNA_FOREST
+	const OLD_CHATEAU
 	const ETERNA_CITY
 	const ROUTE_211
 	const ROUTE_206
@@ -77,8 +78,6 @@
 	const NEWMOON_ISLAND
 	const SEABREAK_PATH
 	const FLOWER_PARADISE
-
-
 
 
 ; old definitions

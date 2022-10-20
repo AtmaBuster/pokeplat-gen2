@@ -132,6 +132,9 @@ INCLUDE "maps/EternaGalacticBuilding1F.asm"
 INCLUDE "maps/EternaGalacticBuilding2F.asm"
 INCLUDE "maps/EternaGalacticBuilding3F.asm"
 INCLUDE "maps/EternaGalacticBuilding4F.asm"
+INCLUDE "maps/OldChateauEntryway.asm"
+INCLUDE "maps/OldChateauDining.asm"
+INCLUDE "maps/OldChateauBedrooms.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX

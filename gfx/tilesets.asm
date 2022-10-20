@@ -290,6 +290,16 @@ INCLUDE "data/tilesets/meadow_collision.asm"
 TilesetMeadowMeta:
 INCBIN "data/tilesets/meadow_metatiles.bin"
 ;---------------------------------------
+TilesetOldChateauGFX:
+INCBIN "gfx/tilesets/old_chateau.2bpp.lz"
+
+TilesetOldChateauColl:
+INCLUDE "data/tilesets/old_chateau_collision.asm"
+
+TilesetOldChateauMeta:
+INCBIN "data/tilesets/old_chateau_metatiles.bin"
+;---------------------------------------
+
 
 ;SECTION "Tileset Data 7", ROMX
 ;SECTION "Tileset Data 8", ROMX

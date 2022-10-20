@@ -41,5 +41,4 @@ Tilesets::
 	tileset TilesetGameCorner
 	tileset TilesetSnowpointTemple
 	tileset TilesetMtCoronet
-
-	
+	tileset TilesetOldChateau

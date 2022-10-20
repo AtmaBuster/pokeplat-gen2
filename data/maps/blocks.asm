@@ -261,6 +261,15 @@ EternaGalacticBuilding3F_Blocks:
 	
 EternaGalacticBuilding4F_Blocks:
 	INCBIN "maps/EternaGalacticBuilding4F.blk"
+	
+OldChateauEntryway_Blocks:
+	INCBIN "maps/OldChateauEntryway.blk"
+	
+OldChateauDining_Blocks:
+	INCBIN "maps/OldChateauDining.blk"
+	
+OldChateauBedrooms_Blocks:
+	INCBIN "maps/OldChateauBedrooms.blk"
 
 SECTION "Map Blocks 2", ROMX
 

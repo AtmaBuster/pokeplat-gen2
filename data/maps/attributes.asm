@@ -278,3 +278,6 @@ ENDM
 	map_attributes EternaGalacticBuilding2F, ETERNA_GALACTIC_BUILDING_2F, $00, 0
 	map_attributes EternaGalacticBuilding3F, ETERNA_GALACTIC_BUILDING_3F, $00, 0
 	map_attributes EternaGalacticBuilding4F, ETERNA_GALACTIC_BUILDING_4F, $00, 0
+	map_attributes OldChateauEntryway, OLD_CHATEAU_ENTRYWAY, $00, 0
+	map_attributes OldChateauDining, OLD_CHATEAU_DINING, $00, 0
+	map_attributes OldChateauBedrooms, OLD_CHATEAU_BEDROOMS, $00, 0

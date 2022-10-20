@@ -25,6 +25,7 @@ Landmarks:
 	landmark  36,  72, FloaromaMeadowName
 	landmark  36,  68, FuegoIronworksName
 	landmark  44,  60, EternaForestName
+	landmark  52,  60, OldChateauName
 	landmark  60,  60, EternaCityName
 	landmark  68,  60, Route211Name
 	landmark  60,  80, Route206Name
@@ -108,6 +109,7 @@ FloaromaMeadowName:  db "FLOAROMA¯MEADOW@"
 FuegoIronworksName:  db "FUEGO¯IRONWORKS@"
 ValleyWindworksName: db "VALLEY¯WINDWORKS@"
 EternaForestName:    db "ETERNA¯FOREST@"
+OldChateauName:      db "OLD¯CHATEAU@"
 WaywardCaveName:     db "WAYWARD¯CAVE@"
 MtCoronetName:       db "MT.CORONET@"
 AmitySquareName:     db "AMITY¯SQUARE@"

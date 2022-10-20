@@ -262,6 +262,7 @@ TilesetPlayersRoomAnim:
 TilesetPokeComCenterAnim:
 TilesetSolaceonRuinsAnim:
 TilesetRadioTowerAnim:
+TilesetOldChateauAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
