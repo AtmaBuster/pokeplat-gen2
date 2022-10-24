@@ -270,6 +270,9 @@ OldChateauDining_Blocks:
 	
 OldChateauBedrooms_Blocks:
 	INCBIN "maps/OldChateauBedrooms.blk"
+	
+FuegoIronworksInt_Blocks:
+	INCBIN "maps/FuegoIronworksInt.blk"
 
 SECTION "Map Blocks 2", ROMX
 

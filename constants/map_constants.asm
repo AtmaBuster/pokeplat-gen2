@@ -157,12 +157,12 @@ ENDM
 	map_const OREBURGH_MINE_B1F,                            8, 12 ;  4
 	map_const OREBURGH_MINE_B2F,                           14, 13 ;  5
 	map_const ETERNA_FOREST_INT,                           30, 30 ;  6
-	;map_const FUEGO_IRONWORKS_INT,                          X,  X ;  10
-	map_const ETERNA_GALACTIC_BUILDING_1F, 					9,  6 ;  11
-	map_const ETERNA_GALACTIC_BUILDING_2F, 					8,  5 ;  12
-	map_const ETERNA_GALACTIC_BUILDING_3F, 					8,  5 ;  13
-	map_const ETERNA_GALACTIC_BUILDING_4F, 					8,  4 ;  14
-	map_const OLD_CHATEAU_ENTRYWAY,                        19,  6 ;   7
-	map_const OLD_CHATEAU_DINING,                          15,  5 ;   8
-	map_const OLD_CHATEAU_BEDROOMS,                        17,  8 ;   9
+	map_const ETERNA_GALACTIC_BUILDING_1F, 					9,  6 ;  7
+	map_const ETERNA_GALACTIC_BUILDING_2F, 					8,  5 ;  8
+	map_const ETERNA_GALACTIC_BUILDING_3F, 					8,  5 ;  9
+	map_const ETERNA_GALACTIC_BUILDING_4F, 					8,  4 ;  10
+	map_const OLD_CHATEAU_ENTRYWAY,                        19,  6 ;  11
+	map_const OLD_CHATEAU_DINING,                          15,  5 ;  12
+	map_const OLD_CHATEAU_BEDROOMS,                        17,  8 ;  13
+	map_const FUEGO_IRONWORKS_INT,                         25, 13 ;  14
 	

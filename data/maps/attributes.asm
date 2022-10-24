@@ -281,3 +281,4 @@ ENDM
 	map_attributes OldChateauEntryway, OLD_CHATEAU_ENTRYWAY, $00, 0
 	map_attributes OldChateauDining, OLD_CHATEAU_DINING, $00, 0
 	map_attributes OldChateauBedrooms, OLD_CHATEAU_BEDROOMS, $00, 0
+	map_attributes FuegoIronworksInt, FUEGO_IRONWORKS_INT, $00, 0
