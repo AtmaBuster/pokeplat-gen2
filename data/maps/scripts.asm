@@ -136,6 +136,9 @@ INCLUDE "maps/OldChateauEntryway.asm"
 INCLUDE "maps/OldChateauDining.asm"
 INCLUDE "maps/OldChateauBedrooms.asm"
 INCLUDE "maps/FuegoIronworksInt.asm"
+INCLUDE "maps/Route206.asm"
+INCLUDE "maps/Route206NGate.asm"
+INCLUDE "maps/Route206SGate.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX

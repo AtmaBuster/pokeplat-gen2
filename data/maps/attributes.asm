@@ -147,7 +147,8 @@ ENDM
 	connection north, Route207, ROUTE_207, 12
 	connection west, Route203, ROUTE_203, -2
 
-	map_attributes Route207, ROUTE_207, $09, SOUTH
+	map_attributes Route207, ROUTE_207, $09, NORTH | SOUTH
+	connection north, Route206, ROUTE_206, 0
 	connection south, OreburghCity, OREBURGH_CITY, -12
 	
 	map_attributes Route204N, ROUTE_204_N, $01, NORTH | SOUTH
@@ -186,6 +187,9 @@ ENDM
 	
 	map_attributes Route211W, ROUTE_211_W, $4E, WEST
 	connection west, EternaCity, ETERNA_CITY, -1
+	
+	map_attributes Route206, ROUTE_206, $09, SOUTH
+	connection south, Route207, ROUTE_207, 0
 	
 ; no connections
 	
@@ -282,3 +286,6 @@ ENDM
 	map_attributes OldChateauDining, OLD_CHATEAU_DINING, $00, 0
 	map_attributes OldChateauBedrooms, OLD_CHATEAU_BEDROOMS, $00, 0
 	map_attributes FuegoIronworksInt, FUEGO_IRONWORKS_INT, $00, 0
+	
+	map_attributes Route206SGate, ROUTE_206_S_GATE, $00, 0
+	map_attributes Route206NGate, ROUTE_206_N_GATE, $00, 0

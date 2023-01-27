@@ -103,6 +103,9 @@ ENDM
 	map_const OREBURGH_HOUSE_N,                             4,  4 ; 13
 	map_const OREBURGH_HOUSE_E,                             4,  4 ; 14
 	map_const OREBURGH_MUSEUM,                              8,  5 ; 15
+	map_const ROUTE_206,                                   14, 40 ; 16
+	map_const ROUTE_206_S_GATE, 							5,  5 ; 17
+	map_const ROUTE_206_N_GATE, 							5,  5 ; 18
 	
 	newgroup ; Canalave, Route 218 & Islands                         6
 	

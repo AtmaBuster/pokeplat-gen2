@@ -273,6 +273,13 @@ OldChateauBedrooms_Blocks:
 	
 FuegoIronworksInt_Blocks:
 	INCBIN "maps/FuegoIronworksInt.blk"
+	
+Route206_Blocks:
+	INCBIN "maps/Route206.blk"
+	
+Route206NGate_Blocks:
+Route206SGate_Blocks:
+	INCBIN "maps/Route206Gate.blk"
 
 SECTION "Map Blocks 2", ROMX
 

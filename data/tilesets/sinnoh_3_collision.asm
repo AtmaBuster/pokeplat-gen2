@@ -194,3 +194,5 @@
 	tilecoll WALL, FLOOR, WALL, CAVE ; c1
 	tilecoll WALL, WALL, WALL, WALL ; c2
 	tilecoll WALL, WALL, WALL, WALL ; c3
+	tilecoll WALL, WALL, WALL, DOOR ; c4
+	tilecoll WALL, WALL, WALL, WALL ; c5
