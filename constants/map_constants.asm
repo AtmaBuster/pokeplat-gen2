@@ -62,7 +62,7 @@ ENDM
 	newgroup ; Jubilife & Routes                                  ;  4
 
 	map_const JUBILIFE_CITY,                               20, 20 ;  1
-	map_const ROUTE_203,                                   26, 10 ;  2
+	map_const ROUTE_203,                                   29, 10 ;  2
 	map_const ROUTE_204_S,                                 12, 21 ;  3
 	map_const JUBILIFE_APARTMENT_SE_1F,                     6,  4 ;  4
 	map_const JUBILIFE_APARTMENT_SE_2F,                     6,  4 ;  5
@@ -103,7 +103,7 @@ ENDM
 	map_const OREBURGH_HOUSE_N,                             4,  4 ; 13
 	map_const OREBURGH_HOUSE_E,                             4,  4 ; 14
 	map_const OREBURGH_MUSEUM,                              8,  5 ; 15
-	map_const ROUTE_206,                                   14, 40 ; 16
+	map_const ROUTE_206,                                   14, 43 ; 16
 	map_const ROUTE_206_S_GATE, 							5,  5 ; 17
 	map_const ROUTE_206_N_GATE, 							5,  5 ; 18
 	
