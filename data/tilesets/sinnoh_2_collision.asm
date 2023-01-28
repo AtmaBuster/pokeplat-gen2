@@ -111,7 +111,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 6e
 	tilecoll WALL, WALL, WALL, WALL ; 6f
 	tilecoll WALL, WALL, WALL, FLOOR ; 70
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 71
+	tilecoll WALL, CUT_TREE, FLOOR, FLOOR ; 71
 	tilecoll WALL, WALL, WALL, WALL ; 72
 	tilecoll WALL, WALL, WALL, WALL ; 73
 	tilecoll WALL, WALL, WALL, WALL ; 74
@@ -147,9 +147,9 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 92
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 93
 	tilecoll WALL, WALL, FLOOR, WALL ; 94
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 95
+	tilecoll FLOOR, HEADBUTT_TREE, FLOOR, HEADBUTT_TREE ; 95
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 96
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 97
+	tilecoll FLOOR, WALL, FLOOR, HEADBUTT_TREE ; 97
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 98
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 99
 	tilecoll WALL, WALL, WALL, DOOR ; 9a
