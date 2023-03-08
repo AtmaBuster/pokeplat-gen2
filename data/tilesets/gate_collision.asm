@@ -29,3 +29,6 @@
 	tilecoll COUNTER, FLOOR, COUNTER, FLOOR ; 1c
 	tilecoll FLOOR, COUNTER, FLOOR, COUNTER ; 1d
 	tilecoll WALL, WALL, DOOR, DOOR ; 1e
+	tilecoll WALL, WALL, WALL, WALL ; 1f
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 20
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 21
