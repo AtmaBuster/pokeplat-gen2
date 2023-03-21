@@ -42,3 +42,5 @@ Tilesets::
 	tileset TilesetSnowpointTemple
 	tileset TilesetMtCoronet
 	tileset TilesetOldChateau
+	tileset TilesetCave_2
+	

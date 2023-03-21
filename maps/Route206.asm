@@ -8,12 +8,13 @@ Route206_MapScripts:
 Route206_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event 13,  5, ROUTE_206_N_GATE, 4
 	warp_event 11, 67, ROUTE_206_S_GATE, 1
 	warp_event 12, 67, ROUTE_206_S_GATE, 2
 	warp_event 11, 73, ROUTE_206_S_GATE, 3
 	warp_event 12, 73, ROUTE_206_S_GATE, 4
+	warp_event 23, 27, WAYWARD_CAVE_1F, 1
 	
 	db 0 ; coord events
 

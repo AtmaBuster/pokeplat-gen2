@@ -29,6 +29,7 @@
 	const TILESET_SNOWPOINT_TEMPLE     ; 1b SNOWPOINT TEMPLE
 	const TILESET_MT_CORONET           ; 1c MT. CORONET
 	const TILESET_OLD_CHATEAU          ; 1d OLD CHATEAU
+	const TILESET_CAVE_2			   ; 1e CAVES #2
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

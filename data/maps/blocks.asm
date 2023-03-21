@@ -280,6 +280,12 @@ Route206_Blocks:
 Route206NGate_Blocks:
 Route206SGate_Blocks:
 	INCBIN "maps/Route206Gate.blk"
+	
+WaywardCave1F_Blocks:
+	INCBIN "maps/WaywardCave1F.blk"
+	
+WaywardCave1F2_Blocks:
+	INCBIN "maps/WaywardCave1F2.blk"
 
 SECTION "Map Blocks 2", ROMX
 

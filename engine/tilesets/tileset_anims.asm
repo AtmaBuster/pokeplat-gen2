@@ -190,6 +190,7 @@ UnusedTilesetAnim_fc1af:
 	dw NULL,  DoneTileAnimation
 
 TilesetCaveAnim:
+TilesetCave_2Anim:
 TilesetMtCoronetAnim:
 	dw vTiles2 tile $14, WriteTileToBuffer
 	dw NULL,  FlickeringCaveEntrancePalette

@@ -299,7 +299,15 @@ INCLUDE "data/tilesets/old_chateau_collision.asm"
 TilesetOldChateauMeta:
 INCBIN "data/tilesets/old_chateau_metatiles.bin"
 ;---------------------------------------
+TilesetCave_2GFX:
+INCBIN "gfx/tilesets/cave_2.2bpp.lz"
 
+TilesetCave_2Coll:
+INCLUDE "data/tilesets/cave_2_collision.asm"
+
+TilesetCave_2Meta:
+INCBIN "data/tilesets/cave_2_metatiles.bin"
+;---------------------------------------
 
 ;SECTION "Tileset Data 7", ROMX
 ;SECTION "Tileset Data 8", ROMX

@@ -286,6 +286,7 @@ ENDM
 	map_attributes OldChateauDining, OLD_CHATEAU_DINING, $00, 0
 	map_attributes OldChateauBedrooms, OLD_CHATEAU_BEDROOMS, $00, 0
 	map_attributes FuegoIronworksInt, FUEGO_IRONWORKS_INT, $00, 0
-	
 	map_attributes Route206SGate, ROUTE_206_S_GATE, $00, 0
 	map_attributes Route206NGate, ROUTE_206_N_GATE, $00, 0
+	map_attributes WaywardCave1F, WAYWARD_CAVE_1F, $06, 0
+	map_attributes WaywardCave1F2, WAYWARD_CAVE_1F_2, $06, 0

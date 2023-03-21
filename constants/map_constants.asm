@@ -168,4 +168,6 @@ ENDM
 	map_const OLD_CHATEAU_DINING,                          15,  5 ;  12
 	map_const OLD_CHATEAU_BEDROOMS,                        17,  8 ;  13
 	map_const FUEGO_IRONWORKS_INT,                         25, 13 ;  14
+	map_const WAYWARD_CAVE_1F, 							   40, 18 ;  15
+	map_const WAYWARD_CAVE_1F_2, 						   10,  3 ;  16
 	

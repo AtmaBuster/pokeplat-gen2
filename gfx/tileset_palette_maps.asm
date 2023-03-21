@@ -96,6 +96,9 @@ INCLUDE "gfx/tilesets/mt_coronet_palette_map.asm"
 TilesetOldChateauPalMap:
 INCLUDE "gfx/tilesets/old_chateau_palette_map.asm"
 
+TilesetCave_2PalMap:
+INCLUDE "gfx/tilesets/cave_2_palette_map.asm"
+
 ; unused
 rept 26
 	db $06
