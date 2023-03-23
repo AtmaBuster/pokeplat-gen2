@@ -170,4 +170,5 @@ ENDM
 	map_const FUEGO_IRONWORKS_INT,                         25, 13 ;  14
 	map_const WAYWARD_CAVE_1F, 							   40, 18 ;  15
 	map_const WAYWARD_CAVE_1F_2, 						   10,  3 ;  16
+	map_const WAYWARD_CAVE_B1F,							   20, 15 ;  17
 	

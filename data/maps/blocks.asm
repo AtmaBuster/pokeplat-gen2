@@ -286,6 +286,9 @@ WaywardCave1F_Blocks:
 	
 WaywardCave1F2_Blocks:
 	INCBIN "maps/WaywardCave1F2.blk"
+	
+WaywardCaveB1F_Blocks:
+	INCBIN "maps/WaywardCaveB1F.blk"
 
 SECTION "Map Blocks 2", ROMX
 

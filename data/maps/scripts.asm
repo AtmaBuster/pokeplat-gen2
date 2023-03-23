@@ -141,6 +141,7 @@ INCLUDE "maps/Route206NGate.asm"
 INCLUDE "maps/Route206SGate.asm"
 INCLUDE "maps/WaywardCave1F.asm"
 INCLUDE "maps/WaywardCave1F2.asm"
+INCLUDE "maps/WaywardCaveB1F.asm"
 
 SECTION "Map Scripts 8", ROMX
 SECTION "Map Scripts 9", ROMX
