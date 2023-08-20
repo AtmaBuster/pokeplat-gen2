@@ -264,6 +264,7 @@ TilesetPokeComCenterAnim:
 TilesetSolaceonRuinsAnim:
 TilesetRadioTowerAnim:
 TilesetOldChateauAnim:
+TilesetGym2Anim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

@@ -20,6 +20,8 @@ LoadSpecialMapPalette:
 	jr z, .meadow
 	cp TILESET_FACILITY
 	jr z, .facility
+	cp TILESET_GYM_2
+	jr z, .gym_2
 	jr .do_nothing
 
 .pokecom_2f
@@ -68,6 +70,11 @@ LoadSpecialMapPalette:
 	
 .facility
 	call LoadFacilityPalette
+	scf
+	ret
+	
+.gym_2
+	call LoadGym2Palette
 	scf
 	ret
 
@@ -188,3 +195,13 @@ LoadFacilityPalette:
 	
 FacilityPalette:
 INCLUDE "gfx/tilesets/facility.pal"
+
+LoadGym2Palette:
+	ld a, BANK (wBGPals1)
+	ld de, wBGPals1
+	ld hl, Gym2Palette
+	ld bc, 8 palettes
+	jp FarCopyWRAM
+	
+Gym2Palette:
+INCLUDE "gfx/tilesets/gym_2.pal"

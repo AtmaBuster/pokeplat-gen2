@@ -308,8 +308,19 @@ INCLUDE "data/tilesets/cave_2_collision.asm"
 TilesetCave_2Meta:
 INCBIN "data/tilesets/cave_2_metatiles.bin"
 ;---------------------------------------
+TilesetGym2GFX:
+INCBIN "gfx/tilesets/gym_2.2bpp.lz"
 
-;SECTION "Tileset Data 7", ROMX
+SECTION "Tileset Data 7", ROMX
+
+TilesetGym2Coll:
+INCLUDE "data/tilesets/gym_2_collision.asm"
+
+TilesetGym2Meta:
+INCBIN "data/tilesets/gym_2_metatiles.bin"
+;---------------------------------------
+
+
 ;SECTION "Tileset Data 8", ROMX
 ;SECTION "Tileset Data 9", ROMX
 

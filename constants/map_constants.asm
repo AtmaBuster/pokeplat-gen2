@@ -131,7 +131,7 @@ ENDM
 	map_const ETERNA_CITY,                                 25, 22 ; 15
 	map_const ETERNA_POKEMON_CENTER_1F,						5,  4 ;  16
 	map_const ETERNA_POKEMART, 								6,  4 ;  17
-	map_const ETERNA_GYM,									5,  5 ;  18
+	map_const ETERNA_GYM,									8, 10 ;  18
 	map_const ETERNA_BIKE_SHOP,								5,  4 ;  19
 	map_const ETERNA_HERB_SHOP,								4,  3 ;  20
 	map_const ETERNA_UNDERGROUND_HOUSE,						4,  3 ;  21

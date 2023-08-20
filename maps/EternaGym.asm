@@ -9,8 +9,8 @@ EternaGym_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4,  9, ETERNA_CITY, 3
-	warp_event  5,  9, ETERNA_CITY, 3
+	warp_event  7, 19, ETERNA_CITY, 3
+	warp_event  8, 19, ETERNA_CITY, 3
 
 	db 0 ; coord events
 

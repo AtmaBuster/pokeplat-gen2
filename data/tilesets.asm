@@ -43,4 +43,5 @@ Tilesets::
 	tileset TilesetMtCoronet
 	tileset TilesetOldChateau
 	tileset TilesetCave_2
+	tileset TilesetGym2
 	
