@@ -1240,7 +1240,7 @@ INCLUDE "gfx/battle/exp_bar.pal"
 
 LoadMapPals:
 	farcall LoadSpecialMapPalette
-	jr c, .got_pals
+	jp c, .got_pals
 
 	; Which palette group is based on whether we're outside or inside
 	ld a, [wEnvironment]
@@ -1299,7 +1299,6 @@ LoadMapPals:
 	pop af
 	ldh [rSVBK], a
 
-.got_pals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
@@ -1339,6 +1338,18 @@ endr
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	ret
+.got_pals
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wOBPals1
+	ld bc, 8 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+
+	jp LoadSpecialMapObjectPal
 
 INCLUDE "data/maps/environment_colors.asm"
 

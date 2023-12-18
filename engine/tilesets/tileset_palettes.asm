@@ -175,10 +175,13 @@ MuseumPalette:
 INCLUDE "gfx/tilesets/museum.pal"
 
 LoadMeadowPalette:
+	ld hl, MeadowPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	call AddNTimes
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, MeadowPalette
-	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
 
