@@ -10,8 +10,6 @@ MapScenes::
 	scene_var TRADE_CENTER,       wTradeCenterSceneID
 	scene_var COLOSSEUM,          wColosseumSceneID
 	scene_var TIME_CAPSULE,       wTimeCapsuleSceneID
-	scene_var MOBILE_TRADE_ROOM,  wMobileTradeRoomSceneID
-	scene_var MOBILE_BATTLE_ROOM, wMobileBattleRoomSceneID
 	scene_var PLAYERS_HOUSE_2F,   wPlayersHouse2FSceneID
 	scene_var PLAYERS_HOUSE_1F,   wPlayersHouse1FSceneID
 	scene_var TWINLEAF_TOWN,      wTwinleafTownSceneID

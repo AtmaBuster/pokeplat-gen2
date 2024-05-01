@@ -2769,8 +2769,6 @@ wTradeCenterSceneID::      db
 wColosseumSceneID::        db
 wTimeCapsuleSceneID::      db
 wPlayersHouse2FSceneID::   db
-wMobileTradeRoomSceneID::  db
-wMobileBattleRoomSceneID:: db
 wPlayersHouse1FSceneID::   db
 wTwinleafTownSceneID::     db
 wRivalHouse2FSceneID::     db

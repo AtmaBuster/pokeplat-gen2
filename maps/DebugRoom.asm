@@ -1,12 +1,7 @@
 DebugRoom_MapScripts:
-	db 2 ; scene scripts
-	scene_script .Dummy
-	scene_script .Dummy
+	def_scene_scripts
 
-	db 0 ; callbacks
-
-.Dummy:
-	end
+	def_callbacks
 
 DebugRoom_BigTextTestScript:
 	opentext
@@ -42,17 +37,17 @@ DebugRoom_BridgeOffScript:
 DebugRoom_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	def_warp_events
 	warp_event  7, 11, TWINLEAF_TOWN, 1
 	warp_event  6, 11, TWINLEAF_TOWN, 1
 
-	db 4 ; coord events
+	def_coord_events
 	coord_event 10,  9, SCENE_DEFAULT, DebugRoom_BridgeOnScript
 	coord_event 19,  9, SCENE_DEFAULT, DebugRoom_BridgeOnScript
 	coord_event 10, 10, SCENE_FINISHED, DebugRoom_BridgeOffScript
 	coord_event 19, 10, SCENE_FINISHED, DebugRoom_BridgeOffScript
 
-	db 1 ; bg events
+	def_bg_events
 	bg_event  7,  5, BGEVENT_READ, DebugRoom_BigTextTestScript
 
-	db 0 ; object events
+	def_object_events

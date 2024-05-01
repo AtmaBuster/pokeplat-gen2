@@ -199,8 +199,6 @@ ENDM
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
 	map_attributes TimeCapsule, TIME_CAPSULE, $00, 0
-	map_attributes MobileTradeRoom, MOBILE_TRADE_ROOM, $00, 0
-	map_attributes MobileBattleRoom, MOBILE_BATTLE_ROOM, $00, 0
 	map_attributes PlayersHouse1F, PLAYERS_HOUSE_1F, $00, 0
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
 	map_attributes RivalHouse1F, RIVAL_HOUSE_1F, $00, 0

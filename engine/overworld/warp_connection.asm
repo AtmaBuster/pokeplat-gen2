@@ -44,7 +44,7 @@ EnterMapConnection:
 	bit WEST2_F, a ; only for Route 205 South -> Fuego Ironworks
 	jr z, .regular_west
 	ld a, [wYCoord] ; check Y coord to get destination map
-	cp FUEGO_IRONWORKS_EXT_HEIGHT * 2
+	cp FUEGO_IRONWORKS_HEIGHT * 2
 	jr nc, .regular_west
 
 	ld a, [wSouthConnectedMapGroup]

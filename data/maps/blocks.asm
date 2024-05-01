@@ -24,12 +24,6 @@ TimeCapsule_Blocks:
 Colosseum_Blocks:
 	INCBIN "maps/Colosseum.blk"
 
-MobileTradeRoom_Blocks:
-	INCBIN "maps/MobileTradeRoom.blk"
-
-MobileBattleRoom_Blocks:
-	INCBIN "maps/MobileBattleRoom.blk"
-	
 SandgemPokeMart_Blocks:
 JubilifePokeMart_Blocks:
 OreburghPokeMart_Blocks:
